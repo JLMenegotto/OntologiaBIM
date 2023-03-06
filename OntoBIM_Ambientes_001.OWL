@@ -1,0 +1,973 @@
+
+Prefix: owl:  <http://www.w3.org/2002/07/owl#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: foaf: <http://xmlns.com/foaf/0.1/#>
+Prefix: rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xsd:  <http://www.w3.org/2001/XMLSchema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix: dc:   <http://purl.org/dc/elements/1.1/>
+Prefix: tem:  <http://www.w3.org/2006/time#>
+Prefix: fofu: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
+
+Ontology: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#Ambientes>
+
+Annotations: 
+	dc:title "Ontologia BIM"@pt, 
+	dc:title "Autor: JL Menegotto"@pt, 
+	rdfs:label "PrefixoOntologia: fofu:"@pt, 
+	rdfs:label "TemaOntologia: Ambientes"@pt, 
+	rdfs:label "Predio: Edificio_A"@pt, 
+	rdfs:label "Longitude: 23.3040043"@pt, 
+	rdfs:label "Latitude: 42.3040043"@pt, 
+	rdfs:label "Altitude: 5.12"@pt, 
+	rdfs:label "Azimut_Norte: 35.5"@pt, 
+	rdfs:label "Logradouro: Rua AlgumaRua"@pt, 
+	rdfs:label "Num: 100"@pt, 
+	rdfs:label "Bloco: A"@pt, 
+	rdfs:label "Cidade: Rio de Janeiro"@pt, 
+	rdfs:label "CEP: 22080-030"@pt, 
+	rdfs:label "Bairro: Copacabana"@pt, 
+	rdfs:label "Pais: Brasil"@pt, 
+	rdfs:label "Função: Residencial"@pt, 
+	rdfs:label "Tipologia: Apartamentos"@pt
+
+Datatype: xsd:string
+Datatype: xsd:decimal
+Datatype: xsd:double
+Datatype: rdfs:Literal
+Datatype: xsd:integer
+Datatype: xsd:dateTime
+Datatype: xsd:boolean
+
+AnnotationProperty: fofu:Autor
+AnnotationProperty: fofu:Edi_Nome
+AnnotationProperty: fofu:Edi_Alias
+AnnotationProperty: dc:title
+
+ObjectProperty: fofu:edificio
+
+DataProperty: fofu:edificio
+
+Class: fofu:Edificio
+
+Class: fofu:ProgramaZonal
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:ProgramaZonal"@pt
+	Annotations: rdfs:comment "Zonas do Programa de Necessidades"@pt
+
+Class: fofu:ProgramaEspacial
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:ProgramaEspacial"@pt
+	Annotations: rdfs:comment "Compartimentos do Programa de Necessidades"@pt
+
+Class: fofu:Projeto
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:Projeto"@pt
+	Annotations: rdfs:comment "Conjuntos Articuladores Projetados"@pt
+
+Class: fofu:ModeloBIM
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:ModeloBIM"@pt
+	Annotations: rdfs:comment "Objetos do modelo BIM Revit"@pt
+
+Class: fofu:ModeloBIM
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:ModeloBIM"@pt
+	Annotations: rdfs:comment "Objetos do modelo BIM em IFC"@pt
+
+Class: fofu:Zonas
+	SubClassOf: fofu:ProgramaZonal
+	Annotations: rdfs:label "fofu:Zonas"@pt
+	Annotations: rdfs:comment "Zonenamento Geral do Edifício"@pt
+
+Class: fofu:Ambientes
+	SubClassOf: fofu:ProgramaEspacial
+	Annotations: rdfs:label "fofu:Ambientes"@pt
+	Annotations: rdfs:comment "Ambientes Planejados p/cumprir as funções do Tema Edifício"@pt
+
+Class: fofu:Núcleos
+	SubClassOf: fofu:Projeto
+	Annotations: rdfs:label "fofu:Núcleos"@pt
+	Annotations: rdfs:comment "Núcleos de Elevadores "@pt
+
+Class: fofu:Núcleos
+	SubClassOf: fofu:Projeto
+	Annotations: rdfs:label "fofu:Núcleos"@pt
+	Annotations: rdfs:comment "Núcleo de Salas de Aula"@pt
+
+Class: fofu:OST
+	SubClassOf: fofu:ModeloBIM
+	Annotations: rdfs:label "fofu:OST"@pt
+	Annotations: rdfs:comment "Categorias OST de Revit "@pt
+
+Class: fofu:IFC
+	SubClassOf: fofu:ModeloBIM
+	Annotations: rdfs:label "fofu:IFC"@pt
+	Annotations: rdfs:comment "Categorias IFC"@pt
+
+Class: fofu:IFC
+	SubClassOf: fofu:ModeloBIM
+	Annotations: rdfs:label "fofu:IFC"@pt
+	Annotations: rdfs:comment "TiposEnum IFC"@pt
+
+Class: fofu:ZonaCardinal
+	SubClassOf: fofu:Zonas
+	Annotations: rdfs:label "fofu:ZonaCardinal"@pt
+	Annotations: rdfs:comment "Define Zonas Orientadas Cardinalmente"@pt
+
+Class: fofu:ZonaInstitucional
+	SubClassOf: fofu:Zonas
+	Annotations: rdfs:label "fofu:ZonaInstitucional"@pt
+	Annotations: rdfs:comment "Define Zonas desde o ponto de vista Institucional"@pt
+
+Class: fofu:ZonaPredial
+	SubClassOf: fofu:Zonas
+	Annotations: rdfs:label "fofu:ZonaPredial"@pt
+	Annotations: rdfs:comment "Define Zonas desde o ponto de vista Manutenção Predial"@pt
+
+Class: fofu:ZonaFuncional
+	SubClassOf: fofu:Zonas
+	Annotations: rdfs:label "fofu:ZonaFuncional"@pt
+	Annotations: rdfs:comment "Define Zonas desde o ponto de vista ao Funcionamento"@pt
+
+Class: fofu:ZonaVertical
+	SubClassOf: fofu:Zonas
+	Annotations: rdfs:label "fofu:ZonaVertical"@pt
+	Annotations: rdfs:comment "Define Zonas Verticais do prédio"@pt
+
+Class: fofu:Guarda
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Guarda"@pt
+	Annotations: rdfs:comment "Ambientes de Guarda tipo depósitos"@pt
+
+Class: fofu:Transição
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Transição"@pt
+	Annotations: rdfs:comment "Ambientes de  Transição espacial (halls, antecâmaras, etc.)"@pt
+
+Class: fofu:Úmidos
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Úmidos"@pt
+	Annotations: rdfs:comment "Ambientes onde existam instalações hidráulicas"@pt
+
+Class: fofu:Conectivos
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Conectivos"@pt
+	Annotations: rdfs:comment "Ambientes que conectam ambientes (corredores e circulações)"@pt
+
+Class: fofu:Acústicos
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Acústicos"@pt
+	Annotations: rdfs:comment "Ambientes que exigem tratamento acústico especial"@pt
+
+Class: fofu:Laboratoriais
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Laboratoriais"@pt
+	Annotations: rdfs:comment "Ambientes Laboratoriais"@pt
+
+Class: fofu:Artísticos
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Artísticos"@pt
+	Annotations: rdfs:comment "Ambientes de uso Artístico"@pt
+
+Class: fofu:Apoio
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Apoio"@pt
+	Annotations: rdfs:comment "Ambientes de Apoio ao funcionamento predial"@pt
+
+Class: fofu:Ensino
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Ensino"@pt
+	Annotations: rdfs:comment "Ambientes de Ensino"@pt
+
+Class: fofu:Veicular
+	SubClassOf: fofu:Ambientes
+	Annotations: rdfs:label "fofu:Veicular"@pt
+	Annotations: rdfs:comment "Ambientes de tránsito de Veiculos"@pt
+
+Class: fofu:NúcleoElevadores
+	SubClassOf: fofu:Núcleos
+	Annotations: rdfs:label "fofu:NúcleoElevadores"@pt
+	Annotations: rdfs:comment "Núcleos de Elevadores"@pt
+
+Class: fofu:SalasAulas
+	SubClassOf: fofu:Núcleos
+	Annotations: rdfs:label "fofu:SalasAulas"@pt
+	Annotations: rdfs:comment "Conjuntos de Salas de Aulas"@pt
+
+Class: fofu:Categorias
+	SubClassOf: fofu:OST
+	Annotations: rdfs:label "fofu:Categorias"@pt
+	Annotations: rdfs:comment "Categorias OST de Revit "@pt
+
+Class: fofu:Categorias
+	SubClassOf: fofu:IFC
+	Annotations: rdfs:label "fofu:Categorias"@pt
+	Annotations: rdfs:comment "Categorias IFC"@pt
+
+Class: fofu:TiposEnum
+	SubClassOf: fofu:IFC
+	Annotations: rdfs:label "fofu:TiposEnum"@pt
+	Annotations: rdfs:comment "Tipos e Enumeráveis IFC"@pt
+
+Class: fofu:SetorNorte
+	SubClassOf: fofu:ZonaCardinal
+	Annotations: rdfs:label "fofu:SetorNorte"@pt
+	Annotations: rdfs:comment "Setores orientados ao Norte"@pt
+
+Class: fofu:SetorOeste
+	SubClassOf: fofu:ZonaCardinal
+	Annotations: rdfs:label "fofu:SetorOeste"@pt
+	Annotations: rdfs:comment "Setores orientados ao Oeste"@pt
+
+Class: fofu:SetorSul
+	SubClassOf: fofu:ZonaCardinal
+	Annotations: rdfs:label "fofu:SetorSul"@pt
+	Annotations: rdfs:comment "Setores orientados ao Sul"@pt
+
+Class: fofu:SetorLeste
+	SubClassOf: fofu:ZonaCardinal
+	Annotations: rdfs:label "fofu:SetorLeste"@pt
+	Annotations: rdfs:comment "Setores orientados ao Leste"@pt
+
+Class: fofu:Direção
+	SubClassOf: fofu:ZonaInstitucional
+	Annotations: rdfs:label "fofu:Direção"@pt
+	Annotations: rdfs:comment "Setor da Direção"@pt
+
+Class: fofu:Produção
+	SubClassOf: fofu:ZonaInstitucional
+	Annotations: rdfs:label "fofu:Produção"@pt
+	Annotations: rdfs:comment "Áreas produtivas do edifício"@pt
+
+Class: fofu:Público
+	SubClassOf: fofu:ZonaInstitucional
+	Annotations: rdfs:label "fofu:Público"@pt
+	Annotations: rdfs:comment "Acesso permitido ao público"@pt
+
+Class: fofu:Privativo
+	SubClassOf: fofu:ZonaInstitucional
+	Annotations: rdfs:label "fofu:Privativo"@pt
+	Annotations: rdfs:comment "Acesso restrito ao público"@pt
+
+Class: fofu:Estacionamento
+	SubClassOf: fofu:ZonaPredial
+	Annotations: rdfs:label "fofu:Estacionamento"@pt
+	Annotations: rdfs:comment "Setor de estacionamentos"@pt
+
+Class: fofu:Elevadores
+	SubClassOf: fofu:ZonaPredial
+	Annotations: rdfs:label "fofu:Elevadores"@pt
+	Annotations: rdfs:comment "Setor de elevadores"@pt
+
+Class: fofu:Máquinas
+	SubClassOf: fofu:ZonaPredial
+	Annotations: rdfs:label "fofu:Máquinas"@pt
+	Annotations: rdfs:comment "Setor de maquinária"@pt
+
+Class: fofu:Acesso
+	SubClassOf: fofu:ZonaPredial
+	Annotations: rdfs:label "fofu:Acesso"@pt
+	Annotations: rdfs:comment "Acessos do edifício"@pt
+
+Class: fofu:Emergência
+	SubClassOf: fofu:ZonaFuncional
+	Annotations: rdfs:label "fofu:Emergência"@pt
+	Annotations: rdfs:comment "Setor de Emergências em Unidades hospitalares"@pt
+
+Class: fofu:BioMolecular
+	SubClassOf: fofu:ZonaFuncional
+	Annotations: rdfs:label "fofu:BioMolecular"@pt
+	Annotations: rdfs:comment "Setor de Ambientes de pesquisa biomolecular"@pt
+
+Class: fofu:Embassamento
+	SubClassOf: fofu:ZonaVertical
+	Annotations: rdfs:label "fofu:Embassamento"@pt
+	Annotations: rdfs:comment "Setor do embassamento"@pt
+
+Class: fofu:AndarTécnico
+	SubClassOf: fofu:ZonaVertical
+	Annotations: rdfs:label "fofu:AndarTécnico"@pt
+	Annotations: rdfs:comment "Andares técnicos do prédio"@pt
+
+Class: fofu:Lámina
+	SubClassOf: fofu:ZonaVertical
+	Annotations: rdfs:label "fofu:Lámina"@pt
+	Annotations: rdfs:comment "Andares da lámina para edificios em altura"@pt
+
+Class: fofu:Cobertura
+	SubClassOf: fofu:ZonaVertical
+	Annotations: rdfs:label "fofu:Cobertura"@pt
+	Annotations: rdfs:comment "Andares de cobertura"@pt
+
+Class: fofu:Subsolos
+	SubClassOf: fofu:ZonaVertical
+	Annotations: rdfs:label "fofu:Subsolos"@pt
+	Annotations: rdfs:comment "Todos os subsolos do prédio"@pt
+
+Class: fofu:Depósito
+	SubClassOf: fofu:Guarda
+	Annotations: rdfs:label "fofu:Depósito"@pt
+	Annotations: rdfs:comment "Ambientes de depótitos"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Hall
+	SubClassOf: fofu:Transição
+	Annotations: rdfs:label "fofu:Hall"@pt
+	Annotations: rdfs:comment "Halls e lobies do prédio"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Antecâmara
+	SubClassOf: fofu:Transição
+	Annotations: rdfs:label "fofu:Antecâmara"@pt
+	Annotations: rdfs:comment "Antecâmaras do prédio"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Banheiro
+	SubClassOf: fofu:Úmidos
+	Annotations: rdfs:label "fofu:Banheiro"@pt
+	Annotations: rdfs:comment "Banheiros"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SanitárioFeminino
+	SubClassOf: fofu:Úmidos
+	Annotations: rdfs:label "fofu:SanitárioFeminino"@pt
+	Annotations: rdfs:comment "Sanitários Femininos"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SanitárioMasculino
+	SubClassOf: fofu:Úmidos
+	Annotations: rdfs:label "fofu:SanitárioMasculino"@pt
+	Annotations: rdfs:comment "Sanitários Masculinos "@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Copa
+	SubClassOf: fofu:Úmidos
+	Annotations: rdfs:label "fofu:Copa"@pt
+	Annotations: rdfs:comment "Copas"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Cozinha
+	SubClassOf: fofu:Úmidos
+	Annotations: rdfs:label "fofu:Cozinha"@pt
+	Annotations: rdfs:comment "Cozinhas "@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Corredor
+	SubClassOf: fofu:Conectivos
+	Annotations: rdfs:label "fofu:Corredor"@pt
+	Annotations: rdfs:comment "Corredores"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Circulação
+	SubClassOf: fofu:Conectivos
+	Annotations: rdfs:label "fofu:Circulação"@pt
+	Annotations: rdfs:comment "Circulações"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:HallElevadores
+	SubClassOf: fofu:Conectivos
+	Annotations: rdfs:label "fofu:HallElevadores"@pt
+	Annotations: rdfs:comment "Hall de elevadores"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaConcerto
+	SubClassOf: fofu:Acústicos
+	Annotations: rdfs:label "fofu:SalaConcerto"@pt
+	Annotations: rdfs:comment "Salas de concertos musicais que requerem tratamento acústico"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaCinema
+	SubClassOf: fofu:Acústicos
+	Annotations: rdfs:label "fofu:SalaCinema"@pt
+	Annotations: rdfs:comment "Salas de cinema que requerem tratamento acústico"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaTeatro
+	SubClassOf: fofu:Acústicos
+	Annotations: rdfs:label "fofu:SalaTeatro"@pt
+	Annotations: rdfs:comment "Salas de teatro que requerem tratamento acústico"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:LaboratórioNB1
+	SubClassOf: fofu:Laboratoriais
+	Annotations: rdfs:label "fofu:LaboratórioNB1"@pt
+	Annotations: rdfs:comment "Laboratório de nível de segurança 1"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:LaboratórioNB2
+	SubClassOf: fofu:Laboratoriais
+	Annotations: rdfs:label "fofu:LaboratórioNB2"@pt
+	Annotations: rdfs:comment "Laboratório de nível de segurança 2"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:LaboratórioNB3
+	SubClassOf: fofu:Laboratoriais
+	Annotations: rdfs:label "fofu:LaboratórioNB3"@pt
+	Annotations: rdfs:comment "Laboratório de nível de segurança 3"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:LaboratórioNB4
+	SubClassOf: fofu:Laboratoriais
+	Annotations: rdfs:label "fofu:LaboratórioNB4"@pt
+	Annotations: rdfs:comment "Laboratório de nível de segurança 4"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:GaleriaArte
+	SubClassOf: fofu:Artísticos
+	Annotations: rdfs:label "fofu:GaleriaArte"@pt
+	Annotations: rdfs:comment "Galerias de arte"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaExposição
+	SubClassOf: fofu:Artísticos
+	Annotations: rdfs:label "fofu:SalaExposição"@pt
+	Annotations: rdfs:comment "Salas de exposição"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaMáquina
+	SubClassOf: fofu:Apoio
+	Annotations: rdfs:label "fofu:SalaMáquina"@pt
+	Annotations: rdfs:comment "Salas de Máquinas"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaBombas
+	SubClassOf: fofu:Apoio
+	Annotations: rdfs:label "fofu:SalaBombas"@pt
+	Annotations: rdfs:comment "Salas de Bombas"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:SalaAula
+	SubClassOf: fofu:Ensino
+	Annotations: rdfs:label "fofu:SalaAula"@pt
+	Annotations: rdfs:comment "Salas de Aula"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:LaboratórioInfo
+	SubClassOf: fofu:Ensino
+	Annotations: rdfs:label "fofu:LaboratórioInfo"@pt
+	Annotations: rdfs:comment "Laboratórios para ensino de Informática"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Garagem
+	SubClassOf: fofu:Veicular
+	Annotations: rdfs:label "fofu:Garagem"@pt
+	Annotations: rdfs:comment "Garagem"@pt
+	EquivalentTo: fofu:OST_Rooms
+
+Class: fofu:Principal
+	SubClassOf: fofu:NúcleoElevadores
+	Annotations: rdfs:label "fofu:Principal"@pt
+	Annotations: rdfs:comment "Núcleo principal de elevadores "@pt
+
+Class: fofu:Secundário
+	SubClassOf: fofu:NúcleoElevadores
+	Annotations: rdfs:label "fofu:Secundário"@pt
+	Annotations: rdfs:comment "Núcleo secundário de elevadores "@pt
+
+Class: fofu:AulaDesenho
+	SubClassOf: fofu:SalasAulas
+	Annotations: rdfs:label "fofu:AulaDesenho"@pt
+	Annotations: rdfs:comment "AulaDesenho"@pt
+
+Class: fofu:AulaInformática
+	SubClassOf: fofu:SalasAulas
+	Annotations: rdfs:label "fofu:AulaInformática"@pt
+	Annotations: rdfs:comment "AulaInformática"@pt
+
+Class: fofu:OST_Areas
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:OST_Areas"@pt
+	Annotations: rdfs:comment "OST_Areas"@pt
+	EquivalentTo: fofu:ifcSpace
+
+Class: fofu:OST_Rooms
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:OST_Rooms"@pt
+	Annotations: rdfs:comment "OST_Rooms"@pt
+	EquivalentTo: fofu:ifcSpace
+
+Class: fofu:OST_HVAC_Zones
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:OST_HVAC_Zones"@pt
+	Annotations: rdfs:comment "OST_HVAC_Zones"@pt
+	EquivalentTo: fofu:ifcZone
+
+Class: fofu:OST_Levels
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:OST_Levels"@pt
+	Annotations: rdfs:comment "OST_Levels"@pt
+	EquivalentTo: fofu:IfcBuildingStorey
+
+Class: fofu:ifcSpace
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:ifcSpace"@pt
+	Annotations: rdfs:comment "ifcSpace"@pt
+
+Class: fofu:ifcZone
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:ifcZone"@pt
+	Annotations: rdfs:comment "ifcZone"@pt
+
+Class: fofu:IfcBuildingStorey
+	SubClassOf: fofu:Categorias
+	Annotations: rdfs:label "fofu:IfcBuildingStorey"@pt
+	Annotations: rdfs:comment "IfcBuildingStorey"@pt
+
+Class: fofu:Space
+	SubClassOf: fofu:TiposEnum
+	Annotations: rdfs:label "fofu:Space"@pt
+	Annotations: rdfs:comment "Qualquer outro espaço"@pt
+
+Class: fofu:Parking
+	SubClassOf: fofu:TiposEnum
+	Annotations: rdfs:label "fofu:Parking"@pt
+	Annotations: rdfs:comment "Espaço de estacionamento veícular, inclui acessos e faixas de estacionamento"@pt
+
+Class: fofu:GFA
+	SubClassOf: fofu:TiposEnum
+	Annotations: rdfs:label "fofu:GFA"@pt
+	Annotations: rdfs:comment "Area Bruta - Espaço de edificação incluindo as paredes"@pt
+
+Class: fofu:Internal
+	SubClassOf: fofu:TiposEnum
+	Annotations: rdfs:label "fofu:Internal"@pt
+	Annotations: rdfs:comment "Espaços interiores"@pt
+
+Class: fofu:External
+	SubClassOf: fofu:TiposEnum
+	Annotations: rdfs:label "fofu:External"@pt
+	Annotations: rdfs:comment "Espaços exteriores"@pt
+
+Class: fofu:IfcBuildingStorey
+	SubClassOf: fofu:TiposEnum
+	Annotations: rdfs:label "fofu:IfcBuildingStorey"@pt
+	Annotations: rdfs:comment "Andar do edifício"@pt
+
+ObjectProperty: fofu:identidade
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:identidade"@pt
+	Annotations: rdfs:comment "Dados de Identidade dos elementos"@pt
+
+ObjectProperty: fofu:tem_idrvt
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_idrvt"@pt
+	Annotations: rdfs:comment "Valor do ID único extraído do modelo Revit"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_ifc
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_ifc"@pt
+	Annotations: rdfs:comment "Valor da categoria IFC correspondente ao elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_ost
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_ost"@pt
+	Annotations: rdfs:comment "Valor da categoria OST Revit do elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_lay
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_lay"@pt
+	Annotations: rdfs:comment "Valor do Layer do elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_unidade
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_unidade"@pt
+	Annotations: rdfs:comment "Código da Unidade POLI, COPPE, etc"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_bloco
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_bloco"@pt
+	Annotations: rdfs:comment "Código do Bloco A, B, C... "@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_nome
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_nome"@pt
+	Annotations: rdfs:comment "Nome do Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_codigo
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_codigo"@pt
+	Annotations: rdfs:comment "Código do Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_numero
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:tem_numero"@pt
+	Annotations: rdfs:comment "Número do Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:requisito
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:requisito"@pt
+	Annotations: rdfs:comment "Dados de requisitos solicitados para o projeto"@pt
+
+ObjectProperty: fofu:tem_larguramin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_larguramin"@pt
+	Annotations: rdfs:comment "Largura mínima do Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_profunmin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_profunmin"@pt
+	Annotations: rdfs:comment "Profundidade mínima do Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_pedireitomin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_pedireitomin"@pt
+	Annotations: rdfs:comment "Pédireito mínimo do Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:projetado
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:projetado"@pt
+	Annotations: rdfs:comment "Dados com os valores adotados no projeto"@pt
+
+ObjectProperty: fofu:tem_largura
+	SubPropertyOf: fofu:projetado
+	Annotations: rdfs:label "fofu:tem_largura"@pt
+	Annotations: rdfs:comment "Largura adotada para o Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_profun
+	SubPropertyOf: fofu:projetado
+	Annotations: rdfs:label "fofu:tem_profun"@pt
+	Annotations: rdfs:comment "Profundidade adotada para o Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_pedireito
+	SubPropertyOf: fofu:projetado
+	Annotations: rdfs:label "fofu:tem_pedireito"@pt
+	Annotations: rdfs:comment "Pédireito adotado para o Elemento"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:geo
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:geo"@pt
+	Annotations: rdfs:comment "Dados para Geolocalização dos elementos"@pt
+
+ObjectProperty: fofu:tem_longitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:tem_longitude"@pt
+	Annotations: rdfs:comment "Longitude - coordenada X"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_latitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:tem_latitude"@pt
+	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:tem_altitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:tem_altitude"@pt
+	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:função
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:função"@pt
+	Annotations: rdfs:comment "Articulação espaço funcional dos ambientes 1 = true,  0 = false"@pt
+
+ObjectProperty: fofu:ser_articulador
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:ser_articulador"@pt
+	Annotations: rdfs:comment "o Elemento é articulador espacial de outros ambientes"@pt
+	Characteristics: Functional
+	InverseOf: fofu:ser_articulado
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:ser_articulado
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:ser_articulado"@pt
+	Annotations: rdfs:comment "o Elemento é subordinado à articulação de outro Elemento"@pt
+	Characteristics: Functional
+	InverseOf: fofu:ser_articulador
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:ser_conectado
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:ser_conectado"@pt
+	Annotations: rdfs:comment "o Elemento está conectado a outro Elemento"@pt
+	Characteristics: Symmetric
+	Domain: fofu:Ambientes
+
+ObjectProperty: fofu:ser_adjacente
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:ser_adjacente"@pt
+	Annotations: rdfs:comment "o Elemento é adjacente a outro Elemento"@pt
+	Characteristics: Symmetric
+	Domain: fofu:Ambientes
+
+DataProperty: fofu:identidade
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:identidade"@pt
+	Annotations: rdfs:comment "Dados de Identidade dos elementos"@pt
+
+DataProperty: fofu:idrvt
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:idrvt"@pt
+	Annotations: rdfs:comment "Valor do ID único extraído do modelo Revit"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:ifc
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:ifc"@pt
+	Annotations: rdfs:comment "Valor da categoria IFC correspondente ao elemento"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:ost
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:ost"@pt
+	Annotations: rdfs:comment "Valor da categoria OST Revit do elemento"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:lay
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:lay"@pt
+	Annotations: rdfs:comment "Valor do Layer do elemento"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:unidade
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:unidade"@pt
+	Annotations: rdfs:comment "Código da Unidade POLI, COPPE, etc"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:bloco
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:bloco"@pt
+	Annotations: rdfs:comment "Código do Bloco A, B, C... "@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:nome
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:nome"@pt
+	Annotations: rdfs:comment "Nome do Elemento"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:codigo
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:codigo"@pt
+	Annotations: rdfs:comment "Código do Elemento"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:numero
+	SubPropertyOf: fofu:identidade
+	Annotations: rdfs:label "fofu:numero"@pt
+	Annotations: rdfs:comment "Número do Elemento"@pt
+	Domain: fofu:Ambientes
+	Range:  xsd:string
+
+DataProperty: fofu:requisito
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:requisito"@pt
+	Annotations: rdfs:comment "Dados de requisitos solicitados para o projeto"@pt
+
+DataProperty: fofu:larguramin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:larguramin"@pt
+	Annotations: rdfs:comment "Largura mínima do Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:profunmin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:profunmin"@pt
+	Annotations: rdfs:comment "Profundidade mínima do Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:pedireitomin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:pedireitomin"@pt
+	Annotations: rdfs:comment "Pédireito mínimo do Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:projetado
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:projetado"@pt
+	Annotations: rdfs:comment "Dados com os valores adotados no projeto"@pt
+
+DataProperty: fofu:largura
+	SubPropertyOf: fofu:projetado
+	Annotations: rdfs:label "fofu:largura"@pt
+	Annotations: rdfs:comment "Largura adotada para o Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:profun
+	SubPropertyOf: fofu:projetado
+	Annotations: rdfs:label "fofu:profun"@pt
+	Annotations: rdfs:comment "Profundidade adotada para o Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:pedireito
+	SubPropertyOf: fofu:projetado
+	Annotations: rdfs:label "fofu:pedireito"@pt
+	Annotations: rdfs:comment "Pédireito adotado para o Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:geo
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:geo"@pt
+	Annotations: rdfs:comment "Dados para Geolocalização dos elementos"@pt
+
+DataProperty: fofu:longitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:longitude"@pt
+	Annotations: rdfs:comment "Longitude - coordenada X"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:latitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:latitude"@pt
+	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:altitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:altitude"@pt
+	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:double
+
+DataProperty: fofu:função
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:função"@pt
+	Annotations: rdfs:comment "Articulação espaço funcional dos ambientes 1 = true,  0 = false"@pt
+
+DataProperty: fofu:articulador
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:articulador"@pt
+	Annotations: rdfs:comment "o Elemento é articulador espacial de outros ambientes"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:boolean
+
+DataProperty: fofu:articulado
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:articulado"@pt
+	Annotations: rdfs:comment "o Elemento é subordinado à articulação de outro Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:boolean
+
+DataProperty: fofu:conectado
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:conectado"@pt
+	Annotations: rdfs:comment "o Elemento está conectado a outro Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:boolean
+
+DataProperty: fofu:adjacente
+	SubPropertyOf: fofu:função
+	Annotations: rdfs:label "fofu:adjacente"@pt
+	Annotations: rdfs:comment "o Elemento é adjacente a outro Elemento"@pt
+	Domain: fofu:Ambientes
+	Range: xsd:boolean
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_codigo fofu:DeposDML
+	Facts: fofu:codigo "AD01"
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_nome fofu:DeposDML
+	Facts: fofu:nome "Depósito DML"
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_larguramin fofu:DeposDML
+	Facts: fofu:larguramin 1.25
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_largura fofu:DeposDML
+	Facts: fofu:largura 2.05
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_profunmin fofu:DeposDML
+	Facts: fofu:profunmin 2.00
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_profun fofu:DeposDML
+	Facts: fofu:profun 3.00
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_idrvt fofu:DeposDML
+	Facts: fofu:idrvt "RVT2345643"
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_longitude fofu:DeposDML
+	Facts: fofu:longitude -43.2309095980421
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_latitude fofu:DeposDML
+	Facts: fofu:latitude -22.8605561008876
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:tem_altitude fofu:DeposDML
+	Facts: fofu:altitude 5.25
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:ser_articulado fofu:DeposDML
+	Facts: fofu:articulado 1
+
+DisjointClasses: fofu:Ambientes, fofu:Zonas, fofu:Núcleos
