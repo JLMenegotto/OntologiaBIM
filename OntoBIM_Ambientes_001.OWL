@@ -63,16 +63,16 @@ Class: fofu:ProgramaEspacial
 Class: fofu:Projeto
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:Projeto"@pt
-	Annotations: rdfs:comment "Projeto Funcional"@pt
+	Annotations: rdfs:comment "Projeto Funcional caracterizado por grupos de ambientes com função específica"@pt
 
-Class: fofu:ModeloBIM
+Class: fofu:ModeloBIMRevit
 	SubClassOf: fofu:Edificio
-	Annotations: rdfs:label "fofu:ModeloBIM"@pt
+	Annotations: rdfs:label "fofu:ModeloBIMRevit"@pt
 	Annotations: rdfs:comment "Objetos do modelo BIM Revit"@pt
 
-Class: fofu:ModeloBIM
+Class: fofu:ModeloBIMIFC
 	SubClassOf: fofu:Edificio
-	Annotations: rdfs:label "fofu:ModeloBIM"@pt
+	Annotations: rdfs:label "fofu:ModeloBIMIFC"@pt
 	Annotations: rdfs:comment "Objetos do modelo BIM em IFC"@pt
 
 Class: fofu:Zona
@@ -115,20 +115,20 @@ Class: fofu:Ambiente
 Class: fofu:Núcleo
 	SubClassOf: fofu:Projeto
 	Annotations: rdfs:label "fofu:Núcleo"@pt
-	Annotations: rdfs:comment "Distribuição de Funções"@pt
+	Annotations: rdfs:comment "Núcleos funcionais"@pt
 
 Class: fofu:OST
-	SubClassOf: fofu:ModeloBIM
+	SubClassOf: fofu:ModeloBIMRevit
 	Annotations: rdfs:label "fofu:OST"@pt
 	Annotations: rdfs:comment "Categorias OST de Revit "@pt
 
 Class: fofu:IFC
-	SubClassOf: fofu:ModeloBIM
+	SubClassOf: fofu:ModeloBIMIFC
 	Annotations: rdfs:label "fofu:IFC"@pt
 	Annotations: rdfs:comment "Categorias IFC"@pt
 
 Class: fofu:IFC
-	SubClassOf: fofu:ModeloBIM
+	SubClassOf: fofu:ModeloBIMIFC
 	Annotations: rdfs:label "fofu:IFC"@pt
 	Annotations: rdfs:comment "TiposEnum IFC"@pt
 
@@ -172,9 +172,14 @@ Class: fofu:deTransição
 	Annotations: rdfs:label "fofu:deTransição"@pt
 	Annotations: rdfs:comment "Ambientes"@pt
 
-Class: fofu:Úmido
+Class: fofu:Sanitário
 	SubClassOf: fofu:Ambiente
-	Annotations: rdfs:label "fofu:Úmido"@pt
+	Annotations: rdfs:label "fofu:Sanitário"@pt
+	Annotations: rdfs:comment "Ambientes"@pt
+
+Class: fofu:Refeições
+	SubClassOf: fofu:Ambiente
+	Annotations: rdfs:label "fofu:Refeições"@pt
 	Annotations: rdfs:comment "Ambientes"@pt
 
 Class: fofu:Conectivo
@@ -216,16 +221,19 @@ Class: fofu:NucleoElevadores
 	SubClassOf: fofu:Núcleo
 	Annotations: rdfs:label "fofu:NucleoElevadores"@pt
 	Annotations: rdfs:comment "Distribuição Elevadores"@pt
+	EquivalentTo: fofu:tem_elevador some fofu:HallElevadores
 
 Class: fofu:NucleoSanitário
 	SubClassOf: fofu:Núcleo
 	Annotations: rdfs:label "fofu:NucleoSanitário"@pt
 	Annotations: rdfs:comment "Distribuição de Sanitários"@pt
+	EquivalentTo: fofu:tem_sanitario some fofu:Sanitário
 
-Class: fofu:NucleoFuncional
+Class: fofu:NucleoEducativo
 	SubClassOf: fofu:Núcleo
-	Annotations: rdfs:label "fofu:NucleoFuncional"@pt
-	Annotations: rdfs:comment "Distribuição de Ensino"@pt
+	Annotations: rdfs:label "fofu:NucleoEducativo"@pt
+	Annotations: rdfs:comment "Distribuição Salas de Ensino"@pt
+	EquivalentTo: fofu:tem_ensino some fofu:deEnsino
 
 Class: fofu:CategoriasRevit
 	SubClassOf: fofu:OST
@@ -379,27 +387,27 @@ Class: fofu:Antecâmara
 	Annotations: rdfs:comment "Antecâmaras do prédio"@pt
 
 Class: fofu:Banheiro
-	SubClassOf: fofu:Úmido
+	SubClassOf: fofu:Sanitário
 	Annotations: rdfs:label "fofu:Banheiro"@pt
 	Annotations: rdfs:comment "Banheiros"@pt
 
 Class: fofu:SanitárioFeminino
-	SubClassOf: fofu:Úmido
+	SubClassOf: fofu:Sanitário
 	Annotations: rdfs:label "fofu:SanitárioFeminino"@pt
 	Annotations: rdfs:comment "Sanitários Femininos"@pt
 
 Class: fofu:SanitárioMasculino
-	SubClassOf: fofu:Úmido
+	SubClassOf: fofu:Sanitário
 	Annotations: rdfs:label "fofu:SanitárioMasculino"@pt
 	Annotations: rdfs:comment "Sanitários Masculinos "@pt
 
 Class: fofu:Copa
-	SubClassOf: fofu:Úmido
+	SubClassOf: fofu:Refeições
 	Annotations: rdfs:label "fofu:Copa"@pt
 	Annotations: rdfs:comment "Copas"@pt
 
 Class: fofu:Cozinha
-	SubClassOf: fofu:Úmido
+	SubClassOf: fofu:Refeições
 	Annotations: rdfs:label "fofu:Cozinha"@pt
 	Annotations: rdfs:comment "Cozinhas "@pt
 
@@ -488,14 +496,14 @@ Class: fofu:Garagem
 	Annotations: rdfs:label "fofu:Garagem"@pt
 	Annotations: rdfs:comment "Garagem"@pt
 
-Class: fofu:Principal
+Class: fofu:Social
 	SubClassOf: fofu:NucleoElevadores
-	Annotations: rdfs:label "fofu:Principal"@pt
+	Annotations: rdfs:label "fofu:Social"@pt
 	Annotations: rdfs:comment "Núcleo principal de elevadores "@pt
 
-Class: fofu:Secundário
+Class: fofu:Serviço
 	SubClassOf: fofu:NucleoElevadores
-	Annotations: rdfs:label "fofu:Secundário"@pt
+	Annotations: rdfs:label "fofu:Serviço"@pt
 	Annotations: rdfs:comment "Núcleo secundário de elevadores "@pt
 
 Class: fofu:BanheirosFemininos
@@ -509,32 +517,32 @@ Class: fofu:BanheirosMasculinos
 	Annotations: rdfs:comment "Banheiros Masculinos"@pt
 
 Class: fofu:EnsinoDesenho
-	SubClassOf: fofu:NucleoFuncional
+	SubClassOf: fofu:NucleoEducativo
 	Annotations: rdfs:label "fofu:EnsinoDesenho"@pt
 	Annotations: rdfs:comment "Salas de Aula de Desenho"@pt
 
 Class: fofu:EnsinoInformática
-	SubClassOf: fofu:NucleoFuncional
+	SubClassOf: fofu:NucleoEducativo
 	Annotations: rdfs:label "fofu:EnsinoInformática"@pt
 	Annotations: rdfs:comment "Salas de Aula de Informática"@pt
 
 Class: fofu:EnsinoMúsica
-	SubClassOf: fofu:NucleoFuncional
+	SubClassOf: fofu:NucleoEducativo
 	Annotations: rdfs:label "fofu:EnsinoMúsica"@pt
 	Annotations: rdfs:comment "Salas de Aula de Música"@pt
 
 Class: fofu:EnsinoCiências
-	SubClassOf: fofu:NucleoFuncional
+	SubClassOf: fofu:NucleoEducativo
 	Annotations: rdfs:label "fofu:EnsinoCiências"@pt
 	Annotations: rdfs:comment "Salas de Aula de Ciências"@pt
 
 Class: fofu:EnsinoCiênciasHumanas
-	SubClassOf: fofu:NucleoFuncional
+	SubClassOf: fofu:NucleoEducativo
 	Annotations: rdfs:label "fofu:EnsinoCiênciasHumanas"@pt
 	Annotations: rdfs:comment "Salas de Aula de CiênciasHumanas"@pt
 
 Class: fofu:EnsinoInfantil
-	SubClassOf: fofu:NucleoFuncional
+	SubClassOf: fofu:NucleoEducativo
 	Annotations: rdfs:label "fofu:EnsinoInfantil"@pt
 	Annotations: rdfs:comment "Salas de Ensino Infantil"@pt
 
@@ -597,11 +605,6 @@ Class: fofu:External
 	SubClassOf: fofu:TiposEnumIFC
 	Annotations: rdfs:label "fofu:External"@pt
 	Annotations: rdfs:comment "Espaços exteriores"@pt
-
-Class: fofu:IfcBuildingStorey
-	SubClassOf: fofu:TiposEnumIFC
-	Annotations: rdfs:label "fofu:IfcBuildingStorey"@pt
-	Annotations: rdfs:comment "Andar do edifício"@pt
 
 ObjectProperty: fofu:identidade
 	SubPropertyOf: fofu:ambientes
@@ -866,6 +869,35 @@ ObjectProperty: fofu:ao_cobertura
 	Characteristics: Functional
 	Domain: fofu:Ambiente
 
+ObjectProperty: fofu:nucleo
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:nucleo"@pt
+	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+
+ObjectProperty: fofu:tem_elevador
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_elevador"@pt
+	Annotations: rdfs:comment "O núcleo dos elevadores"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:tem_escada
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_escada"@pt
+	Annotations: rdfs:comment "O núcleo de escadas"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:tem_sanitario
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_sanitario"@pt
+	Annotations: rdfs:comment "O núcleo de sanitarios"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:tem_ensino
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_ensino"@pt
+	Annotations: rdfs:comment "O núcleo de salas de aula"@pt
+	Domain: fofu:Ambiente
+
 DataProperty: fofu:identidade
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:identidade"@pt
@@ -944,21 +976,21 @@ DataProperty: fofu:larguramin
 	Annotations: rdfs:label "fofu:larguramin"@pt
 	Annotations: rdfs:comment "Largura mínima do ambiente"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:profunmin
 	SubPropertyOf: fofu:requisito
 	Annotations: rdfs:label "fofu:profunmin"@pt
 	Annotations: rdfs:comment "Profundidade mínima do ambiente"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:pedireitomin
 	SubPropertyOf: fofu:requisito
 	Annotations: rdfs:label "fofu:pedireitomin"@pt
 	Annotations: rdfs:comment "Pédireito mínimo para o ambiente"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:projetado
 	SubPropertyOf: fofu:ambientes
@@ -970,21 +1002,21 @@ DataProperty: fofu:largura
 	Annotations: rdfs:label "fofu:largura"@pt
 	Annotations: rdfs:comment "Largura do ambiente"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:profun
 	SubPropertyOf: fofu:projetado
 	Annotations: rdfs:label "fofu:profun"@pt
 	Annotations: rdfs:comment "Profundidade do ambiente"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:pedireito
 	SubPropertyOf: fofu:projetado
 	Annotations: rdfs:label "fofu:pedireito"@pt
 	Annotations: rdfs:comment "Pédireito do ambiente"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:geo
 	SubPropertyOf: fofu:ambientes
@@ -996,21 +1028,21 @@ DataProperty: fofu:longitude
 	Annotations: rdfs:label "fofu:longitude"@pt
 	Annotations: rdfs:comment "Longitude - coordenada X"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:latitude
 	SubPropertyOf: fofu:geo
 	Annotations: rdfs:label "fofu:latitude"@pt
 	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:altitude
 	SubPropertyOf: fofu:geo
 	Annotations: rdfs:label "fofu:altitude"@pt
 	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
 	Domain: fofu:Ambiente
-	Range: xsd:double
+	Range: xsd:decimal
 
 DataProperty: fofu:função
 	SubPropertyOf: fofu:ambientes
@@ -1130,6 +1162,39 @@ DataProperty: fofu:cobertura
 	Domain: fofu:Ambiente
 	Range: xsd:boolean
 
+DataProperty: fofu:nucleo
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:nucleo"@pt
+	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+
+DataProperty: fofu:elevador
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:elevador"@pt
+	Annotations: rdfs:comment "O núcleo dos elevadores"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:escada
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:escada"@pt
+	Annotations: rdfs:comment "O núcleo de escadas"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:sanitario
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:sanitario"@pt
+	Annotations: rdfs:comment "O núcleo de sanitarios"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:ensino
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:ensino"@pt
+	Annotations: rdfs:comment "O núcleo de salas de aula"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
 Individual: fofu:DeposDML
 	Annotations: rdfs:label "fofu:DeposDML"@pt
 	Types: fofu:Depósito
@@ -1196,4 +1261,4 @@ Individual: fofu:DeposDML
 	Facts: fofu:ao_interno fofu:DeposDML
 	Facts: fofu:interno 1
 
-DisjointClasses: fofu:Ambiente, fofu:Zona, fofu:Núcleo
+DisjointClasses: fofu:Ambiente, fofu:Zona
