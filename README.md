@@ -1,4 +1,4 @@
-No projeto Ontologia BIM são desenvolvidas um conjunto de módulos com ontologias em formato OWL. Os módulos podem ser aproveitados 
+No projeto Ontologia BIM são desenvolvidos um conjunto de módulos com ontologias em formato OWL. Os módulos podem ser aproveitados 
 para ordenar os objetos BIM durante a concepção de projetos de arquitetura ou engenharia, assim como para organizar 
 a informação de dados gerenciais de edifícios existentes. Procura-se integrar as categorias e enumerações de IFC e de Revit. 
 
