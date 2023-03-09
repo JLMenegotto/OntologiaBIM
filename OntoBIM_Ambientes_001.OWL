@@ -245,22 +245,38 @@ Class: fofu:TiposEnumIFC
 Class: fofu:SetorNorte
 	SubClassOf: fofu:OrientaçãoCardinal
 	Annotations: rdfs:label "fofu:SetorNorte"@pt
-	Annotations: rdfs:comment "Setores do edifício orientados ao Norte"@pt
+	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Norte"@pt
+	EquivalentTo: fofu:ao_norte exactly 1 fofu:Ambiente
 
 Class: fofu:SetorOeste
 	SubClassOf: fofu:OrientaçãoCardinal
 	Annotations: rdfs:label "fofu:SetorOeste"@pt
-	Annotations: rdfs:comment "Setores do edifício orientados ao Oeste"@pt
+	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Oeste"@pt
+	EquivalentTo: fofu:ao_oeste exactly 1 fofu:Ambiente
 
 Class: fofu:SetorSul
 	SubClassOf: fofu:OrientaçãoCardinal
 	Annotations: rdfs:label "fofu:SetorSul"@pt
-	Annotations: rdfs:comment "Setores do edifício orientados ao Sul"@pt
+	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Sul"@pt
+	EquivalentTo: fofu:ao_sul exactly 1 fofu:Ambiente
 
 Class: fofu:SetorLeste
 	SubClassOf: fofu:OrientaçãoCardinal
 	Annotations: rdfs:label "fofu:SetorLeste"@pt
-	Annotations: rdfs:comment "Setores do edifício orientados ao Leste"@pt
+	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Leste"@pt
+	EquivalentTo: fofu:ao_leste exactly 1 fofu:Ambiente
+
+Class: fofu:SetorCobertura
+	SubClassOf: fofu:OrientaçãoCardinal
+	Annotations: rdfs:label "fofu:SetorCobertura"@pt
+	Annotations: rdfs:comment "Setores do edifício na cobertura considerada a quinta fachada"@pt
+	EquivalentTo: fofu:ao_cobertura exactly 1 fofu:Ambiente
+
+Class: fofu:SetorInterno
+	SubClassOf: fofu:OrientaçãoCardinal
+	Annotations: rdfs:label "fofu:SetorInterno"@pt
+	Annotations: rdfs:comment "Setores internos do edifício sem contato com as fachadas"@pt
+	EquivalentTo: fofu:ao_interno exactly 1 fofu:Ambiente
 
 Class: fofu:Direção
 	SubClassOf: fofu:SetorInstitucional
@@ -803,6 +819,53 @@ ObjectProperty: fofu:está_em_setor
 	Annotations: rdfs:comment "O ambiente pode pertencer a diversos setores"@pt
 	Domain: fofu:Ambiente
 
+ObjectProperty: fofu:orientação
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:orientação"@pt
+	Annotations: rdfs:comment "A orietação NSLW do ambiente 1 = true,  0 = false"@pt
+
+ObjectProperty: fofu:ao_norte
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:ao_norte"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Norte"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:ao_sul
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:ao_sul"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Sul"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:ao_leste
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:ao_leste"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Leste"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:ao_oeste
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:ao_oeste"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Oeste"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:ao_interno
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:ao_interno"@pt
+	Annotations: rdfs:comment "O ambiente interno"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:ao_cobertura
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:ao_cobertura"@pt
+	Annotations: rdfs:comment "O ambiente na quinta fachada (cobertura)"@pt
+	Characteristics: Functional
+	Domain: fofu:Ambiente
+
 DataProperty: fofu:identidade
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:identidade"@pt
@@ -1020,6 +1083,53 @@ DataProperty: fofu:setor
 	Domain: fofu:Ambiente
 	Range:  xsd:string
 
+DataProperty: fofu:orientação
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:orientação"@pt
+	Annotations: rdfs:comment "A orietação NSLW do ambiente 1 = true,  0 = false"@pt
+
+DataProperty: fofu:norte
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:norte"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Norte"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:sul
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:sul"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Sul"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:leste
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:leste"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Leste"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:oeste
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:oeste"@pt
+	Annotations: rdfs:comment "O ambiente orientado ao Oeste"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:interno
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:interno"@pt
+	Annotations: rdfs:comment "O ambiente interno"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:cobertura
+	SubPropertyOf: fofu:orientação
+	Annotations: rdfs:label "fofu:cobertura"@pt
+	Annotations: rdfs:comment "O ambiente na quinta fachada (cobertura)"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
 Individual: fofu:DeposDML
 	Annotations: rdfs:label "fofu:DeposDML"@pt
 	Types: fofu:Depósito
@@ -1079,5 +1189,11 @@ Individual: fofu:DeposDML
 	Types: fofu:Depósito
 	Facts: fofu:tem_altitude fofu:DeposDML
 	Facts: fofu:altitude 5.25
+
+Individual: fofu:DeposDML
+	Annotations: rdfs:label "fofu:DeposDML"@pt
+	Types: fofu:Depósito
+	Facts: fofu:ao_interno fofu:DeposDML
+	Facts: fofu:interno 1
 
 DisjointClasses: fofu:Ambiente, fofu:Zona, fofu:Núcleo
