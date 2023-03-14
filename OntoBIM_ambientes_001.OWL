@@ -44,13 +44,17 @@ AnnotationProperty: fofu:Edi_Nome
 AnnotationProperty: fofu:Edi_Alias
 AnnotationProperty: dc:title
 
-ObjectProperty: fofu:ambientes
+ObjectProperty: fofu:edificio
 
-DataProperty: fofu:ambientes
+DataProperty: fofu:edificio
 
 ObjectProperty: fofu:corpos
 
 DataProperty: fofu:corpos
+
+ObjectProperty: fofu:ambientes
+
+DataProperty: fofu:ambientes
 
 Class: fofu:Edificio
 
@@ -69,6 +73,12 @@ Class: fofu:Programado
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:Programado"@pt
 	Annotations: rdfs:comment "Programa de Necessidade espacial de funções definidas para o projeto"@pt
+
+Class: fofu:Projetado
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:Projetado"@pt
+	Annotations: rdfs:comment "Projeto Funcional caracterizado por corpos, núcleos ou ambientes com função específica"@pt
+	EquivalentTo: fofu:tem_nome some
 
 Class: fofu:Projetado
 	SubClassOf: fofu:Edificio
@@ -402,6 +412,11 @@ Class: fofu:GeometriaIrregular
 	SubClassOf: fofu:Geometria
 	Annotations: rdfs:label "fofu:GeometriaIrregular"@pt
 	Annotations: rdfs:comment "Formas irregulares "@pt
+
+Class: fofu:Perfil
+	SubClassOf: fofu:Geometria
+	Annotations: rdfs:label "fofu:Perfil"@pt
+	Annotations: rdfs:comment "Formas poligonais"@pt
 
 Class: fofu:CotaNatural
 	SubClassOf: fofu:Nivel
@@ -936,7 +951,47 @@ Class: fofu:Retângular
 Class: fofu:Livre
 	SubClassOf: fofu:GeometriaIrregular
 	Annotations: rdfs:label "fofu:Livre"@pt
-	Annotations: rdfs:comment "Poligonal Livre"@pt
+	Annotations: rdfs:comment "Poligonal de forma livre"@pt
+
+Class: fofu:C
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:C"@pt
+	Annotations: rdfs:comment "Poligonal formato C"@pt
+
+Class: fofu:U
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:U"@pt
+	Annotations: rdfs:comment "Poligonal formato U"@pt
+
+Class: fofu:L
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:L"@pt
+	Annotations: rdfs:comment "Poligonal formato L cantonera"@pt
+
+Class: fofu:H
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:H"@pt
+	Annotations: rdfs:comment "Poligonal formato H"@pt
+
+Class: fofu:Cenrijecido
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:Cenrijecido"@pt
+	Annotations: rdfs:comment "Poligonal formato C enrijecido"@pt
+
+Class: fofu:Uenrijecido
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:Uenrijecido"@pt
+	Annotations: rdfs:comment "Poligonal formato U enrijecido"@pt
+
+Class: fofu:Lenrijecido
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:Lenrijecido"@pt
+	Annotations: rdfs:comment "Poligonal formato L cantonera enrijecida"@pt
+
+Class: fofu:H
+	SubClassOf: fofu:Perfil
+	Annotations: rdfs:label "fofu:H"@pt
+	Annotations: rdfs:comment "Poligonal formato H enrijecido"@pt
 
 Class: fofu:NiveldoMar
 	SubClassOf: fofu:CotaNatural
@@ -1013,6 +1068,187 @@ Class: fofu:External
 	Annotations: rdfs:label "fofu:External"@pt
 	Annotations: rdfs:comment "Espaços exteriores"@pt
 
+ObjectProperty: fofu:requisito
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:requisito"@pt
+	Annotations: rdfs:comment "Dados de requisitos solicitados para o projeto"@pt
+
+ObjectProperty: fofu:tem_larguramin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_larguramin"@pt
+	Annotations: rdfs:comment "Largura mínima do ambiente"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_profunmin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_profunmin"@pt
+	Annotations: rdfs:comment "Profundidade mínima do ambiente"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_pedireitomin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_pedireitomin"@pt
+	Annotations: rdfs:comment "Pédireito mínimo para o ambiente"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_gabaritomáximo
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_gabaritomáximo"@pt
+	Annotations: rdfs:comment "Máximo gabarito permitido para o edifício"@pt
+	Characteristics: Functional
+	Domain: fofu:Nivel
+
+ObjectProperty: fofu:tem_RN
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:tem_RN"@pt
+	Annotations: rdfs:comment "Cota de referência da soleira de acesso ao edifício"@pt
+	Characteristics: Functional
+	Domain: fofu:Nivel
+
+ObjectProperty: fofu:geo
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:geo"@pt
+	Annotations: rdfs:comment "Dados para Geolocalização para todos elementos do prédio"@pt
+
+ObjectProperty: fofu:tem_longitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:tem_longitude"@pt
+	Annotations: rdfs:comment "Longitude - coordenada X"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_latitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:tem_latitude"@pt
+	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_altitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:tem_altitude"@pt
+	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:idpredio
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:idpredio"@pt
+	Annotations: rdfs:comment "Dados de Identidade do edifício"@pt
+
+ObjectProperty: fofu:tem_logradouroNome
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:tem_logradouroNome"@pt
+	Annotations: rdfs:comment "Código da Unidade Edificada total"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_logradouroNumero
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:tem_logradouroNumero"@pt
+	Annotations: rdfs:comment "Código do corpo"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_prédioNome
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:tem_prédioNome"@pt
+	Annotations: rdfs:comment "Nome do edifício"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:tem_prédioCódigo
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:tem_prédioCódigo"@pt
+	Annotations: rdfs:comment "Código do edifício"@pt
+	Characteristics: Functional
+	Domain: fofu:Edificio
+
+ObjectProperty: fofu:corpo
+	SubPropertyOf: fofu:corpos
+	Annotations: rdfs:label "fofu:corpo"@pt
+	Annotations: rdfs:comment "Propriedades formais"@pt
+
+ObjectProperty: fofu:com_forma
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_forma"@pt
+	Annotations: rdfs:comment "O nome da forma usada"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_raio
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_raio"@pt
+	Annotations: rdfs:comment "O raio do elemento geométrico "@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_lados
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_lados"@pt
+	Annotations: rdfs:comment "A quantidade de lados do polígono"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_centroX
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_centroX"@pt
+	Annotations: rdfs:comment "A coordenada X"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_centroZ
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_centroZ"@pt
+	Annotations: rdfs:comment "A coordenada Z"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_centroY
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_centroY"@pt
+	Annotations: rdfs:comment "A coordenada Y"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:nucleo
+	SubPropertyOf: fofu:corpos
+	Annotations: rdfs:label "fofu:nucleo"@pt
+	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+
+ObjectProperty: fofu:com_núcleos
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:com_núcleos"@pt
+	Annotations: rdfs:comment "O corpo edificado poderia ter  diversas classes de núcleos"@pt
+	Domain: fofu:CorpoEdificado
+
+ObjectProperty: fofu:tem_elevador
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_elevador"@pt
+	Annotations: rdfs:comment "O núcleo dos elevadores"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:tem_escada
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_escada"@pt
+	Annotations: rdfs:comment "O núcleo de escadas"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:tem_sanitario
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_sanitario"@pt
+	Annotations: rdfs:comment "O núcleo de sanitarios"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:tem_ensino
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:tem_ensino"@pt
+	Annotations: rdfs:comment "O núcleo de salas de aula"@pt
+	Domain: fofu:Ambiente
+
 ObjectProperty: fofu:identidade
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:identidade"@pt
@@ -1081,46 +1317,6 @@ ObjectProperty: fofu:tem_numero
 	Characteristics: Functional
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:requisito
-	SubPropertyOf: fofu:ambientes
-	Annotations: rdfs:label "fofu:requisito"@pt
-	Annotations: rdfs:comment "Dados de requisitos solicitados para o projeto"@pt
-
-ObjectProperty: fofu:tem_larguramin
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:tem_larguramin"@pt
-	Annotations: rdfs:comment "Largura mínima do ambiente"@pt
-	Characteristics: Functional
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:tem_profunmin
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:tem_profunmin"@pt
-	Annotations: rdfs:comment "Profundidade mínima do ambiente"@pt
-	Characteristics: Functional
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:tem_pedireitomin
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:tem_pedireitomin"@pt
-	Annotations: rdfs:comment "Pédireito mínimo para o ambiente"@pt
-	Characteristics: Functional
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:tem_gabaritomáximo
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:tem_gabaritomáximo"@pt
-	Annotations: rdfs:comment "Máximo gabarito permitido para o edifício"@pt
-	Characteristics: Functional
-	Domain: fofu:Nivel
-
-ObjectProperty: fofu:tem_RN
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:tem_RN"@pt
-	Annotations: rdfs:comment "Cota de referência da soleira de acesso ao edifício"@pt
-	Characteristics: Functional
-	Domain: fofu:Nivel
-
 ObjectProperty: fofu:projetado
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:projetado"@pt
@@ -1144,32 +1340,6 @@ ObjectProperty: fofu:tem_pedireito
 	SubPropertyOf: fofu:projetado
 	Annotations: rdfs:label "fofu:tem_pedireito"@pt
 	Annotations: rdfs:comment "Pédireito do ambiente"@pt
-	Characteristics: Functional
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:geo
-	SubPropertyOf: fofu:ambientes
-	Annotations: rdfs:label "fofu:geo"@pt
-	Annotations: rdfs:comment "Dados para Geolocalização dos ambientes"@pt
-
-ObjectProperty: fofu:tem_longitude
-	SubPropertyOf: fofu:geo
-	Annotations: rdfs:label "fofu:tem_longitude"@pt
-	Annotations: rdfs:comment "Longitude - coordenada X"@pt
-	Characteristics: Functional
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:tem_latitude
-	SubPropertyOf: fofu:geo
-	Annotations: rdfs:label "fofu:tem_latitude"@pt
-	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
-	Characteristics: Functional
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:tem_altitude
-	SubPropertyOf: fofu:geo
-	Annotations: rdfs:label "fofu:tem_altitude"@pt
-	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
 	Characteristics: Functional
 	Domain: fofu:Ambiente
 
@@ -1314,87 +1484,191 @@ ObjectProperty: fofu:ao_zenit
 	Characteristics: Functional
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:corpo
+DataProperty: fofu:requisito
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:requisito"@pt
+	Annotations: rdfs:comment "Dados de requisitos solicitados para o projeto"@pt
+
+DataProperty: fofu:larguramin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:larguramin"@pt
+	Annotations: rdfs:comment "Largura mínima do ambiente"@pt
+	Domain: fofu:Edificio
+	Range: xsd:decimal
+
+DataProperty: fofu:profunmin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:profunmin"@pt
+	Annotations: rdfs:comment "Profundidade mínima do ambiente"@pt
+	Domain: fofu:Edificio
+	Range: xsd:decimal
+
+DataProperty: fofu:pedireitomin
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:pedireitomin"@pt
+	Annotations: rdfs:comment "Pédireito mínimo para o ambiente"@pt
+	Domain: fofu:Edificio
+	Range: xsd:decimal
+
+DataProperty: fofu:gabaritomáximo
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:gabaritomáximo"@pt
+	Annotations: rdfs:comment "Máximo gabarito permitido para o edifício"@pt
+	Domain: fofu:Nivel
+	Range: xsd:decimal
+
+DataProperty: fofu:RN
+	SubPropertyOf: fofu:requisito
+	Annotations: rdfs:label "fofu:RN"@pt
+	Annotations: rdfs:comment "Cota de referência da soleira de acesso ao edifício"@pt
+	Domain: fofu:Nivel
+	Range: xsd:decimal
+
+DataProperty: fofu:geo
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:geo"@pt
+	Annotations: rdfs:comment "Dados para Geolocalização para todos elementos do prédio"@pt
+
+DataProperty: fofu:longitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:longitude"@pt
+	Annotations: rdfs:comment "Longitude - coordenada X"@pt
+	Domain: fofu:Edificio
+	Range: xsd:decimal
+
+DataProperty: fofu:latitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:latitude"@pt
+	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
+	Domain: fofu:Edificio
+	Range: xsd:decimal
+
+DataProperty: fofu:altitude
+	SubPropertyOf: fofu:geo
+	Annotations: rdfs:label "fofu:altitude"@pt
+	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
+	Domain: fofu:Edificio
+	Range: xsd:decimal
+
+DataProperty: fofu:idpredio
+	SubPropertyOf: fofu:edificio
+	Annotations: rdfs:label "fofu:idpredio"@pt
+	Annotations: rdfs:comment "Dados de Identidade do edifício"@pt
+
+DataProperty: fofu:logradouroNome
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:logradouroNome"@pt
+	Annotations: rdfs:comment "Código da Unidade Edificada total"@pt
+	Domain: fofu:Edificio
+	Range:  xsd:string
+
+DataProperty: fofu:logradouroNumero
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:logradouroNumero"@pt
+	Annotations: rdfs:comment "Código do corpo"@pt
+	Domain: fofu:Edificio
+	Range:  xsd:string
+
+DataProperty: fofu:prédioNome
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:prédioNome"@pt
+	Annotations: rdfs:comment "Nome do edifício"@pt
+	Domain: fofu:Edificio
+	Range:  xsd:string
+
+DataProperty: fofu:prédioCódigo
+	SubPropertyOf: fofu:idpredio
+	Annotations: rdfs:label "fofu:prédioCódigo"@pt
+	Annotations: rdfs:comment "Código do edifício"@pt
+	Domain: fofu:Edificio
+	Range:  xsd:string
+
+DataProperty: fofu:corpo
 	SubPropertyOf: fofu:corpos
 	Annotations: rdfs:label "fofu:corpo"@pt
 	Annotations: rdfs:comment "Propriedades formais"@pt
 
-ObjectProperty: fofu:com_forma
+DataProperty: fofu:forma
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:com_forma"@pt
+	Annotations: rdfs:label "fofu:forma"@pt
 	Annotations: rdfs:comment "O nome da forma usada"@pt
-	Characteristics: Functional
 	Domain: fofu:Geometria
+	Range:  xsd:string
 
-ObjectProperty: fofu:com_raio
+DataProperty: fofu:raio
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:com_raio"@pt
+	Annotations: rdfs:label "fofu:raio"@pt
 	Annotations: rdfs:comment "O raio do elemento geométrico "@pt
-	Characteristics: Functional
 	Domain: fofu:Geometria
+	Range: xsd:decimal
 
-ObjectProperty: fofu:com_lados
+DataProperty: fofu:lados
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:com_lados"@pt
+	Annotations: rdfs:label "fofu:lados"@pt
 	Annotations: rdfs:comment "A quantidade de lados do polígono"@pt
-	Characteristics: Functional
 	Domain: fofu:Geometria
+	Range: xsd:decimal
 
-ObjectProperty: fofu:com_centroX
+DataProperty: fofu:centroX
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:com_centroX"@pt
+	Annotations: rdfs:label "fofu:centroX"@pt
 	Annotations: rdfs:comment "A coordenada X"@pt
-	Characteristics: Functional
 	Domain: fofu:Geometria
+	Range: xsd:decimal
 
-ObjectProperty: fofu:com_centroZ
+DataProperty: fofu:centroZ
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:com_centroZ"@pt
+	Annotations: rdfs:label "fofu:centroZ"@pt
 	Annotations: rdfs:comment "A coordenada Z"@pt
-	Characteristics: Functional
 	Domain: fofu:Geometria
+	Range: xsd:decimal
 
-ObjectProperty: fofu:com_centroY
+DataProperty: fofu:centroY
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:com_centroY"@pt
+	Annotations: rdfs:label "fofu:centroY"@pt
 	Annotations: rdfs:comment "A coordenada Y"@pt
-	Characteristics: Functional
 	Domain: fofu:Geometria
+	Range: xsd:decimal
 
-ObjectProperty: fofu:nucleo
+DataProperty: fofu:nucleo
 	SubPropertyOf: fofu:corpos
 	Annotations: rdfs:label "fofu:nucleo"@pt
 	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
 
-ObjectProperty: fofu:com_núcleos
+DataProperty: fofu:núcleos
 	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:com_núcleos"@pt
+	Annotations: rdfs:label "fofu:núcleos"@pt
 	Annotations: rdfs:comment "O corpo edificado poderia ter  diversas classes de núcleos"@pt
 	Domain: fofu:CorpoEdificado
+	Range: xsd:boolean
 
-ObjectProperty: fofu:tem_elevador
+DataProperty: fofu:elevador
 	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:tem_elevador"@pt
+	Annotations: rdfs:label "fofu:elevador"@pt
 	Annotations: rdfs:comment "O núcleo dos elevadores"@pt
 	Domain: fofu:Ambiente
+	Range: xsd:boolean
 
-ObjectProperty: fofu:tem_escada
+DataProperty: fofu:escada
 	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:tem_escada"@pt
+	Annotations: rdfs:label "fofu:escada"@pt
 	Annotations: rdfs:comment "O núcleo de escadas"@pt
 	Domain: fofu:Ambiente
+	Range: xsd:boolean
 
-ObjectProperty: fofu:tem_sanitario
+DataProperty: fofu:sanitario
 	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:tem_sanitario"@pt
+	Annotations: rdfs:label "fofu:sanitario"@pt
 	Annotations: rdfs:comment "O núcleo de sanitarios"@pt
 	Domain: fofu:Ambiente
+	Range: xsd:boolean
 
-ObjectProperty: fofu:tem_ensino
+DataProperty: fofu:ensino
 	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:tem_ensino"@pt
+	Annotations: rdfs:label "fofu:ensino"@pt
 	Annotations: rdfs:comment "O núcleo de salas de aula"@pt
 	Domain: fofu:Ambiente
+	Range: xsd:boolean
 
 DataProperty: fofu:identidade
 	SubPropertyOf: fofu:ambientes
@@ -1464,46 +1738,6 @@ DataProperty: fofu:numero
 	Domain: fofu:Ambiente
 	Range:  xsd:string
 
-DataProperty: fofu:requisito
-	SubPropertyOf: fofu:ambientes
-	Annotations: rdfs:label "fofu:requisito"@pt
-	Annotations: rdfs:comment "Dados de requisitos solicitados para o projeto"@pt
-
-DataProperty: fofu:larguramin
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:larguramin"@pt
-	Annotations: rdfs:comment "Largura mínima do ambiente"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:decimal
-
-DataProperty: fofu:profunmin
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:profunmin"@pt
-	Annotations: rdfs:comment "Profundidade mínima do ambiente"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:decimal
-
-DataProperty: fofu:pedireitomin
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:pedireitomin"@pt
-	Annotations: rdfs:comment "Pédireito mínimo para o ambiente"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:decimal
-
-DataProperty: fofu:gabaritomáximo
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:gabaritomáximo"@pt
-	Annotations: rdfs:comment "Máximo gabarito permitido para o edifício"@pt
-	Domain: fofu:Nivel
-	Range: xsd:decimal
-
-DataProperty: fofu:RN
-	SubPropertyOf: fofu:requisito
-	Annotations: rdfs:label "fofu:RN"@pt
-	Annotations: rdfs:comment "Cota de referência da soleira de acesso ao edifício"@pt
-	Domain: fofu:Nivel
-	Range: xsd:decimal
-
 DataProperty: fofu:projetado
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:projetado"@pt
@@ -1527,32 +1761,6 @@ DataProperty: fofu:pedireito
 	SubPropertyOf: fofu:projetado
 	Annotations: rdfs:label "fofu:pedireito"@pt
 	Annotations: rdfs:comment "Pédireito do ambiente"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:decimal
-
-DataProperty: fofu:geo
-	SubPropertyOf: fofu:ambientes
-	Annotations: rdfs:label "fofu:geo"@pt
-	Annotations: rdfs:comment "Dados para Geolocalização dos ambientes"@pt
-
-DataProperty: fofu:longitude
-	SubPropertyOf: fofu:geo
-	Annotations: rdfs:label "fofu:longitude"@pt
-	Annotations: rdfs:comment "Longitude - coordenada X"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:decimal
-
-DataProperty: fofu:latitude
-	SubPropertyOf: fofu:geo
-	Annotations: rdfs:label "fofu:latitude"@pt
-	Annotations: rdfs:comment "Latitude -  coordenada Y"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:decimal
-
-DataProperty: fofu:altitude
-	SubPropertyOf: fofu:geo
-	Annotations: rdfs:label "fofu:altitude"@pt
-	Annotations: rdfs:comment "Altitude - coordenada Z"@pt
 	Domain: fofu:Ambiente
 	Range: xsd:decimal
 
@@ -1701,93 +1909,6 @@ DataProperty: fofu:zenit
 	Annotations: rdfs:comment "O ambiente na quinta fachada (cobertura)"@pt
 	Domain: fofu:Ambiente
 	Range:  xsd:string
-
-DataProperty: fofu:corpo
-	SubPropertyOf: fofu:corpos
-	Annotations: rdfs:label "fofu:corpo"@pt
-	Annotations: rdfs:comment "Propriedades formais"@pt
-
-DataProperty: fofu:forma
-	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:forma"@pt
-	Annotations: rdfs:comment "O nome da forma usada"@pt
-	Domain: fofu:Geometria
-	Range:  xsd:string
-
-DataProperty: fofu:raio
-	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:raio"@pt
-	Annotations: rdfs:comment "O raio do elemento geométrico "@pt
-	Domain: fofu:Geometria
-	Range: xsd:decimal
-
-DataProperty: fofu:lados
-	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:lados"@pt
-	Annotations: rdfs:comment "A quantidade de lados do polígono"@pt
-	Domain: fofu:Geometria
-	Range: xsd:decimal
-
-DataProperty: fofu:centroX
-	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:centroX"@pt
-	Annotations: rdfs:comment "A coordenada X"@pt
-	Domain: fofu:Geometria
-	Range: xsd:decimal
-
-DataProperty: fofu:centroZ
-	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:centroZ"@pt
-	Annotations: rdfs:comment "A coordenada Z"@pt
-	Domain: fofu:Geometria
-	Range: xsd:decimal
-
-DataProperty: fofu:centroY
-	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:centroY"@pt
-	Annotations: rdfs:comment "A coordenada Y"@pt
-	Domain: fofu:Geometria
-	Range: xsd:decimal
-
-DataProperty: fofu:nucleo
-	SubPropertyOf: fofu:corpos
-	Annotations: rdfs:label "fofu:nucleo"@pt
-	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
-
-DataProperty: fofu:núcleos
-	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:núcleos"@pt
-	Annotations: rdfs:comment "O corpo edificado poderia ter  diversas classes de núcleos"@pt
-	Domain: fofu:CorpoEdificado
-	Range: xsd:boolean
-
-DataProperty: fofu:elevador
-	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:elevador"@pt
-	Annotations: rdfs:comment "O núcleo dos elevadores"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:boolean
-
-DataProperty: fofu:escada
-	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:escada"@pt
-	Annotations: rdfs:comment "O núcleo de escadas"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:boolean
-
-DataProperty: fofu:sanitario
-	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:sanitario"@pt
-	Annotations: rdfs:comment "O núcleo de sanitarios"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:boolean
-
-DataProperty: fofu:ensino
-	SubPropertyOf: fofu:nucleo
-	Annotations: rdfs:label "fofu:ensino"@pt
-	Annotations: rdfs:comment "O núcleo de salas de aula"@pt
-	Domain: fofu:Ambiente
-	Range: xsd:boolean
 
 Individual: fofu:DeposDML
 	Annotations: rdfs:label "fofu:DeposDML"@pt
