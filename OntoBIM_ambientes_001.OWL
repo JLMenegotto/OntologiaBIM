@@ -62,12 +62,6 @@ Class: fofu:Programado
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:Programado"@pt
 	Annotations: rdfs:comment "Programa de Necessidade de ordenamento geral definido para o projeto"@pt
-	EquivalentTo: fofu:em_andar some fofu:Pavimento and (fofu:OST_HVAC_Zones or fofu:ifcZone)
-
-Class: fofu:Programado
-	SubClassOf: fofu:Edificio
-	Annotations: rdfs:label "fofu:Programado"@pt
-	Annotations: rdfs:comment "Programa de Necessidade de ordenamento geral definido para o projeto"@pt
 
 Class: fofu:Programado
 	SubClassOf: fofu:Edificio
@@ -78,7 +72,7 @@ Class: fofu:Projetado
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:Projetado"@pt
 	Annotations: rdfs:comment "Projeto Funcional caracterizado por corpos, núcleos ou ambientes com função específica"@pt
-	EquivalentTo: fofu:tem_nome some
+	EquivalentTo: fofu:em_andar some fofu:Pavimento and (fofu:OST_HVAC_Zones or fofu:ifcZone)
 
 Class: fofu:Projetado
 	SubClassOf: fofu:Edificio
@@ -108,6 +102,11 @@ Class: fofu:ModeloRevit
 Class: fofu:ModeloIFC
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:ModeloIFC"@pt
+	Annotations: rdfs:comment "Objetos do modelo BIM em IFC"@pt
+
+Class: fofu:Transformação
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:Transformação"@pt
 	Annotations: rdfs:comment "Objetos do modelo BIM em IFC"@pt
 
 Class: fofu:OrientaçãoCardinal
@@ -180,6 +179,12 @@ Class: fofu:CorposEdificados
 	SubClassOf: fofu:Projetado
 	Annotations: rdfs:label "fofu:CorposEdificados"@pt
 	Annotations: rdfs:comment "Corpos projetados para o edifício"@pt
+	EquivalentTo: fofu:com_forma some 
+
+Class: fofu:CorposEdificados
+	SubClassOf: fofu:Projetado
+	Annotations: rdfs:label "fofu:CorposEdificados"@pt
+	Annotations: rdfs:comment "Corpos projetados para o edifício"@pt
 
 Class: fofu:Núcleos
 	SubClassOf: fofu:Projetado
@@ -242,6 +247,11 @@ Class: fofu:Categorias
 Class: fofu:TiposEnum
 	SubClassOf: fofu:ModeloIFC
 	Annotations: rdfs:label "fofu:TiposEnum"@pt
+	Annotations: rdfs:comment "TiposEnum IFC"@pt
+
+Class: fofu:Geométrica
+	SubClassOf: fofu:Transformação
+	Annotations: rdfs:label "fofu:Geométrica"@pt
 	Annotations: rdfs:comment "TiposEnum IFC"@pt
 
 Class: fofu:Orientação
@@ -436,6 +446,11 @@ Class: fofu:IFC
 Class: fofu:IFC
 	SubClassOf: fofu:TiposEnum
 	Annotations: rdfs:label "fofu:IFC"@pt
+	Annotations: rdfs:comment "Tipos e Enumeráveis IFC"@pt
+
+Class: fofu:Movimento
+	SubClassOf: fofu:Geométrica
+	Annotations: rdfs:label "fofu:Movimento"@pt
 	Annotations: rdfs:comment "Tipos e Enumeráveis IFC"@pt
 
 Class: fofu:Norte
@@ -1066,6 +1081,26 @@ Class: fofu:Internal
 Class: fofu:External
 	SubClassOf: fofu:IFC
 	Annotations: rdfs:label "fofu:External"@pt
+	Annotations: rdfs:comment "Espaços exteriores"@pt
+
+Class: fofu:Translação
+	SubClassOf: fofu:Movimento
+	Annotations: rdfs:label "fofu:Translação"@pt
+	Annotations: rdfs:comment "Espaços exteriores"@pt
+
+Class: fofu:Rotação
+	SubClassOf: fofu:Movimento
+	Annotations: rdfs:label "fofu:Rotação"@pt
+	Annotations: rdfs:comment "Espaços exteriores"@pt
+
+Class: fofu:Reflexão
+	SubClassOf: fofu:Movimento
+	Annotations: rdfs:label "fofu:Reflexão"@pt
+	Annotations: rdfs:comment "Espaços exteriores"@pt
+
+Class: fofu:MudançaEscala
+	SubClassOf: fofu:Movimento
+	Annotations: rdfs:label "fofu:MudançaEscala"@pt
 	Annotations: rdfs:comment "Espaços exteriores"@pt
 
 ObjectProperty: fofu:requisito
@@ -2083,3 +2118,9 @@ Individual: fofu:BlocoD
 	Types: fofu:CorpoEdificado
 	Facts: fofu:tem_escada fofu:BlocoD
 	Facts: fofu:escada True
+
+Individual: fofu:BlocoD
+	Annotations: rdfs:label "fofu:BlocoD"@pt
+	Types: fofu:CorpoEdificado
+	Facts: fofu:tem_longitude fofu:BlocoD
+	Facts: fofu:longitude -43.2309095980421
