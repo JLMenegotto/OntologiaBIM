@@ -85,6 +85,11 @@ Class: fofu:Projetado
 	Annotations: rdfs:label "fofu:Projetado"@pt
 	Annotations: rdfs:comment "Níveis de referência existentes ou legais"@pt
 
+Class: fofu:Projetado
+	SubClassOf: fofu:Edificio
+	Annotations: rdfs:label "fofu:Projetado"@pt
+	Annotations: rdfs:comment "Formas para o projeto "@pt
+
 Class: fofu:ModeloRevit
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:ModeloRevit"@pt
@@ -197,6 +202,22 @@ Class: fofu:Nivel
 	SubClassOf: fofu:Projetado
 	Annotations: rdfs:label "fofu:Nivel"@pt
 	Annotations: rdfs:comment "Outros níveis de referência utilizados"@pt
+
+Class: fofu:Geometria
+	SubClassOf: fofu:Projetado
+	Annotations: rdfs:label "fofu:Geometria"@pt
+	Annotations: rdfs:comment "Formas regulares "@pt
+	EquivalentTo: fofu:OST_ProfileFamilies or fofu:IfcPolyline
+
+Class: fofu:Geometria
+	SubClassOf: fofu:Projetado
+	Annotations: rdfs:label "fofu:Geometria"@pt
+	Annotations: rdfs:comment "Formas regulares "@pt
+
+Class: fofu:Geometria
+	SubClassOf: fofu:Projetado
+	Annotations: rdfs:label "fofu:Geometria"@pt
+	Annotations: rdfs:comment "Formas irregulares "@pt
 
 Class: fofu:Categorias
 	SubClassOf: fofu:ModeloRevit
@@ -312,6 +333,12 @@ Class: fofu:CorpoEdificado
 	SubClassOf: fofu:CorposEdificados
 	Annotations: rdfs:label "fofu:CorpoEdificado"@pt
 	Annotations: rdfs:comment "Parte do corpo edificado"@pt
+	EquivalentTo: fofu:com_núcleos some fofu:Núcleos
+
+Class: fofu:CorpoEdificado
+	SubClassOf: fofu:CorposEdificados
+	Annotations: rdfs:label "fofu:CorpoEdificado"@pt
+	Annotations: rdfs:comment "Parte do corpo edificado"@pt
 
 Class: fofu:NucleoElevadores
 	SubClassOf: fofu:Núcleos
@@ -365,6 +392,16 @@ Class: fofu:CotaLegal
 	SubClassOf: fofu:Nivel
 	Annotations: rdfs:label "fofu:CotaLegal"@pt
 	Annotations: rdfs:comment "NivelLegal"@pt
+
+Class: fofu:GeometriaRegular
+	SubClassOf: fofu:Geometria
+	Annotations: rdfs:label "fofu:GeometriaRegular"@pt
+	Annotations: rdfs:comment "Formas poligonais"@pt
+
+Class: fofu:GeometriaIrregular
+	SubClassOf: fofu:Geometria
+	Annotations: rdfs:label "fofu:GeometriaIrregular"@pt
+	Annotations: rdfs:comment "Formas irregulares "@pt
 
 Class: fofu:CotaNatural
 	SubClassOf: fofu:Nivel
@@ -845,6 +882,62 @@ Class: fofu:GabaritoMaximo
 	Annotations: rdfs:comment "Cota de gabarito máximo"@pt
 	EquivalentTo: fofu:tem_gabaritomáximo some fofu:Nivel
 
+Class: fofu:Círculo
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Círculo"@pt
+	Annotations: rdfs:comment "Poligonal Circular"@pt
+	EquivalentTo: fofu:com_raio some fofu:Círculo and fofu:com_centroX some fofu:Círculo and fofu:com_centroY some fofu:Círculo and fofu:com_centroZ some fofu:Círculo
+
+Class: fofu:Octogono
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Octogono"@pt
+	Annotations: rdfs:comment "Poligonal Octogonal"@pt
+
+Class: fofu:Hexagono
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Hexagono"@pt
+	Annotations: rdfs:comment "Poligonal Hexagonal"@pt
+
+Class: fofu:Pentagono
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Pentagono"@pt
+	Annotations: rdfs:comment "Poligonal Pentagonal"@pt
+
+Class: fofu:Quadrado
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Quadrado"@pt
+	Annotations: rdfs:comment "Poligonal Quadrangular"@pt
+
+Class: fofu:Triângulo
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Triângulo"@pt
+	Annotations: rdfs:comment "Poligonal Triangular"@pt
+
+Class: fofu:Elípse
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Elípse"@pt
+	Annotations: rdfs:comment "Poligonal Elíptica"@pt
+
+Class: fofu:Oval
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Oval"@pt
+	Annotations: rdfs:comment "Poligonal Oval"@pt
+
+Class: fofu:Estrela
+	SubClassOf: fofu:GeometriaRegular
+	Annotations: rdfs:label "fofu:Estrela"@pt
+	Annotations: rdfs:comment "Poligonal Estrelada"@pt
+
+Class: fofu:Retângular
+	SubClassOf: fofu:GeometriaIrregular
+	Annotations: rdfs:label "fofu:Retângular"@pt
+	Annotations: rdfs:comment "Poligonal Retangular"@pt
+
+Class: fofu:Livre
+	SubClassOf: fofu:GeometriaIrregular
+	Annotations: rdfs:label "fofu:Livre"@pt
+	Annotations: rdfs:comment "Poligonal Livre"@pt
+
 Class: fofu:NiveldoMar
 	SubClassOf: fofu:CotaNatural
 	Annotations: rdfs:label "fofu:NiveldoMar"@pt
@@ -869,6 +962,16 @@ Class: fofu:OST_Levels
 	SubClassOf: fofu:OST
 	Annotations: rdfs:label "fofu:OST_Levels"@pt
 	Annotations: rdfs:comment "OST Levels"@pt
+
+Class: fofu:OST_ProfileFamilies
+	SubClassOf: fofu:OST
+	Annotations: rdfs:label "fofu:OST_ProfileFamilies"@pt
+	Annotations: rdfs:comment "OST Levels"@pt
+
+Class: fofu:IfcPolyline
+	SubClassOf: fofu:IFC
+	Annotations: rdfs:label "fofu:IfcPolyline"@pt
+	Annotations: rdfs:comment "ifcSpace"@pt
 
 Class: fofu:ifcSpace
 	SubClassOf: fofu:IFC
@@ -1214,18 +1317,60 @@ ObjectProperty: fofu:ao_zenit
 ObjectProperty: fofu:corpo
 	SubPropertyOf: fofu:corpos
 	Annotations: rdfs:label "fofu:corpo"@pt
-	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+	Annotations: rdfs:comment "Propriedades formais"@pt
 
-ObjectProperty: fofu:tem_forma
+ObjectProperty: fofu:com_forma
 	SubPropertyOf: fofu:corpo
-	Annotations: rdfs:label "fofu:tem_forma"@pt
-	Annotations: rdfs:comment "A forma do corpo edificado"@pt
-	Domain: fofu:Projetado
+	Annotations: rdfs:label "fofu:com_forma"@pt
+	Annotations: rdfs:comment "O nome da forma usada"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_raio
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_raio"@pt
+	Annotations: rdfs:comment "O raio do elemento geométrico "@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_lados
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_lados"@pt
+	Annotations: rdfs:comment "A quantidade de lados do polígono"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_centroX
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_centroX"@pt
+	Annotations: rdfs:comment "A coordenada X"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_centroZ
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_centroZ"@pt
+	Annotations: rdfs:comment "A coordenada Z"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
+
+ObjectProperty: fofu:com_centroY
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:com_centroY"@pt
+	Annotations: rdfs:comment "A coordenada Y"@pt
+	Characteristics: Functional
+	Domain: fofu:Geometria
 
 ObjectProperty: fofu:nucleo
 	SubPropertyOf: fofu:corpos
 	Annotations: rdfs:label "fofu:nucleo"@pt
 	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+
+ObjectProperty: fofu:com_núcleos
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:com_núcleos"@pt
+	Annotations: rdfs:comment "O corpo edificado poderia ter  diversas classes de núcleos"@pt
+	Domain: fofu:CorpoEdificado
 
 ObjectProperty: fofu:tem_elevador
 	SubPropertyOf: fofu:nucleo
@@ -1560,19 +1705,61 @@ DataProperty: fofu:zenit
 DataProperty: fofu:corpo
 	SubPropertyOf: fofu:corpos
 	Annotations: rdfs:label "fofu:corpo"@pt
-	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+	Annotations: rdfs:comment "Propriedades formais"@pt
 
 DataProperty: fofu:forma
 	SubPropertyOf: fofu:corpo
 	Annotations: rdfs:label "fofu:forma"@pt
-	Annotations: rdfs:comment "A forma do corpo edificado"@pt
-	Domain: fofu:Projetado
+	Annotations: rdfs:comment "O nome da forma usada"@pt
+	Domain: fofu:Geometria
 	Range:  xsd:string
+
+DataProperty: fofu:raio
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:raio"@pt
+	Annotations: rdfs:comment "O raio do elemento geométrico "@pt
+	Domain: fofu:Geometria
+	Range: xsd:decimal
+
+DataProperty: fofu:lados
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:lados"@pt
+	Annotations: rdfs:comment "A quantidade de lados do polígono"@pt
+	Domain: fofu:Geometria
+	Range: xsd:decimal
+
+DataProperty: fofu:centroX
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:centroX"@pt
+	Annotations: rdfs:comment "A coordenada X"@pt
+	Domain: fofu:Geometria
+	Range: xsd:decimal
+
+DataProperty: fofu:centroZ
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:centroZ"@pt
+	Annotations: rdfs:comment "A coordenada Z"@pt
+	Domain: fofu:Geometria
+	Range: xsd:decimal
+
+DataProperty: fofu:centroY
+	SubPropertyOf: fofu:corpo
+	Annotations: rdfs:label "fofu:centroY"@pt
+	Annotations: rdfs:comment "A coordenada Y"@pt
+	Domain: fofu:Geometria
+	Range: xsd:decimal
 
 DataProperty: fofu:nucleo
 	SubPropertyOf: fofu:corpos
 	Annotations: rdfs:label "fofu:nucleo"@pt
 	Annotations: rdfs:comment "Componentes de núcleos funcionais"@pt
+
+DataProperty: fofu:núcleos
+	SubPropertyOf: fofu:nucleo
+	Annotations: rdfs:label "fofu:núcleos"@pt
+	Annotations: rdfs:comment "O corpo edificado poderia ter  diversas classes de núcleos"@pt
+	Domain: fofu:CorpoEdificado
+	Range: xsd:boolean
 
 DataProperty: fofu:elevador
 	SubPropertyOf: fofu:nucleo
@@ -1691,3 +1878,87 @@ Individual: fofu:DeposDML
 	Types: fofu:Depósito
 	Facts: fofu:tem_RN fofu:DeposDML
 	Facts: fofu:RN 5.25
+
+Individual: fofu:Círculo
+	Annotations: rdfs:label "fofu:Círculo"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_forma fofu:Círculo
+	Facts: fofu:forma "circulo"
+
+Individual: fofu:Círculo
+	Annotations: rdfs:label "fofu:Círculo"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_raio fofu:Círculo
+	Facts: fofu:raio 5
+
+Individual: fofu:Círculo
+	Annotations: rdfs:label "fofu:Círculo"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_centroX fofu:Círculo
+	Facts: fofu:centroX 0
+
+Individual: fofu:Círculo
+	Annotations: rdfs:label "fofu:Círculo"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_centroY fofu:Círculo
+	Facts: fofu:centroY 0
+
+Individual: fofu:Círculo
+	Annotations: rdfs:label "fofu:Círculo"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_centroZ fofu:Círculo
+	Facts: fofu:centroZ 0
+
+Individual: fofu:PolígonoR3
+	Annotations: rdfs:label "fofu:PolígonoR3"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_forma fofu:PolígonoR3
+	Facts: fofu:forma "triângulo"
+
+Individual: fofu:PolígonoR3
+	Annotations: rdfs:label "fofu:PolígonoR3"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_raio fofu:PolígonoR3
+	Facts: fofu:raio 10
+
+Individual: fofu:PolígonoR3
+	Annotations: rdfs:label "fofu:PolígonoR3"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_lados fofu:PolígonoR3
+	Facts: fofu:lados 3
+
+Individual: fofu:PolígonoR3
+	Annotations: rdfs:label "fofu:PolígonoR3"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_centroX fofu:PolígonoR3
+	Facts: fofu:centroX 0
+
+Individual: fofu:PolígonoR3
+	Annotations: rdfs:label "fofu:PolígonoR3"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_centroY fofu:PolígonoR3
+	Facts: fofu:centroY 0
+
+Individual: fofu:PolígonoR3
+	Annotations: rdfs:label "fofu:PolígonoR3"@pt
+	Types: fofu:Geometria
+	Facts: fofu:com_centroZ fofu:PolígonoR3
+	Facts: fofu:centroZ 0
+
+Individual: fofu:BlocoD
+	Annotations: rdfs:label "fofu:BlocoD"@pt
+	Types: fofu:CorpoEdificado
+	Facts: fofu:com_núcleos fofu:BlocoD
+	Facts: fofu:núcleos 1
+
+Individual: fofu:BlocoD
+	Annotations: rdfs:label "fofu:BlocoD"@pt
+	Types: fofu:CorpoEdificado
+	Facts: fofu:tem_elevador fofu:BlocoD
+	Facts: fofu:elevador 1
+
+Individual: fofu:BlocoD
+	Annotations: rdfs:label "fofu:BlocoD"@pt
+	Types: fofu:CorpoEdificado
+	Facts: fofu:tem_escada fofu:BlocoD
+	Facts: fofu:escada 1
