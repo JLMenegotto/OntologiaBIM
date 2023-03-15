@@ -84,7 +84,6 @@ namespace OntoBIM
 
             foreach (Triple t in dados2.GetTriplesWithPredicateObject(tipos2, clase2))
             {
-                     
                       resultadoInfe += 
                                        "Sujeito: "   + t.Subject.ToString()   + "\n" +
                                        "Objeto: "    + t.Object.ToString()    + "\n" +

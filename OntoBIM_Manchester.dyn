@@ -399,11 +399,11 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "DaPRJ;\nDadTC;\nDadTP;\nDadTI;\nDadDI;\nA1   = \"\\\"\";\nA2   = A1+\"@pt\";\nvi   = \", \";\nNulo = \"Vnulo\";\nanot = \"\\n\\tAnnotations: rdfs:label \"  +A1;\nhelp = \"\\n\\tAnnotations: rdfs:comment \"+A1;\nclas = \"\\n\\nClass: \";\nsubc = \"\\n\\tSubClassOf: \";\nobje = \"\\n\\nObjectProperty: \";\ndata = \"\\n\\nDataProperty: \";\nsubp = \"\\n\\tSubPropertyOf: \";\ncara = \"\\n\\tCharacteristics: \";\ndomi = \"\\n\\tDomain: \";\nrang = \"\\n\\tRange: \";\ninve = \"\\n\\tInverseOf: \";\nindi = \"\\n\\nIndividual: \";\ntipo = \"\\n\\tTypes: \";\nequi = \"\\n\\tEquivalentTo: \";\nchav = \"\\n\\tHasKey: \";\ndisu = \"\\n\\tDisjointUnionOf: \";\nfato = \"\\n\\tFacts: \";\ndisj = \"\\n\\tDisjointWith: \";\ndisc = \"\\n\\nDisjointClasses: \";\nimpo = \"\\n\\nImport: \";\n//------------------------------------------------------------------------\n// Prepara Informações do Projeto\n//------------------------------------------------------------------------\nkeyP = DaPRJ[0];\nvalP = DaPRJ[1];\nfx   = valP[0];\ntema = valP[1];\nqo   = List.Count(keyP)-1;\nio   = 0..qo;\nfo   = qo==io?\"\":vi;\nONTO = \"\\n\\trdfs:label \" +A1+keyP+ \": \"+valP+A2+fo;\nOTXT =\n\"\\n\\nOntology: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#\"+tema+\">\"+\n\"\\n\\nAnnotations: \" +\n\"\\n\\tdc:title \"+A1+\"Ontologia BIM\"      +A2+vi+\n\"\\n\\tdc:title \"+A1+\"Autor: JL Menegotto\"+A2+vi+String.Concat([ONTO]);\n//------------------------------------------------------------------------\n// Prepara CLASSES: Classe c Subclasse c-1\n//------------------------------------------------------------------------\nc   = 2..5;\nCAN = anot + fx+DadTC[c]+A2;\nCCL = clas + fx+DadTC[c]+subc+fx+DadTC[c-1];\nCDE = String.Contains(DadTC[c+9],Nulo)==true?\"\":help+DadTC[c+9]+A2;\nCEQ = String.Contains(DadTC[c+4],Nulo)==true?\"\":equi+DadTC[c+4];\nCLA = CCL+CAN+CDE+CEQ;\n//------------------------------------------------------------------------\n// Prepara PROPRIEDADES DOS OBJETOS E DADOS\n//------------------------------------------------------------------------\nDAN = anot + fx+DadTP[ 2 ]+A2;\nPAN = anot + fx+DadTP[ 3 ]+A2;\nDAT = data + fx+DadTP[ 2 ]+ subp +fx+DadTP[ 1 ];\nPRP = obje + fx+DadTP[ 3 ]+ subp +fx+DadTP[ 1 ];\nPC1 = String.Contains(DadTP[ 4],Nulo)==true?\"\":cara+   DadTP[ 4];\nPC2 = String.Contains(DadTP[ 5],Nulo)==true?\"\":cara+   DadTP[ 5];\nPC3 = String.Contains(DadTP[ 6],Nulo)==true?\"\":cara+   DadTP[ 6];\nPIN = String.Contains(DadTP[ 7],Nulo)==true?\"\":inve+fx+DadTP[ 7];\nDO1 = String.Contains(DadTP[ 8],Nulo)==true?\"\":domi+fx+DadTP[ 8];\nDO2 = String.Contains(DadTP[ 9],Nulo)==true?\"\":domi+fx+DadTP[ 9];\nDO3 = String.Contains(DadTP[10],Nulo)==true?\"\":domi+fx+DadTP[10];\nRP1 = String.Contains(DadTP[11],Nulo)==true?\"\":rang+fx+DadTP[11];\nRP2 = String.Contains(DadTP[12],Nulo)==true?\"\":rang+fx+DadTP[12];\nRAD = String.Contains(DadTP[13],Nulo)==true?\"\":rang+   DadTP[13];\nPHE = String.Contains(DadTP[14],Nulo)==true?\"\":help+   DadTP[14]+A2;\nPRO = PRP+PAN+ PHE+ PC1+PC2+PC3+PIN +DO1+DO2+DO3 +RP1+RP2;\nDAP = DAT+DAN+ PHE                  +DO1+DO2+DO3 +RAD;\n//------------------------------------------------------------------------\n// Prepara INSTANCIAS\n//------------------------------------------------------------------------\nIAN = anot +       fx+DadTI[1]+A2;\nINS = indi +       fx+DadTI[1];\nITI = tipo +       fx+DadTI[2];\nIF1 = String.Contains(DadTI[3],Nulo)==true?\"\":fato+fx+DadTI[3]+\" \"+fx+DadTI[1];\nIF2 = String.Contains(DadTI[4],Nulo)==true?\"\":fato+fx+DadTI[4]+\" \"+   DadTI[5];\nIND = INS+IAN+ITI+IF1+IF2;\n//------------------------------------------------------------------------\n// Prepara DISJUNTAS até 10\n//------------------------------------------------------------------------\nJU01 = String.Contains(DadDI[ 1],Nulo)==true?\"\":disc+ fx+DadDI[ 1];\nJU02 = String.Contains(DadDI[ 2],Nulo)==true?\"\":\", \"+ fx+DadDI[ 2];\nJU03 = String.Contains(DadDI[ 3],Nulo)==true?\"\":\", \"+ fx+DadDI[ 3];\nJU04 = String.Contains(DadDI[ 4],Nulo)==true?\"\":\", \"+ fx+DadDI[ 4];\nJU05 = String.Contains(DadDI[ 5],Nulo)==true?\"\":\", \"+ fx+DadDI[ 5];\nJU06 = String.Contains(DadDI[ 6],Nulo)==true?\"\":\", \"+ fx+DadDI[ 6];\nJU07 = String.Contains(DadDI[ 7],Nulo)==true?\"\":\", \"+ fx+DadDI[ 7];\nJU08 = String.Contains(DadDI[ 8],Nulo)==true?\"\":\", \"+ fx+DadDI[ 8];\nJU09 = String.Contains(DadDI[ 9],Nulo)==true?\"\":\", \"+ fx+DadDI[ 9];\nJU10 = String.Contains(DadDI[10],Nulo)==true?\"\":\", \"+ fx+DadDI[10];\nJU11 = String.Contains(DadDI[11],Nulo)==true?\"\":\", \"+ fx+DadDI[11];\nJU12 = String.Contains(DadDI[12],Nulo)==true?\"\":\", \"+ fx+DadDI[12];\nDIS = JU01+JU02+JU03+JU04+JU05+JU06+JU07+JU08+JU09+JU10+JU11+JU12;\n//------------------------------------------------------------------------\n// Elimina as Nulas e Repetidas e coloca como string\n//------------------------------------------------------------------------\nLSTA = [ CLA , PRO , DAP, IND , DIS];\nTEXT = String.Concat(List.UniqueItems(List.Flatten( LSTA , 2)));",
+      "Code": "DaPRJ;\nDadTC;\nDadTP;\nDadTI;\nDadDI;\nA1   = \"\\\"\";\nA2   = A1+\"@pt\";\nvi   = \", \";\nNulo = \"Vnulo\";\nanot = \"\\n\\tAnnotations: rdfs:label \"  +A1;\nhelp = \"\\n\\tAnnotations: rdfs:comment \"+A1;\nclas = \"\\n\\nClass: \";\nsubc = \"\\n\\tSubClassOf: \";\nobje = \"\\n\\nObjectProperty: \";\ndata = \"\\n\\nDataProperty: \";\nsubp = \"\\n\\tSubPropertyOf: \";\ncara = \"\\n\\tCharacteristics: \";\ndomi = \"\\n\\tDomain: \";\nrang = \"\\n\\tRange: \";\ninve = \"\\n\\tInverseOf: \";\nindi = \"\\n\\nIndividual: \";\ntipo = \"\\n\\tTypes: \";\nequi = \"\\n\\tEquivalentTo: \";\nchav = \"\\n\\tHasKey: \";\ndisu = \"\\n\\tDisjointUnionOf: \";\nfato = \"\\n\\tFacts: \";\ndisj = \"\\n\\tDisjointWith: \";\ndisc = \"\\n\\nDisjointClasses: \";\nimpo = \"\\n\\nImport: \";\n//------------------------------------------------------------------------\n// Prepara Informações do Projeto\n//------------------------------------------------------------------------\nkeyP = DaPRJ[0];\nvalP = DaPRJ[1];\nfx   = valP[0];\ntema = valP[1];\nqo   = List.Count(keyP)-1;\nio   = 0..qo;\nfo   = qo==io?\"\":vi;\nONTO = \"\\n\\trdfs:label \" +A1+keyP+ \": \"+valP+A2+fo;\nOTXT =\n\"\\n\\nOntology: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#\"+tema+\">\"+\n\"\\n\\nAnnotations: \" +\n\"\\n\\tdc:title \"+A1+\"Ontologia BIM\"      +A2+vi+\n\"\\n\\tdc:title \"+A1+\"Autor: JL Menegotto\"+A2+vi+String.Concat([ONTO]);\n//------------------------------------------------------------------------\n// Prepara CLASSES: Classe c Subclasse c-1\n//------------------------------------------------------------------------\nc   = 2..5;\nCAN = anot + fx+DadTC[c]+A2;\nCCL = clas + fx+DadTC[c]+subc+fx+DadTC[c-1];\nCDE = String.Contains(DadTC[c+9],Nulo)==true?\"\":help+DadTC[c+9]+A2;\nCEQ = String.Contains(DadTC[c+4],Nulo)==true?\"\":equi+DadTC[c+4];\nCLA = CCL+CAN+CDE+CEQ;\n//------------------------------------------------------------------------\n// Prepara PROPRIEDADES DOS OBJETOS E DADOS\n//------------------------------------------------------------------------\nDAN = anot + fx+DadTP[ 2 ]+A2;\nPAN = anot + fx+DadTP[ 3 ]+A2;\nDAT = data + fx+DadTP[ 2 ]+ subp +fx+DadTP[ 1 ];\nPRP = obje + fx+DadTP[ 3 ]+ subp +fx+DadTP[ 1 ];\nPC1 = String.Contains(DadTP[ 4],Nulo)==true?\"\":cara+   DadTP[ 4];\nPC2 = String.Contains(DadTP[ 5],Nulo)==true?\"\":cara+   DadTP[ 5];\nPC3 = String.Contains(DadTP[ 6],Nulo)==true?\"\":cara+   DadTP[ 6];\nPIN = String.Contains(DadTP[ 7],Nulo)==true?\"\":inve+fx+DadTP[ 7];\nDO1 = String.Contains(DadTP[ 8],Nulo)==true?\"\":domi+fx+DadTP[ 8];\nDO2 = String.Contains(DadTP[ 9],Nulo)==true?\"\":domi+fx+DadTP[ 9];\nDO3 = String.Contains(DadTP[10],Nulo)==true?\"\":domi+fx+DadTP[10];\nRP1 = String.Contains(DadTP[11],Nulo)==true?\"\":rang+fx+DadTP[11];\nRP2 = String.Contains(DadTP[12],Nulo)==true?\"\":rang+fx+DadTP[12];\nRAD = String.Contains(DadTP[13],Nulo)==true?\"\":rang+   DadTP[13];\nPHE = String.Contains(DadTP[14],Nulo)==true?\"\":help+   DadTP[14]+A2;\nPRO = PRP+PAN+ PHE+ PC1+PC2+PC3+PIN +DO1+DO2+DO3 +RP1+RP2;\nDAP = DAT+DAN+ PHE                  +DO1+DO2+DO3 +RAD;\n//------------------------------------------------------------------------\n// Prepara INSTANCIAS\n//------------------------------------------------------------------------\nIAN = anot +       fx+DadTI[1]+A2;\nINS = indi +       fx+DadTI[1];\nITI = tipo +       fx+DadTI[2];\nIF1 = String.Contains(DadTI[3],Nulo)==true?\"\":fato+fx+DadTI[3]+\" \"+fx+DadTI[1];\nIF2 = String.Contains(DadTI[4],Nulo)==true?\"\":fato+fx+DadTI[4]+\" \"+   DadTI[5];\nIND = INS+IAN+ITI+IF1+IF2;\n//------------------------------------------------------------------------\n// Prepara DISJUNTAS até 10\n//------------------------------------------------------------------------\nJU01 = String.Contains(DadDI[ 1],Nulo)==true?\"\":disc+ fx+DadDI[ 1];\nJU02 = String.Contains(DadDI[ 2],Nulo)==true?\"\":\", \"+ fx+DadDI[ 2];\nJU03 = String.Contains(DadDI[ 3],Nulo)==true?\"\":\", \"+ fx+DadDI[ 3];\nJU04 = String.Contains(DadDI[ 4],Nulo)==true?\"\":\", \"+ fx+DadDI[ 4];\nJU05 = String.Contains(DadDI[ 5],Nulo)==true?\"\":\", \"+ fx+DadDI[ 5];\nJU06 = String.Contains(DadDI[ 6],Nulo)==true?\"\":\", \"+ fx+DadDI[ 6];\nJU07 = String.Contains(DadDI[ 7],Nulo)==true?\"\":\", \"+ fx+DadDI[ 7];\nJU08 = String.Contains(DadDI[ 8],Nulo)==true?\"\":\", \"+ fx+DadDI[ 8];\nJU09 = String.Contains(DadDI[ 9],Nulo)==true?\"\":\", \"+ fx+DadDI[ 9];\nJU10 = String.Contains(DadDI[10],Nulo)==true?\"\":\", \"+ fx+DadDI[10];\nJU11 = String.Contains(DadDI[11],Nulo)==true?\"\":\", \"+ fx+DadDI[11];\nJU12 = String.Contains(DadDI[12],Nulo)==true?\"\":\", \"+ fx+DadDI[12];\nDIS = JU01+JU02+JU03+JU04+JU05+JU06+JU07+JU08+JU09+JU10+JU11+JU12;\n//------------------------------------------------------------------------\n// Elimina as Nulas e Repetidas e coloca como string\n//------------------------------------------------------------------------\nLSTE = [ CLA , PRO , DAP, DIS, IND];\nLSTD = [ IND ];\nESQM = String.Concat(List.UniqueItems(List.Flatten( LSTE , 2)));\nDADO = String.Concat(List.UniqueItems(List.Flatten( LSTD , 2)));",
       "Id": "fbc393e215264286a6f44cf39520ee27",
       "Inputs": [
         {
-          "Id": "ee698a1dd94d4601b9d679c6743c73b9",
+          "Id": "92f662853a1144e2b2e2fd3360decd3f",
           "Name": "DaPRJ",
           "Description": "DaPRJ",
           "UsingDefaultValue": false,
@@ -412,7 +412,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f1caca0a5eaf4ae5ac5036db3283130f",
+          "Id": "a4fcdf2c57bb41189d6000d46f9f5c11",
           "Name": "DadTC",
           "Description": "DadTC",
           "UsingDefaultValue": false,
@@ -421,7 +421,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d5b2dad59fa24fcf96b13f55db816040",
+          "Id": "d680ff421d1b40779e3613402422d90b",
           "Name": "DadTP",
           "Description": "DadTP",
           "UsingDefaultValue": false,
@@ -430,7 +430,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "279195dc8bd94f82bf1fad16ee3dd353",
+          "Id": "9ff11b5c5a6d476fabe922870b98fe73",
           "Name": "DadTI",
           "Description": "DadTI",
           "UsingDefaultValue": false,
@@ -439,7 +439,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7d4991cce3bd4d26bb809a98c77a4ebc",
+          "Id": "f1ebd16b87594d70a5d621939484575b",
           "Name": "DadDI",
           "Description": "DadDI",
           "UsingDefaultValue": false,
@@ -450,7 +450,7 @@
       ],
       "Outputs": [
         {
-          "Id": "473e018bbd244ee7a82094875e4ad7df",
+          "Id": "670b10be6bd04c9ba3a8b87334b478e1",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -459,7 +459,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1de8d7882c624c9292c6951b72c27073",
+          "Id": "6e4eb038f34b497ca1b6ec43fb076bb3",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -468,7 +468,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bba85c97038648d588d063d02267427f",
+          "Id": "35d0c72320d3433588deadc20340dd0b",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -477,7 +477,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b99b44c3a537415a9d3722e672e86e5a",
+          "Id": "2a41ad97272349d68a173273dcfe9f45",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -486,7 +486,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9f194aa954c24d8db3646ba7b7c70123",
+          "Id": "180a54197243463eb2c7ddb8dad3d59e",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -495,7 +495,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "32f026224ce840009cb61821433320bd",
+          "Id": "b99ad907bc57430098c190137832d068",
           "Name": "",
           "Description": "A1",
           "UsingDefaultValue": false,
@@ -504,7 +504,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0ddd946867a54606ac835a8d46c8c42c",
+          "Id": "5a72630067c94c6e96f28d5a8f283827",
           "Name": "",
           "Description": "A2",
           "UsingDefaultValue": false,
@@ -513,7 +513,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e8b1cb8ef6c44f80baaf04b37f96b0bd",
+          "Id": "ed8df6f6d709433fbd02adccb3c12d7c",
           "Name": "",
           "Description": "vi",
           "UsingDefaultValue": false,
@@ -522,7 +522,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "00ad7dac01fb427a8c93b7754bc4fd1f",
+          "Id": "6c8f7435a6104c97b8829dc1e4358625",
           "Name": "",
           "Description": "Nulo",
           "UsingDefaultValue": false,
@@ -531,7 +531,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "189bc0da90954e83acfe012a64660b32",
+          "Id": "4d1286c51f864385be60e52d0b5af768",
           "Name": "",
           "Description": "anot",
           "UsingDefaultValue": false,
@@ -540,7 +540,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fc314b6a592848d2a8a7cb87b276db98",
+          "Id": "a1dad87fdd85438c84c93ee5ecb68c7a",
           "Name": "",
           "Description": "help",
           "UsingDefaultValue": false,
@@ -549,7 +549,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "725661b0239b4b1a8343560d03d87ece",
+          "Id": "b28f5420e6784f8dacfb7a0a4e492e98",
           "Name": "",
           "Description": "clas",
           "UsingDefaultValue": false,
@@ -558,7 +558,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a1ad850606a84017ad59e881e90c6660",
+          "Id": "46396f35bc5343edab795cfc2961a918",
           "Name": "",
           "Description": "subc",
           "UsingDefaultValue": false,
@@ -567,7 +567,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "99a0961a8c5c4c49a62b0db66cb20fbd",
+          "Id": "a2c33e78964c4b889e4eff842545dbaa",
           "Name": "",
           "Description": "obje",
           "UsingDefaultValue": false,
@@ -576,7 +576,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "21b9ab1b1a37481b9fdd5b85b61bbc19",
+          "Id": "f1c48e1298294b6195dae5395d1a5919",
           "Name": "",
           "Description": "data",
           "UsingDefaultValue": false,
@@ -585,7 +585,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "16c752badde24b0a976727f763c2be01",
+          "Id": "7e0c6ba54be44c37b7fd55692bbb25cc",
           "Name": "",
           "Description": "subp",
           "UsingDefaultValue": false,
@@ -594,7 +594,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "64f402951c28401590b9de2109455686",
+          "Id": "5f4ef3f8bbdd467e950cd5f8a213950d",
           "Name": "",
           "Description": "cara",
           "UsingDefaultValue": false,
@@ -603,7 +603,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e1b21a7dd8684f9cbfefdfaacf094fcf",
+          "Id": "ff64ac324e0e43088368dd73ba75066f",
           "Name": "",
           "Description": "domi",
           "UsingDefaultValue": false,
@@ -612,7 +612,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fd07693e8d8242bcae4d79b7a43ea014",
+          "Id": "cd665981c7db4945a455a58c4d3a3d3f",
           "Name": "",
           "Description": "rang",
           "UsingDefaultValue": false,
@@ -621,7 +621,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "32cb083f3f864a05b5f5e5f63ba6e243",
+          "Id": "46a65db30b4a4fdcb7a1abaa576549a5",
           "Name": "",
           "Description": "inve",
           "UsingDefaultValue": false,
@@ -630,7 +630,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b0f97d85bd744b66924e0a4f101eb1d9",
+          "Id": "7857ce816c274ef08310a01a6acd0940",
           "Name": "",
           "Description": "indi",
           "UsingDefaultValue": false,
@@ -639,7 +639,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "36ad250acba043e4991191864830756a",
+          "Id": "048becdda9ed4a72bc2c320a8e14680d",
           "Name": "",
           "Description": "tipo",
           "UsingDefaultValue": false,
@@ -648,7 +648,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6551ad291e7d48b196a00a5add84ef1b",
+          "Id": "ff8eff05e82c49008b526f4e2af3de0f",
           "Name": "",
           "Description": "equi",
           "UsingDefaultValue": false,
@@ -657,7 +657,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8b7d918cfffe486a9d305c9603884329",
+          "Id": "35948448c4b44617a76d824613722164",
           "Name": "",
           "Description": "chav",
           "UsingDefaultValue": false,
@@ -666,7 +666,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fcefdb026eaa4d2c897732cf42a0cdc2",
+          "Id": "f9bfa5ced3614519a37c7a2785ee2c60",
           "Name": "",
           "Description": "disu",
           "UsingDefaultValue": false,
@@ -675,7 +675,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2fe56df3debe48f1b0e215434608a2d7",
+          "Id": "323888c8655b424e92a3121392b0e9b1",
           "Name": "",
           "Description": "fato",
           "UsingDefaultValue": false,
@@ -684,7 +684,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7a1d844255fa4b42ace496816858e019",
+          "Id": "2392b61643574a279827a4976b5cd973",
           "Name": "",
           "Description": "disj",
           "UsingDefaultValue": false,
@@ -693,7 +693,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c58937b709104d84bfd1867a12f8bd73",
+          "Id": "4949026db4b044358256dac5d58d804b",
           "Name": "",
           "Description": "disc",
           "UsingDefaultValue": false,
@@ -702,7 +702,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b9c23d49799c4d3e9585e4b290bb61b6",
+          "Id": "0324ac742af34ccf9993434d1360517c",
           "Name": "",
           "Description": "impo",
           "UsingDefaultValue": false,
@@ -711,7 +711,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c29f2d62266e45b7ad847969f7ea5103",
+          "Id": "c848a50f7a8f48d09aeff914ea82f33e",
           "Name": "",
           "Description": "keyP",
           "UsingDefaultValue": false,
@@ -720,7 +720,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4349df10123d4295a93f458ffee2df1d",
+          "Id": "2366c804bb534e1eafc7bc83f92fb5cc",
           "Name": "",
           "Description": "valP",
           "UsingDefaultValue": false,
@@ -729,7 +729,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "72be0ce7ed114128a8d355cd05640de4",
+          "Id": "2717f7c5e6cd4fea807ecabb2f91c2a9",
           "Name": "",
           "Description": "fx",
           "UsingDefaultValue": false,
@@ -738,7 +738,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "74a274b7a1bd4b70a7788df5e89eedbd",
+          "Id": "8a769728dca541c99076af9ee32acf84",
           "Name": "",
           "Description": "tema",
           "UsingDefaultValue": false,
@@ -747,7 +747,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "84626d076c5a44e596dce54e31bc5ea0",
+          "Id": "5e05f8dc4bcf44f3832a71755b1e1f7a",
           "Name": "",
           "Description": "qo",
           "UsingDefaultValue": false,
@@ -756,7 +756,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a3a5460084d14a4585f7d6d7049cf485",
+          "Id": "dd78b61fc028402da2566f144a68ec97",
           "Name": "",
           "Description": "io",
           "UsingDefaultValue": false,
@@ -765,7 +765,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "be56d7cf08544257949c742544b21756",
+          "Id": "27af40d5b3d84d82b037a11e05fc1fdf",
           "Name": "",
           "Description": "fo",
           "UsingDefaultValue": false,
@@ -774,7 +774,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b6335dabd7ad4912901e52f8a614a0f0",
+          "Id": "1233b66c6d544075b00c79eeef7553a9",
           "Name": "",
           "Description": "ONTO",
           "UsingDefaultValue": false,
@@ -783,7 +783,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f7faded358f44dc4abf4253442d8fe88",
+          "Id": "7e3a0a86bd6b44bea71e0d2f0664acba",
           "Name": "",
           "Description": "OTXT",
           "UsingDefaultValue": false,
@@ -792,7 +792,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2b8d360f6c434d74b977c04edafa98a2",
+          "Id": "85cbcaa6f73f4c6da3aca1da84b20d15",
           "Name": "",
           "Description": "c",
           "UsingDefaultValue": false,
@@ -801,7 +801,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c2b2a5a658704a94b42cd492a54d397c",
+          "Id": "63b87491467e4647a06da42dbeddf268",
           "Name": "",
           "Description": "CAN",
           "UsingDefaultValue": false,
@@ -810,7 +810,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ead6741e18f44bc3bd310faa85229ce3",
+          "Id": "e05bdf18c3e749e58bb73fa3fc36eff9",
           "Name": "",
           "Description": "CCL",
           "UsingDefaultValue": false,
@@ -819,7 +819,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ec5e024ee9e14dcbadc1de030602aa34",
+          "Id": "e20da677609246489e2b03bfebc6ecff",
           "Name": "",
           "Description": "CDE",
           "UsingDefaultValue": false,
@@ -828,7 +828,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1fb365dfe7ff4b36aadb0b161ccf5c00",
+          "Id": "017411f8e11c46b388d518da4a91e09a",
           "Name": "",
           "Description": "CEQ",
           "UsingDefaultValue": false,
@@ -837,7 +837,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "890315da33aa49ebb1b43f7c26d2f116",
+          "Id": "208b1e727dc3463eaf9d81090f804998",
           "Name": "",
           "Description": "CLA",
           "UsingDefaultValue": false,
@@ -846,7 +846,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0732b881f1854dffbf8d255da7ff0d10",
+          "Id": "9ea0d1acf05f4d77a323aeee6de12198",
           "Name": "",
           "Description": "DAN",
           "UsingDefaultValue": false,
@@ -855,7 +855,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "00ea7fd70919469b949b41f7cde5b6a2",
+          "Id": "3a4f71f9230942539c38af022159247d",
           "Name": "",
           "Description": "PAN",
           "UsingDefaultValue": false,
@@ -864,7 +864,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bafb3a53d13a4886902019f799f6e143",
+          "Id": "6981bde0fb144b32816e5fb0b5001551",
           "Name": "",
           "Description": "DAT",
           "UsingDefaultValue": false,
@@ -873,7 +873,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cc6408089ccb415abacf04e644d9c72a",
+          "Id": "e298a34f1a14494abbd192e0cc6da26f",
           "Name": "",
           "Description": "PRP",
           "UsingDefaultValue": false,
@@ -882,7 +882,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "56bdb42467b64cc6b41a6bafa6a4912d",
+          "Id": "b358d7a68ce14e1d815a3a046a509e63",
           "Name": "",
           "Description": "PC1",
           "UsingDefaultValue": false,
@@ -891,7 +891,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cbc8d429507f45a49b8319cf39eae89a",
+          "Id": "5ce7aea53e26473991c89159f690d391",
           "Name": "",
           "Description": "PC2",
           "UsingDefaultValue": false,
@@ -900,7 +900,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5d0b1b34483b409fb42858a4db47b233",
+          "Id": "fc81b29887b4435d84a7f447a3cc03fd",
           "Name": "",
           "Description": "PC3",
           "UsingDefaultValue": false,
@@ -909,7 +909,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "dc71d50e550540968cce0b439f21c9df",
+          "Id": "7eeccb99b41f41aab0337f06e7f45fbc",
           "Name": "",
           "Description": "PIN",
           "UsingDefaultValue": false,
@@ -918,7 +918,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "69d25f5ec69d484180578941e1d34097",
+          "Id": "09888e9eb2694ad0ab3360a2fb74c77c",
           "Name": "",
           "Description": "DO1",
           "UsingDefaultValue": false,
@@ -927,7 +927,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f3423fcb994340c99f265bee4e73d664",
+          "Id": "2cf3745d758e43619a7e1d2994d876eb",
           "Name": "",
           "Description": "DO2",
           "UsingDefaultValue": false,
@@ -936,7 +936,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c41dc0f9ceb24b3bb01c529b9b9a366d",
+          "Id": "0423c604914342cfa764048daccef4da",
           "Name": "",
           "Description": "DO3",
           "UsingDefaultValue": false,
@@ -945,7 +945,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "57ff23d71bee46f88025b5d7e6b4f17f",
+          "Id": "d2304fdcb4164023a7976c6e95200431",
           "Name": "",
           "Description": "RP1",
           "UsingDefaultValue": false,
@@ -954,7 +954,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1a2e6e50b3b34fa9827400f5358306ce",
+          "Id": "62b060052b504d5096c71ce9b9603332",
           "Name": "",
           "Description": "RP2",
           "UsingDefaultValue": false,
@@ -963,7 +963,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "18e8376e1ecb4c38b0a645a62ca495be",
+          "Id": "69aa0bfba9994e16b8a6e5326c3c35f5",
           "Name": "",
           "Description": "RAD",
           "UsingDefaultValue": false,
@@ -972,7 +972,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8be940b4d149403eadd0b9e080f5bc74",
+          "Id": "49dbca33344c413597f12e085caa1f3a",
           "Name": "",
           "Description": "PHE",
           "UsingDefaultValue": false,
@@ -981,7 +981,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9c6d61d7ecc141fd9fe7d0bd93f2b71c",
+          "Id": "1a77bde2634248528b238540404ea905",
           "Name": "",
           "Description": "PRO",
           "UsingDefaultValue": false,
@@ -990,7 +990,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0f8ba9b5f8b44a888cb9cec190548da3",
+          "Id": "14b68d01574d45a1877d6fc63f56e185",
           "Name": "",
           "Description": "DAP",
           "UsingDefaultValue": false,
@@ -999,7 +999,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2e1ee1d245d045e19b57120fb75a1ad2",
+          "Id": "7f9a467a15384568825ef688052eee2f",
           "Name": "",
           "Description": "IAN",
           "UsingDefaultValue": false,
@@ -1008,7 +1008,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6a5d2990fedd46f0842ed5f36866a3c6",
+          "Id": "54109cb2c3b646c2a0e738169b8a663f",
           "Name": "",
           "Description": "INS",
           "UsingDefaultValue": false,
@@ -1017,7 +1017,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "353b138e02484cf1a8c022bde0cf82e0",
+          "Id": "6c3e5bbc91c8457e98ca0bacea37b000",
           "Name": "",
           "Description": "ITI",
           "UsingDefaultValue": false,
@@ -1026,7 +1026,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f8c8ec05d7b9473c87653439531f1f2a",
+          "Id": "891506249f364539b7ff01636ecaf34b",
           "Name": "",
           "Description": "IF1",
           "UsingDefaultValue": false,
@@ -1035,7 +1035,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "34997bcca5754c77824176622f2126ca",
+          "Id": "f62f1bc775d14d80aba30b3d3bdfd0df",
           "Name": "",
           "Description": "IF2",
           "UsingDefaultValue": false,
@@ -1044,7 +1044,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a920ed8ab4a441d4b60cf53f2cbb315b",
+          "Id": "46e27552a2c04ee1b28853f37c8e21c1",
           "Name": "",
           "Description": "IND",
           "UsingDefaultValue": false,
@@ -1053,7 +1053,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9134399a5e00417e88d7e62d130c8d92",
+          "Id": "3ed609065b8d4a0eb520248f9e3aa404",
           "Name": "",
           "Description": "JU01",
           "UsingDefaultValue": false,
@@ -1062,7 +1062,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f3f7c3b4a26143acb00ea4d65cb2a002",
+          "Id": "69977ffbcb7b487c85a8a55beff2dd56",
           "Name": "",
           "Description": "JU02",
           "UsingDefaultValue": false,
@@ -1071,7 +1071,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ea2e067316084fdabda0e362d43fb22b",
+          "Id": "7afa44dc01d94ab497bcba7e811a851b",
           "Name": "",
           "Description": "JU03",
           "UsingDefaultValue": false,
@@ -1080,7 +1080,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "be36244bca904c2c84b612709dff0038",
+          "Id": "c7aa9ed7cd934da2ac29ee7f5b01c6ad",
           "Name": "",
           "Description": "JU04",
           "UsingDefaultValue": false,
@@ -1089,7 +1089,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "808d60752a9e4c18aa944b7835819dd7",
+          "Id": "963c942e3a224a8cae544509b43bd7ef",
           "Name": "",
           "Description": "JU05",
           "UsingDefaultValue": false,
@@ -1098,7 +1098,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bffdac343af74033a3989cc9e74bbaa7",
+          "Id": "37fb80495c274e42976f0e87518e6e08",
           "Name": "",
           "Description": "JU06",
           "UsingDefaultValue": false,
@@ -1107,7 +1107,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1def717ec9ba48d2b9b35c77a120a44b",
+          "Id": "2bf26033821b4ea4820056b15d01f269",
           "Name": "",
           "Description": "JU07",
           "UsingDefaultValue": false,
@@ -1116,7 +1116,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b9dd265ad2364ad1bf9b73f7725bea8c",
+          "Id": "5fd25925a68a4451b5bda14e9116c834",
           "Name": "",
           "Description": "JU08",
           "UsingDefaultValue": false,
@@ -1125,7 +1125,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fc43042d1e6a4a4a9dd0652f7ecf229e",
+          "Id": "cb8f97be0d514894a027461227e68014",
           "Name": "",
           "Description": "JU09",
           "UsingDefaultValue": false,
@@ -1134,7 +1134,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "91478e42e3a045459e5cc353533d14d5",
+          "Id": "6e39a2ce099644fa85b172dcb1961f57",
           "Name": "",
           "Description": "JU10",
           "UsingDefaultValue": false,
@@ -1143,7 +1143,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fd82cad7ab04446e92b3e35c8d78a767",
+          "Id": "f090594c80424d0898351a42a5bcd613",
           "Name": "",
           "Description": "JU11",
           "UsingDefaultValue": false,
@@ -1152,7 +1152,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0afedbe8a31447c782e22b5343f5688a",
+          "Id": "28d81c192b0e4bb495c65cb0783e5966",
           "Name": "",
           "Description": "JU12",
           "UsingDefaultValue": false,
@@ -1161,7 +1161,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2c747002630e4846b93331048fdeb0da",
+          "Id": "64195d180ad249ad80919dfdc830693e",
           "Name": "",
           "Description": "DIS",
           "UsingDefaultValue": false,
@@ -1170,18 +1170,36 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a7d081f338214cffa44f02f3287a2995",
+          "Id": "5a9d16a7c8634a4ea2626f85ff12e108",
           "Name": "",
-          "Description": "LSTA",
+          "Description": "LSTE",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "42a212ba6576479390cde39fda82833f",
+          "Id": "74955847942d4846a89c9137bdf1db7b",
           "Name": "",
-          "Description": "TEXT",
+          "Description": "LSTD",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cb0ffd1df5d545bea06fdbe10c0e391f",
+          "Name": "",
+          "Description": "ESQM",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f5b0b394d4c84cfc8a6a035280893725",
+          "Name": "",
+          "Description": "DADO",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1207,56 +1225,56 @@
     },
     {
       "Start": "8bc055a9bcee4716920d90ab3045490d",
-      "End": "ee698a1dd94d4601b9d679c6743c73b9",
-      "Id": "63b64e946f1c4c918757179ef1f6e600",
+      "End": "92f662853a1144e2b2e2fd3360decd3f",
+      "Id": "aa614319d70a46d4ae4bf326dfc3269f",
       "IsHidden": "False"
     },
     {
       "Start": "e10c8a4ecfd242e9b65c70122f114b6c",
-      "End": "f1caca0a5eaf4ae5ac5036db3283130f",
-      "Id": "58e34e30003e411482f30618160342a8",
+      "End": "a4fcdf2c57bb41189d6000d46f9f5c11",
+      "Id": "0bb1ba8bcbb44647a4b1645671a6aa59",
       "IsHidden": "False"
     },
     {
       "Start": "9a1a6379e3114e3f93c4eb4a19eb32f4",
-      "End": "d5b2dad59fa24fcf96b13f55db816040",
-      "Id": "5077ae54360741f2b81844b68c9e00e5",
+      "End": "d680ff421d1b40779e3613402422d90b",
+      "Id": "11b7fa12855244f581ec59ba8694f157",
       "IsHidden": "False"
     },
     {
       "Start": "6376cfdefdfc47cf9b932ccae9d8c643",
-      "End": "279195dc8bd94f82bf1fad16ee3dd353",
-      "Id": "ef1f157faf044eb4bd2755ee8ffd3e0f",
+      "End": "9ff11b5c5a6d476fabe922870b98fe73",
+      "Id": "cf767db1b616465485d38a411455909a",
       "IsHidden": "False"
     },
     {
       "Start": "216c7f64920a448a98f4fecb3fd545ba",
-      "End": "7d4991cce3bd4d26bb809a98c77a4ebc",
-      "Id": "722477b6bebb4e09985fbfd097cd59b0",
+      "End": "f1ebd16b87594d70a5d621939484575b",
+      "Id": "d7d1f2e742424025b91e176602d53046",
       "IsHidden": "False"
     },
     {
-      "Start": "72be0ce7ed114128a8d355cd05640de4",
+      "Start": "2717f7c5e6cd4fea807ecabb2f91c2a9",
       "End": "882f1e213d264cc6b4734f243d7c3751",
-      "Id": "949f6e17badc41aa8f425691a8f3fa5a",
+      "Id": "0fc375c5aed44b78aed73b25634a32e0",
       "IsHidden": "False"
     },
     {
-      "Start": "74a274b7a1bd4b70a7788df5e89eedbd",
+      "Start": "8a769728dca541c99076af9ee32acf84",
       "End": "16ee12efd45b439a913ddde6b9bd8657",
-      "Id": "35ce267230c64752b496dd90eb313f9b",
+      "Id": "035b42b76efa4f508ce560a07f5cba0a",
       "IsHidden": "False"
     },
     {
-      "Start": "f7faded358f44dc4abf4253442d8fe88",
+      "Start": "7e3a0a86bd6b44bea71e0d2f0664acba",
       "End": "b6249b78e3b4429bb4d5e98499b8f924",
-      "Id": "fb1fa4fbe9ab4091ab6c1496e27a9f9e",
+      "Id": "5f5319bf477548989c92a6e08fed1b9f",
       "IsHidden": "False"
     },
     {
-      "Start": "42a212ba6576479390cde39fda82833f",
+      "Start": "cb0ffd1df5d545bea06fdbe10c0e391f",
       "End": "8997b05751da439aaf7d82c038baf7ff",
-      "Id": "48692c8823004f56adadef25daff4334",
+      "Id": "cd4c493c7b344f61866ee5c63b89245d",
       "IsHidden": "False"
     }
   ],
@@ -1325,51 +1343,51 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
+        "Name": "File Path",
+        "ShowGeometry": true,
         "Id": "a62ed6e4972840bc8b51f26594a4c9a3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "File Path",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": -236.75512933549589,
         "Y": -54.63690607769945
       },
       {
+        "Name": "File From Path",
+        "ShowGeometry": true,
         "Id": "540100e43b83451b9ee7dce380cdb1f6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "File From Path",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 43.010444511054629,
         "Y": -52.492903270114994
       },
       {
+        "Name": "CRIA E ESCREVE ARQUIVO OWL",
+        "ShowGeometry": true,
         "Id": "b3229e633d8d46b699f3545c712ddbfa",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "CRIA E ESCREVE ARQUIVO OWL",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1705.6455092895017,
         "Y": 752.1034019240326
       },
       {
+        "Name": "LEITURA DO EXCEL",
+        "ShowGeometry": true,
         "Id": "ddc4c6e0c51e45d9999941d112ed4f77",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "LEITURA DO EXCEL",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": -242.03662855568336,
         "Y": 97.605499195673019
       },
       {
+        "Name": "FORMAÇÃO DOS AXIOMAS ONTOLÓGICOS ",
+        "ShowGeometry": true,
         "Id": "fbc393e215264286a6f44cf39520ee27",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "FORMAÇÃO DOS AXIOMAS ONTOLÓGICOS ",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 614.22736320262516,
         "Y": 163.98091359013847
@@ -1395,7 +1413,7 @@
         "Left": -252.03662855568336,
         "Top": -141.43690607769946,
         "Width": 2719.682137845185,
-        "Height": 2114.017819667838,
+        "Height": 2146.017819667838,
         "FontSize": 48.0,
         "InitialTop": -54.63690607769945,
         "InitialHeight": 951.740308001732,
@@ -1422,8 +1440,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 210.38669390762516,
-    "Y": 74.519366593097928,
-    "Zoom": 0.27289412566098309
+    "X": -455.43852161248049,
+    "Y": -1250.214693855065,
+    "Zoom": 0.92937388922763242
   }
 }
