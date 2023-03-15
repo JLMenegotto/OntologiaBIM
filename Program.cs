@@ -68,7 +68,44 @@ namespace OntoBIM
             MessageBox.Show(objeprop);
             MessageBox.Show(dataprop);
 
+            //Carregar dados e esquemas 
+            Graph dados    = new Graph(); FileLoader.Load(dados , "C:\\JLMenegotto\\Aplicativos_BIM\\OntoBIM\\Os_individuos.ttl");
+            Graph esque    = new Graph(); FileLoader.Load(esque , "C:\\JLMenegotto\\Aplicativos_BIM\\OntoBIM\\Os_esquemas.ttl");
+
+            IUriNode clase = dados.CreateUriNode("ex:Car");
+            IUriNode tipos = dados.CreateUriNode(new Uri(RdfSpecsHelper.RdfType));
+
+            string carrosSemi = "\n";
+            string carrosInfe = "\n";
+
+            //Resultaso sim fazer inferência
+            foreach (Triple t in dados.GetTriplesWithPredicateObject( tipos , clase))
+            {
+                     carrosSemi += t.Subject.ToString() + "\n";
+            }
+
+            //Faz a inferência e retorna as subclasses de carros
+            StaticRdfsReasoner razona = new StaticRdfsReasoner();
+            razona.Initialise( esque );
+            razona.Apply     ( dados );
+
+            //Resultados com inferência
+            foreach (Triple t in dados.GetTriplesWithPredicateObject( tipos , clase))
+            {
+                      carrosInfe += t.Subject.ToString() + "\n";  
+            }
+
+            MessageBox.Show(
+                               "\nSem Inferência: " + carrosSemi + "\n" +
+                               "\nCom Inferência: " + carrosInfe
+                           );
         }
     }
+
+
+
+
+
+
 }
 
