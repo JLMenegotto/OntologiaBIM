@@ -17,7 +17,8 @@ namespace OntoBIM
     {
         public static void Main(String[] args)
         {
-            MessageBox.Show("Bom dia 1");
+            MessageBox.Show("Inicia Leitura");
+            
             string prefixos = "Prefixos\n";
             string dataprop = "Propriedades de dados\n";
             string objeprop = "Propriedades de objetos\n";
@@ -27,8 +28,8 @@ namespace OntoBIM
             OntologyGraph     g = new OntologyGraph();
 
             FileLoader.Load ( g , "C://JLMenegotto//Projetos//OntoBIM//OntoBIM_ambientes_001.ttl");
-            INode someClass = g.GetUriNode(new Uri("https://jlmenegotto.wixsite.com/jlmenegotto-bim#ao_interior"));
-
+            INode Inodo = g.GetUriNode(new Uri("https://jlmenegotto.wixsite.com/jlmenegotto-bim#ambientes"));
+            
             IEnumerable<OntologyClass>    clas = g.OwlClasses;
             IEnumerable<OntologyProperty> prop = g.OwlDatatypeProperties;
             IEnumerable<OntologyProperty> data = g.OwlDatatypeProperties;
@@ -54,6 +55,13 @@ namespace OntoBIM
             }
 
             MessageBox.Show( nodo ? "VAZIO":"CHEIO");
+
+            MessageBox.Show(
+                            Inodo.ToString()                    + "\n" + 
+                            Inodo.NodeType.ToString()           + "\n" +  
+                            Inodo.GraphUri.Authority.ToString() + "\n" +
+                            Inodo.Graph.ToString()
+                           );
 
             MessageBox.Show(prefixos);
             MessageBox.Show(classes );
