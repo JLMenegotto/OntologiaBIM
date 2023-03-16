@@ -61,11 +61,6 @@ Class: fofu:Edificio
 Class: fofu:Programado
 	SubClassOf: fofu:Edificio
 	Annotations: rdfs:label "fofu:Programado"@pt
-	Annotations: rdfs:comment "Programa de Necessidade de ordenamento geral definido para o projeto"@pt
-
-Class: fofu:Programado
-	SubClassOf: fofu:Edificio
-	Annotations: rdfs:label "fofu:Programado"@pt
 	Annotations: rdfs:comment "Programa de Necessidade espacial de funções definidas para o projeto"@pt
 
 Class: fofu:Projetado
@@ -109,61 +104,6 @@ Class: fofu:Transformação
 	Annotations: rdfs:label "fofu:Transformação"@pt
 	Annotations: rdfs:comment "Objetos do modelo BIM em IFC"@pt
 
-Class: fofu:OrientaçãoCardinal
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:OrientaçãoCardinal"@pt
-	Annotations: rdfs:comment "Zona Cardinal"@pt
-	EquivalentTo: fofu:ser_orientado some fofu:Ambiente
-
-Class: fofu:OrientaçãoCardinal
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:OrientaçãoCardinal"@pt
-	Annotations: rdfs:comment "Zona Cardinal"@pt
-
-Class: fofu:SetorInstitucional
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorInstitucional"@pt
-	Annotations: rdfs:comment "Setores Funcionais"@pt
-	EquivalentTo: fofu:em_setorinstitucional some fofu:Ambiente
-
-Class: fofu:SetorInstitucional
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorInstitucional"@pt
-	Annotations: rdfs:comment "Setores Funcionais"@pt
-
-Class: fofu:SetorPredial
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorPredial"@pt
-	Annotations: rdfs:comment "Setores Prediais"@pt
-	EquivalentTo: fofu:em_setorpredial some fofu:Ambiente
-
-Class: fofu:SetorPredial
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorPredial"@pt
-	Annotations: rdfs:comment "Setores Prediais"@pt
-
-Class: fofu:SetorFuncional
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorFuncional"@pt
-	Annotations: rdfs:comment "Setores Funcionais"@pt
-	EquivalentTo: fofu:em_setorfuncional some fofu:Ambiente
-
-Class: fofu:SetorFuncional
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorFuncional"@pt
-	Annotations: rdfs:comment "Setores Funcionais"@pt
-
-Class: fofu:SetorVertical
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorVertical"@pt
-	Annotations: rdfs:comment "Zonas Verticais do prédio"@pt
-	EquivalentTo: (fofu:em_setorvertical some fofu:Ambiente) and (fofu:em_setorvertical some fofu:Pavimento)
-
-Class: fofu:SetorVertical
-	SubClassOf: fofu:Programado
-	Annotations: rdfs:label "fofu:SetorVertical"@pt
-	Annotations: rdfs:comment "Zonas Verticais"@pt
-
 Class: fofu:Ambiente
 	SubClassOf: fofu:Programado
 	Annotations: rdfs:label "fofu:Ambiente"@pt
@@ -195,7 +135,7 @@ Class: fofu:Pavimento
 	SubClassOf: fofu:Projetado
 	Annotations: rdfs:label "fofu:Pavimento"@pt
 	Annotations: rdfs:comment "Andar total  projetado para o edifício"@pt
-	EquivalentTo: (fofu:OST_Levels or fofu:IfcBuildingStorey) and (fofu:em_setorvertical some fofu:Pavimento)
+	EquivalentTo: fofu:OST_Levels or fofu:IfcBuildingStorey
 
 Class: fofu:Pavimento
 	SubClassOf: fofu:Projetado
@@ -253,46 +193,6 @@ Class: fofu:Geométrica
 	SubClassOf: fofu:Transformação
 	Annotations: rdfs:label "fofu:Geométrica"@pt
 	Annotations: rdfs:comment "TiposEnum IFC"@pt
-
-Class: fofu:Orientação
-	SubClassOf: fofu:OrientaçãoCardinal
-	Annotations: rdfs:label "fofu:Orientação"@pt
-	Annotations: rdfs:comment "Orientação"@pt
-
-Class: fofu:Organograma
-	SubClassOf: fofu:SetorInstitucional
-	Annotations: rdfs:label "fofu:Organograma"@pt
-	Annotations: rdfs:comment "Setores que representam o organograma institucional"@pt
-
-Class: fofu:Exterior
-	SubClassOf: fofu:SetorPredial
-	Annotations: rdfs:label "fofu:Exterior"@pt
-	Annotations: rdfs:comment "Setores Prediais Exteriores"@pt
-
-Class: fofu:Interior
-	SubClassOf: fofu:SetorPredial
-	Annotations: rdfs:label "fofu:Interior"@pt
-	Annotations: rdfs:comment "Setores Prediais Exteriores"@pt
-
-Class: fofu:Hospitalar
-	SubClassOf: fofu:SetorFuncional
-	Annotations: rdfs:label "fofu:Hospitalar"@pt
-	Annotations: rdfs:comment "Setores de função Hospitalar"@pt
-
-Class: fofu:Laboratorial
-	SubClassOf: fofu:SetorFuncional
-	Annotations: rdfs:label "fofu:Laboratorial"@pt
-	Annotations: rdfs:comment "Setores de função Laboratorial"@pt
-
-Class: fofu:SetorGeral
-	SubClassOf: fofu:SetorFuncional
-	Annotations: rdfs:label "fofu:SetorGeral"@pt
-	Annotations: rdfs:comment "Setores com funções Gerais"@pt
-
-Class: fofu:ZonaV
-	SubClassOf: fofu:SetorVertical
-	Annotations: rdfs:label "fofu:ZonaV"@pt
-	Annotations: rdfs:comment "Zonas Verticais do prédio"@pt
 
 Class: fofu:deGuarda
 	SubClassOf: fofu:Ambiente
@@ -375,12 +275,6 @@ Class: fofu:NucleoSanitário
 	SubClassOf: fofu:Núcleos
 	Annotations: rdfs:label "fofu:NucleoSanitário"@pt
 	Annotations: rdfs:comment "Distribuição de Sanitários"@pt
-	EquivalentTo: (fofu:tem_sanitario some fofu:SanitárioFeminino) and (fofu:tem_sanitario some fofu:SanitárioMasculino)
-
-Class: fofu:NucleoSanitário
-	SubClassOf: fofu:Núcleos
-	Annotations: rdfs:label "fofu:NucleoSanitário"@pt
-	Annotations: rdfs:comment "Distribuição de Sanitários"@pt
 
 Class: fofu:NucleoEducativo
 	SubClassOf: fofu:Núcleos
@@ -452,127 +346,6 @@ Class: fofu:Movimento
 	SubClassOf: fofu:Geométrica
 	Annotations: rdfs:label "fofu:Movimento"@pt
 	Annotations: rdfs:comment "Tipos e Enumeráveis IFC"@pt
-
-Class: fofu:Norte
-	SubClassOf: fofu:Orientação
-	Annotations: rdfs:label "fofu:Norte"@pt
-	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Norte"@pt
-	EquivalentTo: fofu:ao_norte some
-
-Class: fofu:Oeste
-	SubClassOf: fofu:Orientação
-	Annotations: rdfs:label "fofu:Oeste"@pt
-	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Oeste"@pt
-	EquivalentTo: fofu:ao_oeste some
-
-Class: fofu:Sul
-	SubClassOf: fofu:Orientação
-	Annotations: rdfs:label "fofu:Sul"@pt
-	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Sul"@pt
-	EquivalentTo: fofu:ao_sul some
-
-Class: fofu:Leste
-	SubClassOf: fofu:Orientação
-	Annotations: rdfs:label "fofu:Leste"@pt
-	Annotations: rdfs:comment "Setores do edifício sobre a fachada e orientados ao Leste"@pt
-	EquivalentTo: fofu:ao_leste some
-
-Class: fofu:Zenit
-	SubClassOf: fofu:Orientação
-	Annotations: rdfs:label "fofu:Zenit"@pt
-	Annotations: rdfs:comment "Setores orientados ao Zenit significa estar na cobertura ou telhado, considerados como a quinta fachada"@pt
-	EquivalentTo: fofu:ao_zenit some
-
-Class: fofu:SemOrientação
-	SubClassOf: fofu:Orientação
-	Annotations: rdfs:label "fofu:SemOrientação"@pt
-	Annotations: rdfs:comment "Setores orientados ao interior significa estar dentro do prédio e sem contato com as fachadas"@pt
-	EquivalentTo: fofu:ao_interior some
-
-Class: fofu:Direção
-	SubClassOf: fofu:Organograma
-	Annotations: rdfs:label "fofu:Direção"@pt
-	Annotations: rdfs:comment "Direção dentro do organograma institucional"@pt
-
-Class: fofu:Departamento
-	SubClassOf: fofu:Organograma
-	Annotations: rdfs:label "fofu:Departamento"@pt
-	Annotations: rdfs:comment "Departamento dentro do organograma institucional"@pt
-
-Class: fofu:Secretarias
-	SubClassOf: fofu:Organograma
-	Annotations: rdfs:label "fofu:Secretarias"@pt
-	Annotations: rdfs:comment "Secretaria dentro do organograma institucional"@pt
-
-Class: fofu:Estacionamento
-	SubClassOf: fofu:Exterior
-	Annotations: rdfs:label "fofu:Estacionamento"@pt
-	Annotations: rdfs:comment "Setor de estacionamentos"@pt
-
-Class: fofu:Elevadores
-	SubClassOf: fofu:Interior
-	Annotations: rdfs:label "fofu:Elevadores"@pt
-	Annotations: rdfs:comment "Setor de elevadores"@pt
-
-Class: fofu:Máquinas
-	SubClassOf: fofu:Interior
-	Annotations: rdfs:label "fofu:Máquinas"@pt
-	Annotations: rdfs:comment "Setor de maquinária"@pt
-
-Class: fofu:Acesso
-	SubClassOf: fofu:Interior
-	Annotations: rdfs:label "fofu:Acesso"@pt
-	Annotations: rdfs:comment "Setor de acessos ao edifício"@pt
-
-Class: fofu:Emergência
-	SubClassOf: fofu:Hospitalar
-	Annotations: rdfs:label "fofu:Emergência"@pt
-	Annotations: rdfs:comment "Setor de emergências em unidades hospitalares"@pt
-
-Class: fofu:BioMolecular
-	SubClassOf: fofu:Laboratorial
-	Annotations: rdfs:label "fofu:BioMolecular"@pt
-	Annotations: rdfs:comment "Setor de ambientes de pesquisa biomolecular"@pt
-
-Class: fofu:Público
-	SubClassOf: fofu:SetorGeral
-	Annotations: rdfs:label "fofu:Público"@pt
-	Annotations: rdfs:comment "Setor de acesso público"@pt
-
-Class: fofu:Privativo
-	SubClassOf: fofu:SetorGeral
-	Annotations: rdfs:label "fofu:Privativo"@pt
-	Annotations: rdfs:comment "Setor de acesso restrito "@pt
-
-Class: fofu:Produção
-	SubClassOf: fofu:SetorGeral
-	Annotations: rdfs:label "fofu:Produção"@pt
-	Annotations: rdfs:comment "Setor de acesso restrito "@pt
-
-Class: fofu:Embassamento
-	SubClassOf: fofu:ZonaV
-	Annotations: rdfs:label "fofu:Embassamento"@pt
-	Annotations: rdfs:comment "Setor do embassamento"@pt
-
-Class: fofu:AndarTécnico
-	SubClassOf: fofu:ZonaV
-	Annotations: rdfs:label "fofu:AndarTécnico"@pt
-	Annotations: rdfs:comment "Andares técnicos do prédio"@pt
-
-Class: fofu:Torre
-	SubClassOf: fofu:ZonaV
-	Annotations: rdfs:label "fofu:Torre"@pt
-	Annotations: rdfs:comment "Andares da torre para edificios em altura"@pt
-
-Class: fofu:Coroamento
-	SubClassOf: fofu:ZonaV
-	Annotations: rdfs:label "fofu:Coroamento"@pt
-	Annotations: rdfs:comment "Andares de cobertura"@pt
-
-Class: fofu:Subsolos
-	SubClassOf: fofu:ZonaV
-	Annotations: rdfs:label "fofu:Subsolos"@pt
-	Annotations: rdfs:comment "Todos os subsolos do prédio"@pt
 
 Class: fofu:Depósito
 	SubClassOf: fofu:deGuarda
@@ -1425,30 +1198,6 @@ ObjectProperty: fofu:em_andar
 	Characteristics: Functional
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:em_setorvertical
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:em_setorvertical"@pt
-	Annotations: rdfs:comment "O ambiente está algum setor Vertical"@pt
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:em_setorinstitucional
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:em_setorinstitucional"@pt
-	Annotations: rdfs:comment "O ambiente tem algum setor Institucional"@pt
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:em_setorpredial
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:em_setorpredial"@pt
-	Annotations: rdfs:comment "O ambiente tem algum setor Predial"@pt
-	Domain: fofu:Ambiente
-
-ObjectProperty: fofu:em_setorfuncional
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:em_setorfuncional"@pt
-	Annotations: rdfs:comment "O ambiente tem algum setor Funcional"@pt
-	Domain: fofu:Ambiente
-
 ObjectProperty: fofu:uso
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:uso"@pt
@@ -1466,46 +1215,40 @@ ObjectProperty: fofu:está_em_setor
 	Annotations: rdfs:comment "O ambiente pode pertencer a diversos setores"@pt
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:é_privativo
+ObjectProperty: fofu:é_usoprivativo
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:é_privativo"@pt
+	Annotations: rdfs:label "fofu:é_usoprivativo"@pt
 	Annotations: rdfs:comment "O ambiente é de uso privativo"@pt
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:é_público
+ObjectProperty: fofu:é_usopúblico
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:é_público"@pt
+	Annotations: rdfs:label "fofu:é_usopúblico"@pt
 	Annotations: rdfs:comment "O ambiente é de uso público"@pt
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:é_estratégico
+ObjectProperty: fofu:é_usoestratégico
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:é_estratégico"@pt
+	Annotations: rdfs:label "fofu:é_usoestratégico"@pt
 	Annotations: rdfs:comment "O ambiente é de uso estratégico"@pt
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:é_intensivo
+ObjectProperty: fofu:é_usointensivo
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:é_intensivo"@pt
+	Annotations: rdfs:label "fofu:é_usointensivo"@pt
 	Annotations: rdfs:comment "O ambiente é de uso intensivo"@pt
 	Domain: fofu:Ambiente
 
-ObjectProperty: fofu:é_esporádico
+ObjectProperty: fofu:é_usoesporádico
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:é_esporádico"@pt
+	Annotations: rdfs:label "fofu:é_usoesporádico"@pt
 	Annotations: rdfs:comment "O ambiente é de uso esporádico"@pt
 	Domain: fofu:Ambiente
 
 ObjectProperty: fofu:orientação
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:orientação"@pt
-	Annotations: rdfs:comment "A orietação NSLW"@pt
-
-ObjectProperty: fofu:ser_orientado
-	SubPropertyOf: fofu:orientação
-	Annotations: rdfs:label "fofu:ser_orientado"@pt
-	Annotations: rdfs:comment "O ambiente está algum setor Cardinal"@pt
-	Domain: fofu:Ambiente
+	Annotations: rdfs:comment "A orietação do ambiente (NSLW)"@pt
 
 ObjectProperty: fofu:ao_norte
 	SubPropertyOf: fofu:orientação
@@ -1538,15 +1281,190 @@ ObjectProperty: fofu:ao_oeste
 ObjectProperty: fofu:ao_interior
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:ao_interior"@pt
-	Annotations: rdfs:comment "O ambiente interno"@pt
+	Annotations: rdfs:comment "O ambiente é interno sem orientação"@pt
 	Characteristics: Functional
 	Domain: fofu:Ambiente
 
 ObjectProperty: fofu:ao_zenit
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:ao_zenit"@pt
-	Annotations: rdfs:comment "O ambiente na quinta fachada (cobertura)"@pt
+	Annotations: rdfs:comment "O ambiente está na cobertura (quinta fachada)"@pt
 	Characteristics: Functional
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:zonahorizontal
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:zonahorizontal"@pt
+	Annotations: rdfs:comment "O posicionamento cardinal do ambiente"@pt
+
+ObjectProperty: fofu:em_zonadeacesso
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonadeacesso"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical de acessos"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonanorte
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonanorte"@pt
+	Annotations: rdfs:comment "O ambiente está na região Norte do edifício"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonasul
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonasul"@pt
+	Annotations: rdfs:comment "O ambiente está na região Sul do edifício"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonaleste
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonaleste"@pt
+	Annotations: rdfs:comment "O ambiente está na região Leste do edifício"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonaoeste
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonaoeste"@pt
+	Annotations: rdfs:comment "O ambiente está na região Oeste do edifício"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonainterna
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonainterna"@pt
+	Annotations: rdfs:comment "O ambiente está na região Interna do edifício"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonaexterna
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:em_zonaexterna"@pt
+	Annotations: rdfs:comment "O ambiente está na região Externa do edifício"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:zonavertical
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:zonavertical"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+ObjectProperty: fofu:em_zonadesubsolos
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:em_zonadesubsolos"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical de subsolos"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonadeembassamento
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:em_zonadeembassamento"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical do embassamento"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonadatorre
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:em_zonadatorre"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical do andar da torre"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonatécnica
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:em_zonatécnica"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical do andar técnico"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:em_zonacoroamento
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:em_zonacoroamento"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical dos andares de coroamento"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:setorinstitucional
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:setorinstitucional"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+ObjectProperty: fofu:é_direção
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:é_direção"@pt
+	Annotations: rdfs:comment "O ambiente está na direção"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_secretaria
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:é_secretaria"@pt
+	Annotations: rdfs:comment "O ambiente está na secretaria"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_departamento
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:é_departamento"@pt
+	Annotations: rdfs:comment "O ambiente está na departamento"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_decania
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:é_decania"@pt
+	Annotations: rdfs:comment "O ambiente está na decania"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:setorpredial
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:setorpredial"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+ObjectProperty: fofu:é_deestacionamento
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:é_deestacionamento"@pt
+	Annotations: rdfs:comment "É área de estacionamento"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_deelevadores
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:é_deelevadores"@pt
+	Annotations: rdfs:comment "É área de elevadores"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_demáquinas
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:é_demáquinas"@pt
+	Annotations: rdfs:comment "É área de máquinas"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_shaft
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:é_shaft"@pt
+	Annotations: rdfs:comment "É área de shaft"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_depoçoilumventi
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:é_depoçoilumventi"@pt
+	Annotations: rdfs:comment "É poço de iluminação e ventilação"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_depoçoventilação
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:é_depoçoventilação"@pt
+	Annotations: rdfs:comment "É poço de ventilação"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:setorfuncional
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:setorfuncional"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+ObjectProperty: fofu:é_Emergência
+	SubPropertyOf: fofu:setorfuncional
+	Annotations: rdfs:label "fofu:é_Emergência"@pt
+	Annotations: rdfs:comment "Setor de emergências em unidades hospitalares"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_BioMolecular
+	SubPropertyOf: fofu:setorfuncional
+	Annotations: rdfs:label "fofu:é_BioMolecular"@pt
+	Annotations: rdfs:comment "Setor de ambientes de pesquisa biomolecular"@pt
+	Domain: fofu:Ambiente
+
+ObjectProperty: fofu:é_Produção
+	SubPropertyOf: fofu:setorfuncional
+	Annotations: rdfs:label "fofu:é_Produção"@pt
+	Annotations: rdfs:comment "Setor de produção"@pt
 	Domain: fofu:Ambiente
 
 DataProperty: fofu:requisito
@@ -1874,34 +1792,6 @@ DataProperty: fofu:andar
 	Domain: fofu:Ambiente
 	Range:  xsd:string
 
-DataProperty: fofu:setorvertical
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:setorvertical"@pt
-	Annotations: rdfs:comment "O ambiente está algum setor Vertical"@pt
-	Domain: fofu:Ambiente
-	Range:  xsd:string
-
-DataProperty: fofu:setorinstitucional
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:setorinstitucional"@pt
-	Annotations: rdfs:comment "O ambiente tem algum setor Institucional"@pt
-	Domain: fofu:Ambiente
-	Range:  xsd:string
-
-DataProperty: fofu:setorpredial
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:setorpredial"@pt
-	Annotations: rdfs:comment "O ambiente tem algum setor Predial"@pt
-	Domain: fofu:Ambiente
-	Range:  xsd:string
-
-DataProperty: fofu:setorfuncional
-	SubPropertyOf: fofu:local
-	Annotations: rdfs:label "fofu:setorfuncional"@pt
-	Annotations: rdfs:comment "O ambiente tem algum setor Funcional"@pt
-	Domain: fofu:Ambiente
-	Range:  xsd:string
-
 DataProperty: fofu:uso
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:uso"@pt
@@ -1921,37 +1811,37 @@ DataProperty: fofu:setor
 	Domain: fofu:Ambiente
 	Range:  xsd:string
 
-DataProperty: fofu:privativo
+DataProperty: fofu:usoprivativo
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:privativo"@pt
+	Annotations: rdfs:label "fofu:usoprivativo"@pt
 	Annotations: rdfs:comment "O ambiente é de uso privativo"@pt
 	Domain: fofu:Ambiente
 	Range: xsd:boolean
 
-DataProperty: fofu:público
+DataProperty: fofu:usopúblico
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:público"@pt
+	Annotations: rdfs:label "fofu:usopúblico"@pt
 	Annotations: rdfs:comment "O ambiente é de uso público"@pt
 	Domain: fofu:Ambiente
 	Range: xsd:boolean
 
-DataProperty: fofu:estratégico
+DataProperty: fofu:usoestratégico
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:estratégico"@pt
+	Annotations: rdfs:label "fofu:usoestratégico"@pt
 	Annotations: rdfs:comment "O ambiente é de uso estratégico"@pt
 	Domain: fofu:Ambiente
 	Range: xsd:boolean
 
-DataProperty: fofu:intensivo
+DataProperty: fofu:usointensivo
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:intensivo"@pt
+	Annotations: rdfs:label "fofu:usointensivo"@pt
 	Annotations: rdfs:comment "O ambiente é de uso intensivo"@pt
 	Domain: fofu:Ambiente
 	Range: xsd:boolean
 
-DataProperty: fofu:esporádico
+DataProperty: fofu:usoesporádico
 	SubPropertyOf: fofu:uso
-	Annotations: rdfs:label "fofu:esporádico"@pt
+	Annotations: rdfs:label "fofu:usoesporádico"@pt
 	Annotations: rdfs:comment "O ambiente é de uso esporádico"@pt
 	Domain: fofu:Ambiente
 	Range: xsd:boolean
@@ -1959,56 +1849,249 @@ DataProperty: fofu:esporádico
 DataProperty: fofu:orientação
 	SubPropertyOf: fofu:ambientes
 	Annotations: rdfs:label "fofu:orientação"@pt
-	Annotations: rdfs:comment "A orietação NSLW"@pt
-
-DataProperty: fofu:orientado
-	SubPropertyOf: fofu:orientação
-	Annotations: rdfs:label "fofu:orientado"@pt
-	Annotations: rdfs:comment "O ambiente está algum setor Cardinal"@pt
-	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Annotations: rdfs:comment "A orietação do ambiente (NSLW)"@pt
 
 DataProperty: fofu:norte
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:norte"@pt
 	Annotations: rdfs:comment "O ambiente orientado ao Norte"@pt
 	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Range: xsd:boolean
 
 DataProperty: fofu:sul
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:sul"@pt
 	Annotations: rdfs:comment "O ambiente orientado ao Sul"@pt
 	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Range: xsd:boolean
 
 DataProperty: fofu:leste
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:leste"@pt
 	Annotations: rdfs:comment "O ambiente orientado ao Leste"@pt
 	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Range: xsd:boolean
 
 DataProperty: fofu:oeste
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:oeste"@pt
 	Annotations: rdfs:comment "O ambiente orientado ao Oeste"@pt
 	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Range: xsd:boolean
 
 DataProperty: fofu:interior
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:interior"@pt
-	Annotations: rdfs:comment "O ambiente interno"@pt
+	Annotations: rdfs:comment "O ambiente é interno sem orientação"@pt
 	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Range: xsd:boolean
 
 DataProperty: fofu:zenit
 	SubPropertyOf: fofu:orientação
 	Annotations: rdfs:label "fofu:zenit"@pt
-	Annotations: rdfs:comment "O ambiente na quinta fachada (cobertura)"@pt
+	Annotations: rdfs:comment "O ambiente está na cobertura (quinta fachada)"@pt
 	Domain: fofu:Ambiente
-	Range:  xsd:string
+	Range: xsd:boolean
+
+DataProperty: fofu:zonahorizontal
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:zonahorizontal"@pt
+	Annotations: rdfs:comment "O posicionamento cardinal do ambiente"@pt
+
+DataProperty: fofu:zonadeacesso
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonadeacesso"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical de acessos"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonanorte
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonanorte"@pt
+	Annotations: rdfs:comment "O ambiente está na região Norte do edifício"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonasul
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonasul"@pt
+	Annotations: rdfs:comment "O ambiente está na região Sul do edifício"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonaleste
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonaleste"@pt
+	Annotations: rdfs:comment "O ambiente está na região Leste do edifício"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonaoeste
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonaoeste"@pt
+	Annotations: rdfs:comment "O ambiente está na região Oeste do edifício"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonainterna
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonainterna"@pt
+	Annotations: rdfs:comment "O ambiente está na região Interna do edifício"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonaexterna
+	SubPropertyOf: fofu:zonahorizontal
+	Annotations: rdfs:label "fofu:zonaexterna"@pt
+	Annotations: rdfs:comment "O ambiente está na região Externa do edifício"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonavertical
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:zonavertical"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+DataProperty: fofu:zonadesubsolos
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:zonadesubsolos"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical de subsolos"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonadeembassamento
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:zonadeembassamento"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical do embassamento"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonadatorre
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:zonadatorre"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical do andar da torre"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonatécnica
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:zonatécnica"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical do andar técnico"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:zonacoroamento
+	SubPropertyOf: fofu:zonavertical
+	Annotations: rdfs:label "fofu:zonacoroamento"@pt
+	Annotations: rdfs:comment "O ambiente está na zona vertical dos andares de coroamento"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:setorinstitucional
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:setorinstitucional"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+DataProperty: fofu:direção
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:direção"@pt
+	Annotations: rdfs:comment "O ambiente está na direção"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:secretaria
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:secretaria"@pt
+	Annotations: rdfs:comment "O ambiente está na secretaria"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:departamento
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:departamento"@pt
+	Annotations: rdfs:comment "O ambiente está na departamento"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:decania
+	SubPropertyOf: fofu:setorinstitucional
+	Annotations: rdfs:label "fofu:decania"@pt
+	Annotations: rdfs:comment "O ambiente está na decania"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:setorpredial
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:setorpredial"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+DataProperty: fofu:deestacionamento
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:deestacionamento"@pt
+	Annotations: rdfs:comment "É área de estacionamento"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:deelevadores
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:deelevadores"@pt
+	Annotations: rdfs:comment "É área de elevadores"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:demáquinas
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:demáquinas"@pt
+	Annotations: rdfs:comment "É área de máquinas"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:shaft
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:shaft"@pt
+	Annotations: rdfs:comment "É área de shaft"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:depoçoilumventi
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:depoçoilumventi"@pt
+	Annotations: rdfs:comment "É poço de iluminação e ventilação"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:depoçoventilação
+	SubPropertyOf: fofu:setorpredial
+	Annotations: rdfs:label "fofu:depoçoventilação"@pt
+	Annotations: rdfs:comment "É poço de ventilação"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:setorfuncional
+	SubPropertyOf: fofu:ambientes
+	Annotations: rdfs:label "fofu:setorfuncional"@pt
+	Annotations: rdfs:comment "A localização do ambiente em zona vertical"@pt
+
+DataProperty: fofu:Emergência
+	SubPropertyOf: fofu:setorfuncional
+	Annotations: rdfs:label "fofu:Emergência"@pt
+	Annotations: rdfs:comment "Setor de emergências em unidades hospitalares"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:BioMolecular
+	SubPropertyOf: fofu:setorfuncional
+	Annotations: rdfs:label "fofu:BioMolecular"@pt
+	Annotations: rdfs:comment "Setor de ambientes de pesquisa biomolecular"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
+
+DataProperty: fofu:Produção
+	SubPropertyOf: fofu:setorfuncional
+	Annotations: rdfs:label "fofu:Produção"@pt
+	Annotations: rdfs:comment "Setor de produção"@pt
+	Domain: fofu:Ambiente
+	Range: xsd:boolean
 
 Individual: fofu:DeposDML
 	Annotations: rdfs:label "fofu:DeposDML"@pt
@@ -2069,30 +2152,6 @@ Individual: fofu:DeposDML
 	Types: fofu:Depósito
 	Facts: fofu:tem_altitude fofu:DeposDML
 	Facts: fofu:altitude 5.25
-
-Individual: fofu:DeposDML
-	Annotations: rdfs:label "fofu:DeposDML"@pt
-	Types: fofu:Depósito
-	Facts: fofu:ao_norte fofu:DeposDML
-	Facts: fofu:norte "orientado ao norte"
-
-Individual: fofu:DeposDML
-	Annotations: rdfs:label "fofu:DeposDML"@pt
-	Types: fofu:Depósito
-	Facts: fofu:em_setorfuncional fofu:DeposDML
-	Facts: fofu:setorfuncional "Emergências"
-
-Individual: fofu:DeposDML
-	Annotations: rdfs:label "fofu:DeposDML"@pt
-	Types: fofu:Depósito
-	Facts: fofu:em_setorpredial fofu:DeposDML
-	Facts: fofu:setorpredial "Máquinas"
-
-Individual: fofu:DeposDML
-	Annotations: rdfs:label "fofu:DeposDML"@pt
-	Types: fofu:Depósito
-	Facts: fofu:em_setorvertical fofu:DeposDML
-	Facts: fofu:setorvertical "subsolos"
 
 Individual: fofu:DeposDML
 	Annotations: rdfs:label "fofu:DeposDML"@pt
@@ -2184,38 +2243,32 @@ Individual: fofu:BlocoD
 	Facts: fofu:tem_escada fofu:BlocoD
 	Facts: fofu:escada True
 
-Individual: fofu:BlocoD
-	Annotations: rdfs:label "fofu:BlocoD"@pt
-	Types: fofu:CorpoEdificado
-	Facts: fofu:tem_longitude fofu:BlocoD
-	Facts: fofu:longitude -43.2309095980421
-
 Individual: fofu:Lbxn3
 	Annotations: rdfs:label "fofu:Lbxn3"@pt
 	Types: fofu:LaboratórioNB3
-	Facts: fofu:é_privativo fofu:Lbxn3
-	Facts: fofu:privativo True
+	Facts: fofu:é_usoprivativo fofu:Lbxn3
+	Facts: fofu:usoprivativo True
 
 Individual: fofu:LbxT2
 	Annotations: rdfs:label "fofu:LbxT2"@pt
 	Types: fofu:LaboratórioNB2
-	Facts: fofu:é_privativo fofu:LbxT2
-	Facts: fofu:privativo True
+	Facts: fofu:é_usoprivativo fofu:LbxT2
+	Facts: fofu:usoprivativo True
 
 Individual: fofu:LbIn2
 	Annotations: rdfs:label "fofu:LbIn2"@pt
 	Types: fofu:LaboratórioNB2
-	Facts: fofu:é_privativo fofu:LbIn2
-	Facts: fofu:privativo True
+	Facts: fofu:é_usoprivativo fofu:LbIn2
+	Facts: fofu:usoprivativo True
 
 Individual: fofu:LbIn2
 	Annotations: rdfs:label "fofu:LbIn2"@pt
 	Types: fofu:LaboratórioNB2
-	Facts: fofu:é_intensivo fofu:LbIn2
-	Facts: fofu:intensivo True
+	Facts: fofu:é_usointensivo fofu:LbIn2
+	Facts: fofu:usointensivo True
 
 Individual: fofu:LbIn2
 	Annotations: rdfs:label "fofu:LbIn2"@pt
 	Types: fofu:LaboratórioNB2
-	Facts: fofu:em_setorfuncional fofu:LbIn2
-	Facts: fofu:setorfuncional "laboratórios"
+	Facts: fofu:em_zonadeacesso fofu:LbIn2
+	Facts: fofu:zonadeacesso True
