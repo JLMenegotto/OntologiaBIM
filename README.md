@@ -1,7 +1,7 @@
 # Ontologias BIM GIS 
   * **Escola Politécnica da UFRJ**
-  * * **Programa de Pós-graduação em Engenharia Urbana**
-  * * **Programa de Pós-graduação em Estruturas**
+  *  **Programa de Pós-graduação em Engenharia Urbana**
+  *  **Programa de Pós-graduação em Estruturas**
 
 No projeto Ontologia BIM, atualmente ampliado para Ontologias GIS, são desenvolvidos módulos ontológicos em formato OWL. Pensados para serem integrados em sistemas de dados abertos e conectados, que trabalhem com contextos de informação da construção ou geográficos. Os módulos procuram descrever conceitualmente os elementos de projetos arquitetônicos e urbanos. Podem ser aproveitados para ordenar e direcionar dados em sistemas CAD BIM GIS durante a concepção, assim como para organizar a informação durante as etapas construtivas e de gerenciamento após a construção. Procura-se integrar as categorias e enumerações de IFC e de Revit. Atualmente o sistema está sendo ampliado para incorporar modelos de informação GIS como o CityGML, KML, OSM, etc.
 
