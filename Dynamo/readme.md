@@ -1,9 +1,10 @@
+
 # Ontologias BIM GIS 
   * **Escola Politécnica da UFRJ**
   *  **Programa de Pós-graduação em Engenharia Urbana**
   *  **Programa de Pós-graduação em Estruturas**
    
-![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/128e867b-fd91-4faf-b092-4b1b3755ba41)
+![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/3044ea54-d366-47fb-9b30-8c10b885b272)
 
  *  A Macro DesignScript utiliza a estrutura do arquivo Excel para definir os axiomas de classes, propriedades e demais características da ontologia.
  *  Embaixo o arquivo OWL gerado aberto no editor Protegé, onde pode ser analisado.
