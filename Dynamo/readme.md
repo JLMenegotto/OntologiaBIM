@@ -5,7 +5,9 @@
    
 ![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/128e867b-fd91-4faf-b092-4b1b3755ba41)
 
-A função utiliza a estrutura do arquivo Excel para definir os axiomas de classes, propriedades e demais características da ontologia. 
+
+ *  A função utiliza a estrutura do arquivo Excel para definir os axiomas de classes, propriedades e demais características da ontologia.
+
 
 ![Tela_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/229992a0-fb3e-459b-a532-ab93ad930094)
 
