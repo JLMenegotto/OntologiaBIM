@@ -1,7 +1,7 @@
 
-# Alguns dos Grafos resultantes da extruturação axiomática de Classes e Equivalências
+# Alguns dos Grafos resultantes da estruturação axiomática de Classes e Equivalências
 
-* Os grafos são os do arquivo ** OntoBIM_NormasDesenho_1005.OWL **
+* Os grafos correspondem ao arquivo **OntoBIM_NormasDesenho_1005.OWL**
 * Limites
 ![Grafo_Limites](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/51b9b0f9-1251-40d0-a1e3-14c5be9ad3e8)
 
