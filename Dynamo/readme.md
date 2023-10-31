@@ -7,7 +7,7 @@
 
   ![Tela_Excel](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0b8a08d7-0689-4c31-aacf-835c13487c3b)
 
-Em breve será publicada uma API em C# para fazer interface com o arquivo OWL desde o modelo BIM. Desse modo, a definição factual dos Individuos da ontologia extraíndo os Fatos do modelo BIM de acordo à estrutura de axiomas da ontologia.
+Em breve será publicada uma API em C# para fazer interface com o arquivo OWL desde o modelo BIM. Desse modo, a definição factual dos Individuos da ontologia será extraída diretamente do modelo BIM de acordo à estruturação axiomática da ontologia.
 
 **Arquivo OWL analisado no editor Protegé da Universidade de Stanford**
  
