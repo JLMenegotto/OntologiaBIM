@@ -9,6 +9,7 @@ Pensados para serem integrados em sistemas de dados abertos e conectados (Open L
 Os módulos procuram descrever conceitualmente os elementos de projetos arquitetônicos e urbanos. Podem ser aproveitados para ordenar e direcionar dados em sistemas 
 CAD BIM GIS durante a concepção, assim como para organizar a informação durante as etapas construtivas e de gerenciamento após a construção. 
 Procura-se integrar as categorias e enumerações de esquemas de dados diferentes como IFC e Revit. Atualmente o sistema está sendo ampliado para incorporar modelos de informação GIS como o CityGML, KML, OSM, etc. 
+
 A implementação do construtor parte da hipótese de que a tecnologia digital de projeto em BIM poderá evoluir melhor se o conhecimento projetual que vai sendo acumulado com o decorrer do tempo for expresso e ordenado em redes de dados abertos e vinculados, segundo conceitualizou Tim Berners-Lee. Esse conceito permite criar uma infraestrutura digital de conhecimentos compartilhadas. Se Normas Técnicas expressam o conhecimento industrial acumulado, por que não o estruturá-las em ontologias de domínio específico e colocá-las a disposição de modo irrestrito, para que a comunidade técnica possa usufruir? Não se beneficiaria a indústria como um todo orgânico? Não seria esse um retorno do conhecimento às suas fontes? O construtor visa aportar uma contribuição para este empreendimento.
 
  + **Fontes**     https://github.com/JLMenegotto/OntologiaBIM/tree/main/Dynamo
