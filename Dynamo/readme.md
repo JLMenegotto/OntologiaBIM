@@ -1,5 +1,5 @@
 
-# Ontologias BIM GIS 
+## Ontologias BIM GIS 
 
 Nesta seção o aluno encontrará as fontes necessárias para definição da ontologia. O processo se inicia preenchedo o arquivo Excel com a estruturação das classes, propriedades, características das propriedades, dados do projeto, etc. A macro em Dynamo, que deve ser carregada em Revit 2024, faz a leitura do arquivo Excel para formar o arquivo OWL (Ontology Web Language) com o conteúdo escrito em sintaxe Manchester. 
 O grande desafio desta tarefa está na definição do campo ontológico do tema representado no arquivo Excel. 
