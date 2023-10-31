@@ -1,5 +1,5 @@
 
-# Alguns dos Grafos resultantes da estruturação axiomática de Classes e Equivalências
+# Alguns Grafos resultantes da axiomática de Classes e Equivalências
 
 Os grafos correspondem ao arquivo **OntoBIM_NormasDesenho_1005.OWL**
   
