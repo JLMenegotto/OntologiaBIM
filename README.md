@@ -12,15 +12,14 @@ Parece lógico defender que ontologias OWL devam ser desenvolvidas e publicadas 
 
 Os arquivos OWL, escritos em notação Manchester, são criados modularmente a partir de planilhas Excel gerenciadas por uma macro programada especialmente e a medida em Designscript. As ontologias podem ser abertas no editor Protégé para visualizar, gerenciar ou depurar a sua estruturação. Os módulos desenvolvidos tem prefixo fofu: (significando forma e função) e estão divididos em domínios específicos (ambiente, esquadria, SUS, normas, etc). As determinações ontológicas procuram fazer o alinhamento dos módulos para que possam ser importados evitando-se ou minimizando as sobreposições e ambiguidades conceituais. Ontologias direcionadas ao GIS poderão ter prefixos como urba:  rede: h2o: que permitam caracterizar o Namespace do domínio modelado.
 
- * **Fontes
-                https://github.com/JLMenegotto/OntologiaBIM/tree/main/Dynamo
+ * Fontes     https://github.com/JLMenegotto/OntologiaBIM/tree/main/Dynamo
 
- * **Grafos
-                https://github.com/JLMenegotto/OntologiaBIM/tree/main/OWL
-      
+ * Grafos     https://github.com/JLMenegotto/OntologiaBIM/tree/main/OWL 
 
-* Versão 2.00 Para Revit 2024
+ * Versão 2.00 Para Revit 2024
+   
 ![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/945e437f-32db-44be-b04e-ec7d19a2a3c3)
 
-
+ * Leitura e análise dos arquivos OWL em Protegé
+      
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
