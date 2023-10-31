@@ -2,9 +2,7 @@
 <sub> **_Prof. José Luis Menegotto._**</sub> 
 
 <sub> **_Escola Politécnica da UFRJ. DEG/POLI/UFRJ._**</sub>
-
 <sub> _Programa de Pós-graduação em Engenharia Urbana_</sub>
-
 <sub> _Programa de Pós-graduação em Estruturas_</sub>
 ## 
 No projeto Ontologia BIM, atualmente ampliado para Ontologias GIS, foi implementado um construtor de ontologias para a criação de módulos ontológicos em formato OWL. 
