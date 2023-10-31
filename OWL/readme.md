@@ -1,7 +1,7 @@
 
-# Alguns Grafos da axiomática de Classes e Equivalências
+# Grafos da axiomática de Classes e Equivalências
 
-Os grafos correspondem ao arquivo **OntoBIM_NormasDesenho_1005.OWL**
+Os seguintes imagens correspondem a alguns grafos resultantes dos axiomas definidos no arquivo **OntoBIM_NormasDesenho_1005.OWL** 
   
 **Limites**
 
