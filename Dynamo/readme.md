@@ -7,7 +7,7 @@ O grande desafio desta tarefa está na definição do campo ontológico do tema 
    
 ![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/3044ea54-d366-47fb-9b30-8c10b885b272)
 
-**Arquivo Excel estruturado para facilitar a visão do campo ontológico de axiomas de classes e características ontológicas**
+### Planilhas estruturadas para facilitar a visão do campo ontológico de axiomas de classes e características**
 
   ![Tela_Excel](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0b8a08d7-0689-4c31-aacf-835c13487c3b)
 
