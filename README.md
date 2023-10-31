@@ -1,7 +1,7 @@
 # Ontologias BIM GIS
-**_Prof. José Luis Menegotto. Escola Politécnica da UFRJ. DEG/POLI._** 
+<sub>**_Prof. José Luis Menegotto. Escola Politécnica da UFRJ. DEG/POLI._** 
 * _Programa de Pós-graduação em Engenharia Urbana_
-* _Programa de Pós-graduação em Estruturas_
+* _Programa de Pós-graduação em Estruturas_</sub>
 ## 
 No projeto Ontologia BIM, atualmente ampliado para Ontologias GIS, foi implementado um construtor de ontologias para a criação de módulos ontológicos em formato OWL. 
 Pensados para serem integrados em sistemas de dados abertos e conectados (Open Linked Data), que trabalhem com contextos de informação da construção ou geográficos. 
