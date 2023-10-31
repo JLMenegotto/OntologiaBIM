@@ -4,7 +4,7 @@
 Os seguintes imagens correspondem a alguns grafos resultantes dos axiomas definidos no arquivo **OntoBIM_NormasDesenho_1005.OWL**.
 Embora o tema da ontologia tenha sido a Norma ABNT NBR:6492, ela foi complementada com definições de objetos Revit e IFC. 
 Esse vínculo entre modelagem, normativas e regulamentos é extremanente necessário para evoluir com a integração de sistemas computacionais
-de projeto CAD-BIM cada vez mais informados.  
+de projeto CAD-BIM cada vez mais informados. O aluno pode abrir o arquivo OWL num editor de texto e fazer a leitura do conteúdo que está em sintaxe Manchester.
   
 **Limites**
 
