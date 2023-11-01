@@ -6,6 +6,7 @@
 ## 
 
 ### **Versão 2.00 Para Revit 2024**
+
 ![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/945e437f-32db-44be-b04e-ec7d19a2a3c3)
 
 Ontologias modeladas em OWL permitem que tanto seres humanos e como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de um ambiente integrado de processos. 
@@ -14,14 +15,14 @@ No projeto Ontologia BIM-GIS vem sendo implementado um construtor de ontologias 
 
 O projeto parte da hipótese de que as tecnologias CAD-BIM-GIS somente serão integradas se o conhecimento projetual, acumulado ao longo dos anos, for expresso e ordenado em redes de dados abertos e conectados, segundo conceitualizou Tim Berners-Lee. Esse conceito permite montar uma infraestrutura digital compartilhada de conhecimentos. Portanto, se Normas Técnicas expressam o conhecimento industrial acumulado, deveriam ser estruturadas em ontologias de domínio específico e disponibilizadas de modo aberto. Os fluxos de dados, informaçoes e conhecimentos seriam beneficiados. Não seria esse um retorno do conhecimento às suas fontes? O construtor pretende ser uma contribuição para realizar este empreendimento.
 
-Resumnindo, é altamente recomendável que ontologias OWL sejam desenvolvidas e publicadas de modo aberto por:
+O projeto sustenta que é altamente recomendável que ontologias OWL sejam desenvolvidas e publicadas de modo aberto por:
 
-* Organizações normativas como a ABNT. 
-* Fabricantes: eles melhor conhecem os seus produtos e processos.
-* Códigos de Edificações e Regulamentos. 
-* Cada projeto construído.
+* Organizações normativas como a ABNT que acumulam o conhecimento industrial.
+* Fabricantes que conhecem os seus produtos e processos.
+* Códigos de Edificações e Regulamentos.
+* Cada projeto novo construído.
 
-Estruturas axiomáticas ontológicas deveriam ser publicadas para melhorar os fluxos de verificação e validação de projetos num processo aberto que poderia acontecer sistematicamente de modo contínuo e permanente durante o projeto.
+Estruturas axiomáticas ontológicas deveriam ser publicadas para melhorar os fluxos de verificação e validação de projetos num processo aberto que poderia acontecer sistematicamente de modo contínuo e permanente durante o projeto. 
 
 + **Fontes**     https://github.com/JLMenegotto/OntologiaBIM/tree/main/Dynamo
 + **Grafos**     https://github.com/JLMenegotto/OntologiaBIM/tree/main/OWL 
