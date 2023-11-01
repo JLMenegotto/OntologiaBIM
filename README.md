@@ -17,10 +17,10 @@ O projeto parte da hipótese de que as tecnologias CAD-BIM-GIS somente serão in
 
 O projeto sustenta que é altamente recomendável que ontologias OWL sejam desenvolvidas e publicadas de modo aberto por:
 
-* Organizações normativas como a ABNT que acumulam o conhecimento industrial.
-* Fabricantes que conhecem os seus produtos e processos.
-* Códigos de Edificações e Regulamentos.
-* Cada projeto novo construído.
+* _Organizações normativas como a ABNT que acumulam o conhecimento industrial._
+* _Fabricantes que conhecem os seus produtos e processos._
+* _Códigos de Edificações e Regulamentos._
+* _Cada projeto novo construído._
 
 Estruturas axiomáticas ontológicas deveriam ser publicadas para melhorar os fluxos de verificação e validação de projetos num processo aberto que poderia acontecer sistematicamente de modo contínuo e permanente durante o projeto. 
 
