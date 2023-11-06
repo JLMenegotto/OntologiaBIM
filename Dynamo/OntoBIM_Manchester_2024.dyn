@@ -36,6 +36,46 @@
   "Nodes": [
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "f9730326308e4cbcaaeb9763139855a8",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def Fato ( fat , f1 , f2 )\n{\n  celu   = f1 + \" \" + f2;\n  abce   = fat + celu;\n  cond   = String.Contains(celu,\"null\");\n  final  = cond == true ? \"\" : abce;\n  return = final;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "42e70c32084d4938928749513d6ece6b",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def LerExcel ( Arq , Tab )\n{\n   dadosIn = DSOffice.Data.ImportExcel(Arq, Tab, true, false);\n   valores = List.DropItems( dadosIn , 1    );\n   dadosTr = List.Transpose( valores        );\n   dadosOu = List.Clean    ( dadosTr , true );\n   return dadosOu;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "d7385304510442d8ac2a356d9cc75b71",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def Unicos ( S , n)\n{\n    LF  = List.Flatten     ( S , n);\n    LU  = List.UniqueItems ( LF   );\n    ST  = String.Concat    ( LU   );\n\n    return = ST;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "011c3061132b4ea2ba3a4ce848fb225c",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def EqVt ( fx,  txt , AXI )\n{\n    Axi = Nula ( txt , AXI );\n    s   = String.Split( Axi , \" \");\n    str = String.Contains (s, \"Equiv\",0)? s+\" \"    :\n          String.Contains (s, \"Inver\",0)? s+\" \"    :\n          (s == \"some\"||\n           s == \"only\"||\n           s == \"and\" ||\n           s == \"or\"  ||\n           s == \"(\"   ||\n           s == \")\"   ||\n           s == \"Min\" ||\n           s == \"Max\" ||\n           s == \"Exactly\" )      ? \" \"+s+\" \":\n           List.Count(s)>0       ? \" \"+fx+s :\"\";\n    return = String.Concat( [ str ] );\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "Id": "01de2aa7a6b0413a9a246bf784ba8345",
       "NodeType": "CodeBlockNode",
       "Inputs": [],
@@ -46,21 +86,11 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "011c3061132b4ea2ba3a4ce848fb225c",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def EqVt ( fx,  txt , AXI )\n{\n    Axi = Nula ( txt , AXI );\n    s   = String.Split( Axi , \" \");\n    str = String.Contains (s, \"Equiv\",0)? s+\" \"    :\n          String.Contains (s, \"Inver\",0)? s+\" \"    :\n          (s == \"some\"||\n           s == \"only\"||\n           s == \"and\" ||\n           s == \"or\")                   ? \" \"+s+\" \":\n           List.Count(s)>0              ? \" \"+fx+s :\"\";\n    return = String.Concat( [ str ] );\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "243e63fdb69e4ac38feb068e77c9a460",
+      "Id": "9f88c601c6b948b7ae6b128dcae7e10d",
       "NodeType": "CodeBlockNode",
       "Inputs": [
         {
-          "Id": "82e0a2b601144129aadc0b10cd4ef034",
+          "Id": "705cca3574ea40858f06ffe96e6cd60d",
           "Name": "DADOS",
           "Description": "DADOS",
           "UsingDefaultValue": false,
@@ -69,7 +99,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "05a6bd4eb2734945b682b7609e1365ec",
+          "Id": "d019a068f91e440297f9f354b7e7cae8",
           "Name": "DCLA",
           "Description": "DCLA",
           "UsingDefaultValue": false,
@@ -78,7 +108,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3d4894b43757447fbd9bb3da91c5d16f",
+          "Id": "dad17795bed54fd38a1677cde9b61f1d",
           "Name": "DDOM",
           "Description": "DDOM",
           "UsingDefaultValue": false,
@@ -87,7 +117,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d7ce670390764f799ddfd2c7b6b930e2",
+          "Id": "b8804525c99d4bca816c0468fda834e0",
           "Name": "DANO",
           "Description": "DANO",
           "UsingDefaultValue": false,
@@ -96,7 +126,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6ccc85a9a3e24562a13b9a9845ac7dd2",
+          "Id": "2a40095c180e4796b3083cf09a5f9e41",
           "Name": "DESP",
           "Description": "DESP",
           "UsingDefaultValue": false,
@@ -105,7 +135,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "48c6bd55878d4bd995a6bbe5f2f5ad46",
+          "Id": "c41ce9df4e4a42788a8226590462d62e",
           "Name": "DCAR",
           "Description": "DCAR",
           "UsingDefaultValue": false,
@@ -114,7 +144,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e3c778f5184c4374b0b7ff523dcf8b7d",
+          "Id": "8e6c551da9f041bdb7cbbce35c4207b2",
           "Name": "DFAT",
           "Description": "DFAT",
           "UsingDefaultValue": false,
@@ -123,7 +153,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "88211b29c5164da181665f576b7ed884",
+          "Id": "951a5227d93e4405adb644e70cd9d5df",
           "Name": "DicI",
           "Description": "DicI",
           "UsingDefaultValue": false,
@@ -132,7 +162,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "222e7cc9ea774f94b81c43a6c0e97b54",
+          "Id": "e79c01595d2947cab3da7e0443915ace",
           "Name": "DicC",
           "Description": "DicC",
           "UsingDefaultValue": false,
@@ -141,7 +171,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "29a968a8e15144a3b3fc5d8736eb5adc",
+          "Id": "913986e02f504ad3bd2676fde67cd275",
           "Name": "DicP",
           "Description": "DicP",
           "UsingDefaultValue": false,
@@ -152,7 +182,7 @@
       ],
       "Outputs": [
         {
-          "Id": "541cfbb51243451d992031c61ad0512d",
+          "Id": "d2d48794c1e845bda101af16a71d6529",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -161,7 +191,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "299b782813c5402d9aa639a84ef86789",
+          "Id": "da2a3e3426904bc897465e05bbe9a448",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -170,7 +200,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "19cae1b0bd64466c9f54e6db4a65d10b",
+          "Id": "c67d58f326ba4fd193520d48dd5b1bfe",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -179,7 +209,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a495b8cf6bb2488fb675f6e89a2e0851",
+          "Id": "d536c03180b34715bbfbe5b514a6b2de",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -188,7 +218,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d07093a35efe481e96042e1e548ff226",
+          "Id": "e39ef950bb5a413f97d83423878f3d3f",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -197,7 +227,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "172141000a9b43feac6adfe8cabac9e1",
+          "Id": "51b0d26ca83b433f8292e856ed607080",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -206,7 +236,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "662027e484ba48a392a9eb35b360d284",
+          "Id": "59babf4d8de54f49a0c05fd93566c9e6",
           "Name": "",
           "Description": "Value of expression at line 7",
           "UsingDefaultValue": false,
@@ -215,7 +245,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6993e96679bc4c5698b30e0650199686",
+          "Id": "99b3bedb9aa44621ac72d4feb75094ca",
           "Name": "",
           "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
@@ -224,7 +254,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "35ad3ce8fc7f43cfb4ce994fcbc4d4fd",
+          "Id": "5208663961614fb783ba7cf78837da72",
           "Name": "",
           "Description": "Value of expression at line 9",
           "UsingDefaultValue": false,
@@ -233,7 +263,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b0eae8251cce44dca61145e78db98c6e",
+          "Id": "57e64d2e0ea040cda4aae366806b508f",
           "Name": "",
           "Description": "Value of expression at line 10",
           "UsingDefaultValue": false,
@@ -242,7 +272,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3e5e1c0ab2124b9b8012545f37238e6d",
+          "Id": "f6d7d299b1374509bb387fa285ac2e7a",
           "Name": "",
           "Description": "Value of expression at line 11",
           "UsingDefaultValue": false,
@@ -251,7 +281,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e69f5ef46207495e8117d4ee6cd89c2c",
+          "Id": "a41bbfe300234aee9d5c241cac888c8b",
           "Name": "",
           "Description": "DPJT",
           "UsingDefaultValue": false,
@@ -260,7 +290,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c7d23d785159472b8696f3050cfd2810",
+          "Id": "f3646c8f5f0f413bbb949b3a13600ef1",
           "Name": "",
           "Description": "DISJ",
           "UsingDefaultValue": false,
@@ -269,7 +299,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b3e4727e72e94ed8a25ffb70530fa176",
+          "Id": "766ebcb77ad047ea98b8c7611c8396fe",
           "Name": "",
           "Description": "keyP",
           "UsingDefaultValue": false,
@@ -278,7 +308,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c9ef75a6e76048d5942447177b19bd43",
+          "Id": "e44f3b990cbf4441a438e97a929fdf9c",
           "Name": "",
           "Description": "valP",
           "UsingDefaultValue": false,
@@ -287,7 +317,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7d97c1a22ee2474f8dd740627171b786",
+          "Id": "2f68dd69cf3b41f29ee7567ad8af97ee",
           "Name": "",
           "Description": "fx",
           "UsingDefaultValue": false,
@@ -296,7 +326,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ce0b70aea77a455498a80b78b31ee319",
+          "Id": "ace9c8a433414abba30242f9e9f04a70",
           "Name": "",
           "Description": "vi",
           "UsingDefaultValue": false,
@@ -305,7 +335,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fb75ce6844be4f69aec70856c6e17ab7",
+          "Id": "2ac613fe3c6a476881b8fb5b37401cb4",
           "Name": "",
           "Description": "disc",
           "UsingDefaultValue": false,
@@ -314,7 +344,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "67d9bb5608964322b82ccb107982fef9",
+          "Id": "de22c9ee887548b8a328db24ecb3ada3",
           "Name": "",
           "Description": "DJ1",
           "UsingDefaultValue": false,
@@ -323,7 +353,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f6090420bef942a2939a1571e3e40ecf",
+          "Id": "944f4f5f5a714db28848e3bcef0563fe",
           "Name": "",
           "Description": "DJ2",
           "UsingDefaultValue": false,
@@ -332,7 +362,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e471e81d9fb34d9490325a1c2c6b9067",
+          "Id": "6487ad4f51db47faa7cdfff2b94de311",
           "Name": "",
           "Description": "DJ3",
           "UsingDefaultValue": false,
@@ -341,7 +371,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cb285eee58db48a98de208f6da157ff8",
+          "Id": "822a4e6b56e540daabd183dec5124970",
           "Name": "",
           "Description": "DJ4",
           "UsingDefaultValue": false,
@@ -350,7 +380,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2a6dac2d472340249e22c5660868c6a7",
+          "Id": "c1c6c25ff6f24aaaa343fe7483db3ee1",
           "Name": "",
           "Description": "DJ5",
           "UsingDefaultValue": false,
@@ -359,7 +389,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fd5be90337d74001ac164d6c6570b6c0",
+          "Id": "ed0d95e4b2734e1bab3be19870af0040",
           "Name": "",
           "Description": "DJ6",
           "UsingDefaultValue": false,
@@ -368,7 +398,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a295869e4666434aba7bd05bc1e285d9",
+          "Id": "d23b46d668d3447c95c9fdce9db58fa7",
           "Name": "",
           "Description": "DJ7",
           "UsingDefaultValue": false,
@@ -377,7 +407,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bb6fca3fc40c40769fba8a2074669cc6",
+          "Id": "5a1c8ccdeb7f4dfdade72cb73c13304c",
           "Name": "",
           "Description": "DJ8",
           "UsingDefaultValue": false,
@@ -386,7 +416,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "18dbe23292044caea069ca2ba5e0b5d8",
+          "Id": "f25d6d101b554f7f85dc583f4803bfa9",
           "Name": "",
           "Description": "DJ9",
           "UsingDefaultValue": false,
@@ -395,7 +425,106 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9287155bcc2745d286955129262e9be3",
+          "Id": "7f56a55addaf42f096f3f68a15714fcf",
+          "Name": "",
+          "Description": "DJ10",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e00d9acde09b4e0abf4e0f83d8d209b1",
+          "Name": "",
+          "Description": "DJ11",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7449ce0394f044ce999d53925141b698",
+          "Name": "",
+          "Description": "DJ12",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "806757f79a314313aec954a204b4fb5d",
+          "Name": "",
+          "Description": "DJ13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8e7fd5da4fcc49969def5477895c5971",
+          "Name": "",
+          "Description": "DJ14",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "16eac282daae4ac999aa3b96370c6a07",
+          "Name": "",
+          "Description": "DJ15",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29da8bc032ba448f923abd44101a6886",
+          "Name": "",
+          "Description": "DJ16",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f4c5707fc9a4422e98afc5cbb5cc36e6",
+          "Name": "",
+          "Description": "DJ17",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7d9e1aa8d1af4964bdce786e7b566ba3",
+          "Name": "",
+          "Description": "DJ18",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "27e07473c0584182a40500ff1e1d2dc1",
+          "Name": "",
+          "Description": "DJ19",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "de1415cec4e149b3b2b97e1377448572",
+          "Name": "",
+          "Description": "DJ20",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b8531c47ede743a1874ea03ec2612d50",
           "Name": "",
           "Description": "ODJ",
           "UsingDefaultValue": false,
@@ -404,7 +533,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d0064cb879384997a5d99f9efa9cba7c",
+          "Id": "59317dac53674378b79dc488d3209fc8",
           "Name": "",
           "Description": "UDJ",
           "UsingDefaultValue": false,
@@ -413,7 +542,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "dabe879f4ead48e69c9a0b5cdf13dfa2",
+          "Id": "96346bd7ca8140f7bcb4890283fef089",
           "Name": "",
           "Description": "kj",
           "UsingDefaultValue": false,
@@ -422,7 +551,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a0d7961e74a64f8780b7447548cdce1e",
+          "Id": "c9f2da42737e4e3993fa155a991384fe",
           "Name": "",
           "Description": "vj",
           "UsingDefaultValue": false,
@@ -431,7 +560,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d0140687b4d3487e9a18f56196cec060",
+          "Id": "b16094c9e1034bbe8230b3c7363dc006",
           "Name": "",
           "Description": "DicD",
           "UsingDefaultValue": false,
@@ -442,7 +571,487 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "DADOS;\nDCLA;\nDDOM;\nDANO;\nDESP;\nDCAR;\nDFAT;\nDicI;\nDicC;\nDicP;\nDicD;\n//-----------------------------------\n// Prepara dados de Disjuntas\n//-----------------------------------\nDPJT = DADOS[\"DAPRJ\"];\nDISJ = DADOS[\"DADIS\"];\nkeyP = DPJT [0];\nvalP = DPJT [1];\nfx   = valP [0];\nvi   = DESP [\"virg\"];\ndisc = DANO [\"disc\"];\n//-----------------------------------\n// DISJUNTAS até 9\n//-----------------------------------\nDJ1 = Nula (    fx, DISJ[ 1 ]);\nDJ2 = Nula ( vi+fx, DISJ[ 2 ]);\nDJ3 = Nula ( vi+fx, DISJ[ 3 ]);\nDJ4 = Nula ( vi+fx, DISJ[ 4 ]);\nDJ5 = Nula ( vi+fx, DISJ[ 5 ]);\nDJ6 = Nula ( vi+fx, DISJ[ 6 ]);\nDJ7 = Nula ( vi+fx, DISJ[ 7 ]);\nDJ8 = Nula ( vi+fx, DISJ[ 8 ]);\nDJ9 = Nula ( vi+fx, DISJ[ 9 ]);\n//-----------------------------------\nODJ = disc+DJ1+DJ2+DJ3+DJ4+DJ5+DJ6+\n           DJ7+DJ8+DJ9;\nUDJ = Unicos ( ODJ , 2);\n//-----------------------------------\n// REGISTRA FINAIS DE DISJUNTAS\n//-----------------------------------\nkj   = [\"DISJ\"];\nvj   = [ UDJ  ];\nDicD = Dictionary.ByKeysValues(kj,vj);"
+      "Code": "DADOS;\nDCLA;\nDDOM;\nDANO;\nDESP;\nDCAR;\nDFAT;\nDicI;\nDicC;\nDicP;\nDicD;\n//-----------------------------------\n// Prepara dados de Disjuntas\n//-----------------------------------\nDPJT = DADOS[\"DAPRJ\"];\nDISJ = DADOS[\"DADIS\"];\nkeyP = DPJT [0];\nvalP = DPJT [1];\nfx   = valP [0];\nvi   = DESP [\"virg\"];\ndisc = DANO [\"disc\"];\n//-----------------------------------\n// DISJUNTAS até 9\n//-----------------------------------\nDJ1  = Nula (    fx, DISJ[  1 ]);\nDJ2  = Nula ( vi+fx, DISJ[  2 ]);\nDJ3  = Nula ( vi+fx, DISJ[  3 ]);\nDJ4  = Nula ( vi+fx, DISJ[  4 ]);\nDJ5  = Nula ( vi+fx, DISJ[  5 ]);\nDJ6  = Nula ( vi+fx, DISJ[  6 ]);\nDJ7  = Nula ( vi+fx, DISJ[  7 ]);\nDJ8  = Nula ( vi+fx, DISJ[  8 ]);\nDJ9  = Nula ( vi+fx, DISJ[  9 ]);\nDJ10 = Nula ( vi+fx, DISJ[ 10 ]);\nDJ11 = Nula ( vi+fx, DISJ[ 11 ]);\nDJ12 = Nula ( vi+fx, DISJ[ 12 ]);\nDJ13 = Nula ( vi+fx, DISJ[ 13 ]);\nDJ14 = Nula ( vi+fx, DISJ[ 14 ]);\nDJ15 = Nula ( vi+fx, DISJ[ 15 ]);\nDJ16 = Nula ( vi+fx, DISJ[ 16 ]);\nDJ17 = Nula ( vi+fx, DISJ[ 17 ]);\nDJ18 = Nula ( vi+fx, DISJ[ 18 ]);\nDJ19 = Nula ( vi+fx, DISJ[ 19 ]);\nDJ20 = Nula ( vi+fx, DISJ[ 20 ]);\n//-----------------------------------\nODJ = disc+DJ1 +DJ2 +DJ3 +DJ4 +DJ5 +\n           DJ6 +DJ7 +DJ8 +DJ9 +DJ10+\n           DJ11+DJ12+DJ13+DJ14+DJ15+\n           DJ16+DJ17+DJ18+DJ19+DJ20;\nUDJ = Unicos ( ODJ , 3);\n//-----------------------------------\n// REGISTRA FINAIS DE DISJUNTAS\n//-----------------------------------\nkj   = [\"DISJ\"];\nvj   = [ UDJ  ];\nDicD = Dictionary.ByKeysValues(kj,vj);"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "e63beb0401f2418b96d1b56accd1bbc8",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "cb546246c028443785d358f1c2d4f48d",
+          "Name": "DADOS",
+          "Description": "DADOS",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73c33c76318b4c749b5f526a85e208bf",
+          "Name": "DCLA",
+          "Description": "DCLA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "40e8465cd7fb448cab8d3689d106c0d9",
+          "Name": "DDOM",
+          "Description": "DDOM",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ca5a6d064974125ae0f8f3343d3ea67",
+          "Name": "DANO",
+          "Description": "DANO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ae5a04aed2744c5a52a857e178e5c09",
+          "Name": "DESP",
+          "Description": "DESP",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0bf577c1c299428f8cef8a4159823b69",
+          "Name": "DCAR",
+          "Description": "DCAR",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cd3c65ea8ead4860a4002c3c3973257e",
+          "Name": "DFAT",
+          "Description": "DFAT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2aaa458fa2db4ac28e4df31338211119",
+          "Name": "DicI",
+          "Description": "DicI",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "91aee247158943f4a3bcc1f1a6fed8cc",
+          "Name": "DicC",
+          "Description": "DicC",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6e0ac5708cf148888c3a552ee0df97f3",
+          "Name": "DicP",
+          "Description": "DicP",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47192546283a4ca7b299e80b6aa395cf",
+          "Name": "DicD",
+          "Description": "DicD",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c9b11c011dc641e8b56d809ee25b78c4",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "beb949a85be7429b91e0a895de889f7a",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f0fac9b5a3ff42a2910c7e477c2212f6",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "90521a1c672c4737a908ec4f9a8503d8",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "853d587192b24209ba9f92a6c3851454",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "565585572cf248909b82d4b60e0e47d9",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dee941f6876040aaba28fe21a958af25",
+          "Name": "",
+          "Description": "Value of expression at line 7",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "968c44a751b84e189dc556b422bc16b9",
+          "Name": "",
+          "Description": "Value of expression at line 8",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9f16a1cac89241a89f35a680b5c314ef",
+          "Name": "",
+          "Description": "Value of expression at line 9",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b52498f0df64331a88fa85ad13235f7",
+          "Name": "",
+          "Description": "Value of expression at line 10",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "679ee67511a04c0ba4fafd55ae108eb2",
+          "Name": "",
+          "Description": "Value of expression at line 11",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fbe1c3f6f5d74c4cb513d16e2cd3fa7d",
+          "Name": "",
+          "Description": "DPJT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2905f5e1a017401c8c27151e9a2c159c",
+          "Name": "",
+          "Description": "DIFA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e7a3972e7a37423bbc89eef521ad4f31",
+          "Name": "",
+          "Description": "keyP",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "91770e1f077748b8ab361363f1e5bfa8",
+          "Name": "",
+          "Description": "valP",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca889b38a2aa4c7fba8803864452493f",
+          "Name": "",
+          "Description": "fx",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "535c27ca272f4b5fbacdcf7649c544d2",
+          "Name": "",
+          "Description": "id",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7e35975c8bef4a8390cfdf7cc4a5616b",
+          "Name": "",
+          "Description": "help",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8e9360ac46fe406384e9b39835e93ed5",
+          "Name": "",
+          "Description": "indi",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8cfbddaa127b45dd9db31c4aa5e20d47",
+          "Name": "",
+          "Description": "tipo",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e6f4e4c30d7f4c5cbabdf96f208e6948",
+          "Name": "",
+          "Description": "fato",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dd006648ae2d40a79cd155924ec08356",
+          "Name": "",
+          "Description": "IFA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "51eec6f1b710483bb3236140dd49455e",
+          "Name": "",
+          "Description": "TFA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "be8401dcacfe4b779f8d1b9a8d367ee1",
+          "Name": "",
+          "Description": "FA1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0a9331b3616749ad903bf7eb826528be",
+          "Name": "",
+          "Description": "FA2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e62fe9f4c4d14701ad9d174d58fc00e4",
+          "Name": "",
+          "Description": "FA3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f535928517f54022ae364eaadf453b2a",
+          "Name": "",
+          "Description": "FA4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "882fb69f34a046c39818ed7303e5f2be",
+          "Name": "",
+          "Description": "HFA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "914ebc1942824c90a7302d682b4ef64c",
+          "Name": "",
+          "Description": "FAT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cf0cb1aa26cd4dab898b07aa566858eb",
+          "Name": "",
+          "Description": "UFA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ac140e5550a4557ae2ce974383083ae",
+          "Name": "",
+          "Description": "kf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "830f6c1d99014f06a6eb3ad5236322e1",
+          "Name": "",
+          "Description": "vf",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c319e5f3cf88406c88a8384eea0a1970",
+          "Name": "",
+          "Description": "DicF",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9a877c8ba79f4ccb84354c3c30045b0a",
+          "Name": "",
+          "Description": "di1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "da14856229ed45f58e80865319424f74",
+          "Name": "",
+          "Description": "di2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ee990b3cd6f8453f938b919fb2e9fd22",
+          "Name": "",
+          "Description": "tema",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a18df4e83e8142db87f6555ed422727f",
+          "Name": "",
+          "Description": "Nume",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ec8a2c8b7a654c9eb4a10de9bd2fd377",
+          "Name": "",
+          "Description": "Aowl",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "75905d4cb092428b8d747c8ccabbbf58",
+          "Name": "",
+          "Description": "TODO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f465481082da40a4ad637e123085a8ac",
+          "Name": "",
+          "Description": "UTEXT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "df1a700ff0f341bb9ebc3cec10685369",
+          "Name": "",
+          "Description": "Value of expression at line 72",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "DADOS;\nDCLA;\nDDOM;\nDANO;\nDESP;\nDCAR;\nDFAT;\nDicI;\nDicC;\nDicP;\nDicD;\n//-----------------------------------\n// Prepara dados de Fatos\n//-----------------------------------\nDPJT = DADOS[\"DAPRJ\"];\nDIFA = DADOS[\"DAFAT\"];\nkeyP = DPJT [0];\nvalP = DPJT [1];\nfx   = valP [0];\nid   = DESP [\"idio\"];\nhelp = DANO [\"help\"];\nindi = DFAT [\"indi\"];\ntipo = DFAT [\"tipo\"];\nfato = DFAT [\"fato\"];\n//-----------------------------------\n// FATOS DE INDIVIDUOS\n//-----------------------------------\nIFA = indi+     fx+DIFA[1];\nTFA = tipo+     fx+DIFA[2];\nFA1 = Fato(fato,fx+DIFA[3],fx+DIFA[ 4]);\nFA2 = Fato(fato,fx+DIFA[5],   DIFA[ 6]);\nFA3 = Fato(fato,fx+DIFA[7],   DIFA[ 8]);\nFA4 = Fato(fato,fx+DIFA[9],   DIFA[10]);\nHFA = help+        DIFA[1]+id;\n//-----------------------------------\nFAT = IFA+TFA+HFA+FA1+FA2+FA3+FA4;\nUFA = Unicos( FAT , 2);\n//-----------------------------------\n// REGISTRA FINAIS DE FATOS\n//-----------------------------------\nkf   = [\"FATO\"];\nvf   = [ UFA  ];\nDicF = Dictionary.ByKeysValues(kf,vf);\n//-----------------------------------\n// ID PASTA e TEMA\n//-----------------------------------\ndi1  = \"C:\\\\ABNT_Normas\\\\ABNT\";\ndi2  = \"\\\\Para_Desenho\\\\OntoBIM_\";\ntema =  DicI[\"TEMA\"];\nNume = \"1000\";\nAowl = di1+di2+tema+\"_\"+Nume+\".OWL\";\n//---------------------------------\n// REGISTRA TODO\n//---------------------------------\nTODO = [  DicI[\"PREF\"]\n        , DicI[\"CABE\"]\n        , DicI[\"ANOT\"]\n        , DicI[\"RAIZ\"]\n        , DicI[\"CLAI\"]\n        , DicC[\"CLAS\"]\n        , DicP[\"PROP\"]\n        , DicP[\"DATA\"]\n        , DicD[\"DISJ\"]\n        , DicF[\"FATO\"]\n       ];\nUTEXT = String.Concat(\n         List.UniqueItems(\n          List.Flatten(TODO,3)));\n//---------------------------------\n// ESCREVE ARQUIVO OWL\n//---------------------------------\nFileSystem.WriteText ( Aowl , UTEXT);"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -450,7 +1059,7 @@
       "NodeType": "CodeBlockNode",
       "Inputs": [
         {
-          "Id": "5e862dcfc3e54cc7b205236aed2bce93",
+          "Id": "0fff08173764446b9290ae04c1836045",
           "Name": "AXLS",
           "Description": "AXLS",
           "UsingDefaultValue": false,
@@ -461,7 +1070,7 @@
       ],
       "Outputs": [
         {
-          "Id": "80f9f156dd2447b787bf84f0a982d3a3",
+          "Id": "6c0a91ccaf0f46c1a648fef7a707e20e",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -470,7 +1079,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8fe5c752c0da4a7596f1228d4c42e485",
+          "Id": "44891a7dfff841f48f177046ad220056",
           "Name": "",
           "Description": "DaPRJ",
           "UsingDefaultValue": false,
@@ -479,7 +1088,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cd9692d825864177b78fc3d4d3c3d45e",
+          "Id": "9a34c5df47a04a2f9488673620c40487",
           "Name": "",
           "Description": "DadTC",
           "UsingDefaultValue": false,
@@ -488,7 +1097,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a31a52fb57654fcaa8749821b42ad1ca",
+          "Id": "f0d31f9b8c1e44a68c735fd45282fb2a",
           "Name": "",
           "Description": "DadTP",
           "UsingDefaultValue": false,
@@ -497,7 +1106,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d55af60abac54d2b8ba3061036d9fc5b",
+          "Id": "8e0eaeee87e549c0b461e552409ebfee",
           "Name": "",
           "Description": "DadFA",
           "UsingDefaultValue": false,
@@ -506,7 +1115,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e4f8e7ce227e4ba084a3ad092d100f0e",
+          "Id": "906c7a02d0744691b474e2e5680886be",
           "Name": "",
           "Description": "DadDI",
           "UsingDefaultValue": false,
@@ -515,7 +1124,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "94ae7653e05144389cd6390462296b7f",
+          "Id": "e37b02e4381d4775bbee1c0a4f82b39c",
           "Name": "",
           "Description": "key",
           "UsingDefaultValue": false,
@@ -524,7 +1133,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "12859fc0988b459cbe10b8d92ec4844f",
+          "Id": "9e463d417d9947d1b7c72b8487312fbc",
           "Name": "",
           "Description": "val",
           "UsingDefaultValue": false,
@@ -533,7 +1142,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7b732bb3f0284f9f9fb45450851c6d64",
+          "Id": "d002d1fda8544f50b2646a0c78cf33eb",
           "Name": "",
           "Description": "DADOS",
           "UsingDefaultValue": false,
@@ -542,7 +1151,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bc26a1bd5a174b13b769779cd77e8efc",
+          "Id": "fce6d1518ce44ee4be60c4f83215100c",
           "Name": "",
           "Description": "Value of expression at line 14",
           "UsingDefaultValue": false,
@@ -551,7 +1160,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "66f3e8f3a8384cc08dba99f366e3f0d2",
+          "Id": "cb1bf31f11484612a8f784ca9e409540",
           "Name": "",
           "Description": "Value of expression at line 15",
           "UsingDefaultValue": false,
@@ -560,7 +1169,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c2eeb13677834a5fa8268ad361c0beb5",
+          "Id": "63f08c4eaf18423b9be6e0bd41118919",
           "Name": "",
           "Description": "Value of expression at line 16",
           "UsingDefaultValue": false,
@@ -569,7 +1178,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f582bf5328694299846fd876fd6e067f",
+          "Id": "5cd340748fd54945b0ad4a97031c7de9",
           "Name": "",
           "Description": "Value of expression at line 17",
           "UsingDefaultValue": false,
@@ -578,7 +1187,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "76aaf36cf5814e85b8eec8c4deaab9f1",
+          "Id": "98bcc26e6c574b12b76a5b18d4c9203d",
           "Name": "",
           "Description": "Value of expression at line 18",
           "UsingDefaultValue": false,
@@ -587,7 +1196,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "407bc69ccd1d414c8f3a6a5c74fbe359",
+          "Id": "0f27ffdded8e4eda92c91c4bdb1bb311",
           "Name": "",
           "Description": "Value of expression at line 19",
           "UsingDefaultValue": false,
@@ -596,7 +1205,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b0a7316b10464bea82b2e81ce594712f",
+          "Id": "2e55972e834a4237be03b33e1919c987",
           "Name": "",
           "Description": "Value of expression at line 20",
           "UsingDefaultValue": false,
@@ -605,7 +1214,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "643a77ac0b514155b3068ff2cc8f92f8",
+          "Id": "9bdeea71e91942aa952677abc63f7808",
           "Name": "",
           "Description": "clas",
           "UsingDefaultValue": false,
@@ -614,7 +1223,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "79138e270d644921bdcdaa254a9667cd",
+          "Id": "2a3358e3e9104abb997b8a82c3208418",
           "Name": "",
           "Description": "subc",
           "UsingDefaultValue": false,
@@ -623,7 +1232,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5661b270b3094d67ba71d5127046196f",
+          "Id": "3379aacede214958ad383ee6b38bff2b",
           "Name": "",
           "Description": "obje",
           "UsingDefaultValue": false,
@@ -632,7 +1241,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "780e647ea4294a5f833ba61a0689599f",
+          "Id": "c27b8aa1326d41f98e0eddebf7503015",
           "Name": "",
           "Description": "subp",
           "UsingDefaultValue": false,
@@ -641,7 +1250,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ef612012df96418ba9358a91146a455f",
+          "Id": "be6976b1329140e78c26fcd273261791",
           "Name": "",
           "Description": "data",
           "UsingDefaultValue": false,
@@ -650,7 +1259,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4b77a04e93f4442c8540738982d86c2b",
+          "Id": "5b9ee5afc62848faa633c9b6def2f36a",
           "Name": "",
           "Description": "domi",
           "UsingDefaultValue": false,
@@ -659,7 +1268,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3d3088a356094f7ea9209237a903c9c1",
+          "Id": "1e723ea213f946c29b5b16d380a38309",
           "Name": "",
           "Description": "rang",
           "UsingDefaultValue": false,
@@ -668,7 +1277,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "81ff52bc555c49f4947e848bee187c6d",
+          "Id": "386b636e4d724c6ba574c685b198caa7",
           "Name": "",
           "Description": "equi",
           "UsingDefaultValue": false,
@@ -677,7 +1286,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1285896a821a4d01a1811506656b1248",
+          "Id": "0ab60f390678462bb6190df930a469a0",
           "Name": "",
           "Description": "chav",
           "UsingDefaultValue": false,
@@ -686,7 +1295,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2cda204acd464bb49cf630df65a1ddb6",
+          "Id": "c5e861413982427483306862fef840f4",
           "Name": "",
           "Description": "indi",
           "UsingDefaultValue": false,
@@ -695,7 +1304,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "52bc1d627d794b4c93dbb28e3f74f410",
+          "Id": "f23c8242aa094d37857801010de92e91",
           "Name": "",
           "Description": "tipo",
           "UsingDefaultValue": false,
@@ -704,7 +1313,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "42432f1cded84f30ad9738f3eca8ba10",
+          "Id": "eb4ebd3cd46545fd88b11807f759218c",
           "Name": "",
           "Description": "fato",
           "UsingDefaultValue": false,
@@ -713,7 +1322,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1619c3d04ffe41678e11f52016eb6f86",
+          "Id": "94f896b2302049038bfaf5116636e5f0",
           "Name": "",
           "Description": "impo",
           "UsingDefaultValue": false,
@@ -722,7 +1331,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "dcd25ba42cd74e1988f717b3049283be",
+          "Id": "8d0e91be100746cd95e8394aeeb26d5d",
           "Name": "",
           "Description": "anot",
           "UsingDefaultValue": false,
@@ -731,7 +1340,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "dbac645003614f4b8831371e0b277b62",
+          "Id": "7028fe4afc00465fada5be2ecb28de71",
           "Name": "",
           "Description": "help",
           "UsingDefaultValue": false,
@@ -740,7 +1349,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "953266b0fdc741b6bb97b3e76bbc5037",
+          "Id": "4772b2c5fac64f3bba00b3d8b03ac130",
           "Name": "",
           "Description": "disc",
           "UsingDefaultValue": false,
@@ -749,7 +1358,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "484401bafd97490eb412105bb7585f6d",
+          "Id": "7364997c849d42cb8fd0bf4eb91a503d",
           "Name": "",
           "Description": "disu",
           "UsingDefaultValue": false,
@@ -758,7 +1367,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5f88f4ee7db34eb4a0eb1b36fdc16f23",
+          "Id": "f6a1f3ad507c40058fabf44a6310334c",
           "Name": "",
           "Description": "disj",
           "UsingDefaultValue": false,
@@ -767,7 +1376,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ab7057c4fe5645308c77870efaf5affc",
+          "Id": "2675798ab1544de7a32a2b0d67e08e1d",
           "Name": "",
           "Description": "aspa",
           "UsingDefaultValue": false,
@@ -776,7 +1385,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "881765a24ccc4d57b1c2fa2f33bfd048",
+          "Id": "77be1cb73c494a638225c987c04e6aba",
           "Name": "",
           "Description": "espa",
           "UsingDefaultValue": false,
@@ -785,7 +1394,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "54b0a34367d94dd08c0ca89bfee8b8e1",
+          "Id": "ad661dc400df43529125bcdfad5caf49",
           "Name": "",
           "Description": "id",
           "UsingDefaultValue": false,
@@ -794,7 +1403,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1d70dc12844c42909514a39229576544",
+          "Id": "5ac4deff65b84c7db67ae745d46cbd9d",
           "Name": "",
           "Description": "vi",
           "UsingDefaultValue": false,
@@ -803,7 +1412,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3f9af15ef97c4a01a0db798aacf3a53d",
+          "Id": "b6ce915d155948309ac8675a707ca106",
           "Name": "",
           "Description": "cara",
           "UsingDefaultValue": false,
@@ -812,7 +1421,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c05a39ad74694989bb287ce59dd8e36a",
+          "Id": "bd4b852f63d54ebf944aea48579be756",
           "Name": "",
           "Description": "inve",
           "UsingDefaultValue": false,
@@ -821,7 +1430,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8b7a2835cbfc40c080b0f13450322a3d",
+          "Id": "f49be0c066d342c5bbaeefc87a0fa651",
           "Name": "",
           "Description": "kax",
           "UsingDefaultValue": false,
@@ -830,7 +1439,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5b7602f278304199a5ccc71bbb4d8579",
+          "Id": "1c4e8b5d2d2a45f6b9ed6455fca8266f",
           "Name": "",
           "Description": "vax",
           "UsingDefaultValue": false,
@@ -839,7 +1448,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e57af16e299347238a36b39b37eeff69",
+          "Id": "0b30ca6d6c5d4a789bd875b2a8d20ef7",
           "Name": "",
           "Description": "DCLA",
           "UsingDefaultValue": false,
@@ -848,7 +1457,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "035ea385f5f347939a9d951593e8bdeb",
+          "Id": "9dde0f99118244b085f03ab23d87db3e",
           "Name": "",
           "Description": "kdo",
           "UsingDefaultValue": false,
@@ -857,7 +1466,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7cfcc3ce08fc46009c88df40ec2effce",
+          "Id": "4b3442d73a314b4b8e9381038407f635",
           "Name": "",
           "Description": "vdo",
           "UsingDefaultValue": false,
@@ -866,7 +1475,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "baf02898ac6b43ffb651a39db95d9e48",
+          "Id": "7699d2f9bcd64d24bd26b105ac5e8062",
           "Name": "",
           "Description": "DDOM",
           "UsingDefaultValue": false,
@@ -875,7 +1484,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cee59697ee684733aba18802786e0501",
+          "Id": "329be4b206ab46dc9769f2b4e79585d8",
           "Name": "",
           "Description": "kan",
           "UsingDefaultValue": false,
@@ -884,7 +1493,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "651720b94ff94f889a4e91fc039b8dab",
+          "Id": "743a844257d64b388be70b537d8a29fb",
           "Name": "",
           "Description": "van",
           "UsingDefaultValue": false,
@@ -893,7 +1502,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "84e8b44be02341a19f6264c658827c40",
+          "Id": "01c9ba69792d43b4a6ecdecc6444cbdd",
           "Name": "",
           "Description": "DANO",
           "UsingDefaultValue": false,
@@ -902,7 +1511,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5d851fc539974240b3bb20331e60471c",
+          "Id": "62fd9e3661cb4327b2b415ab6a712dde",
           "Name": "",
           "Description": "kes",
           "UsingDefaultValue": false,
@@ -911,7 +1520,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f4449eaefd0241cfb675a4841c9b6183",
+          "Id": "d51db382f09c40b482f440bf064f97c9",
           "Name": "",
           "Description": "ves",
           "UsingDefaultValue": false,
@@ -920,7 +1529,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b14e78928ec0402d9ddda9f35be4de05",
+          "Id": "4383b96f8b3f4c5aba9c57f2c3f149cb",
           "Name": "",
           "Description": "DESP",
           "UsingDefaultValue": false,
@@ -929,7 +1538,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "10bf5206351b4cbaa586c56372f89281",
+          "Id": "b2d90ed283e14cc3b409c1ac272f2414",
           "Name": "",
           "Description": "kca",
           "UsingDefaultValue": false,
@@ -938,7 +1547,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3d145689192a47e882acb2face5daf99",
+          "Id": "d0aadbe8ee5541f393b0737558bc9103",
           "Name": "",
           "Description": "vca",
           "UsingDefaultValue": false,
@@ -947,7 +1556,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f40ce142b89c44d584d9b00aa5091323",
+          "Id": "14036020b7814d50a13df739418f8258",
           "Name": "",
           "Description": "DCAR",
           "UsingDefaultValue": false,
@@ -956,7 +1565,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a6f248c456ef45ec80abae49e80d46ac",
+          "Id": "ddeb09e5d9f747c18fd77cc4569b4ad1",
           "Name": "",
           "Description": "kin",
           "UsingDefaultValue": false,
@@ -965,7 +1574,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "eec5e05efa47470b9fea60c4deada14b",
+          "Id": "f884586d113f4650b213c0a17e36419d",
           "Name": "",
           "Description": "vin",
           "UsingDefaultValue": false,
@@ -974,7 +1583,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0f2ba9494951436a9cc72f87622b9364",
+          "Id": "89620f4f2daf4ee082de92d98a85496f",
           "Name": "",
           "Description": "DFAT",
           "UsingDefaultValue": false,
@@ -993,7 +1602,7 @@
       "NodeType": "CodeBlockNode",
       "Inputs": [
         {
-          "Id": "7ff3a10881d844719d374a818a51dd00",
+          "Id": "39b6cd2fbd63469899a1a79a52e4b655",
           "Name": "DADOS",
           "Description": "DADOS",
           "UsingDefaultValue": false,
@@ -1002,7 +1611,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3e4eecb2786040dbb6acc94fe259ad7b",
+          "Id": "f5ec84c855e5495b8bcf72e467d84a90",
           "Name": "DCLA",
           "Description": "DCLA",
           "UsingDefaultValue": false,
@@ -1011,7 +1620,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3646027438bd4b8f8e458bf14a8fda21",
+          "Id": "f25e5ce03bee4f75b46da2b541cda998",
           "Name": "DDOM",
           "Description": "DDOM",
           "UsingDefaultValue": false,
@@ -1020,7 +1629,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a7a260e43ad94e9ab6b4658ea2babc0c",
+          "Id": "58e3753b80c84badb8be8f5802ea85c2",
           "Name": "DANO",
           "Description": "DANO",
           "UsingDefaultValue": false,
@@ -1029,7 +1638,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c397e9e170b14a50969d0ef69d28e472",
+          "Id": "34be8be95fe0489bb58fff3cee25fd8e",
           "Name": "DESP",
           "Description": "DESP",
           "UsingDefaultValue": false,
@@ -1038,7 +1647,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "eb44af76ed724f6e92069a9a28b9e02f",
+          "Id": "017e089f411a4c3fb0052a6f70c8a09f",
           "Name": "DCAR",
           "Description": "DCAR",
           "UsingDefaultValue": false,
@@ -1047,7 +1656,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ba2c67caf10e4454908290f5d60cea1e",
+          "Id": "fd05e8315e9943a59291c5dfe76ef9eb",
           "Name": "DFAT",
           "Description": "DFAT",
           "UsingDefaultValue": false,
@@ -1056,7 +1665,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d22cf466da214c24a0df2189ec87f838",
+          "Id": "9bdc568ee24d44a0aabbb94f26fd1ff0",
           "Name": "DicI",
           "Description": "DicI",
           "UsingDefaultValue": false,
@@ -1065,7 +1674,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1277d4b7f19844f2b2bd9133b28cde04",
+          "Id": "27aba83a2c66409594c2b14794f8cf23",
           "Name": "DicC",
           "Description": "DicC",
           "UsingDefaultValue": false,
@@ -1076,7 +1685,7 @@
       ],
       "Outputs": [
         {
-          "Id": "1a29de8d0a6848219bfa7da4db884746",
+          "Id": "748cbe0873a943eebcda72aa2c540b6c",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1085,7 +1694,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bc1688f4c0414999a2a8bf73c14b2d12",
+          "Id": "60e35d4726c94e73b49c5ee275bf251e",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1094,7 +1703,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "32d09a5275364fe3a6b848b2ddcddac2",
+          "Id": "f72bbcfc3e384353af8c1ed6874a85cf",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -1103,7 +1712,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f9a72446961944e3a701de34c164fa54",
+          "Id": "0f841efe823e48b39c230a4516f5906f",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -1112,7 +1721,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "22b152ca229f4598aa567c9b1db49bad",
+          "Id": "765c7b751ae44e9aa920feb6035577e2",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -1121,7 +1730,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b0fa72b5514a45e299079758bf712f28",
+          "Id": "31e7fca8dd8d47528f36fc751de8ec18",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -1130,7 +1739,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b80831475e7e4ebb8315a7c52c8bf15d",
+          "Id": "8226073875df4cba92feed2821fb32b2",
           "Name": "",
           "Description": "Value of expression at line 7",
           "UsingDefaultValue": false,
@@ -1139,7 +1748,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "866b77d34a0940538fac6f1196cb633b",
+          "Id": "616e3a74837b49e3bce112b9b155dc13",
           "Name": "",
           "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
@@ -1148,7 +1757,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "018aa920a7364befa8020f8e17876a15",
+          "Id": "db7c98bd0c5a42c2b7503b1c58d3aed9",
           "Name": "",
           "Description": "Value of expression at line 9",
           "UsingDefaultValue": false,
@@ -1157,7 +1766,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1d34f018a8304c0c8ea41b16889d2a22",
+          "Id": "c8eaa6f548004cb4aa89cefbf2384a3e",
           "Name": "",
           "Description": "Value of expression at line 10",
           "UsingDefaultValue": false,
@@ -1166,7 +1775,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bcf437c8e0c44d55962f0396a4eaa08d",
+          "Id": "51b65c89ade9475788b7e5d1a760505e",
           "Name": "",
           "Description": "DPJT",
           "UsingDefaultValue": false,
@@ -1175,7 +1784,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f0945a16586b419b80f34cdc9f4d30b3",
+          "Id": "24a28488b773417eaa46340037b91069",
           "Name": "",
           "Description": "DACL",
           "UsingDefaultValue": false,
@@ -1184,7 +1793,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "12b87f4b415a479f9ef2a83252c75a69",
+          "Id": "b8d9e94c3522416aa112fcc51993c8a9",
           "Name": "",
           "Description": "DPRO",
           "UsingDefaultValue": false,
@@ -1193,7 +1802,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0d200236c9104c3c845e77f9e9eebf57",
+          "Id": "9866b06bf19c4b06834d91084d81eab0",
           "Name": "",
           "Description": "keyP",
           "UsingDefaultValue": false,
@@ -1202,7 +1811,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c016956ac9494540abc58e04d3a8eb86",
+          "Id": "3b43bc8d5c9240129a5322938f8b97ea",
           "Name": "",
           "Description": "valP",
           "UsingDefaultValue": false,
@@ -1211,7 +1820,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a01eab68daf94eb6a3b586ce2f10d48c",
+          "Id": "271dafdf242b4dfe9b6cb9f3391f56ec",
           "Name": "",
           "Description": "fx",
           "UsingDefaultValue": false,
@@ -1220,7 +1829,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5e8e3f251a4c48b99b7b006cafc603a4",
+          "Id": "0e2aff4fcacf4f4faea98ad6b113a9f5",
           "Name": "",
           "Description": "obje",
           "UsingDefaultValue": false,
@@ -1229,7 +1838,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b4aedb35215446c98854a126f8e9d2cf",
+          "Id": "af99dd8fad0c46d590c756ff7dcb2b9a",
           "Name": "",
           "Description": "suop",
           "UsingDefaultValue": false,
@@ -1238,7 +1847,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2843a580e34f49c2a9967a0355a9f259",
+          "Id": "e8ffd0f519d14d4f835083bed6b0e19d",
           "Name": "",
           "Description": "sudp",
           "UsingDefaultValue": false,
@@ -1247,7 +1856,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e02ab749ede64450b1227c98e9b6c7cf",
+          "Id": "d7fda8ec8c6e4bc2974fe80b2d39e03a",
           "Name": "",
           "Description": "data",
           "UsingDefaultValue": false,
@@ -1256,7 +1865,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "280178bfda4d4da69762278831d18012",
+          "Id": "7e60746a54ce44dd819f5a78f2eb0610",
           "Name": "",
           "Description": "anot",
           "UsingDefaultValue": false,
@@ -1265,7 +1874,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6cc146673e4241e2820803c8e53fb216",
+          "Id": "20e22381a51545778a802576ae7a87cf",
           "Name": "",
           "Description": "equi",
           "UsingDefaultValue": false,
@@ -1274,7 +1883,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b385c647df074b73809236455f4bbd02",
+          "Id": "e372ceeb4ba64776b37a2ce106c5f345",
           "Name": "",
           "Description": "domi",
           "UsingDefaultValue": false,
@@ -1283,7 +1892,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "851740b629994d0996ee82497044b4ce",
+          "Id": "4932e9bb225a44c696ccd4b05685d32f",
           "Name": "",
           "Description": "rang",
           "UsingDefaultValue": false,
@@ -1292,7 +1901,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0d57b58276444488a50304ac8f834021",
+          "Id": "06c983f5dc474fc8960d69dc9bb5c4cb",
           "Name": "",
           "Description": "vran",
           "UsingDefaultValue": false,
@@ -1301,7 +1910,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "abb6f23297f245f397572e50e3aeba95",
+          "Id": "922f5f7ff452421c89d419aab358ccbd",
           "Name": "",
           "Description": "help",
           "UsingDefaultValue": false,
@@ -1310,7 +1919,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f4d34f954ef94e7886e0c339e3917fa9",
+          "Id": "c74d5d5135534e218baeff6d288098ac",
           "Name": "",
           "Description": "vi",
           "UsingDefaultValue": false,
@@ -1319,7 +1928,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "56a2621b35d740dbbef8295e6dd63fa2",
+          "Id": "31a53029248a4feb9e4d7011b5827225",
           "Name": "",
           "Description": "id",
           "UsingDefaultValue": false,
@@ -1328,7 +1937,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "161db6b15dc3450d95fdb4361df2ca26",
+          "Id": "bae68d774d354ca9af9ff852952c50d1",
           "Name": "",
           "Description": "cara",
           "UsingDefaultValue": false,
@@ -1337,7 +1946,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a674e0b60ab2424a8bcecc1f73a01bfa",
+          "Id": "a1f78a70d2614c3db6ae13bb3f03d3a6",
           "Name": "",
           "Description": "inve",
           "UsingDefaultValue": false,
@@ -1346,7 +1955,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "98711cda2d7440799a6f0915631f1b44",
+          "Id": "5ad799c537e546149998be544bcaf933",
           "Name": "",
           "Description": "PROP",
           "UsingDefaultValue": false,
@@ -1355,7 +1964,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f7f6ff4c8e4f499195987791ce8f2572",
+          "Id": "6b3259d4b5fb47b9863eb2e2e6471cf8",
           "Name": "",
           "Description": "OSUB",
           "UsingDefaultValue": false,
@@ -1364,7 +1973,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d8f1748d844e4d21a89dbe6ee5db743a",
+          "Id": "b822a27d016242a9b07b82a3efc44912",
           "Name": "",
           "Description": "CA01",
           "UsingDefaultValue": false,
@@ -1373,7 +1982,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2bff4a5fed1d4c2ea0cbc59993fd96c1",
+          "Id": "741676f652314f5cb776860f47067598",
           "Name": "",
           "Description": "CA02",
           "UsingDefaultValue": false,
@@ -1382,7 +1991,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "05e4a39387bb49daadb868a96f49e8d0",
+          "Id": "7fb1d24984b64210be8c7c29ca13061e",
           "Name": "",
           "Description": "CA03",
           "UsingDefaultValue": false,
@@ -1391,7 +2000,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "332d148fed4e4c70a8d90aa0f0dd4951",
+          "Id": "9a8f95f7962a49688c74b00bbe302318",
           "Name": "",
           "Description": "CA04",
           "UsingDefaultValue": false,
@@ -1400,7 +2009,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2dec54298b824e988fb96742cc15cca9",
+          "Id": "837d20d63c014257addf0ce074515559",
           "Name": "",
           "Description": "CA05",
           "UsingDefaultValue": false,
@@ -1409,7 +2018,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7f5486c6cad34fc598825a261c0031a7",
+          "Id": "4a01b70ff1664d60b7abdda3eda01818",
           "Name": "",
           "Description": "CA06",
           "UsingDefaultValue": false,
@@ -1418,7 +2027,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "88da72cef3f64e33a3e6cdc9cb9f6e55",
+          "Id": "e3560cbee7ef47698f373db11eba78d6",
           "Name": "",
           "Description": "CA07",
           "UsingDefaultValue": false,
@@ -1427,7 +2036,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "32a3fbb4255740d293d39d92ea325888",
+          "Id": "a29f3e42513643c288cb7e3e25bf060b",
           "Name": "",
           "Description": "CA08",
           "UsingDefaultValue": false,
@@ -1436,7 +2045,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0940633d30a84766811e9f5e5ecf739d",
+          "Id": "c10c54cf2a0f49a3bf6fa04d70b4b5f5",
           "Name": "",
           "Description": "DOMI",
           "UsingDefaultValue": false,
@@ -1445,7 +2054,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "aab8f3701eb14d6294171d3733f0f369",
+          "Id": "a2969e7c12d24b54a46bedadd21d6eda",
           "Name": "",
           "Description": "RANG",
           "UsingDefaultValue": false,
@@ -1454,7 +2063,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "88d70848344a49aba182996a1e686c1c",
+          "Id": "7a8f7b4859284f98a72d4d385b553b72",
           "Name": "",
           "Description": "HELP",
           "UsingDefaultValue": false,
@@ -1463,7 +2072,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a840c6ef01d943dfad7eb765b0e49b51",
+          "Id": "73f6757e83714b5c8c523e3089cbac9a",
           "Name": "",
           "Description": "OPRO",
           "UsingDefaultValue": false,
@@ -1472,7 +2081,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1867882d4aa44c0086294df8b934734f",
+          "Id": "cf7a6c937b754229b9af5c3bd006a389",
           "Name": "",
           "Description": "OPRU",
           "UsingDefaultValue": false,
@@ -1481,7 +2090,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "18fdd51e1f114300af361c004892efd6",
+          "Id": "c39274e0df0e4273984382148a79ecdb",
           "Name": "",
           "Description": "DATA",
           "UsingDefaultValue": false,
@@ -1490,7 +2099,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "08d54d7582be4da3ae6e78aca026f51f",
+          "Id": "703458256e464c0bafc69e595bc58daf",
           "Name": "",
           "Description": "DASU",
           "UsingDefaultValue": false,
@@ -1499,7 +2108,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "18a247671e0846b39336407c20f600f7",
+          "Id": "07243f55ca2a41e3b0680b50f4ee47c1",
           "Name": "",
           "Description": "DAHE",
           "UsingDefaultValue": false,
@@ -1508,7 +2117,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8e562d06ebe1468c9a481b5a400e022b",
+          "Id": "481cb01d7df64d75bc15228c28dac129",
           "Name": "",
           "Description": "COME",
           "UsingDefaultValue": false,
@@ -1517,7 +2126,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "323dc11552254a1bab36b9c579a8b3b3",
+          "Id": "81b0e6a2cb754c598ae0d9184c0962be",
           "Name": "",
           "Description": "DADO",
           "UsingDefaultValue": false,
@@ -1526,7 +2135,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d3644823caab42bb8780a170371d0e68",
+          "Id": "91505e61cc954c559012fb11fc8a19d6",
           "Name": "",
           "Description": "DARA",
           "UsingDefaultValue": false,
@@ -1535,7 +2144,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ecd7cd30e2564a05ab75a69b2689d2ad",
+          "Id": "974b94519d524b9488e548f64292defa",
           "Name": "",
           "Description": "DACA",
           "UsingDefaultValue": false,
@@ -1544,7 +2153,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "93d8bb3ca52e4ec0af00cd7516f80af5",
+          "Id": "36b2e6143e6e46bd94a37309ea0cbf41",
           "Name": "",
           "Description": "ODAT",
           "UsingDefaultValue": false,
@@ -1553,7 +2162,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "70f1311fc8a64f82928b9ea05d5680e7",
+          "Id": "08f8cce50c8f4d4282d4830dc1b17086",
           "Name": "",
           "Description": "ODAU",
           "UsingDefaultValue": false,
@@ -1562,7 +2171,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9ba1a3f4263843369894b85349a0b1b2",
+          "Id": "851ffe2916794d98b4f1a3e4e8938bfc",
           "Name": "",
           "Description": "kp",
           "UsingDefaultValue": false,
@@ -1571,7 +2180,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4cfa66404a764e8cbe8513ff8017ccbd",
+          "Id": "902faef0fafd47559873bb77cc7d15db",
           "Name": "",
           "Description": "vp",
           "UsingDefaultValue": false,
@@ -1580,7 +2189,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "023be1b7e8884f019c3956015232256c",
+          "Id": "10368217740f4e08b51f1c59f01a8749",
           "Name": "",
           "Description": "DicP",
           "UsingDefaultValue": false,
@@ -1599,7 +2208,7 @@
       "NodeType": "CodeBlockNode",
       "Inputs": [
         {
-          "Id": "22369326d7eb4b2da04321adf20afc6f",
+          "Id": "5bdba67a82d848ab88e9b343e1b8b9a2",
           "Name": "DADOS",
           "Description": "DADOS",
           "UsingDefaultValue": false,
@@ -1608,7 +2217,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d7f5a70a492c42dcad11faaf09e3cda9",
+          "Id": "45e0ae888fea44559bcc61fb735527d4",
           "Name": "DCLA",
           "Description": "DCLA",
           "UsingDefaultValue": false,
@@ -1617,7 +2226,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1a5a4f6c6a584aa7a3b9f434dae9ccf0",
+          "Id": "39f6d48767bb4f0a98ab48d384bea0da",
           "Name": "DDOM",
           "Description": "DDOM",
           "UsingDefaultValue": false,
@@ -1626,7 +2235,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "927486f0ce1d4dce9234b4e97a096d53",
+          "Id": "fbe6f1dad59a49ac9ea5b9de5743fee7",
           "Name": "DANO",
           "Description": "DANO",
           "UsingDefaultValue": false,
@@ -1635,7 +2244,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a8b3448ebaa540ef81b2bb2a5ae2ff2f",
+          "Id": "a5b5e44fee1b4fef9b0590232a166ab6",
           "Name": "DESP",
           "Description": "DESP",
           "UsingDefaultValue": false,
@@ -1644,7 +2253,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1521a855621f4b79b1089b508b1d64ba",
+          "Id": "39d92864c798436399faed1d024c5a78",
           "Name": "DCAR",
           "Description": "DCAR",
           "UsingDefaultValue": false,
@@ -1653,7 +2262,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "693135e3497142b58ab5832166f6d2ef",
+          "Id": "939c00d4038e4569b4fc41537ef17bb5",
           "Name": "DFAT",
           "Description": "DFAT",
           "UsingDefaultValue": false,
@@ -1662,7 +2271,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e8c3895730af40a1a42454b9a6f8887c",
+          "Id": "67e5fe19b2e74b95892efbe1c048799c",
           "Name": "DicI",
           "Description": "DicI",
           "UsingDefaultValue": false,
@@ -1673,7 +2282,7 @@
       ],
       "Outputs": [
         {
-          "Id": "4726d9f8dfdc460b8b7e585d0d0d291f",
+          "Id": "718ba4222f1f4d73a561abf44e6547c3",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1682,7 +2291,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6b0a69a610aa4c658a099286cf9409cc",
+          "Id": "fa230ec9110243aa9086b2d11b6ad9cf",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -1691,7 +2300,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "071ddf715b9745378aa78355c6b51443",
+          "Id": "83030c4b95014489a89bfb0d0dd5bc20",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -1700,7 +2309,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e9f3ef1b17b44780b03f2874456baa2b",
+          "Id": "45879c71cf0f42d399421fa38a421a9b",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -1709,7 +2318,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8bbd9e540159400f89697221ddb18469",
+          "Id": "46a1a5a40be341189ce4541d154329ea",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -1718,7 +2327,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a7a3e317818e412fae341e86c6cc5ea7",
+          "Id": "feeb2e3cbeb54f209dbdc9fab97b883d",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -1727,7 +2336,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "81649552740d4960a57a8ffb0bec4824",
+          "Id": "3ef9373d65c84c93868d6d51eb05ba7e",
           "Name": "",
           "Description": "Value of expression at line 7",
           "UsingDefaultValue": false,
@@ -1736,7 +2345,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b5c6e993f74b42918c2e17fc875cfd5c",
+          "Id": "7bdf8bfef7c3443c9a94ae9917817b1b",
           "Name": "",
           "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
@@ -1745,7 +2354,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b38f387c97144b448c47b02446c82079",
+          "Id": "7499956cbb1e41e7901f31573316f36d",
           "Name": "",
           "Description": "Value of expression at line 9",
           "UsingDefaultValue": false,
@@ -1754,7 +2363,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a4ebc0fc638747aa9b4cfdfecedf2602",
+          "Id": "ade17289cce3406b8597ff38d7821608",
           "Name": "",
           "Description": "DPJT",
           "UsingDefaultValue": false,
@@ -1763,7 +2372,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d7f44b13fd0840769fd8719bb3662e98",
+          "Id": "e2987076ed7a4ba285b9cdab411d849d",
           "Name": "",
           "Description": "DACL",
           "UsingDefaultValue": false,
@@ -1772,7 +2381,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6eb4f07fa1154afaa6bae66cfbf0f279",
+          "Id": "6b1e20756de64993aa6a31b6733ca174",
           "Name": "",
           "Description": "DPRO",
           "UsingDefaultValue": false,
@@ -1781,7 +2390,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bd704cacf7714349bf2463a6072344ab",
+          "Id": "b7caedaaf2e047b48e86e35e5a81299f",
           "Name": "",
           "Description": "DISJ",
           "UsingDefaultValue": false,
@@ -1790,7 +2399,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c87137642c3b4d8cb0d700070eb805be",
+          "Id": "ffc03ea29e8b4c6aa454e552b31bb9a2",
           "Name": "",
           "Description": "keyP",
           "UsingDefaultValue": false,
@@ -1799,7 +2408,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3f3723f7e36942d69b00e2e4b5521e30",
+          "Id": "a47c3934990749dd8874cb19cc5883f6",
           "Name": "",
           "Description": "valP",
           "UsingDefaultValue": false,
@@ -1808,7 +2417,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1ba4aeade54645eb846c50b921dc1759",
+          "Id": "7fe548ca618e4a48954ec4f474e3c1fd",
           "Name": "",
           "Description": "fx",
           "UsingDefaultValue": false,
@@ -1817,7 +2426,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0c1cd44749714492a8de03b3ac2af26b",
+          "Id": "2889e142a0c9473d9ebfe1c427b7bac2",
           "Name": "",
           "Description": "clas",
           "UsingDefaultValue": false,
@@ -1826,7 +2435,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fdffc5e4e5284321a99a1ed26b72a709",
+          "Id": "1f0134fb746f48df8bfa2ec0d007de24",
           "Name": "",
           "Description": "subc",
           "UsingDefaultValue": false,
@@ -1835,7 +2444,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d067de1bc7ad4eb4b29215b36adc6e2a",
+          "Id": "876e261278d142b99e7593acaf0293e0",
           "Name": "",
           "Description": "equi",
           "UsingDefaultValue": false,
@@ -1844,7 +2453,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fae18df5c88e4df196f1f21f3e6c8983",
+          "Id": "d2219819bcb04598a40b50830ce9fb81",
           "Name": "",
           "Description": "help",
           "UsingDefaultValue": false,
@@ -1853,7 +2462,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6d6de00deaf5431ea501a36fe037eba8",
+          "Id": "97895d71969241068e59a73ca6114b57",
           "Name": "",
           "Description": "id",
           "UsingDefaultValue": false,
@@ -1862,7 +2471,25 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b85a22d02bb740bfb9eb16c195bedc77",
+          "Id": "89c13ba0d2b845be84b822c85ba58cec",
+          "Name": "",
+          "Description": "vi",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d5028226b873400a9792ea58312fbeed",
+          "Name": "",
+          "Description": "disc",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0926138f397440a5994f8ead3e769720",
           "Name": "",
           "Description": "c",
           "UsingDefaultValue": false,
@@ -1871,7 +2498,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d7bd326b4e5f4ee7a9e9ff6715660d13",
+          "Id": "c6afea0311ea4927a4ccce5438cc1829",
           "Name": "",
           "Description": "CLAS",
           "UsingDefaultValue": false,
@@ -1880,7 +2507,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ed0e6c3122e44a1e91c4c0e186c8918c",
+          "Id": "dd9aa1df2e35489e8e49a61bd3c6877c",
           "Name": "",
           "Description": "OSUB",
           "UsingDefaultValue": false,
@@ -1889,7 +2516,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "215f1aed13254cebb0f437ae0a06859a",
+          "Id": "a8ad17ef22644ce8b2a5e3d6bb119499",
           "Name": "",
           "Description": "EQUI",
           "UsingDefaultValue": false,
@@ -1898,7 +2525,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c1f6e3ae3ef544fa922f8b8fdb3d1068",
+          "Id": "885da882cdbb428bbb40c1d6679f8682",
           "Name": "",
           "Description": "HELP",
           "UsingDefaultValue": false,
@@ -1907,7 +2534,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f34f1d6ced954fa89ac0671b2b4aacc2",
+          "Id": "01d05a5b808847278e5aad6d3a6bbbf2",
           "Name": "",
           "Description": "OCLA",
           "UsingDefaultValue": false,
@@ -1916,7 +2543,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "0100af69a1774c03a16e4108166ad597",
+          "Id": "241d072150ac4c9e97fdfa5b62285c55",
           "Name": "",
           "Description": "UCLA",
           "UsingDefaultValue": false,
@@ -1925,7 +2552,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5c82271365614f8a8062a357c37299c0",
+          "Id": "6ac67f97a20046dbad08c06e88a5246a",
           "Name": "",
           "Description": "kc",
           "UsingDefaultValue": false,
@@ -1934,7 +2561,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "451520e8bd8e4c1ea386b81bb6d3fb89",
+          "Id": "6a89b24716a746ba9d7dab8dac4b8db9",
           "Name": "",
           "Description": "vc",
           "UsingDefaultValue": false,
@@ -1943,7 +2570,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ae17d0ee8eb1456891474079eb1d49ff",
+          "Id": "b861359dad4c4fd1a91e222432fbb9d5",
           "Name": "",
           "Description": "DicC",
           "UsingDefaultValue": false,
@@ -1954,7 +2581,7 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "DADOS;\nDCLA;\nDDOM;\nDANO;\nDESP;\nDCAR;\nDFAT;\nDicI;\nDicC;\n//-----------------------------------\n// Prepara dados do Classes\n//-----------------------------------\nDPJT = DADOS[\"DAPRJ\"];\nDACL = DADOS[\"DACLA\"];\nDPRO = DADOS[\"DAPRO\"];\nDISJ = DADOS[\"DADIS\"];\nkeyP = DPJT [0];\nvalP = DPJT [1];\nfx   = valP [0];\nclas = DCLA [\"clas\"];\nsubc = DCLA [\"subc\"];\nequi = DDOM [\"equi\"];\nhelp = DANO [\"help\"];\nid   = DESP [\"idio\"];\n//-----------------------------------\n// CLASSES\n//-----------------------------------\nc    = 2..5;\nCLAS =          clas+fx+DACL[c   ];\nOSUB =          subc+fx+DACL[c- 1];\nEQUI = EqVt (fx,equi  , DACL[c+ 5]);\nHELP = Nula (   help  , DACL[c+10]);\n//-----------------------------------\nOCLA = CLAS+OSUB+HELP+id+EQUI;\nUCLA = Unicos ( OCLA , 2);\n//-----------------------------------\n// REGISTRA FINAIS DE CLASSES\n//-----------------------------------\nkc   = [ \"CLAS\" ];\nvc   = [  UCLA  ];\nDicC = Dictionary.ByKeysValues(kc,vc);"
+      "Code": "DADOS;\nDCLA;\nDDOM;\nDANO;\nDESP;\nDCAR;\nDFAT;\nDicI;\nDicC;\n//-----------------------------------\n// Prepara dados do Classes\n//-----------------------------------\nDPJT = DADOS[\"DAPRJ\"];\nDACL = DADOS[\"DACLA\"];\nDPRO = DADOS[\"DAPRO\"];\nDISJ = DADOS[\"DADIS\"];\nkeyP = DPJT [0];\nvalP = DPJT [1];\nfx   = valP [0];\nclas = DCLA [\"clas\"];\nsubc = DCLA [\"subc\"];\nequi = DDOM [\"equi\"];\nhelp = DANO [\"help\"];\nid   = DESP [\"idio\"];\nvi   = DESP [\"virg\"];\ndisc = DANO [\"disc\"];\n//-----------------------------------\n// CLASSES\n//-----------------------------------\nc    = 2..5;\nCLAS =          clas+fx+DACL[c   ];\nOSUB =          subc+fx+DACL[c- 1];\nEQUI = EqVt (fx,equi  , DACL[c+ 5]);\n//EQUI = \"\";\nHELP = Nula (   help  , DACL[c+10]);\n//-----------------------------------\nOCLA = CLAS+OSUB+HELP+id+EQUI;\nUCLA = Unicos ( OCLA , 2);\n//-----------------------------------\n// REGISTRA FINAIS DE CLASSES\n//-----------------------------------\nkc   = [ \"CLAS\" ];\nvc   = [  UCLA  ];\nDicC = Dictionary.ByKeysValues(kc,vc);"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1962,7 +2589,7 @@
       "NodeType": "CodeBlockNode",
       "Inputs": [
         {
-          "Id": "18e5f26d64664737844c3c1c6502c889",
+          "Id": "32549b99e41949c4b4a0da0595855eea",
           "Name": "DADOS",
           "Description": "DADOS",
           "UsingDefaultValue": false,
@@ -1971,7 +2598,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "44911a1ea30945059bc02fa02cba7818",
+          "Id": "29f55f88d57b404289e8bff368bd4617",
           "Name": "DCLA",
           "Description": "DCLA",
           "UsingDefaultValue": false,
@@ -1980,7 +2607,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bf80957285e449128c85b92958afbc7d",
+          "Id": "4c75530d16654895a704388bbd8ee160",
           "Name": "DDOM",
           "Description": "DDOM",
           "UsingDefaultValue": false,
@@ -1989,7 +2616,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f6aa4828006d4f778131f3aab20b5d95",
+          "Id": "ef70d98454a0438fae27ef339f8e4b76",
           "Name": "DANO",
           "Description": "DANO",
           "UsingDefaultValue": false,
@@ -1998,7 +2625,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "09d562cb37924933be4968f94ea68ed2",
+          "Id": "9c68390bfd6e41e48e0e3a521f4b569d",
           "Name": "DESP",
           "Description": "DESP",
           "UsingDefaultValue": false,
@@ -2007,7 +2634,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "50e71a3bf6b24dfc895c68caa20886a5",
+          "Id": "67408fca9d714d6e9d640ea19f5212fa",
           "Name": "DCAR",
           "Description": "DCAR",
           "UsingDefaultValue": false,
@@ -2016,7 +2643,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "856d19bd3fa8430b816171152873ca47",
+          "Id": "0abc5150b91c40e390e9d0ac81cfdda8",
           "Name": "DFAT",
           "Description": "DFAT",
           "UsingDefaultValue": false,
@@ -2027,7 +2654,7 @@
       ],
       "Outputs": [
         {
-          "Id": "406f285114674d19a38f2ae033ce505a",
+          "Id": "b84e41e7c83a494bb80aeed6ad5e5b98",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -2036,7 +2663,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "dbf78460cf234fbbac4948f84d70cda6",
+          "Id": "73f27248512042c6b6f04b983f9ab677",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -2045,7 +2672,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b06453988754406b83809e35f75a8d38",
+          "Id": "fb358aebb36f457e970e728d6b1fcbc3",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -2054,7 +2681,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "162997958e484d74b035c4cea7332355",
+          "Id": "fd8bd2cb1d874f2d817a871d53f0032c",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -2063,7 +2690,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cc7e0b0f7bbf45e49d0244cf3caab5e8",
+          "Id": "72485e78db094de9a0aeeced3d5fb776",
           "Name": "",
           "Description": "Value of expression at line 5",
           "UsingDefaultValue": false,
@@ -2072,7 +2699,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b4fbd727ac144f3c8db4e8aae8f5ab65",
+          "Id": "ee5ddc95e09e4798b7e241533ff8bc0e",
           "Name": "",
           "Description": "Value of expression at line 6",
           "UsingDefaultValue": false,
@@ -2081,7 +2708,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "36f355574cfa4727bd09328175c501f9",
+          "Id": "ef7486c44d394fbc9bd418249b18a7ee",
           "Name": "",
           "Description": "Value of expression at line 7",
           "UsingDefaultValue": false,
@@ -2090,7 +2717,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "98890a71d57f4d6ab395898901a45741",
+          "Id": "a759a9f4b018405287e2f7731656c24a",
           "Name": "",
           "Description": "Value of expression at line 8",
           "UsingDefaultValue": false,
@@ -2099,7 +2726,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7d21e4ef1c3b44298f6576eb548c17f2",
+          "Id": "27e23a3c7f994655aafbb5cce1053573",
           "Name": "",
           "Description": "DPJT",
           "UsingDefaultValue": false,
@@ -2108,7 +2735,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "69775ad7f30f4d53b66dc171229b2116",
+          "Id": "f0725a6e78494cedbd0bc12724a6fc62",
           "Name": "",
           "Description": "DACL",
           "UsingDefaultValue": false,
@@ -2117,7 +2744,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "91defb10586e4d14b5a92ca53a87f86e",
+          "Id": "a673d4d5d9e04ab99c552675bdeefeed",
           "Name": "",
           "Description": "DPRO",
           "UsingDefaultValue": false,
@@ -2126,7 +2753,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "847488aa1ee44188b5f3266a8dc7453d",
+          "Id": "e015ea3754f0448287dde5a78e1105bb",
           "Name": "",
           "Description": "DISJ",
           "UsingDefaultValue": false,
@@ -2135,7 +2762,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b3509e46cd1045e48fc4fef60e5258ff",
+          "Id": "1e8ebb5fec9d4d20bb40a30b0eaaded0",
           "Name": "",
           "Description": "keyP",
           "UsingDefaultValue": false,
@@ -2144,7 +2771,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "85c4f6ba214c4ccb8120d016837ae0f3",
+          "Id": "199df87ae8bc41409c3f0f2bb0a29b76",
           "Name": "",
           "Description": "valP",
           "UsingDefaultValue": false,
@@ -2153,7 +2780,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "99e5958f8f754a06850d84e62d78efef",
+          "Id": "b5ed3f8e79154c578891408641af1735",
           "Name": "",
           "Description": "fx",
           "UsingDefaultValue": false,
@@ -2162,7 +2789,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "794c3f9480d94fbb84757104864ad8fa",
+          "Id": "57660c6aba4c44868666987bff3ed5d5",
           "Name": "",
           "Description": "tema",
           "UsingDefaultValue": false,
@@ -2171,7 +2798,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1ad76f0516704af7ac1824f9ac0e61bc",
+          "Id": "4671086c2be944489e7bb9bd246bb446",
           "Name": "",
           "Description": "rzcl",
           "UsingDefaultValue": false,
@@ -2180,7 +2807,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "507a1948b72649c49556593fd1a65740",
+          "Id": "748e94b4ac5546819faf28682d5d7e00",
           "Name": "",
           "Description": "rzpr",
           "UsingDefaultValue": false,
@@ -2189,7 +2816,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "38c0d126581e49c8b24e63e6a3e1a782",
+          "Id": "71321a0e32f54e99b70570dee6cc5f58",
           "Name": "",
           "Description": "rzda",
           "UsingDefaultValue": false,
@@ -2198,7 +2825,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1a686ef83791411bb88e4fbffbdcfb21",
+          "Id": "c6e4359de7194788b1bd6fbe9d776161",
           "Name": "",
           "Description": "uri",
           "UsingDefaultValue": false,
@@ -2207,7 +2834,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "85ac74924d5d4a03889cdb7ea90b68c7",
+          "Id": "cf0e74ebfc3d4663a23605ffa18b201d",
           "Name": "",
           "Description": "aut",
           "UsingDefaultValue": false,
@@ -2216,7 +2843,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9d33cf71de8e43c7a1bf6fd94495b821",
+          "Id": "5c2435810af64e3cb444c6c655f78da8",
           "Name": "",
           "Description": "clas",
           "UsingDefaultValue": false,
@@ -2225,7 +2852,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "08ecceb9b823460d9b4d07a7f9f401d5",
+          "Id": "b108e43c08eb4f518a18658bf89edcd0",
           "Name": "",
           "Description": "subc",
           "UsingDefaultValue": false,
@@ -2234,7 +2861,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "999ca075c7c047f1b7b3267c5da1a086",
+          "Id": "6ed700c7d855419886d54ca7f0bbb19f",
           "Name": "",
           "Description": "obje",
           "UsingDefaultValue": false,
@@ -2243,7 +2870,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "906d63b787d64abcb055cd36edb3cfcc",
+          "Id": "01dfcfc09b2a4438b25d1ae56988686b",
           "Name": "",
           "Description": "data",
           "UsingDefaultValue": false,
@@ -2252,7 +2879,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b9ff668dea49452dad0076de84fa66a0",
+          "Id": "ab1754ddd6b0478c91564fd4c1f4cfda",
           "Name": "",
           "Description": "equi",
           "UsingDefaultValue": false,
@@ -2261,7 +2888,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2db69fb9903643fb824f671526b31ee4",
+          "Id": "7d3e6fd5c948499cb3e4e2e9addb9b3f",
           "Name": "",
           "Description": "help",
           "UsingDefaultValue": false,
@@ -2270,7 +2897,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1d7aa6bda347478e9f94140f5dbfd3db",
+          "Id": "812eef81d01543edb8c047bdef331cb3",
           "Name": "",
           "Description": "aspa",
           "UsingDefaultValue": false,
@@ -2279,7 +2906,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "163bc0c4adfc4d349e2c97538c559840",
+          "Id": "d98f43cd2b384d2eb599adf6b094d794",
           "Name": "",
           "Description": "vi",
           "UsingDefaultValue": false,
@@ -2288,7 +2915,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c3c5adb001d44e83a1587d15ff30b77a",
+          "Id": "58d4534173704f6ea0bd68eecf5fa584",
           "Name": "",
           "Description": "id",
           "UsingDefaultValue": false,
@@ -2297,7 +2924,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cb70083aaead407b831005d4418982b7",
+          "Id": "89ee1f96cf634e0ca7110a048c9bc41d",
           "Name": "",
           "Description": "qo",
           "UsingDefaultValue": false,
@@ -2306,7 +2933,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "bc677bc7f90343f392169e7a424e7fe4",
+          "Id": "0d523f6e1ca5401bb4947a420685a656",
           "Name": "",
           "Description": "io",
           "UsingDefaultValue": false,
@@ -2315,7 +2942,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "012dd8381dca40d297af66cfa17089cb",
+          "Id": "9a6cf93a882b4876ae1b8d854a2ac7b0",
           "Name": "",
           "Description": "fo",
           "UsingDefaultValue": false,
@@ -2324,7 +2951,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ded2520bcaf5479d8ebe588763eafdeb",
+          "Id": "53e339e46a5b4e64a9205c2f0b31f7b8",
           "Name": "",
           "Description": "PRFX",
           "UsingDefaultValue": false,
@@ -2333,7 +2960,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e41206a452e64b16a7a75d4cbf7ba87a",
+          "Id": "ef63a34f745e4646984c99ff104bb9af",
           "Name": "",
           "Description": "ETIQ",
           "UsingDefaultValue": false,
@@ -2342,7 +2969,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a6f0c8e482284c57b2587bea3b7b4eeb",
+          "Id": "6806f0e8cc0e4dd1a3ed3dd87e02d981",
           "Name": "",
           "Description": "CABE",
           "UsingDefaultValue": false,
@@ -2351,7 +2978,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "cb754199c3464192aa6f7500f2ee54eb",
+          "Id": "2856d84cdc0c4415a3af1e8e846dbd3f",
           "Name": "",
           "Description": "ANOT",
           "UsingDefaultValue": false,
@@ -2360,7 +2987,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5f90e6c95c9e411791aabfb82bc73784",
+          "Id": "c2686dcd7bee4110a13b2dac4e93e4ea",
           "Name": "",
           "Description": "RAIZ",
           "UsingDefaultValue": false,
@@ -2369,7 +2996,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d564fa69a2fc4993a81c21007fc01124",
+          "Id": "208597231bfe4e328424758aecd0826a",
           "Name": "",
           "Description": "CLA",
           "UsingDefaultValue": false,
@@ -2378,7 +3005,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7c9b2d90c6e240e4a9b18028e97292de",
+          "Id": "0a5f4d53006143cb92d37b3138b221c2",
           "Name": "",
           "Description": "SUB",
           "UsingDefaultValue": false,
@@ -2387,7 +3014,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c40166f64a79467dab5507642594748a",
+          "Id": "85a74f04782444e78001b9f808948e23",
           "Name": "",
           "Description": "HEL",
           "UsingDefaultValue": false,
@@ -2396,7 +3023,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "13cb94e5cdba497090ffc56452050d19",
+          "Id": "5769095c75334ee6b22c597a725207fe",
           "Name": "",
           "Description": "LIN",
           "UsingDefaultValue": false,
@@ -2405,7 +3032,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ffb8b7f3823541f19b15eaea6887799c",
+          "Id": "8d72798fdbe74fed80b0af8912e02f99",
           "Name": "",
           "Description": "CLI",
           "UsingDefaultValue": false,
@@ -2414,7 +3041,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "34bcfdd1c0a14a84867d71b6cec1e2fe",
+          "Id": "f3913594743044759c021cd090729beb",
           "Name": "",
           "Description": "key",
           "UsingDefaultValue": false,
@@ -2423,7 +3050,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c6b7cbd3af9941bd8e7731efa651705e",
+          "Id": "eda1c332b0184dc287b4259b5a148243",
           "Name": "",
           "Description": "val",
           "UsingDefaultValue": false,
@@ -2432,7 +3059,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "02decaf463dd4417bb221618977c8011",
+          "Id": "293d3d7634924764ad95c4485fb66e36",
           "Name": "",
           "Description": "DicI",
           "UsingDefaultValue": false,
@@ -2451,7 +3078,7 @@
       "NodeType": "ExtensionNode",
       "Inputs": [
         {
-          "Id": "5b84c4bb98014df58b1974287d65b3b6",
+          "Id": "c74b79367ba34107a2a2b9fec16c7383",
           "Name": "path",
           "Description": "Path to the file.",
           "UsingDefaultValue": false,
@@ -2462,7 +3089,7 @@
       ],
       "Outputs": [
         {
-          "Id": "a13066fff5774384b21fe66cedbfac56",
+          "Id": "a374af3c6c27479db8b91603f3d71471",
           "Name": "file",
           "Description": "File object",
           "UsingDefaultValue": false,
@@ -2481,7 +3108,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "c2132c53b4fa43998c69c45726c2e6cc",
+          "Id": "ab71a68786b643a58509bfb61c899ef6",
           "Name": "",
           "Description": "File Path",
           "UsingDefaultValue": false,
@@ -2492,806 +3119,311 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows you to select a file on the system and returns its file path",
-      "HintPath": "C:\\ABNT_Normas\\ABNT\\Para_Desenho\\Ontologia_NBR_6492-2021.xlsx",
-      "InputValue": ".\\Ontologia_NBR_6492-2021.xlsx"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "d7385304510442d8ac2a356d9cc75b71",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def Unicos ( S , n)\n{\n    LF  = List.Flatten     ( S , n);\n    LU  = List.UniqueItems ( LF   );\n    ST  = String.Concat    ( LU   );\n\n    return = ST;\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "42e70c32084d4938928749513d6ece6b",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def LerExcel ( Arq , Tab )\n{\n   dadosIn = DSOffice.Data.ImportExcel(Arq, Tab, true, false);\n   valores = List.DropItems( dadosIn , 1    );\n   dadosTr = List.Transpose( valores        );\n   dadosOu = List.Clean    ( dadosTr , true );\n   return dadosOu;\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "e63beb0401f2418b96d1b56accd1bbc8",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [
-        {
-          "Id": "a39e36cfc920400e9dc38a29c3d1fbf3",
-          "Name": "DADOS",
-          "Description": "DADOS",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "851351062ce347838f9eba5837b5dcf1",
-          "Name": "DCLA",
-          "Description": "DCLA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "24c48a86a2974a5e976d6c8c343b9b91",
-          "Name": "DDOM",
-          "Description": "DDOM",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f6bcb00335ff42b9b46e80f3e81fad06",
-          "Name": "DANO",
-          "Description": "DANO",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "2da76e9739b7428a81c8b2287ddb8359",
-          "Name": "DESP",
-          "Description": "DESP",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "10c00408109a45db9bc0e01c9a3591ad",
-          "Name": "DCAR",
-          "Description": "DCAR",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a3689bbbd50a4a918c31e438f8025759",
-          "Name": "DFAT",
-          "Description": "DFAT",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "d73a9a1d318d4aa78d13469f9cce22dc",
-          "Name": "DicI",
-          "Description": "DicI",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "324e250a583a49fc993a115409a34cda",
-          "Name": "DicC",
-          "Description": "DicC",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "ee29a8cb140c448aaaf202ef3a291655",
-          "Name": "DicP",
-          "Description": "DicP",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8f1a10961e4e43ceb14dc3fa8b71a104",
-          "Name": "DicD",
-          "Description": "DicD",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "90f4e18eecbb4b21b0724b123857b90d",
-          "Name": "",
-          "Description": "Value of expression at line 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "bdd2e80452b7441fa71035aee2fb70c4",
-          "Name": "",
-          "Description": "Value of expression at line 2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e8533b2bc4e147ad9b20de2f70047985",
-          "Name": "",
-          "Description": "Value of expression at line 3",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e31e8d93a74e4520bbf069f0bc709875",
-          "Name": "",
-          "Description": "Value of expression at line 4",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "fb54b589cd17417897b32ec0dc2924a4",
-          "Name": "",
-          "Description": "Value of expression at line 5",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4c2a7bebafd749b5ab75bc1bd69b071c",
-          "Name": "",
-          "Description": "Value of expression at line 6",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "84ef5892f58f4a9ca2695b1a0d8de576",
-          "Name": "",
-          "Description": "Value of expression at line 7",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a2e81af28800415f888e30c96dceb2de",
-          "Name": "",
-          "Description": "Value of expression at line 8",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "6f068365d2874dde9209cb5190e77f47",
-          "Name": "",
-          "Description": "Value of expression at line 9",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "49a63bd2b2744358ba24a83a3b6ae974",
-          "Name": "",
-          "Description": "Value of expression at line 10",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f0f86df57794482ca8ed43921ca8a2ed",
-          "Name": "",
-          "Description": "Value of expression at line 11",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "14b69d7593f24ce3872f4c95219beb4e",
-          "Name": "",
-          "Description": "DPJT",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "459f4392f0ee414a9e9ea47f79b7f037",
-          "Name": "",
-          "Description": "DIFA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "3aa7ccf2812a475e8c0ca8878d7297d7",
-          "Name": "",
-          "Description": "keyP",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "fde253f682bf4e60b17de6a53a9aa376",
-          "Name": "",
-          "Description": "valP",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "55e1bca60af24e23831ab935e3a17713",
-          "Name": "",
-          "Description": "fx",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "19e3677c09ef4f859eba4b6b3964a7ec",
-          "Name": "",
-          "Description": "id",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "de8f179ba000422abebf6c517adcbc71",
-          "Name": "",
-          "Description": "help",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f64984bd6f0c4908841c837f3224e115",
-          "Name": "",
-          "Description": "indi",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8f21687776f64f5086e7691614ede235",
-          "Name": "",
-          "Description": "tipo",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "9a215b44fd00463084923b492b90c3db",
-          "Name": "",
-          "Description": "fato",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a1a897cd88ff4aa38ebe69dba3078db1",
-          "Name": "",
-          "Description": "IFA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "3ef1cb77f698414fb46a6d8108eb57b4",
-          "Name": "",
-          "Description": "TFA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "cc53a21e2b6042bf92b2e837cdc1dc00",
-          "Name": "",
-          "Description": "FA1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "9542574b796c4b57a0d1d9ebde43bd69",
-          "Name": "",
-          "Description": "FA2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "3f7bd69fbb3b45e7aed9edb50174d5db",
-          "Name": "",
-          "Description": "FA3",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "5de8366be3e740219192a04c12c529c5",
-          "Name": "",
-          "Description": "FA4",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f2b8250b709742d29cb75190417454cf",
-          "Name": "",
-          "Description": "HFA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "012b200419634643a929bb2935da2c11",
-          "Name": "",
-          "Description": "FAT",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e28bb22273c0430fac55fd2a006820d2",
-          "Name": "",
-          "Description": "UFA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "72365ea4940844b1bc394506c480c943",
-          "Name": "",
-          "Description": "kf",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "b965aca4911a48fda5597f2f3b513176",
-          "Name": "",
-          "Description": "vf",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8df58db879fa4af1a65826fdf0fa703b",
-          "Name": "",
-          "Description": "DicF",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "31220539978a41079a8c06ee05d5b0b1",
-          "Name": "",
-          "Description": "di1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "7719d2094bbe494ca44466c453b69239",
-          "Name": "",
-          "Description": "di2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "6b0734b92c6644a4b9016ac469524aae",
-          "Name": "",
-          "Description": "tema",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "942ee3f18e58418091319a69d195c478",
-          "Name": "",
-          "Description": "Nume",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "d5d06abf8916482289c976a814efa0d9",
-          "Name": "",
-          "Description": "Aowl",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "920332ca1ab04e248fa1b269f58ccc40",
-          "Name": "",
-          "Description": "TODO",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "df989478055442559c9a2f13eb7af4f7",
-          "Name": "",
-          "Description": "UTEXT",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "296768fd09ce4490b48988efa8e53ac3",
-          "Name": "",
-          "Description": "Value of expression at line 72",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "DADOS;\nDCLA;\nDDOM;\nDANO;\nDESP;\nDCAR;\nDFAT;\nDicI;\nDicC;\nDicP;\nDicD;\n//-----------------------------------\n// Prepara dados de Fatos\n//-----------------------------------\nDPJT = DADOS[\"DAPRJ\"];\nDIFA = DADOS[\"DAFAT\"];\nkeyP = DPJT [0];\nvalP = DPJT [1];\nfx   = valP [0];\nid   = DESP [\"idio\"];\nhelp = DANO [\"help\"];\nindi = DFAT [\"indi\"];\ntipo = DFAT [\"tipo\"];\nfato = DFAT [\"fato\"];\n//-----------------------------------\n// FATOS DE INDIVIDUOS\n//-----------------------------------\nIFA = indi+     fx+DIFA[1];\nTFA = tipo+     fx+DIFA[2];\nFA1 = Fato(fato,fx+DIFA[3],fx+DIFA[ 4]);\nFA2 = Fato(fato,fx+DIFA[5],   DIFA[ 6]);\nFA3 = Fato(fato,fx+DIFA[7],   DIFA[ 8]);\nFA4 = Fato(fato,fx+DIFA[9],   DIFA[10]);\nHFA = help+        DIFA[1]+id;\n//-----------------------------------\nFAT = IFA+TFA+HFA+FA1+FA2+FA3+FA4;\nUFA = Unicos( FAT , 2);\n//-----------------------------------\n// REGISTRA FINAIS DE FATOS\n//-----------------------------------\nkf   = [\"FATO\"];\nvf   = [ UFA  ];\nDicF = Dictionary.ByKeysValues(kf,vf);\n//-----------------------------------\n// ID PASTA e TEMA\n//-----------------------------------\ndi1  = \"C:\\\\ABNT_Normas\\\\ABNT\";\ndi2  = \"\\\\Para_Desenho\\\\OntoBIM_\";\ntema =  DicI[\"TEMA\"];\nNume = \"1005\";\nAowl = di1+di2+tema+\"_\"+Nume+\".OWL\";\n//---------------------------------\n// REGISTRA TODO\n//---------------------------------\nTODO = [  DicI[\"PREF\"]\n        , DicI[\"CABE\"]\n        , DicI[\"ANOT\"]\n        , DicI[\"RAIZ\"]\n        , DicI[\"CLAI\"]\n        , DicC[\"CLAS\"]\n        , DicP[\"PROP\"]\n        , DicP[\"DATA\"]\n        , DicD[\"DISJ\"]\n        , DicF[\"FATO\"]\n       ];\nUTEXT = String.Concat(\n         List.UniqueItems(\n          List.Flatten(TODO,3)));\n//---------------------------------\n// ESCREVE ARQUIVO OWL\n//---------------------------------\nFileSystem.WriteText ( Aowl , UTEXT);"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "f9730326308e4cbcaaeb9763139855a8",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def Fato ( fat , f1 , f2 )\n{\n  celu   = f1 + \" \" + f2;\n  abce   = fat + celu;\n  cond   = String.Contains(celu,\"null\");\n  final  = cond == true ? \"\" : abce;\n  return = final;\n};"
+      "HintPath": "C:\\ABNT_Normas\\ABNT\\Para_Desenho\\Ontologia_NBR_6492-2021_V2.00.xlsx",
+      "InputValue": ".\\Ontologia_NBR_6492-2021_V2.00.xlsx"
     }
   ],
   "Connectors": [
     {
-      "Start": "541cfbb51243451d992031c61ad0512d",
-      "End": "a39e36cfc920400e9dc38a29c3d1fbf3",
-      "Id": "d00b87693be6445286bdf737258df3f9",
+      "Start": "d2d48794c1e845bda101af16a71d6529",
+      "End": "cb546246c028443785d358f1c2d4f48d",
+      "Id": "75d59b9996ce4adf9db85302dbd45bc5",
       "IsHidden": "False"
     },
     {
-      "Start": "299b782813c5402d9aa639a84ef86789",
-      "End": "851351062ce347838f9eba5837b5dcf1",
-      "Id": "f55fed26b88b41f387951c1e6080f395",
+      "Start": "da2a3e3426904bc897465e05bbe9a448",
+      "End": "73c33c76318b4c749b5f526a85e208bf",
+      "Id": "b4dce52bc51c43efa947d478a1e6158f",
       "IsHidden": "False"
     },
     {
-      "Start": "19cae1b0bd64466c9f54e6db4a65d10b",
-      "End": "24c48a86a2974a5e976d6c8c343b9b91",
-      "Id": "69c631650cc341b285853e8c2995cebd",
+      "Start": "c67d58f326ba4fd193520d48dd5b1bfe",
+      "End": "40e8465cd7fb448cab8d3689d106c0d9",
+      "Id": "3cb5ee2e570b4569ac43e15b487575d2",
       "IsHidden": "False"
     },
     {
-      "Start": "a495b8cf6bb2488fb675f6e89a2e0851",
-      "End": "f6bcb00335ff42b9b46e80f3e81fad06",
-      "Id": "c984d49aa32d42d9be8036c464e43dec",
+      "Start": "d536c03180b34715bbfbe5b514a6b2de",
+      "End": "3ca5a6d064974125ae0f8f3343d3ea67",
+      "Id": "29f3931ccb0948c0a17b38d0ab90e6d3",
       "IsHidden": "False"
     },
     {
-      "Start": "d07093a35efe481e96042e1e548ff226",
-      "End": "2da76e9739b7428a81c8b2287ddb8359",
-      "Id": "01cb46d782cc4a159df0abc8c1f480dd",
+      "Start": "e39ef950bb5a413f97d83423878f3d3f",
+      "End": "5ae5a04aed2744c5a52a857e178e5c09",
+      "Id": "7c654132e0a7458597738facd4a61296",
       "IsHidden": "False"
     },
     {
-      "Start": "172141000a9b43feac6adfe8cabac9e1",
-      "End": "10c00408109a45db9bc0e01c9a3591ad",
-      "Id": "dbbc1439339f4ff7b2f4ff666ff9f526",
+      "Start": "51b0d26ca83b433f8292e856ed607080",
+      "End": "0bf577c1c299428f8cef8a4159823b69",
+      "Id": "a7e3f25986c9414f8acb61e0696a7469",
       "IsHidden": "False"
     },
     {
-      "Start": "662027e484ba48a392a9eb35b360d284",
-      "End": "a3689bbbd50a4a918c31e438f8025759",
-      "Id": "8a0cc5b514ab42cc9ea5aea69b0cae10",
+      "Start": "59babf4d8de54f49a0c05fd93566c9e6",
+      "End": "cd3c65ea8ead4860a4002c3c3973257e",
+      "Id": "22d665743cdb4e389827109ee313db42",
       "IsHidden": "False"
     },
     {
-      "Start": "6993e96679bc4c5698b30e0650199686",
-      "End": "d73a9a1d318d4aa78d13469f9cce22dc",
-      "Id": "4cd797f610314012ac30e79af82c5178",
+      "Start": "99b3bedb9aa44621ac72d4feb75094ca",
+      "End": "2aaa458fa2db4ac28e4df31338211119",
+      "Id": "dcbab67a688547588f399de627acc113",
       "IsHidden": "False"
     },
     {
-      "Start": "35ad3ce8fc7f43cfb4ce994fcbc4d4fd",
-      "End": "324e250a583a49fc993a115409a34cda",
-      "Id": "e93918c75cd04665ac76402c36989d0e",
+      "Start": "5208663961614fb783ba7cf78837da72",
+      "End": "91aee247158943f4a3bcc1f1a6fed8cc",
+      "Id": "af2f2baca0e847b5a0a2f32af9295b3e",
       "IsHidden": "False"
     },
     {
-      "Start": "b0eae8251cce44dca61145e78db98c6e",
-      "End": "ee29a8cb140c448aaaf202ef3a291655",
-      "Id": "13d38c69fef14c509226d86ff4b6e2a3",
+      "Start": "57e64d2e0ea040cda4aae366806b508f",
+      "End": "6e0ac5708cf148888c3a552ee0df97f3",
+      "Id": "a2cba9eef3c247f792c7b1f6dc15d1c6",
       "IsHidden": "False"
     },
     {
-      "Start": "3e5e1c0ab2124b9b8012545f37238e6d",
-      "End": "8f1a10961e4e43ceb14dc3fa8b71a104",
-      "Id": "dd80f94eccb441319a6e8ab8474f8ec3",
+      "Start": "f6d7d299b1374509bb387fa285ac2e7a",
+      "End": "47192546283a4ca7b299e80b6aa395cf",
+      "Id": "27792b29616949f2b40425713dfbcb3c",
       "IsHidden": "False"
     },
     {
-      "Start": "bc26a1bd5a174b13b769779cd77e8efc",
-      "End": "18e5f26d64664737844c3c1c6502c889",
+      "Start": "fce6d1518ce44ee4be60c4f83215100c",
+      "End": "32549b99e41949c4b4a0da0595855eea",
       "Id": "6c2a2f6c91164792b058c93be0956ae3",
       "IsHidden": "False"
     },
     {
-      "Start": "66f3e8f3a8384cc08dba99f366e3f0d2",
-      "End": "44911a1ea30945059bc02fa02cba7818",
+      "Start": "cb1bf31f11484612a8f784ca9e409540",
+      "End": "29f55f88d57b404289e8bff368bd4617",
       "Id": "c6d2c511a2a3420db488f73181061f79",
       "IsHidden": "False"
     },
     {
-      "Start": "c2eeb13677834a5fa8268ad361c0beb5",
-      "End": "bf80957285e449128c85b92958afbc7d",
+      "Start": "63f08c4eaf18423b9be6e0bd41118919",
+      "End": "4c75530d16654895a704388bbd8ee160",
       "Id": "4b2e2e6b5d7e44c794c9133f12354579",
       "IsHidden": "False"
     },
     {
-      "Start": "f582bf5328694299846fd876fd6e067f",
-      "End": "f6aa4828006d4f778131f3aab20b5d95",
+      "Start": "5cd340748fd54945b0ad4a97031c7de9",
+      "End": "ef70d98454a0438fae27ef339f8e4b76",
       "Id": "93d13ecf2dd84b7c95a299db01d049fb",
       "IsHidden": "False"
     },
     {
-      "Start": "76aaf36cf5814e85b8eec8c4deaab9f1",
-      "End": "09d562cb37924933be4968f94ea68ed2",
+      "Start": "98bcc26e6c574b12b76a5b18d4c9203d",
+      "End": "9c68390bfd6e41e48e0e3a521f4b569d",
       "Id": "30ca42c627044eab9df018323654ebdb",
       "IsHidden": "False"
     },
     {
-      "Start": "407bc69ccd1d414c8f3a6a5c74fbe359",
-      "End": "50e71a3bf6b24dfc895c68caa20886a5",
+      "Start": "0f27ffdded8e4eda92c91c4bdb1bb311",
+      "End": "67408fca9d714d6e9d640ea19f5212fa",
       "Id": "53c0924975c545288c38ec9d2f6c557a",
       "IsHidden": "False"
     },
     {
-      "Start": "b0a7316b10464bea82b2e81ce594712f",
-      "End": "856d19bd3fa8430b816171152873ca47",
+      "Start": "2e55972e834a4237be03b33e1919c987",
+      "End": "0abc5150b91c40e390e9d0ac81cfdda8",
       "Id": "22749e88e4fa4a21b416686f4640e4b8",
       "IsHidden": "False"
     },
     {
-      "Start": "1a29de8d0a6848219bfa7da4db884746",
-      "End": "82e0a2b601144129aadc0b10cd4ef034",
-      "Id": "9d85483f63444c6980968a406b4e2605",
+      "Start": "748cbe0873a943eebcda72aa2c540b6c",
+      "End": "705cca3574ea40858f06ffe96e6cd60d",
+      "Id": "5e5d231855c94c638bb85009e81b3160",
       "IsHidden": "False"
     },
     {
-      "Start": "bc1688f4c0414999a2a8bf73c14b2d12",
-      "End": "05a6bd4eb2734945b682b7609e1365ec",
-      "Id": "7e08ea0659c841c7ac46fda97bec1a1a",
+      "Start": "60e35d4726c94e73b49c5ee275bf251e",
+      "End": "d019a068f91e440297f9f354b7e7cae8",
+      "Id": "9b2e46aebc6742aa8ba8ed095c46e38d",
       "IsHidden": "False"
     },
     {
-      "Start": "32d09a5275364fe3a6b848b2ddcddac2",
-      "End": "3d4894b43757447fbd9bb3da91c5d16f",
-      "Id": "1e2173bf34a9442a911bcc951884e072",
+      "Start": "f72bbcfc3e384353af8c1ed6874a85cf",
+      "End": "dad17795bed54fd38a1677cde9b61f1d",
+      "Id": "b6d98711c2a54ccb800ad5d8cdc8c43a",
       "IsHidden": "False"
     },
     {
-      "Start": "f9a72446961944e3a701de34c164fa54",
-      "End": "d7ce670390764f799ddfd2c7b6b930e2",
-      "Id": "e0b1b56708124d628aa87d532d13a46e",
+      "Start": "0f841efe823e48b39c230a4516f5906f",
+      "End": "b8804525c99d4bca816c0468fda834e0",
+      "Id": "6f4bc6c1a31a4a6e940dd33d269ad1f6",
       "IsHidden": "False"
     },
     {
-      "Start": "22b152ca229f4598aa567c9b1db49bad",
-      "End": "6ccc85a9a3e24562a13b9a9845ac7dd2",
-      "Id": "a7fba6f83e064dc982ed099310c33727",
+      "Start": "765c7b751ae44e9aa920feb6035577e2",
+      "End": "2a40095c180e4796b3083cf09a5f9e41",
+      "Id": "d9dd2d2e7f7a4961a9fb85c4569aa528",
       "IsHidden": "False"
     },
     {
-      "Start": "b0fa72b5514a45e299079758bf712f28",
-      "End": "48c6bd55878d4bd995a6bbe5f2f5ad46",
-      "Id": "947a2ecda7484e29a4736c0f33274041",
+      "Start": "31e7fca8dd8d47528f36fc751de8ec18",
+      "End": "c41ce9df4e4a42788a8226590462d62e",
+      "Id": "fdde1e7a1e204fcda028e574a0d27cca",
       "IsHidden": "False"
     },
     {
-      "Start": "b80831475e7e4ebb8315a7c52c8bf15d",
-      "End": "e3c778f5184c4374b0b7ff523dcf8b7d",
-      "Id": "e83dba24180d4c2188a24c6a31576eee",
+      "Start": "8226073875df4cba92feed2821fb32b2",
+      "End": "8e6c551da9f041bdb7cbbce35c4207b2",
+      "Id": "9bcfe25b5a044c91a7eef803a519097e",
       "IsHidden": "False"
     },
     {
-      "Start": "866b77d34a0940538fac6f1196cb633b",
-      "End": "88211b29c5164da181665f576b7ed884",
-      "Id": "d1ab67c146c244408d9ca86251f90655",
+      "Start": "616e3a74837b49e3bce112b9b155dc13",
+      "End": "951a5227d93e4405adb644e70cd9d5df",
+      "Id": "acac2a058a9b456f96f1eb901f15671a",
       "IsHidden": "False"
     },
     {
-      "Start": "018aa920a7364befa8020f8e17876a15",
-      "End": "222e7cc9ea774f94b81c43a6c0e97b54",
-      "Id": "c73270b7f1a940ebbc9702eef3a3cb47",
+      "Start": "db7c98bd0c5a42c2b7503b1c58d3aed9",
+      "End": "e79c01595d2947cab3da7e0443915ace",
+      "Id": "44eadc8619ef4e4887f4ccddb574f51d",
       "IsHidden": "False"
     },
     {
-      "Start": "1d34f018a8304c0c8ea41b16889d2a22",
-      "End": "29a968a8e15144a3b3fc5d8736eb5adc",
-      "Id": "583dcfe40b4145ea819150409f9a30f3",
+      "Start": "c8eaa6f548004cb4aa89cefbf2384a3e",
+      "End": "913986e02f504ad3bd2676fde67cd275",
+      "Id": "bcdca4d674c34ac89994a6664c183adc",
       "IsHidden": "False"
     },
     {
-      "Start": "4726d9f8dfdc460b8b7e585d0d0d291f",
-      "End": "7ff3a10881d844719d374a818a51dd00",
-      "Id": "b5708c1582404c05a30cef1612385e02",
+      "Start": "718ba4222f1f4d73a561abf44e6547c3",
+      "End": "39b6cd2fbd63469899a1a79a52e4b655",
+      "Id": "302320837dd3484da78a41f00caaba50",
       "IsHidden": "False"
     },
     {
-      "Start": "6b0a69a610aa4c658a099286cf9409cc",
-      "End": "3e4eecb2786040dbb6acc94fe259ad7b",
-      "Id": "810de6b960e94cf495bc311a2a0a3821",
+      "Start": "fa230ec9110243aa9086b2d11b6ad9cf",
+      "End": "f5ec84c855e5495b8bcf72e467d84a90",
+      "Id": "67014485d5b34e2b8eb33f11a8feca19",
       "IsHidden": "False"
     },
     {
-      "Start": "071ddf715b9745378aa78355c6b51443",
-      "End": "3646027438bd4b8f8e458bf14a8fda21",
-      "Id": "37aea1425ac844bfa976c7b3f77b03f4",
+      "Start": "83030c4b95014489a89bfb0d0dd5bc20",
+      "End": "f25e5ce03bee4f75b46da2b541cda998",
+      "Id": "2dab27c7167c497f948533279ef160f4",
       "IsHidden": "False"
     },
     {
-      "Start": "e9f3ef1b17b44780b03f2874456baa2b",
-      "End": "a7a260e43ad94e9ab6b4658ea2babc0c",
-      "Id": "5e578d8c3688460abfd4c23408c067e2",
+      "Start": "45879c71cf0f42d399421fa38a421a9b",
+      "End": "58e3753b80c84badb8be8f5802ea85c2",
+      "Id": "86b01db0c0b14ebca8deedefaf44f9f1",
       "IsHidden": "False"
     },
     {
-      "Start": "8bbd9e540159400f89697221ddb18469",
-      "End": "c397e9e170b14a50969d0ef69d28e472",
-      "Id": "a654bd63a7bd4781a396d6ceee1a6a0d",
+      "Start": "46a1a5a40be341189ce4541d154329ea",
+      "End": "34be8be95fe0489bb58fff3cee25fd8e",
+      "Id": "9b07731b5a2e473381e554234d089b60",
       "IsHidden": "False"
     },
     {
-      "Start": "a7a3e317818e412fae341e86c6cc5ea7",
-      "End": "eb44af76ed724f6e92069a9a28b9e02f",
-      "Id": "7a4839b60d0d4c8cbb8a2039f542f465",
+      "Start": "feeb2e3cbeb54f209dbdc9fab97b883d",
+      "End": "017e089f411a4c3fb0052a6f70c8a09f",
+      "Id": "8157cab69a3544afb4ec298a506b1c74",
       "IsHidden": "False"
     },
     {
-      "Start": "81649552740d4960a57a8ffb0bec4824",
-      "End": "ba2c67caf10e4454908290f5d60cea1e",
-      "Id": "7c55b57e6ce74ba6853fe7b86ae9f85c",
+      "Start": "3ef9373d65c84c93868d6d51eb05ba7e",
+      "End": "fd05e8315e9943a59291c5dfe76ef9eb",
+      "Id": "1317926bc81347a5b5b1c021d07a87b8",
       "IsHidden": "False"
     },
     {
-      "Start": "b5c6e993f74b42918c2e17fc875cfd5c",
-      "End": "d22cf466da214c24a0df2189ec87f838",
-      "Id": "f4cf580eaf0d488885ce9a07ab4088cc",
+      "Start": "7bdf8bfef7c3443c9a94ae9917817b1b",
+      "End": "9bdc568ee24d44a0aabbb94f26fd1ff0",
+      "Id": "251095ba00e74fe09ef4e06a40f910ff",
       "IsHidden": "False"
     },
     {
-      "Start": "b38f387c97144b448c47b02446c82079",
-      "End": "1277d4b7f19844f2b2bd9133b28cde04",
-      "Id": "b297a1a5523b4ae28730255dd532f0d0",
+      "Start": "7499956cbb1e41e7901f31573316f36d",
+      "End": "27aba83a2c66409594c2b14794f8cf23",
+      "Id": "ce0f221a58c94ce59e3507ea637b6592",
       "IsHidden": "False"
     },
     {
-      "Start": "406f285114674d19a38f2ae033ce505a",
-      "End": "22369326d7eb4b2da04321adf20afc6f",
-      "Id": "2147bdaf781245ff9ba99e26be972a5d",
+      "Start": "b84e41e7c83a494bb80aeed6ad5e5b98",
+      "End": "5bdba67a82d848ab88e9b343e1b8b9a2",
+      "Id": "0860a5e97dec4b2bb937bdb9a3d276ee",
       "IsHidden": "False"
     },
     {
-      "Start": "dbf78460cf234fbbac4948f84d70cda6",
-      "End": "d7f5a70a492c42dcad11faaf09e3cda9",
-      "Id": "b23cbe43ee5b4f1194c2aa41680b5f81",
+      "Start": "73f27248512042c6b6f04b983f9ab677",
+      "End": "45e0ae888fea44559bcc61fb735527d4",
+      "Id": "1b337c9d64024af79ad4be2f30d84b11",
       "IsHidden": "False"
     },
     {
-      "Start": "b06453988754406b83809e35f75a8d38",
-      "End": "1a5a4f6c6a584aa7a3b9f434dae9ccf0",
-      "Id": "a0ef90dcc378485999b6f9ef5db37c12",
+      "Start": "fb358aebb36f457e970e728d6b1fcbc3",
+      "End": "39f6d48767bb4f0a98ab48d384bea0da",
+      "Id": "71a009640c6144c3a2ee1769092333ad",
       "IsHidden": "False"
     },
     {
-      "Start": "162997958e484d74b035c4cea7332355",
-      "End": "927486f0ce1d4dce9234b4e97a096d53",
-      "Id": "b59cacdfca0f49c59b581afb2cca06b8",
+      "Start": "fd8bd2cb1d874f2d817a871d53f0032c",
+      "End": "fbe6f1dad59a49ac9ea5b9de5743fee7",
+      "Id": "e8a4e8e61cd24d0397d0948e7854ba01",
       "IsHidden": "False"
     },
     {
-      "Start": "cc7e0b0f7bbf45e49d0244cf3caab5e8",
-      "End": "a8b3448ebaa540ef81b2bb2a5ae2ff2f",
-      "Id": "3606c11da8fd43dbb5a6b1cf4b95ed59",
+      "Start": "72485e78db094de9a0aeeced3d5fb776",
+      "End": "a5b5e44fee1b4fef9b0590232a166ab6",
+      "Id": "9ba5961be08344aa8f48b9154ea377ba",
       "IsHidden": "False"
     },
     {
-      "Start": "b4fbd727ac144f3c8db4e8aae8f5ab65",
-      "End": "1521a855621f4b79b1089b508b1d64ba",
-      "Id": "7f5c11c0c2a04362a97641d886d598be",
+      "Start": "ee5ddc95e09e4798b7e241533ff8bc0e",
+      "End": "39d92864c798436399faed1d024c5a78",
+      "Id": "8a7fe9bf20a343c0b62c2f27fcfa795a",
       "IsHidden": "False"
     },
     {
-      "Start": "36f355574cfa4727bd09328175c501f9",
-      "End": "693135e3497142b58ab5832166f6d2ef",
-      "Id": "37bde1eedad4476481238df7dcae61b5",
+      "Start": "ef7486c44d394fbc9bd418249b18a7ee",
+      "End": "939c00d4038e4569b4fc41537ef17bb5",
+      "Id": "89f9dc3e99a74e4586b69a4ff5fe2c79",
       "IsHidden": "False"
     },
     {
-      "Start": "98890a71d57f4d6ab395898901a45741",
-      "End": "e8c3895730af40a1a42454b9a6f8887c",
-      "Id": "b6c85e299a9644ddaaa4d3351092bf61",
+      "Start": "a759a9f4b018405287e2f7731656c24a",
+      "End": "67e5fe19b2e74b95892efbe1c048799c",
+      "Id": "5413cb0e30d649dba84629ae3a3f628d",
       "IsHidden": "False"
     },
     {
-      "Start": "a13066fff5774384b21fe66cedbfac56",
-      "End": "5e862dcfc3e54cc7b205236aed2bce93",
+      "Start": "a374af3c6c27479db8b91603f3d71471",
+      "End": "0fff08173764446b9290ae04c1836045",
       "Id": "3d2615ffc5fe463eaf6a4d768ee76518",
       "IsHidden": "False"
     },
     {
-      "Start": "c2132c53b4fa43998c69c45726c2e6cc",
-      "End": "5b84c4bb98014df58b1974287d65b3b6",
+      "Start": "ab71a68786b643a58509bfb61c899ef6",
+      "End": "c74b79367ba34107a2a2b9fec16c7383",
       "Id": "869cc3c9f7cf46caa654e805d556e212",
       "IsHidden": "False"
     }
   ],
   "Dependencies": [],
-  "NodeLibraryDependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "OntoBIM_NormasDesenho_1000.OWL",
+      "ReferenceType": "External",
+      "Nodes": [
+        "e63beb0401f2418b96d1b56accd1bbc8"
+      ]
+    },
+    {
+      "Name": "Ontologia_NBR_6492-2021_V2.00.xlsx",
+      "ReferenceType": "External",
+      "Nodes": [
+        "6eb08dc7fbee4b9cb5893761861ca623"
+      ]
+    }
+  ],
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -3340,104 +3472,14 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Id": "01de2aa7a6b0413a9a246bf784ba8345",
-        "Name": "Função -  Célula de Excel é null?",
+        "Id": "f9730326308e4cbcaaeb9763139855a8",
+        "Name": "Função -  Formação de Fato",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -951.618108741055,
-        "Y": -1856.1968261230868
-      },
-      {
-        "Id": "011c3061132b4ea2ba3a4ce848fb225c",
-        "Name": "Função - Formar as equivalências",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -140.58715689110886,
-        "Y": -1856.1968261230868
-      },
-      {
-        "Id": "243e63fdb69e4ac38feb068e77c9a460",
-        "Name": "PREPARAÇÃO DAS DISJUNTAS",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -464.41305221642847,
-        "Y": -1463.1255125717232
-      },
-      {
-        "Id": "83642eeccbca445da27bd488e9300110",
-        "Name": "LEITURA DE DADOS E PREPARAÇÃO DE ELEMENTOS TEXTUAIS",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2889.0994693761854,
-        "Y": -1628.4867899083586
-      },
-      {
-        "Id": "285ac1354dcb4e6fad946e24a31c4608",
-        "Name": "PREPARAÇÃO DAS PROPRIEDADES",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -998.5028722623224,
-        "Y": -1463.1255125717232
-      },
-      {
-        "Id": "58873e7e6eb64d24a728a83b473e479a",
-        "Name": "PREPARAÇÃO DAS CLASSES",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -1532.5926923082163,
-        "Y": -1463.1255125717232
-      },
-      {
-        "Id": "a4e9ac2874014b5bb673b52d709a3742",
-        "Name": "FORMAÇÃO DOS AXIOMAS ONTOLÓGICOS ",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2269.6825123541103,
-        "Y": -1463.1255125717232
-      },
-      {
-        "Id": "eb920bff5a934090846ef4bd104bf0fd",
-        "Name": "File From Path",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2718.566106667929,
-        "Y": -1832.4597956452396
-      },
-      {
-        "Id": "6eb08dc7fbee4b9cb5893761861ca623",
-        "Name": "Escolher o arquivo Excel com a estrutura da Ontologia",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2883.2480661517739,
-        "Y": -2009.2272736871055
-      },
-      {
-        "Id": "d7385304510442d8ac2a356d9cc75b71",
-        "Name": "Função - Concatenar Resultados Únicos",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -1357.1335846660277,
-        "Y": -1856.1968261230868
+        "X": -371.81852699918318,
+        "Y": -1917.7598347154735
       },
       {
         "Id": "42e70c32084d4938928749513d6ece6b",
@@ -3446,8 +3488,48 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1934.6490605910008,
-        "Y": -1856.1968261230868
+        "X": -1760.3649547740988,
+        "Y": -1917.7598347154735
+      },
+      {
+        "Id": "d7385304510442d8ac2a356d9cc75b71",
+        "Name": "Função - Concatenar Resultados Únicos",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1182.8494788491289,
+        "Y": -1917.7598347154735
+      },
+      {
+        "Id": "011c3061132b4ea2ba3a4ce848fb225c",
+        "Name": "Função - Formar as equivalências",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 33.696948925789684,
+        "Y": -1917.7598347154735
+      },
+      {
+        "Id": "01de2aa7a6b0413a9a246bf784ba8345",
+        "Name": "Função -  Célula de Excel é null?",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -777.334002924156,
+        "Y": -1917.7598347154735
+      },
+      {
+        "Id": "9f88c601c6b948b7ae6b128dcae7e10d",
+        "Name": "PREPARAÇÃO DAS DISJUNTAS",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -333.313349559824,
+        "Y": -1466.4303027925303
       },
       {
         "Id": "e63beb0401f2418b96d1b56accd1bbc8",
@@ -3456,18 +3538,68 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 69.676767829465462,
-        "Y": -1463.1255125717232
+        "X": 219.05645357763206,
+        "Y": -1466.4303027925303
       },
       {
-        "Id": "f9730326308e4cbcaaeb9763139855a8",
-        "Name": "Função -  Formação de Fato",
+        "Id": "83642eeccbca445da27bd488e9300110",
+        "Name": "LEITURA DE DADOS E PREPARAÇÃO DE ELEMENTOS TEXTUAIS",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -546.102632816082,
-        "Y": -1856.1968261230868
+        "X": -2775.7899993526557,
+        "Y": -1610.7199175217697
+      },
+      {
+        "Id": "285ac1354dcb4e6fad946e24a31c4608",
+        "Name": "PREPARAÇÃO DAS PROPRIEDADES",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -885.1934022387901,
+        "Y": -1466.4303027925303
+      },
+      {
+        "Id": "58873e7e6eb64d24a728a83b473e479a",
+        "Name": "PREPARAÇÃO DAS CLASSES",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1419.2832222846851,
+        "Y": -1466.4303027925303
+      },
+      {
+        "Id": "a4e9ac2874014b5bb673b52d709a3742",
+        "Name": "FORMAÇÃO DOS AXIOMAS ONTOLÓGICOS ",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2156.3730423305756,
+        "Y": -1466.4303027925303
+      },
+      {
+        "Id": "eb920bff5a934090846ef4bd104bf0fd",
+        "Name": "File From Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2605.2566366443957,
+        "Y": -1814.69292325865
+      },
+      {
+        "Id": "6eb08dc7fbee4b9cb5893761861ca623",
+        "Name": "Escolher o arquivo Excel com a estrutura da Ontologia",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2769.9385961282455,
+        "Y": -1991.46040130052
       }
     ],
     "Annotations": [
@@ -3486,15 +3618,15 @@
           "f9730326308e4cbcaaeb9763139855a8"
         ],
         "HasNestedGroups": false,
-        "Left": -1944.6490605910008,
-        "Top": -2024.1968261230868,
-        "Width": 2301.0619036998919,
-        "Height": 489.0,
+        "Left": -1770.3649547740988,
+        "Top": -2086.1598347154736,
+        "Width": 2277.2619036998885,
+        "Height": 572.2,
         "FontSize": 72.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -1856.1968261230868,
+        "InitialTop": -1917.7598347154735,
         "InitialHeight": 145.0,
-        "TextblockHeight": 158.0,
+        "TextblockHeight": 158.4,
         "Background": "#FFFFFFFF"
       },
       {
@@ -3511,21 +3643,21 @@
           "58873e7e6eb64d24a728a83b473e479a",
           "285ac1354dcb4e6fad946e24a31c4608",
           "83642eeccbca445da27bd488e9300110",
-          "243e63fdb69e4ac38feb068e77c9a460",
           "e63beb0401f2418b96d1b56accd1bbc8",
+          "9f88c601c6b948b7ae6b128dcae7e10d",
           "88748a2b1694449fad1fcf2b6db699f6",
           "84200f65fbb44fc4886d4c4c9a20d03d"
         ],
         "HasNestedGroups": true,
-        "Left": -2899.0994693761854,
-        "Top": -2209.3481170104551,
-        "Width": 3436.7762372056509,
-        "Height": 2081.2226044387317,
+        "Left": -2785.7899993526557,
+        "Top": -2254.5598347154737,
+        "Width": 3474.0464529302881,
+        "Height": 2123.1295319229434,
         "FontSize": 72.0,
         "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
-        "InitialTop": -2041.3481170104553,
-        "InitialHeight": 686.91500202957354,
-        "TextblockHeight": 158.0,
+        "InitialTop": -2086.1598347154736,
+        "InitialHeight": 762.68272930781018,
+        "TextblockHeight": 158.4,
         "Background": "#FF48B9FF"
       },
       {
@@ -3537,8 +3669,8 @@
         "HeightAdjustment": 0.0,
         "Nodes": [],
         "HasNestedGroups": false,
-        "Left": -2276.8788286477275,
-        "Top": -2033.3481170104553,
+        "Left": -2161.2412129520249,
+        "Top": -2076.11303210034,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -3549,8 +3681,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 1369.6988012526276,
-    "Y": 933.6038476515555,
-    "Zoom": 0.44439210388631611
+    "X": 679.878583738227,
+    "Y": 531.59133174881663,
+    "Zoom": 0.14652687028947381
   }
 }
