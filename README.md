@@ -34,13 +34,11 @@ Os arquivos OWL em sintaxe Manchester são criados a partir de uma conjunto estr
 
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
-Mais informaçoes sobre o tema no Livro: 
-
+### Mais informaçoes sobre o tema no Livro: 
 **_O modelo digital. Técnica e arte algorítmica em BIM._** 
-
 https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1
 
-Consulte outros projetos em:
+### Consulte outros projetos em:
 
    1. **Acustica2024 e Parla:**         https://github.com/JLMenegotto/Acustica_2024
    2. **RIO**                           https://github.com/JLMenegotto/Rio
@@ -48,7 +46,6 @@ Consulte outros projetos em:
    4. **Sistemas Projetivos**           https://github.com/JLMenegotto/SistemasProjetivos
    5. **Atratores**                     https://github.com/JLMenegotto/Atratores
    6. **EGC**                           https://github.com/JLMenegotto/EGC
-
    7. **Funções Geométricas**           https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Geometricas
    8. **Funções de Análise de Lotes**   https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Lotes
    9. **Funções Obras Paradigmáticas**  https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Obras
@@ -57,6 +54,5 @@ Consulte outros projetos em:
   12. **Funções para Galpões**          https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Galpão
   13. **Funções para Treliças**         https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Treliças
   14. **Funções para Ambientes**        https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Rooms
-  15. **Funções para Advance Steel**    https://github.com/JLMenegotto/AulasBIM/tree/master/AdvanceSteel
-      
+  15. **Funções para Advance Steel**    https://github.com/JLMenegotto/AulasBIM/tree/master/AdvanceSteel   
   16. **Bibliografia e Material Complementar:** https://jlmenegotto.wixsite.com/jlmenegotto-bim
