@@ -3,8 +3,7 @@
 
 Nesta seção o aluno encontrará as fontes necessárias para definir a ontologia. O processo é iniciado pelo preenchimento das planilhas Excel com a estruturação das classes, propriedades, características das propriedades, dados do projeto, etc. A macro em Dynamo, deve ser carregada em Revit 2024. Ela faz a leitura do arquivo Excel e escreve o arquivo OWL (Ontology Web Language) com o conteúdo em sintaxe Manchester. O desafio da tarefa é definir no arquivo Excel o campo ontológico do tema tratado. 
 
-![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/3a9ce656-c8c5-43f8-a544-842c90482822)
-
+![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/34f506f7-3484-4fd2-b4f8-9d26d5df8162)
 
 ### Planilhas estruturadas para facilitar a visão do campo ontológico de axiomas de classes e características
 
