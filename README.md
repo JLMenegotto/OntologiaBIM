@@ -7,7 +7,7 @@
 
 ### **Versão 2.00 Para Revit 2024**
 
-![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/d8b28272-7645-4c6b-a1f9-d90f3b9267a3)
+![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c43e6b33-1fc6-4a3e-b439-8111af74a6d7)
 
 Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de um ambiente integrado de processos. 
 
