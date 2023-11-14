@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: NBR16636-2"@pt, 
 	rdfs:label "Referência.Norma_3: NBR16636-3-2020"@pt, 
 	rdfs:label "Observações: Normas de desenho integradas às categorias e classes de REVIT, IFC e aos Sistemas de Classificação ABNT e SUS"@pt, 
-	rdfs:label "Data: 11/13/2023 12:00:00 AM"@pt
+	rdfs:label "Data: 11/14/2023 12:00:00 AM"@pt
 
 Datatype: xsd:string
 Datatype: xsd:decimal
@@ -663,17 +663,75 @@ Class: abnt:Política
 	SubClassOf: abnt:De.Divisão
 	Annotations: rdfs:comment "Política "@pt
 
+Class: abnt:Política
+	SubClassOf: abnt:De.Divisão
+	Annotations: rdfs:comment "Política "@pt
+	EquivalentTo:  abnt:País and  (  abnt:tem.localidade some  abnt:Política ) 
+
+Class: abnt:Política
+	SubClassOf: abnt:De.Divisão
+	Annotations: rdfs:comment "Política "@pt
+	EquivalentTo:  abnt:Estado and  (  abnt:tem.localidade some  abnt:Política ) 
+
+Class: abnt:Política
+	SubClassOf: abnt:De.Divisão
+	Annotations: rdfs:comment "Política "@pt
+	EquivalentTo:  abnt:Cidade and  (  abnt:tem.localidade some  abnt:Política ) 
+
 Class: abnt:Urbano
 	SubClassOf: abnt:De.Zoneamento
 	Annotations: rdfs:comment "Urbano "@pt
+	EquivalentTo:  abnt:Area.de.Planejamento and  (  abnt:tem.localidade some  abnt:Política ) 
+
+Class: abnt:Urbano
+	SubClassOf: abnt:De.Zoneamento
+	Annotations: rdfs:comment "Urbano "@pt
+	EquivalentTo:  abnt:Região.Administrativa and  (  abnt:tem.localidade some  abnt:Urbano ) 
+
+Class: abnt:Urbano
+	SubClassOf: abnt:De.Zoneamento
+	Annotations: rdfs:comment "Urbano "@pt
+	EquivalentTo:  abnt:Bairro and  (  abnt:tem.localidade some  abnt:Urbano ) 
+
+Class: abnt:Urbano
+	SubClassOf: abnt:De.Zoneamento
+	Annotations: rdfs:comment "Urbano "@pt
+	EquivalentTo:  abnt:Quadra and  (  abnt:tem.localidade some  abnt:Urbano ) 
 
 Class: abnt:Edificável
 	SubClassOf: abnt:De.Construção
 	Annotations: rdfs:comment "Edificável "@pt
+	EquivalentTo:  abnt:Lote and  (  abnt:tem.localidade some  abnt:Urbano ) 
+
+Class: abnt:Edificável
+	SubClassOf: abnt:De.Construção
+	Annotations: rdfs:comment "Edificável "@pt
+	EquivalentTo:  abnt:Prédio and  (  abnt:tem.localidade some  abnt:Edificável ) 
+
+Class: abnt:Edificável
+	SubClassOf: abnt:De.Construção
+	Annotations: rdfs:comment "Edificável "@pt
+	EquivalentTo:  abnt:Bloco and  (  abnt:tem.localidade some  abnt:Edificável ) 
+
+Class: abnt:Edificável
+	SubClassOf: abnt:De.Construção
+	Annotations: rdfs:comment "Edificável "@pt
+	EquivalentTo:  abnt:Edícula and  (  abnt:tem.localidade some  abnt:Edificável ) 
 
 Class: abnt:Funcional
 	SubClassOf: abnt:De.Organização
 	Annotations: rdfs:comment "Funcional "@pt
+	EquivalentTo:  abnt:Ambiente and  (  abnt:tem.localidade some  abnt:Edificável ) 
+
+Class: abnt:Funcional
+	SubClassOf: abnt:De.Organização
+	Annotations: rdfs:comment "Funcional "@pt
+	EquivalentTo:  abnt:Setor and  (  abnt:tem.localidade some  abnt:Funcional ) 
+
+Class: abnt:Funcional
+	SubClassOf: abnt:De.Organização
+	Annotations: rdfs:comment "Funcional "@pt
+	EquivalentTo:  abnt:Divisão and  (  abnt:tem.localidade some  abnt:Funcional ) 
 
 Class: abnt:Geratriz
 	SubClassOf: abnt:Curva.Fechada
@@ -4612,84 +4670,6 @@ ObjectProperty: abnt:usa.madeiramentos
 	Range: abnt:Simbólico
 	Annotations: rdfs:comment "Propriedade: usa.madeiramentos    Domínio: Elemento     Range: Simbólico"@pt
 
-ObjectProperty: abnt:urbanismo
-	SubPropertyOf: abnt:NBR.Prop
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: urbanismo    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.continente
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.continente    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.país
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.país    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.estado
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.estado    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.cidade
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.cidade    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.nome.bairro
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.nome.bairro    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.código.bairro
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.código.bairro    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.nome.ra
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.nome.ra    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.código.ra
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.código.ra    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.código.ap
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.código.ap    Domínio: Elemento     Range: Limite"@pt
-
-ObjectProperty: abnt:tem.localidade
-	SubPropertyOf: abnt:urbanismo
-	Characteristics: Functional
-	Characteristics: Transitive
-	Domain: abnt:Elemento
-	Range: abnt:Limite
-	Annotations: rdfs:comment "Propriedade: tem.localidade    Domínio: Elemento     Range: Limite"@pt
-
 ObjectProperty: abnt:espacial
 	SubPropertyOf: abnt:NBR.Prop
 	Domain: abnt:ObjetoBIM
@@ -5248,89 +5228,158 @@ ObjectProperty: abnt:tem.tema
 	Domain: abnt:ObjetoBIM
 	Annotations: rdfs:comment "Propriedade: tem.tema    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:posição
+ObjectProperty: abnt:localização
 	SubPropertyOf: abnt:NBR.Prop
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: posição    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: localização    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.interior.a
-	SubPropertyOf: abnt:posição
+ObjectProperty: abnt:dentro.de
+	SubPropertyOf: abnt:localização
 	Characteristics: Transitive
 	Characteristics: Asymmetric
-	InverseOf:  abnt:é.exterior.a
+	Characteristics: Reflexive
+	InverseOf:  abnt:fora.de
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.interior.a    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: dentro.de    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.exterior.a
-	SubPropertyOf: abnt:posição
-	Characteristics: Transitive
-	Characteristics: Asymmetric
-	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.exterior.a    Domínio: ObjetoBIM     Range: null"@pt
-
-ObjectProperty: abnt:é.adjacente.a
-	SubPropertyOf: abnt:posição
+ObjectProperty: abnt:fora.de
+	SubPropertyOf: abnt:localização
 	Characteristics: Symmetric
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.adjacente.a    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: fora.de    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.emfrente.a
-	SubPropertyOf: abnt:posição
+ObjectProperty: abnt:adjacente.a
+	SubPropertyOf: abnt:localização
 	Characteristics: Symmetric
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.emfrente.a    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: adjacente.a    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.central.a
-	SubPropertyOf: abnt:posição
-	Characteristics: Transitive
-	Characteristics: Asymmetric
-	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.central.a    Domínio: ObjetoBIM     Range: null"@pt
-
-ObjectProperty: abnt:é.perimetral.a
-	SubPropertyOf: abnt:posição
-	Characteristics: Asymmetric
-	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.perimetral.a    Domínio: ObjetoBIM     Range: null"@pt
-
-ObjectProperty: abnt:é.agrupado.com
-	SubPropertyOf: abnt:posição
-	Characteristics: Transitive
+ObjectProperty: abnt:frente.a
+	SubPropertyOf: abnt:localização
 	Characteristics: Symmetric
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.agrupado.com    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: frente.a    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.acima.de
-	SubPropertyOf: abnt:posição
-	Characteristics: Asymmetric
-	InverseOf:  abnt:é.embaixo.de
-	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.acima.de    Domínio: ObjetoBIM     Range: null"@pt
-
-ObjectProperty: abnt:é.embaixo.de
-	SubPropertyOf: abnt:posição
+ObjectProperty: abnt:central.a
+	SubPropertyOf: abnt:localização
 	Characteristics: Asymmetric
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.embaixo.de    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: central.a    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.paralelo.a
-	SubPropertyOf: abnt:posição
+ObjectProperty: abnt:perimetral.a
+	SubPropertyOf: abnt:localização
+	Characteristics: Asymmetric
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: perimetral.a    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:agrupado.com
+	SubPropertyOf: abnt:localização
 	Characteristics: Transitive
 	Characteristics: Symmetric
+	Characteristics: Reflexive
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.paralelo.a    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: agrupado.com    Domínio: ObjetoBIM     Range: null"@pt
 
-ObjectProperty: abnt:é.perpendicular.a
-	SubPropertyOf: abnt:posição
+ObjectProperty: abnt:acima.de
+	SubPropertyOf: abnt:localização
+	Characteristics: Asymmetric
+	InverseOf:  abnt:embaixo.de
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: acima.de    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:embaixo.de
+	SubPropertyOf: abnt:localização
+	Characteristics: Asymmetric
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: embaixo.de    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:paralelo.a
+	SubPropertyOf: abnt:localização
+	Characteristics: Transitive
 	Characteristics: Symmetric
 	Domain: abnt:ObjetoBIM
-	Annotations: rdfs:comment "Propriedade: é.perpendicular.a    Domínio: ObjetoBIM     Range: null"@pt
+	Annotations: rdfs:comment "Propriedade: paralelo.a    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:perpendicular.a
+	SubPropertyOf: abnt:localização
+	Characteristics: Symmetric
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: perpendicular.a    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:urbana
+	SubPropertyOf: abnt:localização
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: urbana    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.continente
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.continente    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.país
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.país    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.estado
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.estado    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.cidade
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.cidade    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.nome.bairro
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.nome.bairro    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.código.bairro
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.código.bairro    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.nome.ra
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.nome.ra    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.código.ra
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.código.ra    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.código.ap
+	SubPropertyOf: abnt:urbana
+	Characteristics: Functional
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.código.ap    Domínio: ObjetoBIM     Range: null"@pt
+
+ObjectProperty: abnt:tem.localidade
+	SubPropertyOf: abnt:urbana
+	EquivalentTo: abnt:dentro.de
+	Characteristics: Functional
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	Characteristics: Reflexive
+	Domain: abnt:ObjetoBIM
+	Annotations: rdfs:comment "Propriedade: tem.localidade    Domínio: ObjetoBIM     Range: null"@pt
 
 DataProperty: abnt:requisitos
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  requisitos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  requisitos  >  requisitos"@pt
 
@@ -5338,7 +5387,6 @@ DataProperty: abnt:d.importância
 	SubPropertyOf: abnt:requisitos
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.importância"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.importância  >  d.importância"@pt
 
@@ -5346,7 +5394,6 @@ DataProperty: abnt:d.obrigatoriedade
 	SubPropertyOf: abnt:requisitos
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.obrigatoriedade"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.obrigatoriedade  >  d.obrigatoriedade"@pt
 
@@ -5354,7 +5401,6 @@ DataProperty: abnt:d.opcional
 	SubPropertyOf: abnt:requisitos
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.opcional"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.opcional  >  d.opcional"@pt
 
@@ -5362,7 +5408,6 @@ DataProperty: abnt:escalas
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Ajuste
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  escalas"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  escalas  >  escalas"@pt
 
@@ -5370,7 +5415,6 @@ DataProperty: abnt:d.escala.numérica
 	SubPropertyOf: abnt:escalas
 	Domain: abnt:Ajuste
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.escala.numérica"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.escala.numérica  >  d.escala.numérica"@pt
 
@@ -5378,7 +5422,6 @@ DataProperty: abnt:d.escala.gráfica
 	SubPropertyOf: abnt:escalas
 	Domain: abnt:Ajuste
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.escala.gráfica"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.escala.gráfica  >  d.escala.gráfica"@pt
 
@@ -5386,7 +5429,6 @@ DataProperty: abnt:linhas
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  linhas"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  linhas  >  linhas"@pt
 
@@ -5394,7 +5436,6 @@ DataProperty: abnt:d.tipo.de.linha
 	SubPropertyOf: abnt:linhas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.tipo.de.linha"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.tipo.de.linha  >  d.tipo.de.linha"@pt
 
@@ -5402,7 +5443,6 @@ DataProperty: abnt:d.grupo.de.linha
 	SubPropertyOf: abnt:linhas
 	Domain: abnt:Elemento
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.grupo.de.linha"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.grupo.de.linha  >  d.grupo.de.linha"@pt
 
@@ -5410,7 +5450,6 @@ DataProperty: abnt:d.valor.de.linha
 	SubPropertyOf: abnt:linhas
 	Domain: abnt:Elemento
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.valor.de.linha"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.valor.de.linha  >  d.valor.de.linha"@pt
 
@@ -5418,7 +5457,6 @@ DataProperty: abnt:setas
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  setas"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  setas  >  setas"@pt
 
@@ -5426,7 +5464,6 @@ DataProperty: abnt:d.tipo.de.seta
 	SubPropertyOf: abnt:setas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.tipo.de.seta"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.tipo.de.seta  >  d.tipo.de.seta"@pt
 
@@ -5434,7 +5471,6 @@ DataProperty: abnt:cotas
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  cotas"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  cotas  >  cotas"@pt
 
@@ -5442,7 +5478,6 @@ DataProperty: abnt:d.extremidade
 	SubPropertyOf: abnt:cotas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.extremidade"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.extremidade  >  d.extremidade"@pt
 
@@ -5450,7 +5485,6 @@ DataProperty: abnt:textos
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  textos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  textos  >  textos"@pt
 
@@ -5458,7 +5492,6 @@ DataProperty: abnt:d.regua
 	SubPropertyOf: abnt:textos
 	Domain: abnt:Elemento
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.regua"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.regua  >  d.regua"@pt
 
@@ -5466,7 +5499,6 @@ DataProperty: abnt:d.tipo.de.letra
 	SubPropertyOf: abnt:textos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.tipo.de.letra"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.tipo.de.letra  >  d.tipo.de.letra"@pt
 
@@ -5474,7 +5506,6 @@ DataProperty: abnt:simbolos
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  simbolos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  simbolos  >  simbolos"@pt
 
@@ -5482,7 +5513,6 @@ DataProperty: abnt:d.seta.de.acesso
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.seta.de.acesso"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.seta.de.acesso  >  d.seta.de.acesso"@pt
 
@@ -5490,7 +5520,6 @@ DataProperty: abnt:d.seta.de.escada
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.seta.de.escada"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.seta.de.escada  >  d.seta.de.escada"@pt
 
@@ -5498,7 +5527,6 @@ DataProperty: abnt:d.seta.de.rampa
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.seta.de.rampa"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.seta.de.rampa  >  d.seta.de.rampa"@pt
 
@@ -5506,7 +5534,6 @@ DataProperty: abnt:d.seta.de.fluxo
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.seta.de.fluxo"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.seta.de.fluxo  >  d.seta.de.fluxo"@pt
 
@@ -5514,7 +5541,6 @@ DataProperty: abnt:d.detalhes
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.detalhes"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.detalhes  >  d.detalhes"@pt
 
@@ -5522,7 +5548,6 @@ DataProperty: abnt:d.interrupções
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.interrupções"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.interrupções  >  d.interrupções"@pt
 
@@ -5530,7 +5555,6 @@ DataProperty: abnt:d.orientação.norte
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.orientação.norte"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.orientação.norte  >  d.orientação.norte"@pt
 
@@ -5538,7 +5562,6 @@ DataProperty: abnt:d.ponto.elétrico
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.ponto.elétrico"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.ponto.elétrico  >  d.ponto.elétrico"@pt
 
@@ -5546,7 +5569,6 @@ DataProperty: abnt:d.ponto.solda
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.ponto.solda"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.ponto.solda  >  d.ponto.solda"@pt
 
@@ -5554,7 +5576,6 @@ DataProperty: abnt:d.armaduras
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.armaduras"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.armaduras  >  d.armaduras"@pt
 
@@ -5562,103 +5583,13 @@ DataProperty: abnt:d.madeiramentos
 	SubPropertyOf: abnt:simbolos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.madeiramentos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  usa.madeiramentos  >  d.madeiramentos"@pt
-
-DataProperty: abnt:urbanismo
-	SubPropertyOf: abnt:NBR.Data
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  urbanismo"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  urbanismo  >  urbanismo"@pt
-
-DataProperty: abnt:d.continente
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.continente"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.continente  >  d.continente"@pt
-
-DataProperty: abnt:d.país
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.país"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.país  >  d.país"@pt
-
-DataProperty: abnt:d.estado
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.estado"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.estado  >  d.estado"@pt
-
-DataProperty: abnt:d.cidade
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.cidade"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.cidade  >  d.cidade"@pt
-
-DataProperty: abnt:d.nome.bairro
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.nome.bairro"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.nome.bairro  >  d.nome.bairro"@pt
-
-DataProperty: abnt:d.código.bairro
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.código.bairro"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.bairro  >  d.código.bairro"@pt
-
-DataProperty: abnt:d.nome.ra
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.nome.ra"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.nome.ra  >  d.nome.ra"@pt
-
-DataProperty: abnt:d.código.ra
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.código.ra"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.ra  >  d.código.ra"@pt
-
-DataProperty: abnt:d.código.ap
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.código.ap"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.ap  >  d.código.ap"@pt
-
-DataProperty: abnt:d.localidade
-	SubPropertyOf: abnt:urbanismo
-	Domain: abnt:Elemento
-	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.localidade"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.localidade  >  d.localidade"@pt
 
 DataProperty: abnt:espacial
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  espacial"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  espacial  >  espacial"@pt
 
@@ -5666,7 +5597,6 @@ DataProperty: abnt:d.ambiente
 	SubPropertyOf: abnt:espacial
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.ambiente"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.ambiente  >  d.ambiente"@pt
 
@@ -5674,7 +5604,6 @@ DataProperty: abnt:d.divisão
 	SubPropertyOf: abnt:espacial
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.divisão"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.divisão  >  d.divisão"@pt
 
@@ -5682,7 +5611,6 @@ DataProperty: abnt:d.zona
 	SubPropertyOf: abnt:espacial
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.zona"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.zona  >  d.zona"@pt
 
@@ -5690,7 +5618,6 @@ DataProperty: abnt:dimensional
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  dimensional"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  dimensional  >  dimensional"@pt
 
@@ -5698,7 +5625,6 @@ DataProperty: abnt:tem.area
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.area"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.area  >  tem.area"@pt
 
@@ -5706,7 +5632,6 @@ DataProperty: abnt:d.area.max
 	SubPropertyOf: abnt:tem.area
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.area.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.area.max  >  d.area.max"@pt
 
@@ -5714,7 +5639,6 @@ DataProperty: abnt:d.area.min
 	SubPropertyOf: abnt:tem.area
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.area.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.area.min  >  d.area.min"@pt
 
@@ -5722,7 +5646,6 @@ DataProperty: abnt:d.area.proj
 	SubPropertyOf: abnt:tem.area
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.area.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.area.proj  >  d.area.proj"@pt
 
@@ -5730,7 +5653,6 @@ DataProperty: abnt:tem.comprimento
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.comprimento"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.comprimento  >  tem.comprimento"@pt
 
@@ -5738,7 +5660,6 @@ DataProperty: abnt:d.comprimento.max
 	SubPropertyOf: abnt:tem.comprimento
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.comprimento.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.comprimento.max  >  d.comprimento.max"@pt
 
@@ -5746,7 +5667,6 @@ DataProperty: abnt:d.comprimento.min
 	SubPropertyOf: abnt:tem.comprimento
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.comprimento.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.comprimento.min  >  d.comprimento.min"@pt
 
@@ -5754,7 +5674,6 @@ DataProperty: abnt:d.comprimento.proj
 	SubPropertyOf: abnt:tem.comprimento
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.comprimento.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.comprimento.proj  >  d.comprimento.proj"@pt
 
@@ -5762,7 +5681,6 @@ DataProperty: abnt:tem.largura
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.largura"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.largura  >  tem.largura"@pt
 
@@ -5770,7 +5688,6 @@ DataProperty: abnt:d.largura.max
 	SubPropertyOf: abnt:tem.largura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.largura.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.largura.max  >  d.largura.max"@pt
 
@@ -5778,7 +5695,6 @@ DataProperty: abnt:d.largura.min
 	SubPropertyOf: abnt:tem.largura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.largura.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.largura.min  >  d.largura.min"@pt
 
@@ -5786,7 +5702,6 @@ DataProperty: abnt:d.largura.proj
 	SubPropertyOf: abnt:tem.largura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.largura.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.largura.proj  >  d.largura.proj"@pt
 
@@ -5794,7 +5709,6 @@ DataProperty: abnt:tem.altura
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.altura"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.altura  >  tem.altura"@pt
 
@@ -5802,7 +5716,6 @@ DataProperty: abnt:d.altura.max
 	SubPropertyOf: abnt:tem.altura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.altura.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.altura.max  >  d.altura.max"@pt
 
@@ -5810,7 +5723,6 @@ DataProperty: abnt:d.altura.min
 	SubPropertyOf: abnt:tem.altura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.altura.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.altura.min  >  d.altura.min"@pt
 
@@ -5818,7 +5730,6 @@ DataProperty: abnt:d.altura.proj
 	SubPropertyOf: abnt:tem.altura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.altura.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.altura.proj  >  d.altura.proj"@pt
 
@@ -5826,7 +5737,6 @@ DataProperty: abnt:tem.pédireito
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.pédireito"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.pédireito  >  tem.pédireito"@pt
 
@@ -5834,7 +5744,6 @@ DataProperty: abnt:d.pédireito.max
 	SubPropertyOf: abnt:tem.pédireito
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.pédireito.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.pédireito.max  >  d.pédireito.max"@pt
 
@@ -5842,7 +5751,6 @@ DataProperty: abnt:d.pédireito.min
 	SubPropertyOf: abnt:tem.pédireito
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.pédireito.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.pédireito.min  >  d.pédireito.min"@pt
 
@@ -5850,7 +5758,6 @@ DataProperty: abnt:d.pédireito.proj
 	SubPropertyOf: abnt:tem.pédireito
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.pédireito.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.pédireito.proj  >  d.pédireito.proj"@pt
 
@@ -5858,7 +5765,6 @@ DataProperty: abnt:tem.espesura
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.espesura"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura  >  tem.espesura"@pt
 
@@ -5866,7 +5772,6 @@ DataProperty: abnt:d.espesura.max
 	SubPropertyOf: abnt:tem.espesura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.max  >  d.espesura.max"@pt
 
@@ -5874,7 +5779,6 @@ DataProperty: abnt:d.espesura.min
 	SubPropertyOf: abnt:tem.espesura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.min  >  d.espesura.min"@pt
 
@@ -5882,7 +5786,6 @@ DataProperty: abnt:d.espesura.proj
 	SubPropertyOf: abnt:tem.espesura
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.proj  >  d.espesura.proj"@pt
 
@@ -5890,7 +5793,6 @@ DataProperty: abnt:tem.espesura.alma
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.espesura.alma"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.alma  >  tem.espesura.alma"@pt
 
@@ -5898,7 +5800,6 @@ DataProperty: abnt:d.espesura.alma.max
 	SubPropertyOf: abnt:tem.espesura.alma
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.alma.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.alma.max  >  d.espesura.alma.max"@pt
 
@@ -5906,7 +5807,6 @@ DataProperty: abnt:d.espesura.alma.min
 	SubPropertyOf: abnt:tem.espesura.alma
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.alma.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.alma.min  >  d.espesura.alma.min"@pt
 
@@ -5914,7 +5814,6 @@ DataProperty: abnt:d.espesura.alma.proj
 	SubPropertyOf: abnt:tem.espesura.alma
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.alma.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.alma.proj  >  d.espesura.alma.proj"@pt
 
@@ -5922,7 +5821,6 @@ DataProperty: abnt:tem.espesura.mesa
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.espesura.mesa"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.mesa  >  tem.espesura.mesa"@pt
 
@@ -5930,7 +5828,6 @@ DataProperty: abnt:d.espesura.mesa.max
 	SubPropertyOf: abnt:tem.espesura.mesa
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.mesa.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.mesa.max  >  d.espesura.mesa.max"@pt
 
@@ -5938,7 +5835,6 @@ DataProperty: abnt:d.espesura.mesa.min
 	SubPropertyOf: abnt:tem.espesura.mesa
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.mesa.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.mesa.min  >  d.espesura.mesa.min"@pt
 
@@ -5946,7 +5842,6 @@ DataProperty: abnt:d.espesura.mesa.proj
 	SubPropertyOf: abnt:tem.espesura.mesa
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.espesura.mesa.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.espesura.mesa.proj  >  d.espesura.mesa.proj"@pt
 
@@ -5954,7 +5849,6 @@ DataProperty: abnt:tem.diámetro
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.diámetro"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diámetro  >  tem.diámetro"@pt
 
@@ -5962,7 +5856,6 @@ DataProperty: abnt:d.diámetro.max
 	SubPropertyOf: abnt:tem.diámetro
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.diámetro.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diámetro.max  >  d.diámetro.max"@pt
 
@@ -5970,7 +5863,6 @@ DataProperty: abnt:d.diámetro.min
 	SubPropertyOf: abnt:tem.diámetro
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.diámetro.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diámetro.min  >  d.diámetro.min"@pt
 
@@ -5978,7 +5870,6 @@ DataProperty: abnt:d.diámetro.proj
 	SubPropertyOf: abnt:tem.diámetro
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.diámetro.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diámetro.proj  >  d.diámetro.proj"@pt
 
@@ -5986,7 +5877,6 @@ DataProperty: abnt:tem.raio
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.raio"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.raio  >  tem.raio"@pt
 
@@ -5994,7 +5884,6 @@ DataProperty: abnt:d.raio.max
 	SubPropertyOf: abnt:tem.raio
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.raio.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.raio.max  >  d.raio.max"@pt
 
@@ -6002,7 +5891,6 @@ DataProperty: abnt:d.raio.min
 	SubPropertyOf: abnt:tem.raio
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.raio.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.raio.min  >  d.raio.min"@pt
 
@@ -6010,7 +5898,6 @@ DataProperty: abnt:d.raio.proj
 	SubPropertyOf: abnt:tem.raio
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.raio.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.raio.proj  >  d.raio.proj"@pt
 
@@ -6018,7 +5905,6 @@ DataProperty: abnt:tem.gabarito
 	SubPropertyOf: abnt:dimensional
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  tem.gabarito"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.gabarito  >  tem.gabarito"@pt
 
@@ -6026,7 +5912,6 @@ DataProperty: abnt:d.gabarito.max
 	SubPropertyOf: abnt:tem.gabarito
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.gabarito.max"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.gabarito.max  >  d.gabarito.max"@pt
 
@@ -6034,7 +5919,6 @@ DataProperty: abnt:d.gabarito.min
 	SubPropertyOf: abnt:tem.gabarito
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.gabarito.min"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.gabarito.min  >  d.gabarito.min"@pt
 
@@ -6042,7 +5926,6 @@ DataProperty: abnt:d.gabarito.proj
 	SubPropertyOf: abnt:tem.gabarito
 	Domain: abnt:ObjetoBIM
 	Range: xsd:decimal
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.gabarito.proj"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.gabarito.proj  >  d.gabarito.proj"@pt
 
@@ -6050,7 +5933,6 @@ DataProperty: abnt:códigos.sus
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Classificador
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  códigos.sus"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  códigos.sus  >  códigos.sus"@pt
 
@@ -6058,7 +5940,6 @@ DataProperty: abnt:d.volume
 	SubPropertyOf: abnt:códigos.sus
 	Domain: abnt:Classificador
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.volume"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.volume  >  d.volume"@pt
 
@@ -6066,7 +5947,6 @@ DataProperty: abnt:d.unidade.funcional
 	SubPropertyOf: abnt:códigos.sus
 	Domain: abnt:Classificador
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.unidade.funcional"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.unidade.funcional  >  d.unidade.funcional"@pt
 
@@ -6074,7 +5954,6 @@ DataProperty: abnt:d.setor
 	SubPropertyOf: abnt:códigos.sus
 	Domain: abnt:Classificador
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.setor"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.setor  >  d.setor"@pt
 
@@ -6082,7 +5961,6 @@ DataProperty: abnt:códigos.abnt
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Classificador
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  códigos.abnt"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  códigos.abnt  >  códigos.abnt"@pt
 
@@ -6090,7 +5968,6 @@ DataProperty: abnt:d.código.abnt
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:Classificador
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.código.abnt"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.abnt  >  d.código.abnt"@pt
 
@@ -6098,7 +5975,6 @@ DataProperty: abnt:desenhado
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  desenhado"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  desenhado  >  desenhado"@pt
 
@@ -6106,7 +5982,6 @@ DataProperty: abnt:como.contorno
 	SubPropertyOf: abnt:desenhado
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  como.contorno"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  como.contorno  >  como.contorno"@pt
 
@@ -6114,7 +5989,6 @@ DataProperty: abnt:d.aresta.visível
 	SubPropertyOf: abnt:como.contorno
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.aresta.visível"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.aresta.visível  >  d.aresta.visível"@pt
 
@@ -6122,7 +5996,6 @@ DataProperty: abnt:d.aresta.oculta
 	SubPropertyOf: abnt:como.contorno
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.aresta.oculta"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.aresta.oculta  >  d.aresta.oculta"@pt
 
@@ -6130,7 +6003,6 @@ DataProperty: abnt:d.aresta.corte
 	SubPropertyOf: abnt:como.contorno
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.aresta.corte"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.aresta.corte  >  d.aresta.corte"@pt
 
@@ -6138,7 +6010,6 @@ DataProperty: abnt:como.vazio
 	SubPropertyOf: abnt:desenhado
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  como.vazio"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  como.vazio  >  como.vazio"@pt
 
@@ -6146,7 +6017,6 @@ DataProperty: abnt:d.diagonal.shaft
 	SubPropertyOf: abnt:como.vazio
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.diagonal.shaft"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diagonal.shaft  >  d.diagonal.shaft"@pt
 
@@ -6154,7 +6024,6 @@ DataProperty: abnt:d.diagonal.vazio
 	SubPropertyOf: abnt:como.vazio
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.diagonal.vazio"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diagonal.vazio  >  d.diagonal.vazio"@pt
 
@@ -6162,7 +6031,6 @@ DataProperty: abnt:d.diagonal.plenum
 	SubPropertyOf: abnt:como.vazio
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.diagonal.plenum"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.diagonal.plenum  >  d.diagonal.plenum"@pt
 
@@ -6170,7 +6038,6 @@ DataProperty: abnt:como.movimento
 	SubPropertyOf: abnt:desenhado
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  como.movimento"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  como.movimento  >  como.movimento"@pt
 
@@ -6178,7 +6045,6 @@ DataProperty: abnt:d.arco.de.porta
 	SubPropertyOf: abnt:como.movimento
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.arco.de.porta"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.arco.de.porta  >  d.arco.de.porta"@pt
 
@@ -6186,7 +6052,6 @@ DataProperty: abnt:d.sentido.de.abertura
 	SubPropertyOf: abnt:como.movimento
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.sentido.de.abertura"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.sentido.de.abertura  >  d.sentido.de.abertura"@pt
 
@@ -6194,7 +6059,6 @@ DataProperty: abnt:como.cota
 	SubPropertyOf: abnt:desenhado
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  como.cota"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  como.cota  >  como.cota"@pt
 
@@ -6202,7 +6066,6 @@ DataProperty: abnt:d.cota.externa
 	SubPropertyOf: abnt:como.cota
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.cota.externa"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.cota.externa  >  d.cota.externa"@pt
 
@@ -6210,7 +6073,6 @@ DataProperty: abnt:d.cota.interna
 	SubPropertyOf: abnt:como.cota
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.cota.interna"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.cota.interna  >  d.cota.interna"@pt
 
@@ -6218,7 +6080,6 @@ DataProperty: abnt:folhas
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  folhas"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  folhas  >  folhas"@pt
 
@@ -6226,7 +6087,6 @@ DataProperty: abnt:d.papel
 	SubPropertyOf: abnt:folhas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.papel"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.papel  >  d.papel"@pt
 
@@ -6234,7 +6094,6 @@ DataProperty: abnt:d.gramatura
 	SubPropertyOf: abnt:folhas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.gramatura"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.gramatura  >  d.gramatura"@pt
 
@@ -6242,7 +6101,6 @@ DataProperty: abnt:d.formato
 	SubPropertyOf: abnt:folhas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.formato"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.formato  >  d.formato"@pt
 
@@ -6250,7 +6108,6 @@ DataProperty: abnt:d.margens
 	SubPropertyOf: abnt:folhas
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.margens"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.margens  >  d.margens"@pt
 
@@ -6258,7 +6115,6 @@ DataProperty: abnt:processos
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  processos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  processos  >  processos"@pt
 
@@ -6266,7 +6122,6 @@ DataProperty: abnt:d.disciplina
 	SubPropertyOf: abnt:processos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.disciplina"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.disciplina  >  d.disciplina"@pt
 
@@ -6274,7 +6129,6 @@ DataProperty: abnt:d.fase
 	SubPropertyOf: abnt:processos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.fase"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase  >  d.fase"@pt
 
@@ -6282,7 +6136,6 @@ DataProperty: abnt:d.etapa
 	SubPropertyOf: abnt:processos
 	Domain: abnt:Elemento
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.etapa"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.etapa  >  d.etapa"@pt
 
@@ -6290,7 +6143,6 @@ DataProperty: abnt:identidades
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  identidades"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  identidades  >  identidades"@pt
 
@@ -6298,7 +6150,6 @@ DataProperty: abnt:d.nome
 	SubPropertyOf: abnt:identidades
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.nome"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.nome  >  d.nome"@pt
 
@@ -6306,7 +6157,6 @@ DataProperty: abnt:d.número
 	SubPropertyOf: abnt:identidades
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.número"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.número  >  d.número"@pt
 
@@ -6314,7 +6164,6 @@ DataProperty: abnt:d.id
 	SubPropertyOf: abnt:identidades
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.id"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.id  >  d.id"@pt
 
@@ -6322,7 +6171,6 @@ DataProperty: abnt:d.tag
 	SubPropertyOf: abnt:identidades
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.tag"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.tag  >  d.tag"@pt
 
@@ -6330,7 +6178,6 @@ DataProperty: abnt:materiais
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  materiais"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  materiais  >  materiais"@pt
 
@@ -6338,7 +6185,6 @@ DataProperty: abnt:d.nome.material
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.nome.material"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.nome.material  >  d.nome.material"@pt
 
@@ -6346,7 +6192,6 @@ DataProperty: abnt:d.fornecedor.material
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.fornecedor.material"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.fornecedor.material  >  d.fornecedor.material"@pt
 
@@ -6354,7 +6199,6 @@ DataProperty: abnt:d.código.material
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.código.material"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.material  >  d.código.material"@pt
 
@@ -6362,7 +6206,6 @@ DataProperty: abnt:d.materiais.de.acabamentos
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.materiais.de.acabamentos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  dos.materiais.de.acabamentos  >  d.materiais.de.acabamentos"@pt
 
@@ -6370,7 +6213,6 @@ DataProperty: abnt:d.materiais.estruturais
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.materiais.estruturais"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  dos.materiais.estruturais  >  d.materiais.estruturais"@pt
 
@@ -6378,7 +6220,6 @@ DataProperty: abnt:d.materiais.de.substratos
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.materiais.de.substratos"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  dos.materiais.de.substratos  >  d.materiais.de.substratos"@pt
 
@@ -6386,7 +6227,6 @@ DataProperty: abnt:d.materiais.de.isolamento
 	SubPropertyOf: abnt:materiais
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.materiais.de.isolamento"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  dos.materiais.de.isolamento  >  d.materiais.de.isolamento"@pt
 
@@ -6414,101 +6254,167 @@ DataProperty: abnt:d.tema
 	Annotations: rdfs:comment "Valor:  d.tema"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema  >  d.tema"@pt
 
-DataProperty: abnt:posição
+DataProperty: abnt:localização
 	SubPropertyOf: abnt:NBR.Data
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  posição"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  posição  >  posição"@pt
+	Annotations: rdfs:comment "Valor:  localização"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  localização  >  localização"@pt
 
-DataProperty: abnt:d.interior.a
-	SubPropertyOf: abnt:posição
+DataProperty: abnt:d.dentro.de
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.interior.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.interior.a  >  d.interior.a"@pt
+	Annotations: rdfs:comment "Valor:  d.dentro.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  dentro.de  >  d.dentro.de"@pt
 
-DataProperty: abnt:d.exterior.a
-	SubPropertyOf: abnt:posição
+DataProperty: abnt:d.fora.de
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.exterior.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.exterior.a  >  d.exterior.a"@pt
+	Annotations: rdfs:comment "Valor:  d.fora.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  fora.de  >  d.fora.de"@pt
 
 DataProperty: abnt:d.adjacente.a
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.adjacente.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.adjacente.a  >  d.adjacente.a"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  adjacente.a  >  d.adjacente.a"@pt
 
-DataProperty: abnt:d.emfrente.a
-	SubPropertyOf: abnt:posição
+DataProperty: abnt:d.frente.a
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.emfrente.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.emfrente.a  >  d.emfrente.a"@pt
+	Annotations: rdfs:comment "Valor:  d.frente.a"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  frente.a  >  d.frente.a"@pt
 
 DataProperty: abnt:d.central.a
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.central.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.central.a  >  d.central.a"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  central.a  >  d.central.a"@pt
 
 DataProperty: abnt:d.perimetral.a
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.perimetral.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.perimetral.a  >  d.perimetral.a"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  perimetral.a  >  d.perimetral.a"@pt
 
 DataProperty: abnt:d.agrupado.com
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.agrupado.com"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.agrupado.com  >  d.agrupado.com"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  agrupado.com  >  d.agrupado.com"@pt
 
 DataProperty: abnt:d.acima.de
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.acima.de"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.acima.de  >  d.acima.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  acima.de  >  d.acima.de"@pt
 
 DataProperty: abnt:d.embaixo.de
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.embaixo.de"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.embaixo.de  >  d.embaixo.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  embaixo.de  >  d.embaixo.de"@pt
 
 DataProperty: abnt:d.paralelo.a
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
-	Characteristics: Functional
 	Annotations: rdfs:comment "Valor:  d.paralelo.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.paralelo.a  >  d.paralelo.a"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  paralelo.a  >  d.paralelo.a"@pt
 
 DataProperty: abnt:d.perpendicular.a
-	SubPropertyOf: abnt:posição
+	SubPropertyOf: abnt:localização
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.perpendicular.a"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  perpendicular.a  >  d.perpendicular.a"@pt
+
+DataProperty: abnt:urbana
+	SubPropertyOf: abnt:localização
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  urbana"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  urbana  >  urbana"@pt
+
+DataProperty: abnt:d.continente
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.continente"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.continente  >  d.continente"@pt
+
+DataProperty: abnt:d.país
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.país"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.país  >  d.país"@pt
+
+DataProperty: abnt:d.estado
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.estado"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.estado  >  d.estado"@pt
+
+DataProperty: abnt:d.cidade
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.cidade"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.cidade  >  d.cidade"@pt
+
+DataProperty: abnt:d.nome.bairro
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.nome.bairro"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.nome.bairro  >  d.nome.bairro"@pt
+
+DataProperty: abnt:d.código.bairro
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.código.bairro"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.bairro  >  d.código.bairro"@pt
+
+DataProperty: abnt:d.nome.ra
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.nome.ra"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.nome.ra  >  d.nome.ra"@pt
+
+DataProperty: abnt:d.código.ra
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.código.ra"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.ra  >  d.código.ra"@pt
+
+DataProperty: abnt:d.código.ap
+	SubPropertyOf: abnt:urbana
+	Domain: abnt:ObjetoBIM
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  d.código.ap"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código.ap  >  d.código.ap"@pt
+
+DataProperty: abnt:d.localidade
+	SubPropertyOf: abnt:urbana
 	Domain: abnt:ObjetoBIM
 	Range: xsd:string
 	Characteristics: Functional
-	Annotations: rdfs:comment "Valor:  d.perpendicular.a"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  é.perpendicular.a  >  d.perpendicular.a"@pt
+	Annotations: rdfs:comment "Valor:  d.localidade"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.localidade  >  d.localidade"@pt
 
 DisjointClasses: abnt:De.Aço, abnt:De.Concreto, abnt:De.Madeira
 
@@ -8463,7 +8369,8 @@ Individual: abnt:Hospital.A
 Individual: abnt:Enfermaria.101
 	Types: abnt:Ambiente
 	Annotations: rdfs:comment "Enfermaria.101"@pt
-	Facts: abnt:tem.localidade abnt:Hospital.A
+	Facts: abnt:dentro.de abnt:Hospital.A
+	Facts: abnt:usa.categoria abnt:OST_Rooms
 	Facts: abnt:d.categoria "OST_Rooms"
 	Facts: abnt:d.setor "ENFE"
 	Facts: abnt:d.localidade "Hospital.A"
@@ -8472,7 +8379,8 @@ Individual: abnt:Enfermaria.101
 Individual: abnt:Enfermaria.102
 	Types: abnt:Ambiente
 	Annotations: rdfs:comment "Enfermaria.102"@pt
-	Facts: abnt:tem.localidade abnt:Hospital.A
+	Facts: abnt:dentro.de abnt:Enfermaria.101
+	Facts: abnt:usa.categoria abnt:OST_Rooms
 	Facts: abnt:d.categoria "OST_Rooms"
 	Facts: abnt:d.setor "ENFE"
 	Facts: abnt:d.localidade "Hospital.A"
@@ -8481,7 +8389,8 @@ Individual: abnt:Enfermaria.102
 Individual: abnt:Enfermaria.103
 	Types: abnt:Ambiente
 	Annotations: rdfs:comment "Enfermaria.103"@pt
-	Facts: abnt:tem.localidade abnt:Hospital.A
+	Facts: abnt:dentro.de abnt:Enfermaria.102
+	Facts: abnt:usa.categoria abnt:OST_Rooms
 	Facts: abnt:d.categoria "OST_Rooms"
 	Facts: abnt:d.setor "ENFE"
 	Facts: abnt:d.localidade "Hospital.A"
@@ -8490,7 +8399,9 @@ Individual: abnt:Enfermaria.103
 Individual: abnt:Enfermaria.104
 	Types: abnt:Ambiente
 	Annotations: rdfs:comment "Enfermaria.104"@pt
-	Facts: abnt:tem.localidade abnt:Hospital.A
+	Facts: abnt:dentro.de abnt:Hospital.A
+	Facts: abnt:agrupado.com abnt:Enfermaria.105
+	Facts: abnt:usa.categoria abnt:OST_Rooms
 	Facts: abnt:d.categoria "OST_Rooms"
 	Facts: abnt:d.setor "ENFE"
 	Facts: abnt:d.localidade "Hospital.A"
@@ -8499,7 +8410,18 @@ Individual: abnt:Enfermaria.104
 Individual: abnt:Enfermaria.105
 	Types: abnt:Ambiente
 	Annotations: rdfs:comment "Enfermaria.105"@pt
-	Facts: abnt:tem.localidade abnt:Hospital.A
+	Facts: abnt:dentro.de abnt:Hospital.A
+	Facts: abnt:usa.categoria abnt:OST_Rooms
+	Facts: abnt:d.categoria "OST_Rooms"
+	Facts: abnt:d.setor "ENFE"
+	Facts: abnt:d.localidade "Hospital.A"
+	Facts: abnt:d.area.proj 6.55
+
+Individual: abnt:Enfermaria.106
+	Types: abnt:Ambiente
+	Annotations: rdfs:comment "Enfermaria.106"@pt
+	Facts: abnt:dentro.de abnt:Hospital.A
+	Facts: abnt:usa.categoria abnt:OST_Rooms
 	Facts: abnt:d.categoria "OST_Rooms"
 	Facts: abnt:d.setor "ENFE"
 	Facts: abnt:d.localidade "Hospital.A"
