@@ -13,8 +13,9 @@ Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. A ont
 
 Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de um ambiente integrado de processos. 
 
-No projeto Ontologia BIM-GIS vem sendo implementado um construtor de ontologias com saida em formato OWL **(Ontology Web Language)**. O objetivo é integrar conhecimento em sistemas de dados abertos e conectados **(Open Linked Data)** em contextos de informação CAD-BIM-GIS. As ontologias descrevem conceitualmente elementos de projetos arquitetônicos e urbanos. Podem ser aproveitadas em todo o ciclo de vida dos empreendimentos.
-Ajudam a integrar modelos de informação diferentes como IFC, Revit, CityGML, KML, OSM, etc.
+No projeto Ontologia BIM-GIS vem sendo implementado um construtor de ontologias com saida em formato OWL **(Ontology Web Language)**. O objetivo é integrar conhecimento em sistemas de dados abertos e conectados **(Open Linked Data)** em contextos de informação CAD-BIM-GIS. As ontologias são, de acordo com Gruber,
+"uma especificação explicita de uma conceptualização". Dentro de nosso domínio de conhecimentos podem ser utilizadas para especificar explicitamente conceitos de projetos arquitetônicos e urbanos, seus elementos, os seus processos, etc. 
+Podem ajudar na tarefa de integrar modelos de informação diferentes como IFC, Revit, CityGML, KML, OSM, etc. As descricões e axiomas definidos deveriam auxiliar a conhecer e acompanhar o projeto em todo o ciclo de vida.
 
 O projeto parte da hipótese de que as tecnologias CAD-BIM-GIS somente serão integradas se o conhecimento projetual, acumulado ao longo dos anos, for expresso e ordenado em redes de dados abertos e conectados, segundo conceitualizou Tim Berners-Lee. Esse conceito permite montar uma infraestrutura digital compartilhada de conhecimentos. Portanto, se Normas Técnicas expressam o conhecimento industrial acumulado, deveriam ser estruturadas em ontologias de domínio específico e disponibilizadas de modo aberto. Os fluxos de dados, informaçoes e conhecimentos seriam beneficiados. Não seria esse um retorno do conhecimento às suas fontes? O construtor pretende ser uma contribuição para realizar este empreendimento.
 
