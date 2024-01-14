@@ -7,11 +7,11 @@
 
 ### **Versão 2.00 Para Revit 2024**
 
-Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. A ontologia gerada em OWL e o arquivo excel que lhe deu origem são atualizados quando há mudanças na estruturação de classes e propriedades.
+Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. As ontologias geradas em OWL e os arquivos excel que lhes dão origem são atualizados quando há mudanças na estruturação de classes e propriedades.
 
 ![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c43e6b33-1fc6-4a3e-b439-8111af74a6d7)
 
-Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de um ambiente integrado de processos. 
+Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. 
 
 No projeto Ontologia BIM-GIS vem sendo implementado um construtor de ontologias com saida em formato OWL **(Ontology Web Language)**. O objetivo é integrar conhecimento em sistemas de dados abertos e conectados **(Open Linked Data)** em contextos de informação CAD-BIM-GIS. As ontologias são, de acordo com Gruber,
 "uma especificação explicita de uma conceptualização". Dentro de nosso domínio de conhecimentos podem ser utilizadas para especificar explicitamente conceitos de projetos arquitetônicos e urbanos, seus elementos, os seus processos, etc. 
