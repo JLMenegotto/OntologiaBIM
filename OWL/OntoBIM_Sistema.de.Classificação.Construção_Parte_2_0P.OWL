@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt, 
-	rdfs:label "Data.Hora: 3/15/2024 10:58:12 AM"@pt, 
+	rdfs:label "Data.Hora: 3/16/2024 7:52:14 AM"@pt, 
 	rdfs:label "Advertência_1: -"@pt
 
 Datatype: xsd:string
@@ -202,6 +202,12 @@ ObjectProperty: abnt:tem.tema
 	Range: abnt:NBR.Norma
 	Annotations: rdfs:comment "Propriedade: tem.tema    Domínio: ABNT     Range: NBR.Norma"@pt
 
+ObjectProperty: abnt:tem.subtema
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.subtema    Domínio: ABNT     Range: NBR.Norma"@pt
+
 ObjectProperty: abnt:tem.código
 	SubPropertyOf: abnt:códigos.abnt
 	Characteristics: Functional
@@ -215,11 +221,11 @@ ObjectProperty: abnt:tem.descrição
 	Range: abnt:NBR.Norma
 	Annotations: rdfs:comment "Propriedade: tem.descrição    Domínio: ABNT     Range: NBR.Norma"@pt
 
-ObjectProperty: abnt:tem.classificador.equiv
+ObjectProperty: abnt:tem.siscla.equiv
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
 	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.classificador.equiv    Domínio: ABNT     Range: NBR.Norma"@pt
+	Annotations: rdfs:comment "Propriedade: tem.siscla.equiv    Domínio: ABNT     Range: NBR.Norma"@pt
 
 ObjectProperty: abnt:tem.versão
 	SubPropertyOf: abnt:códigos.abnt
@@ -358,6 +364,13 @@ DataProperty: abnt:tema
 	Annotations: rdfs:comment "Valor:  tema"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema  >  tema"@pt
 
+DataProperty: abnt:subtema
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  subtema"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.subtema  >  subtema"@pt
+
 DataProperty: abnt:código
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
@@ -372,12 +385,12 @@ DataProperty: abnt:descrição
 	Annotations: rdfs:comment "Valor:  descrição"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.descrição  >  descrição"@pt
 
-DataProperty: abnt:classificador.equiv
+DataProperty: abnt:siscla.equiv
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  classificador.equiv"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.classificador.equiv  >  classificador.equiv"@pt
+	Annotations: rdfs:comment "Valor:  siscla.equiv"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.siscla.equiv  >  siscla.equiv"@pt
 
 DataProperty: abnt:versão
 	SubPropertyOf: abnt:códigos.abnt
@@ -449,10 +462,15 @@ DataProperty: abnt:simultâneo
 	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
 
+Individual: abnt:Omni.49
+	Types: abnt:CSI.Parte
+	Annotations: rdfs:comment "Omni.49"@pt
+	Facts: abnt:tema "Sistema de Classificação OmniClass - Tabela 49"
+
 Individual: abnt:NBR.15965
 	Types: abnt:NBR.Norma
 	Annotations: rdfs:comment "NBR.15965"@pt
-	Facts: abnt:descrição "Norma Brasileira"
+	Facts: abnt:descrição "Norma Brasileira para classificação de objetos da construção"
 
 Individual: abnt:Parte.2
 	Types: abnt:NBR.Parte
@@ -462,13 +480,9 @@ Individual: abnt:Parte.2
 Individual: abnt:0P
 	Types: abnt:NBR.Tema
 	Annotations: rdfs:comment "0P"@pt
-	Facts: abnt:tem.classificador.equiv abnt:Omni.49
+	Facts: abnt:tem.norma abnt:NBR.15965
+	Facts: abnt:tem.siscla.equiv abnt:Omni.49
 	Facts: abnt:tema "Tema 0P: Propriedades dos objetos"
-
-Individual: abnt:Omni.49
-	Types: abnt:CSI.Parte
-	Annotations: rdfs:comment "Omni.49"@pt
-	Facts: abnt:descrição "Sistema de Classificação OmniClass - Tabela 49"
 
 Individual: abnt:0P.10
 	Types: abnt:NBR.Código
