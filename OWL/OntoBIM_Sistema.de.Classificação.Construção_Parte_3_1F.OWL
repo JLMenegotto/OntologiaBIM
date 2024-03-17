@@ -27,8 +27,8 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt, 
-	rdfs:label "Data.Hora: 3/16/2024 7:52:47 AM"@pt, 
-	rdfs:label "Advertência_1: -"@pt
+	rdfs:label "Data.Hora: 3/17/2024 4:34:46 PM"@pt, 
+	rdfs:label "Advertência_1: Códigos finalizados em .x estão repetidos na Norma"@pt
 
 Datatype: xsd:string
 Datatype: xsd:decimal
@@ -60,6 +60,10 @@ Class: abnt:OmniClass
 	SubClassOf: abnt:BIM.
 	Annotations: rdfs:comment "Trata-se de: OmniClass"@pt
 
+Class: abnt:Projeto
+	SubClassOf: abnt:BIM.
+	Annotations: rdfs:comment "Trata-se de: Projeto"@pt
+
 Class: abnt:NBR.Temporal
 	SubClassOf: abnt:ABNT
 	Annotations: rdfs:comment "NBR Temporal "@pt
@@ -67,14 +71,21 @@ Class: abnt:NBR.Temporal
 Class: abnt:NBR.Norma
 	SubClassOf: abnt:ABNT
 	Annotations: rdfs:comment "NBR Norma "@pt
+	EquivalentTo:  abnt:tem.tema some  abnt:NBR.Norma
 
 Class: abnt:SUS.Sistema
 	SubClassOf: abnt:SUS
 	Annotations: rdfs:comment "SUS Sistema "@pt
+	EquivalentTo:  abnt:tem.tema some  abnt:SUS.Sistema
 
 Class: abnt:CSI.Sistema
 	SubClassOf: abnt:OmniClass
 	Annotations: rdfs:comment "CSI Sistema "@pt
+	EquivalentTo:  abnt:tem.tema some  abnt:CSI.Sistema
+
+Class: abnt:Limite
+	SubClassOf: abnt:Projeto
+	Annotations: rdfs:comment "Limite "@pt
 
 Class: abnt:NBR.Processo
 	SubClassOf: abnt:NBR.Temporal
@@ -96,6 +107,14 @@ Class: abnt:CSI.Parte
 	SubClassOf: abnt:CSI.Sistema
 	Annotations: rdfs:comment "CSI Parte "@pt
 
+Class: abnt:De.Organização
+	SubClassOf: abnt:Limite
+	Annotations: rdfs:comment "De Organização "@pt
+
+Class: abnt:De.Construção
+	SubClassOf: abnt:Limite
+	Annotations: rdfs:comment "De Construção "@pt
+
 Class: abnt:NBR.Etapa
 	SubClassOf: abnt:NBR.Processo
 	Annotations: rdfs:comment "NBR Etapa "@pt
@@ -116,6 +135,14 @@ Class: abnt:CSI.Tema
 	SubClassOf: abnt:CSI.Parte
 	Annotations: rdfs:comment "CSI Tema "@pt
 
+Class: abnt:Funcional
+	SubClassOf: abnt:De.Organização
+	Annotations: rdfs:comment "Funcional "@pt
+
+Class: abnt:Edificável
+	SubClassOf: abnt:De.Construção
+	Annotations: rdfs:comment "Edificável "@pt
+
 Class: abnt:NBR.Evento
 	SubClassOf: abnt:NBR.Etapa
 	Annotations: rdfs:comment "Trata-se de: ABNT NBR Temporal  NBR Processo  NBR Etapa  NBR Evento. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
@@ -123,6 +150,7 @@ Class: abnt:NBR.Evento
 Class: abnt:NBR.Código
 	SubClassOf: abnt:NBR.Tema
 	Annotations: rdfs:comment "Trata-se de: ABNT NBR Norma  NBR Parte  NBR Tema  NBR Código. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
+	EquivalentTo:  abnt:tem.descrição some  abnt:NBR.Código
 
 Class: abnt:SUS.Código
 	SubClassOf: abnt:SUS.Tema
@@ -135,6 +163,34 @@ Class: abnt:RDC.Código
 Class: abnt:CSI.Código
 	SubClassOf: abnt:CSI.Tema
 	Annotations: rdfs:comment "Trata-se de: OmniClass CSI Sistema  CSI Parte  CSI Tema  CSI Código. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+
+Class: abnt:Divisão
+	SubClassOf: abnt:Funcional
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Divisão. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+
+Class: abnt:Setor
+	SubClassOf: abnt:Funcional
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Setor. --- -"@pt
+
+Class: abnt:Ambiente
+	SubClassOf: abnt:Funcional
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Ambiente. --- -"@pt
+
+Class: abnt:Lote
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Lote. --- -"@pt
+
+Class: abnt:Prédio
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Prédio. --- -"@pt
+
+Class: abnt:Bloco
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Bloco. --- -"@pt
+
+Class: abnt:Edícula
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Edícula. --- -"@pt
 
 ObjectProperty: abnt:de.classificação
 	SubPropertyOf: abnt:BIM.Prop
@@ -202,11 +258,35 @@ ObjectProperty: abnt:tem.tema
 	Range: abnt:NBR.Norma
 	Annotations: rdfs:comment "Propriedade: tem.tema    Domínio: ABNT     Range: NBR.Norma"@pt
 
-ObjectProperty: abnt:tem.subtema
+ObjectProperty: abnt:tem.tema1
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
 	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.subtema    Domínio: ABNT     Range: NBR.Norma"@pt
+	Annotations: rdfs:comment "Propriedade: tem.tema1    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema2
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema2    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema3
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema3    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema4
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema4    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema5
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema5    Domínio: ABNT     Range: NBR.Norma"@pt
 
 ObjectProperty: abnt:tem.código
 	SubPropertyOf: abnt:códigos.abnt
@@ -245,17 +325,23 @@ ObjectProperty: abnt:códigos.omni
 	Range: abnt:CSI.Sistema
 	Annotations: rdfs:comment "Propriedade: códigos.omni    Domínio: OmniClass     Range: CSI.Sistema"@pt
 
-ObjectProperty: abnt:tem.code
+ObjectProperty: abnt:tem.sistema
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.code    Domínio: OmniClass     Range: CSI.Sistema"@pt
+	Annotations: rdfs:comment "Propriedade: tem.sistema    Domínio: OmniClass     Range: CSI.Sistema"@pt
 
-ObjectProperty: abnt:tem.table
+ObjectProperty: abnt:tem.código
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.table    Domínio: OmniClass     Range: CSI.Sistema"@pt
+	Annotations: rdfs:comment "Propriedade: tem.código    Domínio: OmniClass     Range: CSI.Sistema"@pt
+
+ObjectProperty: abnt:tem.tabela
+	SubPropertyOf: abnt:códigos.omni
+	Domain: abnt:OmniClass
+	Range: abnt:CSI.Sistema
+	Annotations: rdfs:comment "Propriedade: tem.tabela    Domínio: OmniClass     Range: CSI.Sistema"@pt
 
 ObjectProperty: abnt:de.estadotemporal
 	SubPropertyOf: abnt:BIM.Prop
@@ -285,6 +371,27 @@ ObjectProperty: abnt:tem.simultâneo
 	SubPropertyOf: abnt:precedências.abnt
 	Domain: abnt:ABNT
 	Range: abnt:NBR.Temporal
+	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+
+ObjectProperty: abnt:de.localização
+	SubPropertyOf: abnt:BIM.Prop
+	Annotations: rdfs:comment "Propriedade: de.localização    Domínio: null     Range: null"@pt
+
+ObjectProperty: abnt:predial
+	SubPropertyOf: abnt:de.localização
+	Annotations: rdfs:comment "Propriedade: predial    Domínio: null     Range: null"@pt
+
+ObjectProperty: abnt:é.setor
+	SubPropertyOf: abnt:predial
+	Annotations: rdfs:comment "Propriedade: tem.equivalente.sus    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+
+ObjectProperty: abnt:é.ambiente
+	SubPropertyOf: abnt:predial
+	Annotations: rdfs:comment "Propriedade: tem.versão.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+
+ObjectProperty: abnt:é.dentro.de
+	SubPropertyOf: abnt:predial
+	Characteristics: Transitive
 	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
 
 DataProperty: abnt:de.classificação
@@ -364,12 +471,40 @@ DataProperty: abnt:tema
 	Annotations: rdfs:comment "Valor:  tema"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema  >  tema"@pt
 
-DataProperty: abnt:subtema
+DataProperty: abnt:tema1
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  subtema"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.subtema  >  subtema"@pt
+	Annotations: rdfs:comment "Valor:  tema1"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema1  >  tema1"@pt
+
+DataProperty: abnt:tema2
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema2"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema2  >  tema2"@pt
+
+DataProperty: abnt:tema3
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema3"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema3  >  tema3"@pt
+
+DataProperty: abnt:tema4
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema4"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema4  >  tema4"@pt
+
+DataProperty: abnt:tema5
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema5"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema5  >  tema5"@pt
 
 DataProperty: abnt:código
 	SubPropertyOf: abnt:códigos.abnt
@@ -413,19 +548,26 @@ DataProperty: abnt:códigos.omni
 	Annotations: rdfs:comment "Valor:  códigos.omni"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  códigos.omni  >  códigos.omni"@pt
 
-DataProperty: abnt:code
+DataProperty: abnt:sistema
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  code"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.code  >  code"@pt
+	Annotations: rdfs:comment "Valor:  sistema"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.sistema  >  sistema"@pt
 
-DataProperty: abnt:table
+DataProperty: abnt:código
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  table"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.table  >  table"@pt
+	Annotations: rdfs:comment "Valor:  código"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código  >  código"@pt
+
+DataProperty: abnt:tabela
+	SubPropertyOf: abnt:códigos.omni
+	Domain: abnt:OmniClass
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tabela"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tabela  >  tabela"@pt
 
 DataProperty: abnt:de.estadotemporal
 	SubPropertyOf: abnt:BIM.Data
@@ -462,1413 +604,1553 @@ DataProperty: abnt:simultâneo
 	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
 
+DataProperty: abnt:de.localização
+	SubPropertyOf: abnt:BIM.Data
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  de.localização"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  de.localização  >  de.localização"@pt
+
+DataProperty: abnt:predial
+	SubPropertyOf: abnt:de.localização
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  predial"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  predial  >  predial"@pt
+
+DataProperty: abnt:setor
+	SubPropertyOf: abnt:predial
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  equivalente.sus"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.equivalente.sus  >  equivalente.sus"@pt
+
+DataProperty: abnt:ambiente
+	SubPropertyOf: abnt:predial
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  versão.abnt"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão.abnt  >  versão.abnt"@pt
+
+DataProperty: abnt:dentro.de
+	SubPropertyOf: abnt:predial
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
+
 Individual: abnt:Omni.31
-	Types: abnt:CSI.Tema
+	Types: abnt:CSI.Parte
 	Annotations: rdfs:comment "Omni.31"@pt
-	Facts: abnt:tema "Sistema de Classificação OmniClass - Tabela 31"
+	Facts: abnt:sistema "Omniclass"
+	Facts: abnt:tabela "31"
+	Facts: abnt:descrição "Sistema de Classificação OmniClass - Tabela 31"
 
 Individual: abnt:NBR.15965
 	Types: abnt:NBR.Norma
 	Annotations: rdfs:comment "NBR.15965"@pt
+	Facts: abnt:norma "NBR.15965"
 	Facts: abnt:descrição "Norma Brasileira para classificação de objetos da construção"
 
 Individual: abnt:Parte.3
 	Types: abnt:NBR.Parte
 	Annotations: rdfs:comment "Parte.3"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:versão "Parte 3 - Publicada em 2014"
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:parte "Parte 3"
+	Facts: abnt:descrição "Parte 3 - Publicada em 2014"
 
 Individual: abnt:1F
 	Types: abnt:NBR.Tema
 	Annotations: rdfs:comment "1F"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.siscla.equiv abnt:Omni.31
-	Facts: abnt:tema "Tema 1F - Fases"
-
-Individual: abnt:Anterior
-	Types: abnt:NBR.Evento
-	Annotations: rdfs:comment "Anterior"@pt
-	Facts: abnt:descrição "Evento que acontece antes"
-
-Individual: abnt:Posterior
-	Types: abnt:NBR.Evento
-	Annotations: rdfs:comment "Posterior"@pt
-	Facts: abnt:descrição "Evento que acontece depois"
-
-Individual: abnt:Simultâneo
-	Types: abnt:NBR.Evento
-	Annotations: rdfs:comment "Simultâneo"@pt
-	Facts: abnt:descrição "Evento que acontece simultâneo"
-
-Individual: abnt:Inicial
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Inicial"@pt
-	Facts: abnt:descrição "Etapa inicial de um empreendimento"
-
-Individual: abnt:Projetual
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Projetual"@pt
-	Facts: abnt:descrição "Etapa de projeto de um empreendimento"
-
-Individual: abnt:Construção
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Construção"@pt
-	Facts: abnt:descrição "Etapa de construção de um empreendimento"
-
-Individual: abnt:Licitação
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Licitação"@pt
-	Facts: abnt:descrição "Etapa de licitação de um empreendimento"
-
-Individual: abnt:Comissionamento
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Comissionamento"@pt
-	Facts: abnt:descrição "Etapa de comissionamento de um empreendimento"
-
-Individual: abnt:Ocupação
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Ocupação"@pt
-	Facts: abnt:descrição "Etapa de ocupação de um empreendimento"
-
-Individual: abnt:Operação
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Operação"@pt
-	Facts: abnt:descrição "Etapa de operação de um empreendimento"
-
-Individual: abnt:Reforma
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Reforma"@pt
-	Facts: abnt:descrição "Etapa de reforma de um empreendimento"
-
-Individual: abnt:Especial
-	Types: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Especial"@pt
-	Facts: abnt:descrição "Etapa especiais de um empreendimento"
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:siscla.equiv "OmniClass Tabela 31"
+	Facts: abnt:descrição "Tema 1F - Fases"
 
 Individual: abnt:1F.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágio de concepção"
 
 Individual: abnt:1F.10.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.11"
 	Facts: abnt:descrição "Fase de identificação de necessidades"
 
 Individual: abnt:1F.10.11.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.11.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.11"
 	Facts: abnt:descrição "Fase de descrição do projeto"
 
 Individual: abnt:1F.10.11.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.11.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.11"
 	Facts: abnt:descrição "Fase de criação"
 
 Individual: abnt:1F.10.11.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.11.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.11"
 	Facts: abnt:descrição "Fase de incepção"
 
 Individual: abnt:1F.10.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.14"
 	Facts: abnt:descrição "Fase de conceituação"
 
 Individual: abnt:1F.10.14.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.14.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.14"
 	Facts: abnt:descrição "Fase de análise de mercado"
 
 Individual: abnt:1F.10.14.15
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.14.15"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.14"
 	Facts: abnt:descrição "Fase de pesquisa"
 
 Individual: abnt:1F.10.14.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.14.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.14"
 	Facts: abnt:descrição "Fase de estudo de viabilidade de projeto"
 
 Individual: abnt:1F.10.14.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.14.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.14"
 	Facts: abnt:descrição "Fase de programação de projeto"
-
-Individual: abnt:1F.10.27.00
-	Types: abnt:NBR.Código
-	Annotations: rdfs:comment "1F.10.27.00"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
-	Facts: abnt:descrição "Fase de planejamento de projeto"
 
 Individual: abnt:1F.10.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.27"
+	Facts: abnt:descrição "Fase de planejamento de projeto"
+
+Individual: abnt:1F.10.27.x
+	Types: abnt:NBR.Código
+	Annotations: rdfs:comment "1F.10.27.x"@pt
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.27"
 	Facts: abnt:descrição "Fase de pré-projeto-estudo de massa"
 
 Individual: abnt:1F.10.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.31"
 	Facts: abnt:descrição "Fase de estimativa de orçamento"
-
-Individual: abnt:1F.10.37.00
-	Types: abnt:NBR.Código
-	Annotations: rdfs:comment "1F.10.37.00"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
-	Facts: abnt:descrição "Fase de definição"
 
 Individual: abnt:1F.10.37
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.37"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.37"
+	Facts: abnt:descrição "Fase de definição"
+
+Individual: abnt:1F.10.37.x
+	Types: abnt:NBR.Código
+	Annotations: rdfs:comment "1F.10.37.x"@pt
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.37"
 	Facts: abnt:descrição "Fase de estudos conceituais"
 
 Individual: abnt:1F.10.37.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.37.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.37"
 	Facts: abnt:descrição "Fase de coletas de dados"
 
 Individual: abnt:1F.10.37.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.37.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.37"
 	Facts: abnt:descrição "Fase de levantamento topográfico"
 
 Individual: abnt:1F.10.37.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.37.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.37"
 	Facts: abnt:descrição "Fase de investigação geotécnica"
 
 Individual: abnt:1F.10.37.25
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.37.25"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.37"
 	Facts: abnt:descrição "Fase de definição de produto"
 
 Individual: abnt:1F.10.39
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.39"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.39"
 	Facts: abnt:descrição "Fase de aquisição de propriedade"
 
 Individual: abnt:1F.10.41
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de estudo preliminar"
 
 Individual: abnt:1F.10.41.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de projeto esquemático"
 
 Individual: abnt:1F.10.41.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de desenvolvimento de projeto"
 
 Individual: abnt:1F.10.41.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de estimativa preliminar de custos"
 
 Individual: abnt:1F.10.41.34
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.34"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de estudos técnicos"
 
 Individual: abnt:1F.10.41.37
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.37"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de consulta pública"
 
 Individual: abnt:1F.10.41.41
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.41"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de análise"
 
-Individual: abnt:1F.10.41.00
+Individual: abnt:1F.10.41.x
 	Types: abnt:NBR.Código
-	Annotations: rdfs:comment "1F.10.41.00"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Annotations: rdfs:comment "1F.10.41.x"@pt
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de viabilidade"
 
 Individual: abnt:1F.10.41.47
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.47"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de estudos ambientais"
 
 Individual: abnt:1F.10.41.51
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.51"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de investigação e averiguação de riscos de negócio"
 
 Individual: abnt:1F.10.41.54
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.54"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de seleção de terreno"
-
-Individual: abnt:1F.10.41.61.00
-	Types: abnt:NBR.Código
-	Annotations: rdfs:comment "1F.10.41.61.00"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
-	Facts: abnt:descrição "Fase de aquisição de propriedade"
 
 Individual: abnt:1F.10.41.61
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.41.61"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
+	Facts: abnt:descrição "Fase de aquisição de propriedade"
+
+Individual: abnt:1F.10.41.61.x
+	Types: abnt:NBR.Código
+	Annotations: rdfs:comment "1F.10.41.61.x"@pt
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.41"
 	Facts: abnt:descrição "Fase de planejamento"
 
 Individual: abnt:1F.10.43
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.43"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.43"
 	Facts: abnt:descrição "Fase de programação"
 
 Individual: abnt:1F.10.45
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.10.45"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.10"
+	Facts: abnt:tema2 "1F.10.45"
 	Facts: abnt:descrição "Fase de orçamentação"
 
 Individual: abnt:1F.15
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágio de definição de entrega de projetos"
 
 Individual: abnt:1F.15.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.10"
 	Facts: abnt:descrição "Fase de avaliação do método de entrega dos projetos"
 
 Individual: abnt:1F.15.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de montagem de equipe"
 
 Individual: abnt:1F.15.20.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de seleção de equipe de projeto"
 
 Individual: abnt:1F.15.20.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de seleção de equipe de planejamento"
 
 Individual: abnt:1F.15.20.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Engenharia de instalações hidráulicas"
 
 Individual: abnt:1F.15.20.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de seleção de gerente da construção"
 
 Individual: abnt:1F.15.20.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de requisição para qualificação (RFQ)"
 
 Individual: abnt:1F.15.20.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de avaliação de requisição para qualificação (RFQ)"
 
 Individual: abnt:1F.15.20.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de Requisição de Proposta (RFP)"
 
 Individual: abnt:1F.15.20.34
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.34"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de Avaliação de Requisição de Proposta (RFP)"
 
 Individual: abnt:1F.15.20.37
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.37"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de Entrevista"
 
 Individual: abnt:1F.15.20.39
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.15.20.39"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.15"
+	Facts: abnt:tema2 "1F.15.20"
 	Facts: abnt:descrição "Fase de contratação de equipe"
 
 Individual: abnt:1F.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágio de projeto"
 
 Individual: abnt:1F.20.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.10"
 	Facts: abnt:descrição "Fase de descrição preliminar do projeto"
 
 Individual: abnt:1F.20.10.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.10.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.10"
 	Facts: abnt:descrição "Fase de engenharia preliminar"
 
 Individual: abnt:1F.20.10.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.10.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.10"
 	Facts: abnt:descrição "Fase de projeto conceituai"
 
 Individual: abnt:1F.20.10.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.10.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.10"
 	Facts: abnt:descrição "Fase de projeto esquemático"
 
 Individual: abnt:1F.20.10.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.10.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.10"
 	Facts: abnt:descrição "Fase de estudo preliminar"
 
 Individual: abnt:1F.20.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de desenvolvimento de projeto"
 
 Individual: abnt:1F.20.20.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de detalhamento de projeto"
 
 Individual: abnt:1F.20.20.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de projeto executivo"
 
 Individual: abnt:1F.20.20.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de protótipo e testes"
 
 Individual: abnt:1F.20.20.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de análise de engenharia"
 
 Individual: abnt:1F.20.20.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de seleção de produto"
 
 Individual: abnt:1F.20.20.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de seleção de materiais"
 
 Individual: abnt:1F.20.20.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de Seleção de equipamentos"
 
 Individual: abnt:1F.20.20.34
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.34"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de estimativa de valores"
 
 Individual: abnt:1F.20.20.37
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.20.20.37"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.20"
+	Facts: abnt:tema2 "1F.20.20"
 	Facts: abnt:descrição "Fase de análise de valor"
 
 Individual: abnt:1F.25
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágio de documentação de construção"
 
 Individual: abnt:1F.25.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação da documentação de construção"
 
 Individual: abnt:1F.25.10.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de dados de construção"
 
 Individual: abnt:1F.25.10.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de desenhos"
 
 Individual: abnt:1F.25.10.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de detalhes"
 
 Individual: abnt:1F.25.10.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de desenhos de fabricação"
 
 Individual: abnt:1F.25.10.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de desenhos de coordenação"
 
 Individual: abnt:1F.25.10.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de especificações"
 
 Individual: abnt:1F.25.10.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.10.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.10"
 	Facts: abnt:descrição "Fase de preparação de manual de projeto"
 
 Individual: abnt:1F.25.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.20"
 	Facts: abnt:descrição "Fase de produção de documentos de construção"
 
 Individual: abnt:1F.25.30
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.25.30"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.25"
+	Facts: abnt:tema2 "1F.25.30"
 	Facts: abnt:descrição "Fase de estimativas de custos de construção"
 
 Individual: abnt:1F.30
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágios de compras e contratações"
 
 Individual: abnt:1F.30.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.10"
 	Facts: abnt:descrição "Fase de solicitações"
 
-Individual: abnt:1F.30.00
+Individual: abnt:1F.30.x
 	Types: abnt:NBR.Código
-	Annotations: rdfs:comment "1F.30.00"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Annotations: rdfs:comment "1F.30.x"@pt
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Fase de publicidade"
 
 Individual: abnt:1F.30.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.20"
 	Facts: abnt:descrição "Fase de pré-qualificação"
 
 Individual: abnt:1F.30.30
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.30"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.30"
 	Facts: abnt:descrição "Fase de edital de licitação"
 
 Individual: abnt:1F.30.30.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.30.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.30"
 	Facts: abnt:descrição "Fase de escopo de edital de licitação"
 
 Individual: abnt:1F.30.30.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.30.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.30"
 	Facts: abnt:descrição "Fase de precificação"
 
 Individual: abnt:1F.30.30.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.30.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.30"
 	Facts: abnt:descrição "Fase de preparação da licitação"
 
 Individual: abnt:1F.30.30.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.30.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.30"
 	Facts: abnt:descrição "Fase de preparação de propostas"
 
 Individual: abnt:1F.30.40
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.40"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.40"
 	Facts: abnt:descrição "Fase de seleção"
 
 Individual: abnt:1F.30.40.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.40.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.40"
 	Facts: abnt:descrição "Fase de seleção de construtor"
 
 Individual: abnt:1F.30.40.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.40.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.40"
 	Facts: abnt:descrição "Fase de avaliação de proposta"
 
 Individual: abnt:1F.30.40.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.40.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.40"
 	Facts: abnt:descrição "Fase de avaliação da licitação"
 
 Individual: abnt:1F.30.50
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.50"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.50"
 	Facts: abnt:descrição "Fase de contratação"
 
 Individual: abnt:1F.30.50.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.50.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.50"
 	Facts: abnt:descrição "Fase de negociação"
 
 Individual: abnt:1F.30.50.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.50.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.50"
 	Facts: abnt:descrição "Fase de adjudicação da proposta vencedora"
 
 Individual: abnt:1F.30.50.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.30.50.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.30"
+	Facts: abnt:tema2 "1F.30.50"
 	Facts: abnt:descrição "Fase de execução de contrato"
 
 Individual: abnt:1F.40
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágio de execução"
 
 Individual: abnt:1F.40.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.10"
 	Facts: abnt:descrição "Fase de administração do contrato de construção"
 
 Individual: abnt:1F.40.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de preparação de construção"
 
 Individual: abnt:1F.40.20.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de mobilização"
 
 Individual: abnt:1F.40.20.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de subcontratação"
 
 Individual: abnt:1F.40.20.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de licenciamentos"
 
 Individual: abnt:1F.40.20.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de revisão de regulamentação"
 
 Individual: abnt:1F.40.20.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de aprovação de regulamentação"
 
 Individual: abnt:1F.40.20.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de solicitação de licenças e aprovações"
 
 Individual: abnt:1F.40.20.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de programação"
 
 Individual: abnt:1F.40.20.34
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.34"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de coordenação"
 
 Individual: abnt:1F.40.20.37
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.20.37"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.20"
 	Facts: abnt:descrição "Fase de transmissão de controle e responsabilidade"
 
 Individual: abnt:1F.40.30
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de desenvolvimento de produto"
 
 Individual: abnt:1F.40.30.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de prototipação de produto"
 
 Individual: abnt:1F.40.30.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de ensaios de produto"
 
 Individual: abnt:1F.40.30.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de avaliação de produto"
 
 Individual: abnt:1F.40.30.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de aquisição de produtos"
 
 Individual: abnt:1F.40.30.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de pedidos de produtos"
 
 Individual: abnt:1F.40.30.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.30.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.30"
 	Facts: abnt:descrição "Fase de entrega de produtos"
 
 Individual: abnt:1F.40.40
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de construção"
 
 Individual: abnt:1F.40.40.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de inicializaçâo da construção"
 
 Individual: abnt:1F.40.40.11.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de validação de processos de construção"
 
 Individual: abnt:1F.40.40.11.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de mobilização"
 
 Individual: abnt:1F.40.40.11.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de instalação"
 
 Individual: abnt:1F.40.40.11.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de aplicação"
 
 Individual: abnt:1F.40.40.11.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de produção"
 
 Individual: abnt:1F.40.40.11.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.11.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de equipamentos e ferramentas"
 
 Individual: abnt:1F.40.40.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de execução de projetos"
 
 Individual: abnt:1F.40.40.14.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de ereção-elevação"
 
 Individual: abnt:1F.40.40.14.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de montagem"
 
 Individual: abnt:1F.40.40.14.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de manufatura"
 
 Individual: abnt:1F.40.40.14.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de fabricação externa"
 
 Individual: abnt:1F.40.40.14.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de fabricação"
 
 Individual: abnt:1F.40.40.14.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.14.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de desmobilização"
 
 Individual: abnt:1F.40.40.91
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de encerramento da construção"
 
 Individual: abnt:1F.40.40.91.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de testes de edificações-instalações"
 
 Individual: abnt:1F.40.40.91.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de ajustes e balanceamentos"
 
 Individual: abnt:1F.40.40.91.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de avaliação"
 
 Individual: abnt:1F.40.40.91.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de limpeza"
 
 Individual: abnt:1F.40.40.91.24
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.24"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de encerramento de contrato"
 
 Individual: abnt:1F.40.40.91.27
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.27"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de equipação"
 
 Individual: abnt:1F.40.40.91.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.40.91.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.40"
 	Facts: abnt:descrição "Fase de entrega"
 
 Individual: abnt:1F.40.50
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.50"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.50"
 	Facts: abnt:descrição "Fase de comissionamento"
 
 Individual: abnt:1F.40.50.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.50.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.50"
 	Facts: abnt:descrição "Fase de inicialização do comissionamento"
 
 Individual: abnt:1F.40.50.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.50.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.50"
 	Facts: abnt:descrição "Fase de monitoração do comissionamento"
 
 Individual: abnt:1F.40.50.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.50.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.50"
 	Facts: abnt:descrição "Fase de certificação do comissionamento"
 
 Individual: abnt:1F.40.50.41
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.50.41"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.50"
 	Facts: abnt:descrição "Fase de demonstração de equipamentos das edificações-instalações"
 
 Individual: abnt:1F.40.50.51
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.40.50.51"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.40"
+	Facts: abnt:tema2 "1F.40.50"
 	Facts: abnt:descrição "Fase de treinamento nos equipamentos das edificações-instalações"
 
 Individual: abnt:1F.50
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Estágio de utilização"
 
 Individual: abnt:1F.50.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.10"
 	Facts: abnt:descrição "Fase de ocupação"
 
 Individual: abnt:1F.50.10.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.10.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.10"
 	Facts: abnt:descrição "Fase de pré-inauguração"
 
 Individual: abnt:1F.50.10.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.10.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.10"
 	Facts: abnt:descrição "Fase de inauguração"
 
 Individual: abnt:1F.50.10.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.10.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.10"
 	Facts: abnt:descrição "Fase de utilização"
 
 Individual: abnt:1F.50.10.19
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.10.19"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.10"
 	Facts: abnt:descrição "Fase de implantação"
 
 Individual: abnt:1F.50.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.20"
 	Facts: abnt:descrição "Fase de gerenciamento da edificação-instalação"
 
 Individual: abnt:1F.50.20.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.20.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.20"
 	Facts: abnt:descrição "Fase de operação da edificação-instalação"
 
 Individual: abnt:1F.50.20.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.20.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.20"
 	Facts: abnt:descrição "Fase de inspeção da edificação-instalação"
 
 Individual: abnt:1F.50.20.31
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.20.31"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.20"
 	Facts: abnt:descrição "Fase de manutenção da edificação-instalação"
 
 Individual: abnt:1F.50.30
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.30"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.30"
 	Facts: abnt:descrição "Fase de reutilização da edificação-instalação"
 
 Individual: abnt:1F.50.30.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.30.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.30"
 	Facts: abnt:descrição "Fase de reforma da edificação-instalação"
 
 Individual: abnt:1F.50.30.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.30.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.30"
 	Facts: abnt:descrição "Fase de remodelagem da edificação-instalação"
 
 Individual: abnt:1F.50.30.17
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.30.17"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.30"
 	Facts: abnt:descrição "Fase de expansão da edificação-instalação"
 
 Individual: abnt:1F.50.30.21
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.30.21"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.30"
 	Facts: abnt:descrição "Fase de restauração da edificação-instalação"
 
 Individual: abnt:1F.50.70
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.50.70"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.50"
+	Facts: abnt:tema2 "1F.50.70"
 	Facts: abnt:descrição "Fase de reparação da edificação-instalação"
 
 Individual: abnt:1F.60
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Fase de fechamento da edificação-instalação"
 
 Individual: abnt:1F.60.10
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.10"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.10"
 	Facts: abnt:descrição "Fase de adaptação"
 
 Individual: abnt:1F.60.10.11
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.10.11"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.10"
 	Facts: abnt:descrição "Fase de reequipação"
 
 Individual: abnt:1F.60.10.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.10.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.10"
 	Facts: abnt:descrição "Fase de recomissionamento"
 
 Individual: abnt:1F.60.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.20"
 	Facts: abnt:descrição "Fase de redesenvolvimento"
 
 Individual: abnt:1F.60.25
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.25"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.25"
 	Facts: abnt:descrição "Fase de realocação"
 
 Individual: abnt:1F.60.30
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.30"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.30"
 	Facts: abnt:descrição "Fase de desmontagem-desconstrução"
 
 Individual: abnt:1F.60.35
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.35"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.35"
 	Facts: abnt:descrição "Fase de reciclagem"
 
 Individual: abnt:1F.60.40
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.60.40"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.60"
+	Facts: abnt:tema2 "1F.60.40"
 	Facts: abnt:descrição "Fase de descomissionamento"
 
 Individual: abnt:1F.80
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "1F.80"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.3
-	Facts: abnt:tem.tema abnt:1F
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "1F"
+	Facts: abnt:tema1 "1F.80"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Fase de demolição"

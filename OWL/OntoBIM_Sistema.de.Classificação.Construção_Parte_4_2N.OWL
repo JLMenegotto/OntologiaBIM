@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt, 
-	rdfs:label "Data.Hora: 3/16/2024 8:14:43 AM"@pt, 
+	rdfs:label "Data.Hora: 3/17/2024 4:36:27 PM"@pt, 
 	rdfs:label "Advertência_1: -"@pt
 
 Datatype: xsd:string
@@ -60,6 +60,10 @@ Class: abnt:OmniClass
 	SubClassOf: abnt:BIM.
 	Annotations: rdfs:comment "Trata-se de: OmniClass"@pt
 
+Class: abnt:Projeto
+	SubClassOf: abnt:BIM.
+	Annotations: rdfs:comment "Trata-se de: Projeto"@pt
+
 Class: abnt:NBR.Temporal
 	SubClassOf: abnt:ABNT
 	Annotations: rdfs:comment "NBR Temporal "@pt
@@ -67,14 +71,21 @@ Class: abnt:NBR.Temporal
 Class: abnt:NBR.Norma
 	SubClassOf: abnt:ABNT
 	Annotations: rdfs:comment "NBR Norma "@pt
+	EquivalentTo:  abnt:tem.tema some  abnt:NBR.Norma
 
 Class: abnt:SUS.Sistema
 	SubClassOf: abnt:SUS
 	Annotations: rdfs:comment "SUS Sistema "@pt
+	EquivalentTo:  abnt:tem.tema some  abnt:SUS.Sistema
 
 Class: abnt:CSI.Sistema
 	SubClassOf: abnt:OmniClass
 	Annotations: rdfs:comment "CSI Sistema "@pt
+	EquivalentTo:  abnt:tem.tema some  abnt:CSI.Sistema
+
+Class: abnt:Limite
+	SubClassOf: abnt:Projeto
+	Annotations: rdfs:comment "Limite "@pt
 
 Class: abnt:NBR.Processo
 	SubClassOf: abnt:NBR.Temporal
@@ -96,6 +107,14 @@ Class: abnt:CSI.Parte
 	SubClassOf: abnt:CSI.Sistema
 	Annotations: rdfs:comment "CSI Parte "@pt
 
+Class: abnt:De.Organização
+	SubClassOf: abnt:Limite
+	Annotations: rdfs:comment "De Organização "@pt
+
+Class: abnt:De.Construção
+	SubClassOf: abnt:Limite
+	Annotations: rdfs:comment "De Construção "@pt
+
 Class: abnt:NBR.Etapa
 	SubClassOf: abnt:NBR.Processo
 	Annotations: rdfs:comment "NBR Etapa "@pt
@@ -116,6 +135,14 @@ Class: abnt:CSI.Tema
 	SubClassOf: abnt:CSI.Parte
 	Annotations: rdfs:comment "CSI Tema "@pt
 
+Class: abnt:Funcional
+	SubClassOf: abnt:De.Organização
+	Annotations: rdfs:comment "Funcional "@pt
+
+Class: abnt:Edificável
+	SubClassOf: abnt:De.Construção
+	Annotations: rdfs:comment "Edificável "@pt
+
 Class: abnt:NBR.Evento
 	SubClassOf: abnt:NBR.Etapa
 	Annotations: rdfs:comment "Trata-se de: ABNT NBR Temporal  NBR Processo  NBR Etapa  NBR Evento. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
@@ -123,6 +150,7 @@ Class: abnt:NBR.Evento
 Class: abnt:NBR.Código
 	SubClassOf: abnt:NBR.Tema
 	Annotations: rdfs:comment "Trata-se de: ABNT NBR Norma  NBR Parte  NBR Tema  NBR Código. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
+	EquivalentTo:  abnt:tem.descrição some  abnt:NBR.Código
 
 Class: abnt:SUS.Código
 	SubClassOf: abnt:SUS.Tema
@@ -135,6 +163,34 @@ Class: abnt:RDC.Código
 Class: abnt:CSI.Código
 	SubClassOf: abnt:CSI.Tema
 	Annotations: rdfs:comment "Trata-se de: OmniClass CSI Sistema  CSI Parte  CSI Tema  CSI Código. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+
+Class: abnt:Divisão
+	SubClassOf: abnt:Funcional
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Divisão. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+
+Class: abnt:Setor
+	SubClassOf: abnt:Funcional
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Setor. --- -"@pt
+
+Class: abnt:Ambiente
+	SubClassOf: abnt:Funcional
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Ambiente. --- -"@pt
+
+Class: abnt:Lote
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Lote. --- -"@pt
+
+Class: abnt:Prédio
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Prédio. --- -"@pt
+
+Class: abnt:Bloco
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Bloco. --- -"@pt
+
+Class: abnt:Edícula
+	SubClassOf: abnt:Edificável
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Edícula. --- -"@pt
 
 ObjectProperty: abnt:de.classificação
 	SubPropertyOf: abnt:BIM.Prop
@@ -202,11 +258,35 @@ ObjectProperty: abnt:tem.tema
 	Range: abnt:NBR.Norma
 	Annotations: rdfs:comment "Propriedade: tem.tema    Domínio: ABNT     Range: NBR.Norma"@pt
 
-ObjectProperty: abnt:tem.subtema
+ObjectProperty: abnt:tem.tema1
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
 	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.subtema    Domínio: ABNT     Range: NBR.Norma"@pt
+	Annotations: rdfs:comment "Propriedade: tem.tema1    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema2
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema2    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema3
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema3    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema4
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema4    Domínio: ABNT     Range: NBR.Norma"@pt
+
+ObjectProperty: abnt:tem.tema5
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: abnt:NBR.Norma
+	Annotations: rdfs:comment "Propriedade: tem.tema5    Domínio: ABNT     Range: NBR.Norma"@pt
 
 ObjectProperty: abnt:tem.código
 	SubPropertyOf: abnt:códigos.abnt
@@ -245,17 +325,23 @@ ObjectProperty: abnt:códigos.omni
 	Range: abnt:CSI.Sistema
 	Annotations: rdfs:comment "Propriedade: códigos.omni    Domínio: OmniClass     Range: CSI.Sistema"@pt
 
-ObjectProperty: abnt:tem.code
+ObjectProperty: abnt:tem.sistema
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.code    Domínio: OmniClass     Range: CSI.Sistema"@pt
+	Annotations: rdfs:comment "Propriedade: tem.sistema    Domínio: OmniClass     Range: CSI.Sistema"@pt
 
-ObjectProperty: abnt:tem.table
+ObjectProperty: abnt:tem.código
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.table    Domínio: OmniClass     Range: CSI.Sistema"@pt
+	Annotations: rdfs:comment "Propriedade: tem.código    Domínio: OmniClass     Range: CSI.Sistema"@pt
+
+ObjectProperty: abnt:tem.tabela
+	SubPropertyOf: abnt:códigos.omni
+	Domain: abnt:OmniClass
+	Range: abnt:CSI.Sistema
+	Annotations: rdfs:comment "Propriedade: tem.tabela    Domínio: OmniClass     Range: CSI.Sistema"@pt
 
 ObjectProperty: abnt:de.estadotemporal
 	SubPropertyOf: abnt:BIM.Prop
@@ -285,6 +371,27 @@ ObjectProperty: abnt:tem.simultâneo
 	SubPropertyOf: abnt:precedências.abnt
 	Domain: abnt:ABNT
 	Range: abnt:NBR.Temporal
+	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+
+ObjectProperty: abnt:de.localização
+	SubPropertyOf: abnt:BIM.Prop
+	Annotations: rdfs:comment "Propriedade: de.localização    Domínio: null     Range: null"@pt
+
+ObjectProperty: abnt:predial
+	SubPropertyOf: abnt:de.localização
+	Annotations: rdfs:comment "Propriedade: predial    Domínio: null     Range: null"@pt
+
+ObjectProperty: abnt:é.setor
+	SubPropertyOf: abnt:predial
+	Annotations: rdfs:comment "Propriedade: tem.equivalente.sus    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+
+ObjectProperty: abnt:é.ambiente
+	SubPropertyOf: abnt:predial
+	Annotations: rdfs:comment "Propriedade: tem.versão.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+
+ObjectProperty: abnt:é.dentro.de
+	SubPropertyOf: abnt:predial
+	Characteristics: Transitive
 	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
 
 DataProperty: abnt:de.classificação
@@ -364,12 +471,40 @@ DataProperty: abnt:tema
 	Annotations: rdfs:comment "Valor:  tema"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema  >  tema"@pt
 
-DataProperty: abnt:subtema
+DataProperty: abnt:tema1
 	SubPropertyOf: abnt:códigos.abnt
 	Domain: abnt:ABNT
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  subtema"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.subtema  >  subtema"@pt
+	Annotations: rdfs:comment "Valor:  tema1"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema1  >  tema1"@pt
+
+DataProperty: abnt:tema2
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema2"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema2  >  tema2"@pt
+
+DataProperty: abnt:tema3
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema3"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema3  >  tema3"@pt
+
+DataProperty: abnt:tema4
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema4"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema4  >  tema4"@pt
+
+DataProperty: abnt:tema5
+	SubPropertyOf: abnt:códigos.abnt
+	Domain: abnt:ABNT
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tema5"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema5  >  tema5"@pt
 
 DataProperty: abnt:código
 	SubPropertyOf: abnt:códigos.abnt
@@ -413,19 +548,26 @@ DataProperty: abnt:códigos.omni
 	Annotations: rdfs:comment "Valor:  códigos.omni"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  códigos.omni  >  códigos.omni"@pt
 
-DataProperty: abnt:code
+DataProperty: abnt:sistema
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  code"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.code  >  code"@pt
+	Annotations: rdfs:comment "Valor:  sistema"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.sistema  >  sistema"@pt
 
-DataProperty: abnt:table
+DataProperty: abnt:código
 	SubPropertyOf: abnt:códigos.omni
 	Domain: abnt:OmniClass
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  table"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.table  >  table"@pt
+	Annotations: rdfs:comment "Valor:  código"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código  >  código"@pt
+
+DataProperty: abnt:tabela
+	SubPropertyOf: abnt:códigos.omni
+	Domain: abnt:OmniClass
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  tabela"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.tabela  >  tabela"@pt
 
 DataProperty: abnt:de.estadotemporal
 	SubPropertyOf: abnt:BIM.Data
@@ -462,1249 +604,1436 @@ DataProperty: abnt:simultâneo
 	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
 
+DataProperty: abnt:de.localização
+	SubPropertyOf: abnt:BIM.Data
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  de.localização"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  de.localização  >  de.localização"@pt
+
+DataProperty: abnt:predial
+	SubPropertyOf: abnt:de.localização
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  predial"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  predial  >  predial"@pt
+
+DataProperty: abnt:setor
+	SubPropertyOf: abnt:predial
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  equivalente.sus"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.equivalente.sus  >  equivalente.sus"@pt
+
+DataProperty: abnt:ambiente
+	SubPropertyOf: abnt:predial
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  versão.abnt"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão.abnt  >  versão.abnt"@pt
+
+DataProperty: abnt:dentro.de
+	SubPropertyOf: abnt:predial
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
+
 Individual: abnt:Omni.11
-	Types: abnt:CSI.Tema
+	Types: abnt:CSI.Parte
 	Annotations: rdfs:comment "Omni.11"@pt
-	Facts: abnt:tema "Sistema de Classificação OmniClass - Tabela 11"
+	Facts: abnt:sistema "Omniclass"
+	Facts: abnt:tabela "11"
+	Facts: abnt:descrição "Sistema de Classificação OmniClass - Tabela 11"
 
 Individual: abnt:NBR.15965
 	Types: abnt:NBR.Norma
 	Annotations: rdfs:comment "NBR.15965"@pt
+	Facts: abnt:norma "NBR.15965"
 	Facts: abnt:descrição "Norma Brasileira para classificação de objetos da construção"
 
 Individual: abnt:Parte.4
 	Types: abnt:NBR.Parte
 	Annotations: rdfs:comment "Parte.4"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:versão "Parte 4 - Publicada em 2021"
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:parte "Parte 4"
+	Facts: abnt:descrição "Parte 4 - Publicada em 2021"
 
 Individual: abnt:2N
 	Types: abnt:NBR.Tema
 	Annotations: rdfs:comment "2N"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.siscla.equiv abnt:Omni.11
-	Facts: abnt:tema "Tema 2N - Recursos Humanos"
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:siscla.equiv "OmniClass Tabela 11"
+	Facts: abnt:descrição "Tema 2N - Recursos Humanos"
 
 Individual: abnt:2N.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de empreendedores"
 
 Individual: abnt:2N.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.02"
 	Facts: abnt:descrição "Investidor único"
 
 Individual: abnt:2N.02.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.02"
 	Facts: abnt:descrição "Incorporador"
 
 Individual: abnt:2N.02.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.02"
 	Facts: abnt:descrição "Entidade corporativa"
 
 Individual: abnt:2N.02.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.02"
 	Facts: abnt:descrição "Entidade pública"
 
 Individual: abnt:2N.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.08"
 	Facts: abnt:descrição "Sociedade investidora"
 
 Individual: abnt:2N.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.14"
 	Facts: abnt:descrição "Patrocinador"
 
 Individual: abnt:2N.02.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.02.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.02"
+	Facts: abnt:tema2 "2N.02.20"
 	Facts: abnt:descrição "Cliente"
 
 Individual: abnt:2N.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de gestão de projetos ou obras"
 
 Individual: abnt:2N.08.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.02"
 	Facts: abnt:descrição "Funções de gestão estratégica"
 
 Individual: abnt:2N.08.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.02"
 	Facts: abnt:descrição "Presidente"
 
 Individual: abnt:2N.08.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.02"
 	Facts: abnt:descrição "Vice-Presidente"
 
 Individual: abnt:2N.08.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.02"
 	Facts: abnt:descrição "Representante legal"
 
 Individual: abnt:2N.08.02.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.02.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.02"
 	Facts: abnt:descrição "Conselheiro"
 
 Individual: abnt:2N.08.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Funções de gestão operacional"
 
 Individual: abnt:2N.08.08.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Executivo"
 
 Individual: abnt:2N.08.08.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Administrador"
 
 Individual: abnt:2N.08.08.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Diretor"
 
 Individual: abnt:2N.08.08.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Gerente"
 
 Individual: abnt:2N.08.08.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Supervisor"
 
 Individual: abnt:2N.08.08.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Coordenador"
 
 Individual: abnt:2N.08.08.38
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.38"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Planejador"
 
 Individual: abnt:2N.08.08.44
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.44"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Líder de projeto"
 
 Individual: abnt:2N.08.08.50
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.08.08.50"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.08"
+	Facts: abnt:tema2 "2N.08.08"
 	Facts: abnt:descrição "Analista"
 
 Individual: abnt:2N.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de desenvolvimento de projetos"
 
 Individual: abnt:2N.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.02"
 	Facts: abnt:descrição "Funções de projeto"
 
 Individual: abnt:2N.14.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.02"
 	Facts: abnt:descrição "Arquiteto"
 
 Individual: abnt:2N.14.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.02"
 	Facts: abnt:descrição "Engenheiro"
 
 Individual: abnt:2N.14.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.02"
 	Facts: abnt:descrição "Projetista"
 
 Individual: abnt:2N.14.02.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.02.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.02"
 	Facts: abnt:descrição "Especificador"
 
 Individual: abnt:2N.14.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.08"
 	Facts: abnt:descrição "Funções de planejamento"
 
 Individual: abnt:2N.14.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.08"
 	Facts: abnt:descrição "Administrador de contratos"
 
 Individual: abnt:2N.14.08.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.08.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.08"
 	Facts: abnt:descrição "Gestor de projetos"
 
 Individual: abnt:2N.14.08.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.08.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.08"
 	Facts: abnt:descrição "Orçamentista"
 
 Individual: abnt:2N.14.08.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.08.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.08"
 	Facts: abnt:descrição "Planejador"
 
 Individual: abnt:2N.14.08.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.08.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.08"
 	Facts: abnt:descrição "Gestor de custos"
 
 Individual: abnt:2N.14.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.14"
 	Facts: abnt:descrição "Funções de fiscalização de projetos"
 
 Individual: abnt:2N.14.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.14"
 	Facts: abnt:descrição "Revisor"
 
 Individual: abnt:2N.14.14.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.14.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.14"
 	Facts: abnt:descrição "Auditor"
 
 Individual: abnt:2N.14.14.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.14.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.14"
 	Facts: abnt:descrição "Inspetor"
 
 Individual: abnt:2N.14.14.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.14.14.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.14"
+	Facts: abnt:tema2 "2N.14.14"
 	Facts: abnt:descrição "Fiscal"
 
 Individual: abnt:2N.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de execução de obras"
 
 Individual: abnt:2N.20.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Funções de fabricação e logística de produtos"
 
 Individual: abnt:2N.20.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Produtor de bens manufaturados"
 
 Individual: abnt:2N.20.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Produtor de bens montados"
 
 Individual: abnt:2N.20.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Distribuidor"
 
 Individual: abnt:2N.20.02.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Fornecedor"
 
 Individual: abnt:2N.20.02.20.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02.20.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Representante comercial"
 
 Individual: abnt:2N.20.02.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.02.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.02"
 	Facts: abnt:descrição "Comprador"
 
 Individual: abnt:2N.20.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Funções de gestão da obra"
 
 Individual: abnt:2N.20.08.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Construtor"
 
 Individual: abnt:2N.20.08.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Empreiteiro"
 
 Individual: abnt:2N.20.08.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Subempreiteiro"
 
 Individual: abnt:2N.20.08.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Engenheiro de obras"
 
 Individual: abnt:2N.20.08.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Mestre de obras"
 
 Individual: abnt:2N.20.08.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.08.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.08"
 	Facts: abnt:descrição "Encarregado"
 
 Individual: abnt:2N.20.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Funções de execução da obra"
 
 Individual: abnt:2N.20.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Oficial ou profissional"
 
 Individual: abnt:2N.20.14.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Meio-oficial - ajudante ou servente"
 
 Individual: abnt:2N.20.14.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Aprendiz"
 
 Individual: abnt:2N.20.14.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Pedreiro"
 
 Individual: abnt:2N.20.14.20.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.20.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Pedreiro qualificado"
 
 Individual: abnt:2N.20.14.20.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.20.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Pedreiro não qualificado"
 
 Individual: abnt:2N.20.14.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Montador"
 
 Individual: abnt:2N.20.14.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Instalador"
 
 Individual: abnt:2N.20.14.38
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.14.38"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.14"
 	Facts: abnt:descrição "Operador de sistemas"
 
 Individual: abnt:2N.20.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.20"
 	Facts: abnt:descrição "Funções de fiscalização de obras"
 
 Individual: abnt:2N.20.20.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.20.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.20"
 	Facts: abnt:descrição "Revisor"
 
 Individual: abnt:2N.20.20.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.20.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.20"
 	Facts: abnt:descrição "Auditor"
 
 Individual: abnt:2N.20.20.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.20.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.20"
 	Facts: abnt:descrição "Inspetor"
 
 Individual: abnt:2N.20.20.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.20.20.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.20"
+	Facts: abnt:tema2 "2N.20.20"
 	Facts: abnt:descrição "Fiscal"
 
 Individual: abnt:2N.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de gestão patrimonial"
 
 Individual: abnt:2N.26.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.02"
 	Facts: abnt:descrição "Funções de operação e manutenção"
 
 Individual: abnt:2N.26.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.02"
 	Facts: abnt:descrição "Gestor de operações"
 
 Individual: abnt:2N.26.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.02"
 	Facts: abnt:descrição "Gestor de manutenção"
 
 Individual: abnt:2N.26.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.02"
 	Facts: abnt:descrição "Engenheiro de manutenção"
 
 Individual: abnt:2N.26.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.08"
 	Facts: abnt:descrição "Funções de zeladoria"
 
 Individual: abnt:2N.26.08.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.08.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.08"
 	Facts: abnt:descrição "Zelador"
 
 Individual: abnt:2N.26.08.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.08.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.08"
 	Facts: abnt:descrição "Porteiro"
 
 Individual: abnt:2N.26.08.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.08.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.08"
 	Facts: abnt:descrição "Auxiliar de limpeza"
 
 Individual: abnt:2N.26.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.14"
 	Facts: abnt:descrição "Funções de segurança"
 
 Individual: abnt:2N.26.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.14"
 	Facts: abnt:descrição "Chefe de segurança"
 
 Individual: abnt:2N.26.14.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.26.14.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.26"
+	Facts: abnt:tema2 "2N.26.14"
 	Facts: abnt:descrição "Agente de segurança"
 
 Individual: abnt:2N.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de apoio"
 
 Individual: abnt:2N.32.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Funções administrativas"
 
 Individual: abnt:2N.32.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Assistente administrativo"
 
 Individual: abnt:2N.32.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Recepcionista"
 
 Individual: abnt:2N.32.02.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Arquivador"
 
 Individual: abnt:2N.32.02.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Estagiário da administração"
 
 Individual: abnt:2N.32.02.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Auxiliar administrativo"
 
 Individual: abnt:2N.32.02.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.02.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.02"
 	Facts: abnt:descrição "Treinador"
 
 Individual: abnt:2N.32.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.08"
 	Facts: abnt:descrição "Funções de marketing e vendas"
 
 Individual: abnt:2N.32.08.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.08.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.08"
 	Facts: abnt:descrição "Gestor de marketing"
 
 Individual: abnt:2N.32.08.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.08.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.08"
 	Facts: abnt:descrição "Assistente de marketing"
 
 Individual: abnt:2N.32.08.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.08.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.08"
 	Facts: abnt:descrição "Vendedor"
 
 Individual: abnt:2N.32.08.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.08.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.08"
 	Facts: abnt:descrição "Corretor de imóvel"
 
 Individual: abnt:2N.32.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.14"
 	Facts: abnt:descrição "Funções financeiras"
 
 Individual: abnt:2N.32.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.14"
 	Facts: abnt:descrição "Contador"
 
 Individual: abnt:2N.32.14.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.14.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.14"
 	Facts: abnt:descrição "Consultor financeiro"
 
 Individual: abnt:2N.32.14.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.14.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.14"
 	Facts: abnt:descrição "Escrevente"
 
 Individual: abnt:2N.32.14.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.14.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.14"
 	Facts: abnt:descrição "Escriturário"
 
 Individual: abnt:2N.32.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.20"
 	Facts: abnt:descrição "Funções jurídicas"
 
 Individual: abnt:2N.32.20.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.20.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.20"
 	Facts: abnt:descrição "Advogado"
 
 Individual: abnt:2N.32.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Funções contratadas por demanda eventual"
 
 Individual: abnt:2N.32.26.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Consultor"
 
 Individual: abnt:2N.32.26.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Bibliotecário"
 
 Individual: abnt:2N.32.26.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Desenhista"
 
 Individual: abnt:2N.32.26.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Agente"
 
 Individual: abnt:2N.32.26.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Especialista"
 
 Individual: abnt:2N.32.26.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Motorista"
 
 Individual: abnt:2N.32.26.32.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.32.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Motorista de caminhão"
 
 Individual: abnt:2N.32.26.38
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.38"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Topógrafo"
 
 Individual: abnt:2N.32.26.44
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.44"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Laboratorista"
 
 Individual: abnt:2N.32.26.50
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.50"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Perito"
 
 Individual: abnt:2N.32.26.56
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.56"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Assistente técnico"
 
 Individual: abnt:2N.32.26.62
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.62"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Analista de sistemas"
 
 Individual: abnt:2N.32.26.68
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.68"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Desenvolvedor de soluções de informática"
 
 Individual: abnt:2N.32.26.74
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.32.26.74"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.32"
+	Facts: abnt:tema2 "2N.32.26"
 	Facts: abnt:descrição "Pesquisador"
 
 Individual: abnt:2N.36
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções de gestão da informação"
 
 Individual: abnt:2N.36.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.02"
 	Facts: abnt:descrição "Agente"
 
 Individual: abnt:2N.36.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.08"
 	Facts: abnt:descrição "Contratante"
 
 Individual: abnt:2N.36.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.14"
 	Facts: abnt:descrição "Contratado"
 
 Individual: abnt:2N.36.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.20"
 	Facts: abnt:descrição "Gerente de desenvolvimento da informação"
 
 Individual: abnt:2N.36.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.26"
 	Facts: abnt:descrição "Supervisor de informação"
 
 Individual: abnt:2N.36.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.32"
 	Facts: abnt:descrição "Supervisor de interfaces"
 
 Individual: abnt:2N.36.38
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.38"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.38"
 	Facts: abnt:descrição "Produtor de informação"
 
 Individual: abnt:2N.36.44
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.44"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.44"
 	Facts: abnt:descrição "Coordenador da informação"
 
 Individual: abnt:2N.36.50
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.50"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.50"
 	Facts: abnt:descrição "Facilitador da informação"
 
 Individual: abnt:2N.36.56
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.56"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.56"
 	Facts: abnt:descrição "Líder de produção"
 
 Individual: abnt:2N.36.62
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.62"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.62"
 	Facts: abnt:descrição "Coordenador de produção"
 
 Individual: abnt:2N.36.68
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.68"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.68"
 	Facts: abnt:descrição "Autor de informação"
 
 Individual: abnt:2N.36.74
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.36.74"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.36"
+	Facts: abnt:tema2 "2N.36.74"
 	Facts: abnt:descrição "Preposto"
 
 Individual: abnt:2N.92
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Funções que caracterizam grupos e organizações"
 
 Individual: abnt:2N.92.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.02"
 	Facts: abnt:descrição "Equipes"
 
 Individual: abnt:2N.92.02.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.02.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.02"
 	Facts: abnt:descrição "Grupo de trabalho"
 
 Individual: abnt:2N.92.02.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.02.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.02"
 	Facts: abnt:descrição "Força-tarefa"
 
 Individual: abnt:2N.92.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.08"
 	Facts: abnt:descrição "Conselhos"
 
 Individual: abnt:2N.92.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.14"
 	Facts: abnt:descrição "Comitês"
 
 Individual: abnt:2N.92.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.14"
 	Facts: abnt:descrição "Conselho de Diretores"
 
 Individual: abnt:2N.92.14.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.14.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.14"
 	Facts: abnt:descrição "Comitê ad hoc"
 
 Individual: abnt:2N.92.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Organizações empresariais"
 
 Individual: abnt:2N.92.20.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Corporação"
 
 Individual: abnt:2N.92.20.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Sociedade"
 
 Individual: abnt:2N.92.20.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Empresa individual"
 
 Individual: abnt:2N.92.20.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Microempresa"
 
 Individual: abnt:2N.92.20.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Aliança empresarial"
 
 Individual: abnt:2N.92.20.32
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.32"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Consórcio"
 
 Individual: abnt:2N.92.20.38
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.20.38"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.20"
 	Facts: abnt:descrição "Sociedade de propósito específico"
 
 Individual: abnt:2N.92.26
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.26"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.26"
 	Facts: abnt:descrição "Organizações sem fins lucrativos"
 
 Individual: abnt:2N.92.26.02
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.26.02"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.26"
 	Facts: abnt:descrição "Associação"
 
 Individual: abnt:2N.92.26.08
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.26.08"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.26"
 	Facts: abnt:descrição "Fundação"
 
 Individual: abnt:2N.92.26.14
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.26.14"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.26"
 	Facts: abnt:descrição "Sindicato"
 
 Individual: abnt:2N.92.26.20
 	Types: abnt:NBR.Código
 	Annotations: rdfs:comment "2N.92.26.20"@pt
-	Facts: abnt:tem.norma abnt:NBR.15965
-	Facts: abnt:tem.parte abnt:Parte.4
-	Facts: abnt:tem.tema abnt:2N
+	Facts: abnt:norma "NBR.15965"
+	Facts: abnt:tema "2N"
+	Facts: abnt:tema1 "2N.92"
+	Facts: abnt:tema2 "2N.92.26"
 	Facts: abnt:descrição "Serviço social"
