@@ -4,7 +4,7 @@
 O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
 
 ## Exemplo de filtro SPARQL que pode ser aplicado
-**Retorna uma lista de materiais n1 = 20 
+** Retorna uma lista de materiais n1 = 20 
 **                               n2 = 10 
 ** ordenada com as colunas n1, n2, descrição do material
 
