@@ -9,12 +9,12 @@ Retorna uma lista de materiais n1 = 20
                                n2 = 10 
 ordenada com as colunas n1, n2, descrição do material
 
-1. SELECT ?obj ?y ?p ?q
-2. WHERE
-3. { 
-4.  ?obj abnt:código-n1 "20" .
-5. ?obj abnt:código-n2 "10" .
-6. ?obj abnt:código-n1 ?y .
-7. ?obj abnt:código-n2 ?p .
-8.  ?obj abnt:descrição ?q .
-9. }
+1.   SELECT ?obj ?y ?p ?q
+2.   WHERE
+3.   { 
+4.       ?obj abnt:código-n1 "20" .
+5.       ?obj abnt:código-n2 "10" .
+6.       ?obj abnt:código-n1 ?y .
+7.       ?obj abnt:código-n2 ?p .
+8.       ?obj abnt:descrição ?q .
+9.   }
