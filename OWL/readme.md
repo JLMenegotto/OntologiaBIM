@@ -5,9 +5,7 @@ O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fa
 
 ## Exemplo de filtro SPARQL que pode ser aplicado
 
-Retorna uma lista de materiais n1 = 20 
-                               n2 = 10 
-ordenada com as colunas n1, n2, descrição do material
+Retorna uma lista de materiais n1= 20 , n2= 10 e ordenada com as colunas n1, n2, descrição do material
    
         1.    SELECT ?obj ?y ?p ?q
         2.    WHERE
