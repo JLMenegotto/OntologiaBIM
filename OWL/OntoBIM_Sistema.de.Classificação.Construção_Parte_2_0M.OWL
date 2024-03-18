@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt, 
-	rdfs:label "Data.Hora: 3/17/2024 4:34:14 PM"@pt, 
+	rdfs:label "Data.Hora: 3/18/2024 3:55:27 PM"@pt, 
 	rdfs:label "Advertência_1: -"@pt
 
 Datatype: xsd:string
@@ -48,64 +48,37 @@ ObjectProperty: abnt:BIM.Prop
 DataProperty: abnt:BIM.Data
 	Annotations: rdfs:comment "Raiz dos Data"@pt
 
-Class: abnt:ABNT
+Class: abnt:Normativa
 	SubClassOf: abnt:BIM.
-	Annotations: rdfs:comment "Trata-se de: ABNT"@pt
-
-Class: abnt:SUS
-	SubClassOf: abnt:BIM.
-	Annotations: rdfs:comment "Trata-se de: SUS"@pt
-
-Class: abnt:OmniClass
-	SubClassOf: abnt:BIM.
-	Annotations: rdfs:comment "Trata-se de: OmniClass"@pt
+	Annotations: rdfs:comment "Trata-se de: Normativa"@pt
 
 Class: abnt:Projeto
 	SubClassOf: abnt:BIM.
 	Annotations: rdfs:comment "Trata-se de: Projeto"@pt
 
-Class: abnt:NBR.Temporal
-	SubClassOf: abnt:ABNT
-	Annotations: rdfs:comment "NBR Temporal "@pt
+Class: abnt:ABNT
+	SubClassOf: abnt:Normativa
+	Annotations: rdfs:comment "ABNT "@pt
 
-Class: abnt:NBR.Norma
-	SubClassOf: abnt:ABNT
-	Annotations: rdfs:comment "NBR Norma "@pt
-	EquivalentTo:  abnt:tem.tema some  abnt:NBR.Norma
-
-Class: abnt:SUS.Sistema
-	SubClassOf: abnt:SUS
-	Annotations: rdfs:comment "SUS Sistema "@pt
-	EquivalentTo:  abnt:tem.tema some  abnt:SUS.Sistema
-
-Class: abnt:CSI.Sistema
-	SubClassOf: abnt:OmniClass
-	Annotations: rdfs:comment "CSI Sistema "@pt
-	EquivalentTo:  abnt:tem.tema some  abnt:CSI.Sistema
+Class: abnt:SUS
+	SubClassOf: abnt:Normativa
+	Annotations: rdfs:comment "SUS "@pt
 
 Class: abnt:Limite
 	SubClassOf: abnt:Projeto
 	Annotations: rdfs:comment "Limite "@pt
 
-Class: abnt:NBR.Processo
-	SubClassOf: abnt:NBR.Temporal
-	Annotations: rdfs:comment "NBR Processo "@pt
+Class: abnt:NormaNBR
+	SubClassOf: abnt:ABNT
+	Annotations: rdfs:comment "NormaNBR "@pt
 
-Class: abnt:NBR.Parte
-	SubClassOf: abnt:NBR.Norma
-	Annotations: rdfs:comment "NBR Parte "@pt
-
-Class: abnt:SUS.SomaSUS
-	SubClassOf: abnt:SUS.Sistema
-	Annotations: rdfs:comment "SUS SomaSUS "@pt
+Class: abnt:SomaSUS
+	SubClassOf: abnt:SUS
+	Annotations: rdfs:comment "SomaSUS "@pt
 
 Class: abnt:RDC50
-	SubClassOf: abnt:SUS.Sistema
+	SubClassOf: abnt:SUS
 	Annotations: rdfs:comment "RDC50 "@pt
-
-Class: abnt:CSI.Parte
-	SubClassOf: abnt:CSI.Sistema
-	Annotations: rdfs:comment "CSI Parte "@pt
 
 Class: abnt:De.Organização
 	SubClassOf: abnt:Limite
@@ -115,25 +88,17 @@ Class: abnt:De.Construção
 	SubClassOf: abnt:Limite
 	Annotations: rdfs:comment "De Construção "@pt
 
-Class: abnt:NBR.Etapa
-	SubClassOf: abnt:NBR.Processo
-	Annotations: rdfs:comment "NBR Etapa "@pt
+Class: abnt:TemaNBR
+	SubClassOf: abnt:NormaNBR
+	Annotations: rdfs:comment "TemaNBR "@pt
 
-Class: abnt:NBR.Tema
-	SubClassOf: abnt:NBR.Parte
-	Annotations: rdfs:comment "NBR Tema "@pt
+Class: abnt:TemaSUS
+	SubClassOf: abnt:SomaSUS
+	Annotations: rdfs:comment "TemaSUS "@pt
 
-Class: abnt:SUS.Tema
-	SubClassOf: abnt:SUS.SomaSUS
-	Annotations: rdfs:comment "SUS Tema "@pt
-
-Class: abnt:RDC.Tema
+Class: abnt:TemaRDC
 	SubClassOf: abnt:RDC50
-	Annotations: rdfs:comment "RDC Tema "@pt
-
-Class: abnt:CSI.Tema
-	SubClassOf: abnt:CSI.Parte
-	Annotations: rdfs:comment "CSI Tema "@pt
+	Annotations: rdfs:comment "TemaRDC "@pt
 
 Class: abnt:Funcional
 	SubClassOf: abnt:De.Organização
@@ -143,3166 +108,3258 @@ Class: abnt:Edificável
 	SubClassOf: abnt:De.Construção
 	Annotations: rdfs:comment "Edificável "@pt
 
-Class: abnt:NBR.Evento
-	SubClassOf: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Trata-se de: ABNT NBR Temporal  NBR Processo  NBR Etapa  NBR Evento. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
+Class: abnt:CódigoNBR
+	SubClassOf: abnt:TemaNBR
+	Annotations: rdfs:comment "Trata-se de: Normativa ABNT  NormaNBR  TemaNBR  CódigoNBR. ---> Consultar  NBR 15965"@pt
 
-Class: abnt:NBR.Código
-	SubClassOf: abnt:NBR.Tema
-	Annotations: rdfs:comment "Trata-se de: ABNT NBR Norma  NBR Parte  NBR Tema  NBR Código. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
-	EquivalentTo:  abnt:tem.descrição some  abnt:NBR.Código
+Class: abnt:CódigoSUS
+	SubClassOf: abnt:TemaSUS
+	Annotations: rdfs:comment "Trata-se de: Normativa SUS  SomaSUS  TemaSUS  CódigoSUS. ---> Consultar  SUS-SomaSUS"@pt
 
-Class: abnt:SUS.Código
-	SubClassOf: abnt:SUS.Tema
-	Annotations: rdfs:comment "Trata-se de: SUS SUS Sistema  SUS SomaSUS  SUS Tema  SUS Código. --- Consultar o SUS no Volume Sistema Único de Sáude"@pt
-
-Class: abnt:RDC.Código
-	SubClassOf: abnt:RDC.Tema
-	Annotations: rdfs:comment "Trata-se de: SUS SUS Sistema  RDC50  RDC Tema  RDC Código. --- Consultar o SUS no Volume Sistema Único de Sáude"@pt
-
-Class: abnt:CSI.Código
-	SubClassOf: abnt:CSI.Tema
-	Annotations: rdfs:comment "Trata-se de: OmniClass CSI Sistema  CSI Parte  CSI Tema  CSI Código. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+Class: abnt:CódigoRDC
+	SubClassOf: abnt:TemaRDC
+	Annotations: rdfs:comment "Trata-se de: Normativa SUS  RDC50  TemaRDC  CódigoRDC. ---> Consultar  SUS-RDC50"@pt
 
 Class: abnt:Divisão
 	SubClassOf: abnt:Funcional
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Divisão. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Divisão. ---> "@pt
 
 Class: abnt:Setor
 	SubClassOf: abnt:Funcional
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Setor. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Setor. ---> "@pt
 
 Class: abnt:Ambiente
 	SubClassOf: abnt:Funcional
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Ambiente. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Ambiente. ---> "@pt
 
 Class: abnt:Lote
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Lote. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Lote. ---> "@pt
 
 Class: abnt:Prédio
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Prédio. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Prédio. ---> "@pt
 
 Class: abnt:Bloco
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Bloco. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Bloco. ---> "@pt
 
 Class: abnt:Edícula
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Edícula. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Edícula. ---> "@pt
 
 ObjectProperty: abnt:de.classificação
 	SubPropertyOf: abnt:BIM.Prop
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: de.classificação    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: de.classificação    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:códigos.sus
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: códigos.sus    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: códigos.sus    Domínio: Normativa     Range: SomaSUS"@pt
+
+ObjectProperty: abnt:tem.código-sus
+	SubPropertyOf: abnt:códigos.sus
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.código-sus    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.volume
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.volume    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.volume    Domínio: Normativa     Range: SomaSUS"@pt
 
-ObjectProperty: abnt:tem.unid.funcional
+ObjectProperty: abnt:tem.ufuncional
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.unid.funcional    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.ufuncional    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.setor
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.setor    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.setor    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.ambiente
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.ambiente    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.ambiente    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.equipamento
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.equipamento    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.equipamento    Domínio: Normativa     Range: SomaSUS"@pt
 
-ObjectProperty: abnt:códigos.abnt
+ObjectProperty: abnt:códigos.nbr
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: códigos.abnt    Domínio: ABNT     Range: NBR.Norma"@pt
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: códigos.nbr    Domínio: Normativa     Range: NormaNBR"@pt
 
 ObjectProperty: abnt:tem.norma
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.norma    Domínio: ABNT     Range: NBR.Norma"@pt
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.norma    Domínio: Normativa     Range: NormaNBR"@pt
 
 ObjectProperty: abnt:tem.parte
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.parte    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema1
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema1    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema2
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema2    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema3
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema3    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema4
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema4    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema5
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema5    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.código
-	SubPropertyOf: abnt:códigos.abnt
-	Characteristics: Functional
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.código    Domínio: ABNT     Range: NBR.Norma"@pt
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.parte    Domínio: Normativa     Range: NormaNBR"@pt
 
 ObjectProperty: abnt:tem.descrição
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.descrição    Domínio: ABNT     Range: NBR.Norma"@pt
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.descrição    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.siscla.equiv
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.siscla.equiv    Domínio: ABNT     Range: NBR.Norma"@pt
+ObjectProperty: abnt:tem.código-nbr
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-nbr    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.versão
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.versão    Domínio: ABNT     Range: NBR.Norma"@pt
+ObjectProperty: abnt:tem.código-n0
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n0    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.etapa
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.etapa    Domínio: ABNT     Range: NBR.Norma"@pt
+ObjectProperty: abnt:tem.código-n1
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n1    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:códigos.omni
-	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: códigos.omni    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n2
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n2    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.sistema
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.sistema    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n3
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n3    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.código
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.código    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n4
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n4    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.tabela
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.tabela    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n5
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n5    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:de.estadotemporal
-	SubPropertyOf: abnt:BIM.Prop
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: de.estadotemporal    Domínio: ABNT     Range: NBR.Temporal"@pt
+ObjectProperty: abnt:tem.código-n6
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n6    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:precedências.abnt
-	SubPropertyOf: abnt:de.estadotemporal
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: precedências.abnt    Domínio: ABNT     Range: NBR.Temporal"@pt
+ObjectProperty: abnt:tem.código-n7
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n7    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.anterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: tem.equivalente.sus    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+ObjectProperty: abnt:tem.código-n8
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n8    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.posterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: tem.versão.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:tem.simultâneo
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:de.localização
-	SubPropertyOf: abnt:BIM.Prop
-	Annotations: rdfs:comment "Propriedade: de.localização    Domínio: null     Range: null"@pt
-
-ObjectProperty: abnt:predial
-	SubPropertyOf: abnt:de.localização
-	Annotations: rdfs:comment "Propriedade: predial    Domínio: null     Range: null"@pt
-
-ObjectProperty: abnt:é.setor
-	SubPropertyOf: abnt:predial
-	Annotations: rdfs:comment "Propriedade: tem.equivalente.sus    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:é.ambiente
-	SubPropertyOf: abnt:predial
-	Annotations: rdfs:comment "Propriedade: tem.versão.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:é.dentro.de
-	SubPropertyOf: abnt:predial
-	Characteristics: Transitive
-	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+ObjectProperty: abnt:tem.código-n9
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n9    Domínio: Normativa     Range: NormaNBR"@pt
 
 DataProperty: abnt:de.classificação
 	SubPropertyOf: abnt:BIM.Data
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  de.classificação"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  de.classificação  >  de.classificação"@pt
 
 DataProperty: abnt:códigos.sus
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  códigos.sus"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  códigos.sus  >  códigos.sus"@pt
 
+DataProperty: abnt:código-sus
+	SubPropertyOf: abnt:códigos.sus
+	Domain: abnt:Normativa
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  código-sus"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-sus  >  código-sus"@pt
+
 DataProperty: abnt:volume
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  volume"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.volume  >  volume"@pt
 
-DataProperty: abnt:unid.funcional
+DataProperty: abnt:ufuncional
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  unid.funcional"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.unid.funcional  >  unid.funcional"@pt
+	Annotations: rdfs:comment "Valor:  ufuncional"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.ufuncional  >  ufuncional"@pt
 
 DataProperty: abnt:setor
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  setor"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.setor  >  setor"@pt
 
 DataProperty: abnt:ambiente
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  ambiente"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.ambiente  >  ambiente"@pt
 
 DataProperty: abnt:equipamento
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  equipamento"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.equipamento  >  equipamento"@pt
 
-DataProperty: abnt:códigos.abnt
+DataProperty: abnt:códigos.nbr
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:ABNT
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  códigos.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  códigos.abnt  >  códigos.abnt"@pt
+	Annotations: rdfs:comment "Valor:  códigos.nbr"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  códigos.nbr  >  códigos.nbr"@pt
 
 DataProperty: abnt:norma
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  norma"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.norma  >  norma"@pt
 
 DataProperty: abnt:parte
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  parte"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.parte  >  parte"@pt
 
-DataProperty: abnt:tema
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema  >  tema"@pt
-
-DataProperty: abnt:tema1
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema1"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema1  >  tema1"@pt
-
-DataProperty: abnt:tema2
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema2"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema2  >  tema2"@pt
-
-DataProperty: abnt:tema3
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema3"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema3  >  tema3"@pt
-
-DataProperty: abnt:tema4
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema4"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema4  >  tema4"@pt
-
-DataProperty: abnt:tema5
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema5"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema5  >  tema5"@pt
-
-DataProperty: abnt:código
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  código"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código  >  código"@pt
-
 DataProperty: abnt:descrição
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  descrição"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.descrição  >  descrição"@pt
 
-DataProperty: abnt:siscla.equiv
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-nbr
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  siscla.equiv"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.siscla.equiv  >  siscla.equiv"@pt
+	Annotations: rdfs:comment "Valor:  código-nbr"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-nbr  >  código-nbr"@pt
 
-DataProperty: abnt:versão
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n0
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  versão"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão  >  versão"@pt
+	Annotations: rdfs:comment "Valor:  código-n0"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n0  >  código-n0"@pt
 
-DataProperty: abnt:etapa
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n1
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  etapa"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.etapa  >  etapa"@pt
+	Annotations: rdfs:comment "Valor:  código-n1"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n1  >  código-n1"@pt
 
-DataProperty: abnt:códigos.omni
-	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n2
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  códigos.omni"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  códigos.omni  >  códigos.omni"@pt
+	Annotations: rdfs:comment "Valor:  código-n2"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n2  >  código-n2"@pt
 
-DataProperty: abnt:sistema
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n3
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  sistema"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.sistema  >  sistema"@pt
+	Annotations: rdfs:comment "Valor:  código-n3"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n3  >  código-n3"@pt
 
-DataProperty: abnt:código
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n4
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  código"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código  >  código"@pt
+	Annotations: rdfs:comment "Valor:  código-n4"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n4  >  código-n4"@pt
 
-DataProperty: abnt:tabela
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n5
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tabela"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tabela  >  tabela"@pt
+	Annotations: rdfs:comment "Valor:  código-n5"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n5  >  código-n5"@pt
 
-DataProperty: abnt:de.estadotemporal
-	SubPropertyOf: abnt:BIM.Data
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n6
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  de.estadotemporal"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  de.estadotemporal  >  de.estadotemporal"@pt
+	Annotations: rdfs:comment "Valor:  código-n6"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n6  >  código-n6"@pt
 
-DataProperty: abnt:precedências.abnt
-	SubPropertyOf: abnt:de.estadotemporal
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n7
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  precedências.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  precedências.abnt  >  precedências.abnt"@pt
+	Annotations: rdfs:comment "Valor:  código-n7"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n7  >  código-n7"@pt
 
-DataProperty: abnt:anterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n8
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  equivalente.sus"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.equivalente.sus  >  equivalente.sus"@pt
+	Annotations: rdfs:comment "Valor:  código-n8"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n8  >  código-n8"@pt
 
-DataProperty: abnt:posterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n9
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  versão.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão.abnt  >  versão.abnt"@pt
+	Annotations: rdfs:comment "Valor:  código-n9"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n9  >  código-n9"@pt
 
-DataProperty: abnt:simultâneo
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
-
-DataProperty: abnt:de.localização
-	SubPropertyOf: abnt:BIM.Data
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  de.localização"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  de.localização  >  de.localização"@pt
-
-DataProperty: abnt:predial
-	SubPropertyOf: abnt:de.localização
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  predial"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  predial  >  predial"@pt
-
-DataProperty: abnt:setor
-	SubPropertyOf: abnt:predial
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  equivalente.sus"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.equivalente.sus  >  equivalente.sus"@pt
-
-DataProperty: abnt:ambiente
-	SubPropertyOf: abnt:predial
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  versão.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão.abnt  >  versão.abnt"@pt
-
-DataProperty: abnt:dentro.de
-	SubPropertyOf: abnt:predial
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
-
-Individual: abnt:Omni.41
-	Types: abnt:CSI.Parte
-	Annotations: rdfs:comment "Omni.41"@pt
-	Facts: abnt:sistema "Omniclass"
-	Facts: abnt:tabela "41"
-	Facts: abnt:descrição "Sistema de Classificação OmniClass - Tabela 41"
-
-Individual: abnt:NBR.15965
-	Types: abnt:NBR.Norma
-	Annotations: rdfs:comment "NBR.15965"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:parte "Parte 2"
+Individual: abnt:0M.NBR-15965
+	Types: abnt:NormaNBR
+	Annotations: rdfs:comment "0M.NBR-15965"@pt
 	Facts: abnt:descrição "Norma Brasileira para a classificação de objetos da construção"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:norma "NBR-15965"
 
-Individual: abnt:Parte.2
-	Types: abnt:NBR.Parte
-	Annotations: rdfs:comment "Parte.2"@pt
-	Facts: abnt:norma "NBR.15965"
+Individual: abnt:0M.Parte-2
+	Types: abnt:NormaNBR
+	Annotations: rdfs:comment "0M.Parte-2"@pt
 	Facts: abnt:descrição "Parte 2 - Publicada em 2012"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:parte "Parte-2"
 
-Individual: abnt:0M
-	Types: abnt:NBR.Tema
-	Annotations: rdfs:comment "0M"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:siscla.equiv "OmniClass Tabela 41"
-	Facts: abnt:descrição "Tema 0M - Materiais"
+Individual: abnt:0M.00
+	Types: abnt:CódigoNBR
+	Annotations: rdfs:comment "0M.00"@pt
+	Facts: abnt:descrição "Tema 0M - Materiais - Derivada de Omniclass Tabela 41"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "00"
 
 Individual: abnt:0M.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Elementos químicos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
 
 Individual: abnt:0M.10.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Elementos sólidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:0M.10.10.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Carbono"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.10.10.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Silício"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.10.10.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Fósforo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.10.10.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Enxofre"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.10.10.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Cálcio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "09"
 
 Individual: abnt:0M.10.10.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Iodo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
 
 Individual: abnt:0M.10.10.13
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.13"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Boro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "13"
 
 Individual: abnt:0M.10.10.15
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.15"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Magnêsio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "15"
 
 Individual: abnt:0M.10.10.17
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.17"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Aluminio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "17"
 
 Individual: abnt:0M.10.10.19
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.19"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Potássio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "19"
 
 Individual: abnt:0M.10.10.21
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.21"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Titânio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "21"
 
 Individual: abnt:0M.10.10.23
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.23"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Vanádio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "23"
 
 Individual: abnt:0M.10.10.25
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.25"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Crômio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "25"
 
 Individual: abnt:0M.10.10.27
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.27"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Manganês"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "27"
 
 Individual: abnt:0M.10.10.29
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.29"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Feno"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "29"
 
 Individual: abnt:0M.10.10.31
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.31"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Cobalto"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "31"
 
 Individual: abnt:0M.10.10.33
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.33"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Níquel"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "33"
 
 Individual: abnt:0M.10.10.35
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.35"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Cofre"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "35"
 
 Individual: abnt:0M.10.10.37
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.37"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Zinco"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "37"
 
 Individual: abnt:0M.10.10.39
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.39"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Arsênico"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "39"
 
 Individual: abnt:0M.10.10.41
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.41"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Molibdênio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "41"
 
 Individual: abnt:0M.10.10.43
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.43"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Prata"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "43"
 
 Individual: abnt:0M.10.10.45
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.45"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Cádmio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "45"
 
 Individual: abnt:0M.10.10.47
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.47"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Estanho"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "47"
 
 Individual: abnt:0M.10.10.49
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.49"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Antimônio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "49"
 
 Individual: abnt:0M.10.10.51
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.51"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Tungstênio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "51"
 
 Individual: abnt:0M.10.10.53
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.53"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Ouro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "53"
 
 Individual: abnt:0M.10.10.55
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.55"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Chumbo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "55"
 
 Individual: abnt:0M.10.10.57
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.10.57"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.10"
 	Facts: abnt:descrição "Bismuto"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "57"
 
 Individual: abnt:0M.10.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.30"
 	Facts: abnt:descrição "Elementos líquidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
 
 Individual: abnt:0M.10.30.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.30.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.30"
 	Facts: abnt:descrição "Mercúrio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.10.40
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Elementos gasosos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
 
 Individual: abnt:0M.10.40.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Hidrogênio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.10.40.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Hélio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.10.40.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Nitrogênio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.10.40.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Oxigênio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.10.40.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Flúor"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "09"
 
 Individual: abnt:0M.10.40.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Neônio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "11"
 
 Individual: abnt:0M.10.40.13
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.13"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Cloro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "13"
 
 Individual: abnt:0M.10.40.15
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.15"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Argônio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "15"
 
 Individual: abnt:0M.10.40.17
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.17"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Criptônio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "17"
 
 Individual: abnt:0M.10.40.19
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.19"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Xenônio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "19"
 
 Individual: abnt:0M.10.40.21
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.10.40.21"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.10"
-	Facts: abnt:tema2 "0M.10.40"
 	Facts: abnt:descrição "Radônio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "21"
 
 Individual: abnt:0M.20
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Compostos sólidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
 
 Individual: abnt:0M.20.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Compostos minerais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:0M.20.10.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Rochas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.20.10.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Granitos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.10.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Mármores"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.10.01.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra-luminária"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.10.01.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra Mineira"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.10.01.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra Goiás"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "09"
 
 Individual: abnt:0M.20.10.01.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra Miracema"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "11"
 
 Individual: abnt:0M.20.10.01.13
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.13"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra-madeira"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "13"
 
 Individual: abnt:0M.20.10.01.15
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.15"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra-sabão"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "15"
 
 Individual: abnt:0M.20.10.01.17
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.17"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra Lagoa Santa"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "17"
 
 Individual: abnt:0M.20.10.01.19
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.19"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Pedra Cariri"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "19"
 
 Individual: abnt:0M.20.10.01.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Rochas á base de quarlzo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "50"
 
 Individual: abnt:0M.20.10.01.50.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.50.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Quartzo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "50"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.01.50.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.50.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Arenito"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "50"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.10.01.50.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.01.50.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Areia"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "50"
+	Facts: abnt:código-n5 "05"
 
 Individual: abnt:0M.20.10.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Argilas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.20.10.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Argila"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.10.03.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Argila refratária (queimada)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.10.03.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Bentonita"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.10.03.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Argila expandida"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.10.03.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cerâmica"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "09"
 
 Individual: abnt:0M.20.10.03.09.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.09.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Barro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "09"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.03.09.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.09.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Terracota"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "09"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.10.03.09.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.09.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Xisto refratário (queimado)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "09"
+	Facts: abnt:código-n5 "05"
 
 Individual: abnt:0M.20.10.03.09.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.09.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Porcelana"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "09"
+	Facts: abnt:código-n5 "07"
 
 Individual: abnt:0M.20.10.03.09.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.03.09.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Louças"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "09"
+	Facts: abnt:código-n5 "09"
 
 Individual: abnt:0M.20.10.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Outros materiais cimenticios"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.20.10.05.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Solos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.10.05.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimentos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.10.05.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento comum"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.05.03.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento Portland comum CP-I"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "01"
 
 Individual: abnt:0M.20.10.05.03.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento Portland comum CP-l-S"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "02"
 
 Individual: abnt:0M.20.10.05.03.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento composto CP-II"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.10.05.03.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento escória CP-II-E"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "01"
 
 Individual: abnt:0M.20.10.05.03.03.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.03.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento Filler CP-lI-F"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "02"
 
 Individual: abnt:0M.20.10.05.03.03.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.03.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento pozolânico CP-II-Z"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "03"
 
 Individual: abnt:0M.20.10.05.03.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento alto forno CP-III"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "05"
 
 Individual: abnt:0M.20.10.05.03.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento pozolânico CP-IV"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "07"
 
 Individual: abnt:0M.20.10.05.03.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento de alta resistência inicial CP-V-ARI"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "09"
 
 Individual: abnt:0M.20.10.05.03.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.03.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cimento branco CP-B"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "11"
 
 Individual: abnt:0M.20.10.05.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cales"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.10.05.05.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.05.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cal"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.05.05.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.05.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cal virgem"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.10.05.05.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.05.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cal extinta"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.10.05.05.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.05.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cal hidratada"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
+	Facts: abnt:código-n5 "04"
 
 Individual: abnt:0M.20.10.05.05.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.05.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cal hidráulica"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
+	Facts: abnt:código-n5 "05"
 
 Individual: abnt:0M.20.10.05.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Gesso"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.10.05.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Silicato de cálcio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "09"
 
 Individual: abnt:0M.20.10.05.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.05.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Magnésia"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "11"
 
 Individual: abnt:0M.20.10.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Betuminosos e minerais petroquimicos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.20.10.07.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Asfaltos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.10.07.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Asfalto"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.07.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Asfalto modificado por pciimero"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.10.07.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Alcatrão de carvão"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.10.07.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Breu de alcatrão de carvão"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.07.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.07.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Parafinas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.10.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Outros minerais não metálicos naturais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "09"
 
 Individual: abnt:0M.20.10.09.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.09.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Crisotila"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.10.09.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.09.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Grafite"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.10.09.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.09.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Preto de carbono"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.10.09.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.09.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Sal (cloreto de sócio)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.10.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Outros minerais que não ocorrem naturalmente"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
 
 Individual: abnt:0M.20.10.11.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Vidros e materiais como o vidro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.10.11.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Vidro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.11.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Porcelana esmaltada"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.10.11.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Outros minerais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.10.11.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cinzas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.10.11.03.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.03.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Fibra de carbono"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.10.11.03.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.03.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Carboneto de silício"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.10.11.03.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.10.11.03.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.10"
 	Facts: abnt:descrição "Cermet"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "04"
 
 Individual: abnt:0M.20.20
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Compostos metálicos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
 
 Individual: abnt:0M.20.20.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ferro liga"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.20.20.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Aços carbono"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.20.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Aços inoxidáveis"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.20.01.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Outros aços"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.20.01.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Outras ligas de ferro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.20.01.07.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.07.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ferro fundido"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.20.01.07.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.07.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ferro forjado"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.20.01.07.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.07.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ferro fundido dúctil"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.20.01.07.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.01.07.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ferro maleável"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
+	Facts: abnt:código-n5 "04"
 
 Individual: abnt:0M.20.20.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de alumínio"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.20.20.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de alumínio-zinco"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.20.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de cobre"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.20.20.05.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.05.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Latões"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.20.05.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.05.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Bronzes"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.20.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de zinco"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.20.20.07.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.07.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de zinco-chumbo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.20.07.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.07.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Zamac"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.20.07.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.07.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Outras ligas de zinco"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.20.07.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.07.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Mazac"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.20.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de chumbo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "09"
 
 Individual: abnt:0M.20.20.09.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.09.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Ligas de chumbo e estanho"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.20.09.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.09.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Teme"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.20.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.20.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.20"
 	Facts: abnt:descrição "Outras ligas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "11"
 
 Individual: abnt:0M.20.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Vegetação"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
 
 Individual: abnt:0M.20.30.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Materiais de vegetais em geral"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.20.30.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Celulose"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.30.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Papeis"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.30.01.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.01.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Têxteis"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.30.01.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.01.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Resíduos de combustão"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.30.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Materiais de árvores"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.20.30.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Madeira"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.30.03.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Madeiras resinosas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.30.03.01.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Pinus"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "01"
 
 Individual: abnt:0M.20.30.03.01.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Peroba"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "02"
 
 Individual: abnt:0M.20.30.03.01.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Mogno"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "03"
 
 Individual: abnt:0M.20.30.03.01.01.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Cedro vermetho ocidental"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "04"
 
 Individual: abnt:0M.20.30.03.01.01.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Angelim-pedra (Hymenolobium)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "05"
 
 Individual: abnt:0M.20.30.03.01.01.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Cedro (Cedrela Odorata)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "06"
 
 Individual: abnt:0M.20.30.03.01.01.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Cerejeira (Ambuana Caerensis)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "07"
 
 Individual: abnt:0M.20.30.03.01.01.08
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.08"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Pau-marfim (Agonandra Brasiliensis)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "08"
 
 Individual: abnt:0M.20.30.03.01.01.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Pequiá (Caryocar Villosum)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "09"
 
 Individual: abnt:0M.20.30.03.01.01.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.01.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Sucupira (Bowdichia Nitida)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
+	Facts: abnt:código-n6 "10"
 
 Individual: abnt:0M.20.30.03.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Madeira de lei"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
 
 Individual: abnt:0M.20.30.03.01.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Carvalho branco"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "01"
 
 Individual: abnt:0M.20.30.03.01.03.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Carvalho vermelho"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "02"
 
 Individual: abnt:0M.20.30.03.01.03.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Bordo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "03"
 
 Individual: abnt:0M.20.30.03.01.03.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Curupixá (Micropholis Venulosa)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "04"
 
 Individual: abnt:0M.20.30.03.01.03.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Goiabão (Pouteria Pachicarpa)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "05"
 
 Individual: abnt:0M.20.30.03.01.03.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Ipê (Tabebuia)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "06"
 
 Individual: abnt:0M.20.30.03.01.03.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Jatobá (Hymenaea Courbani)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "07"
 
 Individual: abnt:0M.20.30.03.01.03.08
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.08"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Louro-vermelho (Nectrandra Rubra)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "08"
 
 Individual: abnt:0M.20.30.03.01.03.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Marupd (Simarouba Amara)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "09"
 
 Individual: abnt:0M.20.30.03.01.03.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Massaranduba (Manilkara Elata)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "10"
 
 Individual: abnt:0M.20.30.03.01.03.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Muiracatira (Astmium Lecointer)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "11"
 
 Individual: abnt:0M.20.30.03.01.03.12
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.12"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Pau-amarelo (Euxylophora Paraensis)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "12"
 
 Individual: abnt:0M.20.30.03.01.03.13
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.13"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Cumarú (Dipteryx Odorata)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "13"
 
 Individual: abnt:0M.20.30.03.01.03.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.01.03.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Jacaranda"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "03"
+	Facts: abnt:código-n6 "14"
 
 Individual: abnt:0M.20.30.03.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Outras partes da Swore"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.30.03.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.03.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Casca de arvore"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.30.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Materiais de gramineas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.20.30.05.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.05.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Bambu"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.30.05.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.05.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Grama"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.20.30.05.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.05.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Linho"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.30.05.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.05.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Vime"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "04"
 
 Individual: abnt:0M.20.30.05.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.30.05.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.30"
 	Facts: abnt:descrição "Palha"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "05"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.40
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.40"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.40"
 	Facts: abnt:descrição "Materials de outras plantas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "40"
 
 Individual: abnt:0M.20.40.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.40.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.40"
 	Facts: abnt:descrição "Borracha natural"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.20.40.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.40.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.40"
 	Facts: abnt:descrição "Algodão"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.20.40.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.40.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.40"
 	Facts: abnt:descrição "Juta"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.20.40.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.40.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.40"
 	Facts: abnt:descrição "Cortiça"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.20.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Outros materials organicos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
 
 Individual: abnt:0M.20.50.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Materiais de origem animal"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.20.50.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Materials de pelo animal"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.50.01.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Lá"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.50.01.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Crina"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.50.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Outros materials de origem animal"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.50.01.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Couro"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "01"
 
 Individual: abnt:0M.20.50.01.03.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.01.03.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Sebo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
+	Facts: abnt:código-n5 "02"
 
 Individual: abnt:0M.20.50.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Materials de insetos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.20.50.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Seda"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.50.03.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.50.03.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.50"
 	Facts: abnt:descrição "Cera de abelha"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.20.60
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Compostos sintéticos sólidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
 
 Individual: abnt:0M.20.60.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Acidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.20.60.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Bases (álcalis)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.20.60.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Sais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.20.60.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Plásticos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.20.60.07.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Acrilonitrila-butadieno-estireno (ABE)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.60.07.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Acrilico - polimetilmetacrilato"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.20.60.07.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Epóxi"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.60.07.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Poliamida"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "04"
 
 Individual: abnt:0M.20.60.07.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Polibutileno (PB)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.20.60.07.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Fenólicos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:0M.20.60.07.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Policarbonato"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.20.60.07.08
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.08"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Poliester"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "08"
 
 Individual: abnt:0M.20.60.07.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Polietileno (PE)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "09"
 
 Individual: abnt:0M.20.60.07.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Polietileno reticulado (PE-X)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "10"
 
 Individual: abnt:0M.20.60.07.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Poli-isocianurato"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "11"
 
 Individual: abnt:0M.20.60.07.12
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.12"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Polipropileno"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "12"
 
 Individual: abnt:0M.20.60.07.13
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.13"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Polipropileno copolímero random (PP-R)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "13"
 
 Individual: abnt:0M.20.60.07.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Poliestireno"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "14"
 
 Individual: abnt:0M.20.60.07.15
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.15"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Poliuretano"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "15"
 
 Individual: abnt:0M.20.60.07.16
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.16"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Cloreto de polivinil (PVC)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "16"
 
 Individual: abnt:0M.20.60.07.17
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.17"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Cloreto de polivinil - não plastificado (U-PVC)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "17"
 
 Individual: abnt:0M.20.60.07.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Policloreto de vinila clorado (CPVC)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "18"
 
 Individual: abnt:0M.20.60.07.19
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.19"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Fluoreto de polivinilideno"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "19"
 
 Individual: abnt:0M.20.60.07.20
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.20"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Ureia formaldeido"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "20"
 
 Individual: abnt:0M.20.60.07.21
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.07.21"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Vinil"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "07"
+	Facts: abnt:código-n4 "21"
 
 Individual: abnt:0M.20.60.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Borrachas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "09"
 
 Individual: abnt:0M.20.60.09.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.09.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Borracha butilica"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.60.09.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.09.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Neoprene"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.20.60.09.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.09.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Silicone"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.20.60.09.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.09.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Polisulfato"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "09"
+	Facts: abnt:código-n4 "04"
 
 Individual: abnt:0M.20.60.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Outros compostos petroquímicos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "11"
 
 Individual: abnt:0M.20.60.11.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.11.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Parafina"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.20.60.11.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.11.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Ceras"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "11"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.20.60.13
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.20.60.13"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.20"
-	Facts: abnt:tema2 "0M.20.60"
 	Facts: abnt:descrição "Outros compostos sintéticos sólidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "20"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "13"
 
 Individual: abnt:0M.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Líquidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
 
 Individual: abnt:0M.30.10.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água doce"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.30.10.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água da chuva"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.30.10.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água mineral"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.30.10.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água destilada"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.30.10.01.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água deionizada"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "04"
 
 Individual: abnt:0M.30.10.01.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água dura"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.30.10.01.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.01.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água de reuso"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:0M.30.10.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água salgadas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.30.10.03.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10.03.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Água do mar"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.30.20
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.20"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.20"
 	Facts: abnt:descrição "Soluções a base de água"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "20"
 
 Individual: abnt:0M.30.20.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.20.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.20"
 	Facts: abnt:descrição "Solusões acidas a base de água"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.30.20.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.20.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.20"
 	Facts: abnt:descrição "Solusões básicas (alcalinas) a base de água"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.30.20.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.20.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.20"
 	Facts: abnt:descrição "Outras solusões a base de água"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.30.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Minerals líquidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
 
 Individual: abnt:0M.30.30.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Produtos de petróleo"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.30.30.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Gasolina"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.30.30.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Oleos diesel"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.30.30.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Oleos combustíveis"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.30.30.01.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30.01.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Querosene"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "04"
 
 Individual: abnt:0M.30.30.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.30.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.30"
 	Facts: abnt:descrição "Oleos minerais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.30.40
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.40"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.40"
 	Facts: abnt:descrição "Líquidos derivados de plantas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "40"
 
 Individual: abnt:0M.30.40.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.40.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.40"
 	Facts: abnt:descrição "Oleos vegetais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.30.40.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.40.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.40"
 	Facts: abnt:descrição "Outros líquidos derivados de plantas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.30.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.50"
 	Facts: abnt:descrição "Líquidos de origem animal"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "50"
 
 Individual: abnt:0M.30.50.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.50.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.50"
 	Facts: abnt:descrição "Oleos de peixe"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.30.50.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.50.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.50"
 	Facts: abnt:descrição "Outros líquidos de origem animal"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.30.60
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.60"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.60"
 	Facts: abnt:descrição "Líquidos sintéticos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "60"
 
 Individual: abnt:0M.30.60.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.60.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.60"
 	Facts: abnt:descrição "Alcóois"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.30.60.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.60.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.60"
 	Facts: abnt:descrição "Lubrificantes"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.30.60.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.60.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.60"
 	Facts: abnt:descrição "Amonia"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "60"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.30.70
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.70"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.70"
 	Facts: abnt:descrição "Outros líquidos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "70"
 
 Individual: abnt:0M.30.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.30.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.30"
-	Facts: abnt:tema2 "0M.30.10"
 	Facts: abnt:descrição "Águas"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "30"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:0M.40
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Gases"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
 
 Individual: abnt:0M.40.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.10"
 	Facts: abnt:descrição "Gases naturais"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:0M.40.10.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.10.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.10"
 	Facts: abnt:descrição "Ar natural"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.40.10.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.10.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.10"
 	Facts: abnt:descrição "Dióxido de carbono"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.40.10.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.10.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.10"
 	Facts: abnt:descrição "Monóxido de carbono"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.40.10.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.10.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.10"
 	Facts: abnt:descrição "Vapor de água"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "07"
 
 Individual: abnt:0M.40.20
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.20"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.20"
 	Facts: abnt:descrição "Gases de hidrocarbonetos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "20"
 
 Individual: abnt:0M.40.20.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.20.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.20"
 	Facts: abnt:descrição "Propano"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.40.20.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.20.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.20"
 	Facts: abnt:descrição "Gas butano"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "03"
 
 Individual: abnt:0M.40.20.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.20.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.20"
 	Facts: abnt:descrição "GLP"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "20"
+	Facts: abnt:código-n3 "05"
 
 Individual: abnt:0M.40.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Gases refrigerantes"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
 
 Individual: abnt:0M.40.30.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Fluorocarbonos"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.40.30.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Triclorofluorometano (CFC-11)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.40.30.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Diclorodifluorometano (CFC-12)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:0M.40.30.01.03
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.03"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Clorotrifluorometano (CFC-13)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "03"
 
 Individual: abnt:0M.40.30.01.04
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.04"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Clorodifluorometano  (HCFC-22)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "04"
 
 Individual: abnt:0M.40.30.01.05
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.05"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Trifluorometano (HFC-23)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "05"
 
 Individual: abnt:0M.40.30.01.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Triclorotrifluoretano (CFC-113)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:0M.40.30.01.07
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.07"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Diclorotetrafluoretano (CFC-114)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "07"
 
 Individual: abnt:0M.40.30.01.08
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.08"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Cloropentafluoretano (CFC-115)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "08"
 
 Individual: abnt:0M.40.30.01.09
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.09"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Hexafluoroetano (CFC-116)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "09"
 
 Individual: abnt:0M.40.30.01.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Tetrafluoroetano (HFC-134a)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "10"
 
 Individual: abnt:0M.40.30.01.11
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.30.01.11"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.30"
 	Facts: abnt:descrição "Heptafluoropropano (HFC-227ea)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "11"
 
 Individual: abnt:0M.40.40
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.40"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.40"
 	Facts: abnt:descrição "Outros gases"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "40"
 
 Individual: abnt:0M.40.40.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.40.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.40"
 	Facts: abnt:descrição "Halon"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "01"
 
 Individual: abnt:0M.40.40.01.01
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.40.01.01"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.40"
 	Facts: abnt:descrição "Bromoclorodifluorometano (Halon 1211)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "01"
 
 Individual: abnt:0M.40.40.01.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "0M.40.40.01.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "0M"
-	Facts: abnt:tema1 "0M.40"
-	Facts: abnt:tema2 "0M.40.40"
 	Facts: abnt:descrição "Bromotrifluorometano (Halon 1301)"
+	Facts: abnt:código-n0 "0M"
+	Facts: abnt:código-n1 "40"
+	Facts: abnt:código-n2 "40"
+	Facts: abnt:código-n3 "01"
+	Facts: abnt:código-n4 "02"

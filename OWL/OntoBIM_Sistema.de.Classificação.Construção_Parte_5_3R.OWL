@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt, 
-	rdfs:label "Data.Hora: 3/17/2024 4:37:53 PM"@pt, 
+	rdfs:label "Data.Hora: 3/18/2024 3:59:08 PM"@pt, 
 	rdfs:label "Advertência_1: -"@pt
 
 Datatype: xsd:string
@@ -48,64 +48,37 @@ ObjectProperty: abnt:BIM.Prop
 DataProperty: abnt:BIM.Data
 	Annotations: rdfs:comment "Raiz dos Data"@pt
 
-Class: abnt:ABNT
+Class: abnt:Normativa
 	SubClassOf: abnt:BIM.
-	Annotations: rdfs:comment "Trata-se de: ABNT"@pt
-
-Class: abnt:SUS
-	SubClassOf: abnt:BIM.
-	Annotations: rdfs:comment "Trata-se de: SUS"@pt
-
-Class: abnt:OmniClass
-	SubClassOf: abnt:BIM.
-	Annotations: rdfs:comment "Trata-se de: OmniClass"@pt
+	Annotations: rdfs:comment "Trata-se de: Normativa"@pt
 
 Class: abnt:Projeto
 	SubClassOf: abnt:BIM.
 	Annotations: rdfs:comment "Trata-se de: Projeto"@pt
 
-Class: abnt:NBR.Temporal
-	SubClassOf: abnt:ABNT
-	Annotations: rdfs:comment "NBR Temporal "@pt
+Class: abnt:ABNT
+	SubClassOf: abnt:Normativa
+	Annotations: rdfs:comment "ABNT "@pt
 
-Class: abnt:NBR.Norma
-	SubClassOf: abnt:ABNT
-	Annotations: rdfs:comment "NBR Norma "@pt
-	EquivalentTo:  abnt:tem.tema some  abnt:NBR.Norma
-
-Class: abnt:SUS.Sistema
-	SubClassOf: abnt:SUS
-	Annotations: rdfs:comment "SUS Sistema "@pt
-	EquivalentTo:  abnt:tem.tema some  abnt:SUS.Sistema
-
-Class: abnt:CSI.Sistema
-	SubClassOf: abnt:OmniClass
-	Annotations: rdfs:comment "CSI Sistema "@pt
-	EquivalentTo:  abnt:tem.tema some  abnt:CSI.Sistema
+Class: abnt:SUS
+	SubClassOf: abnt:Normativa
+	Annotations: rdfs:comment "SUS "@pt
 
 Class: abnt:Limite
 	SubClassOf: abnt:Projeto
 	Annotations: rdfs:comment "Limite "@pt
 
-Class: abnt:NBR.Processo
-	SubClassOf: abnt:NBR.Temporal
-	Annotations: rdfs:comment "NBR Processo "@pt
+Class: abnt:NormaNBR
+	SubClassOf: abnt:ABNT
+	Annotations: rdfs:comment "NormaNBR "@pt
 
-Class: abnt:NBR.Parte
-	SubClassOf: abnt:NBR.Norma
-	Annotations: rdfs:comment "NBR Parte "@pt
-
-Class: abnt:SUS.SomaSUS
-	SubClassOf: abnt:SUS.Sistema
-	Annotations: rdfs:comment "SUS SomaSUS "@pt
+Class: abnt:SomaSUS
+	SubClassOf: abnt:SUS
+	Annotations: rdfs:comment "SomaSUS "@pt
 
 Class: abnt:RDC50
-	SubClassOf: abnt:SUS.Sistema
+	SubClassOf: abnt:SUS
 	Annotations: rdfs:comment "RDC50 "@pt
-
-Class: abnt:CSI.Parte
-	SubClassOf: abnt:CSI.Sistema
-	Annotations: rdfs:comment "CSI Parte "@pt
 
 Class: abnt:De.Organização
 	SubClassOf: abnt:Limite
@@ -115,25 +88,17 @@ Class: abnt:De.Construção
 	SubClassOf: abnt:Limite
 	Annotations: rdfs:comment "De Construção "@pt
 
-Class: abnt:NBR.Etapa
-	SubClassOf: abnt:NBR.Processo
-	Annotations: rdfs:comment "NBR Etapa "@pt
+Class: abnt:TemaNBR
+	SubClassOf: abnt:NormaNBR
+	Annotations: rdfs:comment "TemaNBR "@pt
 
-Class: abnt:NBR.Tema
-	SubClassOf: abnt:NBR.Parte
-	Annotations: rdfs:comment "NBR Tema "@pt
+Class: abnt:TemaSUS
+	SubClassOf: abnt:SomaSUS
+	Annotations: rdfs:comment "TemaSUS "@pt
 
-Class: abnt:SUS.Tema
-	SubClassOf: abnt:SUS.SomaSUS
-	Annotations: rdfs:comment "SUS Tema "@pt
-
-Class: abnt:RDC.Tema
+Class: abnt:TemaRDC
 	SubClassOf: abnt:RDC50
-	Annotations: rdfs:comment "RDC Tema "@pt
-
-Class: abnt:CSI.Tema
-	SubClassOf: abnt:CSI.Parte
-	Annotations: rdfs:comment "CSI Tema "@pt
+	Annotations: rdfs:comment "TemaRDC "@pt
 
 Class: abnt:Funcional
 	SubClassOf: abnt:De.Organização
@@ -143,3211 +108,3023 @@ Class: abnt:Edificável
 	SubClassOf: abnt:De.Construção
 	Annotations: rdfs:comment "Edificável "@pt
 
-Class: abnt:NBR.Evento
-	SubClassOf: abnt:NBR.Etapa
-	Annotations: rdfs:comment "Trata-se de: ABNT NBR Temporal  NBR Processo  NBR Etapa  NBR Evento. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
+Class: abnt:CódigoNBR
+	SubClassOf: abnt:TemaNBR
+	Annotations: rdfs:comment "Trata-se de: Normativa ABNT  NormaNBR  TemaNBR  CódigoNBR. ---> Consultar  NBR 15965"@pt
 
-Class: abnt:NBR.Código
-	SubClassOf: abnt:NBR.Tema
-	Annotations: rdfs:comment "Trata-se de: ABNT NBR Norma  NBR Parte  NBR Tema  NBR Código. --- Consultar Sistema de Classificação Construção NBR 15965"@pt
-	EquivalentTo:  abnt:tem.descrição some  abnt:NBR.Código
+Class: abnt:CódigoSUS
+	SubClassOf: abnt:TemaSUS
+	Annotations: rdfs:comment "Trata-se de: Normativa SUS  SomaSUS  TemaSUS  CódigoSUS. ---> Consultar  SUS-SomaSUS"@pt
 
-Class: abnt:SUS.Código
-	SubClassOf: abnt:SUS.Tema
-	Annotations: rdfs:comment "Trata-se de: SUS SUS Sistema  SUS SomaSUS  SUS Tema  SUS Código. --- Consultar o SUS no Volume Sistema Único de Sáude"@pt
-
-Class: abnt:RDC.Código
-	SubClassOf: abnt:RDC.Tema
-	Annotations: rdfs:comment "Trata-se de: SUS SUS Sistema  RDC50  RDC Tema  RDC Código. --- Consultar o SUS no Volume Sistema Único de Sáude"@pt
-
-Class: abnt:CSI.Código
-	SubClassOf: abnt:CSI.Tema
-	Annotations: rdfs:comment "Trata-se de: OmniClass CSI Sistema  CSI Parte  CSI Tema  CSI Código. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+Class: abnt:CódigoRDC
+	SubClassOf: abnt:TemaRDC
+	Annotations: rdfs:comment "Trata-se de: Normativa SUS  RDC50  TemaRDC  CódigoRDC. ---> Consultar  SUS-RDC50"@pt
 
 Class: abnt:Divisão
 	SubClassOf: abnt:Funcional
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Divisão. --- Consultar Sistema de Classificação Construção Omniclass"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Divisão. ---> "@pt
 
 Class: abnt:Setor
 	SubClassOf: abnt:Funcional
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Setor. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Setor. ---> "@pt
 
 Class: abnt:Ambiente
 	SubClassOf: abnt:Funcional
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Ambiente. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Organização  Funcional  Ambiente. ---> "@pt
 
 Class: abnt:Lote
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Lote. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Lote. ---> "@pt
 
 Class: abnt:Prédio
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Prédio. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Prédio. ---> "@pt
 
 Class: abnt:Bloco
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Bloco. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Bloco. ---> "@pt
 
 Class: abnt:Edícula
 	SubClassOf: abnt:Edificável
-	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Edícula. --- -"@pt
+	Annotations: rdfs:comment "Trata-se de: Projeto Limite  De Construção  Edificável  Edícula. ---> "@pt
 
 ObjectProperty: abnt:de.classificação
 	SubPropertyOf: abnt:BIM.Prop
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: de.classificação    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: de.classificação    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:códigos.sus
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: códigos.sus    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: códigos.sus    Domínio: Normativa     Range: SomaSUS"@pt
+
+ObjectProperty: abnt:tem.código-sus
+	SubPropertyOf: abnt:códigos.sus
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.código-sus    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.volume
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.volume    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.volume    Domínio: Normativa     Range: SomaSUS"@pt
 
-ObjectProperty: abnt:tem.unid.funcional
+ObjectProperty: abnt:tem.ufuncional
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.unid.funcional    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.ufuncional    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.setor
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.setor    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.setor    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.ambiente
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.ambiente    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.ambiente    Domínio: Normativa     Range: SomaSUS"@pt
 
 ObjectProperty: abnt:tem.equipamento
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
-	Range: abnt:SUS.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.equipamento    Domínio: SUS     Range: SUS.Sistema"@pt
+	Domain: abnt:Normativa
+	Range: abnt:SomaSUS
+	Annotations: rdfs:comment "Propriedade: tem.equipamento    Domínio: Normativa     Range: SomaSUS"@pt
 
-ObjectProperty: abnt:códigos.abnt
+ObjectProperty: abnt:códigos.nbr
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: códigos.abnt    Domínio: ABNT     Range: NBR.Norma"@pt
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: códigos.nbr    Domínio: Normativa     Range: NormaNBR"@pt
 
 ObjectProperty: abnt:tem.norma
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.norma    Domínio: ABNT     Range: NBR.Norma"@pt
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.norma    Domínio: Normativa     Range: NormaNBR"@pt
 
 ObjectProperty: abnt:tem.parte
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.parte    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema1
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema1    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema2
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema2    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema3
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema3    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema4
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema4    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.tema5
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.tema5    Domínio: ABNT     Range: NBR.Norma"@pt
-
-ObjectProperty: abnt:tem.código
-	SubPropertyOf: abnt:códigos.abnt
-	Characteristics: Functional
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.código    Domínio: ABNT     Range: NBR.Norma"@pt
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.parte    Domínio: Normativa     Range: NormaNBR"@pt
 
 ObjectProperty: abnt:tem.descrição
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.descrição    Domínio: ABNT     Range: NBR.Norma"@pt
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.descrição    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.siscla.equiv
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.siscla.equiv    Domínio: ABNT     Range: NBR.Norma"@pt
+ObjectProperty: abnt:tem.código-nbr
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-nbr    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.versão
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.versão    Domínio: ABNT     Range: NBR.Norma"@pt
+ObjectProperty: abnt:tem.código-n0
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n0    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.etapa
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Norma
-	Annotations: rdfs:comment "Propriedade: tem.etapa    Domínio: ABNT     Range: NBR.Norma"@pt
+ObjectProperty: abnt:tem.código-n1
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n1    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:códigos.omni
-	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: códigos.omni    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n2
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n2    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.sistema
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.sistema    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n3
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n3    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.código
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.código    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n4
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n4    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.tabela
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
-	Range: abnt:CSI.Sistema
-	Annotations: rdfs:comment "Propriedade: tem.tabela    Domínio: OmniClass     Range: CSI.Sistema"@pt
+ObjectProperty: abnt:tem.código-n5
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n5    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:de.estadotemporal
-	SubPropertyOf: abnt:BIM.Prop
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: de.estadotemporal    Domínio: ABNT     Range: NBR.Temporal"@pt
+ObjectProperty: abnt:tem.código-n6
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n6    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:precedências.abnt
-	SubPropertyOf: abnt:de.estadotemporal
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: precedências.abnt    Domínio: ABNT     Range: NBR.Temporal"@pt
+ObjectProperty: abnt:tem.código-n7
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n7    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.anterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: tem.equivalente.sus    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+ObjectProperty: abnt:tem.código-n8
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n8    Domínio: Normativa     Range: NormaNBR"@pt
 
-ObjectProperty: abnt:tem.posterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: tem.versão.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:tem.simultâneo
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: abnt:NBR.Temporal
-	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:de.localização
-	SubPropertyOf: abnt:BIM.Prop
-	Annotations: rdfs:comment "Propriedade: de.localização    Domínio: null     Range: null"@pt
-
-ObjectProperty: abnt:predial
-	SubPropertyOf: abnt:de.localização
-	Annotations: rdfs:comment "Propriedade: predial    Domínio: null     Range: null"@pt
-
-ObjectProperty: abnt:é.setor
-	SubPropertyOf: abnt:predial
-	Annotations: rdfs:comment "Propriedade: tem.equivalente.sus    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:é.ambiente
-	SubPropertyOf: abnt:predial
-	Annotations: rdfs:comment "Propriedade: tem.versão.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
-
-ObjectProperty: abnt:é.dentro.de
-	SubPropertyOf: abnt:predial
-	Characteristics: Transitive
-	Annotations: rdfs:comment "Propriedade: tem.fase.abnt    Domínio: ObjetoBIM     Range: Código.ABNT"@pt
+ObjectProperty: abnt:tem.código-n9
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
+	Range: abnt:NormaNBR
+	Annotations: rdfs:comment "Propriedade: tem.código-n9    Domínio: Normativa     Range: NormaNBR"@pt
 
 DataProperty: abnt:de.classificação
 	SubPropertyOf: abnt:BIM.Data
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  de.classificação"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  de.classificação  >  de.classificação"@pt
 
 DataProperty: abnt:códigos.sus
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  códigos.sus"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  códigos.sus  >  códigos.sus"@pt
 
+DataProperty: abnt:código-sus
+	SubPropertyOf: abnt:códigos.sus
+	Domain: abnt:Normativa
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  código-sus"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-sus  >  código-sus"@pt
+
 DataProperty: abnt:volume
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  volume"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.volume  >  volume"@pt
 
-DataProperty: abnt:unid.funcional
+DataProperty: abnt:ufuncional
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  unid.funcional"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.unid.funcional  >  unid.funcional"@pt
+	Annotations: rdfs:comment "Valor:  ufuncional"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.ufuncional  >  ufuncional"@pt
 
 DataProperty: abnt:setor
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  setor"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.setor  >  setor"@pt
 
 DataProperty: abnt:ambiente
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  ambiente"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.ambiente  >  ambiente"@pt
 
 DataProperty: abnt:equipamento
 	SubPropertyOf: abnt:códigos.sus
-	Domain: abnt:SUS
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  equipamento"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.equipamento  >  equipamento"@pt
 
-DataProperty: abnt:códigos.abnt
+DataProperty: abnt:códigos.nbr
 	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:ABNT
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  códigos.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  códigos.abnt  >  códigos.abnt"@pt
+	Annotations: rdfs:comment "Valor:  códigos.nbr"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  códigos.nbr  >  códigos.nbr"@pt
 
 DataProperty: abnt:norma
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  norma"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.norma  >  norma"@pt
 
 DataProperty: abnt:parte
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  parte"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.parte  >  parte"@pt
 
-DataProperty: abnt:tema
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema  >  tema"@pt
-
-DataProperty: abnt:tema1
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema1"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema1  >  tema1"@pt
-
-DataProperty: abnt:tema2
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema2"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema2  >  tema2"@pt
-
-DataProperty: abnt:tema3
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema3"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema3  >  tema3"@pt
-
-DataProperty: abnt:tema4
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema4"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema4  >  tema4"@pt
-
-DataProperty: abnt:tema5
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tema5"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tema5  >  tema5"@pt
-
-DataProperty: abnt:código
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  código"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código  >  código"@pt
-
 DataProperty: abnt:descrição
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
 	Annotations: rdfs:comment "Valor:  descrição"@pt
 	Annotations: rdfs:label   "Refere-se a propriedade  tem.descrição  >  descrição"@pt
 
-DataProperty: abnt:siscla.equiv
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-nbr
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  siscla.equiv"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.siscla.equiv  >  siscla.equiv"@pt
+	Annotations: rdfs:comment "Valor:  código-nbr"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-nbr  >  código-nbr"@pt
 
-DataProperty: abnt:versão
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n0
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  versão"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão  >  versão"@pt
+	Annotations: rdfs:comment "Valor:  código-n0"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n0  >  código-n0"@pt
 
-DataProperty: abnt:etapa
-	SubPropertyOf: abnt:códigos.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n1
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  etapa"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.etapa  >  etapa"@pt
+	Annotations: rdfs:comment "Valor:  código-n1"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n1  >  código-n1"@pt
 
-DataProperty: abnt:códigos.omni
-	SubPropertyOf: abnt:de.classificação
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n2
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  códigos.omni"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  códigos.omni  >  códigos.omni"@pt
+	Annotations: rdfs:comment "Valor:  código-n2"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n2  >  código-n2"@pt
 
-DataProperty: abnt:sistema
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n3
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  sistema"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.sistema  >  sistema"@pt
+	Annotations: rdfs:comment "Valor:  código-n3"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n3  >  código-n3"@pt
 
-DataProperty: abnt:código
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n4
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  código"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.código  >  código"@pt
+	Annotations: rdfs:comment "Valor:  código-n4"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n4  >  código-n4"@pt
 
-DataProperty: abnt:tabela
-	SubPropertyOf: abnt:códigos.omni
-	Domain: abnt:OmniClass
+DataProperty: abnt:código-n5
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  tabela"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.tabela  >  tabela"@pt
+	Annotations: rdfs:comment "Valor:  código-n5"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n5  >  código-n5"@pt
 
-DataProperty: abnt:de.estadotemporal
-	SubPropertyOf: abnt:BIM.Data
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n6
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  de.estadotemporal"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  de.estadotemporal  >  de.estadotemporal"@pt
+	Annotations: rdfs:comment "Valor:  código-n6"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n6  >  código-n6"@pt
 
-DataProperty: abnt:precedências.abnt
-	SubPropertyOf: abnt:de.estadotemporal
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n7
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  precedências.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  precedências.abnt  >  precedências.abnt"@pt
+	Annotations: rdfs:comment "Valor:  código-n7"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n7  >  código-n7"@pt
 
-DataProperty: abnt:anterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n8
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  equivalente.sus"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.equivalente.sus  >  equivalente.sus"@pt
+	Annotations: rdfs:comment "Valor:  código-n8"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n8  >  código-n8"@pt
 
-DataProperty: abnt:posterior
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
+DataProperty: abnt:código-n9
+	SubPropertyOf: abnt:códigos.nbr
+	Domain: abnt:Normativa
 	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  versão.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão.abnt  >  versão.abnt"@pt
+	Annotations: rdfs:comment "Valor:  código-n9"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.código-n9  >  código-n9"@pt
 
-DataProperty: abnt:simultâneo
-	SubPropertyOf: abnt:precedências.abnt
-	Domain: abnt:ABNT
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
-
-DataProperty: abnt:de.localização
-	SubPropertyOf: abnt:BIM.Data
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  de.localização"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  de.localização  >  de.localização"@pt
-
-DataProperty: abnt:predial
-	SubPropertyOf: abnt:de.localização
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  predial"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  predial  >  predial"@pt
-
-DataProperty: abnt:setor
-	SubPropertyOf: abnt:predial
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  equivalente.sus"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.equivalente.sus  >  equivalente.sus"@pt
-
-DataProperty: abnt:ambiente
-	SubPropertyOf: abnt:predial
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  versão.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.versão.abnt  >  versão.abnt"@pt
-
-DataProperty: abnt:dentro.de
-	SubPropertyOf: abnt:predial
-	Range: xsd:string
-	Annotations: rdfs:comment "Valor:  fase.abnt"@pt
-	Annotations: rdfs:label   "Refere-se a propriedade  tem.fase.abnt  >  fase.abnt"@pt
-
-Individual: abnt:Omni.22
-	Types: abnt:CSI.Parte
-	Annotations: rdfs:comment "Omni.22"@pt
-	Facts: abnt:sistema "Omniclass"
-	Facts: abnt:tabela "22"
-	Facts: abnt:descrição "Sistema de Classificação OmniClass - Tabela 22"
-
-Individual: abnt:NBR.15965
-	Types: abnt:NBR.Norma
-	Annotations: rdfs:comment "NBR.15965"@pt
-	Facts: abnt:norma "NBR.15965"
+Individual: abnt:3R.NBR-15965
+	Types: abnt:NormaNBR
+	Annotations: rdfs:comment "3R.NBR-15965"@pt
 	Facts: abnt:descrição "Norma Brasileira para classificação de objetos da construção"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:norma "NBR-15965"
 
-Individual: abnt:Parte.5
-	Types: abnt:NBR.Parte
-	Annotations: rdfs:comment "Parte.5"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:parte "Parte 5"
+Individual: abnt:3R.Parte-5
+	Types: abnt:NormaNBR
+	Annotations: rdfs:comment "3R.Parte-5"@pt
 	Facts: abnt:descrição "Parte 5 - Publicada em 2022"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:parte "Parte-5"
 
-Individual: abnt:3R
-	Types: abnt:NBR.Tema
-	Annotations: rdfs:comment "3R"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:siscla.equiv "OmniClass Tabela 22"
-	Facts: abnt:descrição "Tema 3R - Resultados construtivos"
+Individual: abnt:3R.00
+	Types: abnt:CódigoNBR
+	Annotations: rdfs:comment "3R.00"@pt
+	Facts: abnt:descrição "Tema 3R - Resultados construtivos - Derivada de Omniclass Tabela 22"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "00"
 
 Individual: abnt:3R.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Resultados dos trabalhos de planejamento - projeto e gestão"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
 
 Individual: abnt:3R.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.02"
 	Facts: abnt:descrição "Resultados dos trabalhos de planejamento"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "02"
 
 Individual: abnt:3R.02.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.02"
 	Facts: abnt:descrição "planejado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.02"
 	Facts: abnt:descrição "delineado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.02"
 	Facts: abnt:descrição "preconcebido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.06"
 	Facts: abnt:descrição "Resultados dos trabalhos de levantamento"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "06"
 
 Individual: abnt:3R.02.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.06"
 	Facts: abnt:descrição "levantado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.06"
 	Facts: abnt:descrição "pesquisado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.06.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.06.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.06"
 	Facts: abnt:descrição "sondado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.06.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.06.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.06"
 	Facts: abnt:descrição "consultado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.10"
 	Facts: abnt:descrição "Resultados dos trabalhos de análise"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:3R.02.10.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.10.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.10"
 	Facts: abnt:descrição "identificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.10.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.10.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.10"
 	Facts: abnt:descrição "analisado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.10.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.10.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.10"
 	Facts: abnt:descrição "interpretado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.10.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.10.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.10"
 	Facts: abnt:descrição "diagnosticado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.10.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.10.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.10"
 	Facts: abnt:descrição "simulado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.02.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "Resultados dos trabalhos de desenvolvimento"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
 
 Individual: abnt:3R.02.14.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "proposto (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.14.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "concebido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.14.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "projetado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.14.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "dimensionado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.14.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "detalhado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.02.14.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "prototipado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.02.14.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.14.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.14"
 	Facts: abnt:descrição "desenvolvido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.02.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "Resultados dos trabalhos de gestão"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
 
 Individual: abnt:3R.02.18.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "contratado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.18.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "conduzido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.18.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "dirigido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.18.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "gerido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.18.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "coordenado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.02.18.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "compatibilizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.02.18.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "comprado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.02.18.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "organizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.02.18.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "estabelecido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.02.18.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "mobilizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.02.18.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.18.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.18"
 	Facts: abnt:descrição "desmobilizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.02.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "Resultados dos trabalhos de documentação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
 
 Individual: abnt:3R.02.22.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "fotografado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.22.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "filmado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.22.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "escaneado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.22.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "descrito (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.22.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "relatado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.02.22.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "esquematizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.02.22.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "roteirizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.02.22.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "tabelado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.02.22.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "listado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.02.22.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "mapeado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.02.22.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "desenhado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.02.22.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "modelado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.02.22.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "renderizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "50"
 
 Individual: abnt:3R.02.22.54
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.54"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "diagramado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "54"
 
 Individual: abnt:3R.02.22.58
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.58"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "especificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "58"
 
 Individual: abnt:3R.02.22.62
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.62"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "documentado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "62"
 
 Individual: abnt:3R.02.22.66
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.22.66"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.22"
 	Facts: abnt:descrição "memoriado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "66"
 
 Individual: abnt:3R.02.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.26"
 	Facts: abnt:descrição "Resultados dos trabalhos de comunicação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "26"
 
 Individual: abnt:3R.02.26.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.26.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.26"
 	Facts: abnt:descrição "protocolado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.26.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.26.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.26"
 	Facts: abnt:descrição "publicado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.26.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.26.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.26"
 	Facts: abnt:descrição "direcionado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.26.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.26.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.26"
 	Facts: abnt:descrição "comunicado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.26.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.26.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.26"
 	Facts: abnt:descrição "notificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.02.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.30"
 	Facts: abnt:descrição "Resultados dos trabalhos de classificação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "30"
 
 Individual: abnt:3R.02.30.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.30.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.30"
 	Facts: abnt:descrição "hierarquizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.30.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.30.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.30"
 	Facts: abnt:descrição "associado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.30.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.30.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.30"
 	Facts: abnt:descrição "agregado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.30.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.30.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.30"
 	Facts: abnt:descrição "composto (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "Resultados dos trabalhos de quantificação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
 
 Individual: abnt:3R.02.34.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "calculado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.34.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "somado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "02"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.02.34.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "subtraído (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "02"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:3R.02.34.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "fatorado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "02"
+	Facts: abnt:código-n4 "10"
 
 Individual: abnt:3R.02.34.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "quantificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.34.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.34.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.34"
 	Facts: abnt:descrição "orçado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "Resultados dos trabalhos de medição - monitoramento e controle"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
 
 Individual: abnt:3R.02.38.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "medido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.02.38.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "testado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.02.38.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "controlado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.02.38.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "monitorado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.02.38.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "periciado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.02.38.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "comissionado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.02.38.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "verificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.02.38.26.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.26.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "vistoriado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "26"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.02.38.26.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.26.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "auditado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "26"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:3R.02.38.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "corrigido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.02.38.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.02.38.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.02"
-	Facts: abnt:tema2 "3R.02.38"
 	Facts: abnt:descrição "validado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "02"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Resultados dos trabalhos de logística"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
 
 Individual: abnt:3R.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "Resultados dos trabalhos de transporte"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
 
 Individual: abnt:3R.06.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "transportado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.06.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "içado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.06.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "carregado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.06.02.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "descarregado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.06.02.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "manobrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.06.02.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.02.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.02"
 	Facts: abnt:descrição "estacionado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "Resultados dos trabalhos de armazenamento"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
 
 Individual: abnt:3R.06.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "fornecido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.06.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "abastecido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.06.06.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "etiquetado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.06.06.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "ensacado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.06.06.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "encaixotado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.06.06.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "acondicionado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.06.06.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "empilhado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.06.06.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "guardado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.06.06.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "armazenado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.06.06.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.06.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.06"
 	Facts: abnt:descrição "hospedado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.06.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "Resultados dos trabalhos de descarte"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:3R.06.10.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "coletado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.06.10.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "destruído (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.06.10.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "triturado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.06.10.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "queimado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.06.10.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "apagado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.06.10.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.06.10.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.06"
-	Facts: abnt:tema2 "3R.06.10"
 	Facts: abnt:descrição "formatado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "06"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Resultados dos trabalhos de transformação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
 
 Individual: abnt:3R.10.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "Resultados dos trabalhos de divisão de um produto (separação. corte etc.)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
 
 Individual: abnt:3R.10.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "cortado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "recortado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "serrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.02.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "chanfrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.02.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "aparelhado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.02.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "pontaletado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.02.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "rasgado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.02.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "quebrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.02.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "britado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.02.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "fissurado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.02.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "lascado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.02.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.02.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.02"
 	Facts: abnt:descrição "dosado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "Resultados dos trabalhos da retirada de partes de um produto"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
 
 Individual: abnt:3R.10.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "ranhurado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "raspado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.06.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "desgastado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.06.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "arranhado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.06.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "fresado {a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.06.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "frisado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.06.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "escarificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.06.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "furado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.06.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "perfurado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.06.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "lixado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.06.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "desempenado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.06.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "usinado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.06.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "podado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "50"
 
 Individual: abnt:3R.10.06.54
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.06.54"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.06"
 	Facts: abnt:descrição "escavado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "54"
 
 Individual: abnt:3R.10.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "Resultados dos trabalhos do acréscimo de partes a um produto"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:3R.10.10.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "enchido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.10.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "preenchido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.10.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "acamurçado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.10.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "umedecido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.10.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "aterrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.10.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.10.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.10"
 	Facts: abnt:descrição "reaterrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "Resultados dos trabalhos de alteração na forma (deformação) de um produto sem retirada ou acréscimo de partes (dobra - torção - compressão - extensão)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
 
 Individual: abnt:3R.10.14.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "dobrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.14.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "torcido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.14.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "enrolado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.14.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "comprimido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.14.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "compactado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.14.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "adensado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.14.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "alargado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.14.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "expandido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.14.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "extrudado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.14.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "protendido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.14.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "canelado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.14.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.14.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.14"
 	Facts: abnt:descrição "temperado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "14"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "Resultados dos trabalhos de conexão de produtos (fácil desconexão - sem danos aos produtos)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
 
 Individual: abnt:3R.10.18.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "conectado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.18.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "amarrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.18.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "parafusado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.18.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "rosqueado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.18.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "engastado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.18.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "encunhado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.18.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "enterrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.18.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.18.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.18"
 	Facts: abnt:descrição "plantado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "18"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "Resultados dos trabalhos de união de produtos (na desunião - os produtos são danificados - porém não totalmente destruídos)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
 
 Individual: abnt:3R.10.22.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "fixado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.22.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "aderido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.22.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "colado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.22.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "soldado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.22.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "chumbado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.22.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "pregado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.22.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "grampeado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.22.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.22.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.22"
 	Facts: abnt:descrição "crimpado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "22"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "Resultados dos trabalhos da mistura de produtos (não há como separar os produtos sem que mais de um deles seja destruído)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
 
 Individual: abnt:3R.10.26.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "moldado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.26.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "pré-moldado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.26.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "grauteado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.26.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "concretado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.26.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "pavimentado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.26.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "cimentado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.26.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "revolvido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.26.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "amassado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.26.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "misturado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.26.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.26.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.26"
 	Facts: abnt:descrição "mesclado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "26"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "Resultados dos trabalhos do revestimento de produtos (não há como separar os produtos sem que pelo menos um deles seja destruído)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
 
 Individual: abnt:3R.10.30.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "emboçado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.30.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "chapiscado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.30.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "estucado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.30.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "jateado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.30.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "lançado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.30.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "pintado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.30.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "pulverizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.30.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "caiado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.30.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "plastificado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.30.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "resinado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.30.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "impermeabilizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.30.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "laminado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.30.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "selado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "50"
 
 Individual: abnt:3R.10.30.54
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.54"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "polido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "54"
 
 Individual: abnt:3R.10.30.58
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.58"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "galvanizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "58"
 
 Individual: abnt:3R.10.30.58.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.58.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "cromado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "58"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.10.30.58.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.58.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "zincado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "58"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:3R.10.30.62
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.30.62"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.30"
 	Facts: abnt:descrição "oxidado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "30"
+	Facts: abnt:código-n3 "62"
 
 Individual: abnt:3R.10.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "Resultados dos trabalhos da montagem de produtos (associação de produtos que pode ocorrer depois dos resultados de união - conexão - alteração ou divisão)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
 
 Individual: abnt:3R.10.34.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "fabricado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.34.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "pré-fabricado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.34.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "instalado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.34.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "montado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.34.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "formado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.34.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "emoldurado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.34.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "apoiado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.34.26.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.26.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "escorado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "26"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.10.34.26.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.26.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "sobreposto (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "26"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:3R.10.34.26.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.26.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "assentado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "26"
+	Facts: abnt:código-n4 "10"
 
 Individual: abnt:3R.10.34.26.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.26.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "reassentado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "26"
+	Facts: abnt:código-n4 "14"
 
 Individual: abnt:3R.10.34.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "colocado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.34.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "combinado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.34.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "coberto (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.34.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "armado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.34.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "aramado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.34.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "travado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "50"
 
 Individual: abnt:3R.10.34.50.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.50.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "contraventado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "50"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.10.34.54
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.54"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "estaqueado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "54"
 
 Individual: abnt:3R.10.34.54.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.54.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "cravado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "54"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.10.34.58
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.58"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "embutido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "58"
 
 Individual: abnt:3R.10.34.62
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.62"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "encaixado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "62"
 
 Individual: abnt:3R.10.34.66
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.66"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "acoplado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "66"
 
 Individual: abnt:3R.10.34.70
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.70"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "contido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "70"
 
 Individual: abnt:3R.10.34.70.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.70.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "cercado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "70"
+	Facts: abnt:código-n4 "02"
 
 Individual: abnt:3R.10.34.70.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.34.70.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.34"
 	Facts: abnt:descrição "vedado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "34"
+	Facts: abnt:código-n3 "70"
+	Facts: abnt:código-n4 "06"
 
 Individual: abnt:3R.10.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "Resultados dos trabalhos da separação de produtos"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
 
 Individual: abnt:3R.10.38.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "destilado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.38.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "vaporizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.38.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "liquefeito (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.38.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "filtrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.38.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "centrifugado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.38.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "dissolvido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.38.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "desmagnetizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.38.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "soprado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.38.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "peneirado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.38.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "levigado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.38.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "flotado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.38.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "floculado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.38.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "catado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "50"
 
 Individual: abnt:3R.10.38.54
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.54"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "isolado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "54"
 
 Individual: abnt:3R.10.38.58
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.58"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "drenado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "58"
 
 Individual: abnt:3R.10.38.62
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.38.62"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.38"
 	Facts: abnt:descrição "esgotado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "38"
+	Facts: abnt:código-n3 "62"
 
 Individual: abnt:3R.10.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "Resultados dos trabalhos da desmontagem de produtos"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
 
 Individual: abnt:3R.10.42.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desmontado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.42.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desformado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.42.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "removido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.42.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "retirado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "14"
 
 Individual: abnt:3R.10.42.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "descolado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "18"
 
 Individual: abnt:3R.10.42.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desgrampeado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "22"
 
 Individual: abnt:3R.10.42.26
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.26"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "despregado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "26"
 
 Individual: abnt:3R.10.42.30
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.30"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desaparafusado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "30"
 
 Individual: abnt:3R.10.42.34
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.34"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desconectado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "34"
 
 Individual: abnt:3R.10.42.38
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.38"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desamarrado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "38"
 
 Individual: abnt:3R.10.42.42
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.42"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desrosqueado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "42"
 
 Individual: abnt:3R.10.42.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.42.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.42"
 	Facts: abnt:descrição "desengastado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "42"
+	Facts: abnt:código-n3 "46"
 
 Individual: abnt:3R.10.46
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.46"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.46"
 	Facts: abnt:descrição "Resultados dos trabalhos da descaracterização de produtos"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "46"
 
 Individual: abnt:3R.10.46.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.46.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.46"
 	Facts: abnt:descrição "demolido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "46"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.46.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.46.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.46"
 	Facts: abnt:descrição "desconstruído (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "46"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.46.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.46.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.46"
 	Facts: abnt:descrição "arrasado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "46"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.10.50
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.50"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.50"
 	Facts: abnt:descrição "Resultados dos trabalhos de reaproveitamento de produtos"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "50"
 
 Individual: abnt:3R.10.50.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.50.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.50"
 	Facts: abnt:descrição "reaproveitado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.10.50.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.50.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.50"
 	Facts: abnt:descrição "recuperado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.10.50.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.10.50.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.10"
-	Facts: abnt:tema2 "3R.10.50"
 	Facts: abnt:descrição "reciclado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "10"
+	Facts: abnt:código-n2 "50"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.14
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Resultados dos trabalhos de operação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
 
 Individual: abnt:3R.14.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.02"
 	Facts: abnt:descrição "Resultados dos trabalhos de acionamento de equipamentos"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "02"
 
 Individual: abnt:3R.14.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.02"
 	Facts: abnt:descrição "acionado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.14.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.02"
 	Facts: abnt:descrição "iniciado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.14.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.02"
 	Facts: abnt:descrição "ligado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.14.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.06"
 	Facts: abnt:descrição "Resultados dos trabalhos de desligamento de equipamentos"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "06"
 
 Individual: abnt:3R.14.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.06"
 	Facts: abnt:descrição "desligado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.14.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.06"
 	Facts: abnt:descrição "desativado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.14.06.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.14.06.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.14"
-	Facts: abnt:tema2 "3R.14.06"
 	Facts: abnt:descrição "inativo (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "14"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.18
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Resultados dos trabalhos de manutenção"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
 
 Individual: abnt:3R.18.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "3R.18.02"
 	Facts: abnt:descrição "Resultados dos trabalhos de substituição"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.18.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "3R.18.02"
 	Facts: abnt:descrição "substituído (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.18.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "3R.18.02"
 	Facts: abnt:descrição "recolocado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
+	Facts: abnt:código-n2 "02"
 
 Individual: abnt:3R.18.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "3R.18.06"
 	Facts: abnt:descrição "Resultados dos trabalhos de reparo"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
+	Facts: abnt:código-n2 "06"
 
 Individual: abnt:3R.18.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "3R.18.06"
 	Facts: abnt:descrição "reparado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.18.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.18.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.18"
-	Facts: abnt:tema2 "3R.18.06"
 	Facts: abnt:descrição "reconstruído (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "18"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.22
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "_"
 	Facts: abnt:descrição "Resultados dos trabalhos de apoio"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
 
 Individual: abnt:3R.22.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.02"
 	Facts: abnt:descrição "Resultados dos trabalhos de limpeza"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "02"
 
 Individual: abnt:3R.22.02.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.02.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.02"
 	Facts: abnt:descrição "limpo (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.22.02.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.02.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.02"
 	Facts: abnt:descrição "lavado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.22.02.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.02.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.02"
 	Facts: abnt:descrição "varrido (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "02"
+	Facts: abnt:código-n3 "10"
 
 Individual: abnt:3R.22.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.06"
 	Facts: abnt:descrição "Resultados dos trabalhos de treinamento e capacitação"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "06"
 
 Individual: abnt:3R.22.06.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.06.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.06"
 	Facts: abnt:descrição "treinado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.22.06.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.06.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.06"
 	Facts: abnt:descrição "capacitado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "06"
+	Facts: abnt:código-n3 "06"
 
 Individual: abnt:3R.22.10
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.10"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.10"
 	Facts: abnt:descrição "Resultados dos trabalhos de segurança e saúde"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "10"
 
 Individual: abnt:3R.22.10.02
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.10.02"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.10"
 	Facts: abnt:descrição "sinalizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "02"
 
 Individual: abnt:3R.22.10.06
-	Types: abnt:NBR.Código
+	Types: abnt:CódigoNBR
 	Annotations: rdfs:comment "3R.22.10.06"@pt
-	Facts: abnt:norma "NBR.15965"
-	Facts: abnt:tema "3R"
-	Facts: abnt:tema1 "3R.22"
-	Facts: abnt:tema2 "3R.22.10"
 	Facts: abnt:descrição "imunizado (a)"
+	Facts: abnt:código-n0 "3R"
+	Facts: abnt:código-n1 "22"
+	Facts: abnt:código-n2 "10"
+	Facts: abnt:código-n3 "06"
