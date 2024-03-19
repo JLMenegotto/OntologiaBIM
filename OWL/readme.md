@@ -3,7 +3,7 @@
 
 O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
 
-## Exemplo de filtro SPARQL que pode ser aplicado
+## Exemplo 1: filtro SPARQL
   
         1.    Retorna uma lista de materiais n1= 20 , n2= 10 e ordenada com as colunas n1, n2, descrição do material
         2.
@@ -16,7 +16,7 @@ O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fa
         9.        ?obj abnt:descrição ?q .
         10.    }
 
-## Exemplo de filtro SPARQL 
+## Exemplo 2: filtro SPARQL 
 
         1.    Retorna só as instâncias que tenham códigos do SomaSUS
         2.
@@ -24,5 +24,5 @@ O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fa
         4.    WHERE
         5.     {   
         6.            ?ind rdf:type abnt:CódigoSUS .
-        10.    }
+        7.    }
       
