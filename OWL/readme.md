@@ -33,14 +33,15 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplo 2: filtro SPARQL 
 
-        1.    Retorna só as instâncias que tenham códigos do SomaSUS com a sua descrição
+        1.    Retorna só as instâncias que tenham códigos do SomaSUS e descrição contendo "Sala" 
         2.
         3.    SELECT ?ind ?d
         4.    WHERE
         5.    {   
         6.            ?ind rdf:type abnt:CódigoSUS .
         7.            ?ind abnt:descrição ?d .
-        8.    }
+        8.            FILTER (REGEX (STR (?ind) , "Sala"))
+        9.    }
 
 ## Exemplo 3: filtro SPARQL 
 
