@@ -3,7 +3,8 @@
 
 O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
 No editor Protégé, pode aplicar filtros com a linguagem SPARQL, que permite realizar consultas em estruturas RDF (Resource Description Framework).
-Antes de efetuar a consulta deve ativar o Reasoner HermiT. 
+Antes de efetuar a consulta deve ativar o Reasoner HermiT.
+Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplo 1: filtro SPARQL
   
