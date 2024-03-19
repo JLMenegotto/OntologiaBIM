@@ -16,3 +16,13 @@ O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fa
         9.        ?obj abnt:descrição ?q .
         10.    }
 
+## Exemplo de filtro SPARQL 
+
+        1.    Retorna só as instâncias que tenham códigos do SomaSUS
+        2.
+        3.    SELECT ?ind
+        4.    WHERE
+        5.     {   
+        6.            ?ind rdf:type abnt:CódigoSUS .
+        10.    }
+      
