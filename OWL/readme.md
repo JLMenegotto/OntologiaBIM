@@ -20,7 +20,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplo 1: filtro SPARQL
   
-        1.    Retorna uma lista de materiais n1= 20 , n2= 10 e ordenada com as colunas n1, n2, descrição do material
+        1.    A variável ?obj retorna uma lista de materiais n1= 20 , n2= 10 nas colunas n1, n2 com a descrição do material (variáveis ?y ?p ?q)
         2.
         3.    SELECT ?obj ?y ?p ?q
         4.    WHERE
@@ -33,7 +33,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplo 2: filtro SPARQL 
 
-        1.    Retorna só as instâncias que tenham códigos do SomaSUS e descrição contendo "Sala" 
+        1.    A variável ?ind retorna só as instâncias que tenham códigos do SomaSUS e descrição da variável ?d contendo "Sala" 
         2.
         3.    SELECT ?ind ?d
         4.    WHERE
@@ -45,10 +45,24 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplo 3: filtro SPARQL 
 
-        1.    Retorna as subpropriedades de dados usadas em BIM.Data
+        1.    A variável ?d retorna as subpropriedades de dados usadas em BIM.Data
         2.
         3.    SELECT ?d
         4.    WHERE
         5.    {   
         6.            ?d rdfs:subPropertyOf abnt:BIM.Data .
         7.    }
+
+## Exemplo 4: filtro SPARQL 
+
+        1.    A variável ?x retorna as instancias das Unidades funcionais do SUS 04 e as ordena
+        2.
+        3.    SELECT ?x
+        4.    WHERE
+        5.    {   
+        6.            ?x rdf:type abnt:CódigoSUS .
+        7.            FILTER (REGEX (STR (?x) , "UFU.04"))
+        7.    }
+        8.    ORDER BY ?x
+
+        
