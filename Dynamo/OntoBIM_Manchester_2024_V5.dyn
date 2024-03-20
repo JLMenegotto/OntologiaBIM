@@ -35,46 +35,6 @@
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "6093f5289abd4f81857dc1b82c8622a9",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def LerExcel ( Arq , Tab )\n{\n   dadosIn = DSOffice.Data.ImportExcel(Arq, Tab, true, true);\n   valores = List.DropItems( dadosIn , 1    );\n   dadosTr = List.Transpose( valores        );\n   dadosOu = List.Clean    ( dadosTr , true );\n   return dadosOu;\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "a5cd2445460940b3a113f42593192635",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def Unicos ( S , n)\n{\n    LF  = List.Flatten     ( S , n);\n    LU  = List.UniqueItems ( LF   );\n    ST  = String.Concat    ( LU   );\n    return = ST;\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "e3863b4b3d5b42b99dc323b9c5a65f42",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def EqVt ( fx,  txt , AXI )\n{\n    Axi = Nula ( txt , AXI );\n    s   = String.Split( Axi , \" \");\n    str = String.Contains (s, \"Equiv\",0)? s+\" \" :\n          String.Contains (s, \"Inver\",0)? s+\" \" :\n          String.Contains (s, \"xsd:\" ,0)? s+\" \" :\n          (s == \"some\" || s == \"only\"    ||\n           s == \"not\"  || s == \"exactly\" ||\n           s == \"and\"  || s == \"or\"      ||\n           s == \"(\"    || s == \")\"       ||\n           s == \"min\"  || s == \"max\"     ||\n           s == \"10\"   || s == \"25\"      ||\n           s == \",\" )      ? \" \"+s+\" \":\n           List.Count(s)>0       ? \" \"+fx+s :\"\";\n    return = String.Concat( [ str ] );\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "92452a31d86a4c4db588242014c095c3",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def Nula ( txt , LIS )\n{\n  celu   = LIS;\n  abce   = txt + celu;\n  cond   = String.Contains(celu,\"null\");\n  final  = cond == true ? \"\" : abce;\n  return = final;\n};"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "Id": "25cc836f222f4ff9abb9fbbbe151c960",
       "NodeType": "FunctionNode",
@@ -3013,8 +2973,8 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows you to select a file on the system and returns its file path",
-      "HintPath": "C:\\ABNT_Normas\\ABNT\\Ontologia_NBR_15965_Parte_2_0M_Nova.xlsx",
-      "InputValue": ".\\Ontologia_NBR_15965_Parte_2_0M_Nova.xlsx"
+      "HintPath": "C:\\ABNT_Normas\\ABNT\\Ontologia_NBR_15965_Parte_7_5I_Nova.xlsx",
+      "InputValue": ".\\Ontologia_NBR_15965_Parte_7_5I_Nova.xlsx"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
@@ -3067,29 +3027,9 @@
       "Description": "Creates a file object from the given path"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "607f23033b8341c69673c1264cd58fb4",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def Descreve ( a , b)\n{\n  r = \"\\n\\tFacts: abnt:\" + a + \" \" + b;\n  return = r;\n};"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "Id": "d6586c86bd604269bad8069a6aa81cb7",
-      "NodeType": "CodeBlockNode",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
-      "Code": "def Tematica ( a )\n{\n  i = [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"];\n  n = \"\\\"\" + String.Split( a , \".\" )+ \"\\\"\";\n  t = i+\" \"+n;\n  f = String.Contains(n, \"NBR\", true)? \"abnt:norma\"      +\" \"+n:\n      String.Contains(n, \"Par\", true)? \"abnt:parte\"      +\" \"+n:\n      String.Length(n) == 3?           \"abnt:código-sus\" +\" \"+n:\n                                       \"abnt:código-n\"   + t;\n\n  r = \"\\n\\tFacts: \" + f;\n  return = String.Concat(r);\n};"
-    },
-    {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 363.2,
-      "WatchHeight": 330.4,
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
       "Id": "46008bc8b6d949f5b3ee8a465d8be989",
       "NodeType": "ExtensionNode",
       "Inputs": [
@@ -3116,6 +3056,66 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "d6586c86bd604269bad8069a6aa81cb7",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def Tematica ( o )\n{\n   i = [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"];\n   n = \"\\\"\" + String.Split( o , \".\" )+ \"\\\"\";\n   t = i+\" \"+n;\n   f0 = String.Contains(n, \"NBR\", true)? \"abnt:norma\"     +\" \"+n:\n        String.Contains(n, \"Par\", true)? \"abnt:parte\"     +\" \"+n:\n        String.Length(n) == 3?           \"abnt:código-sus\"+\" \"+n:\n                                         \"abnt:código-n\"  + t;\n\n   //sus = \"\\\"\" + \"SomaSUS\" + \"\\\"\";\n   //a   = String.Contains(n, \"AMB\", true)? \"abnt:ambiente \"    + sus :\"\";\n   //e   = String.Contains(n, \"EQU\", true)? \"abnt:equipamento \" + sus :\"\";\n   //s   = String.Contains(n, \"SET\", true)? \"abnt:setor \"       + sus :\"\";\n   //u   = String.Contains(n, \"UFU\", true)? \"abnt:ufuncional \"  + sus :\"\";\n   //v   = String.Contains(n, \"VOL\", true)? \"abnt:volume \"      + sus :\"\";\n\n   f1  = f0 != \"\"? \"\\n\\tFacts: \" + f0 : \"\";\n   //f2  = a  != \"\"? \"\\n\\tFacts: \" + a  : \"\";\n   //f3  = e  != \"\"? \"\\n\\tFacts: \" + e  : \"\";\n   //f4  = s  != \"\"? \"\\n\\tFacts: \" + s  : \"\";\n   //f5  = u  != \"\"? \"\\n\\tFacts: \" + u  : \"\";\n   //f6  = v  != \"\"? \"\\n\\tFacts: \" + v  : \"\";\n\n   return = String.Concat( f1 );\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "607f23033b8341c69673c1264cd58fb4",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def Descreve ( a , b)\n{\n  r = \"\\n\\tFacts: abnt:\" + a + \" \" + b;\n  return = r;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "6093f5289abd4f81857dc1b82c8622a9",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def LerExcel ( Arq , Tab )\n{\n   dadosIn = DSOffice.Data.ImportExcel(Arq, Tab, true, true);\n   valores = List.DropItems( dadosIn , 1    );\n   dadosTr = List.Transpose( valores        );\n   dadosOu = List.Clean    ( dadosTr , true );\n   return dadosOu;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "a5cd2445460940b3a113f42593192635",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def Unicos ( S , n)\n{\n    LF  = List.Flatten     ( S , n);\n    LU  = List.UniqueItems ( LF   );\n    ST  = String.Concat    ( LU   );\n    return = ST;\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "e3863b4b3d5b42b99dc323b9c5a65f42",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def EqVt ( fx,  txt , AXI )\n{\n    Axi = Nula ( txt , AXI );\n    s   = String.Split( Axi , \" \");\n    str = String.Contains (s, \"Equiv\",0)? s+\" \" :\n          String.Contains (s, \"Inver\",0)? s+\" \" :\n          String.Contains (s, \"xsd:\" ,0)? s+\" \" :\n          (s == \"some\" || s == \"only\"    ||\n           s == \"not\"  || s == \"exactly\" ||\n           s == \"and\"  || s == \"or\"      ||\n           s == \"(\"    || s == \")\"       ||\n           s == \"min\"  || s == \"max\"     ||\n           s == \"10\"   || s == \"25\"      ||\n           s == \",\" )      ? \" \"+s+\" \":\n           List.Count(s)>0       ? \" \"+fx+s :\"\";\n    return = String.Concat( [ str ] );\n};"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "92452a31d86a4c4db588242014c095c3",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "def Nula ( txt , LIS )\n{\n  celu   = LIS;\n  abce   = txt + celu;\n  cond   = String.Contains(celu,\"null\");\n  final  = cond == true ? \"\" : abce;\n  return = final;\n};"
     }
   ],
   "Connectors": [
@@ -3435,14 +3435,14 @@
   "Dependencies": [],
   "NodeLibraryDependencies": [
     {
-      "Name": "OntoBIM_Sistema.de.Classificação.Construção_Parte_2_0M.OWL",
+      "Name": "OntoBIM_Sistema.de.Classificação.Construção_Parte_7_5I.OWL",
       "ReferenceType": "External",
       "Nodes": [
         "a5a6810bae29487189bc32f1af60699f"
       ]
     },
     {
-      "Name": "Ontologia_NBR_15965_Parte_2_0M_Nova.xlsx",
+      "Name": "Ontologia_NBR_15965_Parte_7_5I_Nova.xlsx",
       "ReferenceType": "External",
       "Nodes": [
         "b5044fd4bee74b49b829e13b744aaf19"
@@ -3504,54 +3504,14 @@
     "ConnectorPins": [],
     "NodeViews": [
       {
-        "Id": "6093f5289abd4f81857dc1b82c8622a9",
-        "Name": "Função = Lee o arquivo Excel",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2971.2406538737755,
-        "Y": -485.80460054298453
-      },
-      {
-        "Id": "a5cd2445460940b3a113f42593192635",
-        "Name": "Função - Concatenar Resultados Únicos",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2401.0952096833726,
-        "Y": -485.80460054298453
-      },
-      {
-        "Id": "e3863b4b3d5b42b99dc323b9c5a65f42",
-        "Name": "Função - Formar as equivalências",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -1586.4439744954439,
-        "Y": -483.10150655796531
-      },
-      {
-        "Id": "92452a31d86a4c4db588242014c095c3",
-        "Name": "Função -  Célula de Excel é null?",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -1973.4696385547134,
-        "Y": -485.80460054298453
-      },
-      {
         "Id": "25cc836f222f4ff9abb9fbbbe151c960",
         "Name": "FileSystem.DirectoryName",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1873.6316622457887,
-        "Y": 984.39902550629506
+        "X": -1832.3887968380841,
+        "Y": 977.71099327801858
       },
       {
         "Id": "0cb3edd0268540c4b25514dd0a57e883",
@@ -3560,8 +3520,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -2051.8771071900746,
-        "Y": 282.08716219851658
+        "X": -2010.6342417823698,
+        "Y": 275.39912997024
       },
       {
         "Id": "a5a6810bae29487189bc32f1af60699f",
@@ -3570,8 +3530,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -1497.2444175934284,
-        "Y": 279.08643343745337
+        "X": -1456.001552185724,
+        "Y": 272.39840120917677
       },
       {
         "Id": "6551e7c5104f47829a531060ae1924ca",
@@ -3580,8 +3540,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -4577.0114535131706,
-        "Y": 105.03424232462964
+        "X": -4535.7685881054658,
+        "Y": 98.346210096353047
       },
       {
         "Id": "4e0d5fac81254529b3c6011b5d873329",
@@ -3590,8 +3550,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -2560.4989361286543,
-        "Y": 282.08716219851658
+        "X": -2519.2560707209495,
+        "Y": 275.39912997024
       },
       {
         "Id": "8ccf4b6e633043b69e5896f617228570",
@@ -3600,8 +3560,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -3104.7996108307439,
-        "Y": 282.45000689848985
+        "X": -3063.556745423039,
+        "Y": 275.76197467021325
       },
       {
         "Id": "0f0149403ba145038ded94681530b272",
@@ -3610,8 +3570,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -3844.0520897704041,
-        "Y": 284.02167830502526
+        "X": -3802.8092243626993,
+        "Y": 277.33364607674866
       },
       {
         "Id": "fd23bdc3c35048cfbb587a0813e46413",
@@ -3620,8 +3580,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -4785.3542610019776,
-        "Y": 200.39791808036193
+        "X": -4744.1113955942728,
+        "Y": 193.70988585208534
       },
       {
         "Id": "b5044fd4bee74b49b829e13b744aaf19",
@@ -3630,8 +3590,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -5380.3226416580146,
-        "Y": 203.8783174542707
+        "X": -5339.07977625031,
+        "Y": 197.1902852259941
       },
       {
         "Id": "8da4657d1e4c46068ebf50b924bce5d1",
@@ -3640,8 +3600,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -5376.2075256677,
-        "Y": 46.20636588499508
+        "X": -5334.9646602599951,
+        "Y": 39.518333656718482
       },
       {
         "Id": "512788d2f530406a83f072267170aee0",
@@ -3650,28 +3610,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -4783.5946304595582,
-        "Y": 47.621540912796604
-      },
-      {
-        "Id": "607f23033b8341c69673c1264cd58fb4",
-        "Name": "Função -  Formação de Fato - Descrição",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2376.3642220483644,
-        "Y": -240.88899174359528
-      },
-      {
-        "Id": "d6586c86bd604269bad8069a6aa81cb7",
-        "Name": "Função -  Formação de Fato - Temático",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": -2971.1909569794384,
-        "Y": -244.12469894582625
+        "X": -4742.3517650518534,
+        "Y": 40.933508684520007
       },
       {
         "Id": "46008bc8b6d949f5b3ee8a465d8be989",
@@ -3680,8 +3620,68 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -959.55016724185089,
-        "Y": 590.51958641825593
+        "X": -918.30730183414562,
+        "Y": 583.83155418997922
+      },
+      {
+        "Id": "d6586c86bd604269bad8069a6aa81cb7",
+        "Name": "Função -  Formação de Fato - Temático",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -6036.4820475889046,
+        "Y": 1129.0884226985427
+      },
+      {
+        "Id": "607f23033b8341c69673c1264cd58fb4",
+        "Name": "Função -  Formação de Fato - Descrição",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -6034.428297253392,
+        "Y": 1656.7966936691944
+      },
+      {
+        "Id": "6093f5289abd4f81857dc1b82c8622a9",
+        "Name": "Função = Lee o arquivo Excel",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -6036.5317444832435,
+        "Y": 887.40852110138371
+      },
+      {
+        "Id": "a5cd2445460940b3a113f42593192635",
+        "Name": "Função - Concatenar Resultados Únicos",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5345.9976971507649,
+        "Y": 904.89682267476962
+      },
+      {
+        "Id": "e3863b4b3d5b42b99dc323b9c5a65f42",
+        "Name": "Função - Formar as equivalências",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5347.0076197527642,
+        "Y": 1362.1431553794873
+      },
+      {
+        "Id": "92452a31d86a4c4db588242014c095c3",
+        "Name": "Função -  Célula de Excel é null?",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5347.0176168572207,
+        "Y": 1126.9667390987179
       }
     ],
     "Annotations": [
@@ -3701,15 +3701,15 @@
           "d6586c86bd604269bad8069a6aa81cb7"
         ],
         "HasNestedGroups": false,
-        "Left": -2981.2406538737755,
-        "Top": -654.20460054298451,
-        "Width": 1845.5966793783316,
-        "Height": 732.27990159715819,
+        "Left": -6046.5317444832435,
+        "Top": 632.60852110138376,
+        "Width": 1150.3241247304795,
+        "Height": 1215.1881725678106,
         "FontSize": 72.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -485.80460054298453,
-        "InitialHeight": 389.91560879938947,
-        "TextblockHeight": 158.4,
+        "InitialTop": 887.40852110138371,
+        "InitialHeight": 389.5758360675502,
+        "TextblockHeight": 244.8,
         "Background": "#FFFFFFFF"
       },
       {
@@ -3731,19 +3731,19 @@
           "25cc836f222f4ff9abb9fbbbe151c960",
           "8da4657d1e4c46068ebf50b924bce5d1",
           "512788d2f530406a83f072267170aee0",
+          "46008bc8b6d949f5b3ee8a465d8be989",
           "348c486fb3714b93a2453e6a4955f044",
-          "4069c6c6780d4c7994ebd5cfef4ff5fb",
-          "46008bc8b6d949f5b3ee8a465d8be989"
+          "4069c6c6780d4c7994ebd5cfef4ff5fb"
         ],
         "HasNestedGroups": true,
-        "Left": -5390.3226416580146,
-        "Top": -822.60460054298449,
-        "Width": 4882.3724744161636,
-        "Height": 2441.62627884801,
+        "Left": -6056.5317444832435,
+        "Top": -128.88166634328152,
+        "Width": 5426.6244426490975,
+        "Height": 1991.6783600124759,
         "FontSize": 72.0,
         "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
-        "InitialTop": -654.20460054298451,
-        "InitialHeight": 1673.3820553817445,
+        "InitialTop": 39.518333656718482,
+        "InitialHeight": 1632.16722394001,
         "TextblockHeight": 158.4,
         "Background": "#FF48B9FF"
       },
@@ -3756,8 +3756,8 @@
         "HeightAdjustment": 0.0,
         "Nodes": [],
         "HasNestedGroups": false,
-        "Left": -5349.6729319234964,
-        "Top": -535.98302987544946,
+        "Left": -6045.5127348820133,
+        "Top": 66.013703171488032,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -3768,8 +3768,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 3285.6448541125778,
-    "Y": 466.82583011651496,
-    "Zoom": 1.1185579767307161
+    "X": 2220.373847709493,
+    "Y": 51.291868365365161,
+    "Zoom": 0.33404551786764808
   }
 }
