@@ -13,10 +13,12 @@ Neste caso são filtradas as descrições (variável ?d) que contenham a "ospit"
 ![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c2bbd899-54c9-40e0-b4ec-36e49e08a0e7)
 
 
-Neste caso são filtradas as descrições (variável ?d) que contenham a "ospit" e ordenadas pelo código (veriável ?x). 
+Neste caso são filtradas as instâncias (variável ?x) que contenham a "4U.02.10" e ordenadas pelo código (veriável ?x). 
 
 ![Sparql_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/b3efead4-0853-48ec-9422-c5cc99369eec)
 
+
+## Outros exeplos.
 
 ## Antes de cada filtro devem ser declarados os recursos usados.
 
