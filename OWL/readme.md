@@ -66,4 +66,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
         9.    }
        10.    ORDER BY ?x
 
+       ![Uploading Sparql_01.PNG…]()
+
+
         
