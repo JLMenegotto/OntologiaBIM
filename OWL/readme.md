@@ -55,14 +55,15 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplo 4: filtro SPARQL 
 
-        1.    A variável ?x retorna as instancias das Unidades funcionais do SUS 04 e as ordena
+        1.    A variável ?x retorna as instancias das Unidades funcionais 04 do SUS com a sua descrição (variável ?d) e as ordena
         2.
-        3.    SELECT ?x
+        3.    SELECT ?x ?d
         4.    WHERE
         5.    {   
         6.            ?x rdf:type abnt:CódigoSUS .
-        7.            FILTER (REGEX (STR (?x) , "UFU.04"))
-        7.    }
-        8.    ORDER BY ?x
+        7.            ?x abnt:descrição ?d .
+        8.            FILTER (REGEX (STR (?x) , "UFU.04"))
+        9.    }
+       10.    ORDER BY ?x
 
         
