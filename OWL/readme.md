@@ -14,8 +14,7 @@ Neste caso são filtradas as descrições (variável ?d) que contenham a "ospit"
 
 Neste caso são filtradas as instâncias (variável ?x) que contenham a "4U.02.10" e ordenadas pelo código (veriável ?x). 
 
-![Sparql_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/b3efead4-0853-48ec-9422-c5cc99369eec)
-
+![Sparql_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/a3942060-e061-4d88-92a9-eabd24f6694e)
 
 ## Outros exeplos.
 
