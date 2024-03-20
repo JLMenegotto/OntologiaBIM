@@ -10,8 +10,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 Neste caso são filtradas as descrições (variável ?d) que contenham a "ospit" e ordenadas pelo código (veriável ?x). 
 
-![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c2bbd899-54c9-40e0-b4ec-36e49e08a0e7)
-
+![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/fa7fc77b-3c65-4f24-84ff-c08f921ddc24)
 
 Neste caso são filtradas as instâncias (variável ?x) que contenham a "4U.02.10" e ordenadas pelo código (veriável ?x). 
 
