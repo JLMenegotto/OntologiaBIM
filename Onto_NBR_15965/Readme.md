@@ -37,16 +37,17 @@
 
 ## Exemplo 1: filtro SPARQL
   
-        1.    A variável ?obj retorna uma lista de materiais n1= 20 , n2= 10 nas colunas n1, n2 com a descrição do material (variáveis ?y ?p ?q)
-        2.
-        3.    SELECT ?obj ?y ?p ?q
-        4.    WHERE
-        5.    {   ?obj abnt:código-n1 "20" .
-        6.        ?obj abnt:código-n2 "10" .
-        7.        ?obj abnt:código-n1 ?y .
-        8.        ?obj abnt:código-n2 ?p .
-        9.        ?obj abnt:descrição ?q .
-        10.    }
+        1.    A variável ?obj retorna uma lista de materiais n1= 20 , n2= 10 nas colunas n1, n2 com 
+        2.    a descrição do material (variáveis ?y ?p ?q)
+        3.
+        4.    SELECT ?obj ?y ?p ?q
+        5.    WHERE
+        6.    {   ?obj abnt:código-n1 "20" .
+        7.        ?obj abnt:código-n2 "10" .
+        8.        ?obj abnt:código-n1 ?y .
+        9.        ?obj abnt:código-n2 ?p .
+        10.        ?obj abnt:descrição ?q .
+        11.    }
 
 ## Exemplo 2: filtro SPARQL 
 
