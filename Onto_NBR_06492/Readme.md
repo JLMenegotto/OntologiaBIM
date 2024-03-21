@@ -1,6 +1,7 @@
-## Ontologias BIM GIS 
+## Arquivos com a Ontologia da Norma Brasileira NBR_06492
 
-Nesta seção o aluno encontrará as fontes necessárias para definir a ontologia. O processo é iniciado pelo preenchimento das planilhas Excel com a estruturação das classes, propriedades, características das propriedades, dados do projeto, etc. A macro em Dynamo, deve ser carregada em Revit 2024. Ela faz a leitura do arquivo Excel e escreve o arquivo OWL (Ontology Web Language) com o conteúdo em sintaxe Manchester. 
+Nesta seção o aluno encontrará as fontes necessárias para definir a ontologia. O processo é iniciado pelo preenchimento das planilhas Excel com a estruturação das classes, propriedades, características das propriedades, dados do projeto, etc. A macro em Dynamo, deve ser carregada em Revit 2024. 
+Ela faz a leitura do arquivo Excel e escreve o arquivo OWL (Ontology Web Language) com o conteúdo em sintaxe Manchester. 
 O desafio da tarefa é definir no arquivo Excel o campo ontológico do tema tratado. 
 
 ![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/d50314f9-0bd3-4f4c-9ee1-c1d0a44c7627)
