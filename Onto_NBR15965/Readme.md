@@ -1,4 +1,4 @@
-## Arquivos Excel com os conteúdos do campo ontológico
+## Arquivos com a Ontologia da Norma Brasileira NBR_15965
 
     Os arquivos Excel de esta pasta contêm o campo ontológico de cada parte da norma NBR 15965.
     As partes da norma NBR 15965 são: 0M, 0P, 1D, 1F, 1S, 2C, 2N, 2Q, 3E, 3R, 4A, 4U e 5I.
@@ -7,23 +7,22 @@
 
 ## Arquivos OWL com as ontologias em sintaxe Manchester
 
-O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
-No editor Protégé, pode aplicar filtros com a linguagem SPARQL, que permite realizar consultas em estruturas RDF (Resource Description Framework).
-Antes de efetuar a consulta deve ativar o Reasoner HermiT.
-Consulte em: https://www.w3.org/TR/sparql11-query/
+    O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
+    No editor Protégé, pode aplicar filtros com a linguagem SPARQL, que permite realizar consultas em estruturas RDF (Resource Description Framework).
+    Antes de efetuar a consulta deve ativar o Reasoner HermiT.
+    Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplos de aplicação de filtros SPARQL para consultar conteúdos no OWL
 
-Neste caso são filtradas as descrições (variável ?d) que contenham a "ospit" e ordenadas pelo código (veriável ?x). 
+    Neste caso são filtradas as descrições (variável ?d) que contenham a "ospit" e ordenadas pelo código (veriável ?x). 
 
 ![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/fa7fc77b-3c65-4f24-84ff-c08f921ddc24)
 
-Neste caso são filtradas as instâncias (variável ?x) que contenham a "4U.02.10" e ordenadas pelo código (variável ?x). 
+    Neste caso são filtradas as instâncias (variável ?x) que contenham a "4U.02.10" e ordenadas pelo código (variável ?x). 
 
 ![Sparql_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/a3942060-e061-4d88-92a9-eabd24f6694e)
 
 ## Outros exemplos.
-
 ## Antes de cada filtro devem ser declarados os recursos usados.
 
         1. Prefix owl:  <http://www.w3.org/2002/07/owl#>
