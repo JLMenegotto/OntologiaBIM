@@ -15,7 +15,7 @@
 
 ## Exemplo 2 de filtro SPARQL 
 
-        1.    A variável do objeto ?o retorna o predicado descriçao, filtrando "Copa"
+        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
         2.
         3.    SELECT ?s ?o
         4.    WHERE
