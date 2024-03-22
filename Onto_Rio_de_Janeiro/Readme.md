@@ -36,6 +36,7 @@
         7.            filter (contains (str (?d) , "Rio"))
         8.    }
 
+## Exemplo 3 de filtro SPARQL
 
 ![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0a1df997-bb93-4b06-ac53-9c87c1e9d790)
      
