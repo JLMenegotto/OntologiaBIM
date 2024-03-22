@@ -5,12 +5,12 @@
 
 ## Exemplo 1 de filtro SPARQL 
 
-        1.    A variável ?d retorna as subpropriedades de dados usadas em BIM.Data
+        1.    A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
         2.
-        3.    SELECT ?d
+        3.    SELECT ?s
         4.    WHERE
         5.    {   
-        6.            ?d rdfs:subPropertyOf abnt:BIM.Data .
+        6.            ?s rdfs:subPropertyOf rioj:BIM.Data .
         7.    }
 
 ## Exemplo 2 de filtro SPARQL 
