@@ -4,12 +4,10 @@ As partes da norma NBR 15965 são: 0M, 0P, 1D, 1F, 1S, 2C, 2N, 2Q, 3E, 3R, 4A, 4
 Os arquivos 2Q, 4A, 4U e 5I também contêm os códigos dos Cadernos do SomaSUS.
 O arquivo de classes e propriedades centraliza os conceitos utilizados em cada parte.
 
-## Arquivos OWL com as ontologias em sintaxe Manchester
-
-    O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
-    No editor Protégé, pode aplicar filtros com a linguagem SPARQL, que permite realizar consultas em estruturas RDF (Resource Description Framework).
-    Antes de efetuar a consulta deve ativar o Reasoner HermiT.
-    Consulte em: https://www.w3.org/TR/sparql11-query/
+O aluno pode abrir o arquivo OWL num editor de texto ou no Editor Protégé e fazer a leitura do conteúdo que está em sintaxe Manchester.
+No editor Protégé, pode aplicar filtros com a linguagem SPARQL, que permite realizar consultas em estruturas RDF (Resource Description Framework).
+Antes de efetuar a consulta deve ativar o Reasoner HermiT.
+Consulte em: https://www.w3.org/TR/sparql11-query/
 
 ## Exemplos de aplicação de filtros SPARQL para consultar conteúdos no OWL
 
