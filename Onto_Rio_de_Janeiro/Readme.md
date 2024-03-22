@@ -23,3 +23,19 @@
         6.            ?s rioj:descrição ?o .
         7.            filter (contains (str (?o) , "Copa"))
         7.    }
+        
+## Exemplo 2 de filtro SPARQL 
+
+        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
+        2.
+        3.    SELECT ?s ?d ?e
+        4.    WHERE
+        5.    {   
+        6.            ?s rioj:é.dentro.de ?d . 
+        6.            ?s rioj:descrição ?e .
+        7.            filter (contains (str (?d) , "Rio"))
+        8.    }
+
+
+![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0a1df997-bb93-4b06-ac53-9c87c1e9d790)
+     
