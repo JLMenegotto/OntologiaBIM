@@ -1,0 +1,531 @@
+
+Prefix: owl:  <http://www.w3.org/2002/07/owl#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: foaf: <http://xmlns.com/foaf/0.1/#>
+Prefix: rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xsd:  <http://www.w3.org/2001/XMLSchema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix: dc:   <http://purl.org/dc/elements/1.1/>
+Prefix: tem:  <http://www.w3.org/2006/time#>
+Prefix: tempr: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
+
+Ontology: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#Temporal.de.Projetos>
+
+Annotations: 
+	rdfs:label "PrefixoOntologia: tempr:"@pt, 
+	rdfs:label "TemaOntologia: Temporal.de.Projetos"@pt, 
+	rdfs:label "RaizClass: BIM."@pt, 
+	rdfs:label "RaizProp: BIM.Prop"@pt, 
+	rdfs:label "RaizData: BIM.Data"@pt, 
+	rdfs:label "URI: https://jlmenegotto.wixsite.com/jlmenegotto-bim#"@pt, 
+	rdfs:label "Autor: José Luis Menegotto - Escola Politécnica da UFRJ"@pt, 
+	rdfs:label "Numero.Norma: -"@pt, 
+	rdfs:label "Edição: -"@pt, 
+	rdfs:label "ISBN: -"@pt, 
+	rdfs:label "Escopo: Ontologia temporal de um projeto"@pt, 
+	rdfs:label "Referência.Norma_1: -"@pt, 
+	rdfs:label "Referência.Norma_2: -"@pt, 
+	rdfs:label "Referência.Norma_3: -"@pt, 
+	rdfs:label "Observações: -"@pt, 
+	rdfs:label "Data.Hora: 3/23/2024 12:39:10 PM"@pt, 
+	rdfs:label "Advertência_1: -"@pt
+
+Datatype: xsd:string
+Datatype: xsd:decimal
+Datatype: xsd:double
+Datatype: rdfs:Literal
+Datatype: rdf:PlainLiteral
+Datatype: xsd:integer
+Datatype: xsd:dateTime
+Datatype: xsd:boolean
+
+Class: tempr:BIM.
+	Annotations: rdfs:comment "Raiz das Classes"@pt
+
+ObjectProperty: tempr:BIM.Prop
+	Annotations: rdfs:comment "Raiz das Propriedades"@pt
+
+DataProperty: tempr:BIM.Data
+	Annotations: rdfs:comment "Raiz dos Data"@pt
+
+Class: tempr:Tempo
+	SubClassOf: tempr:BIM.
+	Annotations: rdfs:comment "Conceitos: Tempo"@pt
+
+Class: tempr:Fato
+	SubClassOf: tempr:Tempo
+	Annotations: rdfs:comment "Fato "@pt
+
+Class: tempr:Evento
+	SubClassOf: tempr:Fato
+	Annotations: rdfs:comment "Evento "@pt
+
+Class: tempr:EventoMacro
+	SubClassOf: tempr:Evento
+	Annotations: rdfs:comment "EventoMacro "@pt
+
+Class: tempr:EventoCalendário
+	SubClassOf: tempr:Evento
+	Annotations: rdfs:comment "EventoCalendário "@pt
+
+Class: tempr:EventoHorário
+	SubClassOf: tempr:Evento
+	Annotations: rdfs:comment "EventoHorário "@pt
+
+Class: tempr:Etapa
+	SubClassOf: tempr:Evento
+	Annotations: rdfs:comment "Etapa "@pt
+
+Class: tempr:Era
+	SubClassOf: tempr:EventoMacro
+	Annotations: rdfs:comment "Era "@pt
+
+Class: tempr:Época
+	SubClassOf: tempr:EventoMacro
+	Annotations: rdfs:comment "Época "@pt
+
+Class: tempr:Ano
+	SubClassOf: tempr:EventoCalendário
+	Annotations: rdfs:comment "Ano "@pt
+
+Class: tempr:Mês
+	SubClassOf: tempr:EventoCalendário
+	Annotations: rdfs:comment "Mês "@pt
+
+Class: tempr:Semana
+	SubClassOf: tempr:EventoCalendário
+	Annotations: rdfs:comment "Semana "@pt
+
+Class: tempr:Dia
+	SubClassOf: tempr:EventoCalendário
+	Annotations: rdfs:comment "Dia "@pt
+
+Class: tempr:Hora
+	SubClassOf: tempr:EventoHorário
+	Annotations: rdfs:comment "Hora "@pt
+
+Class: tempr:Minuto
+	SubClassOf: tempr:EventoHorário
+	Annotations: rdfs:comment "Minuto "@pt
+
+Class: tempr:Segundo
+	SubClassOf: tempr:EventoHorário
+	Annotations: rdfs:comment "Segundo "@pt
+
+Class: tempr:Milisegundo
+	SubClassOf: tempr:EventoHorário
+	Annotations: rdfs:comment "Milisegundo "@pt
+
+Class: tempr:deIdeação
+	SubClassOf: tempr:Etapa
+	Annotations: rdfs:comment "deIdeação "@pt
+
+Class: tempr:deProjetação
+	SubClassOf: tempr:Etapa
+	Annotations: rdfs:comment "deProjetação "@pt
+
+Class: tempr:deSimulação
+	SubClassOf: tempr:Etapa
+	Annotations: rdfs:comment "deSimulação "@pt
+
+Class: tempr:dePlanejamento
+	SubClassOf: tempr:Etapa
+	Annotations: rdfs:comment "dePlanejamento "@pt
+
+Class: tempr:deExecução
+	SubClassOf: tempr:Etapa
+	Annotations: rdfs:comment "deExecução "@pt
+
+Class: tempr:deOperação
+	SubClassOf: tempr:Etapa
+	Annotations: rdfs:comment "deOperação "@pt
+
+ObjectProperty: tempr:de.tempos
+	SubPropertyOf: tempr:BIM.Prop
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: de.tempos    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:eventos
+	SubPropertyOf: tempr:de.tempos
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: eventos    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:tem.duração
+	SubPropertyOf: tempr:eventos
+	Characteristics: Functional
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: tem.duração    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:tem.início
+	SubPropertyOf: tempr:eventos
+	Characteristics: Functional
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: tem.início    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:tem.fim
+	SubPropertyOf: tempr:eventos
+	Characteristics: Functional
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: tem.fim    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:tem.descrição
+	SubPropertyOf: tempr:eventos
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: tem.descrição    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:cronograma
+	SubPropertyOf: tempr:de.tempos
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: cronograma    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:é.depois.de
+	SubPropertyOf: tempr:cronograma
+	Characteristics: Transitive
+	InverseOf:  tempr:é.antes.de
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: é.depois.de    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:é.antes.de
+	SubPropertyOf: tempr:cronograma
+	Characteristics: Transitive
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: é.antes.de    Domínio: Tempo     Range: Evento"@pt
+
+ObjectProperty: tempr:é.simultâneo.de
+	SubPropertyOf: tempr:cronograma
+	Characteristics: Symmetric
+	Domain: tempr:Tempo
+	Range: tempr:Evento
+	Annotations: rdfs:comment "Propriedade: é.simultâneo.de    Domínio: Tempo     Range: Evento"@pt
+
+DataProperty: tempr:de.tempos
+	SubPropertyOf: tempr:BIM.Data
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  de.tempos"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  de.tempos  >  de.tempos"@pt
+
+DataProperty: tempr:eventos
+	SubPropertyOf: tempr:de.tempos
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  eventos"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  eventos  >  eventos"@pt
+
+DataProperty: tempr:duração
+	SubPropertyOf: tempr:eventos
+	Domain: tempr:Tempo
+	Range: xsd:dateTime
+	Annotations: rdfs:comment "Valor:  duração"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.duração  >  duração"@pt
+
+DataProperty: tempr:início
+	SubPropertyOf: tempr:eventos
+	Domain: tempr:Tempo
+	Range: xsd:dateTime
+	Annotations: rdfs:comment "Valor:  início"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.início  >  início"@pt
+
+DataProperty: tempr:fim
+	SubPropertyOf: tempr:eventos
+	Domain: tempr:Tempo
+	Range: xsd:dateTime
+	Annotations: rdfs:comment "Valor:  fim"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.fim  >  fim"@pt
+
+DataProperty: tempr:descrição
+	SubPropertyOf: tempr:eventos
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  descrição"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  tem.descrição  >  descrição"@pt
+
+DataProperty: tempr:cronograma
+	SubPropertyOf: tempr:de.tempos
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  cronograma"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  cronograma  >  cronograma"@pt
+
+DataProperty: tempr:depois.de
+	SubPropertyOf: tempr:cronograma
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  depois.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  é.depois.de  >  depois.de"@pt
+
+DataProperty: tempr:antes.de
+	SubPropertyOf: tempr:cronograma
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  antes.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  é.antes.de  >  antes.de"@pt
+
+DataProperty: tempr:simultâneo.de
+	SubPropertyOf: tempr:cronograma
+	Domain: tempr:Tempo
+	Range: xsd:string
+	Annotations: rdfs:comment "Valor:  simultâneo.de"@pt
+	Annotations: rdfs:label   "Refere-se a propriedade  é.simultâneo.de  >  simultâneo.de"@pt
+
+Individual: tempr:Duração.01
+	Types: tempr:Evento
+	Annotations: rdfs:comment "Duração.01"@pt
+	Facts: tempr:descrição "Duração temporal do evento"
+
+Individual: tempr:Momento.Inicial
+	Types: tempr:Evento
+	Annotations: rdfs:comment "Momento.Inicial"@pt
+	Facts: tempr:descrição "Momento inicial do evento"
+
+Individual: tempr:Momento.Final
+	Types: tempr:Evento
+	Annotations: rdfs:comment "Momento.Final"@pt
+	Facts: tempr:descrição "Momento final do evento"
+
+Individual: tempr:Momento.Zero
+	Types: tempr:Evento
+	Annotations: rdfs:comment "Momento.Zero"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:descrição "Momento zero absoluto do empreendimento"
+
+Individual: tempr:Programa
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "Programa"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Programa de necessidades"
+
+Individual: tempr:Levantamento
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "Levantamento"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Levantamento"
+
+Individual: tempr:EstudoPreliminar
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "EstudoPreliminar"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Estudo preliminar para o projeto"
+
+Individual: tempr:Licenciamento
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "Licenciamento"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Legalização ou aprovação de projeto"
+
+Individual: tempr:ProjetoBásico
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "ProjetoBásico"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Projeto básico"
+
+Individual: tempr:Anteprojeto
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "Anteprojeto"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Anteprojeto"
+
+Individual: tempr:ProjetoExecutivo
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "ProjetoExecutivo"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de Projeto executivo"
+
+Individual: tempr:ProjetoAsBuilt
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "ProjetoAsBuilt"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: Todo tipo de evento de AsBuilt"
+
+Individual: tempr:Ideação
+	Types: tempr:Etapa
+	Annotations: rdfs:comment "Ideação"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: ações acontecidas durante a concepção"
+
+Individual: tempr:Legalização
+	Types: tempr:Etapa
+	Annotations: rdfs:comment "Legalização"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: ações acontecidas durante a legalização"
+
+Individual: tempr:Definição
+	Types: tempr:Etapa
+	Annotations: rdfs:comment "Definição"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: ações acontecidas durante a definição projetual"
+
+Individual: tempr:Finalização
+	Types: tempr:Etapa
+	Annotations: rdfs:comment "Finalização"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: ações acontecidas durante a finalização projetual"
+
+Individual: tempr:Entrega
+	Types: tempr:Etapa
+	Annotations: rdfs:comment "Entrega"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: ações acontecidas durante a entrega"
+
+Individual: tempr:Operação
+	Types: tempr:Etapa
+	Annotations: rdfs:comment "Operação"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Etapa específica: ações acontecidas durante a operação"
+
+Individual: tempr:Reunião.Investidores
+	Types: tempr:deIdeação
+	Annotations: rdfs:comment "Reunião.Investidores"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento acontecido relativo a etapas iniciais do empreendimento"
+
+Individual: tempr:Projeto.A
+	Types: tempr:deProjetação
+	Annotations: rdfs:comment "Projeto.A"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento acontecido relativo a etapas de definição projetual"
+
+Individual: tempr:TesteAcustico
+	Types: tempr:deSimulação
+	Annotations: rdfs:comment "TesteAcustico"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento acontecido relativo a simuladações e testes projetuais"
+
+Individual: tempr:Alvenarias
+	Types: tempr:dePlanejamento
+	Annotations: rdfs:comment "Alvenarias"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento planejado para acontecer em projeto ou obra"
+
+Individual: tempr:Alvenarias.Andar1
+	Types: tempr:deExecução
+	Annotations: rdfs:comment "Alvenarias.Andar1"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento real acontecido em projeto ou obra"
+
+Individual: tempr:Alvenarias.Andar2
+	Types: tempr:deExecução
+	Annotations: rdfs:comment "Alvenarias.Andar2"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento real acontecido em projeto ou obra"
+
+Individual: tempr:Evento.01
+	Types: tempr:EventoCalendário
+	Annotations: rdfs:comment "Evento.01"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento que pode ser definido em ano, mês, dia ou semana"
+
+Individual: tempr:Evento.02
+	Types: tempr:EventoHorário
+	Annotations: rdfs:comment "Evento.02"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento que pode ser definido em hora, minutos, segundos ou milisegundos"
+
+Individual: tempr:Obrigatório
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Obrigatório"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento que tem que acontecer"
+
+Individual: tempr:Opcional
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Opcional"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento não necessário mas que pode acontecer"
+
+Individual: tempr:Esperado
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Esperado"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento de acontecimento normal"
+
+Individual: tempr:Inesperado
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Inesperado"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento de acontecimento anormal"
+
+Individual: tempr:Pontual
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Pontual"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento que acontece sem necessidade de repetição"
+
+Individual: tempr:Periódico
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Periódico"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento que acontece repetidamente com um ritmo"
+
+Individual: tempr:Aperiódico
+	Types: tempr:Fato
+	Annotations: rdfs:comment "Aperiódico"@pt
+	Facts: tempr:tem.início tempr:Momento.Inicial
+	Facts: tempr:tem.fim tempr:Momento.Final
+	Facts: tempr:tem.duração tempr:Duração.01
+	Facts: tempr:descrição "Evento que acontece repetidamente sem um ritmo"
