@@ -5,21 +5,21 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
 
 ## Exemplo 1 de filtro SPARQL 
 
-        1.    A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
-        2.
-        3.    SELECT ?s
-        4.    WHERE
-        5.    {   
-        6.            ?s rdfs:subPropertyOf rioj:BIM.Data .
-        7.    }
+                1.    A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
+                2.
+                3.    SELECT ?s
+                4.    WHERE
+                5.    {   
+                6.            ?s rdfs:subPropertyOf rioj:BIM.Data .
+                7.    }
 
 ## Exemplo 2 de filtro SPARQL 
 
-        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "AguaFria"
-        2.
-        3.    SELECT ?s ?o
-        4.    WHERE 
-        5.    {   
-        6.            ?s hidsan:descrição ?o .
-        7.            filter (contains (str (?o) , "AguaFria"))
-        7.    }
+                1.    A variável do objeto ?o retorna o predicado descrição, filtrando "AguaFria"
+                2.
+                3.    SELECT ?s ?o
+                4.    WHERE 
+                5.    {   
+                6.            ?s hidsan:descrição ?o .
+                7.            filter (contains (str (?o) , "AguaFria"))
+                8.    }
