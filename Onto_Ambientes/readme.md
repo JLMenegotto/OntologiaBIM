@@ -6,7 +6,7 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
 
 Os ambientes foram divididos: 
 
-    1. Ambientes Internos (Objetos OST_Rooms)
-    2. Ambientes Mep (Objetos OST_MEPSpaces)
-    3. Áreas exteriores (Objetos de categoria OST_Areas)
+    1. Ambientes Internos (Objetos OST_Rooms ou ifcSpace)
+    2. Ambientes Mep (Objetos OST_MEPSpaces ou ifcSpatialZone)
+    3. Áreas exteriores (Objetos de categoria OST_Areas ou ifcZone)
     
