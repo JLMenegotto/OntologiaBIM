@@ -15,11 +15,11 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
 
 ## Exemplo 2 de filtro SPARQL 
 
-        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
+        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "AguaFria"
         2.
         3.    SELECT ?s ?o
         4.    WHERE
         5.    {   
-        6.            ?s rioj:descrição ?o .
-        7.            filter (contains (str (?o) , "Copa"))
+        6.            ?s hidsan:descrição ?o .
+        7.            filter (contains (str (?o) , "AguaFria"))
         7.    }
