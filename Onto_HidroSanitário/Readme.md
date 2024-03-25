@@ -18,7 +18,7 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
         1.    A variável do objeto ?o retorna o predicado descrição, filtrando "AguaFria"
         2.
         3.    SELECT ?s ?o
-        4.    WHERE
+        4.    WHERE 
         5.    {   
         6.            ?s hidsan:descrição ?o .
         7.            filter (contains (str (?o) , "AguaFria"))
