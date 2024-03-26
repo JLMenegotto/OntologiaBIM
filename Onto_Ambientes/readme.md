@@ -9,6 +9,7 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
     4. Ontologia_V1_Projeto_Ambientes_Classes_Propriedades.xlsx
 
 Os elementos de ambientes foram divididos: 
+
     1. Ambientes Internos (Objetos OST_Rooms ou ifcSpace)
     2. Espaços Internos Mep (Objetos OST_MEPSpaces ou ifcSpatialZone)
     3. Áreas exteriores (Objetos de categoria OST_Areas ou ifcSpatialZone)
