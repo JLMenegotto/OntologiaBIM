@@ -4,10 +4,10 @@ Os arquivos Excel de esta pasta contêm o campo ontológico dos bairros de Rio d
 Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
 
 ### Arquivos
-    1. Ontologia_V1_Projeto_Temporal.dyn   (Função em Designscript para Revit 2024 que gera o arquivo OWL)
-    2. Ontologia_V1_Projeto_Temporal.owl   (Ontologia owl escrita em sintaxe Manchester)
-    3. Ontologia_V1_Projeto_Temporal.xlsx  (Campo ontológico de Instâncias de teste)
-    4. Ontologia_V1_Projeto_Temporal_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
+    1. Ontologia_V1_Projeto_Rio_de_Janeiro.dyn   (Função em Designscript para Revit 2024 que gera o arquivo OWL)
+    2. Ontologia_V1_Projeto_Rio_de_Janeiro.owl   (Ontologia owl escrita em sintaxe Manchester)
+    3. Ontologia_V1_Projeto_Rio_de_Janeiro.xlsx  (Campo ontológico de Instâncias de teste)
+    4. Ontologia_V1_Projeto_Rio_de_Janeiro_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
 
 ## Exemplo 1 de filtro SPARQL 
 
