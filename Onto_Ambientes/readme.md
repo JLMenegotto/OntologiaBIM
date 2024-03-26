@@ -15,6 +15,7 @@ Os ambientes foram divididos:
 
 
 ## Exemplo de filtro SPARQL 
+A variável do objeto ?s retorna o predicado ?p com a descrição, filtrando os banheiros "Ban"
 
     1. Prefix owl:  <http://www.w3.org/2002/07/owl#>
     2. Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
