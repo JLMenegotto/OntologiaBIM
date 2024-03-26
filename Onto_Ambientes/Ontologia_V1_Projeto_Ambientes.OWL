@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: -"@pt, 
-	rdfs:label "Data.Hora: 3/26/2024 12:13:51 PM"@pt, 
+	rdfs:label "Data.Hora: 3/26/2024 4:11:54 PM"@pt, 
 	rdfs:label "Advertência_1: -"@pt
 
 Datatype: xsd:string
@@ -79,18 +79,22 @@ Class: espa:Habitação
 Class: espa:Ambiente
 	SubClassOf: espa:Espacial
 	Annotations: rdfs:label "Ambiente "@pt
+	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
-Class: espa:Núcleo
+Class: espa:Núcleos
 	SubClassOf: espa:Espacial
-	Annotations: rdfs:label "Núcleo "@pt
+	Annotations: rdfs:label "Núcleos "@pt
+	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:AreaInterna
 	SubClassOf: espa:Espacial
 	Annotations: rdfs:label "AreaInterna "@pt
+	EquivalentTo:  espa:OST_Areas or  espa:ifcZone
 
 Class: espa:AreaExterna
 	SubClassOf: espa:Espacial
 	Annotations: rdfs:label "AreaExterna "@pt
+	EquivalentTo:  espa:OST_Areas or  espa:ifcZone
 
 Class: espa:OST_Areas
 	SubClassOf: espa:Categoria
@@ -149,82 +153,72 @@ Class: espa:ApartamentoDuplex
 Class: espa:ElevadorInterno
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "ElevadorInterno "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Elevador
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Elevador "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Hall
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Hall "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Sala
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Sala "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Quarto
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Quarto "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Cozinha
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Cozinha "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:WC
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "WC "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Banheiro
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Banheiro "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:BanheiroSocial
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "BanheiroSocial "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:BanheiroFemi
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "BanheiroFemi "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:BanheiroMasc
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "BanheiroMasc "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:Circulação
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "Circulação "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
 Class: espa:AreaServiço
 	SubClassOf: espa:Ambiente
 	Annotations: rdfs:label "AreaServiço "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
 
-Class: espa:Elevadores
-	SubClassOf: espa:Núcleo
-	Annotations: rdfs:label "Elevadores "@pt
-	EquivalentTo:  espa:OST_Rooms or  espa:ifcSpace
+Class: espa:Elevadores2
+	SubClassOf: espa:Núcleos
+	Annotations: rdfs:label "Elevadores2 "@pt
+	EquivalentTo:  espa:Núcleos and  (  espa:tem.elevadores max  2  ) 
+
+Class: espa:Elevadores5
+	SubClassOf: espa:Núcleos
+	Annotations: rdfs:label "Elevadores5 "@pt
+	EquivalentTo:  espa:Núcleos and  (  espa:tem.elevadores max  5  ) 
 
 Class: espa:Estacionamento.Int
 	SubClassOf: espa:AreaInterna
 	Annotations: rdfs:label "Estacionamento.Int "@pt
-	EquivalentTo:  espa:OST_Areas or  espa:ifcZone
 
 Class: espa:Estacionamento.Ext
 	SubClassOf: espa:AreaExterna
 	Annotations: rdfs:label "Estacionamento.Ext "@pt
-	EquivalentTo:  espa:OST_Areas or  espa:ifcZone
 
 ObjectProperty: espa:de.ambientes
 	SubPropertyOf: espa:BIM.Prop
@@ -331,6 +325,18 @@ ObjectProperty: espa:é.parte.de
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: é.parte.de    Domínio: Funcional     Range: Espacial"@pt
+
+ObjectProperty: espa:conjunto
+	SubPropertyOf: espa:de.ambientes
+	Domain: espa:Funcional
+	Range: espa:Espacial
+	Annotations: rdfs:label "Propriedade: conjunto    Domínio: Funcional     Range: Espacial"@pt
+
+ObjectProperty: espa:tem.elevadores
+	SubPropertyOf: espa:conjunto
+	Domain: espa:Funcional
+	Range: espa:Espacial
+	Annotations: rdfs:label "Propriedade: tem.elevadores    Domínio: Funcional     Range: Espacial"@pt
 
 DataProperty: espa:de.ambientes
 	SubPropertyOf: espa:BIM.Data
@@ -451,29 +457,43 @@ DataProperty: espa:parte.de
 	Annotations: rdfs:label "Valor:  parte.de"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  é.parte.de  >  parte.de"@pt
 
+DataProperty: espa:conjunto
+	SubPropertyOf: espa:de.ambientes
+	Domain: espa:Funcional
+	Range: xsd:string
+	Annotations: rdfs:label "Valor:  conjunto"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  conjunto  >  conjunto"@pt
+
+DataProperty: espa:elevadores
+	SubPropertyOf: espa:conjunto
+	Domain: espa:Funcional
+	Range: xsd:string
+	Annotations: rdfs:label "Valor:  elevadores"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  tem.elevadores  >  elevadores"@pt
+
 DisjointClasses: espa:ifcSpace, espa:OST_Rooms
 
 DisjointClasses: espa:ifcZone, espa:OST_Areas
 
-Individual: espa:AreaRevit
+Individual: espa:Revit.Area
 	Types: espa:OST_Areas
-	Annotations: rdfs:label "Elemento espacial :   AreaRevit"@pt
-	Facts: espa:descrição "Elemento espacial :   AreaRevit"
+	Annotations: rdfs:label "Elemento espacial :   Revit.Area"@pt
+	Facts: espa:descrição "Elemento espacial :   Revit.Area"
 
-Individual: espa:AmbienteRevit
+Individual: espa:Revit.Room
 	Types: espa:OST_Rooms
-	Annotations: rdfs:label "Elemento espacial :   AmbienteRevit"@pt
-	Facts: espa:descrição "Elemento espacial :   AmbienteRevit"
+	Annotations: rdfs:label "Elemento espacial :   Revit.Room"@pt
+	Facts: espa:descrição "Elemento espacial :   Revit.Room"
 
-Individual: espa:AreaIFC
+Individual: espa:Ifc.Zone
 	Types: espa:ifcZone
-	Annotations: rdfs:label "Elemento espacial :   AreaIFC"@pt
-	Facts: espa:descrição "Elemento espacial :   AreaIFC"
+	Annotations: rdfs:label "Elemento espacial :   Ifc.Zone"@pt
+	Facts: espa:descrição "Elemento espacial :   Ifc.Zone"
 
-Individual: espa:AmbienteIFC
+Individual: espa:Ifc.Space
 	Types: espa:ifcSpace
-	Annotations: rdfs:label "Elemento espacial :   AmbienteIFC"@pt
-	Facts: espa:descrição "Elemento espacial :   AmbienteIFC"
+	Annotations: rdfs:label "Elemento espacial :   Ifc.Space"@pt
+	Facts: espa:descrição "Elemento espacial :   Ifc.Space"
 
 Individual: espa:Bloco.A
 	Types: espa:Bloco
@@ -490,6 +510,15 @@ Individual: espa:Andar.01
 	Facts: espa:nome "1° Pavimento"
 	Facts: espa:tema "Habitação"
 	Facts: espa:descrição "Elemento espacial :   Andar.01"
+
+Individual: espa:Nucleo.Elev
+	Types: espa:Elevadores2
+	Annotations: rdfs:label "Elemento espacial :   Nucleo.Elev"@pt
+	Facts: espa:é.dentro.de espa:Bloco.A
+	Facts: espa:código "Eleva.01"
+	Facts: espa:nome "Elevadores Sociais"
+	Facts: espa:tema "Circulação Vertical"
+	Facts: espa:descrição "Elemento espacial :   Nucleo.Elev"
 
 Individual: espa:Apto.A100
 	Types: espa:Apartamento
@@ -515,7 +544,7 @@ Individual: espa:Hall.A01
 	Types: espa:Hall
 	Annotations: rdfs:label "Elemento espacial :   Hall.A01"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A101"
 	Facts: espa:nome "Hall.A01"
 	Facts: espa:tema "Habitação"
@@ -525,7 +554,7 @@ Individual: espa:Sala.A01
 	Types: espa:Sala
 	Annotations: rdfs:label "Elemento espacial :   Sala.A01"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A102"
 	Facts: espa:nome "Sala.A01"
 	Facts: espa:tema "Habitação"
@@ -535,7 +564,7 @@ Individual: espa:Quarto.A01
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.A01"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A103"
 	Facts: espa:nome "Quarto.A01"
 	Facts: espa:tema "Habitação"
@@ -545,7 +574,7 @@ Individual: espa:Quarto.A02
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.A02"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A104"
 	Facts: espa:nome "Quarto.A02"
 	Facts: espa:tema "Habitação"
@@ -555,7 +584,7 @@ Individual: espa:Quarto.A03
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.A03"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A105"
 	Facts: espa:nome "Quarto.A03"
 	Facts: espa:tema "Habitação"
@@ -565,7 +594,7 @@ Individual: espa:Quarto.A04
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.A04"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A106"
 	Facts: espa:nome "Quarto.A04"
 	Facts: espa:tema "Habitação"
@@ -575,7 +604,7 @@ Individual: espa:Cozinha.A01
 	Types: espa:Cozinha
 	Annotations: rdfs:label "Elemento espacial :   Cozinha.A01"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A107"
 	Facts: espa:nome "Cozinha.A01"
 	Facts: espa:tema "Habitação"
@@ -585,7 +614,7 @@ Individual: espa:Banheiro.A01
 	Types: espa:Banheiro
 	Annotations: rdfs:label "Elemento espacial :   Banheiro.A01"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A108"
 	Facts: espa:nome "Banheiro.A01"
 	Facts: espa:tema "Habitação"
@@ -595,7 +624,7 @@ Individual: espa:Banheiro.A02
 	Types: espa:Banheiro
 	Annotations: rdfs:label "Elemento espacial :   Banheiro.A02"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A109"
 	Facts: espa:nome "Banheiro.A02"
 	Facts: espa:tema "Habitação"
@@ -605,7 +634,7 @@ Individual: espa:Banheiro.A03
 	Types: espa:WC
 	Annotations: rdfs:label "Elemento espacial :   Banheiro.A03"@pt
 	Facts: espa:é.dentro.de espa:Apto.A100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A110"
 	Facts: espa:nome "Banheiro.A03"
 	Facts: espa:tema "Habitação"
@@ -615,7 +644,7 @@ Individual: espa:Hall.B01
 	Types: espa:Hall
 	Annotations: rdfs:label "Elemento espacial :   Hall.B01"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2101"
 	Facts: espa:nome "Hall.B01"
 	Facts: espa:tema "Habitação"
@@ -625,7 +654,7 @@ Individual: espa:Sala.B01
 	Types: espa:Sala
 	Annotations: rdfs:label "Elemento espacial :   Sala.B01"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2102"
 	Facts: espa:nome "Sala.B01"
 	Facts: espa:tema "Habitação"
@@ -635,7 +664,7 @@ Individual: espa:Quarto.B01
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.B01"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2103"
 	Facts: espa:nome "Quarto.B01"
 	Facts: espa:tema "Habitação"
@@ -645,7 +674,7 @@ Individual: espa:Quarto.B02
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.B02"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2104"
 	Facts: espa:nome "Quarto.B02"
 	Facts: espa:tema "Habitação"
@@ -655,7 +684,7 @@ Individual: espa:Quarto.B03
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.B03"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2105"
 	Facts: espa:nome "Quarto.B03"
 	Facts: espa:tema "Habitação"
@@ -665,7 +694,7 @@ Individual: espa:Quarto.B04
 	Types: espa:Quarto
 	Annotations: rdfs:label "Elemento espacial :   Quarto.B04"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2106"
 	Facts: espa:nome "Quarto.B04"
 	Facts: espa:tema "Habitação"
@@ -675,7 +704,7 @@ Individual: espa:Cozinha.B01
 	Types: espa:Cozinha
 	Annotations: rdfs:label "Elemento espacial :   Cozinha.B01"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2107"
 	Facts: espa:nome "Cozinha.B01"
 	Facts: espa:tema "Habitação"
@@ -685,7 +714,7 @@ Individual: espa:Banheiro.B01
 	Types: espa:Banheiro
 	Annotations: rdfs:label "Elemento espacial :   Banheiro.B01"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2108"
 	Facts: espa:nome "Banheiro.B01"
 	Facts: espa:tema "Habitação"
@@ -695,7 +724,7 @@ Individual: espa:Banheiro.B02
 	Types: espa:Banheiro
 	Annotations: rdfs:label "Elemento espacial :   Banheiro.B02"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2109"
 	Facts: espa:nome "Banheiro.B02"
 	Facts: espa:tema "Habitação"
@@ -705,7 +734,7 @@ Individual: espa:Banheiro.B03
 	Types: espa:WC
 	Annotations: rdfs:label "Elemento espacial :   Banheiro.B03"@pt
 	Facts: espa:é.dentro.de espa:Apto.B100
-	Facts: espa:é.categoria espa:AmbienteRevit
+	Facts: espa:é.categoria espa:Revit.Room
 	Facts: espa:código "A2110"
 	Facts: espa:nome "Banheiro.B03"
 	Facts: espa:tema "Habitação"
@@ -714,7 +743,7 @@ Individual: espa:Banheiro.B03
 Individual: espa:Estacionamento.01
 	Types: espa:Estacionamento.Ext
 	Annotations: rdfs:label "Elemento espacial :   Estacionamento.01"@pt
-	Facts: espa:é.categoria espa:AreaRevit
+	Facts: espa:é.categoria espa:Revit.Area
 	Facts: espa:código "E101"
 	Facts: espa:nome "Estacionamento.01"
 	Facts: espa:tema "Habitação"
@@ -723,7 +752,7 @@ Individual: espa:Estacionamento.01
 Individual: espa:Estacionamento.02
 	Types: espa:Estacionamento.Ext
 	Annotations: rdfs:label "Elemento espacial :   Estacionamento.02"@pt
-	Facts: espa:é.categoria espa:AreaRevit
+	Facts: espa:é.categoria espa:Revit.Area
 	Facts: espa:código "E102"
 	Facts: espa:nome "Estacionamento.02"
 	Facts: espa:tema "Habitação"
