@@ -13,6 +13,9 @@ Os ambientes foram divididos:
 
 ![Grafo_04](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/9b139e35-4c91-4480-a790-298d8c7d6b7c)
 
+
+## Exemplo de filtro SPARQL 
+
     1. Prefix owl:  <http://www.w3.org/2002/07/owl#>
     2. Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     3. Prefix foaf: <http://xmlns.com/foaf/0.1/#>
