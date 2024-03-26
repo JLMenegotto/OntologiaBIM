@@ -1,4 +1,6 @@
 ## Ontologia de conceitos de projeto de Ambientes
+Os arquivos Excel de esta pasta contêm o campo ontológico de conceitos de Ambientes internos, externos e Mep para serem utilizados em projetos BIM.
+Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
 
 ### Arquivos
     1. Ontologia_V1_Projeto_Ambientes.dyn
@@ -6,11 +8,7 @@
     3. Ontologia_V1_Projeto_Ambientes.xlsx
     4. Ontologia_V1_Projeto_Ambientes_Classes_Propriedades.xlsx
 
-Os arquivos Excel de esta pasta contêm o campo ontológico de conceitos de Ambientes internos, externos e Mep para serem utilizados em projetos BIM.
-Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
-
-Os ambientes foram divididos: 
-
+Os elementos de ambientes foram divididos: 
     1. Ambientes Internos (Objetos OST_Rooms ou ifcSpace)
     2. Espaços Internos Mep (Objetos OST_MEPSpaces ou ifcSpatialZone)
     3. Áreas exteriores (Objetos de categoria OST_Areas ou ifcSpatialZone)
