@@ -11,6 +11,7 @@ Os ambientes foram divididos:
     3. Áreas exteriores (Objetos de categoria OST_Areas ou ifcSpatialZone)
     4. Zonas (Objetos OST_HVAC_Zones ou ifcZone)
     
-![Grafo_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/3fed0c09-6cc2-4ff4-a869-3f79dc604ac5)
+![Grafo_04](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/ee530ec8-8cec-426f-88ee-2834ffe64ef6)
+
 
 ![Grafo_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/521c266a-2ab1-4875-ab47-5a751314fbb2)
