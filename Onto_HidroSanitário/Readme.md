@@ -11,6 +11,10 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
     
 ![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c2c42707-2733-46b4-9f89-fe624be9aa5d)
 
+
+![Grafo_ost01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0c581048-bdae-49f4-a4fc-062237737dc1)
+
+
 ## Exemplo 1 de filtro SPARQL 
 
                1.    A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
