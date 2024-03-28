@@ -9,9 +9,9 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
     3. Ontologia_V1_Projeto_HidroSanitário.xlsx  (Campo ontológico de Instâncias de teste)
     4. Ontologia_V1_Projeto_HidroSanitário_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
     
-![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/484e6fb4-0b84-455c-8f42-b0f6ab3147cc)
+![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0302da7b-697a-486b-a06a-b7a493a19404)
 
-![Grafo_ost01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/9c91a0aa-4aa6-4a69-bc38-e0510f751fae)
+![Grafo_ost01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/a0209149-7fbe-4992-8e0d-24e28b4ce697)
 
 ## Exemplo 1 de filtro SPARQL 
 
