@@ -1,4 +1,4 @@
-## Ontologia de conceitos de projeto HidroSanitário - Prefixo hsa:
+![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/93d5d5b7-8adf-4c4c-ab3a-a509a9c7ab78)## Ontologia de conceitos de projeto HidroSanitário - Prefixo hsa:
 
 Os arquivos Excel de esta pasta contêm o campo ontológico de conceitos para instalações hidrosanitárias para serem utilizados em projetos BIM.
 Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
@@ -9,9 +9,9 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
     3. Ontologia_V1_Projeto_HidroSanitário.xlsx  (Campo ontológico de Instâncias de teste)
     4. Ontologia_V1_Projeto_HidroSanitário_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
     
-![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0302da7b-697a-486b-a06a-b7a493a19404)
+![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/b8158716-9c4e-485d-a0e0-5cf59b56e4d4)
 
-![Grafo_ost01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/a0209149-7fbe-4992-8e0d-24e28b4ce697)
+![Grafo_ost01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/253d9fae-1f23-493d-9830-ed8010c58564)
 
 ## Exemplo 1 de filtro SPARQL 
 
