@@ -1,4 +1,4 @@
-![Grafo_ifc01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/93d5d5b7-8adf-4c4c-ab3a-a509a9c7ab78)## Ontologia de conceitos de projeto HidroSanitário - Prefixo hsa:
+## Ontologia de conceitos de projeto HidroSanitário - Prefixo hsa:
 
 Os arquivos Excel de esta pasta contêm o campo ontológico de conceitos para instalações hidrosanitárias para serem utilizados em projetos BIM.
 Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
