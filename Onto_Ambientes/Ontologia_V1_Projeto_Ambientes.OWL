@@ -27,8 +27,9 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: -"@pt, 
-	rdfs:label "Data.Hora: 3/28/2024 3:21:31 PM"@pt, 
-	rdfs:label "Advertência_1: -"@pt
+	rdfs:label "Data.Hora: 3/30/2024 12:35:51 PM"@pt, 
+	rdfs:label "Advertência_1: -"@pt, 
+	rdfs:label "Prédio: Predio_P000000A1"@pt
 
 Datatype: xsd:string
 Datatype: xsd:decimal
@@ -94,6 +95,11 @@ Class: espa:AreaInterna
 Class: espa:AreaExterna
 	SubClassOf: espa:Espacial
 	Annotations: rdfs:label "AreaExterna "@pt
+	EquivalentTo:  espa:OST_Areas or  espa:ifcZone
+
+Class: espa:Plenos
+	SubClassOf: espa:Espacial
+	Annotations: rdfs:label "Plenos "@pt
 	EquivalentTo:  espa:OST_Areas or  espa:ifcZone
 
 Class: espa:OST_Areas
@@ -220,6 +226,10 @@ Class: espa:Estacionamento.Ext
 	SubClassOf: espa:AreaExterna
 	Annotations: rdfs:label "Estacionamento.Ext "@pt
 
+Class: espa:Shaft
+	SubClassOf: espa:Plenos
+	Annotations: rdfs:label "Shaft "@pt
+
 ObjectProperty: espa:de.ambientes
 	SubPropertyOf: espa:BIM.Prop
 	Domain: espa:Funcional
@@ -297,6 +307,12 @@ ObjectProperty: espa:é.dentro.de
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: é.dentro.de    Domínio: Funcional     Range: Espacial"@pt
+
+ObjectProperty: espa:é.conectado.a
+	SubPropertyOf: espa:localização
+	Domain: espa:Funcional
+	Range: espa:Espacial
+	Annotations: rdfs:label "Propriedade: é.conectado.a    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:é.parte.de
 	SubPropertyOf: espa:localização
@@ -376,11 +392,11 @@ ObjectProperty: espa:hidrosanitário
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: hidrosanitário    Domínio: Funcional     Range: Espacial"@pt
 
-ObjectProperty: espa:é.seco
+ObjectProperty: espa:é.ambiente.seco
 	SubPropertyOf: espa:hidrosanitário
 	Domain: espa:Funcional
 	Range: espa:Espacial
-	Annotations: rdfs:label "Propriedade: é.seco    Domínio: Funcional     Range: Espacial"@pt
+	Annotations: rdfs:label "Propriedade: é.ambiente.seco    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.AF
 	SubPropertyOf: espa:hidrosanitário
@@ -424,6 +440,12 @@ ObjectProperty: espa:usa.bancada.úmida
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.bancada.úmida    Domínio: Funcional     Range: Espacial"@pt
 
+ObjectProperty: espa:usa.bancada.elétrica
+	SubPropertyOf: espa:bancadas
+	Domain: espa:Funcional
+	Range: espa:Espacial
+	Annotations: rdfs:label "Propriedade: usa.bancada.elétrica    Domínio: Funcional     Range: Espacial"@pt
+
 ObjectProperty: espa:blindagem
 	SubPropertyOf: espa:de.requisito
 	Domain: espa:Funcional
@@ -442,50 +464,50 @@ ObjectProperty: espa:usa.blindagem.antibalas
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.blindagem.antibalas    Domínio: Funcional     Range: Espacial"@pt
 
-ObjectProperty: espa:fluídos
+ObjectProperty: espa:fluídosgasosos
 	SubPropertyOf: espa:de.requisito
 	Domain: espa:Funcional
 	Range: espa:Espacial
-	Annotations: rdfs:label "Propriedade: fluídos    Domínio: Funcional     Range: Espacial"@pt
+	Annotations: rdfs:label "Propriedade: fluídosgasosos    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.gás
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.gás    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.ar.medicinal
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.ar.medicinal    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.ar.industrial
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.ar.industrial    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.ar.sintético
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.ar.sintético    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.vácuo.clínico
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.vácuo.clínico    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.oxigênio
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.oxigênio    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:usa.óxido.nitroso
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: usa.óxido.nitroso    Domínio: Funcional     Range: Espacial"@pt
@@ -496,17 +518,17 @@ ObjectProperty: espa:iluminamento
 	Range: espa:Espacial
 	Annotations: rdfs:label "Propriedade: iluminamento    Domínio: Funcional     Range: Espacial"@pt
 
-ObjectProperty: espa:tem.iluminamento.geral
+ObjectProperty: espa:requer.lux.geral.de
 	SubPropertyOf: espa:iluminamento
 	Domain: espa:Funcional
 	Range: espa:Espacial
-	Annotations: rdfs:label "Propriedade: tem.iluminamento.geral    Domínio: Funcional     Range: Espacial"@pt
+	Annotations: rdfs:label "Propriedade: requer.lux.geral.de    Domínio: Funcional     Range: Espacial"@pt
 
-ObjectProperty: espa:tem.iluminamento.trabalho
+ObjectProperty: espa:requer.lux.trabalho.de
 	SubPropertyOf: espa:iluminamento
 	Domain: espa:Funcional
 	Range: espa:Espacial
-	Annotations: rdfs:label "Propriedade: tem.iluminamento.trabalho    Domínio: Funcional     Range: Espacial"@pt
+	Annotations: rdfs:label "Propriedade: requer.lux.trabalho.de    Domínio: Funcional     Range: Espacial"@pt
 
 ObjectProperty: espa:superfícial
 	SubPropertyOf: espa:de.requisito
@@ -622,6 +644,13 @@ DataProperty: espa:dentro.de
 	Annotations: rdfs:label "Valor:  dentro.de"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  é.dentro.de  >  dentro.de"@pt
 
+DataProperty: espa:conectado.a
+	SubPropertyOf: espa:localização
+	Domain: espa:Funcional
+	Range: xsd:string
+	Annotations: rdfs:label "Valor:  conectado.a"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  é.conectado.a  >  conectado.a"@pt
+
 DataProperty: espa:parte.de
 	SubPropertyOf: espa:localização
 	Domain: espa:Funcional
@@ -713,12 +742,12 @@ DataProperty: espa:hidrosanitário
 	Annotations: rdfs:label "Valor:  hidrosanitário"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  hidrosanitário  >  hidrosanitário"@pt
 
-DataProperty: espa:seco
+DataProperty: espa:ambiente.seco
 	SubPropertyOf: espa:hidrosanitário
 	Domain: espa:Funcional
 	Range: xsd:string
-	Annotations: rdfs:label "Valor:  seco"@pt
-	Annotations: rdfs:label "Refere-se a propriedade  é.seco  >  seco"@pt
+	Annotations: rdfs:label "Valor:  ambiente.seco"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  é.ambiente.seco  >  ambiente.seco"@pt
 
 DataProperty: espa:AF
 	SubPropertyOf: espa:hidrosanitário
@@ -769,6 +798,13 @@ DataProperty: espa:bancada.úmida
 	Annotations: rdfs:label "Valor:  bancada.úmida"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.bancada.úmida  >  bancada.úmida"@pt
 
+DataProperty: espa:bancada.elétrica
+	SubPropertyOf: espa:bancadas
+	Domain: espa:Funcional
+	Range: xsd:string
+	Annotations: rdfs:label "Valor:  bancada.elétrica"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  usa.bancada.elétrica  >  bancada.elétrica"@pt
+
 DataProperty: espa:blindagem
 	SubPropertyOf: espa:de.requisito
 	Domain: espa:Funcional
@@ -790,57 +826,57 @@ DataProperty: espa:blindagem.antibalas
 	Annotations: rdfs:label "Valor:  blindagem.antibalas"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.blindagem.antibalas  >  blindagem.antibalas"@pt
 
-DataProperty: espa:fluídos
+DataProperty: espa:fluídosgasosos
 	SubPropertyOf: espa:de.requisito
 	Domain: espa:Funcional
 	Range: xsd:string
-	Annotations: rdfs:label "Valor:  fluídos"@pt
-	Annotations: rdfs:label "Refere-se a propriedade  fluídos  >  fluídos"@pt
+	Annotations: rdfs:label "Valor:  fluídosgasosos"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  fluídosgasosos  >  fluídosgasosos"@pt
 
 DataProperty: espa:gás
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  gás"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.gás  >  gás"@pt
 
 DataProperty: espa:ar.medicinal
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  ar.medicinal"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.ar.medicinal  >  ar.medicinal"@pt
 
 DataProperty: espa:ar.industrial
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  ar.industrial"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.ar.industrial  >  ar.industrial"@pt
 
 DataProperty: espa:ar.sintético
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  ar.sintético"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.ar.sintético  >  ar.sintético"@pt
 
 DataProperty: espa:vácuo.clínico
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  vácuo.clínico"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.vácuo.clínico  >  vácuo.clínico"@pt
 
 DataProperty: espa:oxigênio
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  oxigênio"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  usa.oxigênio  >  oxigênio"@pt
 
 DataProperty: espa:óxido.nitroso
-	SubPropertyOf: espa:fluídos
+	SubPropertyOf: espa:fluídosgasosos
 	Domain: espa:Funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Valor:  óxido.nitroso"@pt
@@ -853,19 +889,19 @@ DataProperty: espa:iluminamento
 	Annotations: rdfs:label "Valor:  iluminamento"@pt
 	Annotations: rdfs:label "Refere-se a propriedade  iluminamento  >  iluminamento"@pt
 
-DataProperty: espa:iluminamento.geral
+DataProperty: espa:lux.geral.de
 	SubPropertyOf: espa:iluminamento
 	Domain: espa:Funcional
 	Range: xsd:string
-	Annotations: rdfs:label "Valor:  iluminamento.geral"@pt
-	Annotations: rdfs:label "Refere-se a propriedade  tem.iluminamento.geral  >  iluminamento.geral"@pt
+	Annotations: rdfs:label "Valor:  lux.geral.de"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  requer.lux.geral.de  >  lux.geral.de"@pt
 
-DataProperty: espa:iluminamento.trabalho
+DataProperty: espa:lux.trabalho.de
 	SubPropertyOf: espa:iluminamento
 	Domain: espa:Funcional
 	Range: xsd:string
-	Annotations: rdfs:label "Valor:  iluminamento.trabalho"@pt
-	Annotations: rdfs:label "Refere-se a propriedade  tem.iluminamento.trabalho  >  iluminamento.trabalho"@pt
+	Annotations: rdfs:label "Valor:  lux.trabalho.de"@pt
+	Annotations: rdfs:label "Refere-se a propriedade  requer.lux.trabalho.de  >  lux.trabalho.de"@pt
 
 DataProperty: espa:superfícial
 	SubPropertyOf: espa:de.requisito
@@ -907,286 +943,482 @@ DisjointClasses: espa:ifcSpace, espa:OST_Rooms
 DisjointClasses: espa:ifcZone, espa:OST_Areas
 
 Individual: espa:Revit.Area
-	Types: espa:OST_Areas
 	Annotations: rdfs:label "Elemento espacial :   Revit.Area"@pt
+	Types: espa:OST_Areas
 	Facts: espa:descrição "Elemento espacial :   Revit.Area"
 
 Individual: espa:Revit.Room
-	Types: espa:OST_Rooms
 	Annotations: rdfs:label "Elemento espacial :   Revit.Room"@pt
+	Types: espa:OST_Rooms
 	Facts: espa:descrição "Elemento espacial :   Revit.Room"
 
 Individual: espa:Ifc.Zone
-	Types: espa:ifcZone
 	Annotations: rdfs:label "Elemento espacial :   Ifc.Zone"@pt
+	Types: espa:ifcZone
 	Facts: espa:descrição "Elemento espacial :   Ifc.Zone"
 
 Individual: espa:Ifc.Space
-	Types: espa:ifcSpace
 	Annotations: rdfs:label "Elemento espacial :   Ifc.Space"@pt
+	Types: espa:ifcSpace
 	Facts: espa:descrição "Elemento espacial :   Ifc.Space"
 
-Individual: espa:Bloco.A
-	Types: espa:Bloco
-	Annotations: rdfs:label "Elemento espacial :   Bloco.A"@pt
-	Facts: espa:código "Bloco.A"
-	Facts: espa:nome "Bloco A"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Bloco.A"
+Individual: espa:Area.ID.300100
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento:   Area.ID.300100"@pt
+	Types: espa:Espacial
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento:   Area.ID.300100"
 
-Individual: espa:Andar.01
-	Types: espa:Pavimento
-	Annotations: rdfs:label "Elemento espacial :   Andar.01"@pt
-	Facts: espa:código "Pavto.01"
-	Facts: espa:nome "1° Pavimento"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Andar.01"
+Individual: espa:Area.ID.300101
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento:   Area.ID.300101"@pt
+	Types: espa:Espacial
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento:   Area.ID.300101"
 
-Individual: espa:Nucleo.Elev
-	Types: espa:Elevadores2
-	Annotations: rdfs:label "Elemento espacial :   Nucleo.Elev"@pt
-	Facts: espa:é.dentro.de espa:Bloco.A
-	Facts: espa:código "Eleva.01"
-	Facts: espa:nome "Elevadores Sociais"
-	Facts: espa:tema "Circulação Vertical"
-	Facts: espa:descrição "Elemento espacial :   Nucleo.Elev"
+Individual: espa:Area.ID.300102
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento:   Area.ID.300102"@pt
+	Types: espa:Espacial
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento:   Area.ID.300102"
 
-Individual: espa:Apto.A100
-	Types: espa:Apartamento
-	Annotations: rdfs:label "Elemento espacial :   Apto.A100"@pt
-	Facts: espa:é.dentro.de espa:Bloco.A
-	Facts: espa:é.dentro.de espa:Andar.01
-	Facts: espa:código "APTO.A"
-	Facts: espa:nome "Apartamento A"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Apto.A100"
+Individual: espa:Area.ID.300103
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento:   Area.ID.300103"@pt
+	Types: espa:Espacial
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento:   Area.ID.300103"
 
-Individual: espa:Apto.B100
-	Types: espa:Apartamento
-	Annotations: rdfs:label "Elemento espacial :   Apto.B100"@pt
-	Facts: espa:é.dentro.de espa:Bloco.A
-	Facts: espa:é.dentro.de espa:Andar.01
-	Facts: espa:código "APTO.B"
-	Facts: espa:nome "Apartamento B"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Apto.B100"
+Individual: espa:Area.ID.300104
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento:   Area.ID.300104"@pt
+	Types: espa:Espacial
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento:   Area.ID.300104"
 
-Individual: espa:Hall.A01
-	Types: espa:Hall
-	Annotations: rdfs:label "Elemento espacial :   Hall.A01"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400200
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400200"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A101"
-	Facts: espa:nome "Hall.A01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Hall.A01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400200"
 
-Individual: espa:Sala.A01
-	Types: espa:Sala
-	Annotations: rdfs:label "Elemento espacial :   Sala.A01"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400201
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400201"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:área 55.3
-	Facts: espa:código "A102"
-	Facts: espa:nome "Sala.A01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Sala.A01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400201"
 
-Individual: espa:Quarto.A01
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.A01"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400202
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400202"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A103"
-	Facts: espa:nome "Quarto.A01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.A01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400202"
 
-Individual: espa:Quarto.A02
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.A02"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400203
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400203"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A104"
-	Facts: espa:nome "Quarto.A02"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.A02"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400203"
 
-Individual: espa:Quarto.A03
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.A03"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400204
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400204"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A105"
-	Facts: espa:nome "Quarto.A03"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.A03"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400204"
 
-Individual: espa:Quarto.A04
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.A04"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400205
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400205"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A106"
-	Facts: espa:nome "Quarto.A04"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.A04"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400205"
 
-Individual: espa:Cozinha.A01
-	Types: espa:Cozinha
-	Annotations: rdfs:label "Elemento espacial :   Cozinha.A01"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400206
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400206"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A107"
-	Facts: espa:nome "Cozinha.A01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Cozinha.A01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400206"
 
-Individual: espa:Banheiro.A01
-	Types: espa:Banheiro
-	Annotations: rdfs:label "Elemento espacial :   Banheiro.A01"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400207
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400207"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A108"
-	Facts: espa:nome "Banheiro.A01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Banheiro.A01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400207"
 
-Individual: espa:Banheiro.A02
-	Types: espa:Banheiro
-	Annotations: rdfs:label "Elemento espacial :   Banheiro.A02"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400208
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400208"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A109"
-	Facts: espa:nome "Banheiro.A02"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Banheiro.A02"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400208"
 
-Individual: espa:Banheiro.A03
-	Types: espa:WC
-	Annotations: rdfs:label "Elemento espacial :   Banheiro.A03"@pt
-	Facts: espa:é.dentro.de espa:Apto.A100
+Individual: espa:Room.ID.400209
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400209"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A110"
-	Facts: espa:nome "Banheiro.A03"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Banheiro.A03"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400209"
 
-Individual: espa:Hall.B01
-	Types: espa:Hall
-	Annotations: rdfs:label "Elemento espacial :   Hall.B01"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400210
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400210"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2101"
-	Facts: espa:nome "Hall.B01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Hall.B01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400210"
 
-Individual: espa:Sala.B01
-	Types: espa:Sala
-	Annotations: rdfs:label "Elemento espacial :   Sala.B01"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400211
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400211"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:área 54.3
-	Facts: espa:código "A2102"
-	Facts: espa:nome "Sala.B01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Sala.B01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400211"
 
-Individual: espa:Quarto.B01
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.B01"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400212
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400212"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2103"
-	Facts: espa:nome "Quarto.B01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.B01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400212"
 
-Individual: espa:Quarto.B02
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.B02"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400213
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400213"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2104"
-	Facts: espa:nome "Quarto.B02"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.B02"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400213"
 
-Individual: espa:Quarto.B03
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.B03"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400214
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400214"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2105"
-	Facts: espa:nome "Quarto.B03"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.B03"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400214"
 
-Individual: espa:Quarto.B04
-	Types: espa:Quarto
-	Annotations: rdfs:label "Elemento espacial :   Quarto.B04"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400215
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400215"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2106"
-	Facts: espa:nome "Quarto.B04"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Quarto.B04"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400215"
 
-Individual: espa:Cozinha.B01
-	Types: espa:Cozinha
-	Annotations: rdfs:label "Elemento espacial :   Cozinha.B01"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400216
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400216"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2107"
-	Facts: espa:nome "Cozinha.B01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Cozinha.B01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400216"
 
-Individual: espa:Banheiro.B01
-	Types: espa:Banheiro
-	Annotations: rdfs:label "Elemento espacial :   Banheiro.B01"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400217
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400217"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2108"
-	Facts: espa:nome "Banheiro.B01"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Banheiro.B01"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400217"
 
-Individual: espa:Banheiro.B02
-	Types: espa:Banheiro
-	Annotations: rdfs:label "Elemento espacial :   Banheiro.B02"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400218
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400218"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2109"
-	Facts: espa:nome "Banheiro.B02"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Banheiro.B02"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400218"
 
-Individual: espa:Banheiro.B03
-	Types: espa:WC
-	Annotations: rdfs:label "Elemento espacial :   Banheiro.B03"@pt
-	Facts: espa:é.dentro.de espa:Apto.B100
+Individual: espa:Room.ID.400219
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400219"@pt
+	Types: espa:Espacial
 	Facts: espa:é.categoria espa:Revit.Room
-	Facts: espa:código "A2110"
-	Facts: espa:nome "Banheiro.B03"
-	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Banheiro.B03"
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400219"
+
+Individual: espa:Room.ID.400220
+	Annotations: rdfs:label "Projeto espacial. Cadastra ID do elemento :   Room.ID.400220"@pt
+	Types: espa:Espacial
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:descrição "Projeto espacial. Cadastra ID do elemento :   Room.ID.400220"
 
 Individual: espa:Estacionamento.01
+	Annotations: rdfs:label "Projeto espacial:   Estacionamento.01"@pt
 	Types: espa:Estacionamento.Ext
-	Annotations: rdfs:label "Elemento espacial :   Estacionamento.01"@pt
 	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:tem.ID espa:Area.ID.300100
 	Facts: espa:código "E101"
-	Facts: espa:nome "Estacionamento.01"
+	Facts: espa:nome "Estacionamento.Ext"
 	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Estacionamento.01"
+	Facts: espa:descrição "Projeto espacial:   Estacionamento.01"
 
 Individual: espa:Estacionamento.02
+	Annotations: rdfs:label "Projeto espacial:   Estacionamento.02"@pt
 	Types: espa:Estacionamento.Ext
-	Annotations: rdfs:label "Elemento espacial :   Estacionamento.02"@pt
 	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:tem.ID espa:Area.ID.300101
 	Facts: espa:código "E102"
-	Facts: espa:nome "Estacionamento.02"
+	Facts: espa:nome "Estacionamento.Ext"
 	Facts: espa:tema "Habitação"
-	Facts: espa:descrição "Elemento espacial :   Estacionamento.02"
+	Facts: espa:descrição "Projeto espacial:   Estacionamento.02"
+
+Individual: espa:Bloco.A
+	Annotations: rdfs:label "Projeto espacial:   Bloco.A"@pt
+	Types: espa:Bloco
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:tem.ID espa:Area.ID.300102
+	Facts: espa:é.dentro.de espa:Bloco.A
+	Facts: espa:código "Bl.A"
+	Facts: espa:nome "Bloco"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Bloco.A"
+
+Individual: espa:Apto.A100
+	Annotations: rdfs:label "Projeto espacial:   Apto.A100"@pt
+	Types: espa:Apartamento
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:tem.ID espa:Area.ID.300103
+	Facts: espa:é.dentro.de espa:Bloco.A
+	Facts: espa:código "APTO.A"
+	Facts: espa:nome "Apartamento"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Apto.A100"
+
+Individual: espa:Apto.B100
+	Annotations: rdfs:label "Projeto espacial:   Apto.B100"@pt
+	Types: espa:Apartamento
+	Facts: espa:é.categoria espa:Revit.Area
+	Facts: espa:tem.ID espa:Area.ID.300104
+	Facts: espa:é.dentro.de espa:Bloco.A
+	Facts: espa:código "APTO.B"
+	Facts: espa:nome "Apartamento"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Apto.B100"
+
+Individual: espa:Hall.A01
+	Annotations: rdfs:label "Projeto espacial:   Hall.A01"@pt
+	Types: espa:Hall
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400200
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 1.55
+	Facts: espa:código "R101"
+	Facts: espa:nome "Hall"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Hall.A01"
+
+Individual: espa:Sala.A01
+	Annotations: rdfs:label "Projeto espacial:   Sala.A01"@pt
+	Types: espa:Sala
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400201
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 55.3
+	Facts: espa:código "R102"
+	Facts: espa:nome "Sala"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Sala.A01"
+
+Individual: espa:Quarto.A01
+	Annotations: rdfs:label "Projeto espacial:   Quarto.A01"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400202
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 12.5
+	Facts: espa:código "R103"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.A01"
+
+Individual: espa:Quarto.A02
+	Annotations: rdfs:label "Projeto espacial:   Quarto.A02"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400203
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 10.3
+	Facts: espa:código "R104"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.A02"
+
+Individual: espa:Quarto.A03
+	Annotations: rdfs:label "Projeto espacial:   Quarto.A03"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400204
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 9.2
+	Facts: espa:código "R105"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.A03"
+
+Individual: espa:Quarto.A04
+	Annotations: rdfs:label "Projeto espacial:   Quarto.A04"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400205
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 9.2
+	Facts: espa:código "R106"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.A04"
+
+Individual: espa:Cozinha.A01
+	Annotations: rdfs:label "Projeto espacial:   Cozinha.A01"@pt
+	Types: espa:Cozinha
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400206
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 8.2
+	Facts: espa:código "R107"
+	Facts: espa:nome "Cozinha"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Cozinha.A01"
+
+Individual: espa:Banheiro.A01
+	Annotations: rdfs:label "Projeto espacial:   Banheiro.A01"@pt
+	Types: espa:Banheiro
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400207
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 3.5
+	Facts: espa:código "R108"
+	Facts: espa:nome "Banheiro"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Banheiro.A01"
+
+Individual: espa:Banheiro.A02
+	Annotations: rdfs:label "Projeto espacial:   Banheiro.A02"@pt
+	Types: espa:Banheiro
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400208
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 1.8
+	Facts: espa:código "R109"
+	Facts: espa:nome "Banheiro"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Banheiro.A02"
+
+Individual: espa:Banheiro.A03
+	Annotations: rdfs:label "Projeto espacial:   Banheiro.A03"@pt
+	Types: espa:WC
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400209
+	Facts: espa:é.dentro.de espa:Apto.A100
+	Facts: espa:área 1.5
+	Facts: espa:código "R110"
+	Facts: espa:nome "WC"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Banheiro.A03"
+
+Individual: espa:Hall.B01
+	Annotations: rdfs:label "Projeto espacial:   Hall.B01"@pt
+	Types: espa:Hall
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400210
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 1.55
+	Facts: espa:código "R2101"
+	Facts: espa:nome "Hall"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Hall.B01"
+
+Individual: espa:Sala.B01
+	Annotations: rdfs:label "Projeto espacial:   Sala.B01"@pt
+	Types: espa:Sala
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400211
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 54.3
+	Facts: espa:código "R2102"
+	Facts: espa:nome "Sala"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Sala.B01"
+
+Individual: espa:Quarto.B01
+	Annotations: rdfs:label "Projeto espacial:   Quarto.B01"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400212
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 11.5
+	Facts: espa:código "R2103"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.B01"
+
+Individual: espa:Quarto.B02
+	Annotations: rdfs:label "Projeto espacial:   Quarto.B02"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400213
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 12.3
+	Facts: espa:código "R2104"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.B02"
+
+Individual: espa:Quarto.B03
+	Annotations: rdfs:label "Projeto espacial:   Quarto.B03"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400214
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 10.2
+	Facts: espa:código "R2105"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.B03"
+
+Individual: espa:Quarto.B04
+	Annotations: rdfs:label "Projeto espacial:   Quarto.B04"@pt
+	Types: espa:Quarto
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400215
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 9.2
+	Facts: espa:código "R2106"
+	Facts: espa:nome "Quarto"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Quarto.B04"
+
+Individual: espa:Cozinha.B01
+	Annotations: rdfs:label "Projeto espacial:   Cozinha.B01"@pt
+	Types: espa:Cozinha
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400216
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 8.2
+	Facts: espa:código "R2107"
+	Facts: espa:nome "Cozinha"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Cozinha.B01"
+
+Individual: espa:Banheiro.B01
+	Annotations: rdfs:label "Projeto espacial:   Banheiro.B01"@pt
+	Types: espa:Banheiro
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400217
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 3.5
+	Facts: espa:código "R2108"
+	Facts: espa:nome "Banheiro"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Banheiro.B01"
+
+Individual: espa:Banheiro.B02
+	Annotations: rdfs:label "Projeto espacial:   Banheiro.B02"@pt
+	Types: espa:Banheiro
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400218
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 1.8
+	Facts: espa:código "R2109"
+	Facts: espa:nome "Banheiro"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Banheiro.B02"
+
+Individual: espa:Banheiro.B03
+	Annotations: rdfs:label "Projeto espacial:   Banheiro.B03"@pt
+	Types: espa:WC
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400219
+	Facts: espa:é.dentro.de espa:Apto.B100
+	Facts: espa:área 1.5
+	Facts: espa:código "R2110"
+	Facts: espa:nome "WC"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Banheiro.B03"
+
+Individual: espa:Descida.01
+	Annotations: rdfs:label "Projeto espacial:   Descida.01"@pt
+	Types: espa:Shaft
+	Facts: espa:é.categoria espa:Revit.Room
+	Facts: espa:tem.ID espa:Room.ID.400220
+	Facts: espa:é.dentro.de espa:Bloco.A
+	Facts: espa:área 0.9
+	Facts: espa:código "S001"
+	Facts: espa:nome "Shaft"
+	Facts: espa:tema "Habitação"
+	Facts: espa:descrição "Projeto espacial:   Descida.01"
