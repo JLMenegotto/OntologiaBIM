@@ -8,3 +8,8 @@ Ar condicionado para serem utilizados em projetos BIM. Antes de executar filtros
     2. Ontologia_V1_Projeto_Avac.owl   (Ontologia owl escrita em sintaxe Manchester)
     3. Ontologia_V1_Projeto_Avac.xlsx  (Campo ontológico de Instâncias de teste)
     4. Ontologia_V1_Projeto_Avac_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
+
+### Observações
+
+As instâncias da ontologia (Individual) tem a finalidade de testar a consistência das classes e propriedades. 
+Os indivíduos devem ser criados a partir da leitura de um modelo BIM.
