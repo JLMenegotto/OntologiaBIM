@@ -3,6 +3,7 @@
 Os arquivos Excel de esta pasta contêm o campo ontológico de conceitos para instalações hidrosanitárias para serem utilizados em projetos BIM.
 Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
 
+Consulte em: https://www.w3.org/TR/sparql11-query/
 ### Arquivos
     1. Ontologia_V1_Projeto_HidroSanitário.dyn   (Função em Designscript para Revit 2024 que gera o arquivo OWL)
     2. Ontologia_V1_Projeto_HidroSanitário.owl   (Ontologia owl escrita em sintaxe Manchester)
