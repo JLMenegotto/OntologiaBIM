@@ -8,6 +8,12 @@ Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner co
     2. Ontologia_V1_Projeto_Estrutural.owl   (Ontologia owl escrita em sintaxe Manchester)
     3. Ontologia_V1_Projeto_Estrutural.xlsx  (Campo ontológico de Instâncias de teste)
     4. Ontologia_V1_Projeto_Estrutural_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
+    
+### Observações
+As instâncias da ontologia (Individual) têm a finalidade de testar a consistência das classes e propriedades. 
+Os indivíduos e os fatos associados devem ser criados a partir da leitura de um modelo BIM.
+
+### Grafos de exemplo 
 
 ![Grafo_Fundação](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/cfae505e-4043-4795-b4ae-ada78c02faed)
 
