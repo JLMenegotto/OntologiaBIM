@@ -11,5 +11,5 @@ Ar condicionado para serem utilizados em projetos BIM. Antes de executar filtros
 
 ### Observações
 
-As instâncias da ontologia (Individual) tem a finalidade de testar a consistência das classes e propriedades. 
-Os indivíduos devem ser criados a partir da leitura de um modelo BIM.
+As instâncias da ontologia (Individual) têm a finalidade de testar a consistência das classes e propriedades. 
+Os indivíduos e os fatos associados devem ser criados a partir da leitura de um modelo BIM.
