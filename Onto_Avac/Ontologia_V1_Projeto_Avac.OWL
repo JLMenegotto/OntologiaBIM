@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: -"@pt, 
-	rdfs:label "Data.Hora: 4/1/2024 12:23:26 PM"@pt, 
+	rdfs:label "Data.Hora: 4/1/2024 4:33:53 PM"@pt, 
 	rdfs:label "Advertência_1: -"@pt, 
 	rdfs:label "Prédio: P000001"@pt
 
@@ -75,6 +75,10 @@ Class: avac:Peça.Avac
 	SubClassOf: avac:Avac
 	Annotations: rdfs:label "Peça.Avac "@pt
 
+Class: avac:Projeto.Avac
+	SubClassOf: avac:Avac
+	Annotations: rdfs:label "Projeto.Avac "@pt
+
 Class: avac:Avac.IFC
 	SubClassOf: avac:Sistema.Avac
 	Annotations: rdfs:label "Avac.IFC "@pt
@@ -90,6 +94,18 @@ Class: avac:Avac.IFC
 Class: avac:Avac.OST
 	SubClassOf: avac:Peça.Avac
 	Annotations: rdfs:label "Avac.OST "@pt
+
+Class: avac:ArCond
+	SubClassOf: avac:Projeto.Avac
+	Annotations: rdfs:label "ArCond "@pt
+
+Class: avac:ArRetorno
+	SubClassOf: avac:Projeto.Avac
+	Annotations: rdfs:label "ArRetorno "@pt
+
+Class: avac:Exaustão
+	SubClassOf: avac:Projeto.Avac
+	Annotations: rdfs:label "Exaustão "@pt
 
 Class: avac:IfcDistributionSystem
 	SubClassOf: avac:Avac.IFC
@@ -191,13 +207,73 @@ Class: avac:OST_MEPAncillaryFraming
 	SubClassOf: avac:Avac.OST
 	Annotations: rdfs:label "OST_MEPAncillaryFraming "@pt
 
+Class: avac:OST_VibrationIsolators
+	SubClassOf: avac:Avac.OST
+	Annotations: rdfs:label "OST_VibrationIsolators "@pt
+
 Class: avac:OST_VibrationDampers
 	SubClassOf: avac:Avac.OST
 	Annotations: rdfs:label "OST_VibrationDampers "@pt
 
-Class: avac:OST_VibrationIsolators
-	SubClassOf: avac:Avac.OST
-	Annotations: rdfs:label "OST_VibrationIsolators "@pt
+Class: avac:P_InsuflaDuto
+	SubClassOf: avac:ArCond
+	Annotations: rdfs:label "P_InsuflaDuto "@pt
+
+Class: avac:P_InsuflaDutoConexão
+	SubClassOf: avac:ArCond
+	Annotations: rdfs:label "P_InsuflaDutoConexão "@pt
+
+Class: avac:P_InsuflaDutoAcessório
+	SubClassOf: avac:ArCond
+	Annotations: rdfs:label "P_InsuflaDutoAcessório "@pt
+
+Class: avac:P_InsuflaDutoDamper
+	SubClassOf: avac:ArCond
+	Annotations: rdfs:label "P_InsuflaDutoDamper "@pt
+
+Class: avac:P_InsuflaDutoTerminal
+	SubClassOf: avac:ArCond
+	Annotations: rdfs:label "P_InsuflaDutoTerminal "@pt
+
+Class: avac:P_RetornoDuto
+	SubClassOf: avac:ArRetorno
+	Annotations: rdfs:label "P_RetornoDuto "@pt
+
+Class: avac:P_RetornoDutoConexão
+	SubClassOf: avac:ArRetorno
+	Annotations: rdfs:label "P_RetornoDutoConexão "@pt
+
+Class: avac:P_RetornoDutoAcessório
+	SubClassOf: avac:ArRetorno
+	Annotations: rdfs:label "P_RetornoDutoAcessório "@pt
+
+Class: avac:P_RetornoDutoDamper
+	SubClassOf: avac:ArRetorno
+	Annotations: rdfs:label "P_RetornoDutoDamper "@pt
+
+Class: avac:P_RetornoDutoTerminal
+	SubClassOf: avac:ArRetorno
+	Annotations: rdfs:label "P_RetornoDutoTerminal "@pt
+
+Class: avac:P_ExaustãoDuto
+	SubClassOf: avac:Exaustão
+	Annotations: rdfs:label "P_ExaustãoDuto "@pt
+
+Class: avac:P_ExaustãoDutoConexão
+	SubClassOf: avac:Exaustão
+	Annotations: rdfs:label "P_ExaustãoDutoConexão "@pt
+
+Class: avac:P_ExaustãoDutoAcessório
+	SubClassOf: avac:Exaustão
+	Annotations: rdfs:label "P_ExaustãoDutoAcessório "@pt
+
+Class: avac:P_ExaustãoDutoDamper
+	SubClassOf: avac:Exaustão
+	Annotations: rdfs:label "P_ExaustãoDutoDamper "@pt
+
+Class: avac:P_ExaustãoDutoTerminal
+	SubClassOf: avac:Exaustão
+	Annotations: rdfs:label "P_ExaustãoDutoTerminal "@pt
 
 ObjectProperty: avac:de.Avac
 	SubPropertyOf: avac:BIM.Prop
@@ -441,25 +517,35 @@ DataProperty: avac:conectado.a
 
 DisjointClasses: avac:Avac.IFC, avac:Avac.OST
 
-Individual: avac:ifc.DutoAcessório
-	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDiscreteAccessory:   ifc.DutoAcessório"@pt
-	Types: avac:ifcDiscreteAccessory
-	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDiscreteAccessory:   ifc.DutoAcessório"
+Individual: avac:ifc.SistemaAvac
+	Annotations: rdfs:label "Objeto BIM de instalação  IfcDistributionSystem:   ifc.SistemaAvac"@pt
+	Types: avac:IfcDistributionSystem
+	Facts: avac:descrição "Objeto BIM de instalação  IfcDistributionSystem:   ifc.SistemaAvac"
+
+Individual: avac:Revit.SistemaAvac
+	Annotations: rdfs:label "Objeto BIM de instalação  OST_DuctSystem:   Revit.SistemaAvac"@pt
+	Types: avac:OST_DuctSystem
+	Facts: avac:descrição "Objeto BIM de instalação  OST_DuctSystem:   Revit.SistemaAvac"
+
+Individual: avac:ifc.Duto
+	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDuctSegment:   ifc.Duto"@pt
+	Types: avac:ifcDuctSegment
+	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDuctSegment:   ifc.Duto"
 
 Individual: avac:ifc.DutoConexão
 	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDuctFitting:   ifc.DutoConexão"@pt
 	Types: avac:ifcDuctFitting
 	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDuctFitting:   ifc.DutoConexão"
 
+Individual: avac:ifc.DutoAcessório
+	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDiscreteAccessory:   ifc.DutoAcessório"@pt
+	Types: avac:ifcDiscreteAccessory
+	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDiscreteAccessory:   ifc.DutoAcessório"
+
 Individual: avac:ifc.DutoSilenciador
 	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDuctSiIencer:   ifc.DutoSilenciador"@pt
 	Types: avac:ifcDuctSiIencer
 	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDuctSiIencer:   ifc.DutoSilenciador"
-
-Individual: avac:ifc.DutoSegmento
-	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDuctSegment:   ifc.DutoSegmento"@pt
-	Types: avac:ifcDuctSegment
-	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDuctSegment:   ifc.DutoSegmento"
 
 Individual: avac:ifc.DutoForro
 	Annotations: rdfs:label "Objeto BIM dutos AVAC IfcCovering:   ifc.DutoForro"@pt
@@ -471,10 +557,10 @@ Individual: avac:ifc.DutoTerminaI
 	Types: avac:ifcAirTerminaI
 	Facts: avac:descrição "Objeto BIM dutos AVAC ifcAirTerminaI:   ifc.DutoTerminaI"
 
-Individual: avac:Ifc.ControlElement
-	Annotations: rdfs:label "Objeto BIM dutos AVAC IfcUnitaryControlElement:   Ifc.ControlElement"@pt
+Individual: avac:Ifc.DutoControle
+	Annotations: rdfs:label "Objeto BIM dutos AVAC IfcUnitaryControlElement:   Ifc.DutoControle"@pt
 	Types: avac:IfcUnitaryControlElement
-	Facts: avac:descrição "Objeto BIM dutos AVAC IfcUnitaryControlElement:   Ifc.ControlElement"
+	Facts: avac:descrição "Objeto BIM dutos AVAC IfcUnitaryControlElement:   Ifc.DutoControle"
 
 Individual: avac:ifc.DutoEquipamento
 	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcUnitaryEquipment:   ifc.DutoEquipamento"@pt
@@ -486,25 +572,20 @@ Individual: avac:ifc.DutoVentilador
 	Types: avac:ifcFan
 	Facts: avac:descrição "Objeto BIM dutos AVAC ifcFan:   ifc.DutoVentilador"
 
-Individual: avac:ifc.Damper
-	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDamper:   ifc.Damper"@pt
+Individual: avac:ifc.DutoDamper
+	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcDamper:   ifc.DutoDamper"@pt
 	Types: avac:ifcDamper
-	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDamper:   ifc.Damper"
-
-Individual: avac:ifc.VibraçãoIsolador
-	Annotations: rdfs:label "Objeto BIM dutos AVAC ifcVibrationIsoIator:   ifc.VibraçãoIsolador"@pt
-	Types: avac:ifcVibrationIsoIator
-	Facts: avac:descrição "Objeto BIM dutos AVAC ifcVibrationIsoIator:   ifc.VibraçãoIsolador"
+	Facts: avac:descrição "Objeto BIM dutos AVAC ifcDamper:   ifc.DutoDamper"
 
 Individual: avac:Revit.DutoAcessório
 	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_DuctAccessory:   Revit.DutoAcessório"@pt
 	Types: avac:OST_DuctAccessory
 	Facts: avac:descrição "Objeto BIM dutos AVAC OST_DuctAccessory:   Revit.DutoAcessório"
 
-Individual: avac:Revit.DutoCurva
-	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_DuctCurves:   Revit.DutoCurva"@pt
+Individual: avac:Revit.Duto
+	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_DuctCurves:   Revit.Duto"@pt
 	Types: avac:OST_DuctCurves
-	Facts: avac:descrição "Objeto BIM dutos AVAC OST_DuctCurves:   Revit.DutoCurva"
+	Facts: avac:descrição "Objeto BIM dutos AVAC OST_DuctCurves:   Revit.Duto"
 
 Individual: avac:Revit.DutoCurvaFlexivel
 	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_FlexDuctCurves:   Revit.DutoCurvaFlexivel"@pt
@@ -551,17 +632,84 @@ Individual: avac:Revit.ConjuntoMecanico
 	Types: avac:OST_MechanicalEquipmentSet
 	Facts: avac:descrição "Objeto BIM dutos AVAC OST_MechanicalEquipmentSet:   Revit.ConjuntoMecanico"
 
-Individual: avac:Revit.SuporteDutos
-	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_MEPAncillaryFraming:   Revit.SuporteDutos"@pt
+Individual: avac:Revit.DutoSuporte
+	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_MEPAncillaryFraming:   Revit.DutoSuporte"@pt
 	Types: avac:OST_MEPAncillaryFraming
-	Facts: avac:descrição "Objeto BIM dutos AVAC OST_MEPAncillaryFraming:   Revit.SuporteDutos"
+	Facts: avac:descrição "Objeto BIM dutos AVAC OST_MEPAncillaryFraming:   Revit.DutoSuporte"
 
-Individual: avac:Revit.Damper
-	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_VibrationDampers:   Revit.Damper"@pt
+Individual: avac:Revit.DutoDamper
+	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_VibrationDampers:   Revit.DutoDamper"@pt
 	Types: avac:OST_VibrationDampers
-	Facts: avac:descrição "Objeto BIM dutos AVAC OST_VibrationDampers:   Revit.Damper"
+	Facts: avac:descrição "Objeto BIM dutos AVAC OST_VibrationDampers:   Revit.DutoDamper"
 
-Individual: avac:Revit.VibraçãoIsolador
-	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_VibrationIsolators:   Revit.VibraçãoIsolador"@pt
+Individual: avac:Revit.DutoVibraçãoIsolador
+	Annotations: rdfs:label "Objeto BIM dutos AVAC OST_VibrationIsolators:   Revit.DutoVibraçãoIsolador"@pt
 	Types: avac:OST_VibrationIsolators
-	Facts: avac:descrição "Objeto BIM dutos AVAC OST_VibrationIsolators:   Revit.VibraçãoIsolador"
+	Facts: avac:descrição "Objeto BIM dutos AVAC OST_VibrationIsolators:   Revit.DutoVibraçãoIsolador"
+
+Individual: avac:SIS.Avac.ID.100000
+	Annotations: rdfs:label "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.Avac.ID.100000"@pt
+	Types: avac:Sistema.Avac
+	Facts: avac:é.categoria avac:Revit.SistemaAvac
+	Facts: avac:tema "Revit.SistemaAvac"
+	Facts: avac:descrição "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.Avac.ID.100000"
+
+Individual: avac:SIS.ArC.ID.200000
+	Annotations: rdfs:label "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.ArC.ID.200000"@pt
+	Types: avac:Sistema.Avac
+	Facts: avac:é.categoria avac:Revit.SistemaAvac
+	Facts: avac:tem.sistema avac:SIS.Avac.ID.100000
+	Facts: avac:tema "Revit.SistemaAvac"
+	Facts: avac:descrição "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.ArC.ID.200000"
+
+Individual: avac:SIS.Ret.ID.200100
+	Annotations: rdfs:label "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.Ret.ID.200100"@pt
+	Types: avac:Sistema.Avac
+	Facts: avac:é.categoria avac:Revit.SistemaAvac
+	Facts: avac:tem.sistema avac:SIS.Avac.ID.100000
+	Facts: avac:tema "Revit.SistemaAvac"
+	Facts: avac:descrição "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.Ret.ID.200100"
+
+Individual: avac:SIS.Exa.ID.300100
+	Annotations: rdfs:label "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.Exa.ID.300100"@pt
+	Types: avac:Sistema.Avac
+	Facts: avac:é.categoria avac:Revit.SistemaAvac
+	Facts: avac:tem.sistema avac:SIS.Avac.ID.100000
+	Facts: avac:tema "Revit.SistemaAvac"
+	Facts: avac:descrição "Sistema de Avac  Sistema.Avac: Usa o ID do elemento  SIS.Exa.ID.300100"
+
+Individual: avac:DutoArC.ID.100108
+	Annotations: rdfs:label "Traçado dos dutos  P_InsuflaDuto: Usa o ID do elemento  DutoArC.ID.100108"@pt
+	Types: avac:P_InsuflaDuto
+	Facts: avac:é.categoria avac:Revit.Duto
+	Facts: avac:tem.sistema avac:SIS.ArC.ID.200000
+	Facts: avac:tipo "Duto_arcond"
+	Facts: avac:tema "Revit.Duto"
+	Facts: avac:descrição "Traçado dos dutos  P_InsuflaDuto: Usa o ID do elemento  DutoArC.ID.100108"
+
+Individual: avac:DutoArC.ID.100109
+	Annotations: rdfs:label "Traçado dos dutos  P_InsuflaDutoConexão: Usa o ID do elemento  DutoArC.ID.100109"@pt
+	Types: avac:P_InsuflaDutoConexão
+	Facts: avac:é.categoria avac:Revit.DutoConexão
+	Facts: avac:tem.sistema avac:SIS.ArC.ID.200000
+	Facts: avac:tipo "Curv_arcond"
+	Facts: avac:tema "Revit.DutoConexão"
+	Facts: avac:descrição "Traçado dos dutos  P_InsuflaDutoConexão: Usa o ID do elemento  DutoArC.ID.100109"
+
+Individual: avac:DutoRet.ID.100108
+	Annotations: rdfs:label "Traçado dos dutos  P_RetornoDuto: Usa o ID do elemento  DutoRet.ID.100108"@pt
+	Types: avac:P_RetornoDuto
+	Facts: avac:é.categoria avac:Revit.Duto
+	Facts: avac:tem.sistema avac:SIS.Ret.ID.200100
+	Facts: avac:tipo "Duto_arcond"
+	Facts: avac:tema "Revit.Duto"
+	Facts: avac:descrição "Traçado dos dutos  P_RetornoDuto: Usa o ID do elemento  DutoRet.ID.100108"
+
+Individual: avac:DutoRet.ID.100109
+	Annotations: rdfs:label "Traçado dos dutos  P_RetornoDutoConexão: Usa o ID do elemento  DutoRet.ID.100109"@pt
+	Types: avac:P_RetornoDutoConexão
+	Facts: avac:é.categoria avac:Revit.DutoConexão
+	Facts: avac:tem.sistema avac:SIS.Ret.ID.200100
+	Facts: avac:tipo "Curv_arcond"
+	Facts: avac:tema "Revit.DutoConexão"
+	Facts: avac:descrição "Traçado dos dutos  P_RetornoDutoConexão: Usa o ID do elemento  DutoRet.ID.100109"
