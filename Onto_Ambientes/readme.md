@@ -14,7 +14,13 @@ Os elementos de ambientes foram divididos:
     2. Espaços Internos Mep (Objetos OST_MEPSpaces ou ifcSpatialZone)
     3. Áreas exteriores (Objetos de categoria OST_Areas ou ifcSpatialZone)
     4. Zonas (Objetos OST_HVAC_Zones ou ifcZone)
-    
+
+### Observações
+As instâncias da ontologia (Individual) têm a finalidade de testar a consistência das classes e propriedades. 
+Os indivíduos e os fatos associados devem ser criados a partir da leitura de um modelo BIM.
+
+### Grafo de exemplo 
+
 ![Grafo_04](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/9b139e35-4c91-4480-a790-298d8c7d6b7c)
 
 ## Exemplo de filtro SPARQL 
