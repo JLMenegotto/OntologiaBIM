@@ -17,3 +17,5 @@ As instâncias da ontologia (Individual) têm a finalidade de testar a consistê
 Os indivíduos e os fatos associados devem ser criados a partir da leitura de um modelo BIM.
 
 ### Grafos de exemplo
+![Grafo_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/595c3427-4820-4f10-b329-6dc09a8cf39b)
+
