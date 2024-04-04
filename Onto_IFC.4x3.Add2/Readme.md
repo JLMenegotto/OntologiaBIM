@@ -18,6 +18,8 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
 
 ### Grafos de exemplo
 
+![Grafo02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/067846d7-6f47-407b-b5d2-2e34a57d8c69)
+
 ![Grafo01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/42e0c5c1-7df8-445b-b510-36b57410b569)
 
 ![Grafo_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/02770766-8c73-4b16-bd3c-24ce56db1acd)
