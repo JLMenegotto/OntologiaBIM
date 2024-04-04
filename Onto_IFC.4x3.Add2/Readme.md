@@ -37,6 +37,7 @@ A variável do objeto ?s retorna o predicado ?p com as subclasses e filtrando as
     15. }
     
 ### Grafos de exemplo
+![Grafo03](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/7922c90d-9c42-4e6e-87b8-96130db27387)
 
 ![Grafo02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/067846d7-6f47-407b-b5d2-2e34a57d8c69)
 
@@ -44,7 +45,4 @@ A variável do objeto ?s retorna o predicado ?p com as subclasses e filtrando as
 
 ![Grafo_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/02770766-8c73-4b16-bd3c-24ce56db1acd)
 
-![Grafo_03](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/4f8e9b55-605f-45c7-970a-8da4fe1bfb38)
-
-![Grafo_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/52c18d82-04a0-4de6-b48b-a7fee3906e9d)
 
