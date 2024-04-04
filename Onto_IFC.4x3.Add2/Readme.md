@@ -17,7 +17,7 @@ As instâncias da ontologia (Individual) têm a finalidade de testar a consistê
 Os indivíduos e os fatos associados devem ser criados a partir da leitura de um modelo BIM.
 
 ## Exemplo de filtro SPARQL 
-A variável do objeto ?s retorna o predicado ?p com a descrição, filtrando os "IfcElement"
+A variável do objeto ?s retorna o predicado ?p com as subclasses e filtrando as portas "Door"
 
     1. Prefix owl:  <http://www.w3.org/2002/07/owl#>
     2. Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -32,8 +32,8 @@ A variável do objeto ?s retorna o predicado ?p com a descrição, filtrando os 
     10. Select *
     11. Where
     12. {
-    13.       ?s ifc:descrição ?p .
-    14.       filter (contains (str (?p), "IfcElement"))
+    13.       ?p rdfs:subClassOf ?s .
+    14.       filter (contains (str (?s), "Door"))
     15. }
     
 ### Grafos de exemplo
