@@ -37,12 +37,11 @@ A variável do objeto ?s retorna o predicado ?p com as subclasses e filtrando as
     15. }
     
 ### Grafos de exemplo
-![Grafo03](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/7922c90d-9c42-4e6e-87b8-96130db27387)
+![Grafo_05](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/ef8e0938-dba5-4c92-82a7-8e9a801a058d)
+![Grafo_04](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/49f6d511-d42d-434b-983a-a13ce7ca2075)
+![Grafo_03](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/6a92bb0b-b6b1-4c14-af31-5374f7645f41)
+![Grafo_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/4cec6e03-98b6-447e-a3e0-b91b90517440)
+![Grafo_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c97d5c89-7e59-4813-8614-33a55e88da1c)
 
-![Grafo02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/067846d7-6f47-407b-b5d2-2e34a57d8c69)
-
-![Grafo01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/42e0c5c1-7df8-445b-b510-36b57410b569)
-
-![Grafo_02](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/02770766-8c73-4b16-bd3c-24ce56db1acd)
 
 
