@@ -5,7 +5,7 @@
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 ## 
 
-### **Versão 2.00 Para Revit 2024**
+### **Versão 1.00 Para Revit 2024**
 
 Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. As ontologias geradas em OWL e os arquivos excel que lhes dão origem são atualizados quando há mudanças na estruturação de classes e propriedades.
 
