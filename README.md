@@ -4,7 +4,6 @@
 + <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 ## 
-
 ### **Versão 1.00 Para Revit 2024**
 
 Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. As ontologias geradas em OWL e os arquivos excel que lhes dão origem são atualizados quando há mudanças na estruturação de classes e propriedades.
@@ -61,21 +60,3 @@ https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6
   15. **Funções para Advance Steel**    https://github.com/JLMenegotto/AulasBIM/tree/master/AdvanceSteel   
   16. **Bibliografia e Material Complementar:** https://jlmenegotto.wixsite.com/jlmenegotto-bim
 
-
-digraph dot_neato {
-    IfcWall [pos="0,0!"];
-    IfcRelVoidsElement [pos="200,0!"];
-    IfcOpeningElement [pos="400,0!"];
-
-    IfcRelAggregates [pos="0,-70!"];
-
-    IfcBuildingElementPart [pos="0,-140!"];
-    IfcRelVoidsElement2 [label="IfcRelVoidsElement", pos="200,-140!"];
-    IfcVoidingFeature [pos="400,-140!"];
-
-    IfcRelVoidsElement -> IfcWall [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
-    IfcRelVoidsElement -> IfcOpeningElement [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
-    IfcRelAggregates -> IfcWall [label="RelatingObject"];
-    IfcRelAggregates -> IfcBuildingElementPart [label="RelatedObjects[1]"];
-    IfcRelVoidsElement2 -> IfcBuildingElementPart [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
-    IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];}
