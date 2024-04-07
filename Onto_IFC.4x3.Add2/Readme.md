@@ -1,7 +1,8 @@
 ## Ontologia de Classes IFC 4x3 Add 2 - Prefixo ifc:
 
 Os arquivos Excel de esta pasta contêm o campo ontológico de conceitos para Classes IFC 4x3 Addendo 2 para serem utilizados em projetos BIM. 
-Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
+Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT. Os termos dos tipos enumerados em IFC foram traduzidos ao português
+e colocados no DataProperty "tradução".
 
 Consulte em: https://www.w3.org/TR/sparql11-query/
 
@@ -37,6 +38,8 @@ A variável do objeto ?s retorna o predicado ?p com as subclasses e filtrando as
     15. }
     
 ### Grafos de exemplo
+![Grafo_00](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/92861f76-811c-41e2-8f3e-d736ef23b317)
+
 ![Grafo_05](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/ef8e0938-dba5-4c92-82a7-8e9a801a058d)
 ![Grafo_04](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/49f6d511-d42d-434b-983a-a13ce7ca2075)
 ![Grafo_03](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/6a92bb0b-b6b1-4c14-af31-5374f7645f41)
