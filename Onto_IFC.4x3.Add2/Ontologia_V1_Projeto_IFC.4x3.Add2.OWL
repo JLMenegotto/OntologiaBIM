@@ -27,7 +27,7 @@ Annotations:
 	rdfs:label "Referência.Norma_2: -"@pt, 
 	rdfs:label "Referência.Norma_3: -"@pt, 
 	rdfs:label "Observações: -"@pt, 
-	rdfs:label "Data.Hora: 4/7/2024 12:55:41 PM"@pt, 
+	rdfs:label "Data.Hora: 4/7/2024 2:27:20 PM"@pt, 
 	rdfs:label "Advertência_1: -"@pt, 
 	rdfs:label "Prédio: Predio_P0000001"@pt
 
@@ -2473,6 +2473,10 @@ Class: ifc:IfcGeotechnicalStratumType
 	SubClassOf: ifc:IfcGeotechnicalStratum
 	Annotations: rdfs:label "VOID"@pt
 
+Class: ifc:IfcGeotechnicalStratumType
+	SubClassOf: ifc:IfcGeotechnicalStratum
+	Annotations: rdfs:label "WATER."@pt
+
 Class: ifc:IfcCourseType
 	SubClassOf: ifc:IfcCourse
 	Annotations: rdfs:label "ARMOUR"@pt
@@ -2864,6 +2868,10 @@ Class: ifc:IfcMechanicalFastenerType
 Class: ifc:IfcSignType
 	SubClassOf: ifc:IfcSign
 	Annotations: rdfs:label "MARKER"@pt
+
+Class: ifc:IfcSignType
+	SubClassOf: ifc:IfcSign
+	Annotations: rdfs:label "MIRROR"@pt
 
 Class: ifc:IfcSignType
 	SubClassOf: ifc:IfcSign
@@ -6405,13 +6413,18 @@ Class: ifc:SUPPORT
 
 Class: ifc:SOLID
 	SubClassOf: ifc:IfcGeotechnicalStratumType
-	Annotations: rdfs:label "Solo   IfcElement  IfcGeotechnicalElement  IfcGeotechnicalStratum  IfcGeotechnicalStratumType SÓLIDO"@pt
+	Annotations: rdfs:label "Solo   IfcElement  IfcGeotechnicalElement  IfcGeotechnicalStratum  IfcGeotechnicalStratumType SOLO.SÓLIDO"@pt
 	EquivalentTo:  ifc:IfcGeotechnicalStratumType and  ifc:tem.1.2.tipoifc only  ifc:SOLID
 
 Class: ifc:VOID
 	SubClassOf: ifc:IfcGeotechnicalStratumType
-	Annotations: rdfs:label "Solo   IfcElement  IfcGeotechnicalElement  IfcGeotechnicalStratum  IfcGeotechnicalStratumType VAZIO"@pt
+	Annotations: rdfs:label "Solo   IfcElement  IfcGeotechnicalElement  IfcGeotechnicalStratum  IfcGeotechnicalStratumType SOLO.VAZIO.OU.FRATURADO"@pt
 	EquivalentTo:  ifc:IfcGeotechnicalStratumType and  ifc:tem.1.2.tipoifc only  ifc:VOID
+
+Class: ifc:WATER.
+	SubClassOf: ifc:IfcGeotechnicalStratumType
+	Annotations: rdfs:label "Solo   IfcElement  IfcGeotechnicalElement  IfcGeotechnicalStratum  IfcGeotechnicalStratumType CORPO.HÍDRICO"@pt
+	EquivalentTo:  ifc:IfcGeotechnicalStratumType and  ifc:tem.1.2.tipoifc only  ifc:WATER.
 
 Class: ifc:ARMOUR
 	SubClassOf: ifc:IfcCourseType
@@ -6900,12 +6913,17 @@ Class: ifc:STUDSHEARCONNECTOR
 
 Class: ifc:MARKER
 	SubClassOf: ifc:IfcSignType
-	Annotations: rdfs:label "Comunicação.Visual   IfcElement  IfcElementComponent  IfcSign  IfcSignType MARCADOR"@pt
+	Annotations: rdfs:label "Comunicação.Visual   IfcElement  IfcElementComponent  IfcSign  IfcSignType SINALIZAÇÃO.DE.POSTE.SIMBÓLICA"@pt
 	EquivalentTo:  ifc:IfcSignType and  ifc:tem.1.2.tipoifc only  ifc:MARKER
+
+Class: ifc:MIRROR
+	SubClassOf: ifc:IfcSignType
+	Annotations: rdfs:label "Comunicação.Visual   IfcElement  IfcElementComponent  IfcSign  IfcSignType SINALIZAÇÃO.REFLEXIVA"@pt
+	EquivalentTo:  ifc:IfcSignType and  ifc:tem.1.2.tipoifc only  ifc:MIRROR
 
 Class: ifc:PICTORAL
 	SubClassOf: ifc:IfcSignType
-	Annotations: rdfs:label "Comunicação.Visual   IfcElement  IfcElementComponent  IfcSign  IfcSignType PICTORAL"@pt
+	Annotations: rdfs:label "Comunicação.Visual   IfcElement  IfcElementComponent  IfcSign  IfcSignType SINALIZAÇÃO.GRÁFICA"@pt
 	EquivalentTo:  ifc:IfcSignType and  ifc:tem.1.2.tipoifc only  ifc:PICTORAL
 
 Class: ifc:AXIAL_YIELD
@@ -11525,14 +11543,20 @@ Individual: ifc:Estaca.06
 Individual: ifc:GeoTec.01
 	Annotations: rdfs:label "Classe IFC: IfcGeotechnicalStratum    Tipo:  SOLID    Individuo: GeoTec.01"@pt
 	Types: ifc:SOLID
-	Facts: ifc:tradução "SÓLIDO"
+	Facts: ifc:tradução "SOLO SÓLIDO"
 	Facts: ifc:descrição "Classe IFC: IfcGeotechnicalStratum    Tipo:  SOLID    Individuo: GeoTec.01"
 
 Individual: ifc:GeoTec.02
 	Annotations: rdfs:label "Classe IFC: IfcGeotechnicalStratum    Tipo:  VOID    Individuo: GeoTec.02"@pt
 	Types: ifc:VOID
-	Facts: ifc:tradução "VAZIO"
+	Facts: ifc:tradução "SOLO VAZIO OU FRATURADO"
 	Facts: ifc:descrição "Classe IFC: IfcGeotechnicalStratum    Tipo:  VOID    Individuo: GeoTec.02"
+
+Individual: ifc:GeoTec.03
+	Annotations: rdfs:label "Classe IFC: IfcGeotechnicalStratum    Tipo:  WATER.    Individuo: GeoTec.03"@pt
+	Types: ifc:WATER.
+	Facts: ifc:tradução "CORPO HÍDRICO"
+	Facts: ifc:descrição "Classe IFC: IfcGeotechnicalStratum    Tipo:  WATER.    Individuo: GeoTec.03"
 
 Individual: ifc:Cursos.01
 	Annotations: rdfs:label "Classe IFC: IfcCourse    Tipo:  ARMOUR    Individuo: Cursos.01"@pt
@@ -12119,14 +12143,20 @@ Individual: ifc:Ligações.15
 Individual: ifc:Signos.01
 	Annotations: rdfs:label "Classe IFC: IfcSign    Tipo:  MARKER    Individuo: Signos.01"@pt
 	Types: ifc:MARKER
-	Facts: ifc:tradução "MARCADOR"
+	Facts: ifc:tradução "POSTE DE SINALIZAÇÃO SIMBÓLICA"
 	Facts: ifc:descrição "Classe IFC: IfcSign    Tipo:  MARKER    Individuo: Signos.01"
 
 Individual: ifc:Signos.02
-	Annotations: rdfs:label "Classe IFC: IfcSign    Tipo:  PICTORAL    Individuo: Signos.02"@pt
+	Annotations: rdfs:label "Classe IFC: IfcSign    Tipo:  MIRROR    Individuo: Signos.02"@pt
+	Types: ifc:MIRROR
+	Facts: ifc:tradução "SINALIZAÇÃO REFLEXIVA"
+	Facts: ifc:descrição "Classe IFC: IfcSign    Tipo:  MIRROR    Individuo: Signos.02"
+
+Individual: ifc:Signos.03
+	Annotations: rdfs:label "Classe IFC: IfcSign    Tipo:  PICTORAL    Individuo: Signos.03"@pt
 	Types: ifc:PICTORAL
-	Facts: ifc:tradução "PICTORAL"
-	Facts: ifc:descrição "Classe IFC: IfcSign    Tipo:  PICTORAL    Individuo: Signos.02"
+	Facts: ifc:tradução "SINALIZAÇÃO GRÁFICA"
+	Facts: ifc:descrição "Classe IFC: IfcSign    Tipo:  PICTORAL    Individuo: Signos.03"
 
 Individual: ifc:Redutor.Vibração.01
 	Annotations: rdfs:label "Classe IFC: IfcVibrationDamper    Tipo:  AXIAL_YIELD    Individuo: Redutor.Vibração.01"@pt
