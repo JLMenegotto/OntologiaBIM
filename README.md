@@ -9,7 +9,7 @@
 
 Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. As ontologias geradas em OWL e os arquivos excel que lhes dão origem são atualizados quando há mudanças na estruturação de classes e propriedades.
 
-![OntoBIM_Manchester_2024](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/c43e6b33-1fc6-4a3e-b439-8111af74a6d7)
+![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/07db0dd9-2a9f-48f0-9da9-d478fa3b649d)
 
 Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. 
 
