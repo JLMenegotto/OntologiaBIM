@@ -78,5 +78,4 @@ digraph dot_neato {
     IfcRelAggregates -> IfcWall [label="RelatingObject"];
     IfcRelAggregates -> IfcBuildingElementPart [label="RelatedObjects[1]"];
     IfcRelVoidsElement2 -> IfcBuildingElementPart [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
-    IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
-}
+    IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];}
