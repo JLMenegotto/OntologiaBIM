@@ -20,7 +20,7 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
 ![Grafo_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/595c3427-4820-4f10-b329-6dc09a8cf39b)
 
 
-### Filtros SPARQL
+### Filtro SPARQL1
 
         Prefix owl:  <http://www.w3.org/2002/07/owl#>
         Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -43,6 +43,8 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
                filter (contains (str (?p2), "Do")) 
         }
 
+
+### Filtro SPARQL2
 
         Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
 
