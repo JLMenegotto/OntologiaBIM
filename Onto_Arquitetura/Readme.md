@@ -42,3 +42,13 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
                filter (contains (str (?p1), "Wa")) 
                filter (contains (str (?p2), "Do")) 
         }
+
+
+        Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
+
+        # Ver Classes
+
+        select distinct ?clase
+              { 
+                     ?recurso a ?clase
+              }
