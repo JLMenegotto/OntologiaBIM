@@ -22,21 +22,23 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
 
 ### Filtros SPARQL
 
-    Prefix owl:  <http://www.w3.org/2002/07/owl#>
-    Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    Prefix foaf: <http://xmlns.com/foaf/0.1/#>
-    Prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    Prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
-    Prefix skos: <http://www.w3.org/2004/02/skos/core#>
-    Prefix dc:   <http://purl.org/dc/elements/1.1/>
-    Prefix tem:  <http://www.w3.org/2006/time#>
-    Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
-    # Encontrar descrições que contenham "Wa" e "Do"
-    Select ?ob1 ?ob2 ?p1 ?p2 
-    Where
-    {
-           ?ob1 arq:descrição ?p1 .
-           ?ob2 arq:descrição ?p2 .
-           filter (contains (str (?p1), "Wa")) 
-           filter (contains (str (?p2), "Do")) 
-    }
+        Prefix owl:  <http://www.w3.org/2002/07/owl#>
+        Prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        Prefix foaf: <http://xmlns.com/foaf/0.1/#>
+        Prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        Prefix xsd:  <http://www.w3.org/2001/XMLSchema#>
+        Prefix skos: <http://www.w3.org/2004/02/skos/core#>
+        Prefix dc:   <http://purl.org/dc/elements/1.1/>
+        Prefix tem:  <http://www.w3.org/2006/time#>
+        Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
+    
+        # Encontrar descrições que contenham "Wa" e "Do"
+    
+        Select ?ob1 ?ob2 ?p1 ?p2 
+        Where
+        {
+               ?ob1 arq:descrição ?p1 .
+               ?ob2 arq:descrição ?p2 .
+               filter (contains (str (?p1), "Wa")) 
+               filter (contains (str (?p2), "Do")) 
+        }
