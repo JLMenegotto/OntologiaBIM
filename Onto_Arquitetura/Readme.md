@@ -21,7 +21,6 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
 
 
 ### Filtro SPARQL1
-
         Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>    
         # Encontrar descrições que contenham "Wa" e "Do"
     
@@ -35,7 +34,6 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
         }
 
 ### Filtro SPARQL2
-
         Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
         # Encontrar tipos que contenham "Vidro"   
         Select ?r1 ?o1 ?t1 
@@ -47,10 +45,12 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
         }
 
 ### Filtro SPARQL3
-
-        Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#
-        # Ver Classes
-        select distinct ?clase
-        { 
-                     ?recurso a ?clase
-        }
+         Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
+         # Encontrar as classes 
+         
+          Select distinct  ?classe
+          where
+          {
+                ?recurso  a  ?classe .
+          }
+        
