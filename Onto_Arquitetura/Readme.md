@@ -33,8 +33,6 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
                filter (contains (str (?p2), "Door")) 
         }
 
-http://localhost:7200/sparql?name=Paredes%20e%20Portas&query=PREFIX%20arq%3A%20%3Chttps%3A%2F%2Fjlmenegotto.wixsite.com%2Fjlmenegotto-bim%23%3E%0ASelect%20%3Fparedes%20%3Fportas%20%3Fdpar%20%3Fdpor%20%0AWhere%0A%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Fparedes%20arq%3Adescri%C3%A7%C3%A3o%20%3Fdpar%20.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Fportas%20arq%3Adescri%C3%A7%C3%A3o%20%3Fdpor%20.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20filter%20(contains%20(str%20(%3Fdpar)%2C%20%22Wall%22))%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20filter%20(contains%20(str%20(%3Fdpor)%2C%20%22Door%22))%20%0A%7D%0A&infer=true&sameAs=true
-
 ### Filtro SPARQL2
         Prefix arq: <https://jlmenegotto.wixsite.com/jlmenegotto-bim#>
         # Encontrar tipos que contenham "Vidro"   
