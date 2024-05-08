@@ -54,4 +54,3 @@ Os indivíduos e os fatos associados devem ser criados a partir da leitura de um
                 ?recurso  a  ?classe .
           }
         
-Grafo --> http://localhost:7200/graphs-visualizations?saved=d1cd0db12cfc4fc4b5da06ab4a7d42e4
