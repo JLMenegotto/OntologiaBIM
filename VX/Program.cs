@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿// See https://aka.ms/new-console-template for more information
 
 using VDS.RDF;
 using VDS.RDF.Ontology;
 using VDS.RDF.Parsing;
-using VDS.RDF.Writing;
 using VDS.RDF.Query.Inference;
 
 namespace OntoBIM
@@ -16,82 +11,119 @@ namespace OntoBIM
     {
         public static void Main(String[] args)
         {
-            string pastap   = "C:\\JLMenegotto\\Projetos\\OntoBIM\\";
-            string pastaa   = "C:\\JLMenegotto\\Aplicativos_BIM\\OntoBIM\\";
-            string meuuri   = "https://jlmenegotto.wixsite.com/jlmenegotto-bim#ambientes";
-            string prefixos = "Prefixos     \n";
-            string dataprop = "Prop dados   \n";
-            string objeprop = "Prop objetos \n";
-            string classes  = "Classes      \n";
-            bool nodo       = false;
+            Mensagem ( "\nEsta é uma aplicação que usa ontologias ttl. Aguarde 2 segundos..." , 2000 ); 
 
-            OntologyGraph o     = new OntologyGraph();  FileLoader.Load ( o , pastap +  "OntoBIM_ambientes_001.ttl");
-            INode         Inodo = o.GetUriNode (new Uri ( meuuri ));
-            
-            IEnumerable<OntologyClass>    clas = o.OwlClasses;
-            IEnumerable<OntologyProperty> prop = o.OwlDatatypeProperties;
-            IEnumerable<OntologyProperty> data = o.OwlDatatypeProperties;
+			string pastap  = "C:\\ABNT_Normas\\ABNT\\Onto_Projeto_Arquitetura\\";
+            string arquttl = pastap + "Arquitetura.ttl";
+            string meuuri  = "https://jlmenegotto.wixsite.com/jlmenegotto-bim#Elementos.Arquitetura";
+            //bool   nodo  = false;
+
+            string prefixos = "\n------------------\nPREFIXOS        \n------------------\n";
+            string classes  = "\n------------------\nCLASSES         \n------------------\n";
+            string objeprop = "\n------------------\nPROP. DE OBJETOS\n------------------\n";
+            string dataprop = "\n------------------\nPROP. DE DADOS  \n------------------\n";
+            string nodosont = "\n------------------\nNODOS           \n------------------\n";
+            string tripleso = "\n------------------\nTRIPLES         \n------------------\n";
+
+            OntologyGraph o     = new OntologyGraph(); FileLoader.Load(o, arquttl);
+            IGraph        g     = new Graph();         g.LoadFromFile (arquttl, new TurtleParser());
+            INode         Inodo = o.GetUriNode ( new Uri ( meuuri ));
+            //nodo                = o.IsEmpty;
+
             IEnumerable<string>           pref = o.NamespaceMap.Prefixes;
-                                          nodo = o.IsEmpty;
+            IEnumerable <OntologyClass>   clas = o.OwlClasses;
+            IEnumerable<OntologyProperty> prop = o.OwlObjectProperties;
+            IEnumerable<OntologyProperty> data = o.OwlDatatypeProperties;
+            IEnumerable<INode>            nodo = o.AllNodes;
+            IEnumerable<Triple>           trip = o.Triples;
 
-            foreach (string           s in pref) { prefixos += "\n" + s;            }
-            foreach (OntologyClass    c in clas) { classes  += "\n" + c.ToString(); }
-            foreach (OntologyProperty p in prop) { objeprop += "\n" + p.ToString() + p.Domains.ToString(); }
-            foreach (OntologyProperty p in data) { dataprop += "\n" + p.ToString() + p.Domains.ToString(); }
+            foreach (string pre in pref)          { prefixos += pref          + "\n"; }
+            foreach (OntologyClass    cl in clas) { classes  += cl.ToString() + "\n"; }
+            foreach (OntologyProperty op in prop) { objeprop += op.ToString() + "\n"; }
+            foreach (OntologyProperty dp in data) { dataprop += dp.ToString() + "\n"; }
 
-            MessageBox.Show( nodo ? "VAZIO" : "CHEIO"            + "\n" +
-                             Inodo.ToString()                    + "\n" + 
-                             Inodo.NodeType.ToString()           + "\n" +  
-                             Inodo.GraphUri.Authority.ToString() + "\n" +
-                             Inodo.Graph.ToString()
-                           );
-
-            //MessageBox.Show(prefixos);
-            //MessageBox.Show(classes );
-              MessageBox.Show(objeprop);
-            //MessageBox.Show(dataprop);
-            //---------------------------------------------------------------------------------------
-            //Exemplo de inferência de subclasses  Exemplo 1
-            //---------------------------------------------------------------------------------------
-            string   resultadoInfe = "\n";
-            string   classe        = "ex:Car";
-            Graph    dados1        = new Graph(); FileLoader.Load( dados1 , pastaa + "Os_individuos.ttl");
-            Graph    esque1        = new Graph(); FileLoader.Load( esque1 , pastaa + "Os_esquemas.ttl" );
-            IUriNode clase1        = dados1.CreateUriNode( classe );
-            IUriNode tipos1        = dados1.CreateUriNode(new Uri(RdfSpecsHelper.RdfType));
-            StaticRdfsReasoner razona1 = new StaticRdfsReasoner();
-            razona1.Initialise( esque1 );
-            razona1.Apply     ( dados1 );
-            foreach (Triple t in dados1.GetTriplesWithPredicateObject( tipos1 , clase1))
-            {
-                     resultadoInfe += t.Subject.ToString() + "\n";  
+            foreach (INode nd in nodo) 
+            {         
+                     nodosont += "\n-----------" + 
+                                 "\nNodo =     " + nd.ToString() + 
+                                 "\nTipo =     " + nd.NodeType.ToString(); 
+            }                                   
+            foreach (Triple tr in trip)         
+            {        tripleso += "\n-----------" +
+                                 "\nSujeito  = " + tr.Subject.ToString() +
+                                 "\nPredica  = " + tr.Predicate.ToString() +
+                                 "\nObjeto   = " + tr.Object.ToString();
             }
-            MessageBox.Show( "\nCom Inferência 1: " + resultadoInfe );
-            //---------------------------------------------------------------------------------------
-            //Exemplo de inferência de subclasses  Exemplo 2 com ambientes fofu:
-            //---------------------------------------------------------------------------------------
-            resultadoInfe = "\n";
-            classe        = "fofu:CorpoEdificado";
 
-            Graph              dados2  = new Graph(); FileLoader.Load(dados2 , pastap + "OntoBIM_ambientes_Individuos.ttl");
-            Graph              esque2  = new Graph(); FileLoader.Load(esque2 , pastap + "OntoBIM_ambientes_Esquema.ttl");
-            IUriNode           clase2  = dados2.CreateUriNode ( classe );
-            IUriNode           tipos2  = dados2.CreateUriNode (new Uri(RdfSpecsHelper.RdfType));
-            StaticRdfsReasoner razona2 = new StaticRdfsReasoner();
+            Mensagem ( classes  , 2000 ); 
+            Mensagem ( objeprop , 2000 ); 
+            Mensagem ( dataprop , 2000 ); 
+            Mensagem ( nodosont , 2000 );
+            Mensagem ( tripleso , 2000 ); 
+            //-----------------------------------------------------------------------------------
+            // Teste simple do reasoner
+            //-----------------------------------------------------------------------------------
+            string dir = "C:\\JLMenegotto\\Projetos\\OBIM\\";
+            string esq = dir + "Esquemas.ttl";
+            string fat = dir + "Fatos.ttl";
 
-            razona2.Initialise(esque2);
-            razona2.Apply     (dados2);
+			Razonador ( "1" , esq , fat , ":Vehicle");
+			Razonador ( "2" , esq , fat , ":Car");
+			Razonador ( "3" , esq , fat , ":SportsCar");
+		}
 
-            foreach (Triple t in dados2.GetTriplesWithPredicateObject(tipos2, clase2))
-            {
-                      resultadoInfe += 
-                                       "Sujeito: "   + t.Subject.ToString()   + "\n" +
-                                       "Objeto: "    + t.Object.ToString()    + "\n" +
-                                       "Predicado: " + t.Predicate.ToString() + "\n" +
-                                                      (t.IsGroundTriple ? "Verdadeiro":"Falso") + "\n";
-            }
-            MessageBox.Show( "\nCom Inferência 2: " + resultadoInfe   );
+        public static void Razonador (string num, string arquesq, string arqufat, string classe)
+        {
+			   Mensagem  ("\nINICIA RAZONADOR: " + num + "   Aguarde 2 segundos.", 2000);  
+
+		  	   StaticRdfsReasoner razonador = new StaticRdfsReasoner();
+               string inferido = "\n";
+               string separado = "\n-----------------";
+
+               Graph    fatos   = new Graph();  FileLoader.Load(fatos   , arqufat );
+               Graph    esquema = new Graph();  FileLoader.Load(esquema , arquesq );
+               
+               IUriNode clas = esquema.CreateUriNode( classe );
+               IUriNode tipo = esquema.CreateUriNode( new Uri(RdfSpecsHelper.RdfType));
+
+               razonador.Initialise( esquema );
+               razonador.Apply     ( fatos   );
+
+               foreach (Triple spo in fatos.GetTriplesWithPredicateObject ( tipo , clas ))
+               {
+                        inferido += separado +
+									(spo.IsGroundTriple ? "\nO que segue é Verdadeiro" : "\nFalso") +
+                                    "\nSujeito: " + spo.Subject.ToSafeString()   + 
+                                    "\nPredica: " + spo.Predicate.ToSafeString() + 
+                                    "\nObjeto:  " + spo.Object.ToSafeString();            
+               }
+			   Mensagem ("\nRESULTADO RAZONADOR: " + num + inferido , 2000 ); 
         }
-    }
-}
 
+        public static void SelecionarArquivo ()
+        {
+               DirectoryInfo Dir = new DirectoryInfo("C:/JLMenegotto/Projetos/OBIM");
+               int i  = 0;
+			   foreach (FileInfo f in Dir.GetFiles())
+               {
+			            Mensagem ( "\n" + i.ToString() + "- " + f.Name , 500);
+                        i++;
+               }
+
+			            Mensagem ("\nNúmero do arquivo: " , 3000 );
+
+               if (Int32.TryParse(Console.ReadLine(), out i))
+               {
+                        FileInfo f = Dir.GetFiles()[i];
+				        Mensagem ("\nArquivo selecionado = " + f.Name , 500);
+               }          
+        }
+        public static void Mensagem ( string txt , int tempo)
+        {
+			   Console.WriteLine ( txt   );
+  			   Thread.Sleep      ( tempo );
+		}
+
+
+	}
+}
