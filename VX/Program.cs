@@ -25,17 +25,18 @@ namespace OntoBIM
             string nodosont = "\n------------------\nNODOS           \n------------------\n";
             string tripleso = "\n------------------\nTRIPLES         \n------------------\n";
 
-            OntologyGraph o     = new OntologyGraph(); FileLoader.Load(o, arquttl);
-            IGraph        g     = new Graph();         g.LoadFromFile (arquttl, new TurtleParser());
-            INode         Inodo = o.GetUriNode ( new Uri ( meuuri ));
+            TurtleParser  tute  = new TurtleParser ( );
+			OntologyGraph onto  = new OntologyGraph( ); FileLoader.Load   ( onto , arquttl );
+            IGraph        graf  = new Graph();          graf.LoadFromFile ( arquttl , tute );
+            INode         Inodo = onto.GetUriNode ( new Uri ( meuuri ));
             //nodo                = o.IsEmpty;
 
-            IEnumerable<string>           pref = o.NamespaceMap.Prefixes;
-            IEnumerable <OntologyClass>   clas = o.OwlClasses;
-            IEnumerable<OntologyProperty> prop = o.OwlObjectProperties;
-            IEnumerable<OntologyProperty> data = o.OwlDatatypeProperties;
-            IEnumerable<INode>            nodo = o.AllNodes;
-            IEnumerable<Triple>           trip = o.Triples;
+            IEnumerable<string>           pref = onto.NamespaceMap.Prefixes;
+            IEnumerable <OntologyClass>   clas = onto.OwlClasses;
+            IEnumerable<OntologyProperty> prop = onto.OwlObjectProperties;
+            IEnumerable<OntologyProperty> data = onto.OwlDatatypeProperties;
+            IEnumerable<INode>            nodo = onto.AllNodes;
+            IEnumerable<Triple>           trip = onto.Triples;
 
             foreach (string pre in pref)          { prefixos += pref          + "\n"; }
             foreach (OntologyClass    cl in clas) { classes  += cl.ToString() + "\n"; }
@@ -55,15 +56,18 @@ namespace OntoBIM
                                  "\nObjeto   = " + tr.Object.ToString();
             }
 
-            Mensagem ( classes  , 2000 ); 
-            Mensagem ( objeprop , 2000 ); 
-            Mensagem ( dataprop , 2000 ); 
-            Mensagem ( nodosont , 2000 );
-            Mensagem ( tripleso , 2000 ); 
-            //-----------------------------------------------------------------------------------
-            // Teste simple do reasoner
-            //-----------------------------------------------------------------------------------
-            string dir = "C:\\JLMenegotto\\Projetos\\OBIM\\";
+            Mensagem ( classes  , 500 ); 
+            Mensagem ( objeprop , 500 ); 
+            Mensagem ( dataprop , 500 ); 
+            Mensagem ( nodosont , 500 );
+            Mensagem ( tripleso , 500 );
+
+			Selecionar ( "C:/JLMenegotto/Projetos/OBIM" );
+
+			//-----------------------------------------------------------------------------------
+			// Teste simple do reasoner
+			//-----------------------------------------------------------------------------------
+			string dir = "C:\\JLMenegotto\\Projetos\\OBIM\\";
             string esq = dir + "Esquemas.ttl";
             string fat = dir + "Fatos.ttl";
 
@@ -72,7 +76,7 @@ namespace OntoBIM
 			Razonador ( "3" , esq , fat , ":SportsCar");
 		}
 
-        public static void Razonador (string num, string arquesq, string arqufat, string classe)
+        public static void Razonador  (string num, string arquesq, string arqufat, string classe)
         {
 			   Mensagem  ("\nINICIA RAZONADOR: " + num + "   Aguarde 2 segundos.", 2000);  
 
@@ -97,28 +101,27 @@ namespace OntoBIM
                                     "\nPredica: " + spo.Predicate.ToSafeString() + 
                                     "\nObjeto:  " + spo.Object.ToSafeString();            
                }
-			   Mensagem ("\nRESULTADO RAZONADOR: " + num + inferido , 2000 ); 
-        }
-
-        public static void SelecionarArquivo ()
+			   Mensagem ("\nRESULTADO RAZONADOR: " + num + inferido , 2000 );
+		}
+        public static void Selecionar (string pasta ) 
         {
-               DirectoryInfo Dir = new DirectoryInfo("C:/JLMenegotto/Projetos/OBIM");
-               int i  = 0;
+               DirectoryInfo Dir = new DirectoryInfo( pasta );
+               int           i   = 1;
 			   foreach (FileInfo f in Dir.GetFiles())
                {
 			            Mensagem ( "\n" + i.ToString() + "- " + f.Name , 500);
                         i++;
                }
 
-			            Mensagem ("\nNúmero do arquivo: " , 3000 );
+			   Mensagem ("\nSelecione Número do arquivo (Aguarda 5 seg): " , 5000 );
 
                if (Int32.TryParse(Console.ReadLine(), out i))
                {
-                        FileInfo f = Dir.GetFiles()[i];
+                        FileInfo f = Dir.GetFiles()[i-1];
 				        Mensagem ("\nArquivo selecionado = " + f.Name , 500);
                }          
         }
-        public static void Mensagem ( string txt , int tempo)
+        public static void Mensagem   ( string txt , int tempo)
         {
 			   Console.WriteLine ( txt   );
   			   Thread.Sleep      ( tempo );
