@@ -7,8 +7,7 @@
 ### **Versão 1.00 Para Revit 2024**
 
 Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. As ontologias geradas em OWL e os arquivos excel que lhes dão origem são atualizados quando há mudanças na estruturação de classes e propriedades.
-
-![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/07db0dd9-2a9f-48f0-9da9-d478fa3b649d)
+![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
 
 Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. 
 
