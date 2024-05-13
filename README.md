@@ -27,9 +27,6 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 Estruturas axiomáticas ontológicas deveriam ser publicadas para melhorar os fluxos de verificação e validação de projetos num processo aberto que poderia acontecer sistematicamente de modo contínuo e permanente durante o projeto. O paradigma informação teria que ir se deslocando para um paradigma que coloque o conhecimento no início do processo de projeto.
 
-+ **Fonte da Macro**  https://github.com/JLMenegotto/OntologiaBIM/tree/main/Dynamo
-+ **Grafos Exemplo**  https://github.com/JLMenegotto/OntologiaBIM/tree/main/OWL 
-
 Os arquivos OWL em sintaxe Manchester são criados a partir de uma conjunto estrururado de planilhas Excel e uma macro programada a medida em Designscript. As ontologias podem ser abertas no editor Protégé para visualizar, testar a axiomática e depurar a sua estruturação. Os módulos desenvolvidos devem ter um prefixo único (fofu: urba: rede: hid:) caracterizando Namespace do domínio específico axiomatizado (ambientes, esquadrias, SUS, normas, etc).
 
 ### **Leitura e análise dos arquivos OWL em Protegé**
