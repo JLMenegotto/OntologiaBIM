@@ -6,16 +6,17 @@
 ## 
 ### **Versão 1.00 Para Revit 2024**
 
-Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. As ontologias geradas em OWL e os arquivos excel que lhes dão origem são atualizados quando há mudanças na estruturação de classes e propriedades.
+Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. O repositóirio contem ontologias geradas em OWL e arquivos excel utilizados para ordenar os conteúdos da ontologia. 
 ![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
 
 Ontologias modeladas em OWL permitem que tanto seres humanos como agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. 
+No projeto Ontologia BIM-GIS é implementado um construtor de ontologias com saida em formato OWL **(Ontology Web Language)**. O objetivo é integrar conhecimento na infraestrutura digital da Web Semántica, de dados abertos e conectados **(Open Linked Data)**, específicos em domínios de informação CAD-BIM-GIS. As ontologias são, de acordo com Gruber, "uma especificação explicita de uma conceptualização". 
+Dentro do domínio de conhecimentos AECO podem ser utilizadas para especificar explicitamente conceitos de projetos arquitetônicos e urbanos, seus elementos, os seus processos, etc. 
+Podem ajudar na tarefa de integrar modelos de informação diferentes como IFC, Revit, CityGML, KML, OSM, etc. 
+As descricões e axiomas definidos deveriam auxiliar a conhecer e acompanhar o projeto em todo o ciclo de vida.
 
-No projeto Ontologia BIM-GIS vem sendo implementado um construtor de ontologias com saida em formato OWL **(Ontology Web Language)**. O objetivo é integrar conhecimento em infraestruturas digitais com sistemas de dados abertos e conectados **(Open Linked Data)** para contextos de informação CAD-BIM-GIS. As ontologias são, de acordo com Gruber,
-"uma especificação explicita de uma conceptualização". Dentro de nosso domínio de conhecimentos podem ser utilizadas para especificar explicitamente conceitos de projetos arquitetônicos e urbanos, seus elementos, os seus processos, etc. 
-Podem ajudar na tarefa de integrar modelos de informação diferentes como IFC, Revit, CityGML, KML, OSM, etc. As descricões e axiomas definidos deveriam auxiliar a conhecer e acompanhar o projeto em todo o ciclo de vida.
-
-O projeto parte da hipótese de que as tecnologias CAD-BIM-GIS somente serão integradas se o conhecimento projetual, acumulado ao longo dos anos, for expresso e ordenado em redes de dados abertos e conectados, segundo conceitualizara Tim Berners-Lee. Esse conceito permite montar uma infraestrutura digital compartilhada de conhecimentos dentro da Web-semântica. Portanto, se Normas Técnicas expressam o conhecimento industrial acumulado ao longo do tempo, creio que deveriam ser estruturadas em ontologias de domínio específico e disponibilizadas de modo aberto e irrestrito para beneficiar os fluxos de dados, informações e conhecimentos. Não seria esse um retorno do conhecimento às suas fontes? O construtor pretende ser uma contribuição para realizar este empreendimento.
+O projeto parte da hipótese de que as tecnologias CAD-BIM-GIS somente serão integradas se o conhecimento projetual, acumulado ao longo dos anos, for expresso e ordenado em redes de dados abertos e conectados, segundo conceitualizara Tim Berners-Lee. 
+Esse conceito permite montar uma infraestrutura digital compartilhada de conhecimentos dentro da Web-semântica. Portanto, se Normas Técnicas expressam o conhecimento industrial acumulado ao longo do tempo, creio que deveriam ser estruturadas em ontologias de domínio específico e disponibilizadas de modo aberto e irrestrito para beneficiar os fluxos de dados, informações e conhecimentos. Não seria esse um retorno do conhecimento às suas fontes? O construtor pretende ser uma contribuição para realizar este empreendimento.
 
 O projeto sustenta que é altamente recomendável que ontologias OWL sejam desenvolvidas e publicadas de modo irrestrito por:
 
