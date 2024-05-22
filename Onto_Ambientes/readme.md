@@ -44,7 +44,7 @@ A variável do objeto ?s retorna o predicado ?p com a descrição, filtrando os 
     14.       filter (contains (str (?p), "Ban"))
     15. }
 
-![Link Filtro AllegroGraph ](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
+- [Link Filtro AllegroGraph ](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
 
 
  
