@@ -39,7 +39,7 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 
 ### Consulte outros projetos em:
 
-   1. **Acustica2024 e Parla:**         https://github.com/JLMenegotto/Acustica_2024
+   1. -[**Acustica2024 e Parla:**](https://github.com/JLMenegotto/Acustica_2024)
    2. **RIO**                           https://github.com/JLMenegotto/Rio
    3. **Promenade**                     https://github.com/JLMenegotto/Promenade
    4. **Sistemas Projetivos**           https://github.com/JLMenegotto/SistemasProjetivos
