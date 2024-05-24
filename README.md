@@ -37,22 +37,27 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 ##### Mais informaçoes sobre o tema no Livro:
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
 
-### Consulte outros projetos em:
-
-   1. -[**Acustica2024 e Parla:**](https://github.com/JLMenegotto/Acustica_2024)
-   2. **RIO**                           https://github.com/JLMenegotto/Rio
-   3. **Promenade**                     https://github.com/JLMenegotto/Promenade
-   4. **Sistemas Projetivos**           https://github.com/JLMenegotto/SistemasProjetivos
-   5. **Atratores**                     https://github.com/JLMenegotto/Atratores
-   6. **EGC**                           https://github.com/JLMenegotto/EGC
-   7. **Funções Geométricas**           https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Geometricas
-   8. **Funções de Análise de Lotes**   https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Lotes
-   9. **Funções Obras Paradigmáticas**  https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Obras
-  10. **Funções Gerais de Predios**     https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Predios
-  11. **Funções Periódicas Temporais**  https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Relógio
-  12. **Funções para Galpões**          https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Galpão
-  13. **Funções para Treliças**         https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Treliças
-  14. **Funções para Ambientes**        https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Rooms
-  15. **Funções para Advance Steel**    https://github.com/JLMenegotto/AulasBIM/tree/master/AdvanceSteel   
-  16. **Bibliografia e Material Complementar:** https://jlmenegotto.wixsite.com/jlmenegotto-bim
-
+## 
+[**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
+#### **Consulte outros projetos**
+  
+   1. [**OntologiaBIM:** Construtor de ontologias OWL](https://github.com/JLMenegotto/OntologiaBIM)
+   2. [**Acustica2024 e Parla:** Ingetração de Simulador acústico BRASS com Revit](https://github.com/JLMenegotto/Acustica_2024)
+   3. [**RIO:** Reformatação de acervos digitais](https://github.com/JLMenegotto/Rio)
+   4. [**Promenade:** Sistema IoT para microlocalização](https://github.com/JLMenegotto/Promenade)
+   5. [**Sistemas Projetivos:** Funções para o ensino de Geometria Descritiva em Revit](https://github.com/JLMenegotto/SistemasProjetivos)
+   6. [**Atratores:** Funções AutoLISP para geração de pontos](https://github.com/JLMenegotto/Atratores)
+   7. [**EGC:** Funções em AutoLISP para representação e formalização do projeto](https://github.com/JLMenegotto/EGC)
+   8. [**Funções Geométricas:** Funções Dynamo para geometria plana](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Geometricas)
+   9. [**Funções de Análise de Lotes:** Funções Dynamo para o projeto conceptual a partir do lote](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Lotes)
+  10. [**Funções Obras Paradigmáticas:** Funções Dynamo de projetos paradigmáticos]( https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Obras)
+  11. [**Funções Gerais de Predios:** Funções Dynamo para automatizar o projeto](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Predio)
+  12. [**Funções Periódicas Temporais:** Funções Dynamo para trabalhar com o tempo](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Relógio)
+  13. [**Funções para Galpões:** Funções Dynamo para automatizar o projeto de Gapões de aço](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Galpão)
+  14. [**Funções para Treliças:** Funções Dynamo para automatizar o projeto de treliças](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Treliças)
+  15. [**Funções para Ambientes:** Funções Dynamo para automatizar o projeto a partir do objeto Room em Revit](https://github.com/JLMenegotto/AulasBIM/tree/master/Dynamo/Rooms)
+  16. [**Funções para Advance Steel:** Funções para gerar perfis customizados em AdvanceSteel](https://github.com/JLMenegotto/AulasBIM/tree/master/AdvanceSteel)
+      
+  17. [**Bibliografia**](https://jlmenegotto.wixsite.com/jlmenegotto-bim/pesquisa)
+  18. [**Publicações**](https://jlmenegotto.wixsite.com/jlmenegotto-bim/jlm-public)
+      
