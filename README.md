@@ -30,7 +30,7 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
 #### **Exemplos com filtros em recursos RDF**
-- [Veja os filtros em AllegroGraph ](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
+- [Experimente os filtros em AllegroGraph](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
 
 - [Exemplo: Filtro_SPO](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
 
