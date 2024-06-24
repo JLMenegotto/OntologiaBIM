@@ -35,7 +35,7 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 
 - [Exemplo: Filtro_SPO](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
 
-- [Exemplo de filtros em StarDog](https://cloud.stardog.com/u/0/explorer/#/graph?db=catalog&graph=tag%3Astardog%3Aapi%3Acatalog%3Alocal&reasoning&advancedQuery=eJyNj11vgjAUhv_L8RbKh-CEOzK9MNlwmVxsWYwpcMQaoKwtojH89xW82Ee2ZOlNc3re53l7hRMKyXgNoW9AThWF8AonKhhNS1zlEsI3QJzZM9_xTbQD3_S8OTVp4DlmMKW556CLqT-HrQHvLYrLkM94fWzrTI1cWD-DAXhuBMrBNCB_rkTxYhevk1_29qxUuuF4l216xEwNBiaYjh2UamRoWceywhoLrhQnHTtLppBkvPo6N1NWTe6IYxOXuLvVPotGd3JpcFm3lTazXBP_9dXeAN6goIqL7110la7rSDclXBSWa9u2ZTuWyPemzA5Y0UlJUyzhMz7odXYRJVHy-rTUL4LWBf6Fc6yXx4fNDSWVYHWhE-rGuF_HSbSKN0O7Ey3bcUZFQaHfjqfvPwC9Dp9B)
+- [Exemplo: Filtros em StarDog](https://cloud.stardog.com/u/0/explorer/#/graph?db=catalog&graph=tag%3Astardog%3Aapi%3Acatalog%3Alocal&reasoning&advancedQuery=eJyNj11vgjAUhv_L8RbKh-CEOzK9MNlwmVxsWYwpcMQaoKwtojH89xW82Ee2ZOlNc3re53l7hRMKyXgNoW9AThWF8AonKhhNS1zlEsI3QJzZM9_xTbQD3_S8OTVp4DlmMKW556CLqT-HrQHvLYrLkM94fWzrTI1cWD-DAXhuBMrBNCB_rkTxYhevk1_29qxUuuF4l216xEwNBiaYjh2UamRoWceywhoLrhQnHTtLppBkvPo6N1NWTe6IYxOXuLvVPotGd3JpcFm3lTazXBP_9dXeAN6goIqL7110la7rSDclXBSWa9u2ZTuWyPemzA5Y0UlJUyzhMz7odXYRJVHy-rTUL4LWBf6Fc6yXx4fNDSWVYHWhE-rGuF_HSbSKN0O7Ey3bcUZFQaHfjqfvPwC9Dp9B)
 
 ##### Mais informaçoes sobre o tema no Livro:
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
