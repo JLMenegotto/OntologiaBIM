@@ -30,12 +30,12 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 ### **Leitura e análise dos arquivos OWL em Protegé**
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
-#### **Exemplos com filtros em recursos RDF**
-- [Experimente os filtros em AllegroGraph](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
+#### **Exemplos com filtros em plataformas KG usando recursos RDF**
+- [Exemplo 01: Filtros SPARQL em AllegroGraph](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
 
-- [Exemplo: Filtro_SPO em AllegroGraph](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
+- [Exemplo 02: Filtro_SPO em AllegroGraph](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
 
-- [Exemplo: Ifc432.Domínio.7 em StarDog](https://cloud.stardog.com/share/eec9366729d3113d)
+- [Exemplo 03: Filtros na ontologia Ifc432.Domínio.7 em StarDog](https://cloud.stardog.com/share/eec9366729d3113d)
 
 ##### Mais informaçoes sobre o tema no Livro:
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
