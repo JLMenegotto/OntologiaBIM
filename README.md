@@ -35,7 +35,7 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 
 - [Exemplo: Filtro_SPO](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
 
-- [Exemplo: Filtros em StarDog]([https://cloud.stardog.com/share/e31b156d0b34a98f](https://cloud.stardog.com/share/eec9366729d3113d))
+- [https://cloud.stardog.com/share/e31b156d0b34a98f](https://cloud.stardog.com/share/eec9366729d3113d)
  
 ##### Mais informaçoes sobre o tema no Livro:
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
