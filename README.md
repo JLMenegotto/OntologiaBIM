@@ -35,6 +35,9 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 
 - [Exemplo: Filtro_SPO](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
 
+- [Exemplo: StarDog](https://cloud.stardog.com/share/eec9366729d3113d)
+
+- 
 - [https://cloud.stardog.com/share/e31b156d0b34a98f](https://cloud.stardog.com/share/eec9366729d3113d)
  
 ##### Mais informaçoes sobre o tema no Livro:
