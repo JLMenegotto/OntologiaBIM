@@ -33,7 +33,7 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 #### **Exemplos com filtros em plataformas KG usando recursos RDF**
 - [Exemplo 01: Filtros SPARQL em AllegroGraph](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/BIM/exec-query/anonymous/0bPosp-_jUoqS11H-tBo4/results?text=Select+%3Fcomp+%3Fnome+%3Fcod+%3Ftema+%3Fdes+%3Fem+%3Fcat+%3Fid+%3Farea%0AWhere%0A%7B%0A+++%3Fcomp+a+arq%3AQuarto%3B%0A+++++++++arq%3Atema+++++++++%3Ftema+%3B+%0A+++++++++arq%3Adescri%C3%A7%C3%A3o++++%3Fdes++%3B+%0A+++++++++arq%3A%C3%A9.dentro.de++%3Fem+++%3B%0A+++++++++arq%3A%C3%A9.categoria++%3Fcat++%3B%0A+++++++++arq%3Atem.ID+++++++%3Fid+++%3B%0A+++++++++arq%3A%C3%A1rea+++++++++%3Farea+%3B%0A+++++++++arq%3Anome+++++++++%3Fnome+%3B+++++++++++++++++%0A+++++++++arq%3Ac%C3%B3digo+++++++%3Fcod++.%0A%7D&language=SPARQL)
 
-- [Exemplo 02: Filtro_SPO em AllegroGraph](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
+- [Exemplo 02:Filtros SPARQL em AllegroGraph](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/BIM/exec-query/anonymous/YNDFVHLWW1LzJKe5shtt5/results?text=select+%3Fem+%3Ftema+%3Fsala+%3Fcod+%3Fare%0Awhere+%0A%7B%0A+++%3Fsala+arq%3Ac%C3%B3digo+%3Fcod+%3B%0A+++++++++arq%3A%C3%A1rea+++%3Fare+%3B%0A+++++++++arq%3Atema+++%3Ftema%3B%0A+++++++++arq%3A%C3%A9.dentro.de+%3Fem.%0A%7D%0Aorder+by+%3Fem+%3Fare&language=SPARQL)
 
 - [Exemplo 03: Filtros na ontologia Ifc432.Domínio.7 em StarDog](https://cloud.stardog.com/share/eec9366729d3113d)
 
