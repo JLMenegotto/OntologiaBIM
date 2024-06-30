@@ -44,7 +44,3 @@ A variável do sujeito ?suj retorna os objetos ?obj usando o predicado espa:desc
     14.       filter (contains (str (?obj), "Quarto"))
     15. }
 
-- [Veja os filtros em AllegroGraph ](https://ag132vl3gqf5dw9c.allegrograph.cloud/webview/repositories/OBIM/exec-query/anonymous/sa6FJP-X4BPF_g530CfyR/results?text=Select+%3Fs+%3Fo+%0A++++Where%0A++++%7B%0A+++++++++++%3Fs++arq%3Adescri%C3%A7%C3%A3o+%3Fo+.%0A+++++++++++filter+%28contains+%28str+%28%3Fo%29%2C+%22Quarto%22%29%29+%0A++++%7D&language=SPARQL)
-
-- [Exemplo: Filtro_SPO](https://ag132vl3gqf5dw9c.allegrograph.cloud/classic-webview#/repositories/OBIM/query/d/%23%20View%20triples%0ASELECT%20?s%20?p%20?o%20%7B%20?s%20?p%20?o%20.%20%7D)
- 
