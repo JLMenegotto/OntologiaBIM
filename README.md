@@ -39,9 +39,6 @@ Os arquivos OWL em **sintaxe Manchester** são criados a partir de uma conjunto 
 
 - [Exemplo 04: Filtra Ambientes do SUS](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/BIM/exec-query/anonymous/eAkjEl3DoPRShdkKGrAHs/results?text=Select+distinct+%3Felem+%3Fsus+%3Fset+%3Fem%0AWhere%0A%7B%0A+++%3Felem++arq%3Adescri%C3%A7%C3%A3o++%3Fsus+.%0A+++filter+%28contains+%28str+%28%3Fsus%29%2C+%22SUS%22%29%29%0A%7D%0Aorder+by+%3Felem&language=SPARQL)
 
-#### **Exemplos com filtros SPARQL em plataforma STARDOG usando recursos RDF**
-- [Exemplo 01: Filtros na ontologia Ifc432.Domínio.7 em StarDog](https://cloud.stardog.com/share/eec9366729d3113d)
-
 ##### Mais informaçoes sobre o tema no Livro:
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
 
