@@ -39,6 +39,8 @@ Estruturas axiomáticas ontológicas deveriam ser publicadas para melhorar os fl
 
 #### **Exemplos com filtros SPARQL em plataforma Stardog usando recursos RDF**
 
+![Tela_Stardog_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/97afb135-f525-4887-a92f-cd68f006c1db)
+
 - [Exemplo 01: Filtra Elementos IFC](https://cloud.stardog.com/share/fe71d0581acbde7b)
 
 ##### Mais informaçoes sobre o tema no Livro:
