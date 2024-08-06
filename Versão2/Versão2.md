@@ -1,4 +1,4 @@
-#Versão 2.00 
+## Versão 2.00 
 
 Nesta versão a aplicação foi programada para rodar desde a linha de comando do Windows.
 Para rodar:
