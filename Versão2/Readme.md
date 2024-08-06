@@ -11,6 +11,7 @@ c:/> Pastainstalação>**obim 1** (cria os  arquivos owl e ttl de arquitetura)
 c:/> Pastainstalação>**obim 2** (cria os arquivos owl e ttl de ambientes)  
 c:/> Pastainstalação>**obim 3** (cria os arquivos owl e ttl de hidrossanitárias)  
 
+c:/> Pastainstalação>**obim 1 2 3** (cria os arquivos owl e ttl dos três temas )  
 
 Nas pastas **Arqui, Ambie e Hidra** estão os arquivos Excel utilizados para estruturar a ontologia de cada tema.  
 
