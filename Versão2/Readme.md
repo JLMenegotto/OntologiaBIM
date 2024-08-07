@@ -1,4 +1,10 @@
-## Versão 2.00
+# Ontologias BIM GIS
+<sub> **_Prof. José Luis Menegotto._**</sub> 
++ <sub> **_DEG/POLI/UFRJ. Escola Politécnica da UFRJ._**</sub>
++ <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
++ <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
+## 
+#### Versão 2.00 Para Executar em Windows
 
 Nesta versão a aplicação foi programada para ser executada de modo autônomo a Revit. O arquivo executável **OBIM.EXE** pode ser rodado  
 desde a linha de comando do Windows. A aplicação foi preparada para gerar o arquivo owl em **sintaxe Manchester** e um arquivo ttl em  
