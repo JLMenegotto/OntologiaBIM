@@ -1,7 +1,8 @@
 ## Versão 2.00
 
-Nesta versão a aplicação foi programada em um executável (OBIM.EXE) para rodar desde a linha de comando do Windows.  
-A aplicação foi preparada para gerar o arquivo owl em **sintaxe Manchester** e um arquivo ttl em **sintaxe Turtle**.   
+Nesta versão a aplicação foi programada para ser executada de modo autônomo a Revit. O arquivo executável **OBIM.EXE** pode ser rodado  
+desde a linha de comando do Windows. A aplicação foi preparada para gerar o arquivo owl em **sintaxe Manchester** e um arquivo ttl em  
+**sintaxe Turtle**.   
 
 Para rodar:  
 
