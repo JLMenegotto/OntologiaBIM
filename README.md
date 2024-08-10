@@ -6,6 +6,8 @@
 ## 
 #### **Versão 1.00 Para Revit 2024**
 
+![Construtor Ontológico Versão 2](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
+
 Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. O repositório contem as funções Designscript desenvolvidas para gerar as ontologias em OWL. Os arquivos OWL gerados e as planilhas excel utilizadas para organizar o campo ontológico de cada domínio podem ser usados como exemplo para que o interessado possa formalizar a sua ontologia.
 
 ![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
