@@ -4,7 +4,9 @@
 + <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 ## 
-#### **Versão 1.00 Para Revit 2024**      ![Construtor Ontológico Versão 2.00 para desktop Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
+#### **Versão 1.00 Para Revit 2024**
+
+![Construtor Ontológico Versão 2.00 para desktop Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
 
 Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. O repositório contem as funções Designscript desenvolvidas para gerar as ontologias em OWL. Os arquivos OWL gerados e as planilhas excel utilizadas para organizar o campo ontológico de cada domínio podem ser usados como exemplo para que o interessado possa formalizar a sua ontologia.
 
