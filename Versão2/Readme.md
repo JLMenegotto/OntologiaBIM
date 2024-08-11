@@ -7,7 +7,7 @@
 #### Versão 2.00. Para executar em linha de comandos Windows 
 
 <p align="justify">Foram modificados os arquivos Excel da estrutura de classes e propriedades utilizadas na versão 1. A Versão 2.0 foi programada para ser executada de modo autônomo a Revit. O arquivo executável **OBIM.EXE** pode ser rodado  
-desde a linha de comando do Windows. O programa cria o arquivo owl em sintaxe Manchester e um arquivo ttl em **sintaxe Turtle**.</p> 
+desde a linha de comando do Windows. O programa cria o arquivo owl em <b>sintaxe Manchester</b> e um arquivo ttl em <b>sintaxe Turtle</b>.</p> 
 
 Para rodar:
 
