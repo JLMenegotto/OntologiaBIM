@@ -6,10 +6,10 @@
 
 # Construtor de Ontologias BIM-GIS
 
-**<span style="color:blue"><em>Prof. José Luis Menegotto</em></span>**  
-**<span style="color:green"><em>DEG/POLI/UFRJ - Escola Politécnica da UFRJ</em></span>**  
-**<span style="color:red"><em>PEU - Programa de Pós-graduação em Engenharia Urbana</em></span>**  
-**<span style="color:purple"><em>PPE - Programa de Pós-graduação em Estruturas</em></span>**
+<span style="color:blue"><em>Prof. José Luis Menegotto</em></span>  
+<span style="color:green"><em>DEG/POLI/UFRJ - Escola Politécnica da UFRJ</em></span>  
+<span style="color:red"><em>PEU - Programa de Pós-graduação em Engenharia Urbana</em></span>  
+<span style="color:purple"><em>PPE - Programa de Pós-graduação em Estruturas</em></span>
 
 
 #### **Versão 1.00 Para Revit 2024**
