@@ -7,7 +7,7 @@
 # Construtor de Ontologias BIM-GIS
 
 <span style="color:blue"><em>Prof. José Luis Menegotto</em></span>  
-<span style="color:green"><em>DEG/POLI/UFRJ - Escola Politécnica da UFRJ</em></span>  
+<span style="color:green"><em>Escola Politécnica da UFRJ - Departamento de Expressão Gráfica</em></span>  
 <span style="color:red"><em>PEU - Programa de Pós-graduação em Engenharia Urbana</em></span>  
 <span style="color:purple"><em>PPE - Programa de Pós-graduação em Estruturas</em></span>
 
