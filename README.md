@@ -6,11 +6,11 @@
 ## 
 #### **Versão 1.00 Para Revit 2024**
 
-Este é um trabalho acadêmico em desenvolvimento regularmente atualizado. O repositório contem as funções Designscript desenvolvidas para gerar as ontologias em OWL. Os arquivos OWL gerados e as planilhas excel utilizadas para organizar o campo ontológico de cada domínio podem ser usados como exemplo para que o interessado possa formalizar a sua ontologia.
+Este é um trabalho acadêmico em contínuo desenvolvimento regularmente atualizado. O repositório contem as funções Designscript desenvolvidas para gerar as ontologias em OWL. Os arquivos OWL gerados e as planilhas excel utilizadas para organizar o campo ontológico de cada domínio podem ser usados como exemplo para que o interessado possa formalizar a sua ontologia.
 
  ![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
 
- - [Construtor Ontológico Versão 2.00 para desktop Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
+ - [Construtor Ontológico Versão 2.00 para desktop Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2) Na versão 2.0 foi modificada a estrutura dos arquivos Excel e incorporada a criação de arquivos em formato Turtle (ttl) simultamente aos arquivos OWL escritos em sintaxe Manchester.  
    
 Ontologias modeladas em OWL permitem que tanto os seres humanos como os agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. No projeto Ontologia BIM-GIS foi implementado um construtor de ontologias com saída em formato OWL **(Ontology Web Language)**. O objetivo é aumentar a integração entre o conhecimento produzido nos domínios CAD-BIM-GIS e a infraestrutura cognitiva digital da Web Semántica, dentro do paradigma de dados abertos e conectados **(Open Linked Data)**. 
 As ontologias são, de acordo com Gruber, "uma especificação explicita de uma conceptualização". Dentro do domínio de conhecimentos AECO podem ser utilizadas para especificar explicitamente conceitos de projetos arquitetônicos e urbanos, seus elementos, os seus processos, etc. Podem ajudar na tarefa de integrar modelos de informação diferentes como IFC, Revit, CityGML, KML, OSM, etc. As descricões e axiomas definidos deveriam auxiliar projetistas e gestores a conhecer e acompanhar o projeto em todo o ciclo de vida.
