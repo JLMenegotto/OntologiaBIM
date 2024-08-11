@@ -1,4 +1,4 @@
-# Ontologias BIM GIS
+# Construtor de Ontologias BIM GIS
 <sub> **_Prof. José Luis Menegotto._**</sub> 
 + <sub> **_DEG/POLI/UFRJ. Escola Politécnica da UFRJ._**</sub>
 + <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
