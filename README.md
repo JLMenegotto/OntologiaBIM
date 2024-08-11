@@ -4,11 +4,13 @@
 + <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 
-Construtor de Ontologias BIM-GIS
-<sub>Prof. José Luis Menegotto</sub>
-<sub>DEG/POLI/UFRJ - Escola Politécnica da UFRJ</sub>
-<sub>PEU - Programa de Pós-graduação em Engenharia Urbana</sub>
-<sub>PPE - Programa de Pós-graduação em Estruturas</sub>
+# Construtor de Ontologias BIM-GIS
+
+**<span style="color:blue">Prof. José Luis Menegotto</span>**  
+**<span style="color:green">DEG/POLI/UFRJ - Escola Politécnica da UFRJ</span>**  
+**<span style="color:red">PEU - Programa de Pós-graduação em Engenharia Urbana</span>**  
+**<span style="color:purple">PPE - Programa de Pós-graduação em Estruturas</span>**
+
 
 #### **Versão 1.00 Para Revit 2024**
 <p align="justify">A versão 1.0 do Construtor foi programada em Designscript para rodar no ambiente Dynamo em Revit 2024. A versão le os arquivos Excel onde deve estar estruturado o campo ontológico do domínio tratado. O programa gera a ontologia em arquivo OWL escrito em sintaxe Manchester. Este é um trabalho acadêmico em contínuo desenvolvimento regularmente atualizado.</p>
