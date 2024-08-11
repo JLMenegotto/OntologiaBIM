@@ -10,10 +10,13 @@ Nesta versão a aplicação foi programada para ser executada de modo autônomo 
 desde a linha de comando do Windows. A aplicação foi preparada para gerar o arquivo owl em **sintaxe Manchester** e um arquivo ttl em  
 **sintaxe Turtle**.   
 
-Para rodar:  
+Para rodar:
 
-  * c:/> Pastainstalação>**obim** (cria os arquivos owl e ttl de arquitetura)  
 
+  * Abrir o Prompt de comandos. Digitar cmd na barra de pesquisa do Windows.
+    
+  * c:/> Pastainstalação>**obim** (cria os arquivos owl e ttl de arquitetura)
+    
   * c:/> Pastainstalação>**obim 1** (cria os  arquivos owl e ttl de arquitetura)  
   * c:/> Pastainstalação>**obim 2** (cria os arquivos owl e ttl de ambientes)  
   * c:/> Pastainstalação>**obim 3** (cria os arquivos owl e ttl de hidrossanitárias)  
