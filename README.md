@@ -11,7 +11,7 @@
 
 #### **Versão 2.00 Para Desktop Windows**
 Na versão 2.0 foi modificada a estrutura dos arquivos Excel e incorporada a criação de arquivos em formato Turtle (ttl) simultamente aos arquivos OWL escritos em sintaxe Manchester.  
- - [Construtor Ontológico Versão 2.00 para desktop Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
+ - [Construtor Ontológico Versão 2.00 para a linha de Prompt de Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
 
   
 <p align="justify"> Ontologias modeladas em OWL permitem que tanto os seres humanos como os agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. No projeto Ontologia BIM-GIS foi implementado um construtor de ontologias com saída em formato OWL **(Ontology Web Language)**. O objetivo é aumentar a integração entre o conhecimento produzido nos domínios CAD-BIM-GIS e a infraestrutura cognitiva digital da Web Semántica, dentro do paradigma de dados abertos e conectados **(Open Linked Data)**. 
