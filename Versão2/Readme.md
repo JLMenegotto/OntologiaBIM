@@ -15,12 +15,8 @@ Para rodar:
   * Abrir o Prompt de comandos digitando **cmd** na barra de pesquisa do Windows.
   * Para executar pode ser digitado:  
     * c:/> Pastainstalação>**obim** (cria os arquivos owl e ttl de arquitetura)
-    
-    * c:/> Pastainstalação>**obim 1** (cria os  arquivos owl e ttl de arquitetura)  
-    * c:/> Pastainstalação>**obim 2** (cria os arquivos owl e ttl de ambientes)  
-    * c:/> Pastainstalação>**obim 3** (cria os arquivos owl e ttl de hidrossanitárias)  
 
-    * c:/> Pastainstalação>**obim 1 2 3** (cria os arquivos owl e ttl dos três temas )  
+![obim01](https://github.com/user-attachments/assets/f70d9107-c614-4301-b7f1-93bcac2ba1a8)
 
 Nas pastas **Arqui, Ambie e Hidra** estão os arquivos Excel utilizados para estruturar a ontologia de cada tema.  
 
