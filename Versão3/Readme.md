@@ -18,9 +18,7 @@ Nesta versão foram modificados quatro aspectos:
       * **C:\APIBIM\Onto\Ico**  
     
    O arquivo **ONTOBIM_2024.dll** deve ser colocado na pasta **C:\APIBIM\Onto**
-   
-   ![ConfigWindows](https://github.com/JLMenegotto/Acustica_2024/assets/9437020/1d4aa328-5702-41a6-9bea-646067da512f)
-   
+    
  2. Copiar o arquivo **ONTOBIM_2024.addin** para a pasta **C:\ProgramData\Autodesk\Revit\Addins\2024**
  
  Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTOBIM_2024.addin
