@@ -31,6 +31,9 @@ O botão principal executa a construção da ontologia especificada no campo 1.
 No campo 1 é especificado o domínio da ontologia que será criada.
 O campo 2 ainda não tem uma função definida, mas será utilizado na próxima versão da API.
 
+Durante a execução da função é informado o andamento la linha de Prompt de Revit, posicionada normalmente no canto inferior esquerdo da interface.
+
+![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
 
 ## **Exemplos com filtros SPARQL em plataforma AllegroGraph usando recursos RDF**
