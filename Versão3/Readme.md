@@ -21,6 +21,7 @@ Nesta versão foram modificados quatro aspectos:
     
  2. Incorporar o conteúdo do arquivo **ONTO.addin** na lista de aplicações do seu sistema que estão na pasta **C:\ProgramData\Autodesk\Revit\Addins\2024**
     Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO.addin
+ 3. Os arquivos png da pasta Ico devem ser colocadados em **C:\APIBIM\Onto\Ico**.
 
 ![OntoAddin](https://github.com/user-attachments/assets/77f41887-582a-409d-8782-51179bcf8e6f)
 
