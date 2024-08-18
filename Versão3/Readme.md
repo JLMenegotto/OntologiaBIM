@@ -28,6 +28,12 @@ Nesta versão foram modificados quatro aspectos:
 
 ![Iface](https://github.com/user-attachments/assets/66a63096-3c9e-42e0-a036-4d1e134de7a2)
 
+O botão principal executa a construção da ontologia especificada no campo 1.
+
+No campo 1 é especificado o domínio da ontologia que será criada.
+O campo 2 ainda não tem uma função definida, mas será utilizado na próxima versão da API.
+
+
 
 ## **Exemplos com filtros SPARQL em plataforma AllegroGraph usando recursos RDF**
 ### Nota:
