@@ -19,9 +19,9 @@ Nesta versão foram modificados quatro aspectos:
     
    O arquivo **ONTOBIM_2024.dll** deve ser colocado na pasta **C:\APIBIM\Onto**
     
- 2. Copiar o arquivo **ONTOBIM_2024.addin** para a pasta **C:\ProgramData\Autodesk\Revit\Addins\2024**
- 
- Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTOBIM_2024.addin
+ 2. Incorporar o conteúdo do arquivo **ONTO.addin** na lista de aplicações do seu sistema que estão na pasta **C:\ProgramData\Autodesk\Revit\Addins\2024**
+    Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO.addin
+
  ![OntoAddin](https://github.com/user-attachments/assets/408dca24-5d0f-49a0-991d-5456cf94e11e)
 
 ### **Leitura e análise dos arquivos OWL em Protegé**  
