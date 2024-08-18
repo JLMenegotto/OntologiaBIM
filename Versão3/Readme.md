@@ -22,7 +22,12 @@ Nesta versão foram modificados quatro aspectos:
  2. Incorporar o conteúdo do arquivo **ONTO.addin** na lista de aplicações do seu sistema que estão na pasta **C:\ProgramData\Autodesk\Revit\Addins\2024**
     Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO.addin
 
- ![OntoAddin](https://github.com/user-attachments/assets/408dca24-5d0f-49a0-991d-5456cf94e11e)
+![OntoAddin](https://github.com/user-attachments/assets/77f41887-582a-409d-8782-51179bcf8e6f)
+
+### Interface:
+
+![Iface](https://github.com/user-attachments/assets/66a63096-3c9e-42e0-a036-4d1e134de7a2)
+
 
 ## **Exemplos com filtros SPARQL em plataforma AllegroGraph usando recursos RDF**
 ### Nota:
