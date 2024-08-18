@@ -11,6 +11,22 @@ Nesta versão foram modificados quatro aspectos:
  * Programado para executar como API em Revit.  
  * O programa cria o arquivo owl em **sintaxe Manchester** e um arquivo ttl em **sintaxe Turtle**.
 
+### Instalação:
+ 1. Criar as pastas
+ 
+      * **C:\APIBIM\Onto**
+      * **C:\APIBIM\Onto\Ico**  
+    
+   O arquivo **ONTOBIM_2024.dll** deve ser colocado na pasta **C:\APIBIM\Onto**
+   
+   ![ConfigWindows](https://github.com/JLMenegotto/Acustica_2024/assets/9437020/1d4aa328-5702-41a6-9bea-646067da512f)
+   
+ 2. Copiar o arquivo **ONTOBIM_2024.addin** para a pasta **C:\ProgramData\Autodesk\Revit\Addins\2024**
+ 
+ Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTOBIM_2024.addin
+ 
+ ![Addin](https://user-images.githubusercontent.com/9437020/236694667-1af4dff9-9dda-48c6-8017-9f7ed62e205f.PNG)
+
 ### **Leitura e análise dos arquivos OWL em Protegé**  
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
