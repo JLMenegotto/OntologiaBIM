@@ -7,15 +7,14 @@
 #### Versão 2.00. Para executar em linha de comandos Windows 
 Nesta versão foram modificados quatro aspectos:  
  
- * 1) A estrutura de classes e propriedades dos arquivos Excel.  
- * 2) Foi programada para ser executada de modo autônomo a Revit a partir da linha de comando do Windows.  
- * 3) O programa cria o arquivo owl em <b>sintaxe Manchester</b> e um arquivo ttl em <b>sintaxe Turtle</b>.
- * 4) O arquivo executável <b>OBIM.EXE</b> pode ser rodado especificando parâmetros de cada domínio. 
+ * A estrutura de classes e propriedades dos arquivos Excel.  
+ * Programado para executar a partir da linha de comando do Windows, de modo autônomo a Revit.  
+ * O programa cria o arquivo owl em **sintaxe Manchester** e um arquivo ttl em **sintaxe Turtle**.
+ * O arquivo executável **OBIM.EXE** pode ser rodado especificando parâmetros de cada domínio. 
 
 Para rodar:
   * Abrir o Prompt de comandos digitando **cmd** na barra de pesquisa do Windows.
-  * Para executar pode ser digitado:  
-   
+  
 ![obim01](https://github.com/user-attachments/assets/f70d9107-c614-4301-b7f1-93bcac2ba1a8)
 
 Nas pastas **Arqui, Ambie e Hidra** estão os arquivos Excel utilizados para estruturar a ontologia de cada tema.  
