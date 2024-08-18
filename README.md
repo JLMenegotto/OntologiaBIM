@@ -10,7 +10,7 @@
 
  ![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
 
-#### **Versão 2.00 Para Desktop Windows**
+#### **Versão 2.00. Programada para executar em Desktop Windows**
 Na versão 2.0 foi modificada a estrutura dos arquivos Excel e incorporada a criação de arquivos em formato Turtle (ttl) simultamente aos arquivos OWL escritos em sintaxe Manchester.  
  - [Construtor Ontológico Versão 2.00 para a linha de Prompt de Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
 
