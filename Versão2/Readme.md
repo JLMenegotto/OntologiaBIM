@@ -5,22 +5,20 @@
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 ## 
 #### Versão 2.00. Para executar em linha de comandos Windows 
-
-<p align="justify">Foram modificados os arquivos Excel da estrutura de classes e propriedades utilizadas na versão 1. A Versão 2.0 foi programada para ser executada de modo autônomo a Revit. O arquivo executável <b>OBIM.EXE</b> pode ser rodado  
-desde a linha de comando do Windows. O programa cria o arquivo owl em <b>sintaxe Manchester</b> e um arquivo ttl em <b>sintaxe Turtle</b>.</p> 
+Nesta versão foram modificados quatro aspectos:  
+ 
+ * 1) A estrutura de classes e propriedades dos arquivos Excel.  
+ * 2) Foi programada para ser executada de modo autônomo a Revit a partir da linha de comando do Windows.  
+ * 3) O programa cria o arquivo owl em <b>sintaxe Manchester</b> e um arquivo ttl em <b>sintaxe Turtle</b>.
+ * 4) O arquivo executável <b>OBIM.EXE</b> pode ser rodado especificando parâmetros de cada domínio. 
 
 Para rodar:
-
-
   * Abrir o Prompt de comandos digitando **cmd** na barra de pesquisa do Windows.
   * Para executar pode ser digitado:  
-    * c:/> Pastainstalação>**obim** (cria os arquivos owl e ttl de arquitetura)
-
+   
 ![obim01](https://github.com/user-attachments/assets/f70d9107-c614-4301-b7f1-93bcac2ba1a8)
 
 Nas pastas **Arqui, Ambie e Hidra** estão os arquivos Excel utilizados para estruturar a ontologia de cada tema.  
-
-Na versão 2 foi modificada a estrutura de classes e propriedades utilizadas na versão 1.  
 
 ### **Leitura e análise dos arquivos OWL em Protegé**  
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
