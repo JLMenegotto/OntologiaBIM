@@ -35,20 +35,16 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 <p align="justify">A versão 2.0 do programa, foi preparada para rodar no Prompt do Windows e para produzir a saída da ontologia em formato Turtle (ttl)</p>
 
-### **Leitura e análise dos arquivos OWL em Protegé**
-![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
-
-## **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
+### **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
 - [Exemplo 01: Filtro SPARQL](https://triplydb.com/JoseLuisMenegotto/OBIM/sparql#query=Prefix%20arq%3A%20%3Chttps%3A%2F%2Fjlmenegotto.wixsite.com%2Fjlmenegotto-bim%23%3E%0A%20%20%20%20%23%20Encontrar%20tipos%20que%20contenham%20%22Vidro%22%20%20%20%0A%20%20%20%20Select%20%3Fr1%20%3Fo1%20%3Ft1%20%0A%20%20%20%20Where%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%3Fr1%20%20arq%3Adescri%C3%A7%C3%A3o%20%3Fo1%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20arq%3Atipo%20%3Ft1%20.%0A%20%20%20%20%20%20%20%20%20%20%20filter%20%28contains%20%28str%20%28%3Ft1%29%2C%20%22Vidro%22%29%29%20%0A%20%20%20%20%7D&endpoint=https%3A%2F%2Fapi.triplydb.com%2Fdatasets%2FJoseLuisMenegotto%2FOBIM%2Fsparql&tabTitle=Query&outputFormat=Table)
 
-## **Exemplos com filtros SPARQL em plataforma AllegroGraph usando recursos RDF**
+### **Exemplos com filtros SPARQL em plataforma AllegroGraph usando recursos RDF**
 ### Nota:
           Como se trata de uma pesquisa acadêmica o servidor configurado utiliza uma   
           licença gratuita do AllegroGraph que deve ser reiniciada se permanecer  
           inativa por 12 hs. Caso a plataforma esteja fora do ar, retorne 
           mais tarde para fazer a consulta. 
  
-
 - [Exemplo 01: Filtra Compartimentos](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/BIM/exec-query/anonymous/0bPosp-_jUoqS11H-tBo4/results?text=Select+%3Fcomp+%3Fnome+%3Fcod+%3Ftema+%3Fdes+%3Fem+%3Fcat+%3Fid+%3Farea%0AWhere%0A%7B%0A+++%3Fcomp+a+arq%3AQuarto%3B%0A+++++++++arq%3Atema+++++++++%3Ftema+%3B+%0A+++++++++arq%3Adescri%C3%A7%C3%A3o++++%3Fdes++%3B+%0A+++++++++arq%3A%C3%A9.dentro.de++%3Fem+++%3B%0A+++++++++arq%3A%C3%A9.categoria++%3Fcat++%3B%0A+++++++++arq%3Atem.ID+++++++%3Fid+++%3B%0A+++++++++arq%3A%C3%A1rea+++++++++%3Farea+%3B%0A+++++++++arq%3Anome+++++++++%3Fnome+%3B+++++++++++++++++%0A+++++++++arq%3Ac%C3%B3digo+++++++%3Fcod++.%0A%7D&language=SPARQL)
 
 - [Exemplo 02: Filtra Salas](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/BIM/exec-query/anonymous/YNDFVHLWW1LzJKe5shtt5/results?text=select+%3Fem+%3Ftema+%3Fsala+%3Fcod+%3Fare%0Awhere+%0A%7B%0A+++%3Fsala+arq%3Ac%C3%B3digo+%3Fcod+%3B%0A+++++++++arq%3A%C3%A1rea+++%3Fare+%3B%0A+++++++++arq%3Atema+++%3Ftema%3B%0A+++++++++arq%3A%C3%A9.dentro.de+%3Fem.%0A%7D%0Aorder+by+%3Fem+%3Fare&language=SPARQL)
@@ -65,6 +61,9 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 ##### Mais informaçoes sobre o tema no Livro:
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
+
+#### **Leitura e análise dos arquivos OWL em Protegé**
+![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
 ## 
 [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
