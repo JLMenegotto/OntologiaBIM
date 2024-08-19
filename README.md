@@ -36,6 +36,8 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 <p align="justify">A versão 2.0 do programa, foi preparada para rodar no Prompt do Windows e para produzir a saída da ontologia em formato Turtle (ttl)</p>
 
 ### **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
+
+- [Site Triply](https://triplydb.com/JoseLuisMenegotto/OBIM/)
 - [Exemplo 01: Filtro SPARQL](https://triplydb.com/JoseLuisMenegotto/OBIM/sparql#query=Prefix%20arq%3A%20%3Chttps%3A%2F%2Fjlmenegotto.wixsite.com%2Fjlmenegotto-bim%23%3E%0A%20%20%20%20%23%20Encontrar%20tipos%20que%20contenham%20%22Vidro%22%20%20%20%0A%20%20%20%20Select%20%3Fr1%20%3Fo1%20%3Ft1%20%0A%20%20%20%20Where%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%3Fr1%20%20arq%3Adescri%C3%A7%C3%A3o%20%3Fo1%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20arq%3Atipo%20%3Ft1%20.%0A%20%20%20%20%20%20%20%20%20%20%20filter%20%28contains%20%28str%20%28%3Ft1%29%2C%20%22Vidro%22%29%29%20%0A%20%20%20%20%7D&endpoint=https%3A%2F%2Fapi.triplydb.com%2Fdatasets%2FJoseLuisMenegotto%2FOBIM%2Fsparql&tabTitle=Query&outputFormat=Table)
 
 ### **Exemplos com filtros SPARQL em plataforma AllegroGraph usando recursos RDF**
