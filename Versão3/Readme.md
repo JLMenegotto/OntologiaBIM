@@ -8,7 +8,7 @@
 Nesta versão foram modificados os seguintes aspectos:  
  
  * A estrutura de classes e propriedades dos arquivos Excel.  
- * Programado para executar como API em Revit.  
+ * Programado para executar como API em Revit (testado nas versões 2024 e 2025).  
  * O programa cria o arquivo owl em **sintaxe Manchester** e um arquivo ttl em **sintaxe Turtle**.
 
 ### Instalação:
