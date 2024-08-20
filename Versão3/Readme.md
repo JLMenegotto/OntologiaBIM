@@ -5,7 +5,7 @@
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 ## 
 #### Versão 3.00. Para executar em como API em Revit 
-Nesta versão foram modificados quatro aspectos:  
+Nesta versão foram modificados os seguintes aspectos:  
  
  * A estrutura de classes e propriedades dos arquivos Excel.  
  * Programado para executar como API em Revit.  
