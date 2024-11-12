@@ -60,8 +60,10 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 - [Exemplo 01: Filtra Elementos IFC](https://cloud.stardog.com/share/fe71d0581acbde7b)
 
-##### Mais informaçoes sobre o tema no Livro:
+##### Mais informaçoes sobre o tema no Livro (Portugûes e español):
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
+
+- [**_El modelo digital. Técnica y arte algorítmica en BIM._**](https://bibliotecadigital.cp67.com/reader/el-modelo-digital-tecnica-y-arte-algoritmica-en-bim)
 
 #### **Leitura e análise dos arquivos OWL em Protegé**
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
