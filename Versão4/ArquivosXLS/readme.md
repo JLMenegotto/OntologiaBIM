@@ -5,19 +5,12 @@
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 
 ## Observações 
-  
+
+#### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
+#### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
 #### Na planilha de axiomas foram incorporadas 4 colunas 
 
   * Correspondência da classe IFC com a categoria de Revit
   * A natureza da classe
   * A disciplina da classe
   * O tema da classe
-
-#### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
-#### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
-
-  * Correspondência da classe IFC com a categoria de Revit
-  * A natureza da classe
-  * A disciplina da classe
-  * O tema da classe
-
