@@ -18,6 +18,7 @@
 		Annotations: rdfs:label "Gerador_Solar"@pt
 		Annotations: rdfs:label "bim-key_850_4"@pt  
 
+#### Arquivos OWL e TTL resultado do processo. Podem ser importados no Protégé para verificação.
 #### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
 #### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
 #### Na planilha de axiomas foram incorporadas 4 colunas 
@@ -34,5 +35,6 @@
 ![ARQ_Mobiliários](https://github.com/user-attachments/assets/859a65e4-01ba-44e3-b07d-7be2207c8ed2)
 
 ![Vista_01](https://github.com/user-attachments/assets/10623359-40ab-4ae5-b43f-349f434f230e)
+
 
 
