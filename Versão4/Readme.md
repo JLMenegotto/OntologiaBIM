@@ -12,7 +12,7 @@
 	  Class: ifc:Gerador_Solar
 		SubClassOf: ifc:ENE_Insumos_Geração
 		Annotations: rdfs:label "Classe IFC ou Categoria Revit:   IfcSolarDevice"@pt
-		** Annotations: rdfs:label "Categorias de Revit relacionadas:  OST_ElectricalEquipmentt"@pt **
+		* Annotations: rdfs:label "Categorias de Revit relacionadas:  OST_ElectricalEquipmentt"@pt *
 		Annotations: rdfs:label "ENE_Projeto"@pt
 		Annotations: rdfs:label "ENE_Insumos_Geração"@pt
 		Annotations: rdfs:label "Gerador_Solar"@pt
