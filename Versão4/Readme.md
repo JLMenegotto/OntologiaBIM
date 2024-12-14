@@ -27,9 +27,6 @@
   * A disciplina da classe
   * O tema da classe
 
-
-
-
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
 ![Vista_INC](https://github.com/user-attachments/assets/24b8b37b-f52d-43e7-bbe8-805db847c105)
