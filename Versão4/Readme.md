@@ -7,12 +7,12 @@
 ## Observações 
 
 #### Na versão 4, que é a mais recente do construtor, foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
-#### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma etiqueta rdfs:label específica informada no RDF
+#### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
 
 	  Class: ifc:Gerador_Solar
 		SubClassOf: ifc:ENE_Insumos_Geração
 		Annotations: rdfs:label "Classe IFC ou Categoria Revit:   IfcSolarDevice"@pt
-		Annotations: rdfs:label "Categorias de Revit relacionadas:  OST_ElectricalEquipmentt"@pt *
+		** Annotations: rdfs:label "Categorias de Revit relacionadas:  OST_ElectricalEquipmentt"@pt **
 		Annotations: rdfs:label "ENE_Projeto"@pt
 		Annotations: rdfs:label "ENE_Insumos_Geração"@pt
 		Annotations: rdfs:label "Gerador_Solar"@pt
