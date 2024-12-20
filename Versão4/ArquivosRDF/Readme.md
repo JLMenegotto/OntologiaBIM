@@ -21,12 +21,14 @@
 #### Arquivos OWL e TTL resultado do processo. Podem ser importados no Protégé para verificação.
 #### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
 #### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
-#### Na planilha de axiomas foram incorporadas 4 colunas 
+#### Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe 
 
-  * Correspondência da classe IFC com a categoria de Revit
-  * A natureza da classe
-  * A disciplina da classe
-  * O tema da classe
+	 * Annotations: bim:Disciplina "Energética"@pt
+ 	 * Annotations: bim:Tradução "Dispositivo captação solar"@pt
+	 * Annotations: bim:Interoperabilidade "OST_ElectricalEquipmentt"@pt
+  	 * Annotations: bim:Natureza "Projeto"@pt
+  	 * Annotations: bim:Espécie "Insumos_Geração"@pt
+  	 * Annotations: bim:Tema "Gerador Solar"@pt
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
