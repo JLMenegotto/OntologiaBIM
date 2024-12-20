@@ -9,14 +9,14 @@
 #### Na versão 4, que é a mais recente do construtor, foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
 #### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
 
-	  Class: ifc:Gerador_Solar
-		SubClassOf: ifc:ENE_Insumos_Geração
-		Annotations: rdfs:label "Classe IFC ou Categoria Revit:   IfcSolarDevice"@pt
-		Annotations: rdfs:label "Categorias de Revit relacionadas:  OST_ElectricalEquipmentt"@pt
-		Annotations: rdfs:label "ENE_Projeto"@pt
-		Annotations: rdfs:label "ENE_Insumos_Geração"@pt
-		Annotations: rdfs:label "Gerador_Solar"@pt
-		Annotations: rdfs:label "bim-key_850_4"@pt  
+	  Class: bim:Gerador_Solar
+		SubClassOf: bim:ENE_Insumos_Geração
+		Annotations: bim:Disciplina "-"@pt
+		Annotations: bim:Tradução "-"@pt
+		Annotations: bim:Interoperabilidade "-"@pt
+		Annotations: bim:Natureza "Projeto"@pt
+		Annotations: bim:Espécie "Insumos_Geração"@pt
+		Annotations: bim:Tema "Gerador Solar"@pt 
 
 #### Arquivos OWL e TTL resultado do processo. Podem ser importados no Protégé para verificação.
 #### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
