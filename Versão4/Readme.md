@@ -30,12 +30,13 @@
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
+##### Visualizações das classes em Protégé com OWLVIZ
 ![Arq_Aud_01](https://github.com/user-attachments/assets/54222801-41bd-41df-941d-e6b416abb65d)
-
-![Arq_Ilu_01](https://github.com/user-attachments/assets/43b7dfc4-64d6-4eaf-a1f0-1c70b0fbb470)
 
 ![Arq_Ene_01](https://github.com/user-attachments/assets/ddf61c29-f7cc-437c-bb45-9caf930d5199)
 
+
+![Arq_Ilu_01](https://github.com/user-attachments/assets/43b7dfc4-64d6-4eaf-a1f0-1c70b0fbb470)
 ![Classes_Lampada](https://github.com/user-attachments/assets/c716a964-2318-4b8d-8ab1-c046234cf6bd)
 
 
