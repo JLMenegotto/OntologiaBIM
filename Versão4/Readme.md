@@ -30,11 +30,11 @@
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
-![Vista_INC](https://github.com/user-attachments/assets/24b8b37b-f52d-43e7-bbe8-805db847c105)
+![Arq_Ene_01](https://github.com/user-attachments/assets/da6c3391-6174-41a4-b9ef-fa75fc6c4327)
 
-![ARQ_Mobiliários](https://github.com/user-attachments/assets/859a65e4-01ba-44e3-b07d-7be2207c8ed2)
+![Arq_Ilu_01](https://github.com/user-attachments/assets/f17696c7-6f43-4f68-ac11-411b04bf8fcf)
 
-![Vista_01](https://github.com/user-attachments/assets/10623359-40ab-4ae5-b43f-349f434f230e)
+![Arq_Aud_01](https://github.com/user-attachments/assets/79206638-50d7-43b4-b778-78f5f1bc49b4)
 
 
 
