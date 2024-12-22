@@ -32,9 +32,17 @@
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
-![Vista_INC](https://github.com/user-attachments/assets/24b8b37b-f52d-43e7-bbe8-805db847c105)
+##### Visualizações das classes em Protégé com OWLVIZ. 
+##### As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. 
+##### O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes.
 
-![ARQ_Mobiliários](https://github.com/user-attachments/assets/859a65e4-01ba-44e3-b07d-7be2207c8ed2)
+![Arq_Aud_01](https://github.com/user-attachments/assets/54222801-41bd-41df-941d-e6b416abb65d)
 
-![Vista_01](https://github.com/user-attachments/assets/10623359-40ab-4ae5-b43f-349f434f230e)
+![Arq_Ene_01](https://github.com/user-attachments/assets/ddf61c29-f7cc-437c-bb45-9caf930d5199)
+
+
+![Arq_Ilu_01](https://github.com/user-attachments/assets/43b7dfc4-64d6-4eaf-a1f0-1c70b0fbb470)
+
+![Classes_Lampada](https://github.com/user-attachments/assets/c716a964-2318-4b8d-8ab1-c046234cf6bd)
+
 
