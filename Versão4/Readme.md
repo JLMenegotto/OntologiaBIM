@@ -30,11 +30,12 @@
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
-![Arq_Ene_01](https://github.com/user-attachments/assets/da6c3391-6174-41a4-b9ef-fa75fc6c4327)
+![Arq_Aud_01](https://github.com/user-attachments/assets/54222801-41bd-41df-941d-e6b416abb65d)
 
-![Arq_Ilu_01](https://github.com/user-attachments/assets/f17696c7-6f43-4f68-ac11-411b04bf8fcf)
+![Arq_Ilu_01](https://github.com/user-attachments/assets/43b7dfc4-64d6-4eaf-a1f0-1c70b0fbb470)
 
-![Arq_Aud_01](https://github.com/user-attachments/assets/79206638-50d7-43b4-b778-78f5f1bc49b4)
+![Arq_Ene_01](https://github.com/user-attachments/assets/ddf61c29-f7cc-437c-bb45-9caf930d5199)
 
+![Classes_Lampada](https://github.com/user-attachments/assets/c716a964-2318-4b8d-8ab1-c046234cf6bd)
 
 
