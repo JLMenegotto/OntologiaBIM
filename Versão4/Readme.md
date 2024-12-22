@@ -9,24 +9,26 @@
 #### Na versão 4, que é a mais recente do construtor, foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
 #### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
 
-	  Class: ifc:Gerador_Solar
-		SubClassOf: ifc:ENE_Insumos_Geração
-		Annotations: rdfs:label "Classe IFC ou Categoria Revit:   IfcSolarDevice"@pt
-		Annotations: rdfs:label "Categorias de Revit relacionadas:  OST_ElectricalEquipmentt"@pt
-		Annotations: rdfs:label "ENE_Projeto"@pt
-		Annotations: rdfs:label "ENE_Insumos_Geração"@pt
-		Annotations: rdfs:label "Gerador_Solar"@pt
-		Annotations: rdfs:label "bim-key_850_4"@pt  
+	  Class: bim:IfcSolarDevice
+		SubClassOf: bim:Gerador_Solar
+		Annotations: bim:Disciplina "Energética"@pt
+		Annotations: bim:Tradução "Dispositivo captação solar"@pt
+		Annotations: bim:Interoperabilidade "OST_ElectricalEquipmentt"@pt
+		Annotations: bim:Natureza "Projeto"@pt
+		Annotations: bim:Espécie "Insumos_Geração"@pt
+		Annotations: bim:Tema "Gerador Solar"@pt
 
 #### Arquivos OWL e TTL resultado do processo. Podem ser importados no Protégé para verificação.
 #### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
 #### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
-#### Na planilha de axiomas foram incorporadas 4 colunas 
+#### Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe 
 
-  * Correspondência da classe IFC com a categoria de Revit
-  * A natureza da classe
-  * A disciplina da classe
-  * O tema da classe
+	 * Annotations: bim:Disciplina "Energética"@pt
+ 	 * Annotations: bim:Tradução "Dispositivo captação solar"@pt
+	 * Annotations: bim:Interoperabilidade "OST_ElectricalEquipmentt"@pt
+  	 * Annotations: bim:Natureza "Projeto"@pt
+  	 * Annotations: bim:Espécie "Insumos_Geração"@pt
+  	 * Annotations: bim:Tema "Gerador Solar"@pt
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
@@ -40,6 +42,7 @@
 
 
 ![Arq_Ilu_01](https://github.com/user-attachments/assets/43b7dfc4-64d6-4eaf-a1f0-1c70b0fbb470)
+
 ![Classes_Lampada](https://github.com/user-attachments/assets/c716a964-2318-4b8d-8ab1-c046234cf6bd)
 
 
