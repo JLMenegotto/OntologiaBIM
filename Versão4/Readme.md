@@ -30,7 +30,9 @@
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
-##### Visualizações das classes em Protégé com OWLVIZ
+##### Visualizações das classes em Protégé com OWLVIZ. 
+##### As classes em amarelo são as definidas, as laranjas são as relações de equivalência entre classes.
+
 ![Arq_Aud_01](https://github.com/user-attachments/assets/54222801-41bd-41df-941d-e6b416abb65d)
 
 ![Arq_Ene_01](https://github.com/user-attachments/assets/ddf61c29-f7cc-437c-bb45-9caf930d5199)
