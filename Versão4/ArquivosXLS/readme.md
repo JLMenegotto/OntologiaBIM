@@ -5,7 +5,7 @@
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 
 ## Observações 
-#### Os arquivos com nome Ontologia_IFC4_3_Axiomas.xlsx e Ontologia_IFC4_3_Projeto incorporam a tradução em español e estão sendo testados para substituir Ontologia_IFC4x3_Axiomas.xlsx e Ontologia_IFC4x3_Projeto. Repare a diferença no nome: IFC4_3  IFC4x3
+#### Os arquivos com nome Ontologia_IFC4_3_Axiomas.xlsx e Ontologia_IFC4_3_Projeto.xlsx incorporam a tradução em español e estão sendo testados para substituir Ontologia_IFC4x3_Axiomas.xlsx e Ontologia_IFC4x3_Projeto.xlsx. Repare a diferença no nome: IFC4_3  IFC4x3
 
 #### Na versão 4, que é a mais recente do construtor, foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
 
