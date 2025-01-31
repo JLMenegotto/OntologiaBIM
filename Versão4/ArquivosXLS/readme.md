@@ -5,9 +5,9 @@
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 
 ## Observações da versão 4.0
-#### Foi Incorporada a tradução ao espanhol das classe.
-#### Foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
-#### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
+##### Foi Incorporada a tradução ao espanhol das classe.
+##### Foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
+##### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
 
 	  Class: bim:IfcSolarDevice
 		SubClassOf: bim:Gerador_Solar
@@ -18,10 +18,10 @@
 		Annotations: bim:Espécie "Insumos_Geração"@pt
 		Annotations: bim:Tema "Gerador Solar"@pt
 
-#### Arquivos OWL e TTL resultado do processo. Podem ser importados no Protégé para verificação.
-#### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
-#### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
-#### Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe 
+##### Arquivos OWL e TTL resultado do processo. Podem ser importados no Protégé para verificação.
+##### As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E).
+##### Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. 
+##### Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe 
 
 	 * Annotations: bim:Disciplina "Energética"@pt
  	 * Annotations: bim:Tradução "Dispositivo captação solar"@pt
@@ -30,8 +30,7 @@
   	 * Annotations: bim:Espécie "Insumos_Geração"@pt
   	 * Annotations: bim:Tema "Gerador Solar"@pt
 
-#### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
-
+###### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 ###### Visualizações das classes em Protégé com OWLVIZ. 
 ###### Classes em amarelo são as definidas, as classes em laranja são as definidas como relações de equivalência entre classes. 
 ###### O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes.
