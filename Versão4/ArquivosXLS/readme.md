@@ -6,9 +6,7 @@
 
 ## Observações da versão 4.0
 #### Foi Incorporada a tradução ao espanhol das classe.
-
 #### Foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
-
 #### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
 
 	  Class: bim:IfcSolarDevice
@@ -34,9 +32,9 @@
 
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
-##### Visualizações das classes em Protégé com OWLVIZ. 
-###### As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. 
-##### O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes.
+###### Visualizações das classes em Protégé com OWLVIZ. 
+###### Classes em amarelo são as definidas, as classes em laranja são as definidas como relações de equivalência entre classes. 
+###### O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes.
 
 ![Arq_Aud_01](https://github.com/user-attachments/assets/54222801-41bd-41df-941d-e6b416abb65d)
 
