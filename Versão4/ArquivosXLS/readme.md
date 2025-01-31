@@ -4,10 +4,10 @@
 + <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 
-## Observações 
-#### Os arquivos com nome Ontologia_IFC4_3_Axiomas.xlsx e Ontologia_IFC4_3_Projeto.xlsx incorporam a tradução em español e estão sendo testados para substituir Ontologia_IFC4x3_Axiomas.xlsx e Ontologia_IFC4x3_Projeto.xlsx. Repare a diferença no nome: IFC4_3  IFC4x3
+## Observações da versão 4.0
+#### Foi Incorporada a tradução ao espanhol das classe.
 
-#### Na versão 4, que é a mais recente do construtor, foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
+#### Foi modificada a forma de leitura do arquivo Excel para permitir estruturar de modo menos homogêneo a planilha de axiomas de Classes.
 
 #### Para as Classes IFC que não tenham uma categoria correlativa direta em Revit é sugerida uma ou várias categorias. Foi preparada uma anotação rdfs:label específica informada no RDF.
 
@@ -35,7 +35,7 @@
 #### O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus.
 
 ##### Visualizações das classes em Protégé com OWLVIZ. 
-##### As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. 
+###### As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. 
 ##### O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes.
 
 ![Arq_Aud_01](https://github.com/user-attachments/assets/54222801-41bd-41df-941d-e6b416abb65d)
