@@ -19,3 +19,6 @@ O texto "is-a" nas setas deve ser interpretado como uma relação entre as class
 ## Exemplos de grafos
 
 ![Ambiente_01](https://github.com/user-attachments/assets/d5b41efa-17f8-4fba-8b7d-ad4f4d39df58)
+
+![Controle_01](https://github.com/user-attachments/assets/5f49fde5-5580-436e-b0f2-a18610aa9cbf)
+
