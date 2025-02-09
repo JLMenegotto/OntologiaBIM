@@ -13,6 +13,8 @@ Pode acontecer que algum conceito esteja presente num dos modelos de informaçã
 Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. <br>
 O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br>
 
+Para abrir a ontologia pode-se baixar o Proteé [https://protege.stanford.edu/]
+
 ## Exemplos de grafos com OWLVIZ
 As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. <br>
 O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes. <br>
