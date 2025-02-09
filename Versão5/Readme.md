@@ -29,7 +29,7 @@ O texto "is-a" nas setas deve ser interpretado como uma relação entre as class
 
 ![Zonas_01](https://github.com/user-attachments/assets/361452f1-7820-449c-8bf2-ca03aad7b2c2)
 
-#### Fixadores
+#### Acessório
 
 ![Fixador_01](https://github.com/user-attachments/assets/3f2f0cc0-a52b-4899-8a61-fe8744d2fa20)
 
