@@ -15,3 +15,7 @@ O trabalho está em processo de desenvolvimento portanto, os arquivos no reposit
 Visualizações das classes em Protégé com OWLVIZ. 
 As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. 
 O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes.
+
+## Exemplos de grafos
+
+![Ambiente_01](https://github.com/user-attachments/assets/d5b41efa-17f8-4fba-8b7d-ad4f4d39df58)
