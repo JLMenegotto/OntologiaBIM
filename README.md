@@ -1,8 +1,9 @@
 # Construtor de Ontologias BIM GIS
-<sub> **_Prof. José Luis Menegotto._**</sub> 
-+ <sub> **_DEG/POLI/UFRJ. Escola Politécnica da UFRJ._**</sub>
-+ <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
-+ <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
+>**Prof. José Luis Menegotto**<br>
+>**jlmenegotto@poli.ufrj.br**<br>
+>Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
+>PEU Programa de Pós-graduação em Engenharia Urbana<br>
+>PPE Programa de Pós-graduação em Estruturas<br>
 ## 
 
 O construtor é atualizado regularmente. Embora o repositório mantenha todas as versões, a mais recente é a ![Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4). Nela poderá achar os arquivos Excel com a arquitetura mais atual proposta para a ontologia e o resultado OWL na pasta ArquivosRDF. Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.
