@@ -1,12 +1,9 @@
 # Construtor de Ontologias BIM GIS. Versão 5.0 
 
->Prof. José Luis Menegotto
->>
->DEG/POLI/UFRJ. Escola Politécnica da UFRJ
->>
->PEU Programa de Pós-graduação em Engenharia Urbana
->>
->PPE Programa de Pós-graduação em Estruturas
+>Prof. José Luis Menegotto<br>
+>DEG/POLI/UFRJ. Escola Politécnica da UFRJ<br>
+>PEU Programa de Pós-graduação em Engenharia Urbana<br>
+>PPE Programa de Pós-graduação em Estruturas<br>
 
 ## Observações 
 
