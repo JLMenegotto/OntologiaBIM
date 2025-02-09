@@ -1,8 +1,9 @@
 # Construtor de Ontologias BIM GIS. Versão 3.00.
-<sub> **_Prof. José Luis Menegotto._**</sub> 
-+ <sub> **_DEG/POLI/UFRJ. Escola Politécnica da UFRJ._**</sub>
-+ <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
-+ <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
+>**Prof. José Luis Menegotto**<br>
+>**jlmenegotto@poli.ufrj.br**<br>
+>Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
+>PEU Programa de Pós-graduação em Engenharia Urbana<br>
+>PPE Programa de Pós-graduação em Estruturas<br>
 ## 
 #### Versão 3.00. Para executar em como API em Revit 
 Nesta versão foram modificados os seguintes aspectos:  
