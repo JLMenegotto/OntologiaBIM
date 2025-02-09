@@ -17,7 +17,21 @@ O trabalho está em processo de desenvolvimento portanto, os arquivos no reposit
 As classes em amarelo são as definidas, as que figuram em laranja são as relações de equivalência entre classes. <br>
 O texto "is-a" nas setas deve ser interpretado como uma relação entre as classes. <br>
 
+#### Ambientes
+
 ![Ambiente_01](https://github.com/user-attachments/assets/d5b41efa-17f8-4fba-8b7d-ad4f4d39df58)
 
+#### Sistema de controle mecânico
+
 ![Controle_01](https://github.com/user-attachments/assets/5f49fde5-5580-436e-b0f2-a18610aa9cbf)
+
+#### Zoneamento
+
+![Zonas_01](https://github.com/user-attachments/assets/361452f1-7820-449c-8bf2-ca03aad7b2c2)
+
+#### Fixadores
+
+![Fixador_01](https://github.com/user-attachments/assets/3f2f0cc0-a52b-4899-8a61-fe8744d2fa20)
+
+
 
