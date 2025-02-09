@@ -11,8 +11,8 @@ Na versão 5, foi alterada a organização das classes e adicionadas equivalênc
 Foram mudados os nomes dos arquivos.
 
   * [Ontologia_ObjetosBIM.owl](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5/Ontologia_ObjetosBIM.owl)
-  * [Ontologia_ObjetosBIM_Axiomas.xlsx]
-  * [Ontologia_ObjetosBIM_Projeto.xlsx]
+  * [Ontologia_ObjetosBIM_Axiomas.xlsx](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5/Ontologia_ObjetosBIM_Axiomas.xlsx)
+  * [Ontologia_ObjetosBIM_Projeto.xlsx](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5/Ontologia_ObjetosBIM_Projeto.xlsx)
 
 As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). <br> 
 Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. <br> 
