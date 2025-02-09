@@ -1,9 +1,6 @@
 # Construtor de Ontologias BIM GIS. Versão 5.0 
 
-![LogoPOLI](https://github.com/user-attachments/assets/569cbb72-5ae5-4c1d-a869-ce563f7e02fc)
-
-+ <sub> **_Prof. José Luis Menegotto._**</sub> 
-+ <sub> **_DEG/POLI/UFRJ. Escola Politécnica da UFRJ._**</sub>
+![LogoPOLI](https://github.com/user-attachments/assets/49e25bca-5e8d-4453-83cd-f6b36469552a)
 + <sub> _PEU Programa de Pós-graduação em Engenharia Urbana_</sub>
 + <sub> _PPE Programa de Pós-graduação em Estruturas_</sub>
 
