@@ -1,8 +1,8 @@
 # Construtor de Ontologias BIM GIS. Versão 5.0 
 
 ![LogoPOLI](https://github.com/user-attachments/assets/49e25bca-5e8d-4453-83cd-f6b36469552a)
-<sub> PEU Programa de Pós-graduação em Engenharia Urbana</sub>
-<sub> PPE Programa de Pós-graduação em Estruturas</sub>
+<p style="font-size:12px;">PEU Programa de Pós-graduação em Engenharia Urbana</p>
+<p style="font-size:12px;">PPE Programa de Pós-graduação em Estruturas</p>
 
 ## Observações 
 
