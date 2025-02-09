@@ -1,7 +1,7 @@
 # Construtor de Ontologias BIM GIS. Versão 2.00.
 >**Prof. José Luis Menegotto**<br>
 >**jlmenegotto@poli.ufrj.br**<br>
->DEG/POLI/UFRJ. Escola Politécnica da UFRJ<br>
+>Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 ## 
