@@ -43,9 +43,10 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 <p align="justify">Na versão 4.0, foram reorganizados os conceitos e adicionadas algumas propriedades, como a tradução das classes para o espanhol.</p>
 
 - [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
-     
+
+<br>
+<br>
 <hr/>
-<hr style="border: 1px solid red;"></hr>
 
 ### **Exemplos de uso de ontologia como recurso RDF aplicando filtros SPARQL em plataforma Yasgui-Triply**
 
@@ -68,7 +69,7 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 #### **Exemplos com filtros SPARQL em plataforma Stardog usando recursos RDF**
 
-![Tela_Stardog_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/97afb135-f525-4887-a92f-cd68f006c1db)
+  ![Tela_Stardog_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/97afb135-f525-4887-a92f-cd68f006c1db)
 
 - [Exemplo 01: Filtra Elementos IFC](https://cloud.stardog.com/share/fe71d0581acbde7b)
 
