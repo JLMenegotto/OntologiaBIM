@@ -45,7 +45,7 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 - [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
      
 <hr/>
-<hr/ style="border: 1px solid red;">
+<hr style="border: 1px solid red;"></hr>
 
 ### **Exemplos de uso de ontologia como recurso RDF aplicando filtros SPARQL em plataforma Yasgui-Triply**
 
