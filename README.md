@@ -11,6 +11,24 @@ Nela poderá encontrar os arquivos Excel contendo a arquitetura de conceitos mai
 Os resultado em formato OWL (sintaxe Mancheste) se encontram na pasta **ArquivosRDF**. <br>
 Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores. <br>
 
+Ontologias modeladas em OWL permitem que tanto os seres humanos como os agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. No projeto Ontologia BIM-GIS foi implementado um construtor de ontologias com saída em formato OWL (Ontology Web Language). O objetivo é aumentar a integração entre o conhecimento produzido nos domínios CAD-BIM-GIS e a infraestrutura cognitiva digital da Web Semántica, dentro do paradigma de dados abertos e conectados (Open Linked Data).<br><br>
+
+As ontologias são, de acordo com Gruber, "uma especificação explicita de uma conceptualização". Dentro do domínio de conhecimentos AECO podem ser utilizadas para especificar explicitamente conceitos de projetos arquitetônicos e urbanos, seus elementos, os seus processos, etc. Podem ajudar na tarefa de integrar modelos de informação diferentes como IFC, Revit, CityGML, KML, OSM, etc. As descricões e axiomas definidos deveriam auxiliar projetistas e gestores a conhecer e acompanhar o projeto em todo o ciclo de vida. O projeto parte da hipótese de que as tecnologias CAD-BIM-GIS somente serão integradas se o conhecimento projetual, acumulado ao longo dos anos, for expresso e ordenado em redes de dados abertos e conectados, segundo conceitualizara Tim Berners-Lee. Esse conceito permite montar uma infraestrutura digital compartilhada de conhecimentos dentro da Web-semântica. Portanto, se as Normas Técnicas expressam o conhecimento industrial acumulado ao longo do tempo, seria conveniente traduzi-las em ontologias de domínio específico e disponibilizá-las de modo aberto e irrestrito para beneficiar os fluxos de dados, informações e conhecimentos. Não seria esse um retorno do conhecimento às suas fontes? O construtor pretende ser uma contribuição para realizar este empreendimento. <br><br>
+
+O projeto sustenta que é altamente recomendável que ontologias OWL sejam desenvolvidas e publicadas de modo irrestrito por:<br>
+
+Organizações normativas como a ABNT, que sirvam como silos abertos de irradiação do conhecimento industrial.
+Catálogos de fabricantes, que conhecem os seus produtos e processos.
+Códigos de Edificações e Regulamentos, que definem as vocações morfológicas das cidades.
+Cada projeto novo construído, que carrega implícito consigo novos conhecimentos.
+Cada projeto existente, que carrega conhecimentos latentes.
+Estruturas axiomáticas ontológicas deveriam ser publicadas para melhorar os fluxos de verificação e validação de projetos num processo aberto que poderia acontecer sistematicamente de modo contínuo e permanente durante o projeto. A evolução dos sistemas de produção de projetos indica que o paradigma de informação teria que ir se deslocando para um paradigma que coloque o conhecimento no início do processo de projeto. O seguinte projeto está inserido dentro do paradigma de modelação de dados conhecido como Neuro-Simbólica no qual combinam-se técnicas de consultas a bases de conhecimentos baseadas em grafos, ML, LLM e consultas SPARQL. <br> <br>
+
+Para que todo o mecanismo de consulta funcione, um dos primeiros passos é possuir bases de conhecimentos formalizadas a partir de ontologias (a parte simbólica das técnicas). Essa é a função do construtor aquí apresentado. Os arquivos OWL em sintaxe Manchester são criados a partir de um conjunto de planilhas Excel estruturadas com o conteúdo do domínio e uma macro programada a medida em Designscript que lê as planilhas e escreve os arquivos OWL. Posteriormente, as ontologias podem ser abertas no editor Protégé para visualizar, testar e depurar a estrutura axiomática proposta. Os módulos desenvolvidos devem ter um prefixo único (fofu: urba: rede: hid:) caracterizando o Namespace do domínio axiomatizado (ambientes, esquadrias, SUS, normas, etc). <br>
+
+
+
+
 #### **Versão 1.00. Programada em Dynamo para Revit 2024**
 <p align="justify">A versão 1.0 do Construtor foi programada em Designscript para rodar no ambiente Dynamo em Revit 2024. A versão le os arquivos Excel onde deve estar estruturado o campo ontológico do domínio tratado. O programa gera a ontologia em arquivo OWL escrito em sintaxe Manchester. Este é um trabalho acadêmico em contínuo desenvolvimento regularmente atualizado.</p>
 
