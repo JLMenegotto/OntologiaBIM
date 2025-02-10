@@ -44,6 +44,9 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 - [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
      
+<hr/>
+<hr/>
+<hr/>
 ### **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
 
 - [Veja exemplos de uso de tecnologia RDF](https://triplydb.com/JoseLuisMenegotto/-/overview)
