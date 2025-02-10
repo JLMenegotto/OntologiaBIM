@@ -6,7 +6,7 @@
 >PPE Programa de Pós-graduação em Estruturas<br>
 ## 
 
-<p align="justify"> O construtor é atualizado regularmente. Embora o repositório mantenha todas as versões, a mais recente é a [Versão5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5). Nela poderá encontrar os arquivos Excel contendo a arquitetura de conceitos mais atualizados proposta para a ontologia. Os resultado em formato OWL (sintaxe Mancheste) se encontram na pasta **ArquivosRDF**. Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.<br></b></p>
+O construtor é atualizado regularmente. Embora o repositório mantenha todas as versões, a mais recente é a [Versão5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5). Nela poderá encontrar os arquivos Excel contendo a arquitetura de conceitos mais atualizados proposta para a ontologia. Os resultado em formato OWL (sintaxe Mancheste) se encontram na pasta **ArquivosRDF**. Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.<br>
 
 <p align="justify"> Ontologias modeladas em OWL permitem que tanto os seres humanos como os agentes algorítmicos possam ler e interpretar dados, favorecendo a conformação de ambientes integradores de processos. No projeto Ontologia BIM-GIS foi implementado um construtor de ontologias com saída em formato OWL <b>(Ontology Web Language)</b>. O objetivo é aumentar a integração entre o conhecimento produzido nos domínios CAD-BIM-GIS e a infraestrutura cognitiva digital da Web Semántica, dentro do paradigma de dados abertos e conectados <b>(Open Linked Data).<br></b></p>
  
