@@ -6,7 +6,9 @@
 >PPE Programa de Pós-graduação em Estruturas<br>
 ## 
 
-O construtor é atualizado regularmente. Embora o repositório mantenha todas as versões, a mais recente é a [Versão 5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5).<br> Nela poderá achar os arquivos Excel com a arquitetura de conceitos mais atualizados proposta para a ontologia e o seu resultado em formato OWL (sintaxe Mancheste) na pasta ArquivosRDF.<br>
+O construtor é atualizado regularmente. Embora o repositório mantenha todas as versões, a mais recente é a [Versão 5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5).<br> 
+Nela poderá encontrar os arquivos Excel contendo a arquitetura de conceitos mais atualizados proposta para a ontologia.
+Os resultado em formato OWL (sintaxe Mancheste) se encontram na pasta ** ArquivosRDF **.<br>
 Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.
 
 #### **Versão 1.00. Programada em Dynamo para Revit 2024**
