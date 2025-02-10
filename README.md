@@ -53,11 +53,9 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 - [Veja exemplos de uso de tecnologia RDF](https://triplydb.com/JoseLuisMenegotto/-/overview)
 
 ### **Exemplos de uso de ontologia como recurso RDF aplicando filtros SPARQL em plataforma AllegroGraph**
-### Nota:
-          Como se trata de uma pesquisa acadêmica o servidor configurado utiliza uma   
-          licença gratuita do AllegroGraph que deve ser reiniciada se permanecer  
-          inativa por 12 hs. Caso a plataforma esteja fora do ar, retorne 
-          mais tarde para fazer a consulta. 
+
+          **Nota:**  Como se trata de uma pesquisa acadêmica o servidor configurado utiliza uma licença gratuita do AllegroGraph que deve ser reiniciada se permanecer  
+          inativa por 12 hs. Caso a plataforma esteja fora do ar, retorne mais tarde para fazer a consulta.   
  
 - [Exemplo 01: Filtra Compartimentos](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/BIM/exec-query/anonymous/0bPosp-_jUoqS11H-tBo4/results?text=Select+%3Fcomp+%3Fnome+%3Fcod+%3Ftema+%3Fdes+%3Fem+%3Fcat+%3Fid+%3Farea%0AWhere%0A%7B%0A+++%3Fcomp+a+arq%3AQuarto%3B%0A+++++++++arq%3Atema+++++++++%3Ftema+%3B+%0A+++++++++arq%3Adescri%C3%A7%C3%A3o++++%3Fdes++%3B+%0A+++++++++arq%3A%C3%A9.dentro.de++%3Fem+++%3B%0A+++++++++arq%3A%C3%A9.categoria++%3Fcat++%3B%0A+++++++++arq%3Atem.ID+++++++%3Fid+++%3B%0A+++++++++arq%3A%C3%A1rea+++++++++%3Farea+%3B%0A+++++++++arq%3Anome+++++++++%3Fnome+%3B+++++++++++++++++%0A+++++++++arq%3Ac%C3%B3digo+++++++%3Fcod++.%0A%7D&language=SPARQL)
 
