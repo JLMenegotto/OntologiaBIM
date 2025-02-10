@@ -30,12 +30,14 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
  ![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
 
 #### **Versão 2.00. Programada para executar em Desktop Windows**
-<p align="justify">A versão 2.0, foi preparada para rodar no Prompt do Windows. Nesta vesão, foi modificada a estrutura dos arquivos Excel e incorporada a criação de arquivos em formato Turtle (ttl) simultamente aos arquivos OWL escritos em sintaxe Manchester. </p>
+<p align="justify">A versão 2.0, foi preparada para rodar no Prompt do Windows. Nesta versão, foi modificada a estrutura dos arquivos Excel e incorporada a criação de arquivos em formato Turtle (ttl) simultamente aos arquivos OWL escritos em sintaxe Manchester. </p>
  
-- [Construtor Ontológico Versão 2.00 para a linha de Prompt de Windows](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
+- [Construtor Ontológico Versão 2.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
 
 #### **Versão 3.00. Programada para executar Revit como API**
-- [Construtor Ontológico Versão 3.00 Revit API](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o3)
+<p align="justify">A versão 3.0, está sendo preparada para rodar em Revit como API. O objetivo é extrair os objetos de um projeto modelado em Revit já dentro das classes ontológicas planejadas.</p>
+
+- [Construtor Ontológico Versão 3.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o3)
      
 ### **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
 
