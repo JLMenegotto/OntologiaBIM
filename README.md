@@ -38,6 +38,11 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 <p align="justify">A versão 3.0, está sendo preparada para rodar em Revit como API. O objetivo é extrair os objetos de um projeto modelado em Revit já dentro das classes ontológicas planejadas.</p>
 
 - [Construtor Ontológico Versão 3.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o3)
+
+#### **Versão 4.00**
+<p align="justify">Na versão 4.0, foram reorganizados os conceitos e adicionadas algumas propriedades, como a tradução das classes para o espanhol.</p>
+
+- [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
      
 ### **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
 
