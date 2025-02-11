@@ -46,6 +46,11 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 - [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
 
+#### **Versão 5.00**
+<p align="justify">Na versão 5.0, foram reorganizados os conceitos.</p>
+
+- [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
+
 <br>
 <br>
 <hr/>
