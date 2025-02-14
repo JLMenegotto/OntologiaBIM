@@ -14,6 +14,9 @@ Foram mudados os nomes dos arquivos e a organização das pastas.
   * **Ontologia_Instanc_ + tema + .xlsx**
   * **Ontologia_ + tema + .owl**
 
+  * Na pasta **ABNT** foram alocadas as ontologias com o sistema de classificação da construção NBR 15.965 ordenado pelas suas Partes.
+  * Na pasta **OBIM** foi alocada a ontologia dos objetos BIM, com as categorias Revit e classes IFC. 
+
 As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). <br> 
 Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. <br> 
 Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. <br>
