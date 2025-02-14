@@ -8,7 +8,7 @@
 ## Observações 
 
 Na versão 5, foi alterada a organização das classes e adicionadas equivalências entre Classe IFC e Categorias Revit. <br> 
-Foram mudados os nomes dos arquivos.
+Foram mudados os nomes dos arquivos e a organização das pastas.
 
   * [Ontologia_ObjetosBIM.owl](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5/Ontologia_ObjetosBIM.owl)
   * [Ontologia_ObjetosBIM_Axiomas.xlsx](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5/Ontologia_ObjetosBIM_Axiomas.xlsx)
