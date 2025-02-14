@@ -7,9 +7,8 @@
 
 ## Pasta OBIM 
 
-Foi alocada a ontologia com os objetos BIM das categorias de Revit e classes IFC.
-No momento, por uma questão de organização prática as 2500 classes foram colocadas num único arquivo.  
-Em algum momento, serão subdivididos em arquivos menores por domínios específicos (Arquitetura, Estrutura, Redes, etc.)
+<p align="justify">Foi alocada a ontologia com os objetos BIM das categorias de Revit e classes IFC. No momento, por uma questão de organização prática as 2500 classes foram colocadas num único arquivo.  
+Em algum momento, serão subdivididos em arquivos menores por domínios específicos (Arquitetura, Estrutura, Redes, etc.)<br></b></p>
 
 ### Exemplo de arquivos
 
