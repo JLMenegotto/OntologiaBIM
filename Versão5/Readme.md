@@ -8,13 +8,13 @@
 ## Observações 
 
 Na versão 5, foi alterada a organização das classes e adicionadas equivalências entre Classe IFC e Categorias Revit. <br> 
-Foram mudados os nomes dos arquivos e a organização das pastas.
+Foram unificados os arquivos de esquemas de classes e de instâncias. Os nomes foram organizados assim: 
 
-  * **Ontologia_Classes_ + tema + .xlsx**
-  * **Ontologia_Instanc_ + tema + .xlsx**
+  * **Ontologia_ + tema + .xlsx**
   * **Ontologia_ + tema + .owl**
 
   * Na pasta **ABNT** foram alocadas as ontologias com o sistema de classificação da construção NBR 15.965 ordenado pelas suas Partes.
+  * Na pasta **CSUS** foram alocadas as ontologias com elementos do Sistema Único de Saúde, especificamente o caderno do SomaSUS.
   * Na pasta **OBIM** foi alocada a ontologia dos objetos BIM, com as categorias Revit e classes IFC. 
 
 As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). <br> 
