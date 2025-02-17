@@ -1,0 +1,1801 @@
+
+Prefix:   owl:  <http://www.w3.org/2002/07/owl#>
+Prefix:   rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix:   foaf: <http://xmlns.com/foaf/0.1/#>
+Prefix:   rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix:   xsd:  <http://www.w3.org/2001/XMLSchema#>
+Prefix:   skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix:   dc:   <http://purl.org/dc/elements/1.1/>
+Prefix:   tem:  <http://www.w3.org/2006/time#>
+Prefix: abnt: <https://github.com/JLMenegotto/RepoOnto#>
+
+Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_3_1F>
+
+  Annotations: rdfs:label "OntologiaPrefixo: abnt:"@pt
+  Annotations: rdfs:label "OntologiaTema: Parte_3_1F"@pt
+  Annotations: rdfs:label "RaizClass: BIM"@pt
+  Annotations: rdfs:label "RaizProp: BIMProp"@pt
+  Annotations: rdfs:label "RaizData: BIMData"@pt
+  Annotations: rdfs:label "URI: https://github.com/JLMenegotto/RepoOnto#"@pt
+  Annotations: rdfs:label "Autor: José Luis Menegotto"@pt
+  Annotations: rdfs:label "Organização: Escola Politécnica da UFRJ"@pt
+  Annotations: rdfs:label "NormaNúmero: NBR.15965-3:2014"@pt
+  Annotations: rdfs:label "Edição: v-2014"@pt
+  Annotations: rdfs:label "ISBN: 978-85-07-05317-0"@pt
+  Annotations: rdfs:label "NormaEscopo: Parte 3 - 1F:  Processos da Construção - Fases"@pt
+  Annotations: rdfs:label "NormaReferência1: -"@pt
+  Annotations: rdfs:label "NormaReferência2: -"@pt
+  Annotations: rdfs:label "NormaReferência3: -"@pt
+  Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
+  Annotations: rdfs:label "DataHora: 17/02/2025 10:08:03"@pt
+  Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
+  Annotations: rdfs:label "Prédio: P000001"@pt
+  Annotations: rdfs:label "Cidade: Rio de Janeiro"@pt
+  Annotations: rdfs:label "Explicação: Formalizar a Norma brasileira NBR15965 no domínio do Sistema de classificação ABNT da construção."@pt
+  Annotations: rdfs:label "Explicación: Formalizar la Norma brasilera NBR15965 en el dominio del Sistema de classificación de la construcción."@pt
+
+Datatype: xsd:string
+Datatype: xsd:decimal
+Datatype: xsd:double
+Datatype: xsd:integer
+Datatype: xsd:dateTime
+Datatype: xsd:boolean
+Datatype: rdfs:Literal
+Datatype: rdf:PlainLiteral
+
+Class: abnt:BIM
+	Annotations: rdfs:label "Raiz das Classes"@pt
+
+ObjectProperty: abnt:BIMProp
+	Annotations: rdfs:label "Raiz das Propriedades"@pt
+
+DataProperty: abnt:BIMData
+	Annotations: rdfs:label "Raiz dos Dados"@pt
+
+
+AnnotationProperty: abnt:Natureza
+AnnotationProperty: abnt:Espécie
+AnnotationProperty: abnt:Disciplina
+AnnotationProperty: abnt:Tema
+AnnotationProperty: abnt:Interoperabilidade
+AnnotationProperty: abnt:Tradução
+AnnotationProperty: abnt:Traducción
+
+Class: abnt:Normativa
+	SubClassOf: abnt:BIM
+	Annotations: abnt:Disciplina "-"@pt
+	Annotations: abnt:Tradução "-"@pt
+	Annotations: abnt:Traducción "-"@es
+	Annotations: abnt:Interoperabilidade "-"@pt
+	Annotations: abnt:Natureza "ABNT"@pt
+	Annotations: abnt:Espécie "-"@pt
+	Annotations: abnt:Tema "-"@pt
+
+Class: abnt:ABNT
+	SubClassOf: abnt:Normativa
+	Annotations: abnt:Disciplina "-"@pt
+	Annotations: abnt:Tradução "-"@pt
+	Annotations: abnt:Traducción "-"@es
+	Annotations: abnt:Interoperabilidade "-"@pt
+	Annotations: abnt:Natureza "ABNT"@pt
+	Annotations: abnt:Espécie "-"@pt
+	Annotations: abnt:Tema "-"@pt
+
+Class: abnt:Norma
+	SubClassOf: abnt:ABNT
+	Annotations: abnt:Disciplina "-"@pt
+	Annotations: abnt:Tradução "-"@pt
+	Annotations: abnt:Traducción "-"@es
+	Annotations: abnt:Interoperabilidade "-"@pt
+	Annotations: abnt:Natureza "ABNT"@pt
+	Annotations: abnt:Espécie "Norma"@pt
+	Annotations: abnt:Tema "-"@pt
+
+Class: abnt:Parte
+	SubClassOf: abnt:Norma
+	Annotations: abnt:Disciplina "-"@pt
+	Annotations: abnt:Tradução "-"@pt
+	Annotations: abnt:Traducción "-"@es
+	Annotations: abnt:Interoperabilidade "-"@pt
+	Annotations: abnt:Natureza "ABNT"@pt
+	Annotations: abnt:Espécie "Norma"@pt
+	Annotations: abnt:Tema "Parte"@pt
+
+Class: abnt:Código
+	SubClassOf: abnt:Parte
+	Annotations: abnt:Disciplina "ABNT"@pt
+	Annotations: abnt:Tradução "Código ABNT do sistema de classificação da construção do Brasil. NBR 15.965."@pt
+	Annotations: abnt:Traducción "Código ABNT del Sistema de Classificación de la Construcción de Brasil.  NBR 15.965."@es
+	Annotations: abnt:Interoperabilidade "."@pt
+	Annotations: abnt:Natureza "ABNT"@pt
+	Annotations: abnt:Espécie "Norma"@pt
+	Annotations: abnt:Tema "Parte"@pt
+
+ObjectProperty: abnt:p_identificar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_nome"@pt
+
+ObjectProperty: abnt:tem_nome
+	SubPropertyOf: abnt:p_identificar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_nome"@pt
+
+ObjectProperty: abnt:p_identificar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_código"@pt
+
+ObjectProperty: abnt:tem_código
+	SubPropertyOf: abnt:p_identificar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_código"@pt
+
+ObjectProperty: abnt:p_identificar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_id"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem_id
+	SubPropertyOf: abnt:p_identificar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_id"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:p_identificar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_uri"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem_uri
+	SubPropertyOf: abnt:p_identificar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_uri"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:p_identificar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_descrição"@pt
+
+ObjectProperty: abnt:tem_descrição
+	SubPropertyOf: abnt:p_identificar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: tem_descrição"@pt
+
+ObjectProperty: abnt:p_definir
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_ambiente"@pt
+
+ObjectProperty: abnt:é_ambiente
+	SubPropertyOf: abnt:p_definir
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_ambiente"@pt
+
+ObjectProperty: abnt:p_definir
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_equipamento"@pt
+
+ObjectProperty: abnt:é_equipamento
+	SubPropertyOf: abnt:p_definir
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_equipamento"@pt
+
+ObjectProperty: abnt:p_definir
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_dispositivo"@pt
+
+ObjectProperty: abnt:é_dispositivo
+	SubPropertyOf: abnt:p_definir
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_dispositivo"@pt
+
+ObjectProperty: abnt:p_definir
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_mobiliário"@pt
+
+ObjectProperty: abnt:é_mobiliário
+	SubPropertyOf: abnt:p_definir
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_mobiliário"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_público"@pt
+
+ObjectProperty: abnt:é_público
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_público"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_órgão"@pt
+
+ObjectProperty: abnt:é_órgão
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_órgão"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_unid_administrativa"@pt
+
+ObjectProperty: abnt:é_unid_administrativa
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_unid_administrativa"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_unid_funcional"@pt
+
+ObjectProperty: abnt:é_unid_funcional
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_unid_funcional"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_setor"@pt
+
+ObjectProperty: abnt:é_setor
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_setor"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_divisão"@pt
+
+ObjectProperty: abnt:é_divisão
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_divisão"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_departamento"@pt
+
+ObjectProperty: abnt:é_departamento
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_departamento"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_tema"@pt
+
+ObjectProperty: abnt:é_tema
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_tema"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_vol"@pt
+
+ObjectProperty: abnt:é_vol
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_vol"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_norma"@pt
+
+ObjectProperty: abnt:é_norma
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_norma"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_parte"@pt
+
+ObjectProperty: abnt:é_parte
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_parte"@pt
+
+ObjectProperty: abnt:p_administrar
+	SubPropertyOf: abnt:BIMProp
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_escopo"@pt
+
+ObjectProperty: abnt:é_escopo
+	SubPropertyOf: abnt:p_administrar
+	Domain: abnt:BIM
+	Range: abnt:ABNT
+	Annotations: rdfs:label "Propriedade de objeto: é_escopo"@pt
+
+DataProperty: abnt:d_identificar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: nome"@pt
+
+DataProperty: abnt:nome
+	SubPropertyOf: abnt:d_identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: nome"@pt
+
+DataProperty: abnt:d_identificar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: código"@pt
+
+DataProperty: abnt:código
+	SubPropertyOf: abnt:d_identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: código"@pt
+
+DataProperty: abnt:d_identificar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: id"@pt
+
+DataProperty: abnt:id
+	SubPropertyOf: abnt:d_identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: id"@pt
+
+DataProperty: abnt:d_identificar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: uri"@pt
+
+DataProperty: abnt:uri
+	SubPropertyOf: abnt:d_identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: uri"@pt
+
+DataProperty: abnt:d_identificar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: descrição"@pt
+
+DataProperty: abnt:descrição
+	SubPropertyOf: abnt:d_identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: descrição"@pt
+
+DataProperty: abnt:d_definir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: ambiente"@pt
+
+DataProperty: abnt:ambiente
+	SubPropertyOf: abnt:d_definir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: ambiente"@pt
+
+DataProperty: abnt:d_definir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: equipamento"@pt
+
+DataProperty: abnt:equipamento
+	SubPropertyOf: abnt:d_definir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: equipamento"@pt
+
+DataProperty: abnt:d_definir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: dispositivo"@pt
+
+DataProperty: abnt:dispositivo
+	SubPropertyOf: abnt:d_definir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: dispositivo"@pt
+
+DataProperty: abnt:d_definir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: mobiliário"@pt
+
+DataProperty: abnt:mobiliário
+	SubPropertyOf: abnt:d_definir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: mobiliário"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: público"@pt
+
+DataProperty: abnt:público
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Valor xsd:boolean da Dataprop: público"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: órgão"@pt
+
+DataProperty: abnt:órgão
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: órgão"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: unid_administrativa"@pt
+
+DataProperty: abnt:unid_administrativa
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: unid_administrativa"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: unid_funcional"@pt
+
+DataProperty: abnt:unid_funcional
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: unid_funcional"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: setor"@pt
+
+DataProperty: abnt:setor
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: setor"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: divisão"@pt
+
+DataProperty: abnt:divisão
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: divisão"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: departamento"@pt
+
+DataProperty: abnt:departamento
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: departamento"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: tema"@pt
+
+DataProperty: abnt:tema
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: tema"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: vol"@pt
+
+DataProperty: abnt:vol
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: vol"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: norma"@pt
+
+DataProperty: abnt:norma
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: norma"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: parte"@pt
+
+DataProperty: abnt:parte
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: parte"@pt
+
+DataProperty: abnt:d_administrar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: escopo"@pt
+
+DataProperty: abnt:escopo
+	SubPropertyOf: abnt:d_administrar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Valor xsd:string da Dataprop: escopo"@pt
+
+Individual: abnt:NBR15965
+	Types: abnt:Norma
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:descrição    "Norma Brasileira para classificação de objetos da construção"
+
+Individual: abnt:1F.Parte3
+	Types: abnt:Parte
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Parte 3 - Publicada em 2014"
+
+Individual: abnt:1F
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Tema 1F - Fases - Derivada da Tabela 31 de Omniclass"
+
+Individual: abnt:1F.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágio de concepção"
+
+Individual: abnt:1F.10.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de identificação de necessidades"
+
+Individual: abnt:1F.10.11.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de descrição do projeto"
+
+Individual: abnt:1F.10.11.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de criação"
+
+Individual: abnt:1F.10.11.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de incepção"
+
+Individual: abnt:1F.10.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de conceituação"
+
+Individual: abnt:1F.10.14.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de análise de mercado"
+
+Individual: abnt:1F.10.14.15
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de pesquisa"
+
+Individual: abnt:1F.10.14.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estudo de viabilidade de projeto"
+
+Individual: abnt:1F.10.14.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de programação de projeto"
+
+Individual: abnt:1F.10.27.00.x
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de planejamento de projeto"
+
+Individual: abnt:1F.10.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de pré-projeto. Estudo de massa"
+
+Individual: abnt:1F.10.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estimativa de orçamento"
+
+Individual: abnt:1F.10.37.00.x
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de definição"
+
+Individual: abnt:1F.10.37.00
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estudos conceituais"
+
+Individual: abnt:1F.10.37.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de coletas de dados"
+
+Individual: abnt:1F.10.37.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de levantamento topográfico"
+
+Individual: abnt:1F.10.37.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de investigação geotécnica"
+
+Individual: abnt:1F.10.37.25
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de definição de produto"
+
+Individual: abnt:1F.10.39
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de aquisição de propriedade"
+
+Individual: abnt:1F.10.41
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estudo preliminar"
+
+Individual: abnt:1F.10.41.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de projeto esquemático"
+
+Individual: abnt:1F.10.41.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de desenvolvimento de projeto"
+
+Individual: abnt:1F.10.41.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estimativa preliminar de custos"
+
+Individual: abnt:1F.10.41.34
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estudos técnicos"
+
+Individual: abnt:1F.10.41.37
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de consulta pública"
+
+Individual: abnt:1F.10.41.41
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de análise"
+
+Individual: abnt:1F.10.41.x
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de viabilidade"
+
+Individual: abnt:1F.10.41.47
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estudos ambientais"
+
+Individual: abnt:1F.10.41.51
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de investigação e averiguação de riscos de negócio"
+
+Individual: abnt:1F.10.41.54
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de terreno"
+
+Individual: abnt:1F.10.41.61.x
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de aquisição de propriedade"
+
+Individual: abnt:1F.10.41.61
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de planejamento"
+
+Individual: abnt:1F.10.43
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de programação"
+
+Individual: abnt:1F.10.45
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de orçamentação"
+
+Individual: abnt:1F.15
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágio de definição de entrega de projetos"
+
+Individual: abnt:1F.15.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de avaliação do método de entrega dos projetos"
+
+Individual: abnt:1F.15.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de montagem de equipe"
+
+Individual: abnt:1F.15.20.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de equipe de projeto"
+
+Individual: abnt:1F.15.20.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de equipe de planejamento"
+
+Individual: abnt:1F.15.20.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Engenharia de instalações hidráulicas"
+
+Individual: abnt:1F.15.20.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de gerente da construção"
+
+Individual: abnt:1F.15.20.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de requisição para qualificação (RFQ)"
+
+Individual: abnt:1F.15.20.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de avaliação de requisição para qualificação (RFQ)"
+
+Individual: abnt:1F.15.20.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de Requisição de Proposta (RFP)"
+
+Individual: abnt:1F.15.20.34
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de Avaliação de Requisição de Proposta (RFP)"
+
+Individual: abnt:1F.15.20.37
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de Entrevista"
+
+Individual: abnt:1F.15.20.39
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de contratação de equipe"
+
+Individual: abnt:1F.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágio de projeto"
+
+Individual: abnt:1F.20.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de descrição preliminar do projeto"
+
+Individual: abnt:1F.20.10.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de engenharia preliminar"
+
+Individual: abnt:1F.20.10.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de projeto conceituai"
+
+Individual: abnt:1F.20.10.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de projeto esquemático"
+
+Individual: abnt:1F.20.10.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estudo preliminar"
+
+Individual: abnt:1F.20.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de desenvolvimento de projeto"
+
+Individual: abnt:1F.20.20.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de detalhamento de projeto"
+
+Individual: abnt:1F.20.20.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de projeto executivo"
+
+Individual: abnt:1F.20.20.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de protótipo e testes"
+
+Individual: abnt:1F.20.20.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de análise de engenharia"
+
+Individual: abnt:1F.20.20.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de produto"
+
+Individual: abnt:1F.20.20.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de materiais"
+
+Individual: abnt:1F.20.20.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de Seleção de equipamentos"
+
+Individual: abnt:1F.20.20.34
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estimativa de valores"
+
+Individual: abnt:1F.20.20.37
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de análise de valor"
+
+Individual: abnt:1F.25
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágio de documentação de construção"
+
+Individual: abnt:1F.25.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação da documentação de construção"
+
+Individual: abnt:1F.25.10.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de dados de construção"
+
+Individual: abnt:1F.25.10.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de desenhos"
+
+Individual: abnt:1F.25.10.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de detalhes"
+
+Individual: abnt:1F.25.10.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de desenhos de fabricação"
+
+Individual: abnt:1F.25.10.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de desenhos de coordenação"
+
+Individual: abnt:1F.25.10.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de especificações"
+
+Individual: abnt:1F.25.10.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de manual de projeto"
+
+Individual: abnt:1F.25.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de produção de documentos de construção"
+
+Individual: abnt:1F.25.30
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de estimativas de custos de construção"
+
+Individual: abnt:1F.30
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágios de compras e contratações"
+
+Individual: abnt:1F.30.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de solicitações"
+
+Individual: abnt:1F.30.x
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de publicidade"
+
+Individual: abnt:1F.30.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de pré-qualificação"
+
+Individual: abnt:1F.30.30
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de edital de licitação"
+
+Individual: abnt:1F.30.30.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de escopo de edital de licitação"
+
+Individual: abnt:1F.30.30.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de precificação"
+
+Individual: abnt:1F.30.30.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação da licitação"
+
+Individual: abnt:1F.30.30.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de propostas"
+
+Individual: abnt:1F.30.40
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção"
+
+Individual: abnt:1F.30.40.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de seleção de construtor"
+
+Individual: abnt:1F.30.40.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de avaliação de proposta"
+
+Individual: abnt:1F.30.40.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de avaliação da licitação"
+
+Individual: abnt:1F.30.50
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de contratação"
+
+Individual: abnt:1F.30.50.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de negociação"
+
+Individual: abnt:1F.30.50.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de adjudicação da proposta vencedora"
+
+Individual: abnt:1F.30.50.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de execução de contrato"
+
+Individual: abnt:1F.40
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágio de execução"
+
+Individual: abnt:1F.40.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de administração do contrato de construção"
+
+Individual: abnt:1F.40.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de preparação de construção"
+
+Individual: abnt:1F.40.20.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de mobilização"
+
+Individual: abnt:1F.40.20.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de subcontratação"
+
+Individual: abnt:1F.40.20.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de licenciamentos"
+
+Individual: abnt:1F.40.20.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de revisão de regulamentação"
+
+Individual: abnt:1F.40.20.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de aprovação de regulamentação"
+
+Individual: abnt:1F.40.20.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de solicitação de licenças e aprovações"
+
+Individual: abnt:1F.40.20.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de programação"
+
+Individual: abnt:1F.40.20.34
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de coordenação"
+
+Individual: abnt:1F.40.20.37
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de transmissão de controle e responsabilidade"
+
+Individual: abnt:1F.40.30
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de desenvolvimento de produto"
+
+Individual: abnt:1F.40.30.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de prototipação de produto"
+
+Individual: abnt:1F.40.30.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de ensaios de produto"
+
+Individual: abnt:1F.40.30.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de avaliação de produto"
+
+Individual: abnt:1F.40.30.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de aquisição de produtos"
+
+Individual: abnt:1F.40.30.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de pedidos de produtos"
+
+Individual: abnt:1F.40.30.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de entrega de produtos"
+
+Individual: abnt:1F.40.40
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de construção"
+
+Individual: abnt:1F.40.40.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de inicializaçâo da construção"
+
+Individual: abnt:1F.40.40.11.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de validação de processos de construção"
+
+Individual: abnt:1F.40.40.11.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de mobilização"
+
+Individual: abnt:1F.40.40.11.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de instalação"
+
+Individual: abnt:1F.40.40.11.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de aplicação"
+
+Individual: abnt:1F.40.40.11.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de produção"
+
+Individual: abnt:1F.40.40.11.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de equipamentos e ferramentas"
+
+Individual: abnt:1F.40.40.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de execução de projetos"
+
+Individual: abnt:1F.40.40.14.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de ereção-elevação"
+
+Individual: abnt:1F.40.40.14.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de montagem"
+
+Individual: abnt:1F.40.40.14.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de manufatura"
+
+Individual: abnt:1F.40.40.14.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de fabricação externa"
+
+Individual: abnt:1F.40.40.14.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de fabricação"
+
+Individual: abnt:1F.40.40.14.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de desmobilização"
+
+Individual: abnt:1F.40.40.91
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de encerramento da construção"
+
+Individual: abnt:1F.40.40.91.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de testes de edificações-instalações"
+
+Individual: abnt:1F.40.40.91.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de ajustes e balanceamentos"
+
+Individual: abnt:1F.40.40.91.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de avaliação"
+
+Individual: abnt:1F.40.40.91.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de limpeza"
+
+Individual: abnt:1F.40.40.91.24
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de encerramento de contrato"
+
+Individual: abnt:1F.40.40.91.27
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de equipação"
+
+Individual: abnt:1F.40.40.91.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de entrega"
+
+Individual: abnt:1F.40.50
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de comissionamento"
+
+Individual: abnt:1F.40.50.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de inicialização do comissionamento"
+
+Individual: abnt:1F.40.50.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de monitoração do comissionamento"
+
+Individual: abnt:1F.40.50.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de certificação do comissionamento"
+
+Individual: abnt:1F.40.50.41
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de demonstração de equipamentos das edificações-instalações"
+
+Individual: abnt:1F.40.50.51
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de treinamento nos equipamentos das edificações-instalações"
+
+Individual: abnt:1F.50
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Estágio de utilização"
+
+Individual: abnt:1F.50.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de ocupação"
+
+Individual: abnt:1F.50.10.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de pré-inauguração"
+
+Individual: abnt:1F.50.10.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de inauguração"
+
+Individual: abnt:1F.50.10.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de utilização"
+
+Individual: abnt:1F.50.10.19
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de implantação"
+
+Individual: abnt:1F.50.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de gerenciamento da edificação-instalação"
+
+Individual: abnt:1F.50.20.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de operação da edificação-instalação"
+
+Individual: abnt:1F.50.20.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de inspeção da edificação-instalação"
+
+Individual: abnt:1F.50.20.31
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de manutenção da edificação-instalação"
+
+Individual: abnt:1F.50.30
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de reutilização da edificação-instalação"
+
+Individual: abnt:1F.50.30.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de reforma da edificação-instalação"
+
+Individual: abnt:1F.50.30.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de remodelagem da edificação-instalação"
+
+Individual: abnt:1F.50.30.17
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de expansão da edificação-instalação"
+
+Individual: abnt:1F.50.30.21
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de restauração da edificação-instalação"
+
+Individual: abnt:1F.50.70
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de reparação da edificação-instalação"
+
+Individual: abnt:1F.60
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de fechamento da edificação-instalação"
+
+Individual: abnt:1F.60.10
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de adaptação"
+
+Individual: abnt:1F.60.10.11
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de reequipação"
+
+Individual: abnt:1F.60.10.14
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de recomissionamento"
+
+Individual: abnt:1F.60.20
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de redesenvolvimento"
+
+Individual: abnt:1F.60.25
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de realocação"
+
+Individual: abnt:1F.60.30
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de desmontagem-desconstrução"
+
+Individual: abnt:1F.60.35
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de reciclagem"
+
+Individual: abnt:1F.60.40
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de descomissionamento"
+
+Individual: abnt:1F.80
+	Types: abnt:Código
+	Facts: abnt:norma    "NBR 15.965"
+	Facts: abnt:parte    "Parte 3"
+	Facts: abnt:tema    "1F"
+	Facts: abnt:descrição    "Fase de demolição"
