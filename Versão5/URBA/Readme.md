@@ -44,7 +44,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
         3.    SELECT ?s ?d ?e
         4.    WHERE
         5.    {   
-        6.            ?s rio:é.dentro.de ?d . 
+        6.            ?s rio:é_dentro_de ?d . 
         6.            ?s rio:descrição ?e .
         7.            filter (contains (str (?d) , "Rio"))
         8.    }
