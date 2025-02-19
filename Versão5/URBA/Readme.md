@@ -9,7 +9,7 @@
 
 <p align="justify">Foi alocada a ontologia com os conceitos urbanos e com fatos relacionados com a cidade de Rio de Janeiro.<br></b></p>
 
-##X Ontologia dos bairros da cidade de Rio de Janeiro - Prefixo rio:
+## Ontologia com os bairros da cidade de Rio de Janeiro - Prefixo rio:
 
 Os arquivos Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro. Tem os códigos das Areas de Planejamento e Regiões Administrativas.
 Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
