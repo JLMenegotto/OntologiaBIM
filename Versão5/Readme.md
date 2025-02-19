@@ -13,9 +13,11 @@ Foram unificados os arquivos de esquemas de classes e de instâncias. Os nomes f
   * **Ontologia_ + tema + .xlsx**
   * **Ontologia_ + tema + .owl**
 
-  * Na pasta **ABNT** foram alocadas as ontologias com o sistema de classificação da construção NBR 15.965 ordenado pelas suas Partes.
-  * Na pasta **CSUS** foram alocadas as ontologias com elementos do Sistema Único de Saúde, especificamente o caderno do SomaSUS.
-  * Na pasta **OBIM** foi alocada a ontologia dos objetos BIM, com as categorias Revit e classes IFC. 
+  * Pasta **ABNT** aloca ontologias com o sistema de classificação da construção **NBR 15.965** ordenado pelas suas Partes.
+  * Pasta **CSUS** aloca ontologias com elementos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
+  * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com as categorias Revit e classes IFC.
+  * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e fatos da cidade de Rio de janeiro.
+  * Pasta **CRON** aloca ontologia con conceitos **temporais**. 
 
 As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). <br> 
 Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. <br> 
