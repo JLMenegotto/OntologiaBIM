@@ -1,4 +1,10 @@
-# Versão 1.0
+# Construtor de Ontologias BIM GIS. Versão 1.00.
+>**Prof. José Luis Menegotto**<br>
+>**jlmenegotto@poli.ufrj.br**<br>
+>Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
+>PEU Programa de Pós-graduação em Engenharia Urbana<br>
+>PPE Programa de Pós-graduação em Estruturas<br>
+
 ## Arquivos com a Ontologia da Norma Brasileira NBR_06492 
 
 Nesta seção o aluno encontrará as fontes necessárias para definir a ontologia. O processo é iniciado pelo preenchimento das planilhas Excel com a estruturação das classes, propriedades, características das propriedades, dados do projeto, etc. A macro em Dynamo, deve ser carregada em Revit 2024. 
