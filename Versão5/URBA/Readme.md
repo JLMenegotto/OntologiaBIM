@@ -15,11 +15,6 @@ Os arquivos Excel de esta pasta contêm o campo ontológico dos bairros de Rio d
 Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
 
 Consulte em: https://www.w3.org/TR/sparql11-query/
-### Arquivos
-    1. Ontologia_V1_Projeto_Rio_de_Janeiro.dyn   (Função em Designscript para Revit 2024 que gera o arquivo OWL)
-    2. Ontologia_V1_Projeto_Rio_de_Janeiro.owl   (Ontologia owl escrita em sintaxe Manchester)
-    3. Ontologia_V1_Projeto_Rio_de_Janeiro.xlsx  (Campo ontológico de Instâncias de teste)
-    4. Ontologia_V1_Projeto_Rio_de_Janeiro_Classes_Propriedades.xlsx (Campo ontológico com Classes e Propriedades e disjunções) 
 
 ## Exemplo 1 de filtro SPARQL 
 
@@ -38,7 +33,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
         3.    SELECT ?s ?o
         4.    WHERE
         5.    {   
-        6.            ?s rioj:descrição ?o .
+        6.            ?s rio:descrição ?o .
         7.            filter (contains (str (?o) , "Copa"))
         7.    }
         
@@ -49,8 +44,8 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
         3.    SELECT ?s ?d ?e
         4.    WHERE
         5.    {   
-        6.            ?s rioj:é.dentro.de ?d . 
-        6.            ?s rioj:descrição ?e .
+        6.            ?s rio:é.dentro.de ?d . 
+        6.            ?s rio:descrição ?e .
         7.            filter (contains (str (?d) , "Rio"))
         8.    }
 
