@@ -61,33 +61,33 @@ AnnotationProperty: sus:Interoperabilidade
 AnnotationProperty: sus:Tradução
 AnnotationProperty: sus:Traducción
 
-Class: sus:Normativa
+Class: sus:Projeto
 	SubClassOf: sus:BIM
 	Annotations: sus:Disciplina "-"@pt
 	Annotations: sus:Tradução "-"@pt
 	Annotations: sus:Traducción "-"@es
 	Annotations: sus:Interoperabilidade "-"@pt
-	Annotations: sus:Natureza "SUS"@pt
+	Annotations: sus:Natureza "Norma"@pt
 	Annotations: sus:Espécie "-"@pt
 	Annotations: sus:Tema "-"@pt
 
-Class: sus:SUS
-	SubClassOf: sus:Normativa
+Class: sus:Norma
+	SubClassOf: sus:Projeto
 	Annotations: sus:Disciplina "-"@pt
 	Annotations: sus:Tradução "-"@pt
 	Annotations: sus:Traducción "-"@es
 	Annotations: sus:Interoperabilidade "-"@pt
-	Annotations: sus:Natureza "SUS"@pt
+	Annotations: sus:Natureza "Norma"@pt
 	Annotations: sus:Espécie "-"@pt
 	Annotations: sus:Tema "-"@pt
 
 Class: sus:SomaSUS
-	SubClassOf: sus:SUS
+	SubClassOf: sus:Norma
 	Annotations: sus:Disciplina "-"@pt
 	Annotations: sus:Tradução "-"@pt
 	Annotations: sus:Traducción "-"@es
 	Annotations: sus:Interoperabilidade "-"@pt
-	Annotations: sus:Natureza "SUS"@pt
+	Annotations: sus:Natureza "Norma"@pt
 	Annotations: sus:Espécie "SomaSUS"@pt
 	Annotations: sus:Tema "-"@pt
 
@@ -97,7 +97,7 @@ Class: sus:Tema
 	Annotations: sus:Tradução "-"@pt
 	Annotations: sus:Traducción "-"@es
 	Annotations: sus:Interoperabilidade "-"@pt
-	Annotations: sus:Natureza "SUS"@pt
+	Annotations: sus:Natureza "Norma"@pt
 	Annotations: sus:Espécie "SomaSUS"@pt
 	Annotations: sus:Tema "Tema"@pt
 
@@ -107,7 +107,7 @@ Class: sus:Código
 	Annotations: sus:Tradução "Códigos Sistema Único de Saúde do Brasil. Caderno SomaSUS."@pt
 	Annotations: sus:Traducción "Códigos del Sistema Único de Salud del Brasil. Cuaderno SomaSUS."@es
 	Annotations: sus:Interoperabilidade "."@pt
-	Annotations: sus:Natureza "SUS"@pt
+	Annotations: sus:Natureza "Norma"@pt
 	Annotations: sus:Espécie "SomaSUS"@pt
 	Annotations: sus:Tema "Tema"@pt
 
@@ -1685,6 +1685,54 @@ ObjectProperty: sus:é_solstício_inverno
 	Range: sus:Projeto
 	Annotations: rdfs:label "Propriedade para acontecer: é_solstício_inverno"@pt
 
+ObjectProperty: sus:p_normatizar
+	SubPropertyOf: sus:BIMProp
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_norma"@pt
+
+ObjectProperty: sus:é_norma
+	SubPropertyOf: sus:p_normatizar
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_norma"@pt
+
+ObjectProperty: sus:p_normatizar
+	SubPropertyOf: sus:BIMProp
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_parte"@pt
+
+ObjectProperty: sus:é_parte
+	SubPropertyOf: sus:p_normatizar
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_parte"@pt
+
+ObjectProperty: sus:p_normatizar
+	SubPropertyOf: sus:BIMProp
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_escopo"@pt
+
+ObjectProperty: sus:é_escopo
+	SubPropertyOf: sus:p_normatizar
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_escopo"@pt
+
+ObjectProperty: sus:p_normatizar
+	SubPropertyOf: sus:BIMProp
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_regulamento"@pt
+
+ObjectProperty: sus:é_regulamento
+	SubPropertyOf: sus:p_normatizar
+	Domain: sus:BIM
+	Range: sus:Projeto
+	Annotations: rdfs:label "Propriedade para normatizar: é_regulamento"@pt
+
 DataProperty: sus:d_endereçar
 	SubPropertyOf: sus:BIMData
 	Domain: sus:BIM
@@ -2644,6 +2692,54 @@ DataProperty: sus:solstício_inverno
 	Domain: sus:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: solstício_inverno ( xsd:dateTime )"@pt
+
+DataProperty: sus:d_normatizar
+	SubPropertyOf: sus:BIMData
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: norma ( xsd:string )"@pt
+
+DataProperty: sus:norma
+	SubPropertyOf: sus:d_normatizar
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: norma ( xsd:string )"@pt
+
+DataProperty: sus:d_normatizar
+	SubPropertyOf: sus:BIMData
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: parte ( xsd:string )"@pt
+
+DataProperty: sus:parte
+	SubPropertyOf: sus:d_normatizar
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: parte ( xsd:string )"@pt
+
+DataProperty: sus:d_normatizar
+	SubPropertyOf: sus:BIMData
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: escopo ( xsd:string )"@pt
+
+DataProperty: sus:escopo
+	SubPropertyOf: sus:d_normatizar
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: escopo ( xsd:string )"@pt
+
+DataProperty: sus:d_normatizar
+	SubPropertyOf: sus:BIMData
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: regulamento ( xsd:string )"@pt
+
+DataProperty: sus:regulamento
+	SubPropertyOf: sus:d_normatizar
+	Domain: sus:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para normatizar: regulamento ( xsd:string )"@pt
 
 Individual: sus:EQU.001
 	Types: sus:Equipamento.Saúde
