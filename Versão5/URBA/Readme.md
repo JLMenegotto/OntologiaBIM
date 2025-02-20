@@ -1,4 +1,3 @@
-![Urba_01](https://github.com/user-attachments/assets/1d63f0af-5e21-4fe6-a6b6-7c1406b86d39)
 # Construtor de Ontologias BIM GIS. Versão 5.00.
 >**Prof. José Luis Menegotto**<br>
 >**jlmenegotto@poli.ufrj.br**<br>
@@ -7,13 +6,13 @@
 >PPE Programa de Pós-graduação em Estruturas<br>
 
 ## Pasta URBA 
-
 <p align="justify">Foi alocada a ontologia com os conceitos urbanos e com fatos relacionados com a cidade de Rio de Janeiro.<br></b></p>
 
 ## Ontologia com os bairros da cidade de Rio de Janeiro - Prefixo rio:
 
-Os arquivos Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro. Tem os códigos das Areas de Planejamento e Regiões Administrativas.
-Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.
+<p align="justify">Os arquivos Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro. Tem os códigos das Areas de Planejamento e Regiões Administrativas. Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.<br></b></p>
+
+![Urba_01](https://github.com/user-attachments/assets/1d63f0af-5e21-4fe6-a6b6-7c1406b86d39)
 
 Consulte em: https://www.w3.org/TR/sparql11-query/
 
