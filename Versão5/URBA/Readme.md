@@ -23,7 +23,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
             SELECT ?s
             WHERE
             {   
-                    ?s rdfs:subPropertyOf rioj:BIM.Data .
+                    ?s rdfs:subPropertyOf rio:BIMData .
             }
 
 #### Exemplo 2 de filtro SPARQL 
@@ -41,11 +41,11 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
             A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
         
-            SELECT ?s ?d ?e
+            SELECT ?s  ?d  ?e
             WHERE
             {   
-                   ?s rio:é_dentro_de ?d . 
-                   ?s rio:descrição ?e .
+                   ?s  rio:é_dentro_de ?d . 
+                   ?s  rio:descrição   ?e .
                    filter (contains (str (?d) , "Rio"))
            }
 
