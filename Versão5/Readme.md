@@ -8,7 +8,8 @@
 ## Observações 
 
 Na versão 5, foi alterada a organização das classes e adicionadas equivalências entre Classe IFC e Categorias Revit. <br> 
-Foram unificados os arquivos de esquemas de classes e de instâncias. Os nomes foram organizados assim: 
+Foram unificados os esquemas de classes e de instâncias. Foram destacadas as Propriedades de objetos e as Anotações personalizadas em um
+arquivo independente e comum a todas as ontologias. Os nomes foram organizados assim: <br> 
 
   * **Ontologia_ + tema + .xlsx**
   * **Ontologia_ + tema + .owl**
