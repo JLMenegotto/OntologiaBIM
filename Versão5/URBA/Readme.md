@@ -18,17 +18,17 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 #### Exemplo 1 de filtro SPARQL 
 
-        1.    A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
-        2.
-        3.    SELECT ?s
-        4.    WHERE
-        5.    {   
-        6.            ?s rdfs:subPropertyOf rioj:BIM.Data .
-        7.    }
+            A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
+        
+            SELECT ?s
+            WHERE
+            {   
+                    ?s rdfs:subPropertyOf rioj:BIM.Data .
+            }
 
 #### Exemplo 2 de filtro SPARQL 
 
-             A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
+            A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
          
             SELECT ?s ?o
             WHERE
@@ -39,17 +39,16 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
         
 #### Exemplo 2 de filtro SPARQL 
 
-        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
-        2.
-        3.    SELECT ?s ?d ?e
-        4.    WHERE
-        5.    {   
-        6.            ?s rio:é_dentro_de ?d . 
-        6.            ?s rio:descrição ?e .
-        7.            filter (contains (str (?d) , "Rio"))
-        8.    }
+            A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
+        
+            SELECT ?s ?d ?e
+            WHERE
+            {   
+                   ?s rio:é_dentro_de ?d . 
+                   ?s rio:descrição ?e .
+                   filter (contains (str (?d) , "Rio"))
+           }
 
 #### Exemplo 3 de filtro SPARQL
 
 ![Sparql_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/0a1df997-bb93-4b06-ac53-9c87c1e9d790)
-     
