@@ -13,10 +13,10 @@
   * **Ontologia_ + tema + .owl**
 
   * Pasta **ABNT** aloca ontologias com o sistema de classificação da construção **NBR 15.965** ordenado pelas suas Partes.
+  * Pasta **CRON** aloca ontologia con conceitos **temporais**. 
   * Pasta **CSUS** aloca ontologias com elementos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
   * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com as categorias Revit e classes IFC.
   * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e fatos da cidade de Rio de janeiro.
-  * Pasta **CRON** aloca ontologia con conceitos **temporais**. 
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
