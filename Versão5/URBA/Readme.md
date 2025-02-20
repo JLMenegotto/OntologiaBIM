@@ -28,14 +28,14 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 #### Exemplo 2 de filtro SPARQL 
 
-        1.    A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
-        2.
-        3.    SELECT ?s ?o
-        4.    WHERE
-        5.    {   
-        6.            ?s rio:descrição ?o .
-        7.            filter (contains (str (?o) , "Copa"))
-        7.    }
+             A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
+         
+            SELECT ?s ?o
+            WHERE
+            {   
+                    ?s rio:descrição ?o .
+                    filter (contains (str (?o) , "Copa"))
+            }
         
 #### Exemplo 2 de filtro SPARQL 
 
