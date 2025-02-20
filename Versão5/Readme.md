@@ -18,11 +18,7 @@
   * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e fatos da cidade de Rio de janeiro.
   * Pasta **CRON** aloca ontologia con conceitos **temporais**. 
 
-As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). <br> 
-Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. <br> 
-Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. <br>
-Foi completada a tradução ao español de cada classe e categoria. <br>
-O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br>
+<p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
 Para abrir a ontologia pode-se baixar e instalar o editor [Protégé](https://protege.stanford.edu/) da Universidade de Stanford.
 
