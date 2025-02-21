@@ -15,7 +15,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 
 #### Exemplo 1 de filtro SPARQL 
 
-            A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
+            A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIMData
             SELECT ?s
             WHERE
             {   
