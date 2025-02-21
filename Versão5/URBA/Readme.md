@@ -5,21 +5,17 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-## Pasta URBA 
-<p align="justify">Foi alocada a ontologia com os conceitos urbanos e com fatos relacionados com a cidade de Rio de Janeiro.<br></b></p>
+### Pasta URBA: Ontologia com os bairros da cidade de Rio de Janeiro - Prefixo rio:
 
-### Ontologia com os bairros da cidade de Rio de Janeiro - Prefixo rio:
+<p align="justify">Foi alocada a ontologia com os conceitos urbanos e com fatos relacionados com a cidade de Rio de Janeiro. O arquivo Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro, com os códigos das Areas de Planejamento e Regiões Administrativas. Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.<br></b></p>
 
-<p align="justify">Os arquivos Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro. Tem os códigos das Areas de Planejamento e Regiões Administrativas. Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.<br></b></p>
-
-![Urba_01](https://github.com/user-attachments/assets/1d63f0af-5e21-4fe6-a6b6-7c1406b86d39)
+![Urba_01](https://github.com/user-attachments/assets/dfb8546b-2683-4715-a6f5-4653078b23d0)
 
 Consulte em: https://www.w3.org/TR/sparql11-query/
 
 #### Exemplo 1 de filtro SPARQL 
 
             A variável de sujeito ?s retorna o predicado de subpropriedades de dados usadas em BIM.Data
-        
             SELECT ?s
             WHERE
             {   
@@ -29,7 +25,6 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 #### Exemplo 2 de filtro SPARQL 
 
             A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
-         
             SELECT ?s ?o
             WHERE
             {   
@@ -40,7 +35,6 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
 #### Exemplo 2 de filtro SPARQL 
 
             A variável do objeto ?o retorna o predicado descrição, filtrando "Copa"
-        
             SELECT ?s  ?d  ?e
             WHERE
             {   
