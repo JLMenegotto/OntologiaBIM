@@ -5,4 +5,6 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-#### Conceitos cromáticos
+### Pasta CROM: Ontologia com conceitos cromáticos - Prefixo bim:
+
+![Croma_01](https://github.com/user-attachments/assets/6d7487d3-2f57-4b19-bffe-f2113b2521cc)
