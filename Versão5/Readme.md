@@ -14,7 +14,7 @@
 
 ## Capítulos de ontologias 
 
-<p align="justify">Foram alocadas 6 capítulos de ontologias<br></b></p>
+<p align="justify">Foram separados os seguintes domínios ontológicos<br></b></p>
 
   * Pasta **ABNT** aloca ontologias com o sistema de classificação da construção **NBR 15.965** ordenado pelas suas Partes.
   * Pasta **CROM** aloca ontologia con conceitos **cromáticos**. 
