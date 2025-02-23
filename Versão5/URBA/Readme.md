@@ -9,7 +9,7 @@
 
 <p align="justify">Foi alocada a ontologia com os conceitos urbanos e com fatos relacionados com a cidade de Rio de Janeiro. O arquivo Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro, com os códigos das Areas de Planejamento e Regiões Administrativas. Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.<br></b></p>
 
-![Urba_01](https://github.com/user-attachments/assets/dfb8546b-2683-4715-a6f5-4653078b23d0)
+![Urba_01](https://github.com/user-attachments/assets/5dd9df50-bb9e-4d59-b308-379a0ed7e337)
 
 Consulte em: https://www.w3.org/TR/sparql11-query/
 
