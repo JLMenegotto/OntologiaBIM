@@ -5,7 +5,7 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-### Pasta URBA: Ontologia com os bairros da cidade de Rio de Janeiro - Prefixo rio:
+### Pasta URBA: Ontologia com os bairros da cidade de Rio de Janeiro.
 
 <p align="justify">Foi alocada a ontologia com os conceitos urbanos e com fatos relacionados com a cidade de Rio de Janeiro. O arquivo Excel de esta pasta contêm o campo ontológico dos bairros de Rio de Janeiro, com os códigos das Areas de Planejamento e Regiões Administrativas. Antes de executar filtros SPARQL em Protégé deve-se inicializar um Reasoner como HermiT.<br></b></p>
 
@@ -28,7 +28,7 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
             SELECT ?s ?o
             WHERE
             {   
-                    ?s rio:descrição ?o .
+                    ?s bim:descrição ?o .
                     filter (contains (str (?o) , "Copa"))
             }
         
@@ -38,8 +38,8 @@ Consulte em: https://www.w3.org/TR/sparql11-query/
             SELECT ?s  ?d  ?e
             WHERE
             {   
-                   ?s  rio:é_dentro_de ?d . 
-                   ?s  rio:descrição   ?e .
+                   ?s  bim:é_dentro_de ?d . 
+                   ?s  bim:descrição   ?e .
                    filter (contains (str (?d) , "Rio"))
            }
 
