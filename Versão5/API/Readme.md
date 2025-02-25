@@ -1,8 +1,11 @@
 #### Versão 5.00. Para executar em como API em Revit 
-Nesta versão foram modificados os seguintes aspectos:  
- 
- * Programado para executar como API em Revit (testado na versão Revit 2024).  
- * O programa cria o arquivo owl em **sintaxe Manchester**.
+>**Prof. José Luis Menegotto**<br>
+>**jlmenegotto@poli.ufrj.br**<br>
+>Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
+>PEU Programa de Pós-graduação em Engenharia Urbana<br>
+>PPE Programa de Pós-graduação em Estruturas<br>
+
+* Programado para executar como API em Revit (testado na versão Revit 2024). O programa cria o arquivo owl em **sintaxe Manchester**.
 
 ### Instalação:
  1. Criar as pastas  
