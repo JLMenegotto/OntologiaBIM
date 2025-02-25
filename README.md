@@ -37,7 +37,7 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 - [Construtor Ontológico Versão 2.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o2)
 
 #### **Versão 3.00. Programada para executar Revit como API**
-<p align="justify">A versão 3.0, está sendo preparada para rodar em Revit como API. O objetivo é extrair os objetos de um projeto modelado em Revit já dentro das classes ontológicas planejadas.</p>
+<p align="justify">A versão 3.0, foi preparada para rodar em Revit como API. O objetivo é extrair os objetos de um projeto modelado em Revit já dentro das classes ontológicas planejadas.</p>
 
 - [Construtor Ontológico Versão 3.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o3)
 
@@ -47,7 +47,7 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 - [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
 
 #### **Versão 5.00**
-<p align="justify">Na versão 5.0, foram reorganizados os conceitos.</p>
+<p align="justify">Na versão 5.0, foram reorganizados os conceitos. Em breve será publicada a versao API para Revit atualizada para esta versão.</p>
 
 - [Construtor Ontológico Versão 5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
 
