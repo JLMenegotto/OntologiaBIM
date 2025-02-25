@@ -24,26 +24,26 @@ O botão principal executa a construção da ontologia especificada no campo 1.
 
 No campo 1 é especificado o domínio da ontologia que será criada. a seguir a lista de valores numéricos permitidos 
 
-1  Processa ABNT 15965_0M
-2  Processa ABNT 15965_0P
-3  Processa ABNT 15965_1D 
-4  Processa ABNT 15965_1F
-5  Processa ABNT 15965_1S
-6  Processa ABNT 15965_2C
-7  Processa ABNT 15965_2N
-8  Processa ABNT 15965_2Q
-9  Processa ABNT 15965_3E
-10 Processa ABNT 15965_3R
-11 Processa ABNT 15965_4A
-12 Processa ABNT 15965_4U                                                      
-13 Processa ABNT 15965_5I                                                     
-14 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
-15 Processa CSUS_4A Caderno SomaSUS (Ambientes)                                                            
-16 Processa CSUS_4U Caderno SomaSUS (Unidades Funcionais)                                                  
-17 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                   
-18 Processa Conceitos urbanos URBA_Rio                                                
-19 Processa Conceitos temporais CRONO                                             
-20 Processa Conceitos cromáticos CROMA                                             
+    * 1  Processa ABNT 15965_0M
+    * 2  Processa ABNT 15965_0P
+    * 3  Processa ABNT 15965_1D 
+    * 4  Processa ABNT 15965_1F
+    * 5  Processa ABNT 15965_1S
+    * 6  Processa ABNT 15965_2C
+    * 7  Processa ABNT 15965_2N
+    * 8  Processa ABNT 15965_2Q
+    * 9  Processa ABNT 15965_3E
+    * 10 Processa ABNT 15965_3R
+    * 11 Processa ABNT 15965_4A
+    * 12 Processa ABNT 15965_4U                                                      
+    * 13 Processa ABNT 15965_5I                                                     
+    * 14 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
+    * 15 Processa CSUS_4A Caderno SomaSUS (Ambientes)                                                            
+    * 16 Processa CSUS_4U Caderno SomaSUS (Unidades Funcionais)                                                    
+    * 17 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
+    * 18 Processa Conceitos urbanos URBA_Rio                                                 
+    * 19 Processa Conceitos temporais CRONO                                             
+    * 20 Processa Conceitos cromáticos CROMA                                            
                                                        
 O campo 2 ainda não tem uma função definida, mas será utilizado na próxima versão da API.  
 Durante a execução é informado o andamento la linha de Prompt de Revit.
