@@ -6,7 +6,7 @@
 >PPE Programa de Pós-graduação em Estruturas<br>
 ## 
 
-O construtor é atualizado regularmente. Ainda que no repositório sejam mantidas todas as versões, a [Versão5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5) é a mais recente. Nela poderá encontrar os arquivos Excel contendo a última arquitetura de conceitos propuesta para a ontologia. Os resultado em formato OWL (sintaxe Mancheste) se encontram na pasta **ArquivosRDF**. Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.<br>
+O construtor é atualizado regularmente. Ainda que no repositório sejam mantidas todas as versões, a [Versão5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5) é a mais recente. Nela poderá encontrar os arquivos Excel contendo a última arquitetura de conceitos propuesta para a ontologia. Os resultado em formato OWL (sintaxe Mancheste) se encontram na pasta junto aos arquivos Excel. Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.<br>
 
 <p align="justify">Apesar da proliferação de agentes e plataformas de IA, é ainda uma necessidade investir em organizar e vincular grandes quantidades de dados. Uma forma de realizar essa tarefa é organizando os dados em Grafos de Conhecimentos, dentro do conceito de Dados Abertos e Conectados. Os grafos podem ser Grafos de propriedades ou, Grafos de conhecimento. A adoção dessas tecnologias contribui a melhorar os processos de manutenção predial, que podem passar a ser menos corretivos e mais preditivos, em outras palavras, uma manutenção menos reativa e mais responsiva.<br></b></p>
 
