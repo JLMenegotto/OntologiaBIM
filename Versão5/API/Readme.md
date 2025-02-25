@@ -14,7 +14,7 @@ Nesta versão foram modificados os seguintes aspectos:
     A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**  
     Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
 
-![OntoAddin](https://github.com/user-attachments/assets/77f41887-582a-409d-8782-51179bcf8e6f)
+![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
 
 ### Interface:
 
