@@ -47,7 +47,7 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 - [Construtor Ontológico Versão 4.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o4)
 
 #### **Versão 5.00**
-<p align="justify">Na versão 5.0, foram reorganizados os conceitos. Em breve será publicada a versao API para Revit atualizada para esta versão.</p>
+<p align="justify">Na versão 5.0, foram reorganizados os conceitos nos arquivos Excel e os diversos dominios estudados foram alinhados. Em breve será publicada a versao API para Revit atualizada para esta versão.</p>
 
 - [Construtor Ontológico Versão 5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
 
