@@ -1,12 +1,12 @@
-#### Versão 5.00. Para executar em como API em Revit 
+### Construtor de Ontologias BIM GIS. Versão 5.00.
 >**Prof. José Luis Menegotto**<br>
 >**jlmenegotto@poli.ufrj.br**<br>
 >Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-#### Versão 5.00. Para executar em como API em Revit 
-##### Instalação:
+##### Instalação para executar em Revit como API 
+
  1. Criar as pastas  
       * **C:\APIBIM\Onto2025**  
       * **C:\APIBIM\Onto2025\Ico**  
@@ -23,7 +23,6 @@
 ![Iface](https://github.com/user-attachments/assets/66a63096-3c9e-42e0-a036-4d1e134de7a2)
 
 O botão principal executa a construção da ontologia especificada no campo 1.
-
 No campo 1 é especificado o domínio da ontologia que será criada. a seguir a lista de valores numéricos permitidos 
 
     * 1  Processa ABNT 15965_0M
