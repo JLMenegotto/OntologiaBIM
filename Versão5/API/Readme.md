@@ -15,10 +15,13 @@
  4. Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema.
     A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**  
     Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
-
-   ![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
  5. Criar a pasta **C:\Construtor_Onto** e as subpastas ABNT, OBIM, CRONO, CROMA, CSUS e URBA onde pode colocar os arquivos Excel de cada tema.
-    Nessas pastas são criados os arquivos owl. 
+    Nessas pastas são criados os arquivos owl.
+
+![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
+
+![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
+
 
 ##### Interface:
 
