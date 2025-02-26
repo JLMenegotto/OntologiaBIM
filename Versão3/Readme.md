@@ -4,37 +4,8 @@
 >Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
-## 
-#### Versão 3.00. Para executar em como API em Revit 
-Nesta versão foram modificados os seguintes aspectos:  
  
- * A estrutura de classes e propriedades dos arquivos Excel.  
- * Programado para executar como API em Revit (testado nas versões 2024 e 2025).  
- * O programa cria o arquivo owl em **sintaxe Manchester** e um arquivo ttl em **sintaxe Turtle**.
-
-### Instalação:
- 1. Criar as pastas  
-      * **C:\APIBIM\Onto**  
-      * **C:\APIBIM\Onto\Ico**  
- 2. O arquivo **ONTOBIM_2024.dll** deve ser colocado na pasta **C:\APIBIM\Onto**.  
- 3. Os arquivos **Png** da pasta Ico devem ser colocadados em **C:\APIBIM\Onto\Ico**.  
- 4. Incorporar o conteúdo do arquivo **ONTO.addin** na lista de aplicações do seu sistema.
-    A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**  
-    Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO.addin  
-
-![OntoAddin](https://github.com/user-attachments/assets/77f41887-582a-409d-8782-51179bcf8e6f)
-
-### Interface:
-
-![Iface](https://github.com/user-attachments/assets/66a63096-3c9e-42e0-a036-4d1e134de7a2)
-
-O botão principal executa a construção da ontologia especificada no campo 1.
-
-No campo 1 é especificado o domínio da ontologia que será criada.  
-O campo 2 ainda não tem uma função definida, mas será utilizado na próxima versão da API.  
-Durante a execução é informado o andamento la linha de Prompt de Revit.
-
-![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
+#### Versão 3.00. Para executar em como API em Revit foi atualizada na Versão 5.00
 
 ### **Exemplos com filtros SPARQL em plataforma Yasgui-Triply usando recursos RDF**
 
