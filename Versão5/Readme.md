@@ -47,8 +47,9 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
 #### Interface:
 ![Interface_2025](https://github.com/user-attachments/assets/3138138d-e57c-48d6-9ee2-128024440999)
 
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não implementada para extrair os fatos ontológicos do modelo BIM, utilizando os esquemas criados. No campo 1 é especificado o domínio da ontologia que será criada. Segue a lista de valores numéricos permitidos.<br></b></p>
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não implementada para extrair os fatos ontológicos do modelo BIM, utilizando os esquemas criados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
+    * 0  Processa os Objetos_BIM de Revit e Ifc 
     * 1  Processa ABNT 15965_0M
     * 2  Processa ABNT 15965_0P
     * 3  Processa ABNT 15965_1D 
@@ -69,8 +70,6 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
     * 18 Processa Conceitos urbanos URBA_Rio                                                 
     * 19 Processa Conceitos temporais CRONO                                             
     * 20 Processa Conceitos cromáticos CROMA                                            
-                                                       
-O campo 2 ainda não tem uma função definida, mas será utilizado na próxima versão da API.  
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
