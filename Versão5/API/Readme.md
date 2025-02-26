@@ -22,8 +22,7 @@
 
 ![Interface_2025](https://github.com/user-attachments/assets/3138138d-e57c-48d6-9ee2-128024440999)
 
-O botão Criar executa a construção da ontologia especificada no campo 1. O botão Extrair fará a extração de fatos ontológicos do modelo BIM.
-No campo 1 é especificado o domínio da ontologia que será criada. a seguir a lista de valores numéricos permitidos 
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> fará a extração de fatos ontológicos do modelo BIM. No campo 1 é especificado o domínio da ontologia que será criada. a seguir a lista de valores numéricos permitidos.<br></b></p>
 
     * 1  Processa ABNT 15965_0M
     * 2  Processa ABNT 15965_0P
