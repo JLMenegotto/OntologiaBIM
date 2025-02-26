@@ -13,3 +13,5 @@
 
   * **Ontologia_ABNT_4A.xlsx**
   * **Ontologia_ABNT_4A.owl**
+
+![Parte_3E](https://github.com/user-attachments/assets/e3556f13-2ab2-49c9-9296-13dc8b2b0afb)
