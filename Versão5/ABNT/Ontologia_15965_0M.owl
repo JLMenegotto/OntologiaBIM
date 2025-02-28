@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_2_0M>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 27/02/2025 16:09:02"@pt
+  Annotations: rdfs:label "DataHora: 28/02/2025 12:08:43"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: P000001"@pt
   Annotations: rdfs:label "Cidade: Rio de Janeiro"@pt
@@ -264,6 +264,18 @@ ObjectProperty: abnt:tem.geocode
 	Domain: abnt:BIM
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para geolocalizar: tem.geocode"@pt
+
+ObjectProperty: abnt:tem.hemisfério
+	SubPropertyOf: abnt:p.geolocalizar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para geolocalizar: tem.hemisfério"@pt
+
+ObjectProperty: abnt:tem.zona.geográfica
+	SubPropertyOf: abnt:p.geolocalizar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para geolocalizar: tem.zona.geográfica"@pt
 
 ObjectProperty: abnt:p.relacionar
 	SubPropertyOf: abnt:BIMProp
@@ -799,6 +811,12 @@ ObjectProperty: abnt:é.meiodia
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para acontecer: é.meiodia"@pt
 
+ObjectProperty: abnt:é.meiodia.solar
+	SubPropertyOf: abnt:p.acontecer
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para acontecer: é.meiodia.solar"@pt
+
 ObjectProperty: abnt:é.equinócio.primavera
 	SubPropertyOf: abnt:p.acontecer
 	Domain: abnt:BIM
@@ -929,6 +947,13 @@ ObjectProperty: abnt:tem.pédireito
 	Annotations: rdfs:label "Propriedade para medir: tem.pédireito"@pt
 	Characteristics: Functional
 
+ObjectProperty: abnt:é.dn
+	SubPropertyOf: abnt:p.medir
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para medir: é.dn"@pt
+	Characteristics: Functional
+
 ObjectProperty: abnt:tem.diámetro
 	SubPropertyOf: abnt:p.medir
 	Domain: abnt:BIM
@@ -964,6 +989,24 @@ ObjectProperty: abnt:tem.cota
 	Annotations: rdfs:label "Propriedade para medir: tem.cota"@pt
 	Characteristics: Functional
 
+ObjectProperty: abnt:é.mínima
+	SubPropertyOf: abnt:p.medir
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para medir: é.mínima"@pt
+
+ObjectProperty: abnt:é.máxima
+	SubPropertyOf: abnt:p.medir
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para medir: é.máxima"@pt
+
+ObjectProperty: abnt:é.média
+	SubPropertyOf: abnt:p.medir
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para medir: é.média"@pt
+
 ObjectProperty: abnt:p.contar
 	SubPropertyOf: abnt:BIMProp
 	Domain: abnt:BIM
@@ -993,6 +1036,12 @@ ObjectProperty: abnt:tem.densidade
 	Domain: abnt:BIM
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para pesar: tem.densidade"@pt
+
+ObjectProperty: abnt:tem.massa
+	SubPropertyOf: abnt:p.pesar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para pesar: tem.massa"@pt
 
 ObjectProperty: abnt:tem.peso
 	SubPropertyOf: abnt:p.pesar
@@ -1180,865 +1229,1015 @@ DataProperty: abnt:continente
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: continente ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do continente"@pt
+	Annotations: rdfs:label "Nome do continente."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome do continente"@pt
+	Annotations: rdfs:label "Nome do continente."@pt
 
 DataProperty: abnt:país
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: país ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do país"@pt
+	Annotations: rdfs:label "Nome do país."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome do país"@pt
+	Annotations: rdfs:label "Nome do país."@pt
 
 DataProperty: abnt:estado
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: estado ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do estado"@pt
+	Annotations: rdfs:label "Nome do estado."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome do estado"@pt
+	Annotations: rdfs:label "Nome do estado."@pt
 
 DataProperty: abnt:cidade
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: cidade ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome da cidade"@pt
+	Annotations: rdfs:label "Nome da cidade."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome da cidade"@pt
+	Annotations: rdfs:label "Nome da cidade."@pt
 
 DataProperty: abnt:area.planejamento
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: area.planejamento ( xsd:string )"@pt
-	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)"@pt
+	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)"@pt
+	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)."@pt
 
 DataProperty: abnt:região.administrativa
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: região.administrativa ( xsd:string )"@pt
-	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)"@pt
+	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)"@pt
+	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)."@pt
 
 DataProperty: abnt:distrito
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: distrito ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificador do distrito."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
+	Annotations: rdfs:label "Identificador do distrito."@pt
 
 DataProperty: abnt:bairro
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: bairro ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do bairro"@pt
+	Annotations: rdfs:label "Nome do bairro."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome do bairro"@pt
+	Annotations: rdfs:label "Nome do bairro."@pt
 
 DataProperty: abnt:nome.logradouro
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: nome.logradouro ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de rua, avenida etc."@pt
+	Annotations: rdfs:label "Nome de rua, avenida etc.."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome de rua, avenida etc."@pt
+	Annotations: rdfs:label "Nome de rua, avenida etc.."@pt
 
 DataProperty: abnt:número
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: número ( xsd:string )"@pt
-	Annotations: rdfs:label "Número de endereço"@pt
+	Annotations: rdfs:label "Número de endereço."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Número de endereço"@pt
+	Annotations: rdfs:label "Número de endereço."@pt
 
 DataProperty: abnt:cnj
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: cnj ( xsd:string )"@pt
-	Annotations: rdfs:label "Em alguns endereços pode haver Conjunto"@pt
+	Annotations: rdfs:label "Em alguns endereços pode haver Conjunto."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Em alguns endereços pode haver Conjunto"@pt
+	Annotations: rdfs:label "Em alguns endereços pode haver Conjunto."@pt
 
 DataProperty: abnt:grp
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: grp ( xsd:string )"@pt
-	Annotations: rdfs:label "Em alguns endereços pode haver Grupo"@pt
+	Annotations: rdfs:label "Em alguns endereços pode haver Grupo ."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Em alguns endereços pode haver Grupo"@pt
+	Annotations: rdfs:label "Em alguns endereços pode haver Grupo ."@pt
 
 DataProperty: abnt:bloco
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: bloco ( xsd:string )"@pt
-	Annotations: rdfs:label "Em alguns endereços pode haver Bloco"@pt
+	Annotations: rdfs:label "Em alguns endereços pode haver Bloco."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Em alguns endereços pode haver Bloco"@pt
+	Annotations: rdfs:label "Em alguns endereços pode haver Bloco."@pt
 
 DataProperty: abnt:andar
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: andar ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do Andar"@pt
+	Annotations: rdfs:label "Nome do Andar."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Nome do Andar"@pt
+	Annotations: rdfs:label "Nome do Andar."@pt
 
 DataProperty: abnt:cep
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: cep ( xsd:string )"@pt
-	Annotations: rdfs:label "Código de endereçamento postal"@pt
+	Annotations: rdfs:label "Código de endereçamento postal."@pt
 
 DataProperty: abnt:d.endereçar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
-	Annotations: rdfs:label "Código de endereçamento postal"@pt
+	Annotations: rdfs:label "Código de endereçamento postal."@pt
 
 DataProperty: abnt:cx.postal
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: cx.postal ( xsd:string )"@pt
+	Annotations: rdfs:label "Caixa postal"@pt
+
+DataProperty: abnt:d.endereçar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.endereçar"@pt
+	Annotations: rdfs:label "Caixa postal"@pt
 
 DataProperty: abnt:e.mail
 	SubPropertyOf: abnt:d.endereçar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: e.mail ( xsd:string )"@pt
+	Annotations: rdfs:label "E-mail."@pt
 
 DataProperty: abnt:d.geolocalizar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.geolocalizar"@pt
+	Annotations: rdfs:label "E-mail."@pt
 
 DataProperty: abnt:latitude
 	SubPropertyOf: abnt:d.geolocalizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: latitude ( xsd:string )"@pt
-	Annotations: rdfs:label "Formatada em sistema WGS 84"@pt
+	Annotations: rdfs:label "Formatada em sistema WGS 84."@pt
 
 DataProperty: abnt:d.geolocalizar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.geolocalizar"@pt
-	Annotations: rdfs:label "Formatada em sistema WGS 84"@pt
+	Annotations: rdfs:label "Formatada em sistema WGS 84."@pt
 
 DataProperty: abnt:longitude
 	SubPropertyOf: abnt:d.geolocalizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: longitude ( xsd:string )"@pt
-	Annotations: rdfs:label "Formatada em sistema WGS 84"@pt
+	Annotations: rdfs:label "Formatada em sistema WGS 84."@pt
 
 DataProperty: abnt:altitude
 	SubPropertyOf: abnt:d.geolocalizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: altitude ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor de altitude de um local."@pt
+
+DataProperty: abnt:d.geolocalizar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.geolocalizar"@pt
+	Annotations: rdfs:label "Valor de altitude de um local."@pt
 
 DataProperty: abnt:geocode
 	SubPropertyOf: abnt:d.geolocalizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: geocode ( xsd:string )"@pt
+	Annotations: rdfs:label "Geocódigo."@pt
+
+DataProperty: abnt:d.geolocalizar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.geolocalizar"@pt
+	Annotations: rdfs:label "Geocódigo."@pt
+
+DataProperty: abnt:hemisfério
+	SubPropertyOf: abnt:d.geolocalizar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para geolocalizar: hemisfério ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor Norte (N) ou Sul (S)."@pt
+
+DataProperty: abnt:d.geolocalizar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.geolocalizar"@pt
+	Annotations: rdfs:label "Valor Norte (N) ou Sul (S)."@pt
+
+DataProperty: abnt:zona.geográfica
+	SubPropertyOf: abnt:d.geolocalizar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para geolocalizar: zona.geográfica ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor da zona geográfica UTM. Valor numérico de 2 dígitos expresso como string."@pt
 
 DataProperty: abnt:d.relacionar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Valor da zona geográfica UTM. Valor numérico de 2 dígitos expresso como string."@pt
 
 DataProperty: abnt:conectado.a
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: conectado.a ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um elemento é contectado a outro. Não é necessariamente uma relação simétrica."@pt
+
+DataProperty: abnt:d.relacionar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Se um elemento é contectado a outro. Não é necessariamente uma relação simétrica."@pt
 
 DataProperty: abnt:dentro.de
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: dentro.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um elemento está dentro de outro."@pt
+
+DataProperty: abnt:d.relacionar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Se um elemento está dentro de outro."@pt
 
 DataProperty: abnt:fora.de
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: fora.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um elemento está fora de outro. Não é transitiva como é.dentro.de."@pt
+
+DataProperty: abnt:d.relacionar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Se um elemento está fora de outro. Não é transitiva como é.dentro.de."@pt
 
 DataProperty: abnt:abaixo.de
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: abaixo.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um elemento está embaixo de outro."@pt
+
+DataProperty: abnt:d.relacionar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Se um elemento está embaixo de outro."@pt
 
 DataProperty: abnt:acima.de
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: acima.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um elemento está acima de outro."@pt
+
+DataProperty: abnt:d.relacionar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Se um elemento está acima de outro."@pt
 
 DataProperty: abnt:parte.de
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: parte.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um objeto é parte de outro."@pt
+
+DataProperty: abnt:d.relacionar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.relacionar"@pt
+	Annotations: rdfs:label "Se um objeto é parte de outro."@pt
 
 DataProperty: abnt:agrupado.com
 	SubPropertyOf: abnt:d.relacionar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: agrupado.com ( xsd:string )"@pt
+	Annotations: rdfs:label "Se um elemento está agrupado com outros."@pt
 
 DataProperty: abnt:d.classificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.classificar"@pt
+	Annotations: rdfs:label "Se um elemento está agrupado com outros."@pt
 
 DataProperty: abnt:categoria.revit
 	SubPropertyOf: abnt:d.classificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para classificar: categoria.revit ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor OST de uma categoria de Revit"@pt
+	Annotations: rdfs:label "Valor OST de uma categoria de Revit."@pt
 
 DataProperty: abnt:d.classificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.classificar"@pt
-	Annotations: rdfs:label "Valor OST de uma categoria de Revit"@pt
+	Annotations: rdfs:label "Valor OST de uma categoria de Revit."@pt
 
 DataProperty: abnt:classe.ifc
 	SubPropertyOf: abnt:d.classificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para classificar: classe.ifc ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor de uma classe de Ifc"@pt
+	Annotations: rdfs:label "Valor de uma classe de Ifc."@pt
 
 DataProperty: abnt:d.classificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.classificar"@pt
-	Annotations: rdfs:label "Valor de uma classe de Ifc"@pt
+	Annotations: rdfs:label "Valor de uma classe de Ifc."@pt
 
 DataProperty: abnt:entidade
 	SubPropertyOf: abnt:d.classificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para classificar: entidade ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor de identificação de uma entidade de AutoCAD ou outro programa"@pt
+	Annotations: rdfs:label "Valor de identificação de uma entidade de AutoCAD ou outro programa."@pt
 
 DataProperty: abnt:d.classificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.classificar"@pt
-	Annotations: rdfs:label "Valor de identificação de uma entidade de AutoCAD ou outro programa"@pt
+	Annotations: rdfs:label "Valor de identificação de uma entidade de AutoCAD ou outro programa."@pt
 
 DataProperty: abnt:link
 	SubPropertyOf: abnt:d.classificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para classificar: link ( xsd:string )"@pt
-	Annotations: rdfs:label "Link de vínculação entre arquivos de modelos"@pt
+	Annotations: rdfs:label "Link de vínculação entre arquivos de modelos ."@pt
 
 DataProperty: abnt:d.classificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.classificar"@pt
-	Annotations: rdfs:label "Link de vínculação entre arquivos de modelos"@pt
+	Annotations: rdfs:label "Link de vínculação entre arquivos de modelos ."@pt
 
 DataProperty: abnt:grupo
 	SubPropertyOf: abnt:d.classificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para classificar: grupo ( xsd:string )"@pt
-	Annotations: rdfs:label "Grupo de objetos de um modelo BIM ou arquivo CAD"@pt
+	Annotations: rdfs:label "Grupo de objetos de um modelo BIM ou arquivo CAD."@pt
 
 DataProperty: abnt:d.identificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.identificar"@pt
-	Annotations: rdfs:label "Grupo de objetos de um modelo BIM ou arquivo CAD"@pt
+	Annotations: rdfs:label "Grupo de objetos de um modelo BIM ou arquivo CAD."@pt
 
 DataProperty: abnt:código
 	SubPropertyOf: abnt:d.identificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: código ( xsd:string )"@pt
-	Annotations: rdfs:label "Código de algum objeto definido"@pt
+	Annotations: rdfs:label "Código de algum objeto definido."@pt
 
 DataProperty: abnt:d.identificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.identificar"@pt
-	Annotations: rdfs:label "Código de algum objeto definido"@pt
+	Annotations: rdfs:label "Código de algum objeto definido."@pt
 
 DataProperty: abnt:nome
 	SubPropertyOf: abnt:d.identificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: nome ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de algum objeto definido"@pt
+	Annotations: rdfs:label "Nome de algum objeto definido."@pt
 
 DataProperty: abnt:d.identificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.identificar"@pt
-	Annotations: rdfs:label "Nome de algum objeto definido"@pt
+	Annotations: rdfs:label "Nome de algum objeto definido."@pt
 
 DataProperty: abnt:id
 	SubPropertyOf: abnt:d.identificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: id ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificador único de objeto. Pode ser um Handle de AutoCAD ou número ID de objeto Revit"@pt
+	Annotations: rdfs:label "Identificador único de objeto. Pode ser um Handle de AutoCAD ou número ID de objeto Revit."@pt
 
 DataProperty: abnt:d.identificar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.identificar"@pt
-	Annotations: rdfs:label "Identificador único de objeto. Pode ser um Handle de AutoCAD ou número ID de objeto Revit"@pt
+	Annotations: rdfs:label "Identificador único de objeto. Pode ser um Handle de AutoCAD ou número ID de objeto Revit."@pt
 
 DataProperty: abnt:uri
 	SubPropertyOf: abnt:d.identificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: uri ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Identification"@pt
+	Annotations: rdfs:label "Uniform Resource Identification."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Uniform Resource Identification"@pt
+	Annotations: rdfs:label "Uniform Resource Identification."@pt
 
 DataProperty: abnt:modelo
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: modelo ( xsd:string )"@pt
-	Annotations: rdfs:label "Modelo definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Modelo definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Modelo definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Modelo definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:tema
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: tema ( xsd:string )"@pt
-	Annotations: rdfs:label "Tema definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Tema definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Tema definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Tema definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:tipo
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: tipo ( xsd:string )"@pt
-	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:série
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: série ( xsd:string )"@pt
-	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:linha
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: linha ( xsd:string )"@pt
-	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:item
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: item ( xsd:string )"@pt
-	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto"@pt
+	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto."@pt
 
 DataProperty: abnt:vol
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: vol ( xsd:string )"@pt
-	Annotations: rdfs:label "Volume do SomaSUS"@pt
+	Annotations: rdfs:label "Volume do SomaSUS."@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
-	Annotations: rdfs:label "Volume do SomaSUS"@pt
+	Annotations: rdfs:label "Volume do SomaSUS."@pt
 
 DataProperty: abnt:descrição
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: descrição ( xsd:string )"@pt
-	Annotations: rdfs:label "Descrição de um determinado objeto"@pt
+	Annotations: rdfs:label "Descrição de um determinado objeto."@pt
 
 DataProperty: abnt:d.definir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.definir"@pt
-	Annotations: rdfs:label "Descrição de um determinado objeto"@pt
+	Annotations: rdfs:label "Descrição de um determinado objeto."@pt
 
 DataProperty: abnt:ambiente
 	SubPropertyOf: abnt:d.definir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para definir: ambiente ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de um ambiente"@pt
+	Annotations: rdfs:label "Nome de um ambiente."@pt
 
 DataProperty: abnt:d.definir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.definir"@pt
-	Annotations: rdfs:label "Nome de um ambiente"@pt
+	Annotations: rdfs:label "Nome de um ambiente."@pt
 
 DataProperty: abnt:equipamento
 	SubPropertyOf: abnt:d.definir
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para definir: equipamento ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é equipamento = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é equipamento = 1 senão 0."@pt
 
 DataProperty: abnt:d.definir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.definir"@pt
-	Annotations: rdfs:label "Se é equipamento = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é equipamento = 1 senão 0."@pt
 
 DataProperty: abnt:dispositivo
 	SubPropertyOf: abnt:d.definir
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para definir: dispositivo ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é dispositivo = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é dispositivo = 1 senão 0."@pt
 
 DataProperty: abnt:d.definir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.definir"@pt
-	Annotations: rdfs:label "Se é dispositivo = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é dispositivo = 1 senão 0."@pt
 
 DataProperty: abnt:aparelho
 	SubPropertyOf: abnt:d.definir
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para definir: aparelho ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é aparelho = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é aparelho = 1 senão 0."@pt
 
 DataProperty: abnt:d.definir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.definir"@pt
-	Annotations: rdfs:label "Se é aparelho = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é aparelho = 1 senão 0."@pt
 
 DataProperty: abnt:instrumento
 	SubPropertyOf: abnt:d.definir
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para definir: instrumento ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é instrumento = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é instrumento = 1 senão 0."@pt
 
 DataProperty: abnt:d.definir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.definir"@pt
-	Annotations: rdfs:label "Se é instrumento = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é instrumento = 1 senão 0."@pt
 
 DataProperty: abnt:mobiliário
 	SubPropertyOf: abnt:d.definir
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para definir: mobiliário ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é mobiliário = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é mobiliário = 1 senão 0."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Se é mobiliário = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é mobiliário = 1 senão 0."@pt
 
 DataProperty: abnt:público
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para administrar: público ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é público = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é público = 1 senão 0."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Se é público = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é público = 1 senão 0."@pt
 
 DataProperty: abnt:privado
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para administrar: privado ( xsd:integer )"@pt
-	Annotations: rdfs:label "Se é privado = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é privado = 1 senão 0."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Se é privado = 1 senão 0"@pt
+	Annotations: rdfs:label "Se é privado = 1 senão 0."@pt
 
 DataProperty: abnt:órgão
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: órgão ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor de órgão de instituição publica brasileira"@pt
+	Annotations: rdfs:label "Valor de órgão de instituição publica brasileira."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Valor de órgão de instituição publica brasileira"@pt
+	Annotations: rdfs:label "Valor de órgão de instituição publica brasileira."@pt
 
 DataProperty: abnt:unid.académica
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: unid.académica ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de Unidade Acadêmica de instituição de ensino brasileira"@pt
+	Annotations: rdfs:label "Nome de Unidade Acadêmica de instituição de ensino brasileira."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Nome de Unidade Acadêmica de instituição de ensino brasileira"@pt
+	Annotations: rdfs:label "Nome de Unidade Acadêmica de instituição de ensino brasileira."@pt
 
 DataProperty: abnt:unid.administrativa
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: unid.administrativa ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de Unidade Administrativa alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de Unidade Administrativa alguma instituição ou edifício."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Nome de Unidade Administrativa alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de Unidade Administrativa alguma instituição ou edifício."@pt
 
 DataProperty: abnt:unid.funcional
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: unid.funcional ( xsd:string )"@pt
-	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde"@pt
+	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde"@pt
+	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde."@pt
 
 DataProperty: abnt:departamento
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: departamento ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de departamento"@pt
+	Annotations: rdfs:label "Nome de departamento."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Nome de departamento"@pt
+	Annotations: rdfs:label "Nome de departamento."@pt
 
 DataProperty: abnt:sigla.departamento
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: sigla.departamento ( xsd:string )"@pt
-	Annotations: rdfs:label "Sigla de departamento"@pt
+	Annotations: rdfs:label "Sigla de departamento."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Sigla de departamento"@pt
+	Annotations: rdfs:label "Sigla de departamento."@pt
 
 DataProperty: abnt:divisão
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: divisão ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de divisão de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de divisão de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Nome de divisão de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de divisão de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:núcleo
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: núcleo ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de núcleo de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de núcleo de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Nome de núcleo de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de núcleo de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:setor
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: setor ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de setor de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de setor de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
-	Annotations: rdfs:label "Nome de setor de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de setor de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:zona
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: zona ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome de zona de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de zona de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:d.contratar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
-	Annotations: rdfs:label "Nome de zona de alguma instituição ou edifício"@pt
+	Annotations: rdfs:label "Nome de zona de alguma instituição ou edifício."@pt
 
 DataProperty: abnt:contrato
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: contrato ( xsd:string )"@pt
-	Annotations: rdfs:label "Número ou identificador do contrato"@pt
+	Annotations: rdfs:label "Número ou identificador do contrato."@pt
 
 DataProperty: abnt:d.contratar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
-	Annotations: rdfs:label "Número ou identificador do contrato"@pt
+	Annotations: rdfs:label "Número ou identificador do contrato."@pt
 
 DataProperty: abnt:contratado
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: contratado ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do agente contratado."@pt
 
 DataProperty: abnt:d.contratar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação do agente contratado."@pt
 
 DataProperty: abnt:contratante
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: contratante ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do agente contratatante."@pt
+
+DataProperty: abnt:d.contratar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação do agente contratatante."@pt
 
 DataProperty: abnt:subcontratista
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: subcontratista ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do agente subcontratado."@pt
+
+DataProperty: abnt:d.contratar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação do agente subcontratado."@pt
 
 DataProperty: abnt:empresa
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: empresa ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação da empresa."@pt
+
+DataProperty: abnt:d.contratar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação da empresa."@pt
 
 DataProperty: abnt:proprietário
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: proprietário ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do proprietário."@pt
+
+DataProperty: abnt:d.contratar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação do proprietário."@pt
 
 DataProperty: abnt:cnpj
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: cnpj ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do CNPJ. Cadastro Nacional da Pessoa Jurídica no Brasil."@pt
+
+DataProperty: abnt:d.contratar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação do CNPJ. Cadastro Nacional da Pessoa Jurídica no Brasil."@pt
 
 DataProperty: abnt:cpf
 	SubPropertyOf: abnt:d.contratar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: cpf ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do CPF. Cadastro Nacional da Pessoa Física no Brasil."@pt
+
+DataProperty: abnt:d.contratar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.contratar"@pt
+	Annotations: rdfs:label "Identificação do CPF. Cadastro Nacional da Pessoa Física no Brasil."@pt
 
 DataProperty: abnt:processo
 	SubPropertyOf: abnt:d.contratar
@@ -2073,558 +2272,826 @@ DataProperty: abnt:autor
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para produzir: autor ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do autor do projeto"@pt
+	Annotations: rdfs:label "Nome do autor do projeto."@pt
 
 DataProperty: abnt:d.produzir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.produzir"@pt
-	Annotations: rdfs:label "Nome do autor do projeto"@pt
+	Annotations: rdfs:label "Nome do autor do projeto."@pt
 
 DataProperty: abnt:coordenador
 	SubPropertyOf: abnt:d.produzir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para produzir: coordenador ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do coordenador do projeto"@pt
+	Annotations: rdfs:label "Nome do coordenador do projeto."@pt
 
 DataProperty: abnt:d.produzir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.produzir"@pt
-	Annotations: rdfs:label "Nome do coordenador do projeto"@pt
+	Annotations: rdfs:label "Nome do coordenador do projeto."@pt
 
 DataProperty: abnt:desenhista
 	SubPropertyOf: abnt:d.produzir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para produzir: desenhista ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do desenhista do projeto"@pt
+	Annotations: rdfs:label "Nome do desenhista do projeto."@pt
 
 DataProperty: abnt:d.produzir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.produzir"@pt
-	Annotations: rdfs:label "Nome do desenhista do projeto"@pt
+	Annotations: rdfs:label "Nome do desenhista do projeto."@pt
 
 DataProperty: abnt:colaborador
 	SubPropertyOf: abnt:d.produzir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para produzir: colaborador ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do colaborador do projeto"@pt
+	Annotations: rdfs:label "Nome do colaborador do projeto."@pt
 
 DataProperty: abnt:d.produzir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.produzir"@pt
-	Annotations: rdfs:label "Nome do colaborador do projeto"@pt
+	Annotations: rdfs:label "Nome do colaborador do projeto."@pt
 
 DataProperty: abnt:revisor
 	SubPropertyOf: abnt:d.produzir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para produzir: revisor ( xsd:string )"@pt
-	Annotations: rdfs:label "Nome do revisor do projeto"@pt
+	Annotations: rdfs:label "Nome do revisor do projeto."@pt
 
 DataProperty: abnt:d.durar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.durar"@pt
-	Annotations: rdfs:label "Nome do revisor do projeto"@pt
+	Annotations: rdfs:label "Nome do revisor do projeto."@pt
 
 DataProperty: abnt:data
 	SubPropertyOf: abnt:d.durar
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para durar: data ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Uma data específica"@pt
+	Annotations: rdfs:label "Uma data específica."@pt
 
 DataProperty: abnt:d.durar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.durar"@pt
-	Annotations: rdfs:label "Uma data específica"@pt
+	Annotations: rdfs:label "Uma data específica."@pt
 
 DataProperty: abnt:data.inicial
 	SubPropertyOf: abnt:d.durar
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para durar: data.inicial ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Uma data considerada o dia de inicialização de um processo"@pt
+	Annotations: rdfs:label "Uma data considerada o dia de inicialização de um processo."@pt
 
 DataProperty: abnt:d.durar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.durar"@pt
-	Annotations: rdfs:label "Uma data considerada o dia de inicialização de um processo"@pt
+	Annotations: rdfs:label "Uma data considerada o dia de inicialização de um processo."@pt
 
 DataProperty: abnt:data.final
 	SubPropertyOf: abnt:d.durar
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para durar: data.final ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Uma data considerada o dia de finalização de um processo"@pt
+	Annotations: rdfs:label "Uma data considerada o dia de finalização de um processo."@pt
 
 DataProperty: abnt:d.durar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.durar"@pt
-	Annotations: rdfs:label "Uma data considerada o dia de finalização de um processo"@pt
+	Annotations: rdfs:label "Uma data considerada o dia de finalização de um processo."@pt
 
 DataProperty: abnt:duração
 	SubPropertyOf: abnt:d.durar
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para durar: duração ( xsd:dateTime )"@pt
+	Annotations: rdfs:label "Duração de um evento."@pt
 
 DataProperty: abnt:d.durar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.durar"@pt
+	Annotations: rdfs:label "Duração de um evento."@pt
 
 DataProperty: abnt:horário
 	SubPropertyOf: abnt:d.durar
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para durar: horário ( xsd:dateTime )"@pt
+	Annotations: rdfs:label "Horário em que ocorreo o evento."@pt
 
 DataProperty: abnt:d.planejar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
+	Annotations: rdfs:label "Horário em que ocorreo o evento."@pt
 
 DataProperty: abnt:depois.de
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: depois.de ( xsd:integer )"@pt
+	Annotations: rdfs:label "Se um evento deve acontecer depois de outro evento."@pt
+
+DataProperty: abnt:d.planejar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
+	Annotations: rdfs:label "Se um evento deve acontecer depois de outro evento."@pt
 
 DataProperty: abnt:previo.a
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: previo.a ( xsd:integer )"@pt
+	Annotations: rdfs:label "Se um evento deve acontecer antes de outro evento."@pt
+
+DataProperty: abnt:d.planejar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
+	Annotations: rdfs:label "Se um evento deve acontecer antes de outro evento."@pt
 
 DataProperty: abnt:concomitante.a
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: concomitante.a ( xsd:integer )"@pt
-	Annotations: rdfs:label "Evento que acontece dentro da mesma fase de outro evento"@pt
+	Annotations: rdfs:label "Evento que acontece dentro da mesma fase de outro evento."@pt
 
 DataProperty: abnt:d.planejar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
-	Annotations: rdfs:label "Evento que acontece dentro da mesma fase de outro evento"@pt
+	Annotations: rdfs:label "Evento que acontece dentro da mesma fase de outro evento."@pt
 
 DataProperty: abnt:simultâneo.a
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: simultâneo.a ( xsd:integer )"@pt
-	Annotations: rdfs:label "Evento exatamente sincronizado a outro evento"@pt
+	Annotations: rdfs:label "Evento exatamente sincronizado a outro evento."@pt
 
 DataProperty: abnt:d.planejar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
-	Annotations: rdfs:label "Evento exatamente sincronizado a outro evento"@pt
+	Annotations: rdfs:label "Evento exatamente sincronizado a outro evento."@pt
 
 DataProperty: abnt:marca.inicial
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: marca.inicial ( xsd:integer )"@pt
-	Annotations: rdfs:label "Momento considerado de inicialização"@pt
+	Annotations: rdfs:label "Momento considerado de inicialização."@pt
 
 DataProperty: abnt:d.planejar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
-	Annotations: rdfs:label "Momento considerado de inicialização"@pt
+	Annotations: rdfs:label "Momento considerado de inicialização."@pt
 
 DataProperty: abnt:marca.final
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: marca.final ( xsd:integer )"@pt
-	Annotations: rdfs:label "Momento considerado finalização"@pt
+	Annotations: rdfs:label "Momento considerado finalização."@pt
 
 DataProperty: abnt:d.planejar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
-	Annotations: rdfs:label "Momento considerado finalização"@pt
+	Annotations: rdfs:label "Momento considerado finalização."@pt
 
 DataProperty: abnt:momento
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: momento ( xsd:integer )"@pt
+	Annotations: rdfs:label "Momento em que acontece o evento."@pt
+
+DataProperty: abnt:d.planejar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado de Objeto d.planejar"@pt
+	Annotations: rdfs:label "Momento em que acontece o evento."@pt
 
 DataProperty: abnt:vida.útil
 	SubPropertyOf: abnt:d.planejar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: vida.útil ( xsd:integer )"@pt
-	Annotations: rdfs:label "Vida útil de algum componente expressa em horas"@pt
+	Annotations: rdfs:label "Vida útil de algum componente expressa em horas."@pt
 
 DataProperty: abnt:d.acontecer
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
-	Annotations: rdfs:label "Vida útil de algum componente expressa em horas"@pt
+	Annotations: rdfs:label "Vida útil de algum componente expressa em horas."@pt
 
 DataProperty: abnt:amanhecer
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: amanhecer ( xsd:dateTime )"@pt
+	Annotations: rdfs:label "Horário do amanhecer. Varia diariamente."@pt
 
 DataProperty: abnt:d.acontecer
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
+	Annotations: rdfs:label "Horário do amanhecer. Varia diariamente."@pt
 
 DataProperty: abnt:anoitecer
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: anoitecer ( xsd:dateTime )"@pt
+	Annotations: rdfs:label "Horário do anoitecer. Varia diariamente."@pt
+
+DataProperty: abnt:d.acontecer
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:dateTime
+	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
+	Annotations: rdfs:label "Horário do anoitecer. Varia diariamente."@pt
 
 DataProperty: abnt:meiodia
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: meiodia ( xsd:dateTime )"@pt
+	Annotations: rdfs:label "Horário do meio-dia. Não varia, é sempre às 12:00 hs independente do dia do ano."@pt
+
+DataProperty: abnt:d.acontecer
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:dateTime
+	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
+	Annotations: rdfs:label "Horário do meio-dia. Não varia, é sempre às 12:00 hs independente do dia do ano."@pt
+
+DataProperty: abnt:meiodia.solar
+	SubPropertyOf: abnt:d.acontecer
+	Domain: abnt:BIM
+	Range: xsd:dateTime
+	Annotations: rdfs:label "Dado para acontecer: meiodia.solar ( xsd:dateTime )"@pt
+	Annotations: rdfs:label "Horário do meio-dia solar. Varia diariamente."@pt
+
+DataProperty: abnt:d.acontecer
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:dateTime
+	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
+	Annotations: rdfs:label "Horário do meio-dia solar. Varia diariamente."@pt
 
 DataProperty: abnt:equinócio.primavera
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: equinócio.primavera ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Dia 21 de setembro no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de setembro no hemisfério sul."@pt
 
 DataProperty: abnt:d.acontecer
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
-	Annotations: rdfs:label "Dia 21 de setembro no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de setembro no hemisfério sul."@pt
 
 DataProperty: abnt:equinócio.outono
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: equinócio.outono ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Dia 21 de março no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de março no hemisfério sul."@pt
 
 DataProperty: abnt:d.acontecer
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
-	Annotations: rdfs:label "Dia 21 de março no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de março no hemisfério sul."@pt
 
 DataProperty: abnt:solstício.verão
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: solstício.verão ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Dia 21 de dezembro no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de dezembro no hemisfério sul."@pt
 
 DataProperty: abnt:d.acontecer
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.acontecer"@pt
-	Annotations: rdfs:label "Dia 21 de dezembro no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de dezembro no hemisfério sul."@pt
 
 DataProperty: abnt:solstício.inverno
 	SubPropertyOf: abnt:d.acontecer
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para acontecer: solstício.inverno ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Dia 21 de junho no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de junho no hemisfério sul."@pt
 
 DataProperty: abnt:d.normatizar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.normatizar"@pt
-	Annotations: rdfs:label "Dia 21 de junho no hemisfério sul"@pt
+	Annotations: rdfs:label "Dia 21 de junho no hemisfério sul."@pt
 
 DataProperty: abnt:norma
 	SubPropertyOf: abnt:d.normatizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para normatizar: norma ( xsd:string )"@pt
+	Annotations: rdfs:label "Nome ou identificação de uma Norma."@pt
 
 DataProperty: abnt:d.normatizar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.normatizar"@pt
+	Annotations: rdfs:label "Nome ou identificação de uma Norma."@pt
 
 DataProperty: abnt:parte
 	SubPropertyOf: abnt:d.normatizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para normatizar: parte ( xsd:string )"@pt
+	Annotations: rdfs:label "Nome ou identificação de parte de uma Norma."@pt
+
+DataProperty: abnt:d.normatizar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.normatizar"@pt
+	Annotations: rdfs:label "Nome ou identificação de parte de uma Norma."@pt
 
 DataProperty: abnt:escopo
 	SubPropertyOf: abnt:d.normatizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para normatizar: escopo ( xsd:string )"@pt
+	Annotations: rdfs:label "Definição do escopo de uma Norma."@pt
+
+DataProperty: abnt:d.normatizar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.normatizar"@pt
+	Annotations: rdfs:label "Definição do escopo de uma Norma."@pt
 
 DataProperty: abnt:regulamento
 	SubPropertyOf: abnt:d.normatizar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para normatizar: regulamento ( xsd:string )"@pt
+	Annotations: rdfs:label "Nome ou identificação de um regulamento não Normativo."@pt
 
 DataProperty: abnt:d.medir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Nome ou identificação de um regulamento não Normativo."@pt
 
 DataProperty: abnt:volume
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: volume ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor Volumétrico."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor Volumétrico."@pt
 
 DataProperty: abnt:área
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: área ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de superfície ou área."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de superfície ou área."@pt
 
 DataProperty: abnt:área.bruta
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: área.bruta ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de superfície ou área bruta."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de superfície ou área bruta."@pt
 
 DataProperty: abnt:área.útil
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: área.útil ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de superfície ou área útil."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de superfície ou área útil."@pt
 
 DataProperty: abnt:altura
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: altura ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de altura."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de altura."@pt
 
 DataProperty: abnt:comprimento
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: comprimento ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de comprimento de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de comprimento de um objeto."@pt
 
 DataProperty: abnt:largura
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: largura ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de largura de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de largura de um objeto."@pt
 
 DataProperty: abnt:profundidade
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: profundidade ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de profundidade de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de profundidade de um objeto."@pt
 
 DataProperty: abnt:espessura
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: espessura ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de espessura de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de espessura de um objeto."@pt
 
 DataProperty: abnt:pédireito
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: pédireito ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de pé direto de um ambiente. Distência entre as superficies acabadas do piso e do forro."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de pé direto de um ambiente. Distência entre as superficies acabadas do piso e do forro."@pt
+
+DataProperty: abnt:dn
+	SubPropertyOf: abnt:d.medir
+	Domain: abnt:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para medir: dn ( xsd:integer )"@pt
+	Annotations: rdfs:label "Valor de diâmetro nominal de um elemento. É um valor inteiro."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de diâmetro nominal de um elemento. É um valor inteiro."@pt
 
 DataProperty: abnt:diámetro
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: diámetro ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de diâmetro de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de diâmetro de um objeto."@pt
 
 DataProperty: abnt:diámetro.interno
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: diámetro.interno ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de diámetro interno de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de diámetro interno de um objeto."@pt
 
 DataProperty: abnt:diámetro.externo
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: diámetro.externo ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de diámetro externo de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de diámetro externo de um objeto."@pt
 
 DataProperty: abnt:raio
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: raio ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de raio de um objeto."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor de raio de um objeto."@pt
 
 DataProperty: abnt:cota
 	SubPropertyOf: abnt:d.medir
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir: cota ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor numérico da cota de um andar ou curva de nível"@pt
+	Annotations: rdfs:label "Valor numérico da cota de um andar ou curva de nível."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "Valor numérico da cota de um andar ou curva de nível."@pt
+
+DataProperty: abnt:mínima
+	SubPropertyOf: abnt:d.medir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para medir: mínima ( xsd:boolean )"@pt
+	Annotations: rdfs:label "É um valor de medida de mínima. Valor true, false, 1 ou 0."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "É um valor de medida de mínima. Valor true, false, 1 ou 0."@pt
+
+DataProperty: abnt:máxima
+	SubPropertyOf: abnt:d.medir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para medir: máxima ( xsd:boolean )"@pt
+	Annotations: rdfs:label "É um valor de medida de mínima. Valor true, false, 1 ou 1."@pt
+
+DataProperty: abnt:d.medir
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.medir"@pt
+	Annotations: rdfs:label "É um valor de medida de mínima. Valor true, false, 1 ou 1."@pt
+
+DataProperty: abnt:média
+	SubPropertyOf: abnt:d.medir
+	Domain: abnt:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para medir: média ( xsd:boolean )"@pt
+	Annotations: rdfs:label "É um valor de medida de média. Valor true, false, 1 ou 1."@pt
 
 DataProperty: abnt:d.contar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.contar"@pt
-	Annotations: rdfs:label "Valor numérico da cota de um andar ou curva de nível"@pt
+	Annotations: rdfs:label "É um valor de medida de média. Valor true, false, 1 ou 1."@pt
 
 DataProperty: abnt:quantidade
 	SubPropertyOf: abnt:d.contar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para contar: quantidade ( xsd:integer )"@pt
+	Annotations: rdfs:label "É um valor de quantidade de objetos."@pt
 
 DataProperty: abnt:d.contar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.contar"@pt
+	Annotations: rdfs:label "É um valor de quantidade de objetos."@pt
 
 DataProperty: abnt:módulo
 	SubPropertyOf: abnt:d.contar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para contar: módulo ( xsd:integer )"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular"@pt
+	Annotations: rdfs:label "Valor numérico inteiro modular."@pt
 
 DataProperty: abnt:d.pesar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado de Objeto d.pesar"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular"@pt
+	Annotations: rdfs:label "Valor numérico inteiro modular."@pt
 
 DataProperty: abnt:densidade
 	SubPropertyOf: abnt:d.pesar
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para pesar: densidade ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de densidade. Densidade = Massa / Volume."@pt
 
 DataProperty: abnt:d.pesar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado de Objeto d.pesar"@pt
+	Annotations: rdfs:label "Valor de densidade. Densidade = Massa / Volume."@pt
+
+DataProperty: abnt:massa
+	SubPropertyOf: abnt:d.pesar
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pesar: massa ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de massa. Valor em kg."@pt
+
+DataProperty: abnt:d.pesar
+	SubPropertyOf: abnt:BIMData
+	Domain: abnt:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.pesar"@pt
+	Annotations: rdfs:label "Valor de massa. Valor em kg."@pt
 
 DataProperty: abnt:peso
 	SubPropertyOf: abnt:d.pesar
 	Domain: abnt:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para pesar: peso ( xsd:double )"@pt
+	Annotations: rdfs:label "Valor de peso. Valor em Newton (N)."@pt
 
 DataProperty: abnt:d.pintar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.pintar"@pt
+	Annotations: rdfs:label "Valor de peso. Valor em Newton (N)."@pt
 
 DataProperty: abnt:cor
 	SubPropertyOf: abnt:d.pintar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para pintar: cor ( xsd:string )"@pt
-	Annotations: rdfs:label "Uma cor definida por canais RGB ou RGBA"@pt
+	Annotations: rdfs:label "Uma cor definida por canais RGB ou RGBA."@pt
 
 DataProperty: abnt:d.pintar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.pintar"@pt
-	Annotations: rdfs:label "Uma cor definida por canais RGB ou RGBA"@pt
+	Annotations: rdfs:label "Uma cor definida por canais RGB ou RGBA."@pt
 
 DataProperty: abnt:red
 	SubPropertyOf: abnt:d.pintar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para pintar: red ( xsd:integer )"@pt
-	Annotations: rdfs:label "Canal Vermelho do RGB"@pt
+	Annotations: rdfs:label "Canal Vermelho do RGB."@pt
 
 DataProperty: abnt:d.pintar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.pintar"@pt
-	Annotations: rdfs:label "Canal Vermelho do RGB"@pt
+	Annotations: rdfs:label "Canal Vermelho do RGB."@pt
 
 DataProperty: abnt:green
 	SubPropertyOf: abnt:d.pintar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para pintar: green ( xsd:integer )"@pt
-	Annotations: rdfs:label "Canal Verde do RGB"@pt
+	Annotations: rdfs:label "Canal Verde do RGB."@pt
 
 DataProperty: abnt:d.pintar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.pintar"@pt
-	Annotations: rdfs:label "Canal Verde do RGB"@pt
+	Annotations: rdfs:label "Canal Verde do RGB."@pt
 
 DataProperty: abnt:blue
 	SubPropertyOf: abnt:d.pintar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para pintar: blue ( xsd:integer )"@pt
-	Annotations: rdfs:label "Canal Azul do RGB"@pt
+	Annotations: rdfs:label "Canal Azul do RGB."@pt
 
 DataProperty: abnt:d.pintar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.pintar"@pt
-	Annotations: rdfs:label "Canal Azul do RGB"@pt
+	Annotations: rdfs:label "Canal Azul do RGB."@pt
 
 DataProperty: abnt:alfa
 	SubPropertyOf: abnt:d.pintar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para pintar: alfa ( xsd:integer )"@pt
-	Annotations: rdfs:label "Canal alfa para transparências RGBA"@pt
+	Annotations: rdfs:label "Canal alfa para transparências RGBA."@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-	Annotations: rdfs:label "Canal alfa para transparências RGBA"@pt
+	Annotations: rdfs:label "Canal alfa para transparências RGBA."@pt
 
 DataProperty: abnt:classe.de.luminária
 	SubPropertyOf: abnt:d.iluminar
@@ -2645,140 +3112,140 @@ DataProperty: abnt:iluminância
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: iluminância ( xsd:integer )"@pt
-	Annotations: rdfs:label "A unidade é o Lux. Valores limites entre 20 e 20000"@pt
+	Annotations: rdfs:label "A unidade é o Lux. Valores limites entre 20 e 20000."@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-	Annotations: rdfs:label "A unidade é o Lux. Valores limites entre 20 e 20000"@pt
+	Annotations: rdfs:label "A unidade é o Lux. Valores limites entre 20 e 20000."@pt
 
 DataProperty: abnt:fluxo.luminoso
 	SubPropertyOf: abnt:d.iluminar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: fluxo.luminoso ( xsd:integer )"@pt
-	Annotations: rdfs:label "A unidade é o Lumen (Lm). Valores limites entre 250 a 8000"@pt
+	Annotations: rdfs:label "A unidade é o Lumen (Lm). Valores limites entre 250 a 8000."@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-	Annotations: rdfs:label "A unidade é o Lumen (Lm). Valores limites entre 250 a 8000"@pt
+	Annotations: rdfs:label "A unidade é o Lumen (Lm). Valores limites entre 250 a 8000."@pt
 
 DataProperty: abnt:eficiência.luminosa
 	SubPropertyOf: abnt:d.iluminar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: eficiência.luminosa ( xsd:integer )"@pt
-	Annotations: rdfs:label "A unidade é o Lumen/Watts"@pt
+	Annotations: rdfs:label "A unidade é o Lumen/Watts."@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-	Annotations: rdfs:label "A unidade é o Lumen/Watts"@pt
+	Annotations: rdfs:label "A unidade é o Lumen/Watts."@pt
 
 DataProperty: abnt:temperatura.cor
 	SubPropertyOf: abnt:d.iluminar
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: temperatura.cor ( xsd:integer )"@pt
-	Annotations: rdfs:label "A unidade é o graus Kelvin (K). Valores limites entre 1000 e 6500"@pt
+	Annotations: rdfs:label "A unidade é o graus Kelvin (K). Valores limites entre 1000 e 6500."@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-	Annotations: rdfs:label "A unidade é o graus Kelvin (K). Valores limites entre 1000 e 6500"@pt
+	Annotations: rdfs:label "A unidade é o graus Kelvin (K). Valores limites entre 1000 e 6500."@pt
 
 DataProperty: abnt:fotometria
 	SubPropertyOf: abnt:d.iluminar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para iluminar: fotometria ( xsd:string )"@pt
-	Annotations: rdfs:label "Dados fotométricos carrregados em arquivos IES"@pt
+	Annotations: rdfs:label "Dados fotométricos carrregados em arquivos IES."@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-	Annotations: rdfs:label "Dados fotométricos carrregados em arquivos IES"@pt
+	Annotations: rdfs:label "Dados fotométricos carrregados em arquivos IES."@pt
 
 DataProperty: abnt:irc
 	SubPropertyOf: abnt:d.iluminar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para iluminar: irc ( xsd:string )"@pt
-	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100"@pt
+	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100."@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.extinguir"@pt
-	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100"@pt
+	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100."@pt
 
 DataProperty: abnt:classe.de.fogo
 	SubPropertyOf: abnt:d.extinguir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para extinguir: classe.de.fogo ( xsd:string )"@pt
-	Annotations: rdfs:label "Classe de fogo: A (solidos), B (combustíveis) C (elétricos) D (metais) K (óleos)"@pt
+	Annotations: rdfs:label "Classe de fogo: A (solidos), B (combustíveis) C (elétricos) D (metais) K (óleos)."@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.extinguir"@pt
-	Annotations: rdfs:label "Classe de fogo: A (solidos), B (combustíveis) C (elétricos) D (metais) K (óleos)"@pt
+	Annotations: rdfs:label "Classe de fogo: A (solidos), B (combustíveis) C (elétricos) D (metais) K (óleos)."@pt
 
 DataProperty: abnt:visibilidade.da.placa
 	SubPropertyOf: abnt:d.extinguir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para extinguir: visibilidade.da.placa ( xsd:string )"@pt
-	Annotations: rdfs:label "Visibilidade da placa de sinalização. Valor 134"@pt
+	Annotations: rdfs:label "Visibilidade da placa de sinalização. Valor 134."@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.extinguir"@pt
-	Annotations: rdfs:label "Visibilidade da placa de sinalização. Valor 134"@pt
+	Annotations: rdfs:label "Visibilidade da placa de sinalização. Valor 134."@pt
 
 DataProperty: abnt:agente.extintor
 	SubPropertyOf: abnt:d.extinguir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para extinguir: agente.extintor ( xsd:string )"@pt
-	Annotations: rdfs:label "Agente do extintor. Valores possíveis CO2, H2O, H2O pressurizada, H2O de rede pressurizada"@pt
+	Annotations: rdfs:label "Agente do extintor. Valores possíveis CO2, H2O, H2O pressurizada, H2O de rede pressurizada."@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.extinguir"@pt
-	Annotations: rdfs:label "Agente do extintor. Valores possíveis CO2, H2O, H2O pressurizada, H2O de rede pressurizada"@pt
+	Annotations: rdfs:label "Agente do extintor. Valores possíveis CO2, H2O, H2O pressurizada, H2O de rede pressurizada."@pt
 
 DataProperty: abnt:tipo.de.extintor
 	SubPropertyOf: abnt:d.extinguir
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para extinguir: tipo.de.extintor ( xsd:string )"@pt
-	Annotations: rdfs:label "Tipo de extintor: CO2, H2O, mangueira ou coluna"@pt
+	Annotations: rdfs:label "Tipo de extintor: CO2, H2O, mangueira ou coluna."@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.extinguir"@pt
-	Annotations: rdfs:label "Tipo de extintor: CO2, H2O, mangueira ou coluna"@pt
+	Annotations: rdfs:label "Tipo de extintor: CO2, H2O, mangueira ou coluna."@pt
 
 DataProperty: abnt:carga.do.extintor
 	SubPropertyOf: abnt:d.extinguir
@@ -2813,77 +3280,77 @@ DataProperty: abnt:validade
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para extinguir: validade ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Data de validade do extintor"@pt
+	Annotations: rdfs:label "Data de validade do extintor."@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.extinguir"@pt
-	Annotations: rdfs:label "Data de validade do extintor"@pt
+	Annotations: rdfs:label "Data de validade do extintor."@pt
 
 DataProperty: abnt:data.de.verificação
 	SubPropertyOf: abnt:d.extinguir
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para extinguir: data.de.verificação ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Data de verificação do extintor"@pt
+	Annotations: rdfs:label "Data de verificação do extintor."@pt
 
 DataProperty: abnt:d.plantar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.plantar"@pt
-	Annotations: rdfs:label "Data de verificação do extintor"@pt
+	Annotations: rdfs:label "Data de verificação do extintor."@pt
 
 DataProperty: abnt:espécie
 	SubPropertyOf: abnt:d.plantar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para plantar: espécie ( xsd:string )"@pt
-	Annotations: rdfs:label "Espécie de árvore ou planta"@pt
+	Annotations: rdfs:label "Espécie de árvore ou planta."@pt
 
 DataProperty: abnt:d.plantar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado de Objeto d.plantar"@pt
-	Annotations: rdfs:label "Espécie de árvore ou planta"@pt
+	Annotations: rdfs:label "Espécie de árvore ou planta."@pt
 
 DataProperty: abnt:data.de.plantio
 	SubPropertyOf: abnt:d.plantar
 	Domain: abnt:BIM
 	Range: xsd:dateTime
 	Annotations: rdfs:label "Dado para plantar: data.de.plantio ( xsd:dateTime )"@pt
-	Annotations: rdfs:label "Data de plantio do indivíduo"@pt
+	Annotations: rdfs:label "Data de plantio do indivíduo."@pt
 
 DataProperty: abnt:d.plantar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.plantar"@pt
-	Annotations: rdfs:label "Data de plantio do indivíduo"@pt
+	Annotations: rdfs:label "Data de plantio do indivíduo."@pt
 
 DataProperty: abnt:estado.de.conservação
 	SubPropertyOf: abnt:d.plantar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para plantar: estado.de.conservação ( xsd:string )"@pt
-	Annotations: rdfs:label "Estado de conservação do indivíduo"@pt
+	Annotations: rdfs:label "Estado de conservação do indivíduo."@pt
 
 DataProperty: abnt:d.plantar
 	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.plantar"@pt
-	Annotations: rdfs:label "Estado de conservação do indivíduo"@pt
+	Annotations: rdfs:label "Estado de conservação do indivíduo."@pt
 
 DataProperty: abnt:tcr
 	SubPropertyOf: abnt:d.plantar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para plantar: tcr ( xsd:string )"@pt
-	Annotations: rdfs:label "Taxa de crescimento relativo. Proporção entre tamanho inicial e tamanho após uma fração temporal (Mi - Mf / Mi * Tempo)"@pt
+	Annotations: rdfs:label "Taxa de crescimento relativo. Proporção entre tamanho inicial e tamanho após uma fração temporal (Mi - Mf / Mi * Tempo)."@pt
 
 Individual: abnt:NBR15965
 	Types: abnt:Norma
