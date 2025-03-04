@@ -606,6 +606,57 @@ Class: bim:Política
 	Annotations: bim:Espécie "-"@pt
 	Annotations: bim:Tema "-"@pt
 
+Class: bim:UF
+	SubClassOf: bim:Política
+	Annotations: bim:Disciplina "Urbanismo"@pt
+	Annotations: bim:Tradução "Unidade Federativa do Brasil"@pt
+	Annotations: bim:Traducción "Unidad Federativa de Brasil"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+	EquivalentTo:  bim:é.dentro.de some bim:País
+
+Class: bim:Projeto
+	SubClassOf: bim:BIM
+	Annotations: bim:Disciplina "-"@pt
+	Annotations: bim:Tradução "-"@pt
+	Annotations: bim:Traducción "-"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+
+Class: bim:Fronteira
+	SubClassOf: bim:Projeto
+	Annotations: bim:Disciplina "-"@pt
+	Annotations: bim:Tradução "-"@pt
+	Annotations: bim:Traducción "-"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+
+Class: bim:Geográfica
+	SubClassOf: bim:Fronteira
+	Annotations: bim:Disciplina "-"@pt
+	Annotations: bim:Tradução "-"@pt
+	Annotations: bim:Traducción "-"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+
+Class: bim:Política
+	SubClassOf: bim:Geográfica
+	Annotations: bim:Disciplina "-"@pt
+	Annotations: bim:Tradução "-"@pt
+	Annotations: bim:Traducción "-"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+
 Class: bim:Província
 	SubClassOf: bim:Política
 	Annotations: bim:Disciplina "Urbanismo"@pt
@@ -765,7 +816,7 @@ Class: bim:Município
 	Annotations: bim:Natureza "-"@pt
 	Annotations: bim:Espécie "-"@pt
 	Annotations: bim:Tema "-"@pt
-	EquivalentTo:  bim:é.dentro.de some bim:Estado
+	EquivalentTo:  bim:é.dentro.de some bim:UF
 
 Class: bim:Projeto
 	SubClassOf: bim:BIM
@@ -2526,6 +2577,15 @@ ObjectProperty: bim:tem.estado
 	Annotations: rdfs:label "end.102"@pt
 	Characteristics: Functional
 
+ObjectProperty: bim:tem.uf
+	SubPropertyOf: bim:p.endereçar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para endereçar: tem.uf"@pt
+	Annotations: rdfs:label "Identifica a Unidade Federativa em Brasil. (usa dois caracteres maíusculos)."@pt
+	Annotations: rdfs:label "end.103"@pt
+	Characteristics: Functional
+
 ObjectProperty: bim:tem.cidade
 	SubPropertyOf: bim:p.endereçar
 	Domain: bim:BIM
@@ -2943,12 +3003,12 @@ ObjectProperty: bim:p.catalogar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade de Objeto para p.catalogar"@pt
 
-ObjectProperty: bim:tem.modelo
+ObjectProperty: bim:tem.marca
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para catalogar: tem.modelo"@pt
-	Annotations: rdfs:label "Modelo definido pelo fabricante de um determinado produto."@pt
+	Annotations: rdfs:label "Propriedade para catalogar: tem.marca"@pt
+	Annotations: rdfs:label "Marca comercial de um componente ou produto."@pt
 	Annotations: rdfs:label "cat.100"@pt
 
 ObjectProperty: bim:tem.tema
@@ -2959,13 +3019,21 @@ ObjectProperty: bim:tem.tema
 	Annotations: rdfs:label "Tema definido pelo fabricante de um determinado produto."@pt
 	Annotations: rdfs:label "cat.101"@pt
 
+ObjectProperty: bim:tem.modelo
+	SubPropertyOf: bim:p.catalogar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para catalogar: tem.modelo"@pt
+	Annotations: rdfs:label "Modelo comercial de um componente ou produto."@pt
+	Annotations: rdfs:label "cat.102"@pt
+
 ObjectProperty: bim:tem.tipo
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.tipo"@pt
 	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.102"@pt
+	Annotations: rdfs:label "cat.103"@pt
 
 ObjectProperty: bim:tem.série
 	SubPropertyOf: bim:p.catalogar
@@ -2973,7 +3041,7 @@ ObjectProperty: bim:tem.série
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.série"@pt
 	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.103"@pt
+	Annotations: rdfs:label "cat.104"@pt
 
 ObjectProperty: bim:tem.linha
 	SubPropertyOf: bim:p.catalogar
@@ -2981,7 +3049,7 @@ ObjectProperty: bim:tem.linha
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.linha"@pt
 	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.104"@pt
+	Annotations: rdfs:label "cat.105"@pt
 
 ObjectProperty: bim:tem.item
 	SubPropertyOf: bim:p.catalogar
@@ -2989,15 +3057,31 @@ ObjectProperty: bim:tem.item
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.item"@pt
 	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.105"@pt
+	Annotations: rdfs:label "cat.106"@pt
+
+ObjectProperty: bim:tem.título
+	SubPropertyOf: bim:p.catalogar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para catalogar: tem.título"@pt
+	Annotations: rdfs:label "Título principal da publicação."@pt
+	Annotations: rdfs:label "cat.107"@pt
+
+ObjectProperty: bim:tem.subtítulo
+	SubPropertyOf: bim:p.catalogar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para catalogar: tem.subtítulo"@pt
+	Annotations: rdfs:label "Subtítulo de publicação."@pt
+	Annotations: rdfs:label "cat.108"@pt
 
 ObjectProperty: bim:tem.denominação
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.denominação"@pt
-	Annotations: rdfs:label "Denominação do objeto"@pt
-	Annotations: rdfs:label "cat.106"@pt
+	Annotations: rdfs:label "Denominação do objeto."@pt
+	Annotations: rdfs:label "cat.109"@pt
 
 ObjectProperty: bim:tem.característica
 	SubPropertyOf: bim:p.catalogar
@@ -3005,31 +3089,39 @@ ObjectProperty: bim:tem.característica
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.característica"@pt
 	Annotations: rdfs:label "Característica por extenso."@pt
-	Annotations: rdfs:label "cat.107"@pt
+	Annotations: rdfs:label "cat.110"@pt
 
 ObjectProperty: bim:tem.norma.aplicável
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.norma.aplicável"@pt
-	Annotations: rdfs:label "Descrever a Norma que respeita o elemento"@pt
-	Annotations: rdfs:label "cat.108"@pt
+	Annotations: rdfs:label "Descrever a Norma que respeita o elemento."@pt
+	Annotations: rdfs:label "cat.111"@pt
 
 ObjectProperty: bim:tem.capítulo
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.capítulo"@pt
-	Annotations: rdfs:label "Capítulo do catálogo."@pt
-	Annotations: rdfs:label "cat.109"@pt
+	Annotations: rdfs:label "Identificação do Capítulo do catálogo."@pt
+	Annotations: rdfs:label "cat.112"@pt
+
+ObjectProperty: bim:tem.coleção
+	SubPropertyOf: bim:p.catalogar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para catalogar: tem.coleção"@pt
+	Annotations: rdfs:label "Identificação da Coleção se aplicável."@pt
+	Annotations: rdfs:label "cat.113"@pt
 
 ObjectProperty: bim:tem.vol
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.vol"@pt
-	Annotations: rdfs:label "Volume do catálogo ou caderno."@pt
-	Annotations: rdfs:label "cat.110"@pt
+	Annotations: rdfs:label "Identificação do Volume se aplicável."@pt
+	Annotations: rdfs:label "cat.114"@pt
 
 ObjectProperty: bim:tem.editor
 	SubPropertyOf: bim:p.catalogar
@@ -3037,15 +3129,23 @@ ObjectProperty: bim:tem.editor
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.editor"@pt
 	Annotations: rdfs:label "Identificação de um editor."@pt
-	Annotations: rdfs:label "cat.111"@pt
+	Annotations: rdfs:label "cat.115"@pt
 
 ObjectProperty: bim:tem.edição
 	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.edição"@pt
-	Annotations: rdfs:label "Ano de edição do catálogo ou caderno."@pt
-	Annotations: rdfs:label "cat.112"@pt
+	Annotations: rdfs:label "Número de edição."@pt
+	Annotations: rdfs:label "cat.116"@pt
+
+ObjectProperty: bim:tem.ano.de.publicação
+	SubPropertyOf: bim:p.catalogar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para catalogar: tem.ano.de.publicação"@pt
+	Annotations: rdfs:label "Ano de publicação do catálogo ou caderno."@pt
+	Annotations: rdfs:label "cat.117"@pt
 
 ObjectProperty: bim:tem.isbn
 	SubPropertyOf: bim:p.catalogar
@@ -3053,7 +3153,7 @@ ObjectProperty: bim:tem.isbn
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.isbn"@pt
 	Annotations: rdfs:label "International Standard Book Number.  Código de 13 dígitos."@pt
-	Annotations: rdfs:label "cat.113"@pt
+	Annotations: rdfs:label "cat.118"@pt
 
 ObjectProperty: bim:tem.issn
 	SubPropertyOf: bim:p.catalogar
@@ -3061,7 +3161,7 @@ ObjectProperty: bim:tem.issn
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.issn"@pt
 	Annotations: rdfs:label "Internacional Standard Serial Number. Código com 8 dígitos."@pt
-	Annotations: rdfs:label "cat.114"@pt
+	Annotations: rdfs:label "cat.119"@pt
 
 ObjectProperty: bim:tem.doi
 	SubPropertyOf: bim:p.catalogar
@@ -3069,7 +3169,7 @@ ObjectProperty: bim:tem.doi
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.doi"@pt
 	Annotations: rdfs:label "Digital Object Identifier. Identificador de Objeto Digital, registro permanente de arquivos digitais."@pt
-	Annotations: rdfs:label "cat.115"@pt
+	Annotations: rdfs:label "cat.120"@pt
 
 ObjectProperty: bim:tem.descrição
 	SubPropertyOf: bim:p.catalogar
@@ -3077,7 +3177,7 @@ ObjectProperty: bim:tem.descrição
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.descrição"@pt
 	Annotations: rdfs:label "Descrição de um determinado objeto."@pt
-	Annotations: rdfs:label "cat.116"@pt
+	Annotations: rdfs:label "cat.121"@pt
 
 ObjectProperty: bim:p.funcionar
 	SubPropertyOf: bim:BIMProp
@@ -3352,13 +3452,21 @@ ObjectProperty: bim:é.cpf
 	Annotations: rdfs:label "Identificação do CPF. Cadastro Nacional da Pessoa Física no Brasil."@pt
 	Annotations: rdfs:label "ctr.107"@pt
 
+ObjectProperty: bim:é.ordem.de.compra
+	SubPropertyOf: bim:p.contratar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para contratar: é.ordem.de.compra"@pt
+	Annotations: rdfs:label "Identificação de uma ordem de compra."@pt
+	Annotations: rdfs:label "ctr.108"@pt
+
 ObjectProperty: bim:é.processo
 	SubPropertyOf: bim:p.contratar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para contratar: é.processo"@pt
 	Annotations: rdfs:label "Identificação de um processo."@pt
-	Annotations: rdfs:label "ctr.108"@pt
+	Annotations: rdfs:label "ctr.109"@pt
 
 ObjectProperty: bim:é.processo.sei
 	SubPropertyOf: bim:p.contratar
@@ -3366,7 +3474,39 @@ ObjectProperty: bim:é.processo.sei
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para contratar: é.processo.sei"@pt
 	Annotations: rdfs:label "Identificação de processo SEI. Sistema Eletrônico de Informação do serviço publico brasileiro."@pt
-	Annotations: rdfs:label "ctr.109"@pt
+	Annotations: rdfs:label "ctr.110"@pt
+
+ObjectProperty: bim:é.art
+	SubPropertyOf: bim:p.contratar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para contratar: é.art"@pt
+	Annotations: rdfs:label "Identificação de ART (Anotação de Responsabilidade Técnica) emitida pelo CREA."@pt
+	Annotations: rdfs:label "ctr.111"@pt
+
+ObjectProperty: bim:é.rrt
+	SubPropertyOf: bim:p.contratar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para contratar: é.rrt"@pt
+	Annotations: rdfs:label "Identificação de RRT (Registro de Responsabilidade Técnica) emitido pelo CAU."@pt
+	Annotations: rdfs:label "ctr.112"@pt
+
+ObjectProperty: bim:é.objetivo
+	SubPropertyOf: bim:p.contratar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para contratar: é.objetivo"@pt
+	Annotations: rdfs:label "Identificação de objeto do contrato ou documento legal."@pt
+	Annotations: rdfs:label "ctr.113"@pt
+
+ObjectProperty: bim:é.meta
+	SubPropertyOf: bim:p.contratar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para contratar: é.meta"@pt
+	Annotations: rdfs:label "Identificação de uma meta do tipo ODS ou similares."@pt
+	Annotations: rdfs:label "ctr.114"@pt
 
 ObjectProperty: bim:p.garantir
 	SubPropertyOf: bim:BIMProp
@@ -3390,13 +3530,21 @@ ObjectProperty: bim:é.certificado
 	Annotations: rdfs:label "Certificado de qualidade."@pt
 	Annotations: rdfs:label "gar.101"@pt
 
+ObjectProperty: bim:é.alvará
+	SubPropertyOf: bim:p.garantir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para garantir: é.alvará"@pt
+	Annotations: rdfs:label "Permissão emitida por autoridade competente para construir ou realizar atividade."@pt
+	Annotations: rdfs:label "gar.102"@pt
+
 ObjectProperty: bim:é.etiqueta.ambiental
 	SubPropertyOf: bim:p.garantir
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para garantir: é.etiqueta.ambiental"@pt
 	Annotations: rdfs:label "Etiqueta de qualidade."@pt
-	Annotations: rdfs:label "gar.102"@pt
+	Annotations: rdfs:label "gar.103"@pt
 
 ObjectProperty: bim:p.projetar
 	SubPropertyOf: bim:BIMProp
@@ -3508,13 +3656,29 @@ ObjectProperty: bim:é.representante
 	Annotations: rdfs:label "Identificação de representante comercial de componente construtivo para o projeto."@pt
 	Annotations: rdfs:label "age.112"@pt
 
+ObjectProperty: bim:é.responsável.técnico
+	SubPropertyOf: bim:p.projetar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para projetar: é.responsável.técnico"@pt
+	Annotations: rdfs:label "Identificação de agente responsável técnico de projeto."@pt
+	Annotations: rdfs:label "age.113"@pt
+
+ObjectProperty: bim:é.inspector
+	SubPropertyOf: bim:p.projetar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para projetar: é.inspector"@pt
+	Annotations: rdfs:label "Identificação de agente de inspeção de projeto."@pt
+	Annotations: rdfs:label "age.113"@pt
+
 ObjectProperty: bim:é.revisor
 	SubPropertyOf: bim:p.projetar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para projetar: é.revisor"@pt
 	Annotations: rdfs:label "Identificação de revisor do projeto."@pt
-	Annotations: rdfs:label "age.113"@pt
+	Annotations: rdfs:label "age.114"@pt
 
 ObjectProperty: bim:p.durar
 	SubPropertyOf: bim:BIMProp
@@ -4324,13 +4488,21 @@ ObjectProperty: bim:tem.acabamento
 	Annotations: rdfs:label "Material do acabamento da parede."@pt
 	Annotations: rdfs:label "fin.104"@pt
 
+ObjectProperty: bim:com.revestimento
+	SubPropertyOf: bim:p.finalizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para finalizar: com.revestimento"@pt
+	Annotations: rdfs:label "Finalização com revestimento aplicado."@pt
+	Annotations: rdfs:label "fin.105"@pt
+
 ObjectProperty: bim:é.fosco
 	SubPropertyOf: bim:p.finalizar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para finalizar: é.fosco"@pt
 	Annotations: rdfs:label "Finalização do acabamento fosco."@pt
-	Annotations: rdfs:label "fin.105"@pt
+	Annotations: rdfs:label "fin.106"@pt
 
 ObjectProperty: bim:é.polido
 	SubPropertyOf: bim:p.finalizar
@@ -4338,7 +4510,7 @@ ObjectProperty: bim:é.polido
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para finalizar: é.polido"@pt
 	Annotations: rdfs:label "Finalização do acabamento polido."@pt
-	Annotations: rdfs:label "fin.106"@pt
+	Annotations: rdfs:label "fin.107"@pt
 
 ObjectProperty: bim:é.lustrado
 	SubPropertyOf: bim:p.finalizar
@@ -4346,7 +4518,7 @@ ObjectProperty: bim:é.lustrado
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para finalizar: é.lustrado"@pt
 	Annotations: rdfs:label "Finalização do acabamento lustrado."@pt
-	Annotations: rdfs:label "fin.107"@pt
+	Annotations: rdfs:label "fin.108"@pt
 
 ObjectProperty: bim:é.apicoado
 	SubPropertyOf: bim:p.finalizar
@@ -4354,7 +4526,7 @@ ObjectProperty: bim:é.apicoado
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para finalizar: é.apicoado"@pt
 	Annotations: rdfs:label "Finalização do acabamento apicoado."@pt
-	Annotations: rdfs:label "fin.108"@pt
+	Annotations: rdfs:label "fin.109"@pt
 
 ObjectProperty: bim:é.salpicado
 	SubPropertyOf: bim:p.finalizar
@@ -4362,14 +4534,6 @@ ObjectProperty: bim:é.salpicado
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para finalizar: é.salpicado"@pt
 	Annotations: rdfs:label "Finalização do acabamento salpicado."@pt
-	Annotations: rdfs:label "fin.109"@pt
-
-ObjectProperty: bim:é.revestido
-	SubPropertyOf: bim:p.finalizar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para finalizar: é.revestido"@pt
-	Annotations: rdfs:label "Finalização com revestimento aplicado."@pt
 	Annotations: rdfs:label "fin.110"@pt
 
 ObjectProperty: bim:é.texturizado
@@ -4630,13 +4794,21 @@ ObjectProperty: bim:é.porta.sanfonada
 	Annotations: rdfs:label "A porta é sanfonada. Conhecida também como porta camarão."@pt
 	Annotations: rdfs:label "por.113"@pt
 
+ObjectProperty: bim:é.porta.de.elevador
+	SubPropertyOf: bim:p.entrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para entrar: é.porta.de.elevador"@pt
+	Annotations: rdfs:label "A porta é de elevador."@pt
+	Annotations: rdfs:label "por.114"@pt
+
 ObjectProperty: bim:é.porta.seccional
 	SubPropertyOf: bim:p.entrar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.seccional"@pt
 	Annotations: rdfs:label "A porta é seccional."@pt
-	Annotations: rdfs:label "por.114"@pt
+	Annotations: rdfs:label "por.115"@pt
 
 ObjectProperty: bim:p.abrir
 	SubPropertyOf: bim:BIMProp
@@ -5440,6 +5612,14 @@ DataProperty: bim:estado
 	Annotations: rdfs:label "Código do estado."@pt
 	Annotations: rdfs:label "end.102"@pt
 
+DataProperty: bim:uf
+	SubPropertyOf: bim:d.endereçar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para endereçar: uf ( xsd:string )"@pt
+	Annotations: rdfs:label "Identifica a Unidade Federativa em Brasil. (usa dois caracteres maíusculos)."@pt
+	Annotations: rdfs:label "end.103"@pt
+
 DataProperty: bim:cidade
 	SubPropertyOf: bim:d.endereçar
 	Domain: bim:BIM
@@ -5822,12 +6002,12 @@ DataProperty: bim:d.catalogar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.catalogar"@pt
 
-DataProperty: bim:modelo
+DataProperty: bim:marca
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para catalogar: modelo ( xsd:string )"@pt
-	Annotations: rdfs:label "Modelo definido pelo fabricante de um determinado produto."@pt
+	Annotations: rdfs:label "Dado para catalogar: marca ( xsd:string )"@pt
+	Annotations: rdfs:label "Marca comercial de um componente ou produto."@pt
 	Annotations: rdfs:label "cat.100"@pt
 
 DataProperty: bim:tema
@@ -5838,13 +6018,21 @@ DataProperty: bim:tema
 	Annotations: rdfs:label "Tema definido pelo fabricante de um determinado produto."@pt
 	Annotations: rdfs:label "cat.101"@pt
 
+DataProperty: bim:modelo
+	SubPropertyOf: bim:d.catalogar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar: modelo ( xsd:string )"@pt
+	Annotations: rdfs:label "Modelo comercial de um componente ou produto."@pt
+	Annotations: rdfs:label "cat.102"@pt
+
 DataProperty: bim:tipo
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: tipo ( xsd:string )"@pt
 	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.102"@pt
+	Annotations: rdfs:label "cat.103"@pt
 
 DataProperty: bim:série
 	SubPropertyOf: bim:d.catalogar
@@ -5852,7 +6040,7 @@ DataProperty: bim:série
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: série ( xsd:string )"@pt
 	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.103"@pt
+	Annotations: rdfs:label "cat.104"@pt
 
 DataProperty: bim:linha
 	SubPropertyOf: bim:d.catalogar
@@ -5860,7 +6048,7 @@ DataProperty: bim:linha
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: linha ( xsd:string )"@pt
 	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.104"@pt
+	Annotations: rdfs:label "cat.105"@pt
 
 DataProperty: bim:item
 	SubPropertyOf: bim:d.catalogar
@@ -5868,15 +6056,31 @@ DataProperty: bim:item
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: item ( xsd:string )"@pt
 	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.105"@pt
+	Annotations: rdfs:label "cat.106"@pt
+
+DataProperty: bim:título
+	SubPropertyOf: bim:d.catalogar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar: título ( xsd:string )"@pt
+	Annotations: rdfs:label "Título principal da publicação."@pt
+	Annotations: rdfs:label "cat.107"@pt
+
+DataProperty: bim:subtítulo
+	SubPropertyOf: bim:d.catalogar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar: subtítulo ( xsd:string )"@pt
+	Annotations: rdfs:label "Subtítulo de publicação."@pt
+	Annotations: rdfs:label "cat.108"@pt
 
 DataProperty: bim:denominação
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: denominação ( xsd:string )"@pt
-	Annotations: rdfs:label "Denominação do objeto"@pt
-	Annotations: rdfs:label "cat.106"@pt
+	Annotations: rdfs:label "Denominação do objeto."@pt
+	Annotations: rdfs:label "cat.109"@pt
 
 DataProperty: bim:característica
 	SubPropertyOf: bim:d.catalogar
@@ -5884,31 +6088,39 @@ DataProperty: bim:característica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: característica ( xsd:string )"@pt
 	Annotations: rdfs:label "Característica por extenso."@pt
-	Annotations: rdfs:label "cat.107"@pt
+	Annotations: rdfs:label "cat.110"@pt
 
 DataProperty: bim:norma.aplicável
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: norma.aplicável ( xsd:string )"@pt
-	Annotations: rdfs:label "Descrever a Norma que respeita o elemento"@pt
-	Annotations: rdfs:label "cat.108"@pt
+	Annotations: rdfs:label "Descrever a Norma que respeita o elemento."@pt
+	Annotations: rdfs:label "cat.111"@pt
 
 DataProperty: bim:capítulo
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: capítulo ( xsd:string )"@pt
-	Annotations: rdfs:label "Capítulo do catálogo."@pt
-	Annotations: rdfs:label "cat.109"@pt
+	Annotations: rdfs:label "Identificação do Capítulo do catálogo."@pt
+	Annotations: rdfs:label "cat.112"@pt
+
+DataProperty: bim:coleção
+	SubPropertyOf: bim:d.catalogar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar: coleção ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação da Coleção se aplicável."@pt
+	Annotations: rdfs:label "cat.113"@pt
 
 DataProperty: bim:vol
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: vol ( xsd:string )"@pt
-	Annotations: rdfs:label "Volume do catálogo ou caderno."@pt
-	Annotations: rdfs:label "cat.110"@pt
+	Annotations: rdfs:label "Identificação do Volume se aplicável."@pt
+	Annotations: rdfs:label "cat.114"@pt
 
 DataProperty: bim:editor
 	SubPropertyOf: bim:d.catalogar
@@ -5916,15 +6128,23 @@ DataProperty: bim:editor
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: editor ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de um editor."@pt
-	Annotations: rdfs:label "cat.111"@pt
+	Annotations: rdfs:label "cat.115"@pt
 
 DataProperty: bim:edição
 	SubPropertyOf: bim:d.catalogar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: edição ( xsd:string )"@pt
-	Annotations: rdfs:label "Ano de edição do catálogo ou caderno."@pt
-	Annotations: rdfs:label "cat.112"@pt
+	Annotations: rdfs:label "Número de edição."@pt
+	Annotations: rdfs:label "cat.116"@pt
+
+DataProperty: bim:ano.de.publicação
+	SubPropertyOf: bim:d.catalogar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar: ano.de.publicação ( xsd:string )"@pt
+	Annotations: rdfs:label "Ano de publicação do catálogo ou caderno."@pt
+	Annotations: rdfs:label "cat.117"@pt
 
 DataProperty: bim:isbn
 	SubPropertyOf: bim:d.catalogar
@@ -5932,7 +6152,7 @@ DataProperty: bim:isbn
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: isbn ( xsd:string )"@pt
 	Annotations: rdfs:label "International Standard Book Number.  Código de 13 dígitos."@pt
-	Annotations: rdfs:label "cat.113"@pt
+	Annotations: rdfs:label "cat.118"@pt
 
 DataProperty: bim:issn
 	SubPropertyOf: bim:d.catalogar
@@ -5940,7 +6160,7 @@ DataProperty: bim:issn
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: issn ( xsd:string )"@pt
 	Annotations: rdfs:label "Internacional Standard Serial Number. Código com 8 dígitos."@pt
-	Annotations: rdfs:label "cat.114"@pt
+	Annotations: rdfs:label "cat.119"@pt
 
 DataProperty: bim:doi
 	SubPropertyOf: bim:d.catalogar
@@ -5948,7 +6168,7 @@ DataProperty: bim:doi
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: doi ( xsd:string )"@pt
 	Annotations: rdfs:label "Digital Object Identifier. Identificador de Objeto Digital, registro permanente de arquivos digitais."@pt
-	Annotations: rdfs:label "cat.115"@pt
+	Annotations: rdfs:label "cat.120"@pt
 
 DataProperty: bim:descrição
 	SubPropertyOf: bim:d.catalogar
@@ -5956,7 +6176,7 @@ DataProperty: bim:descrição
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: descrição ( xsd:string )"@pt
 	Annotations: rdfs:label "Descrição de um determinado objeto."@pt
-	Annotations: rdfs:label "cat.116"@pt
+	Annotations: rdfs:label "cat.121"@pt
 
 DataProperty: bim:d.funcionar
 	SubPropertyOf: bim:BIMData
@@ -6231,13 +6451,21 @@ DataProperty: bim:cpf
 	Annotations: rdfs:label "Identificação do CPF. Cadastro Nacional da Pessoa Física no Brasil."@pt
 	Annotations: rdfs:label "ctr.107"@pt
 
+DataProperty: bim:ordem.de.compra
+	SubPropertyOf: bim:d.contratar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para contratar: ordem.de.compra ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de uma ordem de compra."@pt
+	Annotations: rdfs:label "ctr.108"@pt
+
 DataProperty: bim:processo
 	SubPropertyOf: bim:d.contratar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: processo ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de um processo."@pt
-	Annotations: rdfs:label "ctr.108"@pt
+	Annotations: rdfs:label "ctr.109"@pt
 
 DataProperty: bim:processo.sei
 	SubPropertyOf: bim:d.contratar
@@ -6245,7 +6473,39 @@ DataProperty: bim:processo.sei
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para contratar: processo.sei ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de processo SEI. Sistema Eletrônico de Informação do serviço publico brasileiro."@pt
-	Annotations: rdfs:label "ctr.109"@pt
+	Annotations: rdfs:label "ctr.110"@pt
+
+DataProperty: bim:art
+	SubPropertyOf: bim:d.contratar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para contratar: art ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de ART (Anotação de Responsabilidade Técnica) emitida pelo CREA."@pt
+	Annotations: rdfs:label "ctr.111"@pt
+
+DataProperty: bim:rrt
+	SubPropertyOf: bim:d.contratar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para contratar: rrt ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de RRT (Registro de Responsabilidade Técnica) emitido pelo CAU."@pt
+	Annotations: rdfs:label "ctr.112"@pt
+
+DataProperty: bim:objetivo
+	SubPropertyOf: bim:d.contratar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para contratar: objetivo ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de objeto do contrato ou documento legal."@pt
+	Annotations: rdfs:label "ctr.113"@pt
+
+DataProperty: bim:meta
+	SubPropertyOf: bim:d.contratar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para contratar: meta ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de uma meta do tipo ODS ou similares."@pt
+	Annotations: rdfs:label "ctr.114"@pt
 
 DataProperty: bim:d.garantir
 	SubPropertyOf: bim:BIMData
@@ -6269,13 +6529,21 @@ DataProperty: bim:certificado
 	Annotations: rdfs:label "Certificado de qualidade."@pt
 	Annotations: rdfs:label "gar.101"@pt
 
+DataProperty: bim:alvará
+	SubPropertyOf: bim:d.garantir
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para garantir: alvará ( xsd:string )"@pt
+	Annotations: rdfs:label "Permissão emitida por autoridade competente para construir ou realizar atividade."@pt
+	Annotations: rdfs:label "gar.102"@pt
+
 DataProperty: bim:etiqueta.ambiental
 	SubPropertyOf: bim:d.garantir
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para garantir: etiqueta.ambiental ( xsd:string )"@pt
 	Annotations: rdfs:label "Etiqueta de qualidade."@pt
-	Annotations: rdfs:label "gar.102"@pt
+	Annotations: rdfs:label "gar.103"@pt
 
 DataProperty: bim:d.projetar
 	SubPropertyOf: bim:BIMData
@@ -6387,13 +6655,29 @@ DataProperty: bim:representante
 	Annotations: rdfs:label "Identificação de representante comercial de componente construtivo para o projeto."@pt
 	Annotations: rdfs:label "age.112"@pt
 
+DataProperty: bim:responsável.técnico
+	SubPropertyOf: bim:d.projetar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para projetar: responsável.técnico ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de agente responsável técnico de projeto."@pt
+	Annotations: rdfs:label "age.113"@pt
+
+DataProperty: bim:inspector
+	SubPropertyOf: bim:d.projetar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para projetar: inspector ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de agente de inspeção de projeto."@pt
+	Annotations: rdfs:label "age.113"@pt
+
 DataProperty: bim:revisor
 	SubPropertyOf: bim:d.projetar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para projetar: revisor ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de revisor do projeto."@pt
-	Annotations: rdfs:label "age.113"@pt
+	Annotations: rdfs:label "age.114"@pt
 
 DataProperty: bim:d.durar
 	SubPropertyOf: bim:BIMData
@@ -7226,13 +7510,21 @@ DataProperty: bim:acabamento
 	Annotations: rdfs:label "Material do acabamento da parede."@pt
 	Annotations: rdfs:label "fin.104"@pt
 
+DataProperty: bim:revestimento
+	SubPropertyOf: bim:d.finalizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para finalizar: revestimento ( xsd:string )"@pt
+	Annotations: rdfs:label "Finalização com revestimento aplicado."@pt
+	Annotations: rdfs:label "fin.105"@pt
+
 DataProperty: bim:fosco
 	SubPropertyOf: bim:d.finalizar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para finalizar: fosco ( xsd:string )"@pt
 	Annotations: rdfs:label "Finalização do acabamento fosco."@pt
-	Annotations: rdfs:label "fin.105"@pt
+	Annotations: rdfs:label "fin.106"@pt
 
 DataProperty: bim:polido
 	SubPropertyOf: bim:d.finalizar
@@ -7240,7 +7532,7 @@ DataProperty: bim:polido
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para finalizar: polido ( xsd:string )"@pt
 	Annotations: rdfs:label "Finalização do acabamento polido."@pt
-	Annotations: rdfs:label "fin.106"@pt
+	Annotations: rdfs:label "fin.107"@pt
 
 DataProperty: bim:lustrado
 	SubPropertyOf: bim:d.finalizar
@@ -7248,7 +7540,7 @@ DataProperty: bim:lustrado
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para finalizar: lustrado ( xsd:string )"@pt
 	Annotations: rdfs:label "Finalização do acabamento lustrado."@pt
-	Annotations: rdfs:label "fin.107"@pt
+	Annotations: rdfs:label "fin.108"@pt
 
 DataProperty: bim:apicoado
 	SubPropertyOf: bim:d.finalizar
@@ -7256,7 +7548,7 @@ DataProperty: bim:apicoado
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para finalizar: apicoado ( xsd:string )"@pt
 	Annotations: rdfs:label "Finalização do acabamento apicoado."@pt
-	Annotations: rdfs:label "fin.108"@pt
+	Annotations: rdfs:label "fin.109"@pt
 
 DataProperty: bim:salpicado
 	SubPropertyOf: bim:d.finalizar
@@ -7264,14 +7556,6 @@ DataProperty: bim:salpicado
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para finalizar: salpicado ( xsd:string )"@pt
 	Annotations: rdfs:label "Finalização do acabamento salpicado."@pt
-	Annotations: rdfs:label "fin.109"@pt
-
-DataProperty: bim:revestido
-	SubPropertyOf: bim:d.finalizar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para finalizar: revestido ( xsd:string )"@pt
-	Annotations: rdfs:label "Finalização com revestimento aplicado."@pt
 	Annotations: rdfs:label "fin.110"@pt
 
 DataProperty: bim:texturizado
@@ -7532,13 +7816,21 @@ DataProperty: bim:porta.sanfonada
 	Annotations: rdfs:label "A porta é sanfonada. Conhecida também como porta camarão."@pt
 	Annotations: rdfs:label "por.113"@pt
 
+DataProperty: bim:porta.de.elevador
+	SubPropertyOf: bim:d.entrar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para entrar: porta.de.elevador ( xsd:string )"@pt
+	Annotations: rdfs:label "A porta é de elevador."@pt
+	Annotations: rdfs:label "por.114"@pt
+
 DataProperty: bim:porta.seccional
 	SubPropertyOf: bim:d.entrar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.seccional ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é seccional."@pt
-	Annotations: rdfs:label "por.114"@pt
+	Annotations: rdfs:label "por.115"@pt
 
 DataProperty: bim:d.abrir
 	SubPropertyOf: bim:BIMData
@@ -8316,7 +8608,7 @@ EquivalentClasses:  bim:Lote 	 , bim:Parcela
 
 EquivalentClasses:  bim:País 	 , bim:Nação 	 
 
-EquivalentClasses:  bim:Estado 	 , bim:Província 	 
+EquivalentClasses:  bim:Estado 	 , bim:UF 	 , bim:Província 	 
 
 EquivalentClasses:  bim:Cidade 	 , bim:Metrópoli 	 , bim:Município 	 
 
@@ -8336,15 +8628,280 @@ Individual: bim:Brasil
 	Facts: bim:é.dentro.de  bim:América.do.Sul
 	Facts: bim:descrição  "É um país de América do Sul"
 
+Individual: bim:AC
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Acre"
+
+Individual: bim:AL
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Alagoas"
+
+Individual: bim:AP
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Amapá"
+
+Individual: bim:AM
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Amazonas"
+
+Individual: bim:BA
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Bahia"
+
+Individual: bim:CE
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Ceará"
+
+Individual: bim:DF
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Distrito Federal"
+
+Individual: bim:ES
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Espírito Santo"
+
+Individual: bim:GO
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Goiás"
+
+Individual: bim:MA
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Maranhão"
+
+Individual: bim:MT
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Mato Grosso"
+
+Individual: bim:MS
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Mato Grosso do Sul"
+
+Individual: bim:MG
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Minas Gerais"
+
+Individual: bim:PA
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Pará"
+
+Individual: bim:PB
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Paraíba"
+
+Individual: bim:PR
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Paraná"
+
+Individual: bim:PE
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Pernambuco"
+
+Individual: bim:PI
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Piauí"
+
 Individual: bim:RJ
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Rio de Janeiro"
+
+Individual: bim:RN
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Rio Grande do Norte"
+
+Individual: bim:RS
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Rio Grande do Sul"
+
+Individual: bim:RO
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Rondônia"
+
+Individual: bim:RR
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Roraima"
+
+Individual: bim:SC
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Santa Catarina"
+
+Individual: bim:SP
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "São Paulo"
+
+Individual: bim:SE
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Sergipe"
+
+Individual: bim:TO
+	Types: bim:UF
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:estado  "Tocantins"
+
+Individual: bim:Acre
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Alagoas
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Amapá
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Amazonas
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Bahia
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Ceará
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Distrito.Federal
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Espírito.Santo
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Goiás
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Maranhão
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Mato.Grosso
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Mato.Grosso.do.Sul
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Minas.Gerais
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Pará
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Paraíba
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Paraná
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Pernambuco
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Piauí
 	Types: bim:Estado
 	Facts: bim:é.dentro.de  bim:Brasil
 	Facts: bim:descrição  "É um Estado de Brasil"
 
 Individual: bim:Rio.de.Janeiro
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Rio.Grande.do.Norte
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Rio.Grande.do.Sul
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Rondônia
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Roraima
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Santa.Catarina
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:São.Paulo
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Sergipe
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Tocantins
+	Types: bim:Estado
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "É um Estado de Brasil"
+
+Individual: bim:Rio
 	Types: bim:Cidade
 	Facts: bim:é.dentro.de  bim:RJ
-	Facts: bim:descrição  "É uma Cidade de Brasil"
+	Facts: bim:descrição  "É a cidade de Rio de Janeiro"
 
 Individual: bim:AP.01
 	Types: bim:Area.de.Planejamento
