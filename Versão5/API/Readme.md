@@ -25,8 +25,9 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
 #### Interface:
 ![Interface_2025](https://github.com/user-attachments/assets/3138138d-e57c-48d6-9ee2-128024440999)
 
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não implementada para extrair os fatos ontológicos do modelo BIM, utilizando os esquemas criados. O campo 1 especifica o domínio da ontologia que será criada (deve ser ingressado o valor e pressionar enter ou cliclar na seja azul do campo.  
-Segue a lista de valores numéricos permitidos.<br></b></p>
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não implementada para extrair os fatos ontológicos do modelo BIM, utilizando os esquemas criados. O campo 1 especifica o domínio da ontologia que será criada. Deve ingressar o valor, pressionar enter ou cliclar na seja azul do campo.<br></b></p> 
+
+<p align="justify">Segue a lista de valores numéricos permitidos.<br></b></p>
 
     * 1  Processa ABNT 15965_0M
     * 2  Processa ABNT 15965_0P
