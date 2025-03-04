@@ -49,7 +49,7 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
     * 20 Processa Conceitos cromáticos CROMA 
     * 21 Processa Conceitos cromáticos DOCUM   
                                                        
-O campo 2 ainda não tem uma função definida, mas será utilizado na próxima versão da API.  
+O campo 2 serve para apontar a segunda ontologia a ser criada. Inicialmente será configurado com o mesmo valor digitado no campo1. Caso queira apenas uma ontologia mantenha esse valor.   
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
