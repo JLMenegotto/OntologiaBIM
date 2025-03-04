@@ -49,7 +49,7 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
     * 18 Processa Conceitos urbanos URBA_Rio                                                 
     * 19 Processa Conceitos temporais CRONO                                             
     * 20 Processa Conceitos cromáticos CROMA 
-    * 21 Processa Conceitos cromáticos DOCUM   
+    * 21 Processa Conceitos de documentação DOCUM   
                                                        
 O campo 2 serve para apontar a segunda ontologia a ser criada. Inicialmente será configurado com o mesmo valor digitado no campo1. Caso queira apenas uma ontologia mantenha esse valor.   
 
