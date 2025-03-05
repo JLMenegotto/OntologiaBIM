@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_3_1S>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 04/03/2025 18:09:31"@pt
+  Annotations: rdfs:label "DataHora: 04/03/2025 21:45:24"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: P000001"@pt
   Annotations: rdfs:label "Cidade: Rio de Janeiro"@pt
@@ -484,14 +484,6 @@ ObjectProperty: abnt:é.entidade.cad
 	Annotations: rdfs:label "Identifica a associação com uma entidade de AutoCAD ou outro programa."@pt
 	Annotations: rdfs:label "ass.102"@pt
 
-ObjectProperty: abnt:é.link
-	SubPropertyOf: abnt:p.associar
-	Domain: abnt:BIM
-	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para associar: é.link"@pt
-	Annotations: rdfs:label "Identifica a associação com um Link de vínculação entre arquivos de modelos."@pt
-	Annotations: rdfs:label "ass.103"@pt
-
 ObjectProperty: abnt:é.grupo
 	SubPropertyOf: abnt:p.associar
 	Domain: abnt:BIM
@@ -541,68 +533,158 @@ ObjectProperty: abnt:tem.número
 	Annotations: rdfs:label "ide.103"@pt
 	Characteristics: Functional
 
+ObjectProperty: abnt:tem.género
+	SubPropertyOf: abnt:p.identificar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: tem.género"@pt
+	Annotations: rdfs:label "Género de um agente ou de um objeto."@pt
+	Annotations: rdfs:label "ide.104"@pt
+	Characteristics: Functional
+	Characteristics: Reflexive
+
+ObjectProperty: abnt:tem.ocupante
+	SubPropertyOf: abnt:p.identificar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: tem.ocupante"@pt
+	Annotations: rdfs:label "Ocupante de um ambiente."@pt
+	Annotations: rdfs:label "ide.105"@pt
+	Characteristics: Functional
+	Characteristics: Reflexive
+
+ObjectProperty: abnt:tem.usuário
+	SubPropertyOf: abnt:p.identificar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: tem.usuário"@pt
+	Annotations: rdfs:label "Usuário de um ambiente ou componente específico."@pt
+	Annotations: rdfs:label "ide.106"@pt
+	Characteristics: Functional
+	Characteristics: Reflexive
+
 ObjectProperty: abnt:tem.ide
 	SubPropertyOf: abnt:p.identificar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: tem.ide"@pt
 	Annotations: rdfs:label "Identificador único de objeto. Pode ser um ID Revit, GlobalId IDC ou Handle de AutoCAD."@pt
-	Annotations: rdfs:label "ide.104"@pt
+	Annotations: rdfs:label "ide.107"@pt
 	Characteristics: Functional
 	Characteristics: Reflexive
 
-ObjectProperty: abnt:tem.uri
-	SubPropertyOf: abnt:p.identificar
+ObjectProperty: abnt:p.vincular
+	SubPropertyOf: abnt:BIMProp
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: tem.uri"@pt
+	Annotations: rdfs:label "Propriedade de Objeto para p.vincular"@pt
+
+ObjectProperty: abnt:tem.uri
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.uri"@pt
 	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
-	Annotations: rdfs:label "ide.105"@pt
+	Annotations: rdfs:label "vin.100"@pt
 	Characteristics: Functional
 
 ObjectProperty: abnt:tem.urn
-	SubPropertyOf: abnt:p.identificar
+	SubPropertyOf: abnt:p.vincular
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: tem.urn"@pt
+	Annotations: rdfs:label "Propriedade para vincular: tem.urn"@pt
 	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
-	Annotations: rdfs:label "ide.106"@pt
+	Annotations: rdfs:label "vin.101"@pt
 	Characteristics: Functional
 
 ObjectProperty: abnt:tem.url
-	SubPropertyOf: abnt:p.identificar
+	SubPropertyOf: abnt:p.vincular
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: tem.url"@pt
+	Annotations: rdfs:label "Propriedade para vincular: tem.url"@pt
 	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
-	Annotations: rdfs:label "ide.107"@pt
+	Annotations: rdfs:label "vin.102"@pt
 	Characteristics: Functional
 
 ObjectProperty: abnt:tem.iri
-	SubPropertyOf: abnt:p.identificar
+	SubPropertyOf: abnt:p.vincular
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: tem.iri"@pt
+	Annotations: rdfs:label "Propriedade para vincular: tem.iri"@pt
 	Annotations: rdfs:label "Internationalized Resource Identifier. Identificador web que aceita caracteres internacionais."@pt
-	Annotations: rdfs:label "ide.108"@pt
+	Annotations: rdfs:label "vin.103"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem.ipv4
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.ipv4"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v4. 100.000.0.0"@pt
+	Annotations: rdfs:label "vin.104"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem.ipv6
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.ipv6"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v6. 000a:000b:000a:0000:0000:0000:0000:0000"@pt
+	Annotations: rdfs:label "vin.105"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem.hipervínculo
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.hipervínculo"@pt
+	Annotations: rdfs:label "Hipervínculo ou link."@pt
+	Annotations: rdfs:label "vin.106"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem.link
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.link"@pt
+	Annotations: rdfs:label "Link ou Hipervínculo."@pt
+	Annotations: rdfs:label "vin.107"@pt
 	Characteristics: Functional
 
 ObjectProperty: abnt:tem.orcid
-	SubPropertyOf: abnt:p.identificar
+	SubPropertyOf: abnt:p.vincular
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: tem.orcid"@pt
+	Annotations: rdfs:label "Propriedade para vincular: tem.orcid"@pt
 	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
-	Annotations: rdfs:label "ide.109"@pt
+	Annotations: rdfs:label "vin.108"@pt
 	Characteristics: Functional
 
 ObjectProperty: abnt:tem.lattes
-	SubPropertyOf: abnt:p.identificar
+	SubPropertyOf: abnt:p.vincular
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: tem.lattes"@pt
+	Annotations: rdfs:label "Propriedade para vincular: tem.lattes"@pt
 	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
-	Annotations: rdfs:label "ide.110"@pt
+	Annotations: rdfs:label "vin.109"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem.drive
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.drive"@pt
+	Annotations: rdfs:label "Nome do drive de armazenamento. C: D: etc."@pt
+	Annotations: rdfs:label "vin.110"@pt
+	Characteristics: Functional
+
+ObjectProperty: abnt:tem.pasta
+	SubPropertyOf: abnt:p.vincular
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: tem.pasta"@pt
+	Annotations: rdfs:label "Nome ou caminho completo de uma pasta. \\pasta1\\pasta2\\...."@pt
+	Annotations: rdfs:label "vin.111"@pt
 	Characteristics: Functional
 
 ObjectProperty: abnt:p.catalogar
@@ -643,13 +725,21 @@ ObjectProperty: abnt:tem.tipo
 	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto."@pt
 	Annotations: rdfs:label "cat.103"@pt
 
+ObjectProperty: abnt:tem.família
+	SubPropertyOf: abnt:p.catalogar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para catalogar: tem.família"@pt
+	Annotations: rdfs:label "Nome de família RFA criada em Revit."@pt
+	Annotations: rdfs:label "cat.104"@pt
+
 ObjectProperty: abnt:tem.família.tipo
 	SubPropertyOf: abnt:p.catalogar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.família.tipo"@pt
-	Annotations: rdfs:label "Tipo definido para uma família criada em Revit."@pt
-	Annotations: rdfs:label "cat.104"@pt
+	Annotations: rdfs:label "Nome de tipo de uma família RFA criada em Revit."@pt
+	Annotations: rdfs:label "cat.105"@pt
 
 ObjectProperty: abnt:tem.série
 	SubPropertyOf: abnt:p.catalogar
@@ -657,7 +747,7 @@ ObjectProperty: abnt:tem.série
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.série"@pt
 	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.105"@pt
+	Annotations: rdfs:label "cat.106"@pt
 
 ObjectProperty: abnt:tem.linha
 	SubPropertyOf: abnt:p.catalogar
@@ -665,7 +755,7 @@ ObjectProperty: abnt:tem.linha
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.linha"@pt
 	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.106"@pt
+	Annotations: rdfs:label "cat.107"@pt
 
 ObjectProperty: abnt:tem.item
 	SubPropertyOf: abnt:p.catalogar
@@ -673,7 +763,7 @@ ObjectProperty: abnt:tem.item
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.item"@pt
 	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.107"@pt
+	Annotations: rdfs:label "cat.108"@pt
 
 ObjectProperty: abnt:tem.título
 	SubPropertyOf: abnt:p.catalogar
@@ -681,7 +771,7 @@ ObjectProperty: abnt:tem.título
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.título"@pt
 	Annotations: rdfs:label "Título principal da publicação."@pt
-	Annotations: rdfs:label "cat.108"@pt
+	Annotations: rdfs:label "cat.109"@pt
 
 ObjectProperty: abnt:tem.subtítulo
 	SubPropertyOf: abnt:p.catalogar
@@ -689,7 +779,7 @@ ObjectProperty: abnt:tem.subtítulo
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.subtítulo"@pt
 	Annotations: rdfs:label "Subtítulo de publicação."@pt
-	Annotations: rdfs:label "cat.109"@pt
+	Annotations: rdfs:label "cat.110"@pt
 
 ObjectProperty: abnt:tem.denominação
 	SubPropertyOf: abnt:p.catalogar
@@ -697,7 +787,7 @@ ObjectProperty: abnt:tem.denominação
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.denominação"@pt
 	Annotations: rdfs:label "Denominação do objeto."@pt
-	Annotations: rdfs:label "cat.110"@pt
+	Annotations: rdfs:label "cat.111"@pt
 
 ObjectProperty: abnt:tem.característica
 	SubPropertyOf: abnt:p.catalogar
@@ -705,7 +795,7 @@ ObjectProperty: abnt:tem.característica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.característica"@pt
 	Annotations: rdfs:label "Característica por extenso."@pt
-	Annotations: rdfs:label "cat.111"@pt
+	Annotations: rdfs:label "cat.112"@pt
 
 ObjectProperty: abnt:tem.norma.aplicável
 	SubPropertyOf: abnt:p.catalogar
@@ -713,7 +803,7 @@ ObjectProperty: abnt:tem.norma.aplicável
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.norma.aplicável"@pt
 	Annotations: rdfs:label "Descrever a Norma que respeita o elemento."@pt
-	Annotations: rdfs:label "cat.112"@pt
+	Annotations: rdfs:label "cat.113"@pt
 
 ObjectProperty: abnt:tem.capítulo
 	SubPropertyOf: abnt:p.catalogar
@@ -721,7 +811,7 @@ ObjectProperty: abnt:tem.capítulo
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.capítulo"@pt
 	Annotations: rdfs:label "Identificação do Capítulo do catálogo."@pt
-	Annotations: rdfs:label "cat.113"@pt
+	Annotations: rdfs:label "cat.114"@pt
 
 ObjectProperty: abnt:tem.coleção
 	SubPropertyOf: abnt:p.catalogar
@@ -729,7 +819,7 @@ ObjectProperty: abnt:tem.coleção
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.coleção"@pt
 	Annotations: rdfs:label "Identificação da Coleção se aplicável."@pt
-	Annotations: rdfs:label "cat.114"@pt
+	Annotations: rdfs:label "cat.115"@pt
 
 ObjectProperty: abnt:tem.vol
 	SubPropertyOf: abnt:p.catalogar
@@ -737,7 +827,7 @@ ObjectProperty: abnt:tem.vol
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.vol"@pt
 	Annotations: rdfs:label "Identificação do Volume se aplicável."@pt
-	Annotations: rdfs:label "cat.115"@pt
+	Annotations: rdfs:label "cat.116"@pt
 
 ObjectProperty: abnt:tem.editor
 	SubPropertyOf: abnt:p.catalogar
@@ -745,7 +835,7 @@ ObjectProperty: abnt:tem.editor
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.editor"@pt
 	Annotations: rdfs:label "Identificação de um editor."@pt
-	Annotations: rdfs:label "cat.116"@pt
+	Annotations: rdfs:label "cat.117"@pt
 
 ObjectProperty: abnt:tem.edição
 	SubPropertyOf: abnt:p.catalogar
@@ -753,7 +843,7 @@ ObjectProperty: abnt:tem.edição
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.edição"@pt
 	Annotations: rdfs:label "Número de edição."@pt
-	Annotations: rdfs:label "cat.117"@pt
+	Annotations: rdfs:label "cat.118"@pt
 
 ObjectProperty: abnt:tem.ano.de.publicação
 	SubPropertyOf: abnt:p.catalogar
@@ -761,7 +851,7 @@ ObjectProperty: abnt:tem.ano.de.publicação
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.ano.de.publicação"@pt
 	Annotations: rdfs:label "Ano de publicação do catálogo ou caderno."@pt
-	Annotations: rdfs:label "cat.118"@pt
+	Annotations: rdfs:label "cat.119"@pt
 
 ObjectProperty: abnt:tem.isbn
 	SubPropertyOf: abnt:p.catalogar
@@ -769,7 +859,7 @@ ObjectProperty: abnt:tem.isbn
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.isbn"@pt
 	Annotations: rdfs:label "International Standard Book Number.  Código de 13 dígitos."@pt
-	Annotations: rdfs:label "cat.119"@pt
+	Annotations: rdfs:label "cat.120"@pt
 
 ObjectProperty: abnt:tem.issn
 	SubPropertyOf: abnt:p.catalogar
@@ -777,7 +867,7 @@ ObjectProperty: abnt:tem.issn
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.issn"@pt
 	Annotations: rdfs:label "Internacional Standard Serial Number. Código com 8 dígitos."@pt
-	Annotations: rdfs:label "cat.120"@pt
+	Annotations: rdfs:label "cat.121"@pt
 
 ObjectProperty: abnt:tem.doi
 	SubPropertyOf: abnt:p.catalogar
@@ -785,7 +875,7 @@ ObjectProperty: abnt:tem.doi
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.doi"@pt
 	Annotations: rdfs:label "Digital Object Identifier. Identificador de Objeto Digital, registro permanente de arquivos digitais."@pt
-	Annotations: rdfs:label "cat.121"@pt
+	Annotations: rdfs:label "cat.122"@pt
 
 ObjectProperty: abnt:tem.descrição
 	SubPropertyOf: abnt:p.catalogar
@@ -793,7 +883,7 @@ ObjectProperty: abnt:tem.descrição
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: tem.descrição"@pt
 	Annotations: rdfs:label "Descrição de um determinado objeto."@pt
-	Annotations: rdfs:label "cat.122"@pt
+	Annotations: rdfs:label "cat.123"@pt
 
 ObjectProperty: abnt:p.funcionar
 	SubPropertyOf: abnt:BIMProp
@@ -807,6 +897,7 @@ ObjectProperty: abnt:é.ambiente
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.ambiente"@pt
 	Annotations: rdfs:label "Identificação de um ambiente. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "fun.100"@pt
 
 ObjectProperty: abnt:é.zona
 	SubPropertyOf: abnt:p.funcionar
@@ -814,7 +905,7 @@ ObjectProperty: abnt:é.zona
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.zona"@pt
 	Annotations: rdfs:label "Identificação de zona funcional do prédio."@pt
-	Annotations: rdfs:label "fun.100"@pt
+	Annotations: rdfs:label "fun.101"@pt
 
 ObjectProperty: abnt:é.zona.avac
 	SubPropertyOf: abnt:p.funcionar
@@ -822,7 +913,7 @@ ObjectProperty: abnt:é.zona.avac
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.zona.avac"@pt
 	Annotations: rdfs:label "Identificação de zona térmica ou do projeto AVAC do prédio."@pt
-	Annotations: rdfs:label "fun.101"@pt
+	Annotations: rdfs:label "fun.102"@pt
 
 ObjectProperty: abnt:é.equipamento
 	SubPropertyOf: abnt:p.funcionar
@@ -830,7 +921,7 @@ ObjectProperty: abnt:é.equipamento
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.equipamento"@pt
 	Annotations: rdfs:label "É um equipamento. Em geral um conjunto de componentes que atuam solidários."@pt
-	Annotations: rdfs:label "fun.102"@pt
+	Annotations: rdfs:label "fun.103"@pt
 
 ObjectProperty: abnt:é.dispositivo
 	SubPropertyOf: abnt:p.funcionar
@@ -838,7 +929,7 @@ ObjectProperty: abnt:é.dispositivo
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.dispositivo"@pt
 	Annotations: rdfs:label "É um dispositivo. Uma parte funcional a um equipamento."@pt
-	Annotations: rdfs:label "fun.103"@pt
+	Annotations: rdfs:label "fun.104"@pt
 
 ObjectProperty: abnt:é.aparelho
 	SubPropertyOf: abnt:p.funcionar
@@ -846,7 +937,7 @@ ObjectProperty: abnt:é.aparelho
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.aparelho"@pt
 	Annotations: rdfs:label "É um aparelho. Um equipamento elétrico ou eletrônico de uso cotidiano."@pt
-	Annotations: rdfs:label "fun.104"@pt
+	Annotations: rdfs:label "fun.105"@pt
 
 ObjectProperty: abnt:é.instrumento
 	SubPropertyOf: abnt:p.funcionar
@@ -854,7 +945,7 @@ ObjectProperty: abnt:é.instrumento
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.instrumento"@pt
 	Annotations: rdfs:label "É um instrumento. Elemento pequeno manipulável para realizar tarefas."@pt
-	Annotations: rdfs:label "fun.105"@pt
+	Annotations: rdfs:label "fun.106"@pt
 
 ObjectProperty: abnt:é.bancada
 	SubPropertyOf: abnt:p.funcionar
@@ -862,7 +953,7 @@ ObjectProperty: abnt:é.bancada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.bancada"@pt
 	Annotations: rdfs:label "É uma bancada ou mobília fixa."@pt
-	Annotations: rdfs:label "fun.106"@pt
+	Annotations: rdfs:label "fun.107"@pt
 
 ObjectProperty: abnt:é.mobiliário
 	SubPropertyOf: abnt:p.funcionar
@@ -870,7 +961,7 @@ ObjectProperty: abnt:é.mobiliário
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para funcionar: é.mobiliário"@pt
 	Annotations: rdfs:label "É um mobiliário."@pt
-	Annotations: rdfs:label "fun.107"@pt
+	Annotations: rdfs:label "fun.108"@pt
 
 ObjectProperty: abnt:p.administrar
 	SubPropertyOf: abnt:BIMProp
@@ -934,27 +1025,27 @@ ObjectProperty: abnt:é.organismo
 	Annotations: rdfs:label "Identificação de organismo ou instituição extrangeira."@pt
 	Annotations: rdfs:label "adm.106"@pt
 
-ObjectProperty: abnt:é.unid.académica
+ObjectProperty: abnt:é.unidade.académica
 	SubPropertyOf: abnt:p.administrar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para administrar: é.unid.académica"@pt
+	Annotations: rdfs:label "Propriedade para administrar: é.unidade.académica"@pt
 	Annotations: rdfs:label "Identificação de Unidade Acadêmica de instituição de ensino brasileira."@pt
 	Annotations: rdfs:label "adm.107"@pt
 
-ObjectProperty: abnt:é.unid.administrativa
+ObjectProperty: abnt:é.unidade.administrativa
 	SubPropertyOf: abnt:p.administrar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para administrar: é.unid.administrativa"@pt
+	Annotations: rdfs:label "Propriedade para administrar: é.unidade.administrativa"@pt
 	Annotations: rdfs:label "Identificação de Unidade Administrativa alguma instituição ou edifício."@pt
 	Annotations: rdfs:label "adm.108"@pt
 
-ObjectProperty: abnt:é.unid.funcional
+ObjectProperty: abnt:é.unidade.funcional
 	SubPropertyOf: abnt:p.administrar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para administrar: é.unid.funcional"@pt
+	Annotations: rdfs:label "Propriedade para administrar: é.unidade.funcional"@pt
 	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde."@pt
 	Annotations: rdfs:label "adm.109"@pt
 
@@ -1124,37 +1215,67 @@ ObjectProperty: abnt:é.meta
 	Annotations: rdfs:label "Identificação de uma meta do tipo ODS ou similares."@pt
 	Annotations: rdfs:label "ctr.114"@pt
 
-ObjectProperty: abnt:é.custo
-	SubPropertyOf: abnt:p.contratar
+ObjectProperty: abnt:p.orçamentar
+	SubPropertyOf: abnt:BIMProp
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para contratar: é.custo"@pt
+	Annotations: rdfs:label "Propriedade de Objeto para p.orçamentar"@pt
+
+ObjectProperty: abnt:tem.custo
+	SubPropertyOf: abnt:p.orçamentar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.custo"@pt
 	Annotations: rdfs:label "Valor de custo de um componente ou evento."@pt
-	Annotations: rdfs:label "ctr.115"@pt
+	Annotations: rdfs:label "orç.100"@pt
 
-ObjectProperty: abnt:é.imposto
-	SubPropertyOf: abnt:p.contratar
+ObjectProperty: abnt:tem.imposto.municipal
+	SubPropertyOf: abnt:p.orçamentar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para contratar: é.imposto"@pt
-	Annotations: rdfs:label "Valor de imposto aplicado."@pt
-	Annotations: rdfs:label "ctr.116"@pt
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.imposto.municipal"@pt
+	Annotations: rdfs:label "Valor de imposto municipal aplicado."@pt
+	Annotations: rdfs:label "orç.101"@pt
 
-ObjectProperty: abnt:é.ganho
-	SubPropertyOf: abnt:p.contratar
+ObjectProperty: abnt:tem.imposto.estadual
+	SubPropertyOf: abnt:p.orçamentar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para contratar: é.ganho"@pt
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.imposto.estadual"@pt
+	Annotations: rdfs:label "Valor de imposto estadual aplicado."@pt
+	Annotations: rdfs:label "orç.102"@pt
+
+ObjectProperty: abnt:tem.imposto.federal
+	SubPropertyOf: abnt:p.orçamentar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.imposto.federal"@pt
+	Annotations: rdfs:label "Valor de imposto federal aplicado."@pt
+	Annotations: rdfs:label "orç.103"@pt
+
+ObjectProperty: abnt:tem.iva
+	SubPropertyOf: abnt:p.orçamentar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.iva"@pt
+	Annotations: rdfs:label "Valor de Imposto de Valor Agregado."@pt
+	Annotations: rdfs:label "orç.104"@pt
+
+ObjectProperty: abnt:tem.ganho
+	SubPropertyOf: abnt:p.orçamentar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.ganho"@pt
 	Annotations: rdfs:label "Valor de ganho planejado."@pt
-	Annotations: rdfs:label "ctr.117"@pt
+	Annotations: rdfs:label "orç.105"@pt
 
-ObjectProperty: abnt:é.preço
-	SubPropertyOf: abnt:p.contratar
+ObjectProperty: abnt:tem.preço
+	SubPropertyOf: abnt:p.orçamentar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para contratar: é.preço"@pt
+	Annotations: rdfs:label "Propriedade para orçamentar: tem.preço"@pt
 	Annotations: rdfs:label "Valor de preço de um componente ou evento."@pt
-	Annotations: rdfs:label "ctr.118"@pt
+	Annotations: rdfs:label "orç.106"@pt
 
 ObjectProperty: abnt:p.atestar
 	SubPropertyOf: abnt:BIMProp
@@ -1193,6 +1314,22 @@ ObjectProperty: abnt:é.etiqueta.ambiental
 	Annotations: rdfs:label "Propriedade para atestar: é.etiqueta.ambiental"@pt
 	Annotations: rdfs:label "Etiqueta de qualidade."@pt
 	Annotations: rdfs:label "ate.103"@pt
+
+ObjectProperty: abnt:é.patente
+	SubPropertyOf: abnt:p.atestar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para atestar: é.patente"@pt
+	Annotations: rdfs:label "Identificação de número de patente."@pt
+	Annotations: rdfs:label "ate.104"@pt
+
+ObjectProperty: abnt:é.registro.inpi
+	SubPropertyOf: abnt:p.atestar
+	Domain: abnt:BIM
+	Range: abnt:Projeto
+	Annotations: rdfs:label "Propriedade para atestar: é.registro.inpi"@pt
+	Annotations: rdfs:label "Identificação de número de registro no INPI Instituto Nacional de Propriedade Industrial."@pt
+	Annotations: rdfs:label "ate.105"@pt
 
 ObjectProperty: abnt:p.projetar
 	SubPropertyOf: abnt:BIMProp
@@ -1479,7 +1616,7 @@ ObjectProperty: abnt:é.momento
 	Domain: abnt:BIM
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para planejar: é.momento"@pt
-	Annotations: rdfs:label "Momento em que acontece o evento. Puede ser uma data, um horário ou marca de cronómetro representado como integer."@pt
+	Annotations: rdfs:label "Momento em que acontece o evento. Puede ser data, horário ou marca cronometrica escrita como integer."@pt
 	Annotations: rdfs:label "pla.106"@pt
 
 ObjectProperty: abnt:tem.vida.útil
@@ -1921,12 +2058,13 @@ ObjectProperty: abnt:p.iluminar
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade de Objeto para p.iluminar"@pt
 
-ObjectProperty: abnt:é.classe.de.luminária
+ObjectProperty: abnt:tem.luminária
 	SubPropertyOf: abnt:p.iluminar
 	Domain: abnt:BIM
 	Range: abnt:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.classe.de.luminária"@pt
-	Annotations: rdfs:label "Define a classe de dispositivo de iluminação artificial."@pt
+	Annotations: rdfs:label "Propriedade para iluminar: tem.luminária"@pt
+	Annotations: rdfs:label "Identificação da luminária. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "luz.100"@pt
 
 ObjectProperty: abnt:tem.iluminância
 	SubPropertyOf: abnt:p.iluminar
@@ -1934,7 +2072,7 @@ ObjectProperty: abnt:tem.iluminância
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para iluminar: tem.iluminância"@pt
 	Annotations: rdfs:label "A unidade é o Lux. Valores limites entre 20 e 20000."@pt
-	Annotations: rdfs:label "luz.100"@pt
+	Annotations: rdfs:label "luz.101"@pt
 
 ObjectProperty: abnt:tem.fluxo.luminoso
 	SubPropertyOf: abnt:p.iluminar
@@ -1942,7 +2080,7 @@ ObjectProperty: abnt:tem.fluxo.luminoso
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para iluminar: tem.fluxo.luminoso"@pt
 	Annotations: rdfs:label "A unidade é o Lumen (Lm). Valores limites entre 250 a 8000."@pt
-	Annotations: rdfs:label "luz.101"@pt
+	Annotations: rdfs:label "luz.102"@pt
 
 ObjectProperty: abnt:tem.eficiência.luminosa
 	SubPropertyOf: abnt:p.iluminar
@@ -1950,7 +2088,7 @@ ObjectProperty: abnt:tem.eficiência.luminosa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para iluminar: tem.eficiência.luminosa"@pt
 	Annotations: rdfs:label "O valor é expresso pela relação Lumen / Watts."@pt
-	Annotations: rdfs:label "luz.102"@pt
+	Annotations: rdfs:label "luz.103"@pt
 
 ObjectProperty: abnt:tem.temperatura.de.cor
 	SubPropertyOf: abnt:p.iluminar
@@ -1958,7 +2096,7 @@ ObjectProperty: abnt:tem.temperatura.de.cor
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para iluminar: tem.temperatura.de.cor"@pt
 	Annotations: rdfs:label "A unidade é o graus Kelvin (K). Valores limites entre 1000 e 6500."@pt
-	Annotations: rdfs:label "luz.103"@pt
+	Annotations: rdfs:label "luz.104"@pt
 
 ObjectProperty: abnt:tem.fotometria
 	SubPropertyOf: abnt:p.iluminar
@@ -1966,7 +2104,7 @@ ObjectProperty: abnt:tem.fotometria
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para iluminar: tem.fotometria"@pt
 	Annotations: rdfs:label "Dados fotométricos carrregados em arquivos IES."@pt
-	Annotations: rdfs:label "luz.104"@pt
+	Annotations: rdfs:label "luz.105"@pt
 
 ObjectProperty: abnt:tem.irc
 	SubPropertyOf: abnt:p.iluminar
@@ -1974,7 +2112,7 @@ ObjectProperty: abnt:tem.irc
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para iluminar: tem.irc"@pt
 	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100."@pt
-	Annotations: rdfs:label "luz.105"@pt
+	Annotations: rdfs:label "luz.106"@pt
 
 ObjectProperty: abnt:p.extinguir
 	SubPropertyOf: abnt:BIMProp
@@ -2284,6 +2422,7 @@ ObjectProperty: abnt:tem.grade
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para proteger: tem.grade"@pt
 	Annotations: rdfs:label "Identificação da grade. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "gra.100"@pt
 
 ObjectProperty: abnt:é.grade.aramada
 	SubPropertyOf: abnt:p.proteger
@@ -2291,7 +2430,7 @@ ObjectProperty: abnt:é.grade.aramada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para proteger: é.grade.aramada"@pt
 	Annotations: rdfs:label "A grade é de arame."@pt
-	Annotations: rdfs:label "gra.100"@pt
+	Annotations: rdfs:label "gra.101"@pt
 
 ObjectProperty: abnt:é.grade.de.barras
 	SubPropertyOf: abnt:p.proteger
@@ -2299,7 +2438,7 @@ ObjectProperty: abnt:é.grade.de.barras
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para proteger: é.grade.de.barras"@pt
 	Annotations: rdfs:label "A grade é de barras."@pt
-	Annotations: rdfs:label "gra.101"@pt
+	Annotations: rdfs:label "gra.102"@pt
 
 ObjectProperty: abnt:é.grade.decorativa
 	SubPropertyOf: abnt:p.proteger
@@ -2307,7 +2446,7 @@ ObjectProperty: abnt:é.grade.decorativa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para proteger: é.grade.decorativa"@pt
 	Annotations: rdfs:label "A grade de proteção decorativa."@pt
-	Annotations: rdfs:label "gra.102"@pt
+	Annotations: rdfs:label "gra.103"@pt
 
 ObjectProperty: abnt:é.grade.prisional
 	SubPropertyOf: abnt:p.proteger
@@ -2315,7 +2454,7 @@ ObjectProperty: abnt:é.grade.prisional
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para proteger: é.grade.prisional"@pt
 	Annotations: rdfs:label "A grade destinada a presídio."@pt
-	Annotations: rdfs:label "gra.103"@pt
+	Annotations: rdfs:label "gra.104"@pt
 
 ObjectProperty: abnt:p.entrar
 	SubPropertyOf: abnt:BIMProp
@@ -2329,6 +2468,7 @@ ObjectProperty: abnt:tem.porta
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: tem.porta"@pt
 	Annotations: rdfs:label "Identificação da porta. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "por.100"@pt
 
 ObjectProperty: abnt:é.porta.simples
 	SubPropertyOf: abnt:p.entrar
@@ -2336,7 +2476,7 @@ ObjectProperty: abnt:é.porta.simples
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.simples"@pt
 	Annotations: rdfs:label "A porta é de batente simples."@pt
-	Annotations: rdfs:label "por.100"@pt
+	Annotations: rdfs:label "por.101"@pt
 
 ObjectProperty: abnt:é.porta.dupla.simétrica
 	SubPropertyOf: abnt:p.entrar
@@ -2344,7 +2484,7 @@ ObjectProperty: abnt:é.porta.dupla.simétrica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.dupla.simétrica"@pt
 	Annotations: rdfs:label "A porta é de batente, dupla e com folhas de igual tamanho."@pt
-	Annotations: rdfs:label "por.101"@pt
+	Annotations: rdfs:label "por.102"@pt
 
 ObjectProperty: abnt:é.porta.dupla.asimétrica
 	SubPropertyOf: abnt:p.entrar
@@ -2352,7 +2492,7 @@ ObjectProperty: abnt:é.porta.dupla.asimétrica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.dupla.asimétrica"@pt
 	Annotations: rdfs:label "A porta é de batente, dupla e com folhas de tamanhos diferentes."@pt
-	Annotations: rdfs:label "por.102"@pt
+	Annotations: rdfs:label "por.103"@pt
 
 ObjectProperty: abnt:é.porta.com.bandeira
 	SubPropertyOf: abnt:p.entrar
@@ -2360,7 +2500,7 @@ ObjectProperty: abnt:é.porta.com.bandeira
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.com.bandeira"@pt
 	Annotations: rdfs:label "A porta tem bandeira superior."@pt
-	Annotations: rdfs:label "por.103"@pt
+	Annotations: rdfs:label "por.104"@pt
 
 ObjectProperty: abnt:é.porta.de.correr
 	SubPropertyOf: abnt:p.entrar
@@ -2368,7 +2508,7 @@ ObjectProperty: abnt:é.porta.de.correr
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.de.correr"@pt
 	Annotations: rdfs:label "A porta de correr."@pt
-	Annotations: rdfs:label "por.104"@pt
+	Annotations: rdfs:label "por.105"@pt
 
 ObjectProperty: abnt:é.porta.com.visor
 	SubPropertyOf: abnt:p.entrar
@@ -2376,7 +2516,7 @@ ObjectProperty: abnt:é.porta.com.visor
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.com.visor"@pt
 	Annotations: rdfs:label "A porta tem visor."@pt
-	Annotations: rdfs:label "por.105"@pt
+	Annotations: rdfs:label "por.106"@pt
 
 ObjectProperty: abnt:é.porta.cortafogo
 	SubPropertyOf: abnt:p.entrar
@@ -2384,7 +2524,7 @@ ObjectProperty: abnt:é.porta.cortafogo
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.cortafogo"@pt
 	Annotations: rdfs:label "A porta é cortafogo. Usadas em antecâmaras de escadas."@pt
-	Annotations: rdfs:label "por.106"@pt
+	Annotations: rdfs:label "por.107"@pt
 
 ObjectProperty: abnt:é.porta.acústica
 	SubPropertyOf: abnt:p.entrar
@@ -2392,7 +2532,7 @@ ObjectProperty: abnt:é.porta.acústica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.acústica"@pt
 	Annotations: rdfs:label "A porta é acústica."@pt
-	Annotations: rdfs:label "por.107"@pt
+	Annotations: rdfs:label "por.108"@pt
 
 ObjectProperty: abnt:é.porta.de.biosegurança
 	SubPropertyOf: abnt:p.entrar
@@ -2400,7 +2540,7 @@ ObjectProperty: abnt:é.porta.de.biosegurança
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.de.biosegurança"@pt
 	Annotations: rdfs:label "A porta é especial para salas limpas, laboratórios ou hospitais."@pt
-	Annotations: rdfs:label "por.108"@pt
+	Annotations: rdfs:label "por.109"@pt
 
 ObjectProperty: abnt:é.porta.blindada
 	SubPropertyOf: abnt:p.entrar
@@ -2408,7 +2548,7 @@ ObjectProperty: abnt:é.porta.blindada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.blindada"@pt
 	Annotations: rdfs:label "A porta é blindada."@pt
-	Annotations: rdfs:label "por.109"@pt
+	Annotations: rdfs:label "por.110"@pt
 
 ObjectProperty: abnt:é.porta.ventilada
 	SubPropertyOf: abnt:p.entrar
@@ -2416,7 +2556,7 @@ ObjectProperty: abnt:é.porta.ventilada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.ventilada"@pt
 	Annotations: rdfs:label "A porta é ventilada."@pt
-	Annotations: rdfs:label "por.110"@pt
+	Annotations: rdfs:label "por.111"@pt
 
 ObjectProperty: abnt:é.porta.vaivem
 	SubPropertyOf: abnt:p.entrar
@@ -2424,7 +2564,7 @@ ObjectProperty: abnt:é.porta.vaivem
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.vaivem"@pt
 	Annotations: rdfs:label "A porta é vaivem."@pt
-	Annotations: rdfs:label "por.111"@pt
+	Annotations: rdfs:label "por.112"@pt
 
 ObjectProperty: abnt:é.porta.giratória
 	SubPropertyOf: abnt:p.entrar
@@ -2432,7 +2572,7 @@ ObjectProperty: abnt:é.porta.giratória
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.giratória"@pt
 	Annotations: rdfs:label "A porta é giratória."@pt
-	Annotations: rdfs:label "por.112"@pt
+	Annotations: rdfs:label "por.113"@pt
 
 ObjectProperty: abnt:é.porta.sanfonada
 	SubPropertyOf: abnt:p.entrar
@@ -2440,7 +2580,7 @@ ObjectProperty: abnt:é.porta.sanfonada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.sanfonada"@pt
 	Annotations: rdfs:label "A porta é sanfonada. Conhecida também como porta camarão."@pt
-	Annotations: rdfs:label "por.113"@pt
+	Annotations: rdfs:label "por.114"@pt
 
 ObjectProperty: abnt:é.porta.de.elevador
 	SubPropertyOf: abnt:p.entrar
@@ -2448,7 +2588,7 @@ ObjectProperty: abnt:é.porta.de.elevador
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.de.elevador"@pt
 	Annotations: rdfs:label "A porta é de elevador."@pt
-	Annotations: rdfs:label "por.114"@pt
+	Annotations: rdfs:label "por.115"@pt
 
 ObjectProperty: abnt:é.porta.seccional
 	SubPropertyOf: abnt:p.entrar
@@ -2456,7 +2596,7 @@ ObjectProperty: abnt:é.porta.seccional
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para entrar: é.porta.seccional"@pt
 	Annotations: rdfs:label "A porta é seccional."@pt
-	Annotations: rdfs:label "por.115"@pt
+	Annotations: rdfs:label "por.116"@pt
 
 ObjectProperty: abnt:p.abrir
 	SubPropertyOf: abnt:BIMProp
@@ -2470,6 +2610,7 @@ ObjectProperty: abnt:tem.janela
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: tem.janela"@pt
 	Annotations: rdfs:label "Identificação da janela. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "jan.100"@pt
 
 ObjectProperty: abnt:é.janela.fixa
 	SubPropertyOf: abnt:p.abrir
@@ -2477,7 +2618,7 @@ ObjectProperty: abnt:é.janela.fixa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.fixa"@pt
 	Annotations: rdfs:label "A janela é fixa."@pt
-	Annotations: rdfs:label "jan.100"@pt
+	Annotations: rdfs:label "jan.101"@pt
 
 ObjectProperty: abnt:é.janela.de.batente
 	SubPropertyOf: abnt:p.abrir
@@ -2485,7 +2626,7 @@ ObjectProperty: abnt:é.janela.de.batente
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.de.batente"@pt
 	Annotations: rdfs:label "A janela é de batente."@pt
-	Annotations: rdfs:label "jan.101"@pt
+	Annotations: rdfs:label "jan.102"@pt
 
 ObjectProperty: abnt:é.janela.de.correr
 	SubPropertyOf: abnt:p.abrir
@@ -2493,7 +2634,7 @@ ObjectProperty: abnt:é.janela.de.correr
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.de.correr"@pt
 	Annotations: rdfs:label "A janela é de correr."@pt
-	Annotations: rdfs:label "jan.102"@pt
+	Annotations: rdfs:label "jan.103"@pt
 
 ObjectProperty: abnt:é.janela.basculante
 	SubPropertyOf: abnt:p.abrir
@@ -2501,7 +2642,7 @@ ObjectProperty: abnt:é.janela.basculante
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.basculante"@pt
 	Annotations: rdfs:label "A janela é basculante."@pt
-	Annotations: rdfs:label "jan.103"@pt
+	Annotations: rdfs:label "jan.104"@pt
 
 ObjectProperty: abnt:é.janela.pivotante
 	SubPropertyOf: abnt:p.abrir
@@ -2509,7 +2650,7 @@ ObjectProperty: abnt:é.janela.pivotante
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.pivotante"@pt
 	Annotations: rdfs:label "A janela é pivotante."@pt
-	Annotations: rdfs:label "jan.104"@pt
+	Annotations: rdfs:label "jan.105"@pt
 
 ObjectProperty: abnt:é.janela.maxim.ar
 	SubPropertyOf: abnt:p.abrir
@@ -2517,7 +2658,7 @@ ObjectProperty: abnt:é.janela.maxim.ar
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.maxim.ar"@pt
 	Annotations: rdfs:label "A janela é Maxim-ar."@pt
-	Annotations: rdfs:label "jan.105"@pt
+	Annotations: rdfs:label "jan.106"@pt
 
 ObjectProperty: abnt:é.janela.guilhotina
 	SubPropertyOf: abnt:p.abrir
@@ -2525,7 +2666,7 @@ ObjectProperty: abnt:é.janela.guilhotina
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.guilhotina"@pt
 	Annotations: rdfs:label "A janela é guilhotina."@pt
-	Annotations: rdfs:label "jan.106"@pt
+	Annotations: rdfs:label "jan.107"@pt
 
 ObjectProperty: abnt:é.janela.integral
 	SubPropertyOf: abnt:p.abrir
@@ -2533,7 +2674,7 @@ ObjectProperty: abnt:é.janela.integral
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.janela.integral"@pt
 	Annotations: rdfs:label "A janela é de varandas ou de vários módulos."@pt
-	Annotations: rdfs:label "jan.107"@pt
+	Annotations: rdfs:label "jan.108"@pt
 
 ObjectProperty: abnt:tem.claraboia
 	SubPropertyOf: abnt:p.abrir
@@ -2541,6 +2682,7 @@ ObjectProperty: abnt:tem.claraboia
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: tem.claraboia"@pt
 	Annotations: rdfs:label "Identificação da claraboia. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "cla.100"@pt
 
 ObjectProperty: abnt:é.claraboia.fixa
 	SubPropertyOf: abnt:p.abrir
@@ -2548,7 +2690,7 @@ ObjectProperty: abnt:é.claraboia.fixa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.claraboia.fixa"@pt
 	Annotations: rdfs:label "A claraboia é fixa."@pt
-	Annotations: rdfs:label "cla.100"@pt
+	Annotations: rdfs:label "cla.101"@pt
 
 ObjectProperty: abnt:é.claraboia.ventilada
 	SubPropertyOf: abnt:p.abrir
@@ -2556,7 +2698,7 @@ ObjectProperty: abnt:é.claraboia.ventilada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.claraboia.ventilada"@pt
 	Annotations: rdfs:label "A claraboia é ventilada."@pt
-	Annotations: rdfs:label "cla.101"@pt
+	Annotations: rdfs:label "cla.102"@pt
 
 ObjectProperty: abnt:é.claraboia.cúpula
 	SubPropertyOf: abnt:p.abrir
@@ -2564,7 +2706,7 @@ ObjectProperty: abnt:é.claraboia.cúpula
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.claraboia.cúpula"@pt
 	Annotations: rdfs:label "A claraboia é cúpula."@pt
-	Annotations: rdfs:label "cla.102"@pt
+	Annotations: rdfs:label "cla.103"@pt
 
 ObjectProperty: abnt:é.claraboia.prismática
 	SubPropertyOf: abnt:p.abrir
@@ -2572,7 +2714,7 @@ ObjectProperty: abnt:é.claraboia.prismática
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.claraboia.prismática"@pt
 	Annotations: rdfs:label "A claraboia é prismática."@pt
-	Annotations: rdfs:label "cla.103"@pt
+	Annotations: rdfs:label "cla.104"@pt
 
 ObjectProperty: abnt:é.claraboia.tubular
 	SubPropertyOf: abnt:p.abrir
@@ -2580,7 +2722,7 @@ ObjectProperty: abnt:é.claraboia.tubular
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para abrir: é.claraboia.tubular"@pt
 	Annotations: rdfs:label "A claraboia é tubular.  Direciona a luz de modo indireto por reflexões."@pt
-	Annotations: rdfs:label "cla.104"@pt
+	Annotations: rdfs:label "cla.105"@pt
 
 ObjectProperty: abnt:p.separar
 	SubPropertyOf: abnt:BIMProp
@@ -2594,6 +2736,7 @@ ObjectProperty: abnt:tem.parede
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: tem.parede"@pt
 	Annotations: rdfs:label "Identificação da parede. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "par.100"@pt
 
 ObjectProperty: abnt:é.tijolo.comum
 	SubPropertyOf: abnt:p.separar
@@ -2601,7 +2744,7 @@ ObjectProperty: abnt:é.tijolo.comum
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.tijolo.comum"@pt
 	Annotations: rdfs:label "Parede de tijolo.comum."@pt
-	Annotations: rdfs:label "par.100"@pt
+	Annotations: rdfs:label "par.101"@pt
 
 ObjectProperty: abnt:é.tijolo.furado
 	SubPropertyOf: abnt:p.separar
@@ -2609,7 +2752,7 @@ ObjectProperty: abnt:é.tijolo.furado
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.tijolo.furado"@pt
 	Annotations: rdfs:label "Parede de tijolo.furado."@pt
-	Annotations: rdfs:label "par.101"@pt
+	Annotations: rdfs:label "par.102"@pt
 
 ObjectProperty: abnt:é.tijolo.de.vidro
 	SubPropertyOf: abnt:p.separar
@@ -2617,7 +2760,7 @@ ObjectProperty: abnt:é.tijolo.de.vidro
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.tijolo.de.vidro"@pt
 	Annotations: rdfs:label "Parede de tijolo.de.vidro."@pt
-	Annotations: rdfs:label "par.102"@pt
+	Annotations: rdfs:label "par.103"@pt
 
 ObjectProperty: abnt:é.bloco.concreto
 	SubPropertyOf: abnt:p.separar
@@ -2625,7 +2768,7 @@ ObjectProperty: abnt:é.bloco.concreto
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.bloco.concreto"@pt
 	Annotations: rdfs:label "Parede de bloco.concreto."@pt
-	Annotations: rdfs:label "par.103"@pt
+	Annotations: rdfs:label "par.104"@pt
 
 ObjectProperty: abnt:é.bloco.sílico.calcário
 	SubPropertyOf: abnt:p.separar
@@ -2633,7 +2776,7 @@ ObjectProperty: abnt:é.bloco.sílico.calcário
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.bloco.sílico.calcário"@pt
 	Annotations: rdfs:label "Parede de bloco.sílico.calcário."@pt
-	Annotations: rdfs:label "par.104"@pt
+	Annotations: rdfs:label "par.105"@pt
 
 ObjectProperty: abnt:é.divisória.drywall
 	SubPropertyOf: abnt:p.separar
@@ -2641,7 +2784,7 @@ ObjectProperty: abnt:é.divisória.drywall
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.divisória.drywall"@pt
 	Annotations: rdfs:label "Parede de divisória.drywall."@pt
-	Annotations: rdfs:label "par.105"@pt
+	Annotations: rdfs:label "par.106"@pt
 
 ObjectProperty: abnt:é.divisória.naval
 	SubPropertyOf: abnt:p.separar
@@ -2649,7 +2792,7 @@ ObjectProperty: abnt:é.divisória.naval
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.divisória.naval"@pt
 	Annotations: rdfs:label "Parede de divisória.naval."@pt
-	Annotations: rdfs:label "par.106"@pt
+	Annotations: rdfs:label "par.107"@pt
 
 ObjectProperty: abnt:é.parede.hidráulica
 	SubPropertyOf: abnt:p.separar
@@ -2657,7 +2800,7 @@ ObjectProperty: abnt:é.parede.hidráulica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para separar: é.parede.hidráulica"@pt
 	Annotations: rdfs:label "Parede com elementos hidráulicos."@pt
-	Annotations: rdfs:label "par.107"@pt
+	Annotations: rdfs:label "par.108"@pt
 
 ObjectProperty: abnt:p.sombrear
 	SubPropertyOf: abnt:BIMProp
@@ -2671,6 +2814,7 @@ ObjectProperty: abnt:tem.brise
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: tem.brise"@pt
 	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "bri.100"@pt
 
 ObjectProperty: abnt:é.brise.horizontal
 	SubPropertyOf: abnt:p.sombrear
@@ -2678,7 +2822,7 @@ ObjectProperty: abnt:é.brise.horizontal
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.brise.horizontal"@pt
 	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Norte (sol incidindo com maior inclinação)."@pt
-	Annotations: rdfs:label "bri.100"@pt
+	Annotations: rdfs:label "bri.101"@pt
 
 ObjectProperty: abnt:é.brise.vertical
 	SubPropertyOf: abnt:p.sombrear
@@ -2686,7 +2830,7 @@ ObjectProperty: abnt:é.brise.vertical
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.brise.vertical"@pt
 	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Leste - Oeste (sol incidindo com menor inclinação)."@pt
-	Annotations: rdfs:label "bri.101"@pt
+	Annotations: rdfs:label "bri.102"@pt
 
 ObjectProperty: abnt:é.brise.móvel
 	SubPropertyOf: abnt:p.sombrear
@@ -2694,15 +2838,15 @@ ObjectProperty: abnt:é.brise.móvel
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.brise.móvel"@pt
 	Annotations: rdfs:label "O brise tem aletas móveis."@pt
-	Annotations: rdfs:label "bri.102"@pt
+	Annotations: rdfs:label "bri.103"@pt
 
 ObjectProperty: abnt:é.cobogó
 	SubPropertyOf: abnt:p.sombrear
 	Domain: abnt:BIM
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.cobogó"@pt
-	Annotations: rdfs:label "Identificação do cobogó. Pode ser o ID de Revit ou o GlobalId em IFC. Blocos vazados decorativos o nome é homenagem dos criadores da solução Coimbra, Boeckmann e de Góis."@pt
-	Annotations: rdfs:label "bri.103"@pt
+	Annotations: rdfs:label "Identificação do cobogó. Pode ser o ID de Revit ou o GlobalId em IFC. Blocos vazados. Nome é homenagem aos criadores Coimbra, Boeckmann e de Góis."@pt
+	Annotations: rdfs:label "cob.100"@pt
 
 ObjectProperty: abnt:p.distribuir
 	SubPropertyOf: abnt:BIMProp
@@ -2716,6 +2860,7 @@ ObjectProperty: abnt:tem.tubo
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: tem.tubo"@pt
 	Annotations: rdfs:label "Identificação do tubo. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "tub.100"@pt
 
 ObjectProperty: abnt:é.tubo.água.fria
 	SubPropertyOf: abnt:p.distribuir
@@ -2723,7 +2868,7 @@ ObjectProperty: abnt:é.tubo.água.fria
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.água.fria"@pt
 	Annotations: rdfs:label "É tubo de água fria."@pt
-	Annotations: rdfs:label "tub.100"@pt
+	Annotations: rdfs:label "tub.101"@pt
 
 ObjectProperty: abnt:é.tubo.água.quente
 	SubPropertyOf: abnt:p.distribuir
@@ -2731,7 +2876,7 @@ ObjectProperty: abnt:é.tubo.água.quente
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.água.quente"@pt
 	Annotations: rdfs:label "É tubo de água quente."@pt
-	Annotations: rdfs:label "tub.101"@pt
+	Annotations: rdfs:label "tub.102"@pt
 
 ObjectProperty: abnt:é.tubo.esgoto.sanitário
 	SubPropertyOf: abnt:p.distribuir
@@ -2739,7 +2884,7 @@ ObjectProperty: abnt:é.tubo.esgoto.sanitário
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.esgoto.sanitário"@pt
 	Annotations: rdfs:label "É tubo de esgoto sanitário."@pt
-	Annotations: rdfs:label "tub.102"@pt
+	Annotations: rdfs:label "tub.103"@pt
 
 ObjectProperty: abnt:é.tubo.esgoto.gordura
 	SubPropertyOf: abnt:p.distribuir
@@ -2747,7 +2892,7 @@ ObjectProperty: abnt:é.tubo.esgoto.gordura
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.esgoto.gordura"@pt
 	Annotations: rdfs:label "É tubo de esgoto de cozinhas com gordura."@pt
-	Annotations: rdfs:label "tub.103"@pt
+	Annotations: rdfs:label "tub.104"@pt
 
 ObjectProperty: abnt:é.tubo.ventilação
 	SubPropertyOf: abnt:p.distribuir
@@ -2755,7 +2900,7 @@ ObjectProperty: abnt:é.tubo.ventilação
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.ventilação"@pt
 	Annotations: rdfs:label "É tubo de ventilação."@pt
-	Annotations: rdfs:label "tub.104"@pt
+	Annotations: rdfs:label "tub.105"@pt
 
 ObjectProperty: abnt:é.tubo.pluvial
 	SubPropertyOf: abnt:p.distribuir
@@ -2763,7 +2908,7 @@ ObjectProperty: abnt:é.tubo.pluvial
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.pluvial"@pt
 	Annotations: rdfs:label "É tubo de deságue pluvial."@pt
-	Annotations: rdfs:label "tub.105"@pt
+	Annotations: rdfs:label "tub.106"@pt
 
 ObjectProperty: abnt:é.tubo.gás
 	SubPropertyOf: abnt:p.distribuir
@@ -2771,7 +2916,7 @@ ObjectProperty: abnt:é.tubo.gás
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.gás"@pt
 	Annotations: rdfs:label "É tubo de gás."@pt
-	Annotations: rdfs:label "tub.106"@pt
+	Annotations: rdfs:label "tub.107"@pt
 
 ObjectProperty: abnt:é.tubo.de.avac
 	SubPropertyOf: abnt:p.distribuir
@@ -2779,7 +2924,7 @@ ObjectProperty: abnt:é.tubo.de.avac
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.de.avac"@pt
 	Annotations: rdfs:label "É tubo de líquidos refrigerantes."@pt
-	Annotations: rdfs:label "tub.107"@pt
+	Annotations: rdfs:label "tub.108"@pt
 
 ObjectProperty: abnt:é.tubo.de.químico
 	SubPropertyOf: abnt:p.distribuir
@@ -2787,7 +2932,7 @@ ObjectProperty: abnt:é.tubo.de.químico
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.de.químico"@pt
 	Annotations: rdfs:label "É tubo de fluídos químicos perigosos."@pt
-	Annotations: rdfs:label "tub.108"@pt
+	Annotations: rdfs:label "tub.109"@pt
 
 ObjectProperty: abnt:é.tubo.de.combustível
 	SubPropertyOf: abnt:p.distribuir
@@ -2795,7 +2940,7 @@ ObjectProperty: abnt:é.tubo.de.combustível
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.de.combustível"@pt
 	Annotations: rdfs:label "É tubo de fluídos combustíveis perigosos."@pt
-	Annotations: rdfs:label "tub.109"@pt
+	Annotations: rdfs:label "tub.110"@pt
 
 ObjectProperty: abnt:é.tubo.medicinal
 	SubPropertyOf: abnt:p.distribuir
@@ -2803,7 +2948,7 @@ ObjectProperty: abnt:é.tubo.medicinal
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para distribuir: é.tubo.medicinal"@pt
 	Annotations: rdfs:label "É tubo de fluídos ou gases medicinais."@pt
-	Annotations: rdfs:label "tub.110"@pt
+	Annotations: rdfs:label "tub.111"@pt
 
 ObjectProperty: abnt:p.derivar
 	SubPropertyOf: abnt:BIMProp
@@ -2817,6 +2962,7 @@ ObjectProperty: abnt:tem.conexão
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: tem.conexão"@pt
 	Annotations: rdfs:label "Identificação da conexão. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "cnx.100"@pt
 
 ObjectProperty: abnt:é.curva
 	SubPropertyOf: abnt:p.derivar
@@ -2824,7 +2970,7 @@ ObjectProperty: abnt:é.curva
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.curva"@pt
 	Annotations: rdfs:label "É conexão tipo curva."@pt
-	Annotations: rdfs:label "cnx.100"@pt
+	Annotations: rdfs:label "cnx.101"@pt
 
 ObjectProperty: abnt:é.curva.longa
 	SubPropertyOf: abnt:p.derivar
@@ -2832,7 +2978,7 @@ ObjectProperty: abnt:é.curva.longa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.curva.longa"@pt
 	Annotations: rdfs:label "É conexão tipo curva longa."@pt
-	Annotations: rdfs:label "cnx.101"@pt
+	Annotations: rdfs:label "cnx.102"@pt
 
 ObjectProperty: abnt:é.curva.com.pé
 	SubPropertyOf: abnt:p.derivar
@@ -2840,7 +2986,7 @@ ObjectProperty: abnt:é.curva.com.pé
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.curva.com.pé"@pt
 	Annotations: rdfs:label "É conexão tipo curva com pé."@pt
-	Annotations: rdfs:label "cnx.102"@pt
+	Annotations: rdfs:label "cnx.103"@pt
 
 ObjectProperty: abnt:é.té
 	SubPropertyOf: abnt:p.derivar
@@ -2848,7 +2994,7 @@ ObjectProperty: abnt:é.té
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.té"@pt
 	Annotations: rdfs:label "É conexão de derivação ou mudança de diámetro tipo Té."@pt
-	Annotations: rdfs:label "cnx.103"@pt
+	Annotations: rdfs:label "cnx.104"@pt
 
 ObjectProperty: abnt:é.cruzeta
 	SubPropertyOf: abnt:p.derivar
@@ -2856,7 +3002,7 @@ ObjectProperty: abnt:é.cruzeta
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.cruzeta"@pt
 	Annotations: rdfs:label "É conexão de derivação ou mudança de diámetro tipo Cruzeta."@pt
-	Annotations: rdfs:label "cnx.104"@pt
+	Annotations: rdfs:label "cnx.105"@pt
 
 ObjectProperty: abnt:é.junção
 	SubPropertyOf: abnt:p.derivar
@@ -2864,7 +3010,7 @@ ObjectProperty: abnt:é.junção
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.junção"@pt
 	Annotations: rdfs:label "É conexão de derivação ou mudança de diámetro tipo Junção."@pt
-	Annotations: rdfs:label "cnx.105"@pt
+	Annotations: rdfs:label "cnx.106"@pt
 
 ObjectProperty: abnt:é.transição
 	SubPropertyOf: abnt:p.derivar
@@ -2872,7 +3018,7 @@ ObjectProperty: abnt:é.transição
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.transição"@pt
 	Annotations: rdfs:label "É conexão de transição entre juntas ou materiais."@pt
-	Annotations: rdfs:label "cnx.106"@pt
+	Annotations: rdfs:label "cnx.107"@pt
 
 ObjectProperty: abnt:é.redução
 	SubPropertyOf: abnt:p.derivar
@@ -2880,7 +3026,7 @@ ObjectProperty: abnt:é.redução
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.redução"@pt
 	Annotations: rdfs:label "É conexão de redução de diámetro concéntrica."@pt
-	Annotations: rdfs:label "cnx.107"@pt
+	Annotations: rdfs:label "cnx.108"@pt
 
 ObjectProperty: abnt:é.redução.excêntrica
 	SubPropertyOf: abnt:p.derivar
@@ -2888,7 +3034,7 @@ ObjectProperty: abnt:é.redução.excêntrica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.redução.excêntrica"@pt
 	Annotations: rdfs:label "É conexão de redução de diámetro com excentricidade."@pt
-	Annotations: rdfs:label "cnx.108"@pt
+	Annotations: rdfs:label "cnx.109"@pt
 
 ObjectProperty: abnt:é.luva
 	SubPropertyOf: abnt:p.derivar
@@ -2896,7 +3042,7 @@ ObjectProperty: abnt:é.luva
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.luva"@pt
 	Annotations: rdfs:label "É conexão de união tipo luva."@pt
-	Annotations: rdfs:label "cnx.109"@pt
+	Annotations: rdfs:label "cnx.110"@pt
 
 ObjectProperty: abnt:é.luva.de.correr
 	SubPropertyOf: abnt:p.derivar
@@ -2904,7 +3050,7 @@ ObjectProperty: abnt:é.luva.de.correr
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.luva.de.correr"@pt
 	Annotations: rdfs:label "É conexão de união tipo luva de correr."@pt
-	Annotations: rdfs:label "cnx.110"@pt
+	Annotations: rdfs:label "cnx.111"@pt
 
 ObjectProperty: abnt:é.prolongador
 	SubPropertyOf: abnt:p.derivar
@@ -2912,7 +3058,7 @@ ObjectProperty: abnt:é.prolongador
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.prolongador"@pt
 	Annotations: rdfs:label "É conexão para prolongação."@pt
-	Annotations: rdfs:label "cnx.111"@pt
+	Annotations: rdfs:label "cnx.112"@pt
 
 ObjectProperty: abnt:é.cap
 	SubPropertyOf: abnt:p.derivar
@@ -2920,7 +3066,7 @@ ObjectProperty: abnt:é.cap
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.cap"@pt
 	Annotations: rdfs:label "É conexão para fechamento."@pt
-	Annotations: rdfs:label "cnx.112"@pt
+	Annotations: rdfs:label "cnx.113"@pt
 
 ObjectProperty: abnt:é.plug
 	SubPropertyOf: abnt:p.derivar
@@ -2928,7 +3074,7 @@ ObjectProperty: abnt:é.plug
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para derivar: é.plug"@pt
 	Annotations: rdfs:label "É conexão para fechamento."@pt
-	Annotations: rdfs:label "cnx.113"@pt
+	Annotations: rdfs:label "cnx.114"@pt
 
 ObjectProperty: abnt:p.regular
 	SubPropertyOf: abnt:BIMProp
@@ -2942,6 +3088,7 @@ ObjectProperty: abnt:tem.válvula
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: tem.válvula"@pt
 	Annotations: rdfs:label "Identificação da válvula. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "val.100"@pt
 
 ObjectProperty: abnt:é.válvula.de.controle
 	SubPropertyOf: abnt:p.regular
@@ -2949,7 +3096,7 @@ ObjectProperty: abnt:é.válvula.de.controle
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.controle"@pt
 	Annotations: rdfs:label "É válvula de controle. Diversos tipos de controle de automatização da rede."@pt
-	Annotations: rdfs:label "val.100"@pt
+	Annotations: rdfs:label "val.101"@pt
 
 ObjectProperty: abnt:é.válvula.de.retenção
 	SubPropertyOf: abnt:p.regular
@@ -2957,7 +3104,7 @@ ObjectProperty: abnt:é.válvula.de.retenção
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.retenção"@pt
 	Annotations: rdfs:label "É válvula de retenção. Protege a tubulação da inversão do fluxo."@pt
-	Annotations: rdfs:label "val.101"@pt
+	Annotations: rdfs:label "val.102"@pt
 
 ObjectProperty: abnt:é.válvula.ventosa
 	SubPropertyOf: abnt:p.regular
@@ -2965,7 +3112,7 @@ ObjectProperty: abnt:é.válvula.ventosa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.ventosa"@pt
 	Annotations: rdfs:label "É válvula tipo ventosa. Regula pressões internas ou elimina ar da tubulação."@pt
-	Annotations: rdfs:label "val.102"@pt
+	Annotations: rdfs:label "val.103"@pt
 
 ObjectProperty: abnt:é.válvula.de.esfera
 	SubPropertyOf: abnt:p.regular
@@ -2973,7 +3120,7 @@ ObjectProperty: abnt:é.válvula.de.esfera
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.esfera"@pt
 	Annotations: rdfs:label "É válvula de esfera."@pt
-	Annotations: rdfs:label "val.103"@pt
+	Annotations: rdfs:label "val.104"@pt
 
 ObjectProperty: abnt:é.válvula.borboleta
 	SubPropertyOf: abnt:p.regular
@@ -2981,7 +3128,7 @@ ObjectProperty: abnt:é.válvula.borboleta
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.borboleta"@pt
 	Annotations: rdfs:label "É válvula borboleta."@pt
-	Annotations: rdfs:label "val.104"@pt
+	Annotations: rdfs:label "val.105"@pt
 
 ObjectProperty: abnt:é.válvula.de.gaveta
 	SubPropertyOf: abnt:p.regular
@@ -2989,7 +3136,7 @@ ObjectProperty: abnt:é.válvula.de.gaveta
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.gaveta"@pt
 	Annotations: rdfs:label "É válvula de gaveta."@pt
-	Annotations: rdfs:label "val.105"@pt
+	Annotations: rdfs:label "val.106"@pt
 
 ObjectProperty: abnt:é.válvula.de.alívio
 	SubPropertyOf: abnt:p.regular
@@ -2997,7 +3144,7 @@ ObjectProperty: abnt:é.válvula.de.alívio
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.alívio"@pt
 	Annotations: rdfs:label "É válvula de alívio."@pt
-	Annotations: rdfs:label "val.106"@pt
+	Annotations: rdfs:label "val.107"@pt
 
 ObjectProperty: abnt:é.válvula.de.diafragma
 	SubPropertyOf: abnt:p.regular
@@ -3005,7 +3152,7 @@ ObjectProperty: abnt:é.válvula.de.diafragma
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.diafragma"@pt
 	Annotations: rdfs:label "É válvula de diafragma."@pt
-	Annotations: rdfs:label "val.107"@pt
+	Annotations: rdfs:label "val.108"@pt
 
 ObjectProperty: abnt:é.válvula.solenoide
 	SubPropertyOf: abnt:p.regular
@@ -3013,7 +3160,7 @@ ObjectProperty: abnt:é.válvula.solenoide
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.solenoide"@pt
 	Annotations: rdfs:label "É válvula solenoide."@pt
-	Annotations: rdfs:label "val.108"@pt
+	Annotations: rdfs:label "val.109"@pt
 
 ObjectProperty: abnt:é.válvula.de.agulha
 	SubPropertyOf: abnt:p.regular
@@ -3021,7 +3168,7 @@ ObjectProperty: abnt:é.válvula.de.agulha
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para regular: é.válvula.de.agulha"@pt
 	Annotations: rdfs:label "É válvula de agulha."@pt
-	Annotations: rdfs:label "val.109"@pt
+	Annotations: rdfs:label "val.110"@pt
 
 ObjectProperty: abnt:p.juntar
 	SubPropertyOf: abnt:BIMProp
@@ -3035,6 +3182,7 @@ ObjectProperty: abnt:tem.junta
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: tem.junta"@pt
 	Annotations: rdfs:label "Identificação da junta. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "jun.100"@pt
 
 ObjectProperty: abnt:é.junta.rosqueada
 	SubPropertyOf: abnt:p.juntar
@@ -3042,7 +3190,7 @@ ObjectProperty: abnt:é.junta.rosqueada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.rosqueada"@pt
 	Annotations: rdfs:label "É uma junta rosqueada para unir tubos."@pt
-	Annotations: rdfs:label "jun.100"@pt
+	Annotations: rdfs:label "jun.101"@pt
 
 ObjectProperty: abnt:é.junta.colada
 	SubPropertyOf: abnt:p.juntar
@@ -3050,7 +3198,7 @@ ObjectProperty: abnt:é.junta.colada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.colada"@pt
 	Annotations: rdfs:label "É uma junta colada para unir tubos."@pt
-	Annotations: rdfs:label "jun.101"@pt
+	Annotations: rdfs:label "jun.102"@pt
 
 ObjectProperty: abnt:é.junta.soldada
 	SubPropertyOf: abnt:p.juntar
@@ -3058,7 +3206,7 @@ ObjectProperty: abnt:é.junta.soldada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.soldada"@pt
 	Annotations: rdfs:label "É uma junta soldada para unir tubos."@pt
-	Annotations: rdfs:label "jun.102"@pt
+	Annotations: rdfs:label "jun.103"@pt
 
 ObjectProperty: abnt:é.junta.flangeada
 	SubPropertyOf: abnt:p.juntar
@@ -3066,7 +3214,7 @@ ObjectProperty: abnt:é.junta.flangeada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.flangeada"@pt
 	Annotations: rdfs:label "É uma junta flangeada para unir tubos."@pt
-	Annotations: rdfs:label "jun.103"@pt
+	Annotations: rdfs:label "jun.104"@pt
 
 ObjectProperty: abnt:é.junta.crimpada
 	SubPropertyOf: abnt:p.juntar
@@ -3074,7 +3222,7 @@ ObjectProperty: abnt:é.junta.crimpada
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.crimpada"@pt
 	Annotations: rdfs:label "É uma junta crimpada para unir tubos."@pt
-	Annotations: rdfs:label "jun.104"@pt
+	Annotations: rdfs:label "jun.105"@pt
 
 ObjectProperty: abnt:é.junta.de.encaixe
 	SubPropertyOf: abnt:p.juntar
@@ -3082,7 +3230,7 @@ ObjectProperty: abnt:é.junta.de.encaixe
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.de.encaixe"@pt
 	Annotations: rdfs:label "É uma junta de encaixe para unir tubos."@pt
-	Annotations: rdfs:label "jun.105"@pt
+	Annotations: rdfs:label "jun.106"@pt
 
 ObjectProperty: abnt:é.junta.de.aperto
 	SubPropertyOf: abnt:p.juntar
@@ -3090,7 +3238,7 @@ ObjectProperty: abnt:é.junta.de.aperto
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.de.aperto"@pt
 	Annotations: rdfs:label "É uma junta de aperto para unir tubos."@pt
-	Annotations: rdfs:label "jun.106"@pt
+	Annotations: rdfs:label "jun.107"@pt
 
 ObjectProperty: abnt:é.junta.push-fit
 	SubPropertyOf: abnt:p.juntar
@@ -3098,7 +3246,7 @@ ObjectProperty: abnt:é.junta.push-fit
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.push-fit"@pt
 	Annotations: rdfs:label "É uma junta tipo push-fit para unir tubos."@pt
-	Annotations: rdfs:label "jun.107"@pt
+	Annotations: rdfs:label "jun.108"@pt
 
 ObjectProperty: abnt:é.junta.elástica
 	SubPropertyOf: abnt:p.juntar
@@ -3106,7 +3254,7 @@ ObjectProperty: abnt:é.junta.elástica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.elástica"@pt
 	Annotations: rdfs:label "É uma junta elástica JGS."@pt
-	Annotations: rdfs:label "jun.108"@pt
+	Annotations: rdfs:label "jun.109"@pt
 
 ObjectProperty: abnt:é.junta.travada.interna
 	SubPropertyOf: abnt:p.juntar
@@ -3114,7 +3262,7 @@ ObjectProperty: abnt:é.junta.travada.interna
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.travada.interna"@pt
 	Annotations: rdfs:label "É uma junta com travamento interno JTI."@pt
-	Annotations: rdfs:label "jun.109"@pt
+	Annotations: rdfs:label "jun.110"@pt
 
 ObjectProperty: abnt:é.junta.travada.externa
 	SubPropertyOf: abnt:p.juntar
@@ -3122,7 +3270,7 @@ ObjectProperty: abnt:é.junta.travada.externa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.travada.externa"@pt
 	Annotations: rdfs:label "É uma junta com travamento externo JTE."@pt
-	Annotations: rdfs:label "jun.110"@pt
+	Annotations: rdfs:label "jun.111"@pt
 
 ObjectProperty: abnt:é.junta.mecânica
 	SubPropertyOf: abnt:p.juntar
@@ -3130,7 +3278,7 @@ ObjectProperty: abnt:é.junta.mecânica
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.mecânica"@pt
 	Annotations: rdfs:label "É uma junta com travamento mecânico JME."@pt
-	Annotations: rdfs:label "jun.111"@pt
+	Annotations: rdfs:label "jun.112"@pt
 
 ObjectProperty: abnt:é.junta.smu
 	SubPropertyOf: abnt:p.juntar
@@ -3138,7 +3286,7 @@ ObjectProperty: abnt:é.junta.smu
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para juntar: é.junta.smu"@pt
 	Annotations: rdfs:label "É uma junta com sistema de abraçadeira SMU."@pt
-	Annotations: rdfs:label "jun.112"@pt
+	Annotations: rdfs:label "jun.113"@pt
 
 ObjectProperty: abnt:p.captar
 	SubPropertyOf: abnt:BIMProp
@@ -3152,6 +3300,7 @@ ObjectProperty: abnt:tem.ralo
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para captar: tem.ralo"@pt
 	Annotations: rdfs:label "Identificação do ralo. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ral.100"@pt
 
 ObjectProperty: abnt:é.ralo.seco
 	SubPropertyOf: abnt:p.captar
@@ -3159,7 +3308,7 @@ ObjectProperty: abnt:é.ralo.seco
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para captar: é.ralo.seco"@pt
 	Annotations: rdfs:label "É um ralo seco."@pt
-	Annotations: rdfs:label "ral.100"@pt
+	Annotations: rdfs:label "ral.101"@pt
 
 ObjectProperty: abnt:é.ralo.sifonado
 	SubPropertyOf: abnt:p.captar
@@ -3167,7 +3316,7 @@ ObjectProperty: abnt:é.ralo.sifonado
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para captar: é.ralo.sifonado"@pt
 	Annotations: rdfs:label "É um ralo sifonado."@pt
-	Annotations: rdfs:label "ral.101"@pt
+	Annotations: rdfs:label "ral.102"@pt
 
 ObjectProperty: abnt:é.ralo.linear
 	SubPropertyOf: abnt:p.captar
@@ -3175,7 +3324,7 @@ ObjectProperty: abnt:é.ralo.linear
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para captar: é.ralo.linear"@pt
 	Annotations: rdfs:label "É um ralo linear."@pt
-	Annotations: rdfs:label "ral.102"@pt
+	Annotations: rdfs:label "ral.103"@pt
 
 ObjectProperty: abnt:é.ralo.hemisférico
 	SubPropertyOf: abnt:p.captar
@@ -3183,7 +3332,7 @@ ObjectProperty: abnt:é.ralo.hemisférico
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para captar: é.ralo.hemisférico"@pt
 	Annotations: rdfs:label "É um ralo hemisférico."@pt
-	Annotations: rdfs:label "ral.103"@pt
+	Annotations: rdfs:label "ral.104"@pt
 
 ObjectProperty: abnt:p.passar
 	SubPropertyOf: abnt:BIMProp
@@ -3197,6 +3346,7 @@ ObjectProperty: abnt:tem.passador
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para passar: tem.passador"@pt
 	Annotations: rdfs:label "Identificação do passador. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "pas.100"@pt
 
 ObjectProperty: abnt:tem.passaprato
 	SubPropertyOf: abnt:p.passar
@@ -3204,7 +3354,7 @@ ObjectProperty: abnt:tem.passaprato
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para passar: tem.passaprato"@pt
 	Annotations: rdfs:label "É um passadorde pratos para restaurantes ou cozinhas."@pt
-	Annotations: rdfs:label "pas.100"@pt
+	Annotations: rdfs:label "pas.101"@pt
 
 ObjectProperty: abnt:tem.pass.through
 	SubPropertyOf: abnt:p.passar
@@ -3212,7 +3362,7 @@ ObjectProperty: abnt:tem.pass.through
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para passar: tem.pass.through"@pt
 	Annotations: rdfs:label "É um passador tipo pass-through para laboratórios biológicos."@pt
-	Annotations: rdfs:label "pas.101"@pt
+	Annotations: rdfs:label "pas.102"@pt
 
 ObjectProperty: abnt:tem.cleanroom.pass.through
 	SubPropertyOf: abnt:p.passar
@@ -3220,7 +3370,7 @@ ObjectProperty: abnt:tem.cleanroom.pass.through
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para passar: tem.cleanroom.pass.through"@pt
 	Annotations: rdfs:label "É um passador tipo pass-through para salas limpas."@pt
-	Annotations: rdfs:label "pas.102"@pt
+	Annotations: rdfs:label "pas.103"@pt
 
 ObjectProperty: abnt:tem.passador.de.transferência
 	SubPropertyOf: abnt:p.passar
@@ -3228,7 +3378,7 @@ ObjectProperty: abnt:tem.passador.de.transferência
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para passar: tem.passador.de.transferência"@pt
 	Annotations: rdfs:label "É um passador de transferência para hospitais ou farmácias."@pt
-	Annotations: rdfs:label "pas.103"@pt
+	Annotations: rdfs:label "pas.104"@pt
 
 ObjectProperty: abnt:p.documentar
 	SubPropertyOf: abnt:BIMProp
@@ -3242,6 +3392,7 @@ ObjectProperty: abnt:tem.folha
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: tem.folha"@pt
 	Annotations: rdfs:label "Identificação do documento. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "doc.100"@pt
 
 ObjectProperty: abnt:tem.prancha
 	SubPropertyOf: abnt:p.documentar
@@ -3249,7 +3400,7 @@ ObjectProperty: abnt:tem.prancha
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: tem.prancha"@pt
 	Annotations: rdfs:label "É um documento tipo prancha."@pt
-	Annotations: rdfs:label "doc.100"@pt
+	Annotations: rdfs:label "doc.101"@pt
 
 ObjectProperty: abnt:é.planta.baixa
 	SubPropertyOf: abnt:p.documentar
@@ -3257,7 +3408,7 @@ ObjectProperty: abnt:é.planta.baixa
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.planta.baixa"@pt
 	Annotations: rdfs:label "É um documento tipo planta baixa."@pt
-	Annotations: rdfs:label "doc.101"@pt
+	Annotations: rdfs:label "doc.102"@pt
 
 ObjectProperty: abnt:é.detalhe
 	SubPropertyOf: abnt:p.documentar
@@ -3265,7 +3416,7 @@ ObjectProperty: abnt:é.detalhe
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.detalhe"@pt
 	Annotations: rdfs:label "É um documento tipo detalhe."@pt
-	Annotations: rdfs:label "doc.102"@pt
+	Annotations: rdfs:label "doc.103"@pt
 
 ObjectProperty: abnt:é.corte
 	SubPropertyOf: abnt:p.documentar
@@ -3273,7 +3424,7 @@ ObjectProperty: abnt:é.corte
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.corte"@pt
 	Annotations: rdfs:label "É um documento tipo corte."@pt
-	Annotations: rdfs:label "doc.103"@pt
+	Annotations: rdfs:label "doc.104"@pt
 
 ObjectProperty: abnt:é.vista
 	SubPropertyOf: abnt:p.documentar
@@ -3281,7 +3432,7 @@ ObjectProperty: abnt:é.vista
 	Range: abnt:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.vista"@pt
 	Annotations: rdfs:label "É um documento tipo vista."@pt
-	Annotations: rdfs:label "doc.104"@pt
+	Annotations: rdfs:label "doc.105"@pt
 
 ObjectProperty: abnt:p.tabular
 	SubPropertyOf: abnt:BIMProp
@@ -3665,14 +3816,6 @@ DataProperty: abnt:entidade.cad
 	Annotations: rdfs:label "Identifica a associação com uma entidade de AutoCAD ou outro programa."@pt
 	Annotations: rdfs:label "ass.102"@pt
 
-DataProperty: abnt:link
-	SubPropertyOf: abnt:d.associar
-	Domain: abnt:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para associar: link ( xsd:string )"@pt
-	Annotations: rdfs:label "Identifica a associação com um Link de vínculação entre arquivos de modelos."@pt
-	Annotations: rdfs:label "ass.103"@pt
-
 DataProperty: abnt:grupo
 	SubPropertyOf: abnt:d.associar
 	Domain: abnt:BIM
@@ -3719,61 +3862,139 @@ DataProperty: abnt:número
 	Annotations: rdfs:label "Número de um objeto ou número formador de um código."@pt
 	Annotations: rdfs:label "ide.103"@pt
 
+DataProperty: abnt:género
+	SubPropertyOf: abnt:d.identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: género ( xsd:string )"@pt
+	Annotations: rdfs:label "Género de um agente ou de um objeto."@pt
+	Annotations: rdfs:label "ide.104"@pt
+
+DataProperty: abnt:ocupante
+	SubPropertyOf: abnt:d.identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: ocupante ( xsd:string )"@pt
+	Annotations: rdfs:label "Ocupante de um ambiente."@pt
+	Annotations: rdfs:label "ide.105"@pt
+
+DataProperty: abnt:usuário
+	SubPropertyOf: abnt:d.identificar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: usuário ( xsd:string )"@pt
+	Annotations: rdfs:label "Usuário de um ambiente ou componente específico."@pt
+	Annotations: rdfs:label "ide.106"@pt
+
 DataProperty: abnt:ide
 	SubPropertyOf: abnt:d.identificar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: ide ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificador único de objeto. Pode ser um ID Revit, GlobalId IDC ou Handle de AutoCAD."@pt
-	Annotations: rdfs:label "ide.104"@pt
-
-DataProperty: abnt:uri
-	SubPropertyOf: abnt:d.identificar
-	Domain: abnt:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: uri ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
-	Annotations: rdfs:label "ide.105"@pt
-
-DataProperty: abnt:urn
-	SubPropertyOf: abnt:d.identificar
-	Domain: abnt:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: urn ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
-	Annotations: rdfs:label "ide.106"@pt
-
-DataProperty: abnt:url
-	SubPropertyOf: abnt:d.identificar
-	Domain: abnt:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: url ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
 	Annotations: rdfs:label "ide.107"@pt
 
-DataProperty: abnt:iri
-	SubPropertyOf: abnt:d.identificar
+DataProperty: abnt:d.vincular
+	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: iri ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado de Objeto d.vincular"@pt
+
+DataProperty: abnt:uri
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: uri ( xsd:string )"@pt
+	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
+	Annotations: rdfs:label "vin.100"@pt
+
+DataProperty: abnt:urn
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: urn ( xsd:string )"@pt
+	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
+	Annotations: rdfs:label "vin.101"@pt
+
+DataProperty: abnt:url
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: url ( xsd:string )"@pt
+	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
+	Annotations: rdfs:label "vin.102"@pt
+
+DataProperty: abnt:iri
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: iri ( xsd:string )"@pt
 	Annotations: rdfs:label "Internationalized Resource Identifier. Identificador web que aceita caracteres internacionais."@pt
-	Annotations: rdfs:label "ide.108"@pt
+	Annotations: rdfs:label "vin.103"@pt
+
+DataProperty: abnt:ipv4
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: ipv4 ( xsd:string )"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v4. 100.000.0.0"@pt
+	Annotations: rdfs:label "vin.104"@pt
+
+DataProperty: abnt:ipv6
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: ipv6 ( xsd:string )"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v6. 000a:000b:000a:0000:0000:0000:0000:0000"@pt
+	Annotations: rdfs:label "vin.105"@pt
+
+DataProperty: abnt:hipervínculo
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: hipervínculo ( xsd:string )"@pt
+	Annotations: rdfs:label "Hipervínculo ou link."@pt
+	Annotations: rdfs:label "vin.106"@pt
+
+DataProperty: abnt:link
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: link ( xsd:string )"@pt
+	Annotations: rdfs:label "Link ou Hipervínculo."@pt
+	Annotations: rdfs:label "vin.107"@pt
 
 DataProperty: abnt:orcid
-	SubPropertyOf: abnt:d.identificar
+	SubPropertyOf: abnt:d.vincular
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: orcid ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para vincular: orcid ( xsd:string )"@pt
 	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
-	Annotations: rdfs:label "ide.109"@pt
+	Annotations: rdfs:label "vin.108"@pt
 
 DataProperty: abnt:lattes
-	SubPropertyOf: abnt:d.identificar
+	SubPropertyOf: abnt:d.vincular
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: lattes ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para vincular: lattes ( xsd:string )"@pt
 	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
-	Annotations: rdfs:label "ide.110"@pt
+	Annotations: rdfs:label "vin.109"@pt
+
+DataProperty: abnt:drive
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: drive ( xsd:string )"@pt
+	Annotations: rdfs:label "Nome do drive de armazenamento. C: D: etc."@pt
+	Annotations: rdfs:label "vin.110"@pt
+
+DataProperty: abnt:pasta
+	SubPropertyOf: abnt:d.vincular
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: pasta ( xsd:string )"@pt
+	Annotations: rdfs:label "Nome ou caminho completo de uma pasta. \\pasta1\\pasta2\\...."@pt
+	Annotations: rdfs:label "vin.111"@pt
 
 DataProperty: abnt:d.catalogar
 	SubPropertyOf: abnt:BIMData
@@ -3813,13 +4034,21 @@ DataProperty: abnt:tipo
 	Annotations: rdfs:label "Tipo definido pelo fabricante de um determinado produto."@pt
 	Annotations: rdfs:label "cat.103"@pt
 
+DataProperty: abnt:família
+	SubPropertyOf: abnt:d.catalogar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar: família ( xsd:string )"@pt
+	Annotations: rdfs:label "Nome de família RFA criada em Revit."@pt
+	Annotations: rdfs:label "cat.104"@pt
+
 DataProperty: abnt:família.tipo
 	SubPropertyOf: abnt:d.catalogar
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: família.tipo ( xsd:string )"@pt
-	Annotations: rdfs:label "Tipo definido para uma família criada em Revit."@pt
-	Annotations: rdfs:label "cat.104"@pt
+	Annotations: rdfs:label "Nome de tipo de uma família RFA criada em Revit."@pt
+	Annotations: rdfs:label "cat.105"@pt
 
 DataProperty: abnt:série
 	SubPropertyOf: abnt:d.catalogar
@@ -3827,7 +4056,7 @@ DataProperty: abnt:série
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: série ( xsd:string )"@pt
 	Annotations: rdfs:label "Série definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.105"@pt
+	Annotations: rdfs:label "cat.106"@pt
 
 DataProperty: abnt:linha
 	SubPropertyOf: abnt:d.catalogar
@@ -3835,7 +4064,7 @@ DataProperty: abnt:linha
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: linha ( xsd:string )"@pt
 	Annotations: rdfs:label "Linha definida pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.106"@pt
+	Annotations: rdfs:label "cat.107"@pt
 
 DataProperty: abnt:item
 	SubPropertyOf: abnt:d.catalogar
@@ -3843,7 +4072,7 @@ DataProperty: abnt:item
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: item ( xsd:string )"@pt
 	Annotations: rdfs:label "Item definido pelo fabricante de um determinado produto."@pt
-	Annotations: rdfs:label "cat.107"@pt
+	Annotations: rdfs:label "cat.108"@pt
 
 DataProperty: abnt:título
 	SubPropertyOf: abnt:d.catalogar
@@ -3851,7 +4080,7 @@ DataProperty: abnt:título
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: título ( xsd:string )"@pt
 	Annotations: rdfs:label "Título principal da publicação."@pt
-	Annotations: rdfs:label "cat.108"@pt
+	Annotations: rdfs:label "cat.109"@pt
 
 DataProperty: abnt:subtítulo
 	SubPropertyOf: abnt:d.catalogar
@@ -3859,7 +4088,7 @@ DataProperty: abnt:subtítulo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: subtítulo ( xsd:string )"@pt
 	Annotations: rdfs:label "Subtítulo de publicação."@pt
-	Annotations: rdfs:label "cat.109"@pt
+	Annotations: rdfs:label "cat.110"@pt
 
 DataProperty: abnt:denominação
 	SubPropertyOf: abnt:d.catalogar
@@ -3867,7 +4096,7 @@ DataProperty: abnt:denominação
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: denominação ( xsd:string )"@pt
 	Annotations: rdfs:label "Denominação do objeto."@pt
-	Annotations: rdfs:label "cat.110"@pt
+	Annotations: rdfs:label "cat.111"@pt
 
 DataProperty: abnt:característica
 	SubPropertyOf: abnt:d.catalogar
@@ -3875,7 +4104,7 @@ DataProperty: abnt:característica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: característica ( xsd:string )"@pt
 	Annotations: rdfs:label "Característica por extenso."@pt
-	Annotations: rdfs:label "cat.111"@pt
+	Annotations: rdfs:label "cat.112"@pt
 
 DataProperty: abnt:norma.aplicável
 	SubPropertyOf: abnt:d.catalogar
@@ -3883,7 +4112,7 @@ DataProperty: abnt:norma.aplicável
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: norma.aplicável ( xsd:string )"@pt
 	Annotations: rdfs:label "Descrever a Norma que respeita o elemento."@pt
-	Annotations: rdfs:label "cat.112"@pt
+	Annotations: rdfs:label "cat.113"@pt
 
 DataProperty: abnt:capítulo
 	SubPropertyOf: abnt:d.catalogar
@@ -3891,7 +4120,7 @@ DataProperty: abnt:capítulo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: capítulo ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do Capítulo do catálogo."@pt
-	Annotations: rdfs:label "cat.113"@pt
+	Annotations: rdfs:label "cat.114"@pt
 
 DataProperty: abnt:coleção
 	SubPropertyOf: abnt:d.catalogar
@@ -3899,7 +4128,7 @@ DataProperty: abnt:coleção
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: coleção ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da Coleção se aplicável."@pt
-	Annotations: rdfs:label "cat.114"@pt
+	Annotations: rdfs:label "cat.115"@pt
 
 DataProperty: abnt:vol
 	SubPropertyOf: abnt:d.catalogar
@@ -3907,7 +4136,7 @@ DataProperty: abnt:vol
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: vol ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do Volume se aplicável."@pt
-	Annotations: rdfs:label "cat.115"@pt
+	Annotations: rdfs:label "cat.116"@pt
 
 DataProperty: abnt:editor
 	SubPropertyOf: abnt:d.catalogar
@@ -3915,7 +4144,7 @@ DataProperty: abnt:editor
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: editor ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de um editor."@pt
-	Annotations: rdfs:label "cat.116"@pt
+	Annotations: rdfs:label "cat.117"@pt
 
 DataProperty: abnt:edição
 	SubPropertyOf: abnt:d.catalogar
@@ -3923,7 +4152,7 @@ DataProperty: abnt:edição
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: edição ( xsd:string )"@pt
 	Annotations: rdfs:label "Número de edição."@pt
-	Annotations: rdfs:label "cat.117"@pt
+	Annotations: rdfs:label "cat.118"@pt
 
 DataProperty: abnt:ano.de.publicação
 	SubPropertyOf: abnt:d.catalogar
@@ -3931,7 +4160,7 @@ DataProperty: abnt:ano.de.publicação
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: ano.de.publicação ( xsd:string )"@pt
 	Annotations: rdfs:label "Ano de publicação do catálogo ou caderno."@pt
-	Annotations: rdfs:label "cat.118"@pt
+	Annotations: rdfs:label "cat.119"@pt
 
 DataProperty: abnt:isbn
 	SubPropertyOf: abnt:d.catalogar
@@ -3939,7 +4168,7 @@ DataProperty: abnt:isbn
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: isbn ( xsd:string )"@pt
 	Annotations: rdfs:label "International Standard Book Number.  Código de 13 dígitos."@pt
-	Annotations: rdfs:label "cat.119"@pt
+	Annotations: rdfs:label "cat.120"@pt
 
 DataProperty: abnt:issn
 	SubPropertyOf: abnt:d.catalogar
@@ -3947,7 +4176,7 @@ DataProperty: abnt:issn
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: issn ( xsd:string )"@pt
 	Annotations: rdfs:label "Internacional Standard Serial Number. Código com 8 dígitos."@pt
-	Annotations: rdfs:label "cat.120"@pt
+	Annotations: rdfs:label "cat.121"@pt
 
 DataProperty: abnt:doi
 	SubPropertyOf: abnt:d.catalogar
@@ -3955,7 +4184,7 @@ DataProperty: abnt:doi
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: doi ( xsd:string )"@pt
 	Annotations: rdfs:label "Digital Object Identifier. Identificador de Objeto Digital, registro permanente de arquivos digitais."@pt
-	Annotations: rdfs:label "cat.121"@pt
+	Annotations: rdfs:label "cat.122"@pt
 
 DataProperty: abnt:descrição
 	SubPropertyOf: abnt:d.catalogar
@@ -3963,7 +4192,7 @@ DataProperty: abnt:descrição
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: descrição ( xsd:string )"@pt
 	Annotations: rdfs:label "Descrição de um determinado objeto."@pt
-	Annotations: rdfs:label "cat.122"@pt
+	Annotations: rdfs:label "cat.123"@pt
 
 DataProperty: abnt:d.funcionar
 	SubPropertyOf: abnt:BIMData
@@ -3977,6 +4206,7 @@ DataProperty: abnt:ambiente
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: ambiente ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de um ambiente. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "fun.100"@pt
 
 DataProperty: abnt:zona
 	SubPropertyOf: abnt:d.funcionar
@@ -3984,7 +4214,7 @@ DataProperty: abnt:zona
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: zona ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de zona funcional do prédio."@pt
-	Annotations: rdfs:label "fun.100"@pt
+	Annotations: rdfs:label "fun.101"@pt
 
 DataProperty: abnt:zona.avac
 	SubPropertyOf: abnt:d.funcionar
@@ -3992,7 +4222,7 @@ DataProperty: abnt:zona.avac
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: zona.avac ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de zona térmica ou do projeto AVAC do prédio."@pt
-	Annotations: rdfs:label "fun.101"@pt
+	Annotations: rdfs:label "fun.102"@pt
 
 DataProperty: abnt:equipamento
 	SubPropertyOf: abnt:d.funcionar
@@ -4000,7 +4230,7 @@ DataProperty: abnt:equipamento
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: equipamento ( xsd:string )"@pt
 	Annotations: rdfs:label "É um equipamento. Em geral um conjunto de componentes que atuam solidários."@pt
-	Annotations: rdfs:label "fun.102"@pt
+	Annotations: rdfs:label "fun.103"@pt
 
 DataProperty: abnt:dispositivo
 	SubPropertyOf: abnt:d.funcionar
@@ -4008,7 +4238,7 @@ DataProperty: abnt:dispositivo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: dispositivo ( xsd:string )"@pt
 	Annotations: rdfs:label "É um dispositivo. Uma parte funcional a um equipamento."@pt
-	Annotations: rdfs:label "fun.103"@pt
+	Annotations: rdfs:label "fun.104"@pt
 
 DataProperty: abnt:aparelho
 	SubPropertyOf: abnt:d.funcionar
@@ -4016,7 +4246,7 @@ DataProperty: abnt:aparelho
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: aparelho ( xsd:string )"@pt
 	Annotations: rdfs:label "É um aparelho. Um equipamento elétrico ou eletrônico de uso cotidiano."@pt
-	Annotations: rdfs:label "fun.104"@pt
+	Annotations: rdfs:label "fun.105"@pt
 
 DataProperty: abnt:instrumento
 	SubPropertyOf: abnt:d.funcionar
@@ -4024,7 +4254,7 @@ DataProperty: abnt:instrumento
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: instrumento ( xsd:string )"@pt
 	Annotations: rdfs:label "É um instrumento. Elemento pequeno manipulável para realizar tarefas."@pt
-	Annotations: rdfs:label "fun.105"@pt
+	Annotations: rdfs:label "fun.106"@pt
 
 DataProperty: abnt:bancada
 	SubPropertyOf: abnt:d.funcionar
@@ -4032,7 +4262,7 @@ DataProperty: abnt:bancada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: bancada ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma bancada ou mobília fixa."@pt
-	Annotations: rdfs:label "fun.106"@pt
+	Annotations: rdfs:label "fun.107"@pt
 
 DataProperty: abnt:mobiliário
 	SubPropertyOf: abnt:d.funcionar
@@ -4040,7 +4270,7 @@ DataProperty: abnt:mobiliário
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para funcionar: mobiliário ( xsd:string )"@pt
 	Annotations: rdfs:label "É um mobiliário."@pt
-	Annotations: rdfs:label "fun.107"@pt
+	Annotations: rdfs:label "fun.108"@pt
 
 DataProperty: abnt:d.administrar
 	SubPropertyOf: abnt:BIMData
@@ -4104,27 +4334,27 @@ DataProperty: abnt:organismo
 	Annotations: rdfs:label "Identificação de organismo ou instituição extrangeira."@pt
 	Annotations: rdfs:label "adm.106"@pt
 
-DataProperty: abnt:unid.académica
+DataProperty: abnt:unidade.académica
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para administrar: unid.académica ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para administrar: unidade.académica ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de Unidade Acadêmica de instituição de ensino brasileira."@pt
 	Annotations: rdfs:label "adm.107"@pt
 
-DataProperty: abnt:unid.administrativa
+DataProperty: abnt:unidade.administrativa
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para administrar: unid.administrativa ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para administrar: unidade.administrativa ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de Unidade Administrativa alguma instituição ou edifício."@pt
 	Annotations: rdfs:label "adm.108"@pt
 
-DataProperty: abnt:unid.funcional
+DataProperty: abnt:unidade.funcional
 	SubPropertyOf: abnt:d.administrar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para administrar: unid.funcional ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para administrar: unidade.funcional ( xsd:string )"@pt
 	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde."@pt
 	Annotations: rdfs:label "adm.109"@pt
 
@@ -4294,37 +4524,67 @@ DataProperty: abnt:meta
 	Annotations: rdfs:label "Identificação de uma meta do tipo ODS ou similares."@pt
 	Annotations: rdfs:label "ctr.114"@pt
 
-DataProperty: abnt:custo
-	SubPropertyOf: abnt:d.contratar
+DataProperty: abnt:d.orçamentar
+	SubPropertyOf: abnt:BIMData
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para contratar: custo ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor de custo de um componente ou evento."@pt
-	Annotations: rdfs:label "ctr.115"@pt
+	Annotations: rdfs:label "Dado de Objeto d.orçamentar"@pt
 
-DataProperty: abnt:imposto
-	SubPropertyOf: abnt:d.contratar
+DataProperty: abnt:custo
+	SubPropertyOf: abnt:d.orçamentar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para contratar: imposto ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor de imposto aplicado."@pt
-	Annotations: rdfs:label "ctr.116"@pt
+	Annotations: rdfs:label "Dado para orçamentar: custo ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor de custo de um componente ou evento."@pt
+	Annotations: rdfs:label "orç.100"@pt
+
+DataProperty: abnt:imposto.municipal
+	SubPropertyOf: abnt:d.orçamentar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: imposto.municipal ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor de imposto municipal aplicado."@pt
+	Annotations: rdfs:label "orç.101"@pt
+
+DataProperty: abnt:imposto.estadual
+	SubPropertyOf: abnt:d.orçamentar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: imposto.estadual ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor de imposto estadual aplicado."@pt
+	Annotations: rdfs:label "orç.102"@pt
+
+DataProperty: abnt:imposto.federal
+	SubPropertyOf: abnt:d.orçamentar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: imposto.federal ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor de imposto federal aplicado."@pt
+	Annotations: rdfs:label "orç.103"@pt
+
+DataProperty: abnt:iva
+	SubPropertyOf: abnt:d.orçamentar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: iva ( xsd:string )"@pt
+	Annotations: rdfs:label "Valor de Imposto de Valor Agregado."@pt
+	Annotations: rdfs:label "orç.104"@pt
 
 DataProperty: abnt:ganho
-	SubPropertyOf: abnt:d.contratar
+	SubPropertyOf: abnt:d.orçamentar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para contratar: ganho ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para orçamentar: ganho ( xsd:string )"@pt
 	Annotations: rdfs:label "Valor de ganho planejado."@pt
-	Annotations: rdfs:label "ctr.117"@pt
+	Annotations: rdfs:label "orç.105"@pt
 
 DataProperty: abnt:preço
-	SubPropertyOf: abnt:d.contratar
+	SubPropertyOf: abnt:d.orçamentar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para contratar: preço ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para orçamentar: preço ( xsd:string )"@pt
 	Annotations: rdfs:label "Valor de preço de um componente ou evento."@pt
-	Annotations: rdfs:label "ctr.118"@pt
+	Annotations: rdfs:label "orç.106"@pt
 
 DataProperty: abnt:d.atestar
 	SubPropertyOf: abnt:BIMData
@@ -4363,6 +4623,22 @@ DataProperty: abnt:etiqueta.ambiental
 	Annotations: rdfs:label "Dado para atestar: etiqueta.ambiental ( xsd:string )"@pt
 	Annotations: rdfs:label "Etiqueta de qualidade."@pt
 	Annotations: rdfs:label "ate.103"@pt
+
+DataProperty: abnt:patente
+	SubPropertyOf: abnt:d.atestar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para atestar: patente ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de número de patente."@pt
+	Annotations: rdfs:label "ate.104"@pt
+
+DataProperty: abnt:registro.inpi
+	SubPropertyOf: abnt:d.atestar
+	Domain: abnt:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para atestar: registro.inpi ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação de número de registro no INPI Instituto Nacional de Propriedade Industrial."@pt
+	Annotations: rdfs:label "ate.105"@pt
 
 DataProperty: abnt:d.projetar
 	SubPropertyOf: abnt:BIMData
@@ -4635,7 +4911,7 @@ DataProperty: abnt:momento
 	Domain: abnt:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para planejar: momento ( xsd:integer )"@pt
-	Annotations: rdfs:label "Momento em que acontece o evento. Puede ser uma data, um horário ou marca de cronómetro representado como integer."@pt
+	Annotations: rdfs:label "Momento em que acontece o evento. Puede ser data, horário ou marca cronometrica escrita como integer."@pt
 	Annotations: rdfs:label "pla.106"@pt
 
 DataProperty: abnt:vida.útil
@@ -5102,12 +5378,13 @@ DataProperty: abnt:d.iluminar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
 
-DataProperty: abnt:classe.de.luminária
+DataProperty: abnt:luminária
 	SubPropertyOf: abnt:d.iluminar
 	Domain: abnt:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para iluminar: classe.de.luminária ( xsd:string )"@pt
-	Annotations: rdfs:label "Define a classe de dispositivo de iluminação artificial."@pt
+	Annotations: rdfs:label "Dado para iluminar: luminária ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação da luminária. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "luz.100"@pt
 
 DataProperty: abnt:d.iluminar
 	SubPropertyOf: abnt:BIMData
@@ -5121,7 +5398,7 @@ DataProperty: abnt:iluminância
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: iluminância ( xsd:integer )"@pt
 	Annotations: rdfs:label "A unidade é o Lux. Valores limites entre 20 e 20000."@pt
-	Annotations: rdfs:label "luz.100"@pt
+	Annotations: rdfs:label "luz.101"@pt
 
 DataProperty: abnt:fluxo.luminoso
 	SubPropertyOf: abnt:d.iluminar
@@ -5129,7 +5406,7 @@ DataProperty: abnt:fluxo.luminoso
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: fluxo.luminoso ( xsd:integer )"@pt
 	Annotations: rdfs:label "A unidade é o Lumen (Lm). Valores limites entre 250 a 8000."@pt
-	Annotations: rdfs:label "luz.101"@pt
+	Annotations: rdfs:label "luz.102"@pt
 
 DataProperty: abnt:eficiência.luminosa
 	SubPropertyOf: abnt:d.iluminar
@@ -5137,7 +5414,7 @@ DataProperty: abnt:eficiência.luminosa
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: eficiência.luminosa ( xsd:integer )"@pt
 	Annotations: rdfs:label "O valor é expresso pela relação Lumen / Watts."@pt
-	Annotations: rdfs:label "luz.102"@pt
+	Annotations: rdfs:label "luz.103"@pt
 
 DataProperty: abnt:temperatura.de.cor
 	SubPropertyOf: abnt:d.iluminar
@@ -5145,7 +5422,7 @@ DataProperty: abnt:temperatura.de.cor
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para iluminar: temperatura.de.cor ( xsd:integer )"@pt
 	Annotations: rdfs:label "A unidade é o graus Kelvin (K). Valores limites entre 1000 e 6500."@pt
-	Annotations: rdfs:label "luz.103"@pt
+	Annotations: rdfs:label "luz.104"@pt
 
 DataProperty: abnt:fotometria
 	SubPropertyOf: abnt:d.iluminar
@@ -5153,7 +5430,7 @@ DataProperty: abnt:fotometria
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para iluminar: fotometria ( xsd:string )"@pt
 	Annotations: rdfs:label "Dados fotométricos carrregados em arquivos IES."@pt
-	Annotations: rdfs:label "luz.104"@pt
+	Annotations: rdfs:label "luz.105"@pt
 
 DataProperty: abnt:irc
 	SubPropertyOf: abnt:d.iluminar
@@ -5161,7 +5438,7 @@ DataProperty: abnt:irc
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para iluminar: irc ( xsd:string )"@pt
 	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100."@pt
-	Annotations: rdfs:label "luz.105"@pt
+	Annotations: rdfs:label "luz.106"@pt
 
 DataProperty: abnt:d.extinguir
 	SubPropertyOf: abnt:BIMData
@@ -5477,6 +5754,7 @@ DataProperty: abnt:grade
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para proteger: grade ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da grade. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "gra.100"@pt
 
 DataProperty: abnt:grade.aramada
 	SubPropertyOf: abnt:d.proteger
@@ -5484,7 +5762,7 @@ DataProperty: abnt:grade.aramada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para proteger: grade.aramada ( xsd:string )"@pt
 	Annotations: rdfs:label "A grade é de arame."@pt
-	Annotations: rdfs:label "gra.100"@pt
+	Annotations: rdfs:label "gra.101"@pt
 
 DataProperty: abnt:grade.de.barras
 	SubPropertyOf: abnt:d.proteger
@@ -5492,7 +5770,7 @@ DataProperty: abnt:grade.de.barras
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para proteger: grade.de.barras ( xsd:string )"@pt
 	Annotations: rdfs:label "A grade é de barras."@pt
-	Annotations: rdfs:label "gra.101"@pt
+	Annotations: rdfs:label "gra.102"@pt
 
 DataProperty: abnt:grade.decorativa
 	SubPropertyOf: abnt:d.proteger
@@ -5500,7 +5778,7 @@ DataProperty: abnt:grade.decorativa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para proteger: grade.decorativa ( xsd:string )"@pt
 	Annotations: rdfs:label "A grade de proteção decorativa."@pt
-	Annotations: rdfs:label "gra.102"@pt
+	Annotations: rdfs:label "gra.103"@pt
 
 DataProperty: abnt:grade.prisional
 	SubPropertyOf: abnt:d.proteger
@@ -5508,7 +5786,7 @@ DataProperty: abnt:grade.prisional
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para proteger: grade.prisional ( xsd:string )"@pt
 	Annotations: rdfs:label "A grade destinada a presídio."@pt
-	Annotations: rdfs:label "gra.103"@pt
+	Annotations: rdfs:label "gra.104"@pt
 
 DataProperty: abnt:d.entrar
 	SubPropertyOf: abnt:BIMData
@@ -5522,6 +5800,7 @@ DataProperty: abnt:porta
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da porta. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "por.100"@pt
 
 DataProperty: abnt:porta.simples
 	SubPropertyOf: abnt:d.entrar
@@ -5529,7 +5808,7 @@ DataProperty: abnt:porta.simples
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.simples ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é de batente simples."@pt
-	Annotations: rdfs:label "por.100"@pt
+	Annotations: rdfs:label "por.101"@pt
 
 DataProperty: abnt:porta.dupla.simétrica
 	SubPropertyOf: abnt:d.entrar
@@ -5537,7 +5816,7 @@ DataProperty: abnt:porta.dupla.simétrica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.dupla.simétrica ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é de batente, dupla e com folhas de igual tamanho."@pt
-	Annotations: rdfs:label "por.101"@pt
+	Annotations: rdfs:label "por.102"@pt
 
 DataProperty: abnt:porta.dupla.asimétrica
 	SubPropertyOf: abnt:d.entrar
@@ -5545,7 +5824,7 @@ DataProperty: abnt:porta.dupla.asimétrica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.dupla.asimétrica ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é de batente, dupla e com folhas de tamanhos diferentes."@pt
-	Annotations: rdfs:label "por.102"@pt
+	Annotations: rdfs:label "por.103"@pt
 
 DataProperty: abnt:porta.com.bandeira
 	SubPropertyOf: abnt:d.entrar
@@ -5553,7 +5832,7 @@ DataProperty: abnt:porta.com.bandeira
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.com.bandeira ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta tem bandeira superior."@pt
-	Annotations: rdfs:label "por.103"@pt
+	Annotations: rdfs:label "por.104"@pt
 
 DataProperty: abnt:porta.de.correr
 	SubPropertyOf: abnt:d.entrar
@@ -5561,7 +5840,7 @@ DataProperty: abnt:porta.de.correr
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.de.correr ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta de correr."@pt
-	Annotations: rdfs:label "por.104"@pt
+	Annotations: rdfs:label "por.105"@pt
 
 DataProperty: abnt:porta.com.visor
 	SubPropertyOf: abnt:d.entrar
@@ -5569,7 +5848,7 @@ DataProperty: abnt:porta.com.visor
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.com.visor ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta tem visor."@pt
-	Annotations: rdfs:label "por.105"@pt
+	Annotations: rdfs:label "por.106"@pt
 
 DataProperty: abnt:porta.cortafogo
 	SubPropertyOf: abnt:d.entrar
@@ -5577,7 +5856,7 @@ DataProperty: abnt:porta.cortafogo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.cortafogo ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é cortafogo. Usadas em antecâmaras de escadas."@pt
-	Annotations: rdfs:label "por.106"@pt
+	Annotations: rdfs:label "por.107"@pt
 
 DataProperty: abnt:porta.acústica
 	SubPropertyOf: abnt:d.entrar
@@ -5585,7 +5864,7 @@ DataProperty: abnt:porta.acústica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.acústica ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é acústica."@pt
-	Annotations: rdfs:label "por.107"@pt
+	Annotations: rdfs:label "por.108"@pt
 
 DataProperty: abnt:porta.de.biosegurança
 	SubPropertyOf: abnt:d.entrar
@@ -5593,7 +5872,7 @@ DataProperty: abnt:porta.de.biosegurança
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.de.biosegurança ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é especial para salas limpas, laboratórios ou hospitais."@pt
-	Annotations: rdfs:label "por.108"@pt
+	Annotations: rdfs:label "por.109"@pt
 
 DataProperty: abnt:porta.blindada
 	SubPropertyOf: abnt:d.entrar
@@ -5601,7 +5880,7 @@ DataProperty: abnt:porta.blindada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.blindada ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é blindada."@pt
-	Annotations: rdfs:label "por.109"@pt
+	Annotations: rdfs:label "por.110"@pt
 
 DataProperty: abnt:porta.ventilada
 	SubPropertyOf: abnt:d.entrar
@@ -5609,7 +5888,7 @@ DataProperty: abnt:porta.ventilada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.ventilada ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é ventilada."@pt
-	Annotations: rdfs:label "por.110"@pt
+	Annotations: rdfs:label "por.111"@pt
 
 DataProperty: abnt:porta.vaivem
 	SubPropertyOf: abnt:d.entrar
@@ -5617,7 +5896,7 @@ DataProperty: abnt:porta.vaivem
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.vaivem ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é vaivem."@pt
-	Annotations: rdfs:label "por.111"@pt
+	Annotations: rdfs:label "por.112"@pt
 
 DataProperty: abnt:porta.giratória
 	SubPropertyOf: abnt:d.entrar
@@ -5625,7 +5904,7 @@ DataProperty: abnt:porta.giratória
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.giratória ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é giratória."@pt
-	Annotations: rdfs:label "por.112"@pt
+	Annotations: rdfs:label "por.113"@pt
 
 DataProperty: abnt:porta.sanfonada
 	SubPropertyOf: abnt:d.entrar
@@ -5633,7 +5912,7 @@ DataProperty: abnt:porta.sanfonada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.sanfonada ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é sanfonada. Conhecida também como porta camarão."@pt
-	Annotations: rdfs:label "por.113"@pt
+	Annotations: rdfs:label "por.114"@pt
 
 DataProperty: abnt:porta.de.elevador
 	SubPropertyOf: abnt:d.entrar
@@ -5641,7 +5920,7 @@ DataProperty: abnt:porta.de.elevador
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.de.elevador ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é de elevador."@pt
-	Annotations: rdfs:label "por.114"@pt
+	Annotations: rdfs:label "por.115"@pt
 
 DataProperty: abnt:porta.seccional
 	SubPropertyOf: abnt:d.entrar
@@ -5649,7 +5928,7 @@ DataProperty: abnt:porta.seccional
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para entrar: porta.seccional ( xsd:string )"@pt
 	Annotations: rdfs:label "A porta é seccional."@pt
-	Annotations: rdfs:label "por.115"@pt
+	Annotations: rdfs:label "por.116"@pt
 
 DataProperty: abnt:d.abrir
 	SubPropertyOf: abnt:BIMData
@@ -5663,6 +5942,7 @@ DataProperty: abnt:janela
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da janela. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "jan.100"@pt
 
 DataProperty: abnt:janela.fixa
 	SubPropertyOf: abnt:d.abrir
@@ -5670,7 +5950,7 @@ DataProperty: abnt:janela.fixa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.fixa ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é fixa."@pt
-	Annotations: rdfs:label "jan.100"@pt
+	Annotations: rdfs:label "jan.101"@pt
 
 DataProperty: abnt:janela.de.batente
 	SubPropertyOf: abnt:d.abrir
@@ -5678,7 +5958,7 @@ DataProperty: abnt:janela.de.batente
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.de.batente ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é de batente."@pt
-	Annotations: rdfs:label "jan.101"@pt
+	Annotations: rdfs:label "jan.102"@pt
 
 DataProperty: abnt:janela.de.correr
 	SubPropertyOf: abnt:d.abrir
@@ -5686,7 +5966,7 @@ DataProperty: abnt:janela.de.correr
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.de.correr ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é de correr."@pt
-	Annotations: rdfs:label "jan.102"@pt
+	Annotations: rdfs:label "jan.103"@pt
 
 DataProperty: abnt:janela.basculante
 	SubPropertyOf: abnt:d.abrir
@@ -5694,7 +5974,7 @@ DataProperty: abnt:janela.basculante
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.basculante ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é basculante."@pt
-	Annotations: rdfs:label "jan.103"@pt
+	Annotations: rdfs:label "jan.104"@pt
 
 DataProperty: abnt:janela.pivotante
 	SubPropertyOf: abnt:d.abrir
@@ -5702,7 +5982,7 @@ DataProperty: abnt:janela.pivotante
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.pivotante ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é pivotante."@pt
-	Annotations: rdfs:label "jan.104"@pt
+	Annotations: rdfs:label "jan.105"@pt
 
 DataProperty: abnt:janela.maxim.ar
 	SubPropertyOf: abnt:d.abrir
@@ -5710,7 +5990,7 @@ DataProperty: abnt:janela.maxim.ar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.maxim.ar ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é Maxim-ar."@pt
-	Annotations: rdfs:label "jan.105"@pt
+	Annotations: rdfs:label "jan.106"@pt
 
 DataProperty: abnt:janela.guilhotina
 	SubPropertyOf: abnt:d.abrir
@@ -5718,7 +5998,7 @@ DataProperty: abnt:janela.guilhotina
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.guilhotina ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é guilhotina."@pt
-	Annotations: rdfs:label "jan.106"@pt
+	Annotations: rdfs:label "jan.107"@pt
 
 DataProperty: abnt:janela.integral
 	SubPropertyOf: abnt:d.abrir
@@ -5726,7 +6006,7 @@ DataProperty: abnt:janela.integral
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: janela.integral ( xsd:string )"@pt
 	Annotations: rdfs:label "A janela é de varandas ou de vários módulos."@pt
-	Annotations: rdfs:label "jan.107"@pt
+	Annotations: rdfs:label "jan.108"@pt
 
 DataProperty: abnt:claraboia
 	SubPropertyOf: abnt:d.abrir
@@ -5734,6 +6014,7 @@ DataProperty: abnt:claraboia
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: claraboia ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da claraboia. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "cla.100"@pt
 
 DataProperty: abnt:claraboia.fixa
 	SubPropertyOf: abnt:d.abrir
@@ -5741,7 +6022,7 @@ DataProperty: abnt:claraboia.fixa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: claraboia.fixa ( xsd:string )"@pt
 	Annotations: rdfs:label "A claraboia é fixa."@pt
-	Annotations: rdfs:label "cla.100"@pt
+	Annotations: rdfs:label "cla.101"@pt
 
 DataProperty: abnt:claraboia.ventilada
 	SubPropertyOf: abnt:d.abrir
@@ -5749,7 +6030,7 @@ DataProperty: abnt:claraboia.ventilada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: claraboia.ventilada ( xsd:string )"@pt
 	Annotations: rdfs:label "A claraboia é ventilada."@pt
-	Annotations: rdfs:label "cla.101"@pt
+	Annotations: rdfs:label "cla.102"@pt
 
 DataProperty: abnt:claraboia.cúpula
 	SubPropertyOf: abnt:d.abrir
@@ -5757,7 +6038,7 @@ DataProperty: abnt:claraboia.cúpula
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: claraboia.cúpula ( xsd:string )"@pt
 	Annotations: rdfs:label "A claraboia é cúpula."@pt
-	Annotations: rdfs:label "cla.102"@pt
+	Annotations: rdfs:label "cla.103"@pt
 
 DataProperty: abnt:claraboia.prismática
 	SubPropertyOf: abnt:d.abrir
@@ -5765,7 +6046,7 @@ DataProperty: abnt:claraboia.prismática
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: claraboia.prismática ( xsd:string )"@pt
 	Annotations: rdfs:label "A claraboia é prismática."@pt
-	Annotations: rdfs:label "cla.103"@pt
+	Annotations: rdfs:label "cla.104"@pt
 
 DataProperty: abnt:claraboia.tubular
 	SubPropertyOf: abnt:d.abrir
@@ -5773,7 +6054,7 @@ DataProperty: abnt:claraboia.tubular
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para abrir: claraboia.tubular ( xsd:string )"@pt
 	Annotations: rdfs:label "A claraboia é tubular.  Direciona a luz de modo indireto por reflexões."@pt
-	Annotations: rdfs:label "cla.104"@pt
+	Annotations: rdfs:label "cla.105"@pt
 
 DataProperty: abnt:d.separar
 	SubPropertyOf: abnt:BIMData
@@ -5787,6 +6068,7 @@ DataProperty: abnt:parede
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: parede ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da parede. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "par.100"@pt
 
 DataProperty: abnt:tijolo.comum
 	SubPropertyOf: abnt:d.separar
@@ -5794,7 +6076,7 @@ DataProperty: abnt:tijolo.comum
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: tijolo.comum ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de tijolo.comum."@pt
-	Annotations: rdfs:label "par.100"@pt
+	Annotations: rdfs:label "par.101"@pt
 
 DataProperty: abnt:tijolo.furado
 	SubPropertyOf: abnt:d.separar
@@ -5802,7 +6084,7 @@ DataProperty: abnt:tijolo.furado
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: tijolo.furado ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de tijolo.furado."@pt
-	Annotations: rdfs:label "par.101"@pt
+	Annotations: rdfs:label "par.102"@pt
 
 DataProperty: abnt:tijolo.de.vidro
 	SubPropertyOf: abnt:d.separar
@@ -5810,7 +6092,7 @@ DataProperty: abnt:tijolo.de.vidro
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: tijolo.de.vidro ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de tijolo.de.vidro."@pt
-	Annotations: rdfs:label "par.102"@pt
+	Annotations: rdfs:label "par.103"@pt
 
 DataProperty: abnt:bloco.concreto
 	SubPropertyOf: abnt:d.separar
@@ -5818,7 +6100,7 @@ DataProperty: abnt:bloco.concreto
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: bloco.concreto ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de bloco.concreto."@pt
-	Annotations: rdfs:label "par.103"@pt
+	Annotations: rdfs:label "par.104"@pt
 
 DataProperty: abnt:bloco.sílico.calcário
 	SubPropertyOf: abnt:d.separar
@@ -5826,7 +6108,7 @@ DataProperty: abnt:bloco.sílico.calcário
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: bloco.sílico.calcário ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de bloco.sílico.calcário."@pt
-	Annotations: rdfs:label "par.104"@pt
+	Annotations: rdfs:label "par.105"@pt
 
 DataProperty: abnt:divisória.drywall
 	SubPropertyOf: abnt:d.separar
@@ -5834,7 +6116,7 @@ DataProperty: abnt:divisória.drywall
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: divisória.drywall ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de divisória.drywall."@pt
-	Annotations: rdfs:label "par.105"@pt
+	Annotations: rdfs:label "par.106"@pt
 
 DataProperty: abnt:divisória.naval
 	SubPropertyOf: abnt:d.separar
@@ -5842,7 +6124,7 @@ DataProperty: abnt:divisória.naval
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: divisória.naval ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede de divisória.naval."@pt
-	Annotations: rdfs:label "par.106"@pt
+	Annotations: rdfs:label "par.107"@pt
 
 DataProperty: abnt:parede.hidráulica
 	SubPropertyOf: abnt:d.separar
@@ -5850,7 +6132,7 @@ DataProperty: abnt:parede.hidráulica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para separar: parede.hidráulica ( xsd:string )"@pt
 	Annotations: rdfs:label "Parede com elementos hidráulicos."@pt
-	Annotations: rdfs:label "par.107"@pt
+	Annotations: rdfs:label "par.108"@pt
 
 DataProperty: abnt:d.sombrear
 	SubPropertyOf: abnt:BIMData
@@ -5864,6 +6146,7 @@ DataProperty: abnt:brise
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "bri.100"@pt
 
 DataProperty: abnt:brise.horizontal
 	SubPropertyOf: abnt:d.sombrear
@@ -5871,7 +6154,7 @@ DataProperty: abnt:brise.horizontal
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise.horizontal ( xsd:string )"@pt
 	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Norte (sol incidindo com maior inclinação)."@pt
-	Annotations: rdfs:label "bri.100"@pt
+	Annotations: rdfs:label "bri.101"@pt
 
 DataProperty: abnt:brise.vertical
 	SubPropertyOf: abnt:d.sombrear
@@ -5879,7 +6162,7 @@ DataProperty: abnt:brise.vertical
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise.vertical ( xsd:string )"@pt
 	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Leste - Oeste (sol incidindo com menor inclinação)."@pt
-	Annotations: rdfs:label "bri.101"@pt
+	Annotations: rdfs:label "bri.102"@pt
 
 DataProperty: abnt:brise.móvel
 	SubPropertyOf: abnt:d.sombrear
@@ -5887,15 +6170,15 @@ DataProperty: abnt:brise.móvel
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise.móvel ( xsd:string )"@pt
 	Annotations: rdfs:label "O brise tem aletas móveis."@pt
-	Annotations: rdfs:label "bri.102"@pt
+	Annotations: rdfs:label "bri.103"@pt
 
 DataProperty: abnt:cobogó
 	SubPropertyOf: abnt:d.sombrear
 	Domain: abnt:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: cobogó ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação do cobogó. Pode ser o ID de Revit ou o GlobalId em IFC. Blocos vazados decorativos o nome é homenagem dos criadores da solução Coimbra, Boeckmann e de Góis."@pt
-	Annotations: rdfs:label "bri.103"@pt
+	Annotations: rdfs:label "Identificação do cobogó. Pode ser o ID de Revit ou o GlobalId em IFC. Blocos vazados. Nome é homenagem aos criadores Coimbra, Boeckmann e de Góis."@pt
+	Annotations: rdfs:label "cob.100"@pt
 
 DataProperty: abnt:d.distribuir
 	SubPropertyOf: abnt:BIMData
@@ -5909,6 +6192,7 @@ DataProperty: abnt:tubo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do tubo. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "tub.100"@pt
 
 DataProperty: abnt:tubo.água.fria
 	SubPropertyOf: abnt:d.distribuir
@@ -5916,7 +6200,7 @@ DataProperty: abnt:tubo.água.fria
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.água.fria ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de água fria."@pt
-	Annotations: rdfs:label "tub.100"@pt
+	Annotations: rdfs:label "tub.101"@pt
 
 DataProperty: abnt:tubo.água.quente
 	SubPropertyOf: abnt:d.distribuir
@@ -5924,7 +6208,7 @@ DataProperty: abnt:tubo.água.quente
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.água.quente ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de água quente."@pt
-	Annotations: rdfs:label "tub.101"@pt
+	Annotations: rdfs:label "tub.102"@pt
 
 DataProperty: abnt:tubo.esgoto.sanitário
 	SubPropertyOf: abnt:d.distribuir
@@ -5932,7 +6216,7 @@ DataProperty: abnt:tubo.esgoto.sanitário
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.esgoto.sanitário ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de esgoto sanitário."@pt
-	Annotations: rdfs:label "tub.102"@pt
+	Annotations: rdfs:label "tub.103"@pt
 
 DataProperty: abnt:tubo.esgoto.gordura
 	SubPropertyOf: abnt:d.distribuir
@@ -5940,7 +6224,7 @@ DataProperty: abnt:tubo.esgoto.gordura
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.esgoto.gordura ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de esgoto de cozinhas com gordura."@pt
-	Annotations: rdfs:label "tub.103"@pt
+	Annotations: rdfs:label "tub.104"@pt
 
 DataProperty: abnt:tubo.ventilação
 	SubPropertyOf: abnt:d.distribuir
@@ -5948,7 +6232,7 @@ DataProperty: abnt:tubo.ventilação
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.ventilação ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de ventilação."@pt
-	Annotations: rdfs:label "tub.104"@pt
+	Annotations: rdfs:label "tub.105"@pt
 
 DataProperty: abnt:tubo.pluvial
 	SubPropertyOf: abnt:d.distribuir
@@ -5956,7 +6240,7 @@ DataProperty: abnt:tubo.pluvial
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.pluvial ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de deságue pluvial."@pt
-	Annotations: rdfs:label "tub.105"@pt
+	Annotations: rdfs:label "tub.106"@pt
 
 DataProperty: abnt:tubo.gás
 	SubPropertyOf: abnt:d.distribuir
@@ -5964,7 +6248,7 @@ DataProperty: abnt:tubo.gás
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.gás ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de gás."@pt
-	Annotations: rdfs:label "tub.106"@pt
+	Annotations: rdfs:label "tub.107"@pt
 
 DataProperty: abnt:tubo.de.avac
 	SubPropertyOf: abnt:d.distribuir
@@ -5972,7 +6256,7 @@ DataProperty: abnt:tubo.de.avac
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.de.avac ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de líquidos refrigerantes."@pt
-	Annotations: rdfs:label "tub.107"@pt
+	Annotations: rdfs:label "tub.108"@pt
 
 DataProperty: abnt:tubo.de.químico
 	SubPropertyOf: abnt:d.distribuir
@@ -5980,7 +6264,7 @@ DataProperty: abnt:tubo.de.químico
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.de.químico ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de fluídos químicos perigosos."@pt
-	Annotations: rdfs:label "tub.108"@pt
+	Annotations: rdfs:label "tub.109"@pt
 
 DataProperty: abnt:tubo.de.combustível
 	SubPropertyOf: abnt:d.distribuir
@@ -5988,7 +6272,7 @@ DataProperty: abnt:tubo.de.combustível
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.de.combustível ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de fluídos combustíveis perigosos."@pt
-	Annotations: rdfs:label "tub.109"@pt
+	Annotations: rdfs:label "tub.110"@pt
 
 DataProperty: abnt:tubo.medicinal
 	SubPropertyOf: abnt:d.distribuir
@@ -5996,7 +6280,7 @@ DataProperty: abnt:tubo.medicinal
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para distribuir: tubo.medicinal ( xsd:string )"@pt
 	Annotations: rdfs:label "É tubo de fluídos ou gases medicinais."@pt
-	Annotations: rdfs:label "tub.110"@pt
+	Annotations: rdfs:label "tub.111"@pt
 
 DataProperty: abnt:d.derivar
 	SubPropertyOf: abnt:BIMData
@@ -6010,6 +6294,7 @@ DataProperty: abnt:conexão
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: conexão ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da conexão. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "cnx.100"@pt
 
 DataProperty: abnt:curva
 	SubPropertyOf: abnt:d.derivar
@@ -6017,7 +6302,7 @@ DataProperty: abnt:curva
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: curva ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão tipo curva."@pt
-	Annotations: rdfs:label "cnx.100"@pt
+	Annotations: rdfs:label "cnx.101"@pt
 
 DataProperty: abnt:curva.longa
 	SubPropertyOf: abnt:d.derivar
@@ -6025,7 +6310,7 @@ DataProperty: abnt:curva.longa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: curva.longa ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão tipo curva longa."@pt
-	Annotations: rdfs:label "cnx.101"@pt
+	Annotations: rdfs:label "cnx.102"@pt
 
 DataProperty: abnt:curva.com.pé
 	SubPropertyOf: abnt:d.derivar
@@ -6033,7 +6318,7 @@ DataProperty: abnt:curva.com.pé
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: curva.com.pé ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão tipo curva com pé."@pt
-	Annotations: rdfs:label "cnx.102"@pt
+	Annotations: rdfs:label "cnx.103"@pt
 
 DataProperty: abnt:té
 	SubPropertyOf: abnt:d.derivar
@@ -6041,7 +6326,7 @@ DataProperty: abnt:té
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: té ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de derivação ou mudança de diámetro tipo Té."@pt
-	Annotations: rdfs:label "cnx.103"@pt
+	Annotations: rdfs:label "cnx.104"@pt
 
 DataProperty: abnt:cruzeta
 	SubPropertyOf: abnt:d.derivar
@@ -6049,7 +6334,7 @@ DataProperty: abnt:cruzeta
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: cruzeta ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de derivação ou mudança de diámetro tipo Cruzeta."@pt
-	Annotations: rdfs:label "cnx.104"@pt
+	Annotations: rdfs:label "cnx.105"@pt
 
 DataProperty: abnt:junção
 	SubPropertyOf: abnt:d.derivar
@@ -6057,7 +6342,7 @@ DataProperty: abnt:junção
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: junção ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de derivação ou mudança de diámetro tipo Junção."@pt
-	Annotations: rdfs:label "cnx.105"@pt
+	Annotations: rdfs:label "cnx.106"@pt
 
 DataProperty: abnt:transição
 	SubPropertyOf: abnt:d.derivar
@@ -6065,7 +6350,7 @@ DataProperty: abnt:transição
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: transição ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de transição entre juntas ou materiais."@pt
-	Annotations: rdfs:label "cnx.106"@pt
+	Annotations: rdfs:label "cnx.107"@pt
 
 DataProperty: abnt:redução
 	SubPropertyOf: abnt:d.derivar
@@ -6073,7 +6358,7 @@ DataProperty: abnt:redução
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: redução ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de redução de diámetro concéntrica."@pt
-	Annotations: rdfs:label "cnx.107"@pt
+	Annotations: rdfs:label "cnx.108"@pt
 
 DataProperty: abnt:redução.excêntrica
 	SubPropertyOf: abnt:d.derivar
@@ -6081,7 +6366,7 @@ DataProperty: abnt:redução.excêntrica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: redução.excêntrica ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de redução de diámetro com excentricidade."@pt
-	Annotations: rdfs:label "cnx.108"@pt
+	Annotations: rdfs:label "cnx.109"@pt
 
 DataProperty: abnt:luva
 	SubPropertyOf: abnt:d.derivar
@@ -6089,7 +6374,7 @@ DataProperty: abnt:luva
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: luva ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de união tipo luva."@pt
-	Annotations: rdfs:label "cnx.109"@pt
+	Annotations: rdfs:label "cnx.110"@pt
 
 DataProperty: abnt:luva.de.correr
 	SubPropertyOf: abnt:d.derivar
@@ -6097,7 +6382,7 @@ DataProperty: abnt:luva.de.correr
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: luva.de.correr ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão de união tipo luva de correr."@pt
-	Annotations: rdfs:label "cnx.110"@pt
+	Annotations: rdfs:label "cnx.111"@pt
 
 DataProperty: abnt:prolongador
 	SubPropertyOf: abnt:d.derivar
@@ -6105,7 +6390,7 @@ DataProperty: abnt:prolongador
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: prolongador ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão para prolongação."@pt
-	Annotations: rdfs:label "cnx.111"@pt
+	Annotations: rdfs:label "cnx.112"@pt
 
 DataProperty: abnt:cap
 	SubPropertyOf: abnt:d.derivar
@@ -6113,7 +6398,7 @@ DataProperty: abnt:cap
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: cap ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão para fechamento."@pt
-	Annotations: rdfs:label "cnx.112"@pt
+	Annotations: rdfs:label "cnx.113"@pt
 
 DataProperty: abnt:plug
 	SubPropertyOf: abnt:d.derivar
@@ -6121,7 +6406,7 @@ DataProperty: abnt:plug
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para derivar: plug ( xsd:string )"@pt
 	Annotations: rdfs:label "É conexão para fechamento."@pt
-	Annotations: rdfs:label "cnx.113"@pt
+	Annotations: rdfs:label "cnx.114"@pt
 
 DataProperty: abnt:d.regular
 	SubPropertyOf: abnt:BIMData
@@ -6135,6 +6420,7 @@ DataProperty: abnt:válvula
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da válvula. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "val.100"@pt
 
 DataProperty: abnt:válvula.de.controle
 	SubPropertyOf: abnt:d.regular
@@ -6142,7 +6428,7 @@ DataProperty: abnt:válvula.de.controle
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.controle ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de controle. Diversos tipos de controle de automatização da rede."@pt
-	Annotations: rdfs:label "val.100"@pt
+	Annotations: rdfs:label "val.101"@pt
 
 DataProperty: abnt:válvula.de.retenção
 	SubPropertyOf: abnt:d.regular
@@ -6150,7 +6436,7 @@ DataProperty: abnt:válvula.de.retenção
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.retenção ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de retenção. Protege a tubulação da inversão do fluxo."@pt
-	Annotations: rdfs:label "val.101"@pt
+	Annotations: rdfs:label "val.102"@pt
 
 DataProperty: abnt:válvula.ventosa
 	SubPropertyOf: abnt:d.regular
@@ -6158,7 +6444,7 @@ DataProperty: abnt:válvula.ventosa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.ventosa ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula tipo ventosa. Regula pressões internas ou elimina ar da tubulação."@pt
-	Annotations: rdfs:label "val.102"@pt
+	Annotations: rdfs:label "val.103"@pt
 
 DataProperty: abnt:válvula.de.esfera
 	SubPropertyOf: abnt:d.regular
@@ -6166,7 +6452,7 @@ DataProperty: abnt:válvula.de.esfera
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.esfera ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de esfera."@pt
-	Annotations: rdfs:label "val.103"@pt
+	Annotations: rdfs:label "val.104"@pt
 
 DataProperty: abnt:válvula.borboleta
 	SubPropertyOf: abnt:d.regular
@@ -6174,7 +6460,7 @@ DataProperty: abnt:válvula.borboleta
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.borboleta ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula borboleta."@pt
-	Annotations: rdfs:label "val.104"@pt
+	Annotations: rdfs:label "val.105"@pt
 
 DataProperty: abnt:válvula.de.gaveta
 	SubPropertyOf: abnt:d.regular
@@ -6182,7 +6468,7 @@ DataProperty: abnt:válvula.de.gaveta
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.gaveta ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de gaveta."@pt
-	Annotations: rdfs:label "val.105"@pt
+	Annotations: rdfs:label "val.106"@pt
 
 DataProperty: abnt:válvula.de.alívio
 	SubPropertyOf: abnt:d.regular
@@ -6190,7 +6476,7 @@ DataProperty: abnt:válvula.de.alívio
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.alívio ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de alívio."@pt
-	Annotations: rdfs:label "val.106"@pt
+	Annotations: rdfs:label "val.107"@pt
 
 DataProperty: abnt:válvula.de.diafragma
 	SubPropertyOf: abnt:d.regular
@@ -6198,7 +6484,7 @@ DataProperty: abnt:válvula.de.diafragma
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.diafragma ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de diafragma."@pt
-	Annotations: rdfs:label "val.107"@pt
+	Annotations: rdfs:label "val.108"@pt
 
 DataProperty: abnt:válvula.solenoide
 	SubPropertyOf: abnt:d.regular
@@ -6206,7 +6492,7 @@ DataProperty: abnt:válvula.solenoide
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.solenoide ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula solenoide."@pt
-	Annotations: rdfs:label "val.108"@pt
+	Annotations: rdfs:label "val.109"@pt
 
 DataProperty: abnt:válvula.de.agulha
 	SubPropertyOf: abnt:d.regular
@@ -6214,7 +6500,7 @@ DataProperty: abnt:válvula.de.agulha
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para regular: válvula.de.agulha ( xsd:string )"@pt
 	Annotations: rdfs:label "É válvula de agulha."@pt
-	Annotations: rdfs:label "val.109"@pt
+	Annotations: rdfs:label "val.110"@pt
 
 DataProperty: abnt:d.juntar
 	SubPropertyOf: abnt:BIMData
@@ -6228,6 +6514,7 @@ DataProperty: abnt:junta
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação da junta. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "jun.100"@pt
 
 DataProperty: abnt:junta.rosqueada
 	SubPropertyOf: abnt:d.juntar
@@ -6235,7 +6522,7 @@ DataProperty: abnt:junta.rosqueada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.rosqueada ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta rosqueada para unir tubos."@pt
-	Annotations: rdfs:label "jun.100"@pt
+	Annotations: rdfs:label "jun.101"@pt
 
 DataProperty: abnt:junta.colada
 	SubPropertyOf: abnt:d.juntar
@@ -6243,7 +6530,7 @@ DataProperty: abnt:junta.colada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.colada ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta colada para unir tubos."@pt
-	Annotations: rdfs:label "jun.101"@pt
+	Annotations: rdfs:label "jun.102"@pt
 
 DataProperty: abnt:junta.soldada
 	SubPropertyOf: abnt:d.juntar
@@ -6251,7 +6538,7 @@ DataProperty: abnt:junta.soldada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.soldada ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta soldada para unir tubos."@pt
-	Annotations: rdfs:label "jun.102"@pt
+	Annotations: rdfs:label "jun.103"@pt
 
 DataProperty: abnt:junta.flangeada
 	SubPropertyOf: abnt:d.juntar
@@ -6259,7 +6546,7 @@ DataProperty: abnt:junta.flangeada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.flangeada ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta flangeada para unir tubos."@pt
-	Annotations: rdfs:label "jun.103"@pt
+	Annotations: rdfs:label "jun.104"@pt
 
 DataProperty: abnt:junta.crimpada
 	SubPropertyOf: abnt:d.juntar
@@ -6267,7 +6554,7 @@ DataProperty: abnt:junta.crimpada
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.crimpada ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta crimpada para unir tubos."@pt
-	Annotations: rdfs:label "jun.104"@pt
+	Annotations: rdfs:label "jun.105"@pt
 
 DataProperty: abnt:junta.de.encaixe
 	SubPropertyOf: abnt:d.juntar
@@ -6275,7 +6562,7 @@ DataProperty: abnt:junta.de.encaixe
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.de.encaixe ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta de encaixe para unir tubos."@pt
-	Annotations: rdfs:label "jun.105"@pt
+	Annotations: rdfs:label "jun.106"@pt
 
 DataProperty: abnt:junta.de.aperto
 	SubPropertyOf: abnt:d.juntar
@@ -6283,7 +6570,7 @@ DataProperty: abnt:junta.de.aperto
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.de.aperto ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta de aperto para unir tubos."@pt
-	Annotations: rdfs:label "jun.106"@pt
+	Annotations: rdfs:label "jun.107"@pt
 
 DataProperty: abnt:junta.push-fit
 	SubPropertyOf: abnt:d.juntar
@@ -6291,7 +6578,7 @@ DataProperty: abnt:junta.push-fit
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.push-fit ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta tipo push-fit para unir tubos."@pt
-	Annotations: rdfs:label "jun.107"@pt
+	Annotations: rdfs:label "jun.108"@pt
 
 DataProperty: abnt:junta.elástica
 	SubPropertyOf: abnt:d.juntar
@@ -6299,7 +6586,7 @@ DataProperty: abnt:junta.elástica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.elástica ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta elástica JGS."@pt
-	Annotations: rdfs:label "jun.108"@pt
+	Annotations: rdfs:label "jun.109"@pt
 
 DataProperty: abnt:junta.travada.interna
 	SubPropertyOf: abnt:d.juntar
@@ -6307,7 +6594,7 @@ DataProperty: abnt:junta.travada.interna
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.travada.interna ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta com travamento interno JTI."@pt
-	Annotations: rdfs:label "jun.109"@pt
+	Annotations: rdfs:label "jun.110"@pt
 
 DataProperty: abnt:junta.travada.externa
 	SubPropertyOf: abnt:d.juntar
@@ -6315,7 +6602,7 @@ DataProperty: abnt:junta.travada.externa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.travada.externa ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta com travamento externo JTE."@pt
-	Annotations: rdfs:label "jun.110"@pt
+	Annotations: rdfs:label "jun.111"@pt
 
 DataProperty: abnt:junta.mecânica
 	SubPropertyOf: abnt:d.juntar
@@ -6323,7 +6610,7 @@ DataProperty: abnt:junta.mecânica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.mecânica ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta com travamento mecânico JME."@pt
-	Annotations: rdfs:label "jun.111"@pt
+	Annotations: rdfs:label "jun.112"@pt
 
 DataProperty: abnt:junta.smu
 	SubPropertyOf: abnt:d.juntar
@@ -6331,7 +6618,7 @@ DataProperty: abnt:junta.smu
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para juntar: junta.smu ( xsd:string )"@pt
 	Annotations: rdfs:label "É uma junta com sistema de abraçadeira SMU."@pt
-	Annotations: rdfs:label "jun.112"@pt
+	Annotations: rdfs:label "jun.113"@pt
 
 DataProperty: abnt:d.captar
 	SubPropertyOf: abnt:BIMData
@@ -6345,6 +6632,7 @@ DataProperty: abnt:ralo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para captar: ralo ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do ralo. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ral.100"@pt
 
 DataProperty: abnt:ralo.seco
 	SubPropertyOf: abnt:d.captar
@@ -6352,7 +6640,7 @@ DataProperty: abnt:ralo.seco
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para captar: ralo.seco ( xsd:string )"@pt
 	Annotations: rdfs:label "É um ralo seco."@pt
-	Annotations: rdfs:label "ral.100"@pt
+	Annotations: rdfs:label "ral.101"@pt
 
 DataProperty: abnt:ralo.sifonado
 	SubPropertyOf: abnt:d.captar
@@ -6360,7 +6648,7 @@ DataProperty: abnt:ralo.sifonado
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para captar: ralo.sifonado ( xsd:string )"@pt
 	Annotations: rdfs:label "É um ralo sifonado."@pt
-	Annotations: rdfs:label "ral.101"@pt
+	Annotations: rdfs:label "ral.102"@pt
 
 DataProperty: abnt:ralo.linear
 	SubPropertyOf: abnt:d.captar
@@ -6368,7 +6656,7 @@ DataProperty: abnt:ralo.linear
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para captar: ralo.linear ( xsd:string )"@pt
 	Annotations: rdfs:label "É um ralo linear."@pt
-	Annotations: rdfs:label "ral.102"@pt
+	Annotations: rdfs:label "ral.103"@pt
 
 DataProperty: abnt:ralo.hemisférico
 	SubPropertyOf: abnt:d.captar
@@ -6376,7 +6664,7 @@ DataProperty: abnt:ralo.hemisférico
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para captar: ralo.hemisférico ( xsd:string )"@pt
 	Annotations: rdfs:label "É um ralo hemisférico."@pt
-	Annotations: rdfs:label "ral.103"@pt
+	Annotations: rdfs:label "ral.104"@pt
 
 DataProperty: abnt:d.passar
 	SubPropertyOf: abnt:BIMData
@@ -6390,6 +6678,7 @@ DataProperty: abnt:passador
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para passar: passador ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do passador. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "pas.100"@pt
 
 DataProperty: abnt:passaprato
 	SubPropertyOf: abnt:d.passar
@@ -6397,7 +6686,7 @@ DataProperty: abnt:passaprato
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para passar: passaprato ( xsd:string )"@pt
 	Annotations: rdfs:label "É um passadorde pratos para restaurantes ou cozinhas."@pt
-	Annotations: rdfs:label "pas.100"@pt
+	Annotations: rdfs:label "pas.101"@pt
 
 DataProperty: abnt:pass.through
 	SubPropertyOf: abnt:d.passar
@@ -6405,7 +6694,7 @@ DataProperty: abnt:pass.through
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para passar: pass.through ( xsd:string )"@pt
 	Annotations: rdfs:label "É um passador tipo pass-through para laboratórios biológicos."@pt
-	Annotations: rdfs:label "pas.101"@pt
+	Annotations: rdfs:label "pas.102"@pt
 
 DataProperty: abnt:cleanroom.pass.through
 	SubPropertyOf: abnt:d.passar
@@ -6413,7 +6702,7 @@ DataProperty: abnt:cleanroom.pass.through
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para passar: cleanroom.pass.through ( xsd:string )"@pt
 	Annotations: rdfs:label "É um passador tipo pass-through para salas limpas."@pt
-	Annotations: rdfs:label "pas.102"@pt
+	Annotations: rdfs:label "pas.103"@pt
 
 DataProperty: abnt:passador.de.transferência
 	SubPropertyOf: abnt:d.passar
@@ -6421,7 +6710,7 @@ DataProperty: abnt:passador.de.transferência
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para passar: passador.de.transferência ( xsd:string )"@pt
 	Annotations: rdfs:label "É um passador de transferência para hospitais ou farmácias."@pt
-	Annotations: rdfs:label "pas.103"@pt
+	Annotations: rdfs:label "pas.104"@pt
 
 DataProperty: abnt:d.documentar
 	SubPropertyOf: abnt:BIMData
@@ -6435,6 +6724,7 @@ DataProperty: abnt:folha
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: folha ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do documento. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "doc.100"@pt
 
 DataProperty: abnt:prancha
 	SubPropertyOf: abnt:d.documentar
@@ -6442,7 +6732,7 @@ DataProperty: abnt:prancha
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: prancha ( xsd:string )"@pt
 	Annotations: rdfs:label "É um documento tipo prancha."@pt
-	Annotations: rdfs:label "doc.100"@pt
+	Annotations: rdfs:label "doc.101"@pt
 
 DataProperty: abnt:planta.baixa
 	SubPropertyOf: abnt:d.documentar
@@ -6450,7 +6740,7 @@ DataProperty: abnt:planta.baixa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: planta.baixa ( xsd:string )"@pt
 	Annotations: rdfs:label "É um documento tipo planta baixa."@pt
-	Annotations: rdfs:label "doc.101"@pt
+	Annotations: rdfs:label "doc.102"@pt
 
 DataProperty: abnt:detalhe
 	SubPropertyOf: abnt:d.documentar
@@ -6458,7 +6748,7 @@ DataProperty: abnt:detalhe
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: detalhe ( xsd:string )"@pt
 	Annotations: rdfs:label "É um documento tipo detalhe."@pt
-	Annotations: rdfs:label "doc.102"@pt
+	Annotations: rdfs:label "doc.103"@pt
 
 DataProperty: abnt:corte
 	SubPropertyOf: abnt:d.documentar
@@ -6466,7 +6756,7 @@ DataProperty: abnt:corte
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: corte ( xsd:string )"@pt
 	Annotations: rdfs:label "É um documento tipo corte."@pt
-	Annotations: rdfs:label "doc.103"@pt
+	Annotations: rdfs:label "doc.104"@pt
 
 DataProperty: abnt:vista
 	SubPropertyOf: abnt:d.documentar
@@ -6474,7 +6764,7 @@ DataProperty: abnt:vista
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: vista ( xsd:string )"@pt
 	Annotations: rdfs:label "É um documento tipo vista."@pt
-	Annotations: rdfs:label "doc.104"@pt
+	Annotations: rdfs:label "doc.105"@pt
 
 DataProperty: abnt:d.tabular
 	SubPropertyOf: abnt:BIMData
