@@ -17,11 +17,12 @@
 <p align="justify">Foram separados os seguintes domínios ontológicos<br></b></p>
 
   * Pasta **ABNT** aloca ontologias com o sistema de classificação da construção **NBR 15.965** ordenado pelas suas Partes.
+  * Pasta **AMBI** aloca ontologias com conceitos espaciais e Fatos do **Instituto de Macromoléculas da UFRJ**.
   * Pasta **CROM** aloca ontologia con conceitos **cromáticos**. 
   * Pasta **CRON** aloca ontologia con conceitos **temporais**. 
-  * Pasta **CSUS** aloca ontologias com elementos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
+  * Pasta **CSUS** aloca ontologias com conceitos normativos e Fatos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
   * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com categorias Revit e classes IFC.
-  * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e fatos da cidade de Rio de janeiro.
+  * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e Fatos da cidade de **Rio de janeiro**.
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
