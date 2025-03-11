@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Programa_Funcional>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Modelo de informação IFC 4x3 e Categorias Revit 2024"@pt
-  Annotations: rdfs:label "DataHora: 10/03/2025 16:17:52"@pt
+  Annotations: rdfs:label "DataHora: 11/03/2025 8:49:02"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: P000001"@pt
   Annotations: rdfs:label "Cidade: Rio de Janeiro"@pt
@@ -11369,29 +11369,80 @@ Individual: bim:Programa.01
 
 Individual: bim:obj.espaço.01
 	Types: bim:OST_Rooms
+	Facts: bim:categoria.revit  "OST_Rooms"
 
 Individual: bim:obj.espaço.02
 	Types: bim:OST_Areas
+	Facts: bim:categoria.revit  "OST_Areas"
 
 Individual: bim:obj.espaço.03
 	Types: bim:OST_MEPSpaces
+	Facts: bim:categoria.revit  "OST_MEPSpaces"
 
 Individual: bim:obj.pavto
 	Types: bim:OST_Levels
+	Facts: bim:categoria.revit  "OST_Levels"
 
-Individual: bim:UFRJ.Centro.de.Tecnologia
+Individual: bim:Campus.01
 	Types: bim:Area
+	Facts: bim:nome  "Campus da Cidade Universitária da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "CIDUNI"
+
+Individual: bim:Campus.02
+	Types: bim:Area
+	Facts: bim:nome  "Campus de Macaé da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "MACAÉ"
+
+Individual: bim:Centro.de.Tecnologia
+	Types: bim:Area
+	Facts: bim:é.dentro.de  bim:Campus.01
 	Facts: bim:nome  "Centro de Tecnologia da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "CT"
 
-Individual: bim:UFRJ.Macromoléculas
+Individual: bim:Escola.Politécnica
 	Types: bim:Area
-	Facts: bim:é.dentro.de  bim:UFRJ.Centro.de.Tecnologia
-	Facts: bim:nome  "Instituto de Macromoléculas da UFRJ"
-
-Individual: bim:UFRJ.Escola.Politécnica
-	Types: bim:Area
-	Facts: bim:é.dentro.de  bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de  bim:Centro.de.Tecnologia
 	Facts: bim:nome  "Escola Politécnica da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "POLI"
+
+Individual: bim:Coppe
+	Types: bim:Area
+	Facts: bim:é.dentro.de  bim:Centro.de.Tecnologia
+	Facts: bim:nome  "Instituto Alberto Luiz Coimbra"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "COPPE"
+
+Individual: bim:Macromoléculas
+	Types: bim:Area
+	Facts: bim:é.dentro.de  bim:Centro.de.Tecnologia
+	Facts: bim:nome  "Instituto de Macromoléculas da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "IMA"
+
+Individual: bim:Escola.de.Química
+	Types: bim:Area
+	Facts: bim:é.dentro.de  bim:Centro.de.Tecnologia
+	Facts: bim:nome  "Escola de Química da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "EQ"
+
+Individual: bim:Instituto.de.Química
+	Types: bim:Area
+	Facts: bim:é.dentro.de  bim:Centro.de.Tecnologia
+	Facts: bim:nome  "Instituto de Química da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "IQ"
+
+Individual: bim:Instituto.de.Matemática
+	Types: bim:Area
+	Facts: bim:é.dentro.de  bim:Centro.de.Tecnologia
+	Facts: bim:nome  "Instituto de Matemática da UFRJ"
+	Facts: bim:órgão  "UFRJ"
+	Facts: bim:sigla  "IM"
 
 
 ##Fatos do Modelo BIM ---------------------------------------------------------
@@ -11413,6 +11464,7 @@ Individual: bim:Andar.0002
 	Facts: bim:nome                  "BJ_NT"
 	Facts: bim:cota                  -0.660
 	Facts: bim:é.abaixo.de           bim:Andar.0003
+	Facts: bim:é.acima.de            bim:Andar.0001
 
 Individual: bim:Andar.0003
 	Types: bim:Andar
@@ -11421,6 +11473,7 @@ Individual: bim:Andar.0003
 	Facts: bim:nome                  "BJ_1° Pavto"
 	Facts: bim:cota                  0.700
 	Facts: bim:é.abaixo.de           bim:Andar.0004
+	Facts: bim:é.acima.de            bim:Andar.0002
 
 Individual: bim:Andar.0004
 	Types: bim:Andar
@@ -11429,6 +11482,7 @@ Individual: bim:Andar.0004
 	Facts: bim:nome                  "BJ_Cobertura_Anexo"
 	Facts: bim:cota                  3.010
 	Facts: bim:é.abaixo.de           bim:Andar.0005
+	Facts: bim:é.acima.de            bim:Andar.0003
 
 Individual: bim:Andar.0005
 	Types: bim:Andar
@@ -11437,6 +11491,7 @@ Individual: bim:Andar.0005
 	Facts: bim:nome                  "BJ_2° Pavto"
 	Facts: bim:cota                  4.700
 	Facts: bim:é.abaixo.de           bim:Andar.0006
+	Facts: bim:é.acima.de            bim:Andar.0004
 
 Individual: bim:Andar.0006
 	Types: bim:Andar
@@ -11444,6 +11499,7 @@ Individual: bim:Andar.0006
 	Facts: bim:ide                   "370980"
 	Facts: bim:nome                  "BJ_Cobertura"
 	Facts: bim:cota                  8.700
+	Facts: bim:é.acima.de            bim:Andar.0005
 
 
 
@@ -11460,7 +11516,7 @@ Individual: bim:Ambi.0001
 	Facts: bim:longitude             -22.8618914619495
 	Facts: bim:latitude              -43.2274315895476
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0002
 	Types: bim:Ambiente
@@ -11475,7 +11531,7 @@ Individual: bim:Ambi.0002
 	Facts: bim:longitude             -22.8619981091468
 	Facts: bim:latitude              -43.2275206670688
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0003
 	Types: bim:Ambiente
@@ -11490,7 +11546,7 @@ Individual: bim:Ambi.0003
 	Facts: bim:longitude             -22.8619174471373
 	Facts: bim:latitude              -43.2273959736499
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0004
 	Types: bim:Ambiente
@@ -11505,7 +11561,7 @@ Individual: bim:Ambi.0004
 	Facts: bim:longitude             -22.8619169378475
 	Facts: bim:latitude              -43.2273952919688
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0005
 	Types: bim:Ambiente
@@ -11520,7 +11576,7 @@ Individual: bim:Ambi.0005
 	Facts: bim:longitude             -22.8621464259392
 	Facts: bim:latitude              -43.2277497037739
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0006
 	Types: bim:Ambiente
@@ -11535,7 +11591,7 @@ Individual: bim:Ambi.0006
 	Facts: bim:longitude             -22.861900362327
 	Facts: bim:latitude              -43.2274247668399
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0007
 	Types: bim:Ambiente
@@ -11550,7 +11606,7 @@ Individual: bim:Ambi.0007
 	Facts: bim:longitude             -22.86177926631
 	Facts: bim:latitude              -43.2275155839032
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0008
 	Types: bim:Ambiente
@@ -11565,7 +11621,7 @@ Individual: bim:Ambi.0008
 	Facts: bim:longitude             -22.8619212902187
 	Facts: bim:latitude              -43.2274009445761
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0009
 	Types: bim:Ambiente
@@ -11580,7 +11636,7 @@ Individual: bim:Ambi.0009
 	Facts: bim:longitude             -22.8618533712815
 	Facts: bim:latitude              -43.2274599885772
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0010
 	Types: bim:Ambiente
@@ -11595,7 +11651,7 @@ Individual: bim:Ambi.0010
 	Facts: bim:longitude             -22.8618349650118
 	Facts: bim:latitude              -43.2274738272211
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0011
 	Types: bim:Ambiente
@@ -11610,7 +11666,7 @@ Individual: bim:Ambi.0011
 	Facts: bim:longitude             -22.8618165245922
 	Facts: bim:latitude              -43.2274875776178
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0012
 	Types: bim:Ambiente
@@ -11625,7 +11681,7 @@ Individual: bim:Ambi.0012
 	Facts: bim:longitude             -22.8621466015363
 	Facts: bim:latitude              -43.2277502804841
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0013
 	Types: bim:Ambiente
@@ -11640,7 +11696,7 @@ Individual: bim:Ambi.0013
 	Facts: bim:longitude             -22.8618977463643
 	Facts: bim:latitude              -43.2274264434213
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0014
 	Types: bim:Ambiente
@@ -11655,7 +11711,7 @@ Individual: bim:Ambi.0014
 	Facts: bim:longitude             -22.8617783302785
 	Facts: bim:latitude              -43.2275159330136
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0015
 	Types: bim:Ambiente
@@ -11670,7 +11726,7 @@ Individual: bim:Ambi.0015
 	Facts: bim:longitude             -22.8620182211429
 	Facts: bim:latitude              -43.2275515196838
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0016
 	Types: bim:Ambiente
@@ -11685,7 +11741,7 @@ Individual: bim:Ambi.0016
 	Facts: bim:longitude             -22.8617451062893
 	Facts: bim:latitude              -43.2275255288484
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0017
 	Types: bim:Ambiente
@@ -11700,7 +11756,7 @@ Individual: bim:Ambi.0017
 	Facts: bim:longitude             -22.8618730109042
 	Facts: bim:latitude              -43.2274450688498
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0018
 	Types: bim:Ambiente
@@ -11715,7 +11771,7 @@ Individual: bim:Ambi.0018
 	Facts: bim:longitude             -22.8620139583857
 	Facts: bim:latitude              -43.2275449177749
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0019
 	Types: bim:Ambiente
@@ -11730,7 +11786,7 @@ Individual: bim:Ambi.0019
 	Facts: bim:longitude             -22.8620019813674
 	Facts: bim:latitude              -43.2275266641346
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0020
 	Types: bim:Ambiente
@@ -11745,7 +11801,7 @@ Individual: bim:Ambi.0020
 	Facts: bim:longitude             -22.8620911610324
 	Facts: bim:latitude              -43.2276644064831
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0021
 	Types: bim:Ambiente
@@ -11760,7 +11816,7 @@ Individual: bim:Ambi.0021
 	Facts: bim:longitude             -22.8620172324664
 	Facts: bim:latitude              -43.2275507216492
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0022
 	Types: bim:Ambiente
@@ -11775,7 +11831,7 @@ Individual: bim:Ambi.0022
 	Facts: bim:longitude             -22.8620450622097
 	Facts: bim:latitude              -43.2275930348958
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0023
 	Types: bim:Ambiente
@@ -11790,7 +11846,7 @@ Individual: bim:Ambi.0023
 	Facts: bim:longitude             -22.8620784666044
 	Facts: bim:latitude              -43.2276444973945
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0024
 	Types: bim:Ambiente
@@ -11805,7 +11861,7 @@ Individual: bim:Ambi.0024
 	Facts: bim:longitude             -22.8619735096751
 	Facts: bim:latitude              -43.2278791673882
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0025
 	Types: bim:Ambiente
@@ -11820,7 +11876,7 @@ Individual: bim:Ambi.0025
 	Facts: bim:longitude             -22.8621416480716
 	Facts: bim:latitude              -43.2277420368939
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0026
 	Types: bim:Ambiente
@@ -11835,7 +11891,7 @@ Individual: bim:Ambi.0026
 	Facts: bim:longitude             -22.8619876956917
 	Facts: bim:latitude              -43.2275049153794
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0027
 	Types: bim:Ambiente
@@ -11850,7 +11906,7 @@ Individual: bim:Ambi.0027
 	Facts: bim:longitude             -22.862128408694
 	Facts: bim:latitude              -43.2277221043768
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0028
 	Types: bim:Ambiente
@@ -11865,7 +11921,7 @@ Individual: bim:Ambi.0028
 	Facts: bim:longitude             -22.86206630909
 	Facts: bim:latitude              -43.2276259171806
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0029
 	Types: bim:Ambiente
@@ -11880,7 +11936,7 @@ Individual: bim:Ambi.0029
 	Facts: bim:longitude             -22.8620505388613
 	Facts: bim:latitude              -43.2276022628097
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0030
 	Types: bim:Ambiente
@@ -11895,7 +11951,7 @@ Individual: bim:Ambi.0030
 	Facts: bim:longitude             -22.8619471310294
 	Facts: bim:latitude              -43.2274424387149
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0031
 	Types: bim:Ambiente
@@ -11910,7 +11966,7 @@ Individual: bim:Ambi.0031
 	Facts: bim:longitude             -22.8621282037586
 	Facts: bim:latitude              -43.2277214822293
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0032
 	Types: bim:Ambiente
@@ -11925,7 +11981,7 @@ Individual: bim:Ambi.0032
 	Facts: bim:longitude             -22.8619996389115
 	Facts: bim:latitude              -43.2275217097525
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0033
 	Types: bim:Ambiente
@@ -11940,7 +11996,7 @@ Individual: bim:Ambi.0033
 	Facts: bim:longitude             -22.861934471023
 	Facts: bim:latitude              -43.2274231176422
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0034
 	Types: bim:Ambiente
@@ -11955,7 +12011,7 @@ Individual: bim:Ambi.0034
 	Facts: bim:longitude             -22.8621022272454
 	Facts: bim:latitude              -43.2276821169753
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0035
 	Types: bim:Ambiente
@@ -11970,7 +12026,7 @@ Individual: bim:Ambi.0035
 	Facts: bim:longitude             -22.8619736118896
 	Facts: bim:latitude              -43.2274828787317
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0036
 	Types: bim:Ambiente
@@ -11985,7 +12041,7 @@ Individual: bim:Ambi.0036
 	Facts: bim:longitude             -22.8620899127456
 	Facts: bim:latitude              -43.2276627179548
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0037
 	Types: bim:Ambiente
@@ -12000,7 +12056,7 @@ Individual: bim:Ambi.0037
 	Facts: bim:longitude             -22.8621156399391
 	Facts: bim:latitude              -43.2277027263253
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0038
 	Types: bim:Ambiente
@@ -12015,7 +12071,7 @@ Individual: bim:Ambi.0038
 	Facts: bim:longitude             -22.8620761167383
 	Facts: bim:latitude              -43.2276421689654
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0039
 	Types: bim:Ambiente
@@ -12030,7 +12086,7 @@ Individual: bim:Ambi.0039
 	Facts: bim:longitude             -22.8619869283143
 	Facts: bim:latitude              -43.227502596261
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0040
 	Types: bim:Ambiente
@@ -12045,7 +12101,7 @@ Individual: bim:Ambi.0040
 	Facts: bim:longitude             -22.8620125651861
 	Facts: bim:latitude              -43.2275417292036
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0041
 	Types: bim:Ambiente
@@ -12060,7 +12116,7 @@ Individual: bim:Ambi.0041
 	Facts: bim:longitude             -22.8621415157536
 	Facts: bim:latitude              -43.227742310901
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0042
 	Types: bim:Ambiente
@@ -12075,7 +12131,7 @@ Individual: bim:Ambi.0042
 	Facts: bim:longitude             -22.8619224862111
 	Facts: bim:latitude              -43.2274028420144
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0043
 	Types: bim:Ambiente
@@ -12090,7 +12146,7 @@ Individual: bim:Ambi.0043
 	Facts: bim:longitude             -22.8619608692687
 	Facts: bim:latitude              -43.2274622375864
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0044
 	Types: bim:Ambiente
@@ -12105,7 +12161,7 @@ Individual: bim:Ambi.0044
 	Facts: bim:longitude             -22.8620646984134
 	Facts: bim:latitude              -43.2276231494066
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0045
 	Types: bim:Ambiente
@@ -12120,7 +12176,7 @@ Individual: bim:Ambi.0045
 	Facts: bim:longitude             -22.8619748516335
 	Facts: bim:latitude              -43.227814990002
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0046
 	Types: bim:Ambiente
@@ -12135,7 +12191,7 @@ Individual: bim:Ambi.0046
 	Facts: bim:longitude             -22.8620911340446
 	Facts: bim:latitude              -43.2277277394095
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0047
 	Types: bim:Ambiente
@@ -12150,7 +12206,7 @@ Individual: bim:Ambi.0047
 	Facts: bim:longitude             -22.861974355957
 	Facts: bim:latitude              -43.2274840675754
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0048
 	Types: bim:Ambiente
@@ -12165,7 +12221,7 @@ Individual: bim:Ambi.0048
 	Facts: bim:longitude             -22.8619433161264
 	Facts: bim:latitude              -43.2278323887313
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0049
 	Types: bim:Ambiente
@@ -12180,7 +12236,7 @@ Individual: bim:Ambi.0049
 	Facts: bim:longitude             -22.8619941156619
 	Facts: bim:latitude              -43.2275141061474
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0050
 	Types: bim:Ambiente
@@ -12195,7 +12251,7 @@ Individual: bim:Ambi.0050
 	Facts: bim:longitude             -22.8619250727464
 	Facts: bim:latitude              -43.2274077837145
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0051
 	Types: bim:Ambiente
@@ -12210,7 +12266,7 @@ Individual: bim:Ambi.0051
 	Facts: bim:longitude             -22.8617886856041
 	Facts: bim:latitude              -43.2275917809588
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0052
 	Types: bim:Ambiente
@@ -12225,7 +12281,7 @@ Individual: bim:Ambi.0052
 	Facts: bim:longitude             -22.8620326218052
 	Facts: bim:latitude              -43.2275741658227
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0053
 	Types: bim:Ambiente
@@ -12240,7 +12296,7 @@ Individual: bim:Ambi.0053
 	Facts: bim:longitude             -22.8617928176802
 	Facts: bim:latitude              -43.2275053953979
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0054
 	Types: bim:Ambiente
@@ -12255,7 +12311,7 @@ Individual: bim:Ambi.0054
 	Facts: bim:longitude             -22.8618016655324
 	Facts: bim:latitude              -43.2276126398683
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0055
 	Types: bim:Ambiente
@@ -12270,7 +12326,7 @@ Individual: bim:Ambi.0055
 	Facts: bim:longitude             -22.8619681134068
 	Facts: bim:latitude              -43.2274734593688
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0056
 	Types: bim:Ambiente
@@ -12285,7 +12341,7 @@ Individual: bim:Ambi.0056
 	Facts: bim:longitude             -22.8620079605313
 	Facts: bim:latitude              -43.2275359243106
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0057
 	Types: bim:Ambiente
@@ -12300,7 +12356,7 @@ Individual: bim:Ambi.0057
 	Facts: bim:longitude             -22.8619664440332
 	Facts: bim:latitude              -43.2274723495136
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0058
 	Types: bim:Ambiente
@@ -12315,7 +12371,7 @@ Individual: bim:Ambi.0058
 	Facts: bim:longitude             -22.8620954865449
 	Facts: bim:latitude              -43.2276713503479
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0059
 	Types: bim:Ambiente
@@ -12330,7 +12386,7 @@ Individual: bim:Ambi.0059
 	Facts: bim:longitude             -22.8619929075823
 	Facts: bim:latitude              -43.2275136206286
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0060
 	Types: bim:Ambiente
@@ -12345,7 +12401,7 @@ Individual: bim:Ambi.0060
 	Facts: bim:longitude             -22.8621213407348
 	Facts: bim:latitude              -43.2277117189103
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0061
 	Types: bim:Ambiente
@@ -12360,7 +12416,7 @@ Individual: bim:Ambi.0061
 	Facts: bim:longitude             -22.8619407976172
 	Facts: bim:latitude              -43.2274320579939
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0062
 	Types: bim:Ambiente
@@ -12375,7 +12431,7 @@ Individual: bim:Ambi.0062
 	Facts: bim:longitude             -22.8620710146101
 	Facts: bim:latitude              -43.2276324342506
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0063
 	Types: bim:Ambiente
@@ -12390,7 +12446,7 @@ Individual: bim:Ambi.0063
 	Facts: bim:longitude             -22.8617494121048
 	Facts: bim:latitude              -43.2275321974301
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0064
 	Types: bim:Ambiente
@@ -12405,7 +12461,7 @@ Individual: bim:Ambi.0064
 	Facts: bim:longitude             -22.8619422679986
 	Facts: bim:latitude              -43.2274338076332
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0065
 	Types: bim:Ambiente
@@ -12420,7 +12476,7 @@ Individual: bim:Ambi.0065
 	Facts: bim:longitude             -22.861930528277
 	Facts: bim:latitude              -43.2278130185039
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0066
 	Types: bim:Ambiente
@@ -12435,7 +12491,7 @@ Individual: bim:Ambi.0066
 	Facts: bim:longitude             -22.8620309166711
 	Facts: bim:latitude              -43.2275717544759
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0067
 	Types: bim:Ambiente
@@ -12450,7 +12506,7 @@ Individual: bim:Ambi.0067
 	Facts: bim:longitude             -22.8617538602587
 	Facts: bim:latitude              -43.2275386599371
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0068
 	Types: bim:Ambiente
@@ -12465,7 +12521,7 @@ Individual: bim:Ambi.0068
 	Facts: bim:longitude             -22.8619560640316
 	Facts: bim:latitude              -43.2278516971022
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0069
 	Types: bim:Ambiente
@@ -12480,7 +12536,7 @@ Individual: bim:Ambi.0069
 	Facts: bim:longitude             -22.8621221466411
 	Facts: bim:latitude              -43.2277132639339
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0070
 	Types: bim:Ambiente
@@ -12495,7 +12551,7 @@ Individual: bim:Ambi.0070
 	Facts: bim:longitude             -22.8620725499776
 	Facts: bim:latitude              -43.2276350853906
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0071
 	Types: bim:Ambiente
@@ -12510,7 +12566,7 @@ Individual: bim:Ambi.0071
 	Facts: bim:longitude             -22.8620966027795
 	Facts: bim:latitude              -43.227673829014
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0072
 	Types: bim:Ambiente
@@ -12525,7 +12581,7 @@ Individual: bim:Ambi.0072
 	Facts: bim:longitude             -22.8619698042037
 	Facts: bim:latitude              -43.2278725422517
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0073
 	Types: bim:Ambiente
@@ -12540,7 +12596,7 @@ Individual: bim:Ambi.0073
 	Facts: bim:longitude             -22.8620847172443
 	Facts: bim:latitude              -43.2276541780376
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0074
 	Types: bim:Ambiente
@@ -12555,7 +12611,7 @@ Individual: bim:Ambi.0074
 	Facts: bim:longitude             -22.8619825486297
 	Facts: bim:latitude              -43.2274953812198
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0075
 	Types: bim:Ambiente
@@ -12570,7 +12626,7 @@ Individual: bim:Ambi.0075
 	Facts: bim:longitude             -22.8620591526335
 	Facts: bim:latitude              -43.2276148456056
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0076
 	Types: bim:Ambiente
@@ -12585,7 +12641,7 @@ Individual: bim:Ambi.0076
 	Facts: bim:longitude             -22.8621046964765
 	Facts: bim:latitude              -43.2276859880906
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0077
 	Types: bim:Ambiente
@@ -12600,7 +12656,7 @@ Individual: bim:Ambi.0077
 	Facts: bim:longitude             -22.8620408945949
 	Facts: bim:latitude              -43.2275864206461
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0078
 	Types: bim:Ambiente
@@ -12615,7 +12671,7 @@ Individual: bim:Ambi.0078
 	Facts: bim:longitude             -22.8619289688527
 	Facts: bim:latitude              -43.2274128486082
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0079
 	Types: bim:Ambiente
@@ -12630,7 +12686,7 @@ Individual: bim:Ambi.0079
 	Facts: bim:longitude             -22.8620070833022
 	Facts: bim:latitude              -43.2275330251477
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0080
 	Types: bim:Ambiente
@@ -12645,7 +12701,7 @@ Individual: bim:Ambi.0080
 	Facts: bim:longitude             -22.8620245544728
 	Facts: bim:latitude              -43.2275610062078
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0081
 	Types: bim:Ambiente
@@ -12660,7 +12716,7 @@ Individual: bim:Ambi.0081
 	Facts: bim:longitude             -22.8620834760833
 	Facts: bim:latitude              -43.2276516454899
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0082
 	Types: bim:Ambiente
@@ -12675,7 +12731,7 @@ Individual: bim:Ambi.0082
 	Facts: bim:longitude             -22.8621089937182
 	Facts: bim:latitude              -43.2276927519563
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0083
 	Types: bim:Ambiente
@@ -12690,7 +12746,7 @@ Individual: bim:Ambi.0083
 	Facts: bim:longitude             -22.8620575760843
 	Facts: bim:latitude              -43.2276124195517
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0084
 	Types: bim:Ambiente
@@ -12705,7 +12761,7 @@ Individual: bim:Ambi.0084
 	Facts: bim:longitude             -22.8619548310329
 	Facts: bim:latitude              -43.2274533785497
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0085
 	Types: bim:Ambiente
@@ -12720,7 +12776,7 @@ Individual: bim:Ambi.0085
 	Facts: bim:longitude             -22.8619811741638
 	Facts: bim:latitude              -43.2274928986174
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0086
 	Types: bim:Ambiente
@@ -12735,7 +12791,7 @@ Individual: bim:Ambi.0086
 	Facts: bim:longitude             -22.862038949508
 	Facts: bim:latitude              -43.2275826852487
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0087
 	Types: bim:Ambiente
@@ -12750,7 +12806,7 @@ Individual: bim:Ambi.0087
 	Facts: bim:longitude             -22.8621348861039
 	Facts: bim:latitude              -43.2277325451107
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0088
 	Types: bim:Ambiente
@@ -12765,7 +12821,7 @@ Individual: bim:Ambi.0088
 	Facts: bim:longitude             -22.8619672667664
 	Facts: bim:latitude              -43.2278077811926
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0089
 	Types: bim:Ambiente
@@ -12780,7 +12836,7 @@ Individual: bim:Ambi.0089
 	Facts: bim:longitude             -22.8618082024285
 	Facts: bim:latitude              -43.2274936719558
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0090
 	Types: bim:Ambiente
@@ -12795,7 +12851,7 @@ Individual: bim:Ambi.0090
 	Facts: bim:longitude             -22.8620246749103
 	Facts: bim:latitude              -43.2275617159588
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0091
 	Types: bim:Ambiente
@@ -12810,7 +12866,7 @@ Individual: bim:Ambi.0091
 	Facts: bim:longitude             -22.8618229922074
 	Facts: bim:latitude              -43.2276453834149
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0092
 	Types: bim:Ambiente
@@ -12825,7 +12881,7 @@ Individual: bim:Ambi.0092
 	Facts: bim:longitude             -22.8618616118128
 	Facts: bim:latitude              -43.2277061435752
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0093
 	Types: bim:Ambiente
@@ -12840,7 +12896,7 @@ Individual: bim:Ambi.0093
 	Facts: bim:longitude             -22.8619495063857
 	Facts: bim:latitude              -43.2278409651508
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0094
 	Types: bim:Ambiente
@@ -12855,7 +12911,7 @@ Individual: bim:Ambi.0094
 	Facts: bim:longitude             -22.8619092868468
 	Facts: bim:latitude              -43.2277786752827
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0095
 	Types: bim:Ambiente
@@ -12870,7 +12926,7 @@ Individual: bim:Ambi.0095
 	Facts: bim:longitude             -22.8621131893602
 	Facts: bim:latitude              -43.2276992884572
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0096
 	Types: bim:Ambiente
@@ -12885,7 +12941,7 @@ Individual: bim:Ambi.0096
 	Facts: bim:longitude             -22.8618058691693
 	Facts: bim:latitude              -43.2276189427653
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0097
 	Types: bim:Ambiente
@@ -12900,7 +12956,7 @@ Individual: bim:Ambi.0097
 	Facts: bim:longitude             -22.861949611554
 	Facts: bim:latitude              -43.227840834016
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0098
 	Types: bim:Ambiente
@@ -12915,7 +12971,7 @@ Individual: bim:Ambi.0098
 	Facts: bim:longitude             -22.8618714888944
 	Facts: bim:latitude              -43.227721000612
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0099
 	Types: bim:Ambiente
@@ -12930,7 +12986,7 @@ Individual: bim:Ambi.0099
 	Facts: bim:longitude             -22.8618638826997
 	Facts: bim:latitude              -43.2277092205658
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0100
 	Types: bim:Ambiente
@@ -12945,7 +13001,7 @@ Individual: bim:Ambi.0100
 	Facts: bim:longitude             -22.8619628752641
 	Facts: bim:latitude              -43.2278625078445
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0101
 	Types: bim:Ambiente
@@ -12960,7 +13016,7 @@ Individual: bim:Ambi.0101
 	Facts: bim:longitude             -22.8619378561539
 	Facts: bim:latitude              -43.227823556401
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0102
 	Types: bim:Ambiente
@@ -12975,7 +13031,7 @@ Individual: bim:Ambi.0102
 	Facts: bim:longitude             -22.8619576364592
 	Facts: bim:latitude              -43.2278533296692
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0103
 	Types: bim:Ambiente
@@ -12990,7 +13046,7 @@ Individual: bim:Ambi.0103
 	Facts: bim:longitude             -22.8617994752242
 	Facts: bim:latitude              -43.2276092211932
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0104
 	Types: bim:Ambiente
@@ -13005,7 +13061,7 @@ Individual: bim:Ambi.0104
 	Facts: bim:longitude             -22.8619304548003
 	Facts: bim:latitude              -43.227813371833
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0105
 	Types: bim:Ambiente
@@ -13020,7 +13076,7 @@ Individual: bim:Ambi.0105
 	Facts: bim:longitude             -22.8619019414629
 	Facts: bim:latitude              -43.2277678746197
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0106
 	Types: bim:Ambiente
@@ -13035,7 +13091,7 @@ Individual: bim:Ambi.0106
 	Facts: bim:longitude             -22.8618697765797
 	Facts: bim:latitude              -43.2277178891906
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0107
 	Types: bim:Ambiente
@@ -13050,7 +13106,7 @@ Individual: bim:Ambi.0107
 	Facts: bim:longitude             -22.8617614726995
 	Facts: bim:latitude              -43.2275483530401
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0108
 	Types: bim:Ambiente
@@ -13065,7 +13121,7 @@ Individual: bim:Ambi.0108
 	Facts: bim:longitude             -22.8620496632094
 	Facts: bim:latitude              -43.2276011770054
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0109
 	Types: bim:Ambiente
@@ -13080,7 +13136,7 @@ Individual: bim:Ambi.0109
 	Facts: bim:longitude             -22.861820489795
 	Facts: bim:latitude              -43.2277360678868
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0110
 	Types: bim:Ambiente
@@ -13095,7 +13151,7 @@ Individual: bim:Ambi.0110
 	Facts: bim:longitude             -22.8618795104527
 	Facts: bim:latitude              -43.2277324293009
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0111
 	Types: bim:Ambiente
@@ -13110,7 +13166,7 @@ Individual: bim:Ambi.0111
 	Facts: bim:longitude             -22.8617949874578
 	Facts: bim:latitude              -43.2276034318167
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0112
 	Types: bim:Ambiente
@@ -13125,7 +13181,7 @@ Individual: bim:Ambi.0112
 	Facts: bim:longitude             -22.8619020627248
 	Facts: bim:latitude              -43.2277699059646
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0113
 	Types: bim:Ambiente
@@ -13140,7 +13196,7 @@ Individual: bim:Ambi.0113
 	Facts: bim:longitude             -22.8619650743447
 	Facts: bim:latitude              -43.2278078916915
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0114
 	Types: bim:Ambiente
@@ -13155,7 +13211,7 @@ Individual: bim:Ambi.0114
 	Facts: bim:longitude             -22.8618558291838
 	Facts: bim:latitude              -43.2274579729613
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0115
 	Types: bim:Ambiente
@@ -13170,7 +13226,7 @@ Individual: bim:Ambi.0115
 	Facts: bim:longitude             -22.8618163418773
 	Facts: bim:latitude              -43.2276347273669
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0116
 	Types: bim:Ambiente
@@ -13185,7 +13241,7 @@ Individual: bim:Ambi.0116
 	Facts: bim:longitude             -22.861965927506
 	Facts: bim:latitude              -43.2278681369791
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0117
 	Types: bim:Ambiente
@@ -13200,7 +13256,7 @@ Individual: bim:Ambi.0117
 	Facts: bim:longitude             -22.8620925656099
 	Facts: bim:latitude              -43.2277260664401
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0118
 	Types: bim:Ambiente
@@ -13215,7 +13271,7 @@ Individual: bim:Ambi.0118
 	Facts: bim:longitude             -22.8619609245079
 	Facts: bim:latitude              -43.2277971137562
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0119
 	Types: bim:Ambiente
@@ -13230,7 +13286,7 @@ Individual: bim:Ambi.0119
 	Facts: bim:longitude             -22.8619607636968
 	Facts: bim:latitude              -43.2277977651996
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0120
 	Types: bim:Ambiente
@@ -13245,7 +13301,7 @@ Individual: bim:Ambi.0120
 	Facts: bim:longitude             -22.8619451306317
 	Facts: bim:latitude              -43.2277720156564
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0121
 	Types: bim:Ambiente
@@ -13260,7 +13316,7 @@ Individual: bim:Ambi.0121
 	Facts: bim:longitude             -22.8620654765773
 	Facts: bim:latitude              -43.2276818543287
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0122
 	Types: bim:Ambiente
@@ -13275,7 +13331,7 @@ Individual: bim:Ambi.0122
 	Facts: bim:longitude             -22.8619405637423
 	Facts: bim:latitude              -43.2278284199984
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0123
 	Types: bim:Ambiente
@@ -13290,7 +13346,7 @@ Individual: bim:Ambi.0123
 	Facts: bim:longitude             -22.86195237718
 	Facts: bim:latitude              -43.2277847209987
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0124
 	Types: bim:Ambiente
@@ -13305,7 +13361,7 @@ Individual: bim:Ambi.0124
 	Facts: bim:longitude             -22.861852844191
 	Facts: bim:latitude              -43.2276921298671
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0125
 	Types: bim:Ambiente
@@ -13320,7 +13376,7 @@ Individual: bim:Ambi.0125
 	Facts: bim:longitude             -22.8617986450449
 	Facts: bim:latitude              -43.2275453761106
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0126
 	Types: bim:Ambiente
@@ -13335,7 +13391,7 @@ Individual: bim:Ambi.0126
 	Facts: bim:longitude             -22.861934730038
 	Facts: bim:latitude              -43.2277326462639
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0127
 	Types: bim:Ambiente
@@ -13350,7 +13406,7 @@ Individual: bim:Ambi.0127
 	Facts: bim:longitude             -22.8618380517617
 	Facts: bim:latitude              -43.2276705249379
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0128
 	Types: bim:Ambiente
@@ -13365,7 +13421,7 @@ Individual: bim:Ambi.0128
 	Facts: bim:longitude             -22.8617514172852
 	Facts: bim:latitude              -43.2275333708631
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0129
 	Types: bim:Ambiente
@@ -13380,7 +13436,7 @@ Individual: bim:Ambi.0129
 	Facts: bim:longitude             -22.8619557390514
 	Facts: bim:latitude              -43.2274548587953
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0130
 	Types: bim:Ambiente
@@ -13395,7 +13451,7 @@ Individual: bim:Ambi.0130
 	Facts: bim:longitude             -22.8619201508773
 	Facts: bim:latitude              -43.2277963707312
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0131
 	Types: bim:Ambiente
@@ -13410,7 +13466,7 @@ Individual: bim:Ambi.0131
 	Facts: bim:longitude             -22.8619912421064
 	Facts: bim:latitude              -43.2274003059572
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0132
 	Types: bim:Ambiente
@@ -13425,7 +13481,7 @@ Individual: bim:Ambi.0132
 	Facts: bim:longitude             -22.8618315054142
 	Facts: bim:latitude              -43.2274826724137
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0133
 	Types: bim:Ambiente
@@ -13440,7 +13496,7 @@ Individual: bim:Ambi.0133
 	Facts: bim:longitude             -22.8618912538786
 	Facts: bim:latitude              -43.2277528094535
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0134
 	Types: bim:Ambiente
@@ -13455,7 +13511,7 @@ Individual: bim:Ambi.0134
 	Facts: bim:longitude             -22.861811679968
 	Facts: bim:latitude              -43.2276277714506
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0135
 	Types: bim:Ambiente
@@ -13470,7 +13526,7 @@ Individual: bim:Ambi.0135
 	Facts: bim:longitude             -22.8621374273433
 	Facts: bim:latitude              -43.2278377771359
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0136
 	Types: bim:Ambiente
@@ -13485,7 +13541,7 @@ Individual: bim:Ambi.0136
 	Facts: bim:longitude             -22.8618369340974
 	Facts: bim:latitude              -43.2276666469493
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0137
 	Types: bim:Ambiente
@@ -13500,7 +13556,7 @@ Individual: bim:Ambi.0137
 	Facts: bim:longitude             -22.8618703714501
 	Facts: bim:latitude              -43.2277387815504
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0138
 	Types: bim:Ambiente
@@ -13515,7 +13571,7 @@ Individual: bim:Ambi.0138
 	Facts: bim:longitude             -22.861917442238
 	Facts: bim:latitude              -43.2277932305905
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0139
 	Types: bim:Ambiente
@@ -13530,7 +13586,7 @@ Individual: bim:Ambi.0139
 	Facts: bim:longitude             -22.8617731006422
 	Facts: bim:latitude              -43.2275692147974
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0140
 	Types: bim:Ambiente
@@ -13545,7 +13601,7 @@ Individual: bim:Ambi.0140
 	Facts: bim:longitude             -22.8617863981378
 	Facts: bim:latitude              -43.2275288196913
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0141
 	Types: bim:Ambiente
@@ -13560,7 +13616,7 @@ Individual: bim:Ambi.0141
 	Facts: bim:longitude             -22.8617388289363
 	Facts: bim:latitude              -43.2275915651961
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0142
 	Types: bim:Ambiente
@@ -13575,7 +13631,7 @@ Individual: bim:Ambi.0142
 	Facts: bim:longitude             -22.8619455395282
 	Facts: bim:latitude              -43.2277771484987
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0143
 	Types: bim:Ambiente
@@ -13590,7 +13646,7 @@ Individual: bim:Ambi.0143
 	Facts: bim:longitude             -22.8616851325581
 	Facts: bim:latitude              -43.2275517182041
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0144
 	Types: bim:Ambiente
@@ -13605,7 +13661,7 @@ Individual: bim:Ambi.0144
 	Facts: bim:longitude             -22.8617024795048
 	Facts: bim:latitude              -43.2275382261294
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0145
 	Types: bim:Ambiente
@@ -13620,7 +13676,7 @@ Individual: bim:Ambi.0145
 	Facts: bim:longitude             -22.8619839535873
 	Facts: bim:latitude              -43.2277184852429
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0146
 	Types: bim:Ambiente
@@ -13635,7 +13691,7 @@ Individual: bim:Ambi.0146
 	Facts: bim:longitude             -22.8618865717704
 	Facts: bim:latitude              -43.2277439303336
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0147
 	Types: bim:Ambiente
@@ -13650,7 +13706,7 @@ Individual: bim:Ambi.0147
 	Facts: bim:longitude             -22.8617824138092
 	Facts: bim:latitude              -43.2275828449786
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0148
 	Types: bim:Ambiente
@@ -13665,7 +13721,7 @@ Individual: bim:Ambi.0148
 	Facts: bim:longitude             -22.8618589901758
 	Facts: bim:latitude              -43.2277470445056
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0149
 	Types: bim:Ambiente
@@ -13680,7 +13736,7 @@ Individual: bim:Ambi.0149
 	Facts: bim:longitude             -22.8619949513244
 	Facts: bim:latitude              -43.22744564836
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0150
 	Types: bim:Ambiente
@@ -13695,7 +13751,7 @@ Individual: bim:Ambi.0150
 	Facts: bim:longitude             -22.8619318071711
 	Facts: bim:latitude              -43.2278401143111
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0151
 	Types: bim:Ambiente
@@ -13710,7 +13766,7 @@ Individual: bim:Ambi.0151
 	Facts: bim:longitude             -22.8617640558597
 	Facts: bim:latitude              -43.2276929620335
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0152
 	Types: bim:Ambiente
@@ -13725,7 +13781,7 @@ Individual: bim:Ambi.0152
 	Facts: bim:longitude             -22.8620745098823
 	Facts: bim:latitude              -43.2277006155638
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0153
 	Types: bim:Ambiente
@@ -13740,7 +13796,7 @@ Individual: bim:Ambi.0153
 	Facts: bim:longitude             -22.8618919960316
 	Facts: bim:latitude              -43.2278998232393
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0154
 	Types: bim:Ambiente
@@ -13755,7 +13811,7 @@ Individual: bim:Ambi.0154
 	Facts: bim:longitude             -22.8619303065959
 	Facts: bim:latitude              -43.2277494457306
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0155
 	Types: bim:Ambiente
@@ -13770,7 +13826,7 @@ Individual: bim:Ambi.0155
 	Facts: bim:longitude             -22.8620803317874
 	Facts: bim:latitude              -43.2277055207109
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0156
 	Types: bim:Ambiente
@@ -13785,7 +13841,7 @@ Individual: bim:Ambi.0156
 	Facts: bim:longitude             -22.8619311881481
 	Facts: bim:latitude              -43.2277519045779
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0157
 	Types: bim:Ambiente
@@ -13800,7 +13856,7 @@ Individual: bim:Ambi.0157
 	Facts: bim:longitude             -22.8620507363667
 	Facts: bim:latitude              -43.2276590255073
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0158
 	Types: bim:Ambiente
@@ -13815,7 +13871,7 @@ Individual: bim:Ambi.0158
 	Facts: bim:longitude             -22.8617651698901
 	Facts: bim:latitude              -43.2276965140116
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0159
 	Types: bim:Ambiente
@@ -13830,7 +13886,7 @@ Individual: bim:Ambi.0159
 	Facts: bim:longitude             -22.8620407813808
 	Facts: bim:latitude              -43.2274893453944
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0160
 	Types: bim:Ambiente
@@ -13845,7 +13901,7 @@ Individual: bim:Ambi.0160
 	Facts: bim:longitude             -22.8620248289883
 	Facts: bim:latitude              -43.2275287315877
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0161
 	Types: bim:Ambiente
@@ -13860,7 +13916,7 @@ Individual: bim:Ambi.0161
 	Facts: bim:longitude             -22.8619111120032
 	Facts: bim:latitude              -43.2274435986394
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0162
 	Types: bim:Ambiente
@@ -13875,7 +13931,7 @@ Individual: bim:Ambi.0162
 	Facts: bim:longitude             -22.8620304429472
 	Facts: bim:latitude              -43.2278275767092
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0163
 	Types: bim:Ambiente
@@ -13890,7 +13946,7 @@ Individual: bim:Ambi.0163
 	Facts: bim:longitude             -22.8620145021319
 	Facts: bim:latitude              -43.2278398759488
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0164
 	Types: bim:Ambiente
@@ -13905,7 +13961,7 @@ Individual: bim:Ambi.0164
 	Facts: bim:longitude             -22.8620365589081
 	Facts: bim:latitude              -43.2274376165451
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0165
 	Types: bim:Ambiente
@@ -13920,7 +13976,7 @@ Individual: bim:Ambi.0165
 	Facts: bim:longitude             -22.8618686583004
 	Facts: bim:latitude              -43.2278573095901
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0166
 	Types: bim:Ambiente
@@ -13935,7 +13991,7 @@ Individual: bim:Ambi.0166
 	Facts: bim:longitude             -22.8618853476528
 	Facts: bim:latitude              -43.2278460196923
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0167
 	Types: bim:Ambiente
@@ -13950,7 +14006,7 @@ Individual: bim:Ambi.0167
 	Facts: bim:longitude             -22.8618316624974
 	Facts: bim:latitude              -43.2278063526812
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0168
 	Types: bim:Ambiente
@@ -13965,7 +14021,7 @@ Individual: bim:Ambi.0168
 	Facts: bim:longitude             -22.8620470114282
 	Facts: bim:latitude              -43.227812189956
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0169
 	Types: bim:Ambiente
@@ -13980,7 +14036,7 @@ Individual: bim:Ambi.0169
 	Facts: bim:longitude             -22.8619835580844
 	Facts: bim:latitude              -43.2273576004451
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0170
 	Types: bim:Ambiente
@@ -13995,7 +14051,7 @@ Individual: bim:Ambi.0170
 	Facts: bim:longitude             -22.8620603219371
 	Facts: bim:latitude              -43.2274759989761
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0171
 	Types: bim:Ambiente
@@ -14010,7 +14066,7 @@ Individual: bim:Ambi.0171
 	Facts: bim:longitude             -22.8620084792579
 	Facts: bim:latitude              -43.2273969240531
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0172
 	Types: bim:Ambiente
@@ -14025,7 +14081,7 @@ Individual: bim:Ambi.0172
 	Facts: bim:longitude             -22.8618790878811
 	Facts: bim:latitude              -43.2277625251244
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0173
 	Types: bim:Ambiente
@@ -14040,7 +14096,7 @@ Individual: bim:Ambi.0173
 	Facts: bim:longitude             -22.8619958100195
 	Facts: bim:latitude              -43.227376405404
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0174
 	Types: bim:Ambiente
@@ -14055,7 +14111,7 @@ Individual: bim:Ambi.0174
 	Facts: bim:longitude             -22.8620086354715
 	Facts: bim:latitude              -43.2273962686649
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0175
 	Types: bim:Ambiente
@@ -14070,7 +14126,7 @@ Individual: bim:Ambi.0175
 	Facts: bim:longitude             -22.8620337475964
 	Facts: bim:latitude              -43.2275422401706
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0176
 	Types: bim:Ambiente
@@ -14085,7 +14141,7 @@ Individual: bim:Ambi.0176
 	Facts: bim:longitude             -22.861736718002
 	Facts: bim:latitude              -43.2275420077306
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0177
 	Types: bim:Ambiente
@@ -14100,7 +14156,7 @@ Individual: bim:Ambi.0177
 	Facts: bim:longitude             -22.8620580413364
 	Facts: bim:latitude              -43.2276968395973
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0178
 	Types: bim:Ambiente
@@ -14115,7 +14171,7 @@ Individual: bim:Ambi.0178
 	Facts: bim:longitude             -22.8621287339847
 	Facts: bim:latitude              -43.2277556879319
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0179
 	Types: bim:Ambiente
@@ -14130,7 +14186,7 @@ Individual: bim:Ambi.0179
 	Facts: bim:longitude             -22.8619926348924
 	Facts: bim:latitude              -43.2277321692614
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0180
 	Types: bim:Ambiente
@@ -14145,7 +14201,7 @@ Individual: bim:Ambi.0180
 	Facts: bim:longitude             -22.8620550781479
 	Facts: bim:latitude              -43.2276670379305
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0181
 	Types: bim:Ambiente
@@ -14160,7 +14216,7 @@ Individual: bim:Ambi.0181
 	Facts: bim:longitude             -22.8619623816478
 	Facts: bim:latitude              -43.227421576528
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0182
 	Types: bim:Ambiente
@@ -14175,7 +14231,7 @@ Individual: bim:Ambi.0182
 	Facts: bim:longitude             -22.8618621667397
 	Facts: bim:latitude              -43.2277755614087
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0183
 	Types: bim:Ambiente
@@ -14190,7 +14246,7 @@ Individual: bim:Ambi.0183
 	Facts: bim:longitude             -22.8618422451471
 	Facts: bim:latitude              -43.2277911678273
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0184
 	Types: bim:Ambiente
@@ -14205,7 +14261,7 @@ Individual: bim:Ambi.0184
 	Facts: bim:longitude             -22.8619355649825
 	Facts: bim:latitude              -43.2273906932338
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0185
 	Types: bim:Ambiente
@@ -14220,7 +14276,7 @@ Individual: bim:Ambi.0185
 	Facts: bim:longitude             -22.8617166401192
 	Facts: bim:latitude              -43.2275575215722
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0186
 	Types: bim:Ambiente
@@ -14235,7 +14291,7 @@ Individual: bim:Ambi.0186
 	Facts: bim:longitude             -22.8618873338601
 	Facts: bim:latitude              -43.2277849436185
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0187
 	Types: bim:Ambiente
@@ -14250,7 +14306,7 @@ Individual: bim:Ambi.0187
 	Facts: bim:longitude             -22.8619555110344
 	Facts: bim:latitude              -43.2273787332194
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0188
 	Types: bim:Ambiente
@@ -14265,7 +14321,7 @@ Individual: bim:Ambi.0188
 	Facts: bim:longitude             -22.8619561138963
 	Facts: bim:latitude              -43.2278838489596
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0189
 	Types: bim:Ambiente
@@ -14280,7 +14336,7 @@ Individual: bim:Ambi.0189
 	Facts: bim:longitude             -22.8617151862677
 	Facts: bim:latitude              -43.2276178965541
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0190
 	Types: bim:Ambiente
@@ -14295,7 +14351,7 @@ Individual: bim:Ambi.0190
 	Facts: bim:longitude             -22.8617024993063
 	Facts: bim:latitude              -43.2275978674699
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0191
 	Types: bim:Ambiente
@@ -14310,7 +14366,7 @@ Individual: bim:Ambi.0191
 	Facts: bim:longitude             -22.8617845980552
 	Facts: bim:latitude              -43.2277184094822
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0192
 	Types: bim:Ambiente
@@ -14325,7 +14381,7 @@ Individual: bim:Ambi.0192
 	Facts: bim:longitude             -22.8618508000881
 	Facts: bim:latitude              -43.2277230305602
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0193
 	Types: bim:Ambiente
@@ -14340,7 +14396,7 @@ Individual: bim:Ambi.0193
 	Facts: bim:longitude             -22.8618773587048
 	Facts: bim:latitude              -43.2277627341581
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0194
 	Types: bim:Ambiente
@@ -14355,7 +14411,7 @@ Individual: bim:Ambi.0194
 	Facts: bim:longitude             -22.8619114935372
 	Facts: bim:latitude              -43.2279162246882
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0195
 	Types: bim:Ambiente
@@ -14370,7 +14426,7 @@ Individual: bim:Ambi.0195
 	Facts: bim:longitude             -22.8620452325915
 	Facts: bim:latitude              -43.2275587566955
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0196
 	Types: bim:Ambiente
@@ -14385,7 +14441,7 @@ Individual: bim:Ambi.0196
 	Facts: bim:longitude             -22.8619325456379
 	Facts: bim:latitude              -43.2279003968826
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0197
 	Types: bim:Ambiente
@@ -14400,7 +14456,7 @@ Individual: bim:Ambi.0197
 	Facts: bim:longitude             -22.8618124737154
 	Facts: bim:latitude              -43.2277523102413
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0198
 	Types: bim:Ambiente
@@ -14415,7 +14471,7 @@ Individual: bim:Ambi.0198
 	Facts: bim:longitude             -22.8618099622123
 	Facts: bim:latitude              -43.2277330320007
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0199
 	Types: bim:Ambiente
@@ -14430,7 +14486,7 @@ Individual: bim:Ambi.0199
 	Facts: bim:longitude             -22.8618987741842
 	Facts: bim:latitude              -43.2277959741657
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0200
 	Types: bim:Ambiente
@@ -14445,7 +14501,7 @@ Individual: bim:Ambi.0200
 	Facts: bim:longitude             -22.8620556868171
 	Facts: bim:latitude              -43.2274759525271
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0201
 	Types: bim:Ambiente
@@ -14460,7 +14516,7 @@ Individual: bim:Ambi.0201
 	Facts: bim:longitude             -22.8619141516732
 	Facts: bim:latitude              -43.2278313399432
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0202
 	Types: bim:Ambiente
@@ -14475,7 +14531,7 @@ Individual: bim:Ambi.0202
 	Facts: bim:longitude             -22.8617946822594
 	Facts: bim:latitude              -43.2277437218754
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0203
 	Types: bim:Ambiente
@@ -14490,7 +14546,7 @@ Individual: bim:Ambi.0203
 	Facts: bim:longitude             -22.8619627340368
 	Facts: bim:latitude              -43.2277534748157
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0204
 	Types: bim:Ambiente
@@ -14505,7 +14561,7 @@ Individual: bim:Ambi.0204
 	Facts: bim:longitude             -22.8619759127477
 	Facts: bim:latitude              -43.2273616150537
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0205
 	Types: bim:Ambiente
@@ -14520,7 +14576,7 @@ Individual: bim:Ambi.0205
 	Facts: bim:longitude             -22.8616923153712
 	Facts: bim:latitude              -43.2275754079414
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0206
 	Types: bim:Ambiente
@@ -14535,7 +14591,7 @@ Individual: bim:Ambi.0206
 	Facts: bim:longitude             -22.8617320022948
 	Facts: bim:latitude              -43.2276357056359
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0207
 	Types: bim:Ambiente
@@ -14550,7 +14606,7 @@ Individual: bim:Ambi.0207
 	Facts: bim:longitude             -22.8618885506775
 	Facts: bim:latitude              -43.2277786777124
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0208
 	Types: bim:Ambiente
@@ -14565,7 +14621,7 @@ Individual: bim:Ambi.0208
 	Facts: bim:longitude             -22.861870830347
 	Facts: bim:latitude              -43.2278133661098
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0209
 	Types: bim:Ambiente
@@ -14580,7 +14636,7 @@ Individual: bim:Ambi.0209
 	Facts: bim:longitude             -22.8617775601179
 	Facts: bim:latitude              -43.2277114082603
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0210
 	Types: bim:Ambiente
@@ -14595,7 +14651,7 @@ Individual: bim:Ambi.0210
 	Facts: bim:longitude             -22.8618811759501
 	Facts: bim:latitude              -43.2278086103732
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0211
 	Types: bim:Ambiente
@@ -14610,7 +14666,7 @@ Individual: bim:Ambi.0211
 	Facts: bim:longitude             -22.8620129310529
 	Facts: bim:latitude              -43.2274184956327
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0212
 	Types: bim:Ambiente
@@ -14625,7 +14681,7 @@ Individual: bim:Ambi.0212
 	Facts: bim:longitude             -22.8617794844375
 	Facts: bim:latitude              -43.227717642684
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0213
 	Types: bim:Ambiente
@@ -14640,7 +14696,7 @@ Individual: bim:Ambi.0213
 	Facts: bim:longitude             -22.8618423753837
 	Facts: bim:latitude              -43.2277093617565
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0214
 	Types: bim:Ambiente
@@ -14655,7 +14711,7 @@ Individual: bim:Ambi.0214
 	Facts: bim:longitude             -22.8619919699169
 	Facts: bim:latitude              -43.2278564009334
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0215
 	Types: bim:Ambiente
@@ -14670,7 +14726,7 @@ Individual: bim:Ambi.0215
 	Facts: bim:longitude             -22.8618508917619
 	Facts: bim:latitude              -43.2274892312864
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0216
 	Types: bim:Ambiente
@@ -14685,7 +14741,7 @@ Individual: bim:Ambi.0216
 	Facts: bim:longitude             -22.8618313837012
 	Facts: bim:latitude              -43.2275048490972
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0217
 	Types: bim:Ambiente
@@ -14700,7 +14756,7 @@ Individual: bim:Ambi.0217
 	Facts: bim:longitude             -22.8618689159116
 	Facts: bim:latitude              -43.2274760875884
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0218
 	Types: bim:Ambiente
@@ -14715,7 +14771,7 @@ Individual: bim:Ambi.0218
 	Facts: bim:longitude             -22.8619723728692
 	Facts: bim:latitude              -43.2277129389774
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0219
 	Types: bim:Ambiente
@@ -14730,7 +14786,7 @@ Individual: bim:Ambi.0219
 	Facts: bim:longitude             -22.8618960128392
 	Facts: bim:latitude              -43.2277983851498
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0220
 	Types: bim:Ambiente
@@ -14745,7 +14801,7 @@ Individual: bim:Ambi.0220
 	Facts: bim:longitude             -22.8620123387849
 	Facts: bim:latitude              -43.2275068755215
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0221
 	Types: bim:Ambiente
@@ -14760,7 +14816,7 @@ Individual: bim:Ambi.0221
 	Facts: bim:longitude             -22.8619935582503
 	Facts: bim:latitude              -43.2274760160934
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0222
 	Types: bim:Ambiente
@@ -14775,7 +14831,7 @@ Individual: bim:Ambi.0222
 	Facts: bim:longitude             -22.8619479438641
 	Facts: bim:latitude              -43.2274090201457
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0223
 	Types: bim:Ambiente
@@ -14790,7 +14846,7 @@ Individual: bim:Ambi.0223
 	Facts: bim:longitude             -22.8622205574183
 	Facts: bim:latitude              -43.2276324458772
 	Facts: bim:altitude              -0.660
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0224
 	Types: bim:Ambiente
@@ -14805,7 +14861,7 @@ Individual: bim:Ambi.0224
 	Facts: bim:longitude             -22.8619444974937
 	Facts: bim:latitude              -43.2277343068018
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0225
 	Types: bim:Ambiente
@@ -14820,7 +14876,7 @@ Individual: bim:Ambi.0225
 	Facts: bim:longitude             -22.8618576442733
 	Facts: bim:latitude              -43.2278288417062
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0226
 	Types: bim:Ambiente
@@ -14835,7 +14891,7 @@ Individual: bim:Ambi.0226
 	Facts: bim:longitude             -22.8620623078107
 	Facts: bim:latitude              -43.2275116658754
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0227
 	Types: bim:Ambiente
@@ -14850,7 +14906,7 @@ Individual: bim:Ambi.0227
 	Facts: bim:longitude             -22.8617987863833
 	Facts: bim:latitude              -43.2277027809096
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0228
 	Types: bim:Ambiente
@@ -14865,7 +14921,7 @@ Individual: bim:Ambi.0228
 	Facts: bim:longitude             -22.8620675366196
 	Facts: bim:latitude              -43.2277335357966
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0229
 	Types: bim:Ambiente
@@ -14880,7 +14936,7 @@ Individual: bim:Ambi.0229
 	Facts: bim:longitude             -22.8618092461722
 	Facts: bim:latitude              -43.2275217401573
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0230
 	Types: bim:Ambiente
@@ -14895,7 +14951,7 @@ Individual: bim:Ambi.0230
 	Facts: bim:longitude             -22.8618938477381
 	Facts: bim:latitude              -43.227457741847
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0231
 	Types: bim:Ambiente
@@ -14910,7 +14966,7 @@ Individual: bim:Ambi.0231
 	Facts: bim:longitude             -22.8618378117448
 	Facts: bim:latitude              -43.2275023724161
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0232
 	Types: bim:Ambiente
@@ -14925,7 +14981,7 @@ Individual: bim:Ambi.0232
 	Facts: bim:longitude             -22.8620094042807
 	Facts: bim:latitude              -43.227762488162
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0233
 	Types: bim:Ambiente
@@ -14940,7 +14996,7 @@ Individual: bim:Ambi.0233
 	Facts: bim:longitude             -22.8616828832151
 	Facts: bim:latitude              -43.2275274359612
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0234
 	Types: bim:Ambiente
@@ -14955,7 +15011,7 @@ Individual: bim:Ambi.0234
 	Facts: bim:longitude             -22.8617382651817
 	Facts: bim:latitude              -43.2275701416829
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0235
 	Types: bim:Ambiente
@@ -14970,7 +15026,7 @@ Individual: bim:Ambi.0235
 	Facts: bim:longitude             -22.8619837531291
 	Facts: bim:latitude              -43.2274148047007
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0236
 	Types: bim:Ambiente
@@ -14985,7 +15041,7 @@ Individual: bim:Ambi.0236
 	Facts: bim:longitude             -22.8617178324604
 	Facts: bim:latitude              -43.2275061930853
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0237
 	Types: bim:Ambiente
@@ -15000,7 +15056,7 @@ Individual: bim:Ambi.0237
 	Facts: bim:longitude             -22.8617996686652
 	Facts: bim:latitude              -43.2275247945971
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0238
 	Types: bim:Ambiente
@@ -15015,7 +15071,7 @@ Individual: bim:Ambi.0238
 	Facts: bim:longitude             -22.8617573296717
 	Facts: bim:latitude              -43.2277028752031
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0239
 	Types: bim:Ambiente
@@ -15030,7 +15086,7 @@ Individual: bim:Ambi.0239
 	Facts: bim:longitude             -22.8617988823682
 	Facts: bim:latitude              -43.2276419484994
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0240
 	Types: bim:Ambiente
@@ -15045,7 +15101,7 @@ Individual: bim:Ambi.0240
 	Facts: bim:longitude             -22.8621833620845
 	Facts: bim:latitude              -43.22771253153
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0241
 	Types: bim:Ambiente
@@ -15060,7 +15116,7 @@ Individual: bim:Ambi.0241
 	Facts: bim:longitude             -22.8620564065674
 	Facts: bim:latitude              -43.2275738676163
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0242
 	Types: bim:Ambiente
@@ -15075,7 +15131,7 @@ Individual: bim:Ambi.0242
 	Facts: bim:longitude             -22.8617506129093
 	Facts: bim:latitude              -43.2276553056126
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0243
 	Types: bim:Ambiente
@@ -15090,7 +15146,7 @@ Individual: bim:Ambi.0243
 	Facts: bim:longitude             -22.8617670640268
 	Facts: bim:latitude              -43.2275845893404
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0244
 	Types: bim:Ambiente
@@ -15105,7 +15161,7 @@ Individual: bim:Ambi.0244
 	Facts: bim:longitude             -22.8620853821143
 	Facts: bim:latitude              -43.2275373825984
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0245
 	Types: bim:Ambiente
@@ -15120,7 +15176,7 @@ Individual: bim:Ambi.0245
 	Facts: bim:longitude             -22.8620196072043
 	Facts: bim:latitude              -43.2274575244592
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0246
 	Types: bim:Ambiente
@@ -15135,7 +15191,7 @@ Individual: bim:Ambi.0246
 	Facts: bim:longitude             -22.8620583881663
 	Facts: bim:latitude              -43.2275379346946
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0247
 	Types: bim:Ambiente
@@ -15150,7 +15206,7 @@ Individual: bim:Ambi.0247
 	Facts: bim:longitude             -22.8620705404586
 	Facts: bim:latitude              -43.2275600206135
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0248
 	Types: bim:Ambiente
@@ -15165,7 +15221,7 @@ Individual: bim:Ambi.0248
 	Facts: bim:longitude             -22.8618920918989
 	Facts: bim:latitude              -43.2274460229861
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0249
 	Types: bim:Ambiente
@@ -15180,7 +15236,7 @@ Individual: bim:Ambi.0249
 	Facts: bim:longitude             -22.8619204014035
 	Facts: bim:latitude              -43.2278800960758
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0250
 	Types: bim:Ambiente
@@ -15195,7 +15251,7 @@ Individual: bim:Ambi.0250
 	Facts: bim:longitude             -22.8617820014631
 	Facts: bim:latitude              -43.2276527637497
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0251
 	Types: bim:Ambiente
@@ -15210,7 +15266,7 @@ Individual: bim:Ambi.0251
 	Facts: bim:longitude             -22.8621051497916
 	Facts: bim:latitude              -43.2276494391801
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0252
 	Types: bim:Ambiente
@@ -15225,7 +15281,7 @@ Individual: bim:Ambi.0252
 	Facts: bim:longitude             -22.8619810963235
 	Facts: bim:latitude              -43.2277872341729
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0253
 	Types: bim:Ambiente
@@ -15240,7 +15296,7 @@ Individual: bim:Ambi.0253
 	Facts: bim:longitude             -22.8618676307981
 	Facts: bim:latitude              -43.2274811215853
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0254
 	Types: bim:Ambiente
@@ -15255,7 +15311,7 @@ Individual: bim:Ambi.0254
 	Facts: bim:longitude             -22.8620278602967
 	Facts: bim:latitude              -43.2276805712311
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0255
 	Types: bim:Ambiente
@@ -15270,7 +15326,7 @@ Individual: bim:Ambi.0255
 	Facts: bim:longitude             -22.862193722406
 	Facts: bim:latitude              -43.2275638410582
 	Facts: bim:altitude              -0.660
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0256
 	Types: bim:Ambiente
@@ -15285,7 +15341,7 @@ Individual: bim:Ambi.0256
 	Facts: bim:longitude             -22.8618049505322
 	Facts: bim:latitude              -43.2276725127425
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0257
 	Types: bim:Ambiente
@@ -15300,7 +15356,7 @@ Individual: bim:Ambi.0257
 	Facts: bim:longitude             -22.861914957339
 	Facts: bim:latitude              -43.2278384924707
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0258
 	Types: bim:Ambiente
@@ -15315,7 +15371,7 @@ Individual: bim:Ambi.0258
 	Facts: bim:longitude             -22.8620347828202
 	Facts: bim:latitude              -43.22772624248
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0259
 	Types: bim:Ambiente
@@ -15330,7 +15386,7 @@ Individual: bim:Ambi.0259
 	Facts: bim:longitude             -22.8618416977076
 	Facts: bim:latitude              -43.2274526970241
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0260
 	Types: bim:Ambiente
@@ -15345,7 +15401,7 @@ Individual: bim:Ambi.0260
 	Facts: bim:longitude             -22.8619842316631
 	Facts: bim:latitude              -43.2274307374185
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0261
 	Types: bim:Ambiente
@@ -15360,7 +15416,7 @@ Individual: bim:Ambi.0261
 	Facts: bim:longitude             -22.8620401333549
 	Facts: bim:latitude              -43.2275075508591
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0262
 	Types: bim:Ambiente
@@ -15375,7 +15431,7 @@ Individual: bim:Ambi.0262
 	Facts: bim:longitude             -22.8619595380629
 	Facts: bim:latitude              -43.2273895773783
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0263
 	Types: bim:Ambiente
@@ -15390,7 +15446,7 @@ Individual: bim:Ambi.0263
 	Facts: bim:longitude             -22.8620120689621
 	Facts: bim:latitude              -43.2274695163081
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0264
 	Types: bim:Ambiente
@@ -15405,7 +15461,7 @@ Individual: bim:Ambi.0264
 	Facts: bim:longitude             -22.8618386579348
 	Facts: bim:latitude              -43.2277415591925
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0265
 	Types: bim:Ambiente
@@ -15420,7 +15476,7 @@ Individual: bim:Ambi.0265
 	Facts: bim:longitude             -22.8619385814242
 	Facts: bim:latitude              -43.2278774774074
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0266
 	Types: bim:Ambiente
@@ -15435,7 +15491,7 @@ Individual: bim:Ambi.0266
 	Facts: bim:longitude             -22.8619054449972
 	Facts: bim:latitude              -43.2278600954974
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0267
 	Types: bim:Ambiente
@@ -15450,7 +15506,7 @@ Individual: bim:Ambi.0267
 	Facts: bim:longitude             -22.8621900250796
 	Facts: bim:latitude              -43.2276911719432
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0268
 	Types: bim:Ambiente
@@ -15465,7 +15521,7 @@ Individual: bim:Ambi.0268
 	Facts: bim:longitude             -22.8621502195574
 	Facts: bim:latitude              -43.2276615348814
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0269
 	Types: bim:Ambiente
@@ -15480,7 +15536,7 @@ Individual: bim:Ambi.0269
 	Facts: bim:longitude             -22.8620975643144
 	Facts: bim:latitude              -43.227583616195
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0270
 	Types: bim:Ambiente
@@ -15495,7 +15551,7 @@ Individual: bim:Ambi.0270
 	Facts: bim:longitude             -22.8621230644572
 	Facts: bim:latitude              -43.2276234711023
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0271
 	Types: bim:Ambiente
@@ -15510,7 +15566,7 @@ Individual: bim:Ambi.0271
 	Facts: bim:longitude             -22.8617191432871
 	Facts: bim:latitude              -43.2275714902807
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0272
 	Types: bim:Ambiente
@@ -15525,7 +15581,7 @@ Individual: bim:Ambi.0272
 	Facts: bim:longitude             -22.8620959493185
 	Facts: bim:latitude              -43.2275837725849
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0273
 	Types: bim:Ambiente
@@ -15540,7 +15596,7 @@ Individual: bim:Ambi.0273
 	Facts: bim:longitude             -22.8617717540618
 	Facts: bim:latitude              -43.2276480502321
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0274
 	Types: bim:Ambiente
@@ -15555,7 +15611,7 @@ Individual: bim:Ambi.0274
 	Facts: bim:longitude             -22.8618281389025
 	Facts: bim:latitude              -43.2277872541124
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0275
 	Types: bim:Ambiente
@@ -15570,7 +15626,7 @@ Individual: bim:Ambi.0275
 	Facts: bim:longitude             -22.8620686181104
 	Facts: bim:latitude              -43.2277826830568
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0276
 	Types: bim:Ambiente
@@ -15585,7 +15641,7 @@ Individual: bim:Ambi.0276
 	Facts: bim:longitude             -22.8618251710441
 	Facts: bim:latitude              -43.2277504140888
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0277
 	Types: bim:Ambiente
@@ -15600,7 +15656,7 @@ Individual: bim:Ambi.0277
 	Facts: bim:longitude             -22.8621562029339
 	Facts: bim:latitude              -43.2276591007454
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0278
 	Types: bim:Ambiente
@@ -15615,7 +15671,7 @@ Individual: bim:Ambi.0278
 	Facts: bim:longitude             -22.8618848435538
 	Facts: bim:latitude              -43.2278430803616
 	Facts: bim:altitude              -2.600
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0279
 	Types: bim:Ambiente
@@ -15630,7 +15686,7 @@ Individual: bim:Ambi.0279
 	Facts: bim:longitude             -22.8620147418227
 	Facts: bim:latitude              -43.2275752924483
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0280
 	Types: bim:Ambiente
@@ -15645,7 +15701,7 @@ Individual: bim:Ambi.0280
 	Facts: bim:longitude             -22.8617575638557
 	Facts: bim:latitude              -43.2276307919056
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0281
 	Types: bim:Ambiente
@@ -15660,7 +15716,7 @@ Individual: bim:Ambi.0281
 	Facts: bim:longitude             -22.8618612582782
 	Facts: bim:latitude              -43.227691158056
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0282
 	Types: bim:Ambiente
@@ -15675,7 +15731,7 @@ Individual: bim:Ambi.0282
 	Facts: bim:longitude             -22.861998183266
 	Facts: bim:latitude              -43.2277232283294
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0283
 	Types: bim:Ambiente
@@ -15690,7 +15746,7 @@ Individual: bim:Ambi.0283
 	Facts: bim:longitude             -22.8624205720172
 	Facts: bim:latitude              -43.2276565940356
 	Facts: bim:altitude              -0.660
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0284
 	Types: bim:Ambiente
@@ -15705,7 +15761,7 @@ Individual: bim:Ambi.0284
 	Facts: bim:longitude             -22.8620531103596
 	Facts: bim:latitude              -43.2277961100849
 	Facts: bim:altitude              4.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Ambi.0285
 	Types: bim:Ambiente
@@ -15720,7 +15776,7 @@ Individual: bim:Ambi.0285
 	Facts: bim:longitude             -22.8619188222549
 	Facts: bim:latitude              -43.2275979101935
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Macromoléculas
+	Facts: bim:é.dentro.de           bim:Macromoléculas
 
 Individual: bim:Area.0286
 	Types: bim:Area
@@ -15735,7 +15791,7 @@ Individual: bim:Area.0286
 	Facts: bim:longitude             -22.862137707952
 	Facts: bim:latitude              -43.2278372259438
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de           bim:Centro.de.Tecnologia
 	Facts: bim:nome.do.logradouro    "Avenida Horácio Macedo"
 	Facts: bim:bairro                "Cidade Universitária"
 	Facts: bim:cidade                "Rio de Janeiro"
@@ -15757,7 +15813,7 @@ Individual: bim:Area.0287
 	Facts: bim:longitude             -22.8620575469786
 	Facts: bim:latitude              -43.2278847572608
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de           bim:Centro.de.Tecnologia
 	Facts: bim:nome.do.logradouro    "Avenida Horácio Macedo"
 	Facts: bim:bairro                "Cidade Universitária"
 	Facts: bim:cidade                "Rio de Janeiro"
@@ -15779,7 +15835,7 @@ Individual: bim:Area.0288
 	Facts: bim:longitude             -22.862222360809
 	Facts: bim:latitude              -43.2276329191159
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de           bim:Centro.de.Tecnologia
 	Facts: bim:nome.do.logradouro    "Avenida Horácio Macedo"
 	Facts: bim:bairro                "Cidade Universitária"
 	Facts: bim:cidade                "Rio de Janeiro"
@@ -15801,7 +15857,7 @@ Individual: bim:Area.0289
 	Facts: bim:longitude             -22.8621951427295
 	Facts: bim:latitude              -43.2275653311566
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de           bim:Centro.de.Tecnologia
 	Facts: bim:nome.do.logradouro    "Avenida Horácio Macedo"
 	Facts: bim:bairro                "Cidade Universitária"
 	Facts: bim:cidade                "Rio de Janeiro"
@@ -15823,7 +15879,7 @@ Individual: bim:Area.0290
 	Facts: bim:longitude             -22.8624135173779
 	Facts: bim:latitude              -43.2276481754531
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de           bim:Centro.de.Tecnologia
 	Facts: bim:nome.do.logradouro    "Avenida Horácio Macedo"
 	Facts: bim:bairro                "Cidade Universitária"
 	Facts: bim:cidade                "Rio de Janeiro"
@@ -15845,7 +15901,7 @@ Individual: bim:Area.0291
 	Facts: bim:longitude             -22.861949789947
 	Facts: bim:latitude              -43.227636488204
 	Facts: bim:altitude              0.700
-	Facts: bim:é.dentro.de           bim:UFRJ.Centro.de.Tecnologia
+	Facts: bim:é.dentro.de           bim:Centro.de.Tecnologia
 	Facts: bim:nome.do.logradouro    "Avenida Horácio Macedo"
 	Facts: bim:bairro                "Cidade Universitária"
 	Facts: bim:cidade                "Rio de Janeiro"
