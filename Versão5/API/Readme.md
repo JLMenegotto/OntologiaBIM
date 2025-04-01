@@ -29,6 +29,7 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
 
 <p align="justify">Segue a lista de valores numéricos permitidos.<br></b></p>
 
+    * 0  Processa OBIM Categorias Revit e Classes IFC
     * 1  Processa ABNT 15965_0M
     * 2  Processa ABNT 15965_0P
     * 3  Processa ABNT 15965_1D 
