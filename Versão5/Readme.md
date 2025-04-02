@@ -16,13 +16,14 @@
 
 <p align="justify">Foram separados os seguintes domínios ontológicos<br></b></p>
 
-  * Pasta **ABNT** aloca ontologias com o sistema de classificação da construção **NBR 15.965** ordenado pelas suas Partes.
-  * Pasta **AMBI** aloca ontologias com conceitos espaciais e Fatos do **Instituto de Macromoléculas da UFRJ**.
-  * Pasta **CROM** aloca ontologia con conceitos **cromáticos**. 
-  * Pasta **CRON** aloca ontologia con conceitos **temporais**. 
-  * Pasta **CSUS** aloca ontologias com conceitos normativos e Fatos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
-  * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com categorias Revit e classes IFC.
-  * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e Fatos da cidade de **Rio de janeiro**.
+  * Pasta **ABNT** aloca ontologias com o sistema de classificação da construção **NBR 15.965** ordenado seus códigos como Fatos conhecidos.
+  * Pasta **AMBI** aloca ontologias com conceitos espaciais e Fatos conhecidos do **Instituto de Macromoléculas da UFRJ**.
+  * Pasta **CROM** aloca ontologia con conceitos **cromáticos** e alguns Fatos conhecidos de paletas cromáticas. 
+  * Pasta **CRON** aloca ontologia con conceitos **temporais** e Fatos conhecidos acerca de conceitos temporais. 
+  * Pasta **CSUS** aloca ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
+  * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com fatos conhecidos de categorias Revit e classes IFC.
+  * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e Fatos conhecidos da cidade de **Rio de janeiro**.
+  * Pasta **DOCU** aloca ontologia com conceitos de **Documentação** e com alguns fatos conhecidos referentes a Leis e Decretos como exemplo.
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
