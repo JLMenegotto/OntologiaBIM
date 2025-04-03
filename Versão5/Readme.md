@@ -99,3 +99,6 @@ Não pode ter células vazias. Colocar o valor null caso não se defina a caract
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
 As colunas U e V são preenchidas automaticamente para definir e a coluna W deve ser preenchida com comentários que explicam os conteúdos das propriedades.
+
+![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
+
