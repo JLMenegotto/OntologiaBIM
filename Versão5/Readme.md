@@ -111,6 +111,7 @@ A planilha de classes define a estrutura hierárquica dos conceitos com as condi
    * and
    * max
    * min
+   * exactly
 
 Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição definida utilizando a propriedade de objeto **é.red**, configurada para ter um mínimo de 0 e um máximo de 255
 
