@@ -103,3 +103,6 @@ A coluna X numera cada grupo de propriedades com um valor iniciado com 3 caract√
 
 ![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
 
+### Preenchimento do arquivo de Classes e Fatos de cada Dom√≠nio.
+
+![PreenchimentoClasses_01](https://github.com/user-attachments/assets/093cf0ea-58bd-41a0-bf63-cc977366bd44)
