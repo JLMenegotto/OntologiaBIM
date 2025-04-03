@@ -79,7 +79,7 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 
 ![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
-### Preenchimento do arquivo Excel
+### Preenchimento do arquivo de Propriedades.
 Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. A planilha deve ser preenchida utilizando a coluna G (SubData2)
 em minúscula e separando cada palavra da propriedade utilizando um ponto como separador. Quando a propriedade tiver mais de uma palavra não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade e deve ser iniciada com o prefixo "d.".
 As propriedades de objetos são construídas automaticamente a partir de fórmulas aplicadas às colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
@@ -98,7 +98,7 @@ Não pode ter células vazias. Colocar o valor null caso não se defina a caract
     
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
-As colunas U e V são preenchidas automaticamente para definir e a coluna W deve ser preenchida com comentários que explicam os conteúdos das propriedades.
+As colunas U e V são preenchidas automaticamente. A coluna W deve ser preenchida manualemte com comentários que expliquem de maneira clara e sucinta os conteúdos das propriedades.
 A coluna X numera cada grupo de propriedades com um valor iniciado com 3 caractéres do grupo numerados desde 100. É utilizada para manter uma indexação de cada grupo. A coluna Y é reservada para futuro desenvolvimento.
 
 ![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
