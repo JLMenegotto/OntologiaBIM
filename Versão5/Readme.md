@@ -95,3 +95,7 @@ Não pode ter células vazias. Colocar o valor null caso não se defina a caract
   * Irreflexive
   * Inverse Of	
   * Equivatent
+    
+![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
+
+As colunas U e V são preenchidas automaticamente para definir e a coluna W deve ser preenchida com comentários que explicam os conteúdos das propriedades.
