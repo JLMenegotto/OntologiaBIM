@@ -104,7 +104,8 @@ A coluna X numera cada grupo de propriedades com um valor iniciado com 3 caract�
 ![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
 
 ### Preenchimento do arquivo de Classes e Fatos de cada Domínio.
-A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que não pode ter classes repetidas, por isso essa coluna tem uma regra de verificação de células repetifas. A colunas G a K são utilizadas para colocar condições existenciais. Cada condição faz referência a uma ou mais condições de existência. 
+A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que não pode ter classes repetidas, por isso essa coluna tem uma regra de verificação de células repetifas. A colunas G a K são utilizadas para colocar condições existenciais de universais e particulares. Cada condição faz referência a uma ou mais condições de existência.
+
    * some
    * only
    * or
@@ -112,6 +113,7 @@ A planilha de classes define a estrutura hierárquica dos conceitos com as condi
    * max
    * min
    * exactly
+   * not
 
 Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição definida utilizando a propriedade de objeto **é.red**, configurada para ter um mínimo de 0 e um máximo de 255
 
