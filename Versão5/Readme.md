@@ -112,12 +112,16 @@ A planilha de classes define a estrutura hierárquica dos conceitos com as condi
    * max
    * min
 
-Por exemplo, para a classe **Canal** de cor **Red** uma condição é de propriedade de objeto **é.red** entre um mínimo de 0 e um máximo de 255
+Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição definida utilizando a propriedade de objeto **é.red**, configurada para ter um mínimo de 0 e um máximo de 255
 
-   * é.red min 0  ,  é.red max 255
+   * é.red min 0 , é.red max 255 
 
-Outro exemplo, para uma classe **Bairro** á condição é que **é.dentro.de** alguma classe **Cidade**.
+Exemplo 2: para uma classe **Bairro** a condição é que **é.dentro.de** alguma classe **Cidade**.
 
    * é.dentro.de some Cidade
+
+As condições podem ser escritas concatenando condições de conjunções (and) ou disjunções (or). Essas afirmações agrupadas entre parênteses devem ser escritas deixando um espaço em branco depois de cada elemento da proposição. As condições expressam premisas válidas conhecidas.
+
+     ( prop.ob1 some Classe ) and ( prop.ob2 some Classe )
    
 ![PreenchimentoClasses_01](https://github.com/user-attachments/assets/093cf0ea-58bd-41a0-bf63-cc977366bd44)
