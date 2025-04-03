@@ -104,5 +104,20 @@ A coluna X numera cada grupo de propriedades com um valor iniciado com 3 caract�
 ![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
 
 ### Preenchimento do arquivo de Classes e Fatos de cada Domínio.
+A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que não pode ter classes repetidas, por isso essa coluna tem uma regra de verificação de células repetifas. A colunas G a K são utilizadas para colocar condições existenciais. Cada condição faz referência a uma ou mais condições de existência. 
+   * some
+   * only
+   * or
+   * and
+   * max
+   * min
 
+Por exemplo, para a classe **Canal** de cor **Red** uma condição é de propriedade de objeto **é.red** entre um mínimo de 0 e um máximo de 255
+
+   * é.red min 0  ,  é.red max 255
+
+Outro exemplo, para uma classe **Bairro** á condição é que **é.dentro.de** alguma classe **Cidade**.
+
+   * é.dentro.de some Cidade
+   
 ![PreenchimentoClasses_01](https://github.com/user-attachments/assets/093cf0ea-58bd-41a0-bf63-cc977366bd44)
