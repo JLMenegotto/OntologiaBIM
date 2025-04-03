@@ -79,6 +79,26 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 
 ![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
+#### Preenchimento do arquivo Excel
+Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. A planilha deve ser preenchida utilizando a coluna G (SubData2)
+em minúscula e separando cada palavra da propriedade utilizando um ponto como separador. Quando a propriedade tiver mais de uma palavra não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade e deve ser iniciada com o prefixo "d.".
+As propriedades de objetos são construídas automaticamente a partir de fórmulas aplicadas às colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
+A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem o comportamento  lógico da propriedade que os Reasoners podem processar, esclarecendo que não todas os Reasoners podem processar todas as características.
+Não pode ter células vazias. Colocar o valor null caso não se defina a característica.
 
+  * Functional
+  * Inverse Functional
+  * Transitive 
+  * Synmetric
+  * Asymnetric 
+  * Reflexive
+  * Irreflexive
+  * Inverse Of	
+  * Equivatent
+
+![image](https://github.com/user-attachments/assets/1f0aa4c1-08fd-45dd-9579-4986e4a7a5e4)
+
+
+Durante a execução é informado o andamento la linha de Prompt de Revit.
 
 
