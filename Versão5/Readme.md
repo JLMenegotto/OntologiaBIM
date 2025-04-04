@@ -119,7 +119,7 @@ Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição def
 
    * é.red min 0 , é.red max 255 
 
-Exemplo 2: para uma classe **Bairro** (na coluna F) a condição declarada na coluna J é que **é.dentro.de** alguma classe **Cidade**.
+Exemplo 2: para uma classe **Bairro** (na coluna F) a condição declarada na coluna K é declara com a propriedade de objeto **é.dentro.de** associada à classe **Cidade**.
 
    * é.dentro.de some Cidade
 
