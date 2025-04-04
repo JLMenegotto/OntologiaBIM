@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#SomaSUS_Volumes>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde"@pt
-  Annotations: rdfs:label "DataHora: 04/04/2025 14:59:37"@pt
+  Annotations: rdfs:label "DataHora: 04/04/2025 17:39:38"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -3513,13 +3513,21 @@ ObjectProperty: bim:é.assinatura
 	Annotations: rdfs:label "Assinatura de uma lei, decreto ou normativa."@pt
 	Annotations: rdfs:label "legi.110"@pt
 
+ObjectProperty: bim:é.assinado.por
+	SubPropertyOf: bim:p.legislar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para legislar: é.assinado.por"@pt
+	Annotations: rdfs:label "Agente que assina o documento."@pt
+	Annotations: rdfs:label "legi.111"@pt
+
 ObjectProperty: bim:é.revogante.de
 	SubPropertyOf: bim:p.legislar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para legislar: é.revogante.de"@pt
 	Annotations: rdfs:label "A lei ou norma que revoga outra lei."@pt
-	Annotations: rdfs:label "legi.111"@pt
+	Annotations: rdfs:label "legi.112"@pt
 	InverseOf: bim:é.revogado.por
 
 ObjectProperty: bim:é.revogado.por
@@ -3528,7 +3536,7 @@ ObjectProperty: bim:é.revogado.por
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para legislar: é.revogado.por"@pt
 	Annotations: rdfs:label "A lei ou norma foi revogada por alguma outra lei."@pt
-	Annotations: rdfs:label "legi.112"@pt
+	Annotations: rdfs:label "legi.113"@pt
 	InverseOf: bim:é.revogante.de
 
 ObjectProperty: bim:p.mapear
@@ -3584,6 +3592,14 @@ ObjectProperty: bim:é.mapeamento.uv
 	Annotations: rdfs:label "Propriedade para materializar: é.mapeamento.uv"@pt
 	Annotations: rdfs:label "Identificação do elemento de mapeamento de texturas sobre a geometria."@pt
 	Annotations: rdfs:label "mate.101"@pt
+
+ObjectProperty: bim:é.concretagem
+	SubPropertyOf: bim:p.materializar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para materializar: é.concretagem"@pt
+	Annotations: rdfs:label "Identificação da concretagem."@pt
+	Annotations: rdfs:label "mate.102"@pt
 
 ObjectProperty: bim:p.medir
 	SubPropertyOf: bim:BIMProp
@@ -3957,6 +3973,60 @@ ObjectProperty: bim:é.ofertado
 	Annotations: rdfs:label "Propriedade para orçamentar: é.ofertado"@pt
 	Annotations: rdfs:label "Valor de um bem em oferta."@pt
 	Annotations: rdfs:label "orça.111"@pt
+
+ObjectProperty: bim:p.pagar
+	SubPropertyOf: bim:BIMProp
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade de Objeto para p.pagar"@pt
+
+ObjectProperty: bim:é.nota.fiscal
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.nota.fiscal"@pt
+	Annotations: rdfs:label "Identificação da nota fiscal."@pt
+	Annotations: rdfs:label "paga.100"@pt
+
+ObjectProperty: bim:é.nota.fiscal.eletrônica
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.nota.fiscal.eletrônica"@pt
+	Annotations: rdfs:label "Identificação do tipo de nota fiscal eletrônica."@pt
+	Annotations: rdfs:label "paga.101"@pt
+
+ObjectProperty: bim:é.pagamento
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.pagamento"@pt
+	Annotations: rdfs:label "Identificação do valor do pagamento."@pt
+	Annotations: rdfs:label "paga.102"@pt
+
+ObjectProperty: bim:é.recibo
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.recibo"@pt
+	Annotations: rdfs:label "Identificação do recibo."@pt
+	Annotations: rdfs:label "paga.103"@pt
+
+ObjectProperty: bim:é.transferido
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.transferido"@pt
+	Annotations: rdfs:label "Identificação da transferência."@pt
+	Annotations: rdfs:label "paga.104"@pt
+
+ObjectProperty: bim:é.pix
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.pix"@pt
+	Annotations: rdfs:label "Identificação do pix."@pt
+	Annotations: rdfs:label "paga.105"@pt
 
 ObjectProperty: bim:p.passar
 	SubPropertyOf: bim:BIMProp
@@ -8478,13 +8548,21 @@ DataProperty: bim:assinatura
 	Annotations: rdfs:label "Assinatura de uma lei, decreto ou normativa."@pt
 	Annotations: rdfs:label "legi.110"@pt
 
+DataProperty: bim:assinado.por
+	SubPropertyOf: bim:d.legislar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para legislar: assinado.por ( xsd:string )"@pt
+	Annotations: rdfs:label "Agente que assina o documento."@pt
+	Annotations: rdfs:label "legi.111"@pt
+
 DataProperty: bim:revogante.de
 	SubPropertyOf: bim:d.legislar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para legislar: revogante.de ( xsd:string )"@pt
 	Annotations: rdfs:label "A lei ou norma que revoga outra lei."@pt
-	Annotations: rdfs:label "legi.111"@pt
+	Annotations: rdfs:label "legi.112"@pt
 
 DataProperty: bim:revogado.por
 	SubPropertyOf: bim:d.legislar
@@ -8492,7 +8570,7 @@ DataProperty: bim:revogado.por
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para legislar: revogado.por ( xsd:string )"@pt
 	Annotations: rdfs:label "A lei ou norma foi revogada por alguma outra lei."@pt
-	Annotations: rdfs:label "legi.112"@pt
+	Annotations: rdfs:label "legi.113"@pt
 
 DataProperty: bim:d.mapear
 	SubPropertyOf: bim:BIMData
@@ -8545,6 +8623,14 @@ DataProperty: bim:mapeamento.uv
 	Annotations: rdfs:label "Dado para materializar: mapeamento.uv ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do elemento de mapeamento de texturas sobre a geometria."@pt
 	Annotations: rdfs:label "mate.101"@pt
+
+DataProperty: bim:concretagem
+	SubPropertyOf: bim:d.materializar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para materializar: concretagem ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação da concretagem."@pt
+	Annotations: rdfs:label "mate.102"@pt
 
 DataProperty: bim:d.medir
 	SubPropertyOf: bim:BIMData
@@ -8943,6 +9029,66 @@ DataProperty: bim:ofertado
 	Annotations: rdfs:label "Dado para orçamentar: ofertado ( xsd:string )"@pt
 	Annotations: rdfs:label "Valor de um bem em oferta."@pt
 	Annotations: rdfs:label "orça.111"@pt
+
+DataProperty: bim:d.pagar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.pagar"@pt
+
+DataProperty: bim:nota.fiscal
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para pagar: nota.fiscal ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação da nota fiscal."@pt
+	Annotations: rdfs:label "paga.100"@pt
+
+DataProperty: bim:nota.fiscal.eletrônica
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para pagar: nota.fiscal.eletrônica ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do tipo de nota fiscal eletrônica."@pt
+	Annotations: rdfs:label "paga.101"@pt
+
+DataProperty: bim:d.pagar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.pagar"@pt
+
+DataProperty: bim:pagamento
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pagar: pagamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Identificação do valor do pagamento."@pt
+	Annotations: rdfs:label "paga.102"@pt
+
+DataProperty: bim:recibo
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pagar: recibo ( xsd:double )"@pt
+	Annotations: rdfs:label "Identificação do recibo."@pt
+	Annotations: rdfs:label "paga.103"@pt
+
+DataProperty: bim:transferido
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pagar: transferido ( xsd:double )"@pt
+	Annotations: rdfs:label "Identificação da transferência."@pt
+	Annotations: rdfs:label "paga.104"@pt
+
+DataProperty: bim:pix
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pagar: pix ( xsd:double )"@pt
+	Annotations: rdfs:label "Identificação do pix."@pt
+	Annotations: rdfs:label "paga.105"@pt
 
 DataProperty: bim:d.passar
 	SubPropertyOf: bim:BIMData
