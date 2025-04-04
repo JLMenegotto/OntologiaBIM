@@ -121,7 +121,7 @@ Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição def
 
 Exemplo 2: para uma classe **Bairro** (na coluna F) a condição é declarada na coluna K. Ela afirma com a propriedade de objeto **é.dentro.de**, associada existencialmente como **some** à classe **Cidade**.
 
-   *interpretação (um bairro) é.dentro.de some Cidade
+   *interpretação: (um bairro) é.dentro.de some Cidade  um Bairro é.dentro.de alguma Cidade.
 
 As condições podem ser escritas concatenando condições de conjunções (and) ou disjunções (or). Essas afirmações agrupadas entre parênteses devem ser escritas deixando um espaço em branco depois de cada elemento da proposição. As condições expressam premisas válidas conhecidas.
 
