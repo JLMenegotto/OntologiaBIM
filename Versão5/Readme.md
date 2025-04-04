@@ -104,7 +104,7 @@ A coluna X numera cada grupo de propriedades com um valor iniciado com 3 caract�
 ![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
 
 ### Preenchimento do arquivo de Classes e Fatos de cada Domínio.
-A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que não pode ter classes repetidas, por isso essa coluna tem uma regra de verificação de células repetifas. A colunas G a K são utilizadas para colocar condições existenciais de universais e particulares. Cada condição faz referência a uma ou mais condições de existência.
+A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que **não pode ter classes repetidas**, por isso essa coluna tem uma regra de verificar e destacar células repetidas. A colunas G a K são utilizadas para colocar condições existenciais (universais e particulares). Cada condição faz referência a uma ou mais condições de existência.
 
    * some
    * only
@@ -115,13 +115,13 @@ A planilha de classes define a estrutura hierárquica dos conceitos com as condi
    * exactly
    * not
 
-Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição definida utilizando a propriedade de objeto **é.red**, configurada para ter um mínimo de 0 e um máximo de 255
+Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição definida utilizando a propriedade de objeto **é.red**, configurada para ter um valor mínimo de 0 e um valor máximo de 255.
 
    * é.red min 0 , é.red max 255 
 
-Exemplo 2: para uma classe **Bairro** (na coluna F) a condição declarada na coluna K é declara com a propriedade de objeto **é.dentro.de** associada existencialmente como **some** à classe **Cidade**.
+Exemplo 2: para uma classe **Bairro** (na coluna F) a condição é declarada na coluna K. Ela afirma com a propriedade de objeto **é.dentro.de**, associada existencialmente como **some** à classe **Cidade**.
 
-   * é.dentro.de some Cidade
+   *interpretação (um bairro) é.dentro.de some Cidade
 
 As condições podem ser escritas concatenando condições de conjunções (and) ou disjunções (or). Essas afirmações agrupadas entre parênteses devem ser escritas deixando um espaço em branco depois de cada elemento da proposição. As condições expressam premisas válidas conhecidas.
 
