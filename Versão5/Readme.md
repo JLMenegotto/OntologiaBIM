@@ -136,4 +136,4 @@ As colunas L M N O são preenchidas automaticamente. A coluna P é preenchida ma
 
     * =TRADUZIR(P20; "pt"; "es")
 
-![PreenchimentoClasses_02](https://github.com/user-attachments/assets/6b06578f-ae5b-4b56-a3bd-b497c8328411)
+![PreenchimentoClasses_02](https://github.com/user-attachments/assets/a3748c49-8bfa-44e4-845d-30ab7c09f176)
