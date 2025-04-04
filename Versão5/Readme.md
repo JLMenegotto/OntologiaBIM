@@ -99,7 +99,7 @@ Não pode ter células vazias. Colocar o valor null caso não se defina a caract
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
 As colunas U e V são preenchidas automaticamente. A coluna W deve ser preenchida manualmente com comentários que expliquem de maneira clara e sucinta os conteúdos das propriedades.
-A coluna X numera cada grupo de propriedades com um valor iniciado com 3 caractéres do grupo numerados desde 100. É utilizada para manter uma indexação de cada grupo. A coluna Y é reservada para futuro desenvolvimento.
+A coluna X identifica cada grupo de propriedades com um valor formado pelos 4 primeiros caracteres do grupo e sequencialmente numerado desde 100. É utilizada para manter uma indexação de cada grupo. A coluna Y é reservada para futuro desenvolvimento.
 
 ![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
 
