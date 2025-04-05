@@ -103,10 +103,12 @@ Não pode ter células vazias. Colocar o valor null caso não queira definir a c
     
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
-As colunas U e V são preenchidas automaticamente. A coluna W deve ser preenchida manualmente com comentários que expliquem de maneira clara e sucinta os conteúdos das propriedades.
-A coluna X identifica cada grupo de propriedades com um valor formado pelos 4 primeiros caracteres do grupo e sequencialmente numerado desde 100. É utilizada para manter uma indexação de cada grupo. A coluna Y é reservada para futuro desenvolvimento.
+#### Colunas de explicações das propriedades de Objetos e Dados.  
+As colunas U, V e W contem explicações relativas às propriedades definidas. As colunas U e V são preenchidas automaticamente. A coluna W deve ser preenchida manualmente com comentários que expliquem de maneira clara e sucinta o significado da propriedades. Colocar referências às Normas que utilizam a propriedade oo como ela adquire o seu valor pode ser útil.   
+A coluna X identifica cada grupo de propriedades com um valor formado pelos 4 primeiros caracteres do grupo (lido da coluna F) e sequencialmente numerado desde 100. É utilizada para manter uma indexação de cada grupo.  
+A coluna Y é reservada para futuro desenvolvimento.  
 
-![Properties_02](https://github.com/user-attachments/assets/52e10c03-a157-4870-bb0d-b5320ced9f08)
+![PreenchimentoClasses_02](https://github.com/user-attachments/assets/902c288c-0582-470f-b6ec-174fcc3695cc)
 
 ### Preenchimento do arquivo de Classes e Fatos de cada Domínio.
 A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que **não pode ter classes repetidas**, por isso essa coluna tem uma regra de verificar e destacar células repetidas. A colunas G a K são utilizadas para colocar condições existenciais (universais e particulares). Cada condição faz referência a uma ou mais condições de existência.
