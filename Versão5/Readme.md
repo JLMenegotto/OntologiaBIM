@@ -92,7 +92,7 @@ Não pode ter células vazias. Colocar o valor null caso não queira definir a c
   * **Symmetric**           ser.irmão.de é uma propriedade com característica simétrica, pois se A é.irmão.de B , também é verdade que B é.irmão.de A.
   * **Asymmetric**          é.avô.de     é uma propriedade com característica antisimétrica, pois se A é.avô.de B, não pode ser verdade que B é.avô.de de A. Evitam contradições entre individuos diferentes.
   * **Reflexive**           uma propriedade reflexiva indica uma relação que aponta também para o proprio indivíduo que a tem. (exemplo é.igual.a é uma propriedade reflexiva). 
-  * **Irreflexive**         uma propriedade irreflexiva indica que é sempre falso que um objeto se relacione a si mesmo com essa propriedade. Evitam auto-relações inválidas (exemplo é.avô.de é uma propriedade irreflexiva pois ninguem pode ser avô de se mesmo).
+  * **Irreflexive**         uma propriedade irreflexiva indica que é sempre falso que um objeto se relacione a si mesmo com essa propriedade (por exemplo, é.avô.de é uma propriedade irreflexiva pois ninguem pode ser avô de se mesmo). Evitam auto-relações inválidas.
   * **Inverse Of**	
   * **Equivatent**
     
