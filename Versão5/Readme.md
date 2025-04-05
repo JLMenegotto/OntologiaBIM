@@ -84,10 +84,10 @@ Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. A p
 em minúscula e separando cada palavra da propriedade utilizando um ponto como separador. Quando a propriedade tiver mais de uma palavra não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade e deve ser iniciada com o prefixo "d.".
 As propriedades de objetos são construídas automaticamente a partir de fórmulas aplicadas às colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
 A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem o comportamento  lógico da propriedade que os Reasoners podem processar, esclarecendo que não todas os Reasoners podem processar todas as características.
-Não pode ter células vazias. Colocar o valor null caso não se defina a característica.
+Não pode ter células vazias. Colocar o valor null caso não queira definir a característica.
 
-  * Functional
-  * Inverse Functional
+  * Functional          Indica que a propriedade deve ter, no máximo, um valor para cada sujeito. (Pense, por exemplo, no múmero de CPF).
+  * Inverse Functional  Indica que a propriedade pode ter muitos valores mas atribuir apenas um valor para cada sujeito. (Pense, por exemplo, na carteira de CPF).
   * Transitive 
   * Synmetric
   * Asymnetric 
