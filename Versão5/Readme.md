@@ -87,7 +87,7 @@ A coluna G tem uma regra de verificação de valores duplicados para ajudar a cr
 Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. 
 
   * **Functional**          Indica que deve ter, no máximo, um valor para cada sujeito. (exemplo: número de CPF).
-  * **Inverse Functional**  Indica que tem muitos valores mas atribui apenas um valor para cada sujeito. (exemplo: carteira de CPF).
+  * **Inverse Functional**  Indica que tem muitos valores mas atribui apenas um valor unívoco para cada sujeito. (exemplo: carteira de CPF).
   * **Transitive**          é.dentro.de  é uma propriedade com característica de transitividade, pois se A é.dentro.de B e B é.dentro.de C é verdade que A e.dentro.de C.
   * **Symmetric**           ser.irmão.de é uma propriedade com característica simétrica, pois se A é.irmão.de B , também é verdade que B é.irmão.de A.
   * **Asymmetric**          é.avô.de     é uma propriedade com característica antisimétrica, pois se A é.avô.de B, não pode ser verdade que B é.avô.de de A. Evitam contradições entre individuos diferentes.
