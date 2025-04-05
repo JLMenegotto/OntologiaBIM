@@ -108,7 +108,7 @@ As colunas U, V e W contem explicações relativas às propriedades definidas. A
 A coluna X identifica cada grupo de propriedades com um valor formado pelos 4 primeiros caracteres do grupo (lido da coluna F) e sequencialmente numerado desde 100. É utilizada para manter uma indexação de cada grupo.  
 A coluna Y é reservada para futuro desenvolvimento.  
 
-![PreenchimentoClasses_02](https://github.com/user-attachments/assets/902c288c-0582-470f-b6ec-174fcc3695cc)
+![Properties_02](https://github.com/user-attachments/assets/b93a281e-7e44-431f-ba12-45d427df0afd)
 
 ### Preenchimento do arquivo de Classes e Fatos de cada Domínio.
 A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que **não pode ter classes repetidas**, por isso essa coluna tem uma regra de verificar e destacar células repetidas. A colunas G a K são utilizadas para colocar condições existenciais (universais e particulares). Cada condição faz referência a uma ou mais condições de existência.
