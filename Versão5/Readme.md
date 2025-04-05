@@ -80,15 +80,15 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 ![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
 ### Preenchimento do arquivo de Propriedades.
-##### Adicionar ou mudar uma propriedade de Dado.
+#### Adicionar ou mudar uma propriedade de Dado.
 
 Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
 
-##### propriedade de Objeto.
+#### Propriedades de Objeto.
 As propriedades de objetos (colunas C e D) são construídas automaticamente a partir de fórmulas aplicadas nas colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
 A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. 
 
-##### Características das propriedades de Objeto.
+#### Características das propriedades de Objeto.
 A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características.
 Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. 
 
