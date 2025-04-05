@@ -88,10 +88,10 @@ Não pode ter células vazias. Colocar o valor null caso não queira definir a c
 
   * **Functional**          Indica que deve ter, no máximo, um valor para cada sujeito. (por exemplo, número de CPF).
   * **Inverse Functional**  Indica que tem muitos valores mas atribui apenas um valor para cada sujeito. (por exemplo, carteira de CPF).
-  * **Transitive** 
-  * **Synmetric**
-  * **Asymnetric** 
-  * vReflexive**
+  * **Transitive**          é.dentro.de  é uma propriedade com característica de transitividade, pois se A é.dentro.de B e B é.dentro.de C é verdade que A e.dentro.de C.
+  * **Symmetric**           ser.irmão.de é uma propriedade com característica de simetria, pois se A é irmão de B , também é verdade que B é irmão de A.
+  * **Asymmetric**          ser.avô.de   é uma propriedade com caractéristica de antisimetria, pois se A é.avô de B, não pode ser verdade que B é.avô de A.
+  * **Reflexive**
   * **Irreflexive**
   * **Inverse Of**	
   * **Equivatent**
