@@ -80,10 +80,16 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 ![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
 ### Preenchimento do arquivo de Propriedades.
-Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. A planilha deve ser preenchida utilizando a coluna G (SubData2)
-em minúscula e separando cada palavra da propriedade utilizando um ponto como separador. Quando a propriedade tiver mais de uma palavra não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade e deve ser iniciada com o prefixo "d.".
-As propriedades de objetos são construídas automaticamente a partir de fórmulas aplicadas às colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
-A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características.
+##### Adicionar ou mudar uma propriedade de Dado.
+
+Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
+
+##### propriedade de Objeto.
+As propriedades de objetos (colunas C e D) são construídas automaticamente a partir de fórmulas aplicadas nas colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
+A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. 
+
+##### Características das propriedades de Objeto.
+A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características.
 Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. 
 
   * **Functional**          Indica que deve ter, no máximo, um valor para cada sujeito. (exemplo: número de CPF).
@@ -94,7 +100,6 @@ Não pode ter células vazias. Colocar o valor null caso não queira definir a c
   * **Reflexive**           uma propriedade reflexiva indica uma relação que aponta também para o proprio indivíduo que a tem. (exemplo: é.igual.a é uma propriedade reflexiva). 
   * **Irreflexive**         uma propriedade irreflexiva indica que é sempre falso que um objeto se relacione a si mesmo com essa propriedade (exemplo: 'é.avô.de' é uma propriedade irreflexiva, pois ninguém pode ser avô de si mesmo). Evitam auto-relações inválidas.
   * **Inverse Of**	         uma propridade inversa indica que se um objeto A se relaciona com outro B por essa propriedade, então será verdade indicar que B se relaciona com A pela propriedade inversa (exemplo: se A é.acima de B é verdade, então B é.abaixo.de A também é verdade, pois a propriedade é.acima.de foi definida como a inversa da propriedade é.abaixo.de). 
-  * **Equivalent**
     
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
