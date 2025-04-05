@@ -86,15 +86,15 @@ As propriedades de objetos são construídas automaticamente a partir de fórmul
 A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem o comportamento  lógico da propriedade que os Reasoners podem processar, esclarecendo que não todas os Reasoners podem processar todas as características.
 Não pode ter células vazias. Colocar o valor null caso não queira definir a característica.
 
-  * Functional          Indica que a propriedade deve ter, no máximo, um valor para cada sujeito. (Pense, por exemplo, no múmero de CPF).
-  * Inverse Functional  Indica que a propriedade pode ter muitos valores mas atribuir apenas um valor para cada sujeito. (Pense, por exemplo, na carteira de CPF).
-  * Transitive 
-  * Synmetric
-  * Asymnetric 
-  * Reflexive
-  * Irreflexive
-  * Inverse Of	
-  * Equivatent
+  * **Functional**          Indica que a propriedade deve ter, no máximo, um valor para cada sujeito. (Pense, por exemplo, no múmero de CPF).
+  * **Inverse Functional**  Indica que a propriedade pode ter muitos valores mas atribuir apenas um valor para cada sujeito. (Pense, por exemplo, na carteira de CPF).
+  * **Transitive** 
+  * **Synmetric**
+  * **Asymnetric** 
+  * vReflexive**
+  * **Irreflexive**
+  * **Inverse Of**	
+  * **Equivatent**
     
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
