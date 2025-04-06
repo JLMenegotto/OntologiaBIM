@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_3_1F>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 05/04/2025 16:00:06"@pt
+  Annotations: rdfs:label "DataHora: 05/04/2025 21:51:08"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -352,6 +352,7 @@ ObjectProperty: bim:é.público
 	Annotations: rdfs:label "Propriedade para administrar: é.público"@pt
 	Annotations: rdfs:label "É um bem ou espaço público."@pt
 	Annotations: rdfs:label "admi.104"@pt
+	InverseOf: bim:é.privado
 
 ObjectProperty: bim:é.privado
 	SubPropertyOf: bim:p.administrar
@@ -512,6 +513,80 @@ ObjectProperty: bim:é.setor
 	Annotations: rdfs:label "Propriedade para administrar: é.setor"@pt
 	Annotations: rdfs:label "Identificação Setorial de instituição."@pt
 	Annotations: rdfs:label "admi.124"@pt
+
+ObjectProperty: bim:é.turno
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.turno"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como um turno a ser preenchido por uma atividade."@pt
+	Annotations: rdfs:label "admi.125"@pt
+
+ObjectProperty: bim:é.laboral
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.laboral"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como laboral."@pt
+	Annotations: rdfs:label "admi.126"@pt
+	InverseOf: bim:é.feriado
+
+ObjectProperty: bim:é.feriado
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.feriado"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como feriado."@pt
+	Annotations: rdfs:label "admi.127"@pt
+
+ObjectProperty: bim:é.diurno
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.diurno"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como diurno."@pt
+	Annotations: rdfs:label "admi.128"@pt
+	InverseOf: bim:é.noturno
+
+ObjectProperty: bim:é.noturno
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.noturno"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como noturno."@pt
+	Annotations: rdfs:label "admi.129"@pt
+
+ObjectProperty: bim:é.matutino
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.matutino"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como matutino."@pt
+	Annotations: rdfs:label "admi.130"@pt
+
+ObjectProperty: bim:é.vespertino
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.vespertino"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como vespertino."@pt
+	Annotations: rdfs:label "admi.131"@pt
+
+ObjectProperty: bim:é.aberto
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.aberto"@pt
+	Annotations: rdfs:label "Um objeto é aberto."@pt
+	Annotations: rdfs:label "admi.132"@pt
+
+ObjectProperty: bim:é.fechado
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.fechado"@pt
+	Annotations: rdfs:label "Um objeto é fechado."@pt
+	Annotations: rdfs:label "admi.133"@pt
 
 ObjectProperty: bim:p.afirmar
 	SubPropertyOf: bim:BIMProp
@@ -862,6 +937,36 @@ ObjectProperty: bim:é.fiscalizado.por
 	Annotations: rdfs:label "Propriedade para atestar: é.fiscalizado.por"@pt
 	Annotations: rdfs:label "Identificação de agente fiscalizador."@pt
 	Annotations: rdfs:label "ates.110"@pt
+
+ObjectProperty: bim:p.autenticar
+	SubPropertyOf: bim:BIMProp
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade de Objeto para p.autenticar"@pt
+
+ObjectProperty: bim:é.certificado.digital
+	SubPropertyOf: bim:p.autenticar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para autenticar: é.certificado.digital"@pt
+	Annotations: rdfs:label "Autenticação por Certificado digital."@pt
+	Annotations: rdfs:label "aute.100"@pt
+
+ObjectProperty: bim:é.assinatura.digital
+	SubPropertyOf: bim:p.autenticar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para autenticar: é.assinatura.digital"@pt
+	Annotations: rdfs:label "Autenticação por Assinatura digital."@pt
+	Annotations: rdfs:label "aute.101"@pt
+
+ObjectProperty: bim:é.criptografado
+	SubPropertyOf: bim:p.autenticar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para autenticar: é.criptografado"@pt
+	Annotations: rdfs:label "Autenticado por critografia."@pt
+	Annotations: rdfs:label "aute.102"@pt
 
 ObjectProperty: bim:p.captar
 	SubPropertyOf: bim:BIMProp
@@ -1646,7 +1751,6 @@ ObjectProperty: bim:é.categoria.revit
 	Annotations: rdfs:label "Propriedade para converter: é.categoria.revit"@pt
 	Annotations: rdfs:label "Identifica a associação com uma categoria OST Revit."@pt
 	Annotations: rdfs:label "conv.100"@pt
-	Characteristics: Functional
 
 ObjectProperty: bim:é.classe.ifc
 	SubPropertyOf: bim:p.converter
@@ -1655,7 +1759,6 @@ ObjectProperty: bim:é.classe.ifc
 	Annotations: rdfs:label "Propriedade para converter: é.classe.ifc"@pt
 	Annotations: rdfs:label "Identifica a associação com uma classe IFC."@pt
 	Annotations: rdfs:label "conv.101"@pt
-	Characteristics: Functional
 
 ObjectProperty: bim:é.entidade.cad
 	SubPropertyOf: bim:p.converter
@@ -3133,9 +3236,48 @@ ObjectProperty: bim:é.matrícula
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: é.matrícula"@pt
-	Annotations: rdfs:label "Identificador único tipo matrícula."@pt
+	Annotations: rdfs:label "Identificador tipo número de matrícula de um agente."@pt
 	Annotations: rdfs:label "iden.109"@pt
 	Characteristics: Functional
+
+ObjectProperty: bim:é.número.serial
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.número.serial"@pt
+	Annotations: rdfs:label "Identificador tipo número de série de um produto."@pt
+	Annotations: rdfs:label "iden.110"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.número.mac
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.número.mac"@pt
+	Annotations: rdfs:label "Identificador tipo MAC (Media Access Control). Formado por 48 bits (6 bytes) com 12 caracteres hexadecimais. 3 bytes são atribuidos pelo IEEE e 3 bytes pelo fabricante do equipamento ou dispositivo. xx:xx:xx:yy:yy:yy"@pt
+	Annotations: rdfs:label "iden.111"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.número.lote
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.número.lote"@pt
+	Annotations: rdfs:label "Identificador do lote de produção de algum produto."@pt
+	Annotations: rdfs:label "iden.112"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.uuid
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.uuid"@pt
+	Annotations: rdfs:label "Identificador tipo UUID (Universally Unique Identifier). Formado por 128 bits (16 bytes). É uma sequência de 32 caracteres hexadecimais xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"@pt
+	Annotations: rdfs:label "iden.113"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:p.iluminar
 	SubPropertyOf: bim:BIMProp
@@ -3809,7 +3951,7 @@ ObjectProperty: bim:é.para.conforto
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para mobiliar: é.para.conforto"@pt
-	Annotations: rdfs:label "É um mobiliário para conforto dos habitantes."@pt
+	Annotations: rdfs:label "É um mobiliário para as atividades cotidianas e para dar conforto às pessoas."@pt
 	Annotations: rdfs:label "mobi.103"@pt
 
 ObjectProperty: bim:é.para.trabalhar
@@ -3817,7 +3959,7 @@ ObjectProperty: bim:é.para.trabalhar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para mobiliar: é.para.trabalhar"@pt
-	Annotations: rdfs:label "É um mobiliário necessário para executar tarefas de trabalho."@pt
+	Annotations: rdfs:label "É um mobiliário necessário para executar tarefas profissionais."@pt
 	Annotations: rdfs:label "mobi.104"@pt
 
 ObjectProperty: bim:é.para.ornar
@@ -4075,6 +4217,22 @@ ObjectProperty: bim:é.pix
 	Annotations: rdfs:label "Propriedade para pagar: é.pix"@pt
 	Annotations: rdfs:label "Identificação da operação de pagamento rápido tipo Pix."@pt
 	Annotations: rdfs:label "paga.106"@pt
+
+ObjectProperty: bim:é.creditado
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.creditado"@pt
+	Annotations: rdfs:label "Identificação de valor creditado."@pt
+	Annotations: rdfs:label "paga.107"@pt
+
+ObjectProperty: bim:é.debitado
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para pagar: é.debitado"@pt
+	Annotations: rdfs:label "Identificação de valor debitado."@pt
+	Annotations: rdfs:label "paga.108"@pt
 
 ObjectProperty: bim:p.passar
 	SubPropertyOf: bim:BIMProp
@@ -4475,6 +4633,7 @@ ObjectProperty: bim:é.depois.de
 	Annotations: rdfs:label "plan.100"@pt
 	Characteristics: Transitive
 	Characteristics: Asymmetric
+	Characteristics: Irreflexive
 	InverseOf: bim:é.antes.de
 
 ObjectProperty: bim:é.antes.de
@@ -4486,6 +4645,7 @@ ObjectProperty: bim:é.antes.de
 	Annotations: rdfs:label "plan.101"@pt
 	Characteristics: Transitive
 	Characteristics: Asymmetric
+	Characteristics: Irreflexive
 
 ObjectProperty: bim:é.concomitante.a
 	SubPropertyOf: bim:p.planejar
@@ -4723,6 +4883,22 @@ ObjectProperty: bim:é.coordenada.absoluta
 	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento em relação ao sistema de coordenadas absolutas."@pt
 	Annotations: rdfs:label "posi.119"@pt
 	Characteristics: Functional
+
+ObjectProperty: bim:é.coordenada.base
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para posicionar : é.coordenada.base"@pt
+	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento usado como referência de base."@pt
+	Annotations: rdfs:label "posi.120"@pt
+
+ObjectProperty: bim:é.coordenada.topográfica
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para posicionar : é.coordenada.topográfica"@pt
+	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento de topografia."@pt
+	Annotations: rdfs:label "posi.121"@pt
 
 ObjectProperty: bim:p.prever
 	SubPropertyOf: bim:BIMProp
@@ -5130,22 +5306,6 @@ ObjectProperty: bim:é.destino
 	Annotations: rdfs:label "Um objeto é destino de algo."@pt
 	Annotations: rdfs:label "rela.108"@pt
 
-ObjectProperty: bim:é.aberto
-	SubPropertyOf: bim:p.relacionar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para relacionar: é.aberto"@pt
-	Annotations: rdfs:label "Um objeto é aberto."@pt
-	Annotations: rdfs:label "rela.109"@pt
-
-ObjectProperty: bim:é.fechado
-	SubPropertyOf: bim:p.relacionar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para relacionar: é.fechado"@pt
-	Annotations: rdfs:label "Um objeto é fechado."@pt
-	Annotations: rdfs:label "rela.110"@pt
-
 ObjectProperty: bim:p.separar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -5471,22 +5631,6 @@ ObjectProperty: bim:é.ano.fiscal
 	Annotations: rdfs:label "Declara o ano fiscal."@pt
 	Annotations: rdfs:label "temp.113"@pt
 
-ObjectProperty: bim:é.laboral
-	SubPropertyOf: bim:p.temporalizar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para temporalizar: é.laboral"@pt
-	Annotations: rdfs:label "Declara que um dia é laboral."@pt
-	Annotations: rdfs:label "temp.114"@pt
-
-ObjectProperty: bim:é.feriado
-	SubPropertyOf: bim:p.temporalizar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para temporalizar: é.feriado"@pt
-	Annotations: rdfs:label "Declara que um dia é feriado."@pt
-	Annotations: rdfs:label "temp.115"@pt
-
 ObjectProperty: bim:p.urbanizar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -5667,6 +5811,7 @@ ObjectProperty: bim:é.orcid
 	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
 	Annotations: rdfs:label "vinc.108"@pt
 	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:é.lattes
 	SubPropertyOf: bim:p.vincular
@@ -6139,6 +6284,84 @@ DataProperty: bim:setor
 	Annotations: rdfs:label "Identificação Setorial de instituição."@pt
 	Annotations: rdfs:label "admi.124"@pt
 
+DataProperty: bim:turno
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para administrar: turno ( xsd:string )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como um turno a ser preenchido por uma atividade."@pt
+	Annotations: rdfs:label "admi.125"@pt
+
+DataProperty: bim:d.administrar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.administrar"@pt
+
+DataProperty: bim:laboral
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: laboral ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como laboral."@pt
+	Annotations: rdfs:label "admi.126"@pt
+
+DataProperty: bim:feriado
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: feriado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como feriado."@pt
+	Annotations: rdfs:label "admi.127"@pt
+
+DataProperty: bim:diurno
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: diurno ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como diurno."@pt
+	Annotations: rdfs:label "admi.128"@pt
+
+DataProperty: bim:noturno
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: noturno ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como noturno."@pt
+	Annotations: rdfs:label "admi.129"@pt
+
+DataProperty: bim:matutino
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: matutino ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como matutino."@pt
+	Annotations: rdfs:label "admi.130"@pt
+
+DataProperty: bim:vespertino
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: vespertino ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Qualifica um espaço temporal como vespertino."@pt
+	Annotations: rdfs:label "admi.131"@pt
+
+DataProperty: bim:aberto
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: aberto ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Um objeto é aberto."@pt
+	Annotations: rdfs:label "admi.132"@pt
+
+DataProperty: bim:fechado
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar: fechado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Um objeto é fechado."@pt
+	Annotations: rdfs:label "admi.133"@pt
+
 DataProperty: bim:d.afirmar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
@@ -6500,6 +6723,36 @@ DataProperty: bim:fiscalizado.por
 	Annotations: rdfs:label "Dado para atestar: fiscalizado.por ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de agente fiscalizador."@pt
 	Annotations: rdfs:label "ates.110"@pt
+
+DataProperty: bim:d.autenticar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.autenticar"@pt
+
+DataProperty: bim:certificado.digital
+	SubPropertyOf: bim:d.autenticar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para autenticar: certificado.digital ( xsd:string )"@pt
+	Annotations: rdfs:label "Autenticação por Certificado digital."@pt
+	Annotations: rdfs:label "aute.100"@pt
+
+DataProperty: bim:assinatura.digital
+	SubPropertyOf: bim:d.autenticar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para autenticar: assinatura.digital ( xsd:string )"@pt
+	Annotations: rdfs:label "Autenticação por Assinatura digital."@pt
+	Annotations: rdfs:label "aute.101"@pt
+
+DataProperty: bim:criptografado
+	SubPropertyOf: bim:d.autenticar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para autenticar: criptografado ( xsd:string )"@pt
+	Annotations: rdfs:label "Autenticado por critografia."@pt
+	Annotations: rdfs:label "aute.102"@pt
 
 DataProperty: bim:d.captar
 	SubPropertyOf: bim:BIMData
@@ -8754,8 +9007,40 @@ DataProperty: bim:matrícula
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: matrícula ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificador único tipo matrícula."@pt
+	Annotations: rdfs:label "Identificador tipo número de matrícula de um agente."@pt
 	Annotations: rdfs:label "iden.109"@pt
+
+DataProperty: bim:número.serial
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: número.serial ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificador tipo número de série de um produto."@pt
+	Annotations: rdfs:label "iden.110"@pt
+
+DataProperty: bim:número.mac
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: número.mac ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificador tipo MAC (Media Access Control). Formado por 48 bits (6 bytes) com 12 caracteres hexadecimais. 3 bytes são atribuidos pelo IEEE e 3 bytes pelo fabricante do equipamento ou dispositivo. xx:xx:xx:yy:yy:yy"@pt
+	Annotations: rdfs:label "iden.111"@pt
+
+DataProperty: bim:número.lote
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: número.lote ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificador do lote de produção de algum produto."@pt
+	Annotations: rdfs:label "iden.112"@pt
+
+DataProperty: bim:uuid
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: uuid ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificador tipo UUID (Universally Unique Identifier). Formado por 128 bits (16 bytes). É uma sequência de 32 caracteres hexadecimais xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"@pt
+	Annotations: rdfs:label "iden.113"@pt
 
 DataProperty: bim:d.iluminar
 	SubPropertyOf: bim:BIMData
@@ -9436,7 +9721,7 @@ DataProperty: bim:para.conforto
 	Domain: bim:BIM
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para mobiliar: para.conforto ( xsd:boolean )"@pt
-	Annotations: rdfs:label "É um mobiliário para conforto dos habitantes."@pt
+	Annotations: rdfs:label "É um mobiliário para as atividades cotidianas e para dar conforto às pessoas."@pt
 	Annotations: rdfs:label "mobi.103"@pt
 
 DataProperty: bim:para.trabalhar
@@ -9444,7 +9729,7 @@ DataProperty: bim:para.trabalhar
 	Domain: bim:BIM
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para mobiliar: para.trabalhar ( xsd:boolean )"@pt
-	Annotations: rdfs:label "É um mobiliário necessário para executar tarefas de trabalho."@pt
+	Annotations: rdfs:label "É um mobiliário necessário para executar tarefas profissionais."@pt
 	Annotations: rdfs:label "mobi.104"@pt
 
 DataProperty: bim:para.ornar
@@ -9726,6 +10011,22 @@ DataProperty: bim:pix
 	Annotations: rdfs:label "Dado para pagar: pix ( xsd:double )"@pt
 	Annotations: rdfs:label "Identificação da operação de pagamento rápido tipo Pix."@pt
 	Annotations: rdfs:label "paga.106"@pt
+
+DataProperty: bim:creditado
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pagar: creditado ( xsd:double )"@pt
+	Annotations: rdfs:label "Identificação de valor creditado."@pt
+	Annotations: rdfs:label "paga.107"@pt
+
+DataProperty: bim:debitado
+	SubPropertyOf: bim:d.pagar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para pagar: debitado ( xsd:double )"@pt
+	Annotations: rdfs:label "Identificação de valor debitado."@pt
+	Annotations: rdfs:label "paga.108"@pt
 
 DataProperty: bim:d.passar
 	SubPropertyOf: bim:BIMData
@@ -10345,13 +10646,35 @@ DataProperty: bim:andar.de
 	Annotations: rdfs:label "Identifica o tipo de andar (Funcional, Técnico, Mezanino, Cobertura, Nível de fundação)"@pt
 	Annotations: rdfs:label "posi.118"@pt
 
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.posicionar"@pt
+
 DataProperty: bim:coordenada.absoluta
 	SubPropertyOf: bim:d.posicionar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para posicionar : coordenada.absoluta ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para posicionar : coordenada.absoluta ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento em relação ao sistema de coordenadas absolutas."@pt
 	Annotations: rdfs:label "posi.119"@pt
+
+DataProperty: bim:coordenada.base
+	SubPropertyOf: bim:d.posicionar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para posicionar : coordenada.base ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento usado como referência de base."@pt
+	Annotations: rdfs:label "posi.120"@pt
+
+DataProperty: bim:coordenada.topográfica
+	SubPropertyOf: bim:d.posicionar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para posicionar : coordenada.topográfica ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento de topografia."@pt
+	Annotations: rdfs:label "posi.121"@pt
 
 DataProperty: bim:d.prever
 	SubPropertyOf: bim:BIMData
@@ -10765,22 +11088,6 @@ DataProperty: bim:destino
 	Annotations: rdfs:label "Um objeto é destino de algo."@pt
 	Annotations: rdfs:label "rela.108"@pt
 
-DataProperty: bim:aberto
-	SubPropertyOf: bim:d.relacionar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para relacionar: aberto ( xsd:string )"@pt
-	Annotations: rdfs:label "Um objeto é aberto."@pt
-	Annotations: rdfs:label "rela.109"@pt
-
-DataProperty: bim:fechado
-	SubPropertyOf: bim:d.relacionar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para relacionar: fechado ( xsd:string )"@pt
-	Annotations: rdfs:label "Um objeto é fechado."@pt
-	Annotations: rdfs:label "rela.110"@pt
-
 DataProperty: bim:d.separar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
@@ -11106,22 +11413,6 @@ DataProperty: bim:ano.fiscal
 	Annotations: rdfs:label "Dado para temporalizar: ano.fiscal ( xsd:string )"@pt
 	Annotations: rdfs:label "Declara o ano fiscal."@pt
 	Annotations: rdfs:label "temp.113"@pt
-
-DataProperty: bim:laboral
-	SubPropertyOf: bim:d.temporalizar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para temporalizar: laboral ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara que um dia é laboral."@pt
-	Annotations: rdfs:label "temp.114"@pt
-
-DataProperty: bim:feriado
-	SubPropertyOf: bim:d.temporalizar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para temporalizar: feriado ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara que um dia é feriado."@pt
-	Annotations: rdfs:label "temp.115"@pt
 
 DataProperty: bim:d.urbanizar
 	SubPropertyOf: bim:BIMData
