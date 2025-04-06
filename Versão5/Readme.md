@@ -151,14 +151,12 @@ Se as Classes e as Propriedades de Objetos e Dados definem o esquema abstrato do
 para descrever as propriedades de cada indivíduo. No momento o construtor limita a quantidade de propriedades a 10. Cada propriedade usa duas colunas, a primeira para colocar o nome da propriedade definido pelo esquema e a segunda para definir o seu valor. As propriedades de objetos relacionam as Classes com os Indivíduos ou Indivíduos entre se. As propriedades de dados qualificam os indivíduos. 
 Os indivíduos são conhecimentos factuais, representam a descrição de fatos válidos. Por exemplo, todos os códigos da NBR 15.965 são fatos válidos.  
 
-Em sintaxe Manchester um indivíduo tem a seguinte leitura:
-
-   * Individual: bim:1F.10.14.15
-	  *      Types: bim:Código
-	  *      Facts: bim:norma  "NBR 15.965"
-	  *      Facts: bim:parte  "Parte 3"
-	  *      Facts: bim:tema  "1F"
-	  *      Facts: bim:descrição  "Fase de pesquisa"
-
 ![Fatos_01](https://github.com/user-attachments/assets/570183c0-e2e8-450c-8804-72fd646f9707)
 
+Em sintaxe Manchester um indivíduo tem a seguinte leitura:
+   	* Individual: bim:1F.10.14.15   
+	*      Types: bim:Código  
+	*      Facts: bim:norma  "NBR 15.965"  
+	*      Facts: bim:parte  "Parte 3"  
+	*      Facts: bim:tema  "1F"  
+	*      Facts: bim:descrição  "Fase de pesquisa"  
