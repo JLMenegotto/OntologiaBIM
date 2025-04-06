@@ -153,8 +153,9 @@ Os indivíduos são conhecimentos factuais, representam a descrição de fatos v
 
 ![Fatos_01](https://github.com/user-attachments/assets/570183c0-e2e8-450c-8804-72fd646f9707)
 
-Em sintaxe Manchester um indivíduo tem a seguinte leitura:
-   	* Individual: bim:1F.10.14.15   
+Em sintaxe Manchester um indivíduo tem a seguinte leitura:  
+
+   	*  Individual: bim:1F.10.14.15   
 	*      Types: bim:Código  
 	*      Facts: bim:norma  "NBR 15.965"  
 	*      Facts: bim:parte  "Parte 3"  
