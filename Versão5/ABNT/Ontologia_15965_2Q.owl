@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_4_2Q>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 06/04/2025 10:57:39"@pt
+  Annotations: rdfs:label "DataHora: 06/04/2025 19:18:49"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -4545,13 +4545,41 @@ ObjectProperty: bim:é.expirada
 	Annotations: rdfs:label "Indica se o recurso tem a permissão expirada."@pt
 	Annotations: rdfs:label "perm.108"@pt
 
+ObjectProperty: bim:é.diferida
+	SubPropertyOf: bim:p.passar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para passar: é.diferida"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão diferida."@pt
+	Annotations: rdfs:label "pass.100"@pt
+	InverseOf: bim:é.indiferida
+	EquivalentTo: bim:é.autorizada
+
+ObjectProperty: bim:é.rejeitada
+	SubPropertyOf: bim:p.passar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para passar: é.rejeitada"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão rejeitada."@pt
+	Annotations: rdfs:label "pass.101"@pt
+	InverseOf: bim:é.autorizada
+	EquivalentTo: bim:é.indiferida
+
+ObjectProperty: bim:é.indiferida
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para permitir: é.indiferida"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão indiferida."@pt
+	Annotations: rdfs:label "perm.100"@pt
+
 ObjectProperty: bim:é.implícita
 	SubPropertyOf: bim:p.permitir
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para permitir: é.implícita"@pt
 	Annotations: rdfs:label "Indica se o recurso tem a permissão implicitamente comprendida."@pt
-	Annotations: rdfs:label "perm.109"@pt
+	Annotations: rdfs:label "perm.101"@pt
 
 ObjectProperty: bim:é.verbal
 	SubPropertyOf: bim:p.permitir
@@ -4559,7 +4587,7 @@ ObjectProperty: bim:é.verbal
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para permitir: é.verbal"@pt
 	Annotations: rdfs:label "Indica se o recurso tem a permissão verbalmente concedida"@pt
-	Annotations: rdfs:label "perm.110"@pt
+	Annotations: rdfs:label "perm.102"@pt
 
 ObjectProperty: bim:p.pesar
 	SubPropertyOf: bim:BIMProp
@@ -4926,6 +4954,7 @@ ObjectProperty: bim:é.vertical
 	Annotations: rdfs:label "Propriedade para posicionar : é.vertical"@pt
 	Annotations: rdfs:label "Elemento espacialmente vertical. As coordenadas XY de suas extremidades devem ser iguais."@pt
 	Annotations: rdfs:label "posi.111"@pt
+	EquivalentTo: bim:é.no.prumo
 
 ObjectProperty: bim:é.no.prumo
 	SubPropertyOf: bim:p.posicionar
@@ -5014,6 +5043,22 @@ ObjectProperty: bim:é.coordenada.topográfica
 	Annotations: rdfs:label "Propriedade para posicionar : é.coordenada.topográfica"@pt
 	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento de topografia."@pt
 	Annotations: rdfs:label "posi.121"@pt
+
+ObjectProperty: bim:é.norte.verdadeiro
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para posicionar : é.norte.verdadeiro"@pt
+	Annotations: rdfs:label "Rotação do Norte verdadeiro."@pt
+	Annotations: rdfs:label "posi.122"@pt
+
+ObjectProperty: bim:é.norte.projetual
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para posicionar : é.norte.projetual"@pt
+	Annotations: rdfs:label "Rotação do Norte do projeto."@pt
+	Annotations: rdfs:label "posi.123"@pt
 
 ObjectProperty: bim:p.prever
 	SubPropertyOf: bim:BIMProp
@@ -5936,6 +5981,30 @@ ObjectProperty: bim:é.lattes
 	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
 	Annotations: rdfs:label "vinc.109"@pt
 	Characteristics: Functional
+
+ObjectProperty: bim:é.protocolo.http
+	SubPropertyOf: bim:p.vincular
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: é.protocolo.http"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em Internet. HTTP HyperText Transfer Protocol."@pt
+	Annotations: rdfs:label "vinc.110"@pt
+
+ObjectProperty: bim:é.protocolo.https
+	SubPropertyOf: bim:p.vincular
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: é.protocolo.https"@pt
+	Annotations: rdfs:label "Protocolo seguro de transmissão em Internet. HTTPS HyperText Transfer Protocol Secure."@pt
+	Annotations: rdfs:label "vinc.111"@pt
+
+ObjectProperty: bim:é.protocolo.ftp
+	SubPropertyOf: bim:p.vincular
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para vincular: é.protocolo.ftp"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em rede FTP File Transfer Protocol."@pt
+	Annotations: rdfs:label "vinc.112"@pt
 
 ObjectProperty: bim:p.vistoriar
 	SubPropertyOf: bim:BIMProp
@@ -10455,13 +10524,43 @@ DataProperty: bim:expirada
 	Annotations: rdfs:label "Indica se o recurso tem a permissão expirada."@pt
 	Annotations: rdfs:label "perm.108"@pt
 
+DataProperty: bim:d.passar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.passar"@pt
+
+DataProperty: bim:diferida
+	SubPropertyOf: bim:d.passar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para passar: diferida ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão diferida."@pt
+	Annotations: rdfs:label "pass.100"@pt
+
+DataProperty: bim:rejeitada
+	SubPropertyOf: bim:d.passar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para passar: rejeitada ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão rejeitada."@pt
+	Annotations: rdfs:label "pass.101"@pt
+
+DataProperty: bim:indiferida
+	SubPropertyOf: bim:d.permitir
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir: indiferida ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão indiferida."@pt
+	Annotations: rdfs:label "perm.100"@pt
+
 DataProperty: bim:implícita
 	SubPropertyOf: bim:d.permitir
 	Domain: bim:BIM
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para permitir: implícita ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Indica se o recurso tem a permissão implicitamente comprendida."@pt
-	Annotations: rdfs:label "perm.109"@pt
+	Annotations: rdfs:label "perm.101"@pt
 
 DataProperty: bim:verbal
 	SubPropertyOf: bim:d.permitir
@@ -10469,7 +10568,7 @@ DataProperty: bim:verbal
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para permitir: verbal ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Indica se o recurso tem a permissão verbalmente concedida"@pt
-	Annotations: rdfs:label "perm.110"@pt
+	Annotations: rdfs:label "perm.102"@pt
 
 DataProperty: bim:d.pesar
 	SubPropertyOf: bim:BIMData
@@ -10906,6 +11005,28 @@ DataProperty: bim:coordenada.topográfica
 	Annotations: rdfs:label "Dado para posicionar : coordenada.topográfica ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Coordenadas X, Y, Z de posicionamento de topografia."@pt
 	Annotations: rdfs:label "posi.121"@pt
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.posicionar"@pt
+
+DataProperty: bim:norte.verdadeiro
+	SubPropertyOf: bim:d.posicionar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para posicionar : norte.verdadeiro ( xsd:double )"@pt
+	Annotations: rdfs:label "Rotação do Norte verdadeiro."@pt
+	Annotations: rdfs:label "posi.122"@pt
+
+DataProperty: bim:norte.projetual
+	SubPropertyOf: bim:d.posicionar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para posicionar : norte.projetual ( xsd:double )"@pt
+	Annotations: rdfs:label "Rotação do Norte do projeto."@pt
+	Annotations: rdfs:label "posi.123"@pt
 
 DataProperty: bim:d.prever
 	SubPropertyOf: bim:BIMData
@@ -11830,6 +11951,30 @@ DataProperty: bim:lattes
 	Annotations: rdfs:label "Dado para vincular: lattes ( xsd:string )"@pt
 	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
 	Annotations: rdfs:label "vinc.109"@pt
+
+DataProperty: bim:protocolo.http
+	SubPropertyOf: bim:d.vincular
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: protocolo.http ( xsd:string )"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em Internet. HTTP HyperText Transfer Protocol."@pt
+	Annotations: rdfs:label "vinc.110"@pt
+
+DataProperty: bim:protocolo.https
+	SubPropertyOf: bim:d.vincular
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: protocolo.https ( xsd:string )"@pt
+	Annotations: rdfs:label "Protocolo seguro de transmissão em Internet. HTTPS HyperText Transfer Protocol Secure."@pt
+	Annotations: rdfs:label "vinc.111"@pt
+
+DataProperty: bim:protocolo.ftp
+	SubPropertyOf: bim:d.vincular
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vincular: protocolo.ftp ( xsd:string )"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em rede FTP File Transfer Protocol."@pt
+	Annotations: rdfs:label "vinc.112"@pt
 
 DataProperty: bim:d.vistoriar
 	SubPropertyOf: bim:BIMData
