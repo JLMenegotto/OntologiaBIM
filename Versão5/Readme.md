@@ -162,12 +162,12 @@ Em sintaxe Manchester um indivíduo tem a seguinte leitura:
 	*      Facts: bim:tema  "1F"  
 	*      Facts: bim:descrição  "Fase de pesquisa"  
 
- Quando o fato faz referencia a uma Classe Propriedade ou Indivíduo é precedido pelo prefixo do namespace da ontologia. Pode haver algumas declarações como SameAs:  
+ Quando o fato faz a referência a uma Classe, Propriedade ou Indivíduo é precedido pelo prefixo do namespace da ontologia (bim:). Pode haver algumas declarações como SameAs:  
 
    	*  Individual: bim:Copacabana  
 	*      Types: bim:Bairro
 	*      Facts: bim:é.dentro.de  bim:RA.05
-	*      SameAs:    bim:B.024
+	*      SameAs: bim:B.024
 	*      Facts: bim:é.região.administrativa  bim:RA.05
 	*      Facts: bim:é.dentro.de  bim:Zona.Sul
 	*      Facts: bim:descrição  "Bairro N° B.024 RA.05 Copacabana" 
