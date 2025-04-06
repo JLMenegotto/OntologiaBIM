@@ -144,3 +144,11 @@ As colunas L M N O são preenchidas automaticamente. A coluna P é preenchida ma
     * =TRADUZIR(P20; "pt"; "es")
 
 ![PreenchimentoClasses_02](https://github.com/user-attachments/assets/a3748c49-8bfa-44e4-845d-30ab7c09f176)
+
+### Preenchimento dos Fatos de cada Domínio.
+
+Se as Classes e as Propriedades de Objetos e Dados definem o esquema abstrato dos conceitos, os Fatos descrevem realidades concretas conhecidas utilizando as definições de classes e propriedades. A coluna B da planilha de Fatos é utilizada para declarar um indivíduo (que pode ter qualquer nome sem espaços). A coluna C define o tipo de indivíduo que deve ser alguma classe existente. As colunas seguintes Azuis e verdes são utilizadas 
+para descrever as propriedades de cada indivíduo. No momento o construtor limita a quantidade de propriedades a 10. Cada propriedade usa duas colunas, a primeira para colocar o nome da propriedade definido pelo esquema e a segunda para definir o seu valor. As propriedades de objetos relacionam as Classes com os Indivíduos e as propriedades de dados qualificam os indivíduos. 
+
+![Fatos_01](https://github.com/user-attachments/assets/570183c0-e2e8-450c-8804-72fd646f9707)
+
