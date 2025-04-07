@@ -16,7 +16,7 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
   * **Ontologia_ + tema + .xlsx**
   * **Ontologia_ + tema + .owl**
 
-## Capítulos de ontologias 
+## Domínios ontológicos 
 
 <p align="justify">Foram separados os seguintes domínios ontológicos<br></b></p>
 
