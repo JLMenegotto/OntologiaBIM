@@ -178,7 +178,7 @@ Em sintaxe Manchester um indivíduo tem a seguinte leitura:
 
 Os fatos conhecidos descrever a realidade concreta e são de dois tipos. 1) Fatos que são conhecidos e independentes de cualquer projeto. Podem descrever indivíduos que representam componentes de construção, normas técnicas, dados urbanos, restrições de regulamentos, etc.
 
-	*  Fabricantes de componentes podem publicar ontologias de seus produtos, descrevendo os indivíduos do seu catálogo de produtos.    
+	*  Fabricantes de componentes podem publicar ontologias de seus produtos, descrevendo indivíduos do catálogo de produtos.    
  	*  A prefeitura de uma cidade, pode publicar ontologias descrevendo os diversos aspectos urbanos conhecidos.  
   	*  O corpo de bombeiros poderia descrever situações espaciais a levar em conta no projeto ontologizando o conhecimento.  
    	*  A ABNT poderia descrever uma normativa.  
