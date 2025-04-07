@@ -5,6 +5,10 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
+## API do Construtor 
+
+Os arquivos necessários para a instalação do construtor de ontologias BIM estão na pasta **API**.    
+
 ## Observações 
 
 <p align="justify">Na versão 5, foi alterada a organização das classes e adicionadas equivalências entre Classe IFC e Categorias Revit. Foram unificados os esquemas de classes e de instâncias. Foram destacadas as Propriedades de objetos e as Anotações personalizadas em um arquivo independente e comum a todas as ontologias. Os nomes foram organizados assim: <br></b></p>
