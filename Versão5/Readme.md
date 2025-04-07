@@ -176,5 +176,10 @@ Em sintaxe Manchester um indivíduo tem a seguinte leitura:
 	*      Facts: bim:é.dentro.de  bim:Zona.Sul
 	*      Facts: bim:descrição  "Bairro N° B.024 RA.05 Copacabana" 
 
-Os fatos conhecidos descrever a realidade concreta e são de dois tipos. 1) Fatos que são conhecidos e independentes de cualquer projeto. Podem descrever indivíduos que representam componentes de construção, normas técnicas, dados urbanos, restrições de regulamentos, etc.  
+Os fatos conhecidos descrever a realidade concreta e são de dois tipos. 1) Fatos que são conhecidos e independentes de cualquer projeto. Podem descrever indivíduos que representam componentes de construção, normas técnicas, dados urbanos, restrições de regulamentos, etc.
+
+        *  Um fabricante de componentes construtivos poderia publicar uma ontologia de seus produtos descrevendo ontologicamente os diversos indivíduos do seu catálogo de produtos.
+	*  A prefeitura de uma cidade, poderia publicar uma ontologia descrevendo ontologicamente os diversos aspectos urbanos conhecidos.
+        *  O corpo de bombeiros poderia descrever situações espaciais a levar em conta no projeto. 
+
 2) Indivíduos que descrevem a realidade do projeto. São formados pela descrição factual dos indivíduos extraídos desde o modelo BIM que está sendo construído. Neste aplicativo, o botão de extração está sendo preparado para executar a função de criação da ontologia do projeto a partir da leitura do modelo. 
