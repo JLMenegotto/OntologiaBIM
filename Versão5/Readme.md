@@ -147,7 +147,7 @@ As colunas L M N O são preenchidas automaticamente. A coluna P é preenchida ma
 
     * =TRADUZIR(P20; "pt"; "es")
 
-![PreenchimentoClasses_02](https://github.com/user-attachments/assets/a3748c49-8bfa-44e4-845d-30ab7c09f176)
+![PreenchimentoClasses_02](https://github.com/user-attachments/assets/53a13c2d-0785-42f0-a99a-2ff6cb988db8)
 
 ### Preenchimento dos Fatos de cada Domínio.
 
