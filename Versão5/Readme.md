@@ -136,8 +136,7 @@ As condições podem ser escritas concatenando condições de conjunções (and)
    
 ![PreenchimentoClasses_01](https://github.com/user-attachments/assets/093cf0ea-58bd-41a0-bf63-cc977366bd44)
 
-Procurou-se facilitar a escrita eliminando a necessidade de colocar o namespace da ontologia antes dos nomes de classes e propriedades.
-No arquivo OWL gerado cada classe ou propriedade é precedida pelo namespace da ontologia (bim:Classe). Essa concatenação será feita pelo aplicativo.
+Durante a programação do construtor, procurou-se facilitar a escrita da ontologia eliminando a necessidade de colocar o namespace da ontologia antes dos nomes de classes e propriedades. No arquivo OWL gerado cada classe ou propriedade é precedida pelo namespace da ontologia (bim:Classe). Essa concatenação será feita automaticamente pelo aplicativo, permitindo que o usuário se concentre no trabalho de conceitualização de classes e propriedades.
 
 As colunas L M N O são preenchidas automaticamente. A coluna P é preenchida manualmente com explicação clara e breve sobre o conteúdo da classe definida na coluna F. A coluna Q é a tradução a outro idioma do conteúdo da coluna P. Para preencher pode ser utilizada a fórmula:
 
