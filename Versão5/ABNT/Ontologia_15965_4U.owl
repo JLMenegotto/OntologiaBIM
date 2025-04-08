@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_6_4U>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 07/04/2025 16:44:05"@pt
+  Annotations: rdfs:label "DataHora: 08/04/2025 8:39:02"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -1384,7 +1384,7 @@ ObjectProperty: bim:é.rótulo.de.atributo
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: é.rótulo.de.atributo"@pt
 	Annotations: rdfs:label "Declara que se trata de um rótulo de atributo, parámetro ou etiqueta."@pt
-	Annotations: rdfs:label "cata.133"@pt
+	Annotations: rdfs:label "cata.134"@pt
 
 ObjectProperty: bim:é.descrição
 	SubPropertyOf: bim:p.catalogar
@@ -1392,7 +1392,7 @@ ObjectProperty: bim:é.descrição
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para catalogar: é.descrição"@pt
 	Annotations: rdfs:label "Declara a descrição do objeto."@pt
-	Annotations: rdfs:label "cata.134"@pt
+	Annotations: rdfs:label "cata.135"@pt
 
 ObjectProperty: bim:p.circular
 	SubPropertyOf: bim:BIMProp
@@ -2248,27 +2248,33 @@ ObjectProperty: bim:é.resolução.vertical
 	Annotations: rdfs:label "Declara a resolução vertical em pixels."@pt
 	Annotations: rdfs:label "digi.120"@pt
 
-ObjectProperty: bim:é.conduite
-	SubPropertyOf: bim:p.alimentar
+ObjectProperty: bim:p.distribuir
+	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para alimentar: é.conduite"@pt
+	Annotations: rdfs:label "Propriedade de Objeto para p.distribuir"@pt
+
+ObjectProperty: bim:é.conduite
+	SubPropertyOf: bim:p.distribuir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para distribuir: é.conduite"@pt
 	Annotations: rdfs:label "É conduite para diversos tipos de fiação."@pt
 	Annotations: rdfs:label "dist.100"@pt
 
 ObjectProperty: bim:é.calha
-	SubPropertyOf: bim:p.alimentar
+	SubPropertyOf: bim:p.distribuir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para alimentar: é.calha"@pt
+	Annotations: rdfs:label "Propriedade para distribuir: é.calha"@pt
 	Annotations: rdfs:label "É calha para conduzir fiações."@pt
 	Annotations: rdfs:label "dist.101"@pt
 
 ObjectProperty: bim:é.leito.de.cabeamento
-	SubPropertyOf: bim:p.alimentar
+	SubPropertyOf: bim:p.distribuir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para alimentar: é.leito.de.cabeamento"@pt
+	Annotations: rdfs:label "Propriedade para distribuir: é.leito.de.cabeamento"@pt
 	Annotations: rdfs:label "É leito de cabeamento para conduzir fiações."@pt
 	Annotations: rdfs:label "dist.102"@pt
 
@@ -2291,7 +2297,7 @@ ObjectProperty: bim:é.prancha
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.prancha"@pt
-	Annotations: rdfs:label "É um documento tipo prancha."@pt
+	Annotations: rdfs:label "É um documento ou desenho completo em prancha ou folha técnica."@pt
 	Annotations: rdfs:label "docu.101"@pt
 
 ObjectProperty: bim:é.planta.baixa
@@ -2299,32 +2305,56 @@ ObjectProperty: bim:é.planta.baixa
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.planta.baixa"@pt
-	Annotations: rdfs:label "É um documento tipo planta baixa."@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de planta baixa."@pt
 	Annotations: rdfs:label "docu.102"@pt
+
+ObjectProperty: bim:é.esboço
+	SubPropertyOf: bim:p.documentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para documentar: é.esboço"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de esboço."@pt
+	Annotations: rdfs:label "docu.103"@pt
 
 ObjectProperty: bim:é.detalhe
 	SubPropertyOf: bim:p.documentar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.detalhe"@pt
-	Annotations: rdfs:label "É um documento tipo detalhe."@pt
-	Annotations: rdfs:label "docu.103"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de detalhe."@pt
+	Annotations: rdfs:label "docu.104"@pt
 
 ObjectProperty: bim:é.corte
 	SubPropertyOf: bim:p.documentar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.corte"@pt
-	Annotations: rdfs:label "É um documento tipo corte."@pt
-	Annotations: rdfs:label "docu.104"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de corte."@pt
+	Annotations: rdfs:label "docu.105"@pt
 
 ObjectProperty: bim:é.vista
 	SubPropertyOf: bim:p.documentar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.vista"@pt
-	Annotations: rdfs:label "É um documento tipo vista."@pt
-	Annotations: rdfs:label "docu.105"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de vista ou elevação."@pt
+	Annotations: rdfs:label "docu.106"@pt
+
+ObjectProperty: bim:é.perspectiva
+	SubPropertyOf: bim:p.documentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para documentar: é.perspectiva"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport em perspectiva cônica."@pt
+	Annotations: rdfs:label "docu.107"@pt
+
+ObjectProperty: bim:é.axonometria
+	SubPropertyOf: bim:p.documentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para documentar: é.axonometria"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport em axonometria (Isometria, Dimetria ou Trimetria)."@pt
+	Annotations: rdfs:label "docu.108"@pt
 
 ObjectProperty: bim:é.grupo
 	SubPropertyOf: bim:p.documentar
@@ -2332,7 +2362,7 @@ ObjectProperty: bim:é.grupo
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para documentar: é.grupo"@pt
 	Annotations: rdfs:label "Identifica a associação com um grupo de objetos de um modelo BIM ou arquivo CAD."@pt
-	Annotations: rdfs:label "docu.106"@pt
+	Annotations: rdfs:label "docu.109"@pt
 
 ObjectProperty: bim:p.encher
 	SubPropertyOf: bim:BIMProp
@@ -2416,31 +2446,13 @@ ObjectProperty: bim:é.cidade
 	Annotations: rdfs:label "ende.105"@pt
 	Characteristics: Functional
 
-ObjectProperty: bim:é.area.de.planejamento
-	SubPropertyOf: bim:p.endereçar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para endereçar: é.area.de.planejamento"@pt
-	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)."@pt
-	Annotations: rdfs:label "ende.106"@pt
-	Characteristics: Functional
-
-ObjectProperty: bim:é.região.administrativa
-	SubPropertyOf: bim:p.endereçar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para endereçar: é.região.administrativa"@pt
-	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)."@pt
-	Annotations: rdfs:label "ende.107"@pt
-	Characteristics: Functional
-
 ObjectProperty: bim:é.distrito
 	SubPropertyOf: bim:p.endereçar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.distrito"@pt
 	Annotations: rdfs:label "Identificador do distrito."@pt
-	Annotations: rdfs:label "ende.108"@pt
+	Annotations: rdfs:label "ende.106"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.bairro
@@ -2449,7 +2461,7 @@ ObjectProperty: bim:é.bairro
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.bairro"@pt
 	Annotations: rdfs:label "Nome do bairro."@pt
-	Annotations: rdfs:label "ende.109"@pt
+	Annotations: rdfs:label "ende.107"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.nome.do.logradouro
@@ -2458,7 +2470,7 @@ ObjectProperty: bim:é.nome.do.logradouro
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.nome.do.logradouro"@pt
 	Annotations: rdfs:label "Nome de rua, avenida etc.."@pt
-	Annotations: rdfs:label "ende.110"@pt
+	Annotations: rdfs:label "ende.108"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.número.do.logradouro
@@ -2467,7 +2479,7 @@ ObjectProperty: bim:é.número.do.logradouro
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.número.do.logradouro"@pt
 	Annotations: rdfs:label "Número de rua, avenida, etc."@pt
-	Annotations: rdfs:label "ende.111"@pt
+	Annotations: rdfs:label "ende.109"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.endereço
@@ -2475,8 +2487,8 @@ ObjectProperty: bim:é.endereço
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.endereço"@pt
-	Annotations: rdfs:label "Endereço geral. É preferível desdobrar cada dado individualmente."@pt
-	Annotations: rdfs:label "ende.112"@pt
+	Annotations: rdfs:label "Endereço completo, mas é preferível desdobrar cada dado do endereçamento individualmente."@pt
+	Annotations: rdfs:label "ende.110"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.cnj
@@ -2485,7 +2497,7 @@ ObjectProperty: bim:é.cnj
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.cnj"@pt
 	Annotations: rdfs:label "Em alguns endereços pode haver Conjunto."@pt
-	Annotations: rdfs:label "ende.113"@pt
+	Annotations: rdfs:label "ende.111"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.grp
@@ -2494,7 +2506,7 @@ ObjectProperty: bim:é.grp
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.grp"@pt
 	Annotations: rdfs:label "Em alguns endereços pode haver Grupo ."@pt
-	Annotations: rdfs:label "ende.114"@pt
+	Annotations: rdfs:label "ende.112"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.bloco
@@ -2503,7 +2515,7 @@ ObjectProperty: bim:é.bloco
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.bloco"@pt
 	Annotations: rdfs:label "Em alguns endereços pode haver Bloco."@pt
-	Annotations: rdfs:label "ende.115"@pt
+	Annotations: rdfs:label "ende.113"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.andar
@@ -2512,7 +2524,7 @@ ObjectProperty: bim:é.andar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.andar"@pt
 	Annotations: rdfs:label "Nome do andar."@pt
-	Annotations: rdfs:label "ende.116"@pt
+	Annotations: rdfs:label "ende.114"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.cep
@@ -2521,7 +2533,7 @@ ObjectProperty: bim:é.cep
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para endereçar: é.cep"@pt
 	Annotations: rdfs:label "CEP - Código de endereçamento postal."@pt
-	Annotations: rdfs:label "ende.117"@pt
+	Annotations: rdfs:label "ende.115"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:p.energizar
@@ -2530,36 +2542,36 @@ ObjectProperty: bim:p.energizar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade de Objeto para p.energizar"@pt
 
-ObjectProperty: bim:é.energia.ativa
-	SubPropertyOf: bim:p.energizar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para energizar: é.energia.ativa"@pt
-	Annotations: rdfs:label "Declara o valor de energia ativa em Kw/h por exemplo."@pt
-	Annotations: rdfs:label "ener.100"@pt
-
-ObjectProperty: bim:é.energia.reativa
-	SubPropertyOf: bim:p.energizar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para energizar: é.energia.reativa"@pt
-	Annotations: rdfs:label "Declara o valor de energia.reativa."@pt
-	Annotations: rdfs:label "ener.101"@pt
-
 ObjectProperty: bim:é.gerador
 	SubPropertyOf: bim:p.energizar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para energizar: é.gerador"@pt
-	Annotations: rdfs:label "Declara se o objeto é gerador de energia. Um painel solar ou torre eólica por exemplo."@pt
-	Annotations: rdfs:label "ener.102"@pt
+	Annotations: rdfs:label "Declara objeto de geração de energia.  Um painel solar ou torre eólica por exemplo. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ener.100"@pt
 
 ObjectProperty: bim:é.consumidor
 	SubPropertyOf: bim:p.energizar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para energizar: é.consumidor"@pt
-	Annotations: rdfs:label "Declara se o objeto é consumidor. Uma lámpada ou equipamento."@pt
+	Annotations: rdfs:label "Declara objeto consumidor de energia. Uma lámpada ou equipamento que consuma. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ener.101"@pt
+
+ObjectProperty: bim:é.energia.ativa
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.energia.ativa"@pt
+	Annotations: rdfs:label "Declara o valor de energia ativa em Kw/h por exemplo."@pt
+	Annotations: rdfs:label "ener.102"@pt
+
+ObjectProperty: bim:é.energia.reativa
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.energia.reativa"@pt
+	Annotations: rdfs:label "Declara o valor de energia reativa."@pt
 	Annotations: rdfs:label "ener.103"@pt
 
 ObjectProperty: bim:é.demandado
@@ -2613,7 +2625,7 @@ ObjectProperty: bim:é.esgoto
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para esgotar: é.esgoto"@pt
-	Annotations: rdfs:label "Identificação do elemento de tubulação evacuador. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "Identificação do elemento de tubulação de esgoto. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "esgo.100"@pt
 
 ObjectProperty: bim:é.primário
@@ -3488,6 +3500,68 @@ ObjectProperty: bim:é.mediana
 	Annotations: rdfs:label "É o valor de mediana de uma estatística."@pt
 	Annotations: rdfs:label "grad.111"@pt
 
+ObjectProperty: bim:p.içar
+	SubPropertyOf: bim:BIMProp
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade de Objeto para p.içar"@pt
+
+ObjectProperty: bim:é.comunicador
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.comunicador"@pt
+	Annotations: rdfs:label "Equipamento de comunicação para a operação."@pt
+	Annotations: rdfs:label "içar.100"@pt
+
+ObjectProperty: bim:é.gancho
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.gancho"@pt
+	Annotations: rdfs:label "Gancho para içamento."@pt
+	Annotations: rdfs:label "içar.101"@pt
+
+ObjectProperty: bim:é.guindaste
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.guindaste"@pt
+	Annotations: rdfs:label "Guindaste ou grua de içamento."@pt
+	Annotations: rdfs:label "içar.102"@pt
+
+ObjectProperty: bim:é.eslinga
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.eslinga"@pt
+	Annotations: rdfs:label "Cabos de aço para içamento."@pt
+	Annotations: rdfs:label "içar.103"@pt
+
+ObjectProperty: bim:é.corrente.hsz
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.corrente.hsz"@pt
+	Annotations: rdfs:label "Correntes para Zonas de Segurança."@pt
+	Annotations: rdfs:label "içar.104"@pt
+
+ObjectProperty: bim:é.talha
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.talha"@pt
+	Annotations: rdfs:label "Talhas de içamento."@pt
+	Annotations: rdfs:label "içar.105"@pt
+
+ObjectProperty: bim:é.corda
+	SubPropertyOf: bim:p.içar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para içar: é.corda"@pt
+	Annotations: rdfs:label "Cordas de içamento."@pt
+	Annotations: rdfs:label "içar.106"@pt
+
 ObjectProperty: bim:p.identificar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -3949,6 +4023,54 @@ ObjectProperty: bim:é.prioritário
 	Annotations: rdfs:label "Declara que o elemento é prioritário caso se tenha que escolher entre opções."@pt
 	Annotations: rdfs:label "inst.118"@pt
 
+ObjectProperty: bim:é.opcional
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para instalar: é.opcional"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação opcional."@pt
+	Annotations: rdfs:label "inst.119"@pt
+
+ObjectProperty: bim:é.condicionado.por
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para instalar: é.condicionado.por"@pt
+	Annotations: rdfs:label "Declara que o elemento tem a sua instalação condicionada por alguma situação."@pt
+	Annotations: rdfs:label "inst.120"@pt
+
+ObjectProperty: bim:é.estratégico
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para instalar: é.estratégico"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação estratégica."@pt
+	Annotations: rdfs:label "inst.121"@pt
+
+ObjectProperty: bim:é.obrigatório
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para instalar: é.obrigatório"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação obrigatória."@pt
+	Annotations: rdfs:label "inst.122"@pt
+
+ObjectProperty: bim:é.rápida
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para instalar: é.rápida"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação rápida e simples."@pt
+	Annotations: rdfs:label "inst.123"@pt
+
+ObjectProperty: bim:é.demorada
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para instalar: é.demorada"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação demorada ou precisa tempo de cura ou secagem."@pt
+	Annotations: rdfs:label "inst.124"@pt
+
 ObjectProperty: bim:p.juntar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -4212,6 +4334,127 @@ ObjectProperty: bim:é.vetado.por
 	Annotations: rdfs:label "A lei ou norma foi vetada por alguma autoridade."@pt
 	Annotations: rdfs:label "legi.116"@pt
 	InverseOf: bim:é.revogante.de
+
+ObjectProperty: bim:p.linkar
+	SubPropertyOf: bim:BIMProp
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade de Objeto para p.linkar"@pt
+
+ObjectProperty: bim:é.uri
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.uri"@pt
+	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
+	Annotations: rdfs:label "link.100"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.urn
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.urn"@pt
+	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
+	Annotations: rdfs:label "link.101"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.url
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.url"@pt
+	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
+	Annotations: rdfs:label "link.102"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.iri
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.iri"@pt
+	Annotations: rdfs:label "Internationalized Resource Identifier. Identificador web que aceita caracteres internacionais."@pt
+	Annotations: rdfs:label "link.103"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.ipv4
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.ipv4"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v4. 100.000.0.0"@pt
+	Annotations: rdfs:label "link.104"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.ipv6
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.ipv6"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v6. 000a:000b:000a:0000:0000:0000:0000:0000"@pt
+	Annotations: rdfs:label "link.105"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.hipervínculo
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.hipervínculo"@pt
+	Annotations: rdfs:label "Hipervínculo ou link."@pt
+	Annotations: rdfs:label "link.106"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.link
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.link"@pt
+	Annotations: rdfs:label "Link ou Hipervínculo."@pt
+	Annotations: rdfs:label "link.107"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.orcid
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.orcid"@pt
+	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
+	Annotations: rdfs:label "link.108"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.lattes
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.lattes"@pt
+	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
+	Annotations: rdfs:label "link.109"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.protocolo.http
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.protocolo.http"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em Internet. HTTP HyperText Transfer Protocol."@pt
+	Annotations: rdfs:label "link.110"@pt
+
+ObjectProperty: bim:é.protocolo.https
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.protocolo.https"@pt
+	Annotations: rdfs:label "Protocolo seguro de transmissão em Internet. HTTPS HyperText Transfer Protocol Secure."@pt
+	Annotations: rdfs:label "link.111"@pt
+
+ObjectProperty: bim:é.protocolo.ftp
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para linkar: é.protocolo.ftp"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em rede FTP File Transfer Protocol."@pt
+	Annotations: rdfs:label "link.112"@pt
 
 ObjectProperty: bim:p.mapear
 	SubPropertyOf: bim:BIMProp
@@ -4519,7 +4762,7 @@ ObjectProperty: bim:é.módulo.a
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para modular: é.módulo.a"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular A."@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular A."@pt
 	Annotations: rdfs:label "modu.101"@pt
 
 ObjectProperty: bim:é.módulo.b
@@ -4527,7 +4770,7 @@ ObjectProperty: bim:é.módulo.b
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para modular: é.módulo.b"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular B."@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular B."@pt
 	Annotations: rdfs:label "modu.102"@pt
 
 ObjectProperty: bim:é.módulo.c
@@ -4535,16 +4778,24 @@ ObjectProperty: bim:é.módulo.c
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para modular: é.módulo.c"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular C."@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular C."@pt
 	Annotations: rdfs:label "modu.103"@pt
+
+ObjectProperty: bim:é.módulo.d
+	SubPropertyOf: bim:p.modular
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para modular: é.módulo.d"@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular D."@pt
+	Annotations: rdfs:label "modu.104"@pt
 
 ObjectProperty: bim:é.proporção
 	SubPropertyOf: bim:p.modular
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para modular: é.proporção"@pt
-	Annotations: rdfs:label "Denominador numérico da proporção 1 / X."@pt
-	Annotations: rdfs:label "modu.104"@pt
+	Annotations: rdfs:label "Denominador numérico inteiro da proporção 1 / X."@pt
+	Annotations: rdfs:label "modu.105"@pt
 
 ObjectProperty: bim:p.normatizar
 	SubPropertyOf: bim:BIMProp
@@ -6007,13 +6258,21 @@ ObjectProperty: bim:é.aplicado.para
 	Annotations: rdfs:label "Um objeto que se aplica para cumprir algum objetivo."@pt
 	Annotations: rdfs:label "rela.107"@pt
 
+ObjectProperty: bim:é.precisa.de
+	SubPropertyOf: bim:p.relacionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para relacionar: é.precisa.de"@pt
+	Annotations: rdfs:label "Declara que é necessário ou preciso de um outro objeto."@pt
+	Annotations: rdfs:label "rela.108"@pt
+
 ObjectProperty: bim:é.destino
 	SubPropertyOf: bim:p.relacionar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para relacionar: é.destino"@pt
 	Annotations: rdfs:label "Um objeto é destino de algo."@pt
-	Annotations: rdfs:label "rela.108"@pt
+	Annotations: rdfs:label "rela.109"@pt
 
 ObjectProperty: bim:p.sensorizar
 	SubPropertyOf: bim:BIMProp
@@ -6026,7 +6285,7 @@ ObjectProperty: bim:é.beacon
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.beacon"@pt
-	Annotations: rdfs:label "Identificação de um beacon."@pt
+	Annotations: rdfs:label "Identificação de um beacon. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.100"@pt
 
 ObjectProperty: bim:é.sensor.térmico
@@ -6034,7 +6293,7 @@ ObjectProperty: bim:é.sensor.térmico
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.térmico"@pt
-	Annotations: rdfs:label "Identificação de um sensor de temperatura e umidade."@pt
+	Annotations: rdfs:label "Identificação de um sensor de temperatura e umidade. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.101"@pt
 
 ObjectProperty: bim:é.sensor.de.vibração
@@ -6042,7 +6301,7 @@ ObjectProperty: bim:é.sensor.de.vibração
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.de.vibração"@pt
-	Annotations: rdfs:label "Identificação da um beacon."@pt
+	Annotations: rdfs:label "Identificação da um sensor de vibração. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.102"@pt
 
 ObjectProperty: bim:é.sensor.de.iluminação
@@ -6050,7 +6309,7 @@ ObjectProperty: bim:é.sensor.de.iluminação
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.de.iluminação"@pt
-	Annotations: rdfs:label "Identificação da um sensor de vibração."@pt
+	Annotations: rdfs:label "Identificação da um sensor de iluminação. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.103"@pt
 
 ObjectProperty: bim:é.sensor.de.movimento
@@ -6058,7 +6317,7 @@ ObjectProperty: bim:é.sensor.de.movimento
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.de.movimento"@pt
-	Annotations: rdfs:label "Identificação da um sensor de movimento."@pt
+	Annotations: rdfs:label "Identificação da um sensor de movimento. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.104"@pt
 	EquivalentTo: bim:é.sensor.de.presença
 
@@ -6067,7 +6326,7 @@ ObjectProperty: bim:é.sensor.de.presença
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.de.presença"@pt
-	Annotations: rdfs:label "Identificação da um sensor de presença."@pt
+	Annotations: rdfs:label "Identificação da um sensor de presença. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.105"@pt
 
 ObjectProperty: bim:é.sensor.de.acesso
@@ -6075,7 +6334,7 @@ ObjectProperty: bim:é.sensor.de.acesso
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.de.acesso"@pt
-	Annotations: rdfs:label "Identificação da um sensor de acesso."@pt
+	Annotations: rdfs:label "Identificação da um sensor de acesso. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.106"@pt
 
 ObjectProperty: bim:é.sensor.de.fumaça
@@ -6083,7 +6342,7 @@ ObjectProperty: bim:é.sensor.de.fumaça
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sensorizar: é.sensor.de.fumaça"@pt
-	Annotations: rdfs:label "Identificação da um sensor de fumaça para sistemas de combate a incêndio."@pt
+	Annotations: rdfs:label "Identificação da um sensor de fumaça para sistemas de combate a incêndio. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.107"@pt
 
 ObjectProperty: bim:p.separar
@@ -6505,126 +6764,85 @@ ObjectProperty: bim:é.operação.urbana
 	Annotations: rdfs:label "Declara uma operação urbana consorciada que utiliza o mecanismo de CEPACs."@pt
 	Annotations: rdfs:label "urba.110"@pt
 
-ObjectProperty: bim:p.vincular
+ObjectProperty: bim:é.area.de.planejamento
+	SubPropertyOf: bim:p.urbanizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para urbanizar: é.area.de.planejamento"@pt
+	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)."@pt
+	Annotations: rdfs:label "urba.111"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:é.região.administrativa
+	SubPropertyOf: bim:p.urbanizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para urbanizar: é.região.administrativa"@pt
+	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)."@pt
+	Annotations: rdfs:label "urba.112"@pt
+	Characteristics: Functional
+
+ObjectProperty: bim:p.vestir
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade de Objeto para p.vincular"@pt
+	Annotations: rdfs:label "Propriedade de Objeto para p.vestir"@pt
 
-ObjectProperty: bim:é.uri
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.uniformizado
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.uri"@pt
-	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
-	Annotations: rdfs:label "vinc.100"@pt
-	Characteristics: Functional
+	Annotations: rdfs:label "Propriedade para vestir: é.uniformizado"@pt
+	Annotations: rdfs:label "Declara que o operário está uniformizado."@pt
+	Annotations: rdfs:label "vest.100"@pt
 
-ObjectProperty: bim:é.urn
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.calçado
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.urn"@pt
-	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
-	Annotations: rdfs:label "vinc.101"@pt
-	Characteristics: Functional
+	Annotations: rdfs:label "Propriedade para vestir: é.calçado"@pt
+	Annotations: rdfs:label "Declara que o operário está corretamente calçado com botas ou acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.101"@pt
 
-ObjectProperty: bim:é.url
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.mascarado
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.url"@pt
-	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
-	Annotations: rdfs:label "vinc.102"@pt
-	Characteristics: Functional
+	Annotations: rdfs:label "Propriedade para vestir: é.mascarado"@pt
+	Annotations: rdfs:label "Declara que o operário está usando máscara acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.102"@pt
 
-ObjectProperty: bim:é.iri
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.epi
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.iri"@pt
-	Annotations: rdfs:label "Internationalized Resource Identifier. Identificador web que aceita caracteres internacionais."@pt
-	Annotations: rdfs:label "vinc.103"@pt
-	Characteristics: Functional
+	Annotations: rdfs:label "Propriedade para vestir: é.epi"@pt
+	Annotations: rdfs:label "Declara que o operário está usando todos os EPI Equipamentos de Proteção Individual acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.103"@pt
 
-ObjectProperty: bim:é.ipv4
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.cintado
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.ipv4"@pt
-	Annotations: rdfs:label "Número de Internet Protocol v4. 100.000.0.0"@pt
-	Annotations: rdfs:label "vinc.104"@pt
-	Characteristics: Functional
+	Annotations: rdfs:label "Propriedade para vestir: é.cintado"@pt
+	Annotations: rdfs:label "Declara que o operário está corretamente cintado com arneses apropriados conforme a exigência da atividade."@pt
+	Annotations: rdfs:label "vest.104"@pt
 
-ObjectProperty: bim:é.ipv6
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.enluvado
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.ipv6"@pt
-	Annotations: rdfs:label "Número de Internet Protocol v6. 000a:000b:000a:0000:0000:0000:0000:0000"@pt
-	Annotations: rdfs:label "vinc.105"@pt
-	Characteristics: Functional
+	Annotations: rdfs:label "Propriedade para vestir: é.enluvado"@pt
+	Annotations: rdfs:label "Declara que o operário está usando luvas acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.105"@pt
 
-ObjectProperty: bim:é.hipervínculo
-	SubPropertyOf: bim:p.vincular
+ObjectProperty: bim:é.capacete
+	SubPropertyOf: bim:p.vestir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.hipervínculo"@pt
-	Annotations: rdfs:label "Hipervínculo ou link."@pt
-	Annotations: rdfs:label "vinc.106"@pt
-	Characteristics: Functional
-
-ObjectProperty: bim:é.link
-	SubPropertyOf: bim:p.vincular
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.link"@pt
-	Annotations: rdfs:label "Link ou Hipervínculo."@pt
-	Annotations: rdfs:label "vinc.107"@pt
-	Characteristics: Functional
-
-ObjectProperty: bim:é.orcid
-	SubPropertyOf: bim:p.vincular
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.orcid"@pt
-	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
-	Annotations: rdfs:label "vinc.108"@pt
-	Characteristics: Functional
-	Characteristics: InverseFunctional
-
-ObjectProperty: bim:é.lattes
-	SubPropertyOf: bim:p.vincular
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.lattes"@pt
-	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
-	Annotations: rdfs:label "vinc.109"@pt
-	Characteristics: Functional
-
-ObjectProperty: bim:é.protocolo.http
-	SubPropertyOf: bim:p.vincular
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.protocolo.http"@pt
-	Annotations: rdfs:label "Protocolo de transmissão em Internet. HTTP HyperText Transfer Protocol."@pt
-	Annotations: rdfs:label "vinc.110"@pt
-
-ObjectProperty: bim:é.protocolo.https
-	SubPropertyOf: bim:p.vincular
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.protocolo.https"@pt
-	Annotations: rdfs:label "Protocolo seguro de transmissão em Internet. HTTPS HyperText Transfer Protocol Secure."@pt
-	Annotations: rdfs:label "vinc.111"@pt
-
-ObjectProperty: bim:é.protocolo.ftp
-	SubPropertyOf: bim:p.vincular
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para vincular: é.protocolo.ftp"@pt
-	Annotations: rdfs:label "Protocolo de transmissão em rede FTP File Transfer Protocol."@pt
-	Annotations: rdfs:label "vinc.112"@pt
+	Annotations: rdfs:label "Propriedade para vestir: é.capacete"@pt
+	Annotations: rdfs:label "Declara que o operário está usando capacete de segurança acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.106"@pt
 
 ObjectProperty: bim:p.vistoriar
 	SubPropertyOf: bim:BIMProp
@@ -7974,7 +8192,7 @@ DataProperty: bim:rótulo.de.atributo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: rótulo.de.atributo ( xsd:string )"@pt
 	Annotations: rdfs:label "Declara que se trata de um rótulo de atributo, parámetro ou etiqueta."@pt
-	Annotations: rdfs:label "cata.133"@pt
+	Annotations: rdfs:label "cata.134"@pt
 
 DataProperty: bim:descrição
 	SubPropertyOf: bim:d.catalogar
@@ -7982,7 +8200,7 @@ DataProperty: bim:descrição
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para catalogar: descrição ( xsd:string )"@pt
 	Annotations: rdfs:label "Declara a descrição do objeto."@pt
-	Annotations: rdfs:label "cata.134"@pt
+	Annotations: rdfs:label "cata.135"@pt
 
 DataProperty: bim:d.circular
 	SubPropertyOf: bim:BIMData
@@ -8899,7 +9117,7 @@ DataProperty: bim:prancha
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: prancha ( xsd:string )"@pt
-	Annotations: rdfs:label "É um documento tipo prancha."@pt
+	Annotations: rdfs:label "É um documento ou desenho completo em prancha ou folha técnica."@pt
 	Annotations: rdfs:label "docu.101"@pt
 
 DataProperty: bim:planta.baixa
@@ -8907,32 +9125,56 @@ DataProperty: bim:planta.baixa
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: planta.baixa ( xsd:string )"@pt
-	Annotations: rdfs:label "É um documento tipo planta baixa."@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de planta baixa."@pt
 	Annotations: rdfs:label "docu.102"@pt
+
+DataProperty: bim:esboço
+	SubPropertyOf: bim:d.documentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para documentar: esboço ( xsd:string )"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de esboço."@pt
+	Annotations: rdfs:label "docu.103"@pt
 
 DataProperty: bim:detalhe
 	SubPropertyOf: bim:d.documentar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: detalhe ( xsd:string )"@pt
-	Annotations: rdfs:label "É um documento tipo detalhe."@pt
-	Annotations: rdfs:label "docu.103"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de detalhe."@pt
+	Annotations: rdfs:label "docu.104"@pt
 
 DataProperty: bim:corte
 	SubPropertyOf: bim:d.documentar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: corte ( xsd:string )"@pt
-	Annotations: rdfs:label "É um documento tipo corte."@pt
-	Annotations: rdfs:label "docu.104"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de corte."@pt
+	Annotations: rdfs:label "docu.105"@pt
 
 DataProperty: bim:vista
 	SubPropertyOf: bim:d.documentar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: vista ( xsd:string )"@pt
-	Annotations: rdfs:label "É um documento tipo vista."@pt
-	Annotations: rdfs:label "docu.105"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport de vista ou elevação."@pt
+	Annotations: rdfs:label "docu.106"@pt
+
+DataProperty: bim:perspectiva
+	SubPropertyOf: bim:d.documentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para documentar: perspectiva ( xsd:string )"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport em perspectiva cônica."@pt
+	Annotations: rdfs:label "docu.107"@pt
+
+DataProperty: bim:axonometria
+	SubPropertyOf: bim:d.documentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para documentar: axonometria ( xsd:string )"@pt
+	Annotations: rdfs:label "É um documento ou desenho parcial de viewport em axonometria (Isometria, Dimetria ou Trimetria)."@pt
+	Annotations: rdfs:label "docu.108"@pt
 
 DataProperty: bim:grupo
 	SubPropertyOf: bim:d.documentar
@@ -8940,7 +9182,7 @@ DataProperty: bim:grupo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para documentar: grupo ( xsd:string )"@pt
 	Annotations: rdfs:label "Identifica a associação com um grupo de objetos de um modelo BIM ou arquivo CAD."@pt
-	Annotations: rdfs:label "docu.106"@pt
+	Annotations: rdfs:label "docu.109"@pt
 
 DataProperty: bim:d.encher
 	SubPropertyOf: bim:BIMData
@@ -9018,29 +9260,13 @@ DataProperty: bim:cidade
 	Annotations: rdfs:label "Nome da cidade."@pt
 	Annotations: rdfs:label "ende.105"@pt
 
-DataProperty: bim:area.de.planejamento
-	SubPropertyOf: bim:d.endereçar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para endereçar: area.de.planejamento ( xsd:string )"@pt
-	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)."@pt
-	Annotations: rdfs:label "ende.106"@pt
-
-DataProperty: bim:região.administrativa
-	SubPropertyOf: bim:d.endereçar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para endereçar: região.administrativa ( xsd:string )"@pt
-	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)."@pt
-	Annotations: rdfs:label "ende.107"@pt
-
 DataProperty: bim:distrito
 	SubPropertyOf: bim:d.endereçar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: distrito ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificador do distrito."@pt
-	Annotations: rdfs:label "ende.108"@pt
+	Annotations: rdfs:label "ende.106"@pt
 
 DataProperty: bim:bairro
 	SubPropertyOf: bim:d.endereçar
@@ -9048,7 +9274,7 @@ DataProperty: bim:bairro
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: bairro ( xsd:string )"@pt
 	Annotations: rdfs:label "Nome do bairro."@pt
-	Annotations: rdfs:label "ende.109"@pt
+	Annotations: rdfs:label "ende.107"@pt
 
 DataProperty: bim:nome.do.logradouro
 	SubPropertyOf: bim:d.endereçar
@@ -9056,7 +9282,7 @@ DataProperty: bim:nome.do.logradouro
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: nome.do.logradouro ( xsd:string )"@pt
 	Annotations: rdfs:label "Nome de rua, avenida etc.."@pt
-	Annotations: rdfs:label "ende.110"@pt
+	Annotations: rdfs:label "ende.108"@pt
 
 DataProperty: bim:número.do.logradouro
 	SubPropertyOf: bim:d.endereçar
@@ -9064,15 +9290,15 @@ DataProperty: bim:número.do.logradouro
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: número.do.logradouro ( xsd:string )"@pt
 	Annotations: rdfs:label "Número de rua, avenida, etc."@pt
-	Annotations: rdfs:label "ende.111"@pt
+	Annotations: rdfs:label "ende.109"@pt
 
 DataProperty: bim:endereço
 	SubPropertyOf: bim:d.endereçar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: endereço ( xsd:string )"@pt
-	Annotations: rdfs:label "Endereço geral. É preferível desdobrar cada dado individualmente."@pt
-	Annotations: rdfs:label "ende.112"@pt
+	Annotations: rdfs:label "Endereço completo, mas é preferível desdobrar cada dado do endereçamento individualmente."@pt
+	Annotations: rdfs:label "ende.110"@pt
 
 DataProperty: bim:cnj
 	SubPropertyOf: bim:d.endereçar
@@ -9080,7 +9306,7 @@ DataProperty: bim:cnj
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: cnj ( xsd:string )"@pt
 	Annotations: rdfs:label "Em alguns endereços pode haver Conjunto."@pt
-	Annotations: rdfs:label "ende.113"@pt
+	Annotations: rdfs:label "ende.111"@pt
 
 DataProperty: bim:grp
 	SubPropertyOf: bim:d.endereçar
@@ -9088,7 +9314,7 @@ DataProperty: bim:grp
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: grp ( xsd:string )"@pt
 	Annotations: rdfs:label "Em alguns endereços pode haver Grupo ."@pt
-	Annotations: rdfs:label "ende.114"@pt
+	Annotations: rdfs:label "ende.112"@pt
 
 DataProperty: bim:bloco
 	SubPropertyOf: bim:d.endereçar
@@ -9096,7 +9322,7 @@ DataProperty: bim:bloco
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: bloco ( xsd:string )"@pt
 	Annotations: rdfs:label "Em alguns endereços pode haver Bloco."@pt
-	Annotations: rdfs:label "ende.115"@pt
+	Annotations: rdfs:label "ende.113"@pt
 
 DataProperty: bim:andar
 	SubPropertyOf: bim:d.endereçar
@@ -9104,7 +9330,7 @@ DataProperty: bim:andar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: andar ( xsd:string )"@pt
 	Annotations: rdfs:label "Nome do andar."@pt
-	Annotations: rdfs:label "ende.116"@pt
+	Annotations: rdfs:label "ende.114"@pt
 
 DataProperty: bim:cep
 	SubPropertyOf: bim:d.endereçar
@@ -9112,7 +9338,7 @@ DataProperty: bim:cep
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para endereçar: cep ( xsd:string )"@pt
 	Annotations: rdfs:label "CEP - Código de endereçamento postal."@pt
-	Annotations: rdfs:label "ende.117"@pt
+	Annotations: rdfs:label "ende.115"@pt
 
 DataProperty: bim:d.energizar
 	SubPropertyOf: bim:BIMData
@@ -9120,36 +9346,36 @@ DataProperty: bim:d.energizar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.energizar"@pt
 
-DataProperty: bim:energia.ativa
-	SubPropertyOf: bim:d.energizar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para energizar: energia.ativa ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara o valor de energia ativa em Kw/h por exemplo."@pt
-	Annotations: rdfs:label "ener.100"@pt
-
-DataProperty: bim:energia.reativa
-	SubPropertyOf: bim:d.energizar
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para energizar: energia.reativa ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara o valor de energia.reativa."@pt
-	Annotations: rdfs:label "ener.101"@pt
-
 DataProperty: bim:gerador
 	SubPropertyOf: bim:d.energizar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para energizar: gerador ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara se o objeto é gerador de energia. Um painel solar ou torre eólica por exemplo."@pt
-	Annotations: rdfs:label "ener.102"@pt
+	Annotations: rdfs:label "Declara objeto de geração de energia.  Um painel solar ou torre eólica por exemplo. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ener.100"@pt
 
 DataProperty: bim:consumidor
 	SubPropertyOf: bim:d.energizar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para energizar: consumidor ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara se o objeto é consumidor. Uma lámpada ou equipamento."@pt
+	Annotations: rdfs:label "Declara objeto consumidor de energia. Uma lámpada ou equipamento que consuma. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ener.101"@pt
+
+DataProperty: bim:energia.ativa
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para energizar: energia.ativa ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara o valor de energia ativa em Kw/h por exemplo."@pt
+	Annotations: rdfs:label "ener.102"@pt
+
+DataProperty: bim:energia.reativa
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para energizar: energia.reativa ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara o valor de energia reativa."@pt
 	Annotations: rdfs:label "ener.103"@pt
 
 DataProperty: bim:demandado
@@ -9203,7 +9429,7 @@ DataProperty: bim:esgoto
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para esgotar: esgoto ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação do elemento de tubulação evacuador. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "Identificação do elemento de tubulação de esgoto. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "esgo.100"@pt
 
 DataProperty: bim:primário
@@ -10090,6 +10316,68 @@ DataProperty: bim:mediana
 	Annotations: rdfs:label "É o valor de mediana de uma estatística."@pt
 	Annotations: rdfs:label "grad.111"@pt
 
+DataProperty: bim:d.içar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.içar"@pt
+
+DataProperty: bim:comunicador
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: comunicador ( xsd:string )"@pt
+	Annotations: rdfs:label "Equipamento de comunicação para a operação."@pt
+	Annotations: rdfs:label "içar.100"@pt
+
+DataProperty: bim:gancho
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: gancho ( xsd:string )"@pt
+	Annotations: rdfs:label "Gancho para içamento."@pt
+	Annotations: rdfs:label "içar.101"@pt
+
+DataProperty: bim:guindaste
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: guindaste ( xsd:string )"@pt
+	Annotations: rdfs:label "Guindaste ou grua de içamento."@pt
+	Annotations: rdfs:label "içar.102"@pt
+
+DataProperty: bim:eslinga
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: eslinga  ( xsd:string )"@pt
+	Annotations: rdfs:label "Cabos de aço para içamento."@pt
+	Annotations: rdfs:label "içar.103"@pt
+
+DataProperty: bim:corrente.hsz
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: corrente.hsz  ( xsd:string )"@pt
+	Annotations: rdfs:label "Correntes para Zonas de Segurança."@pt
+	Annotations: rdfs:label "içar.104"@pt
+
+DataProperty: bim:talha
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: talha  ( xsd:string )"@pt
+	Annotations: rdfs:label "Talhas de içamento."@pt
+	Annotations: rdfs:label "içar.105"@pt
+
+DataProperty: bim:corda
+	SubPropertyOf: bim:d.içar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para içar: corda  ( xsd:string )"@pt
+	Annotations: rdfs:label "Cordas de içamento."@pt
+	Annotations: rdfs:label "içar.106"@pt
+
 DataProperty: bim:d.identificar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
@@ -10403,160 +10691,208 @@ DataProperty: bim:revitalizado
 DataProperty: bim:d.instalar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
-	Range: xsd:string
+	Range: xsd:boolean
 	Annotations: rdfs:label "Dado de Objeto d.instalar"@pt
 
 DataProperty: bim:nivelado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: nivelado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: nivelado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado nivelado."@pt
 	Annotations: rdfs:label "inst.100"@pt
 
 DataProperty: bim:preparado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: preparado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: preparado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com preparação prévia do local."@pt
 	Annotations: rdfs:label "inst.101"@pt
 
 DataProperty: bim:ajustado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: ajustado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: ajustado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado por ajuste."@pt
 	Annotations: rdfs:label "inst.102"@pt
 
 DataProperty: bim:preciso
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: preciso ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: preciso ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com precisão e apuro."@pt
 	Annotations: rdfs:label "inst.103"@pt
 
 DataProperty: bim:aparafusado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: aparafusado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: aparafusado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado aparafusado."@pt
 	Annotations: rdfs:label "inst.104"@pt
 
 DataProperty: bim:acústica
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: acústica ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: acústica ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com cuidado especial em acústica."@pt
 	Annotations: rdfs:label "inst.105"@pt
 
 DataProperty: bim:pendurado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: pendurado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: pendurado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado pendurado."@pt
 	Annotations: rdfs:label "inst.106"@pt
 
 DataProperty: bim:oculto
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: oculto ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: oculto ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado oculto."@pt
 	Annotations: rdfs:label "inst.107"@pt
 
 DataProperty: bim:com.elétrica
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: com.elétrica ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: com.elétrica ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com ponto de instalação elétrica."@pt
 	Annotations: rdfs:label "inst.108"@pt
 
 DataProperty: bim:com.hidráulica
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: com.hidráulica ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: com.hidráulica ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com ponto de instalação hidráulica."@pt
 	Annotations: rdfs:label "inst.109"@pt
 
 DataProperty: bim:com.gás
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: com.gás ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: com.gás ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com ponto de instalação de gás."@pt
 	Annotations: rdfs:label "inst.110"@pt
 
 DataProperty: bim:com.avac
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: com.avac ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: com.avac ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com ponto de instalação avac."@pt
 	Annotations: rdfs:label "inst.111"@pt
 
 DataProperty: bim:com.lógica
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: com.lógica ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: com.lógica ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado com ponto de instalação lógico de rede."@pt
 	Annotations: rdfs:label "inst.112"@pt
 
 DataProperty: bim:montado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: montado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: montado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que deve ser instalado por montagem seca."@pt
 	Annotations: rdfs:label "inst.113"@pt
 
 DataProperty: bim:leve
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: leve ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: leve ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o elemento é leve e manipulável por uma pessoa."@pt
 	Annotations: rdfs:label "inst.114"@pt
 
 DataProperty: bim:pesado
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: pesado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: pesado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o elemento é pesado e manipulável por mais de uma pessoa."@pt
 	Annotations: rdfs:label "inst.115"@pt
 
 DataProperty: bim:essencial
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: essencial ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: essencial ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o elemento é essencial para realizar a funções projetadas."@pt
 	Annotations: rdfs:label "inst.116"@pt
 
 DataProperty: bim:acessório
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: acessório ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: acessório ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o elemento é acessório para realizar a funções projetadas."@pt
 	Annotations: rdfs:label "inst.117"@pt
 
 DataProperty: bim:prioritário
 	SubPropertyOf: bim:d.instalar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para instalar: prioritário ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: prioritário ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o elemento é prioritário caso se tenha que escolher entre opções."@pt
 	Annotations: rdfs:label "inst.118"@pt
+
+DataProperty: bim:opcional
+	SubPropertyOf: bim:d.instalar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: opcional ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação opcional."@pt
+	Annotations: rdfs:label "inst.119"@pt
+
+DataProperty: bim:condicionado.por
+	SubPropertyOf: bim:d.instalar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: condicionado.por ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o elemento tem a sua instalação condicionada por alguma situação."@pt
+	Annotations: rdfs:label "inst.120"@pt
+
+DataProperty: bim:estratégico
+	SubPropertyOf: bim:d.instalar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: estratégico ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação estratégica."@pt
+	Annotations: rdfs:label "inst.121"@pt
+
+DataProperty: bim:obrigatório
+	SubPropertyOf: bim:d.instalar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: obrigatório ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação obrigatória."@pt
+	Annotations: rdfs:label "inst.122"@pt
+
+DataProperty: bim:rápida
+	SubPropertyOf: bim:d.instalar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: rápida ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação rápida e simples."@pt
+	Annotations: rdfs:label "inst.123"@pt
+
+DataProperty: bim:demorada
+	SubPropertyOf: bim:d.instalar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar: demorada ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o elemento é de instalação demorada ou precisa tempo de cura ou secagem."@pt
+	Annotations: rdfs:label "inst.124"@pt
 
 DataProperty: bim:d.juntar
 	SubPropertyOf: bim:BIMData
@@ -10817,6 +11153,116 @@ DataProperty: bim:vetado.por
 	Annotations: rdfs:label "Dado para legislar: vetado.por ( xsd:string )"@pt
 	Annotations: rdfs:label "A lei ou norma foi vetada por alguma autoridade."@pt
 	Annotations: rdfs:label "legi.116"@pt
+
+DataProperty: bim:d.linkar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.linkar"@pt
+
+DataProperty: bim:uri
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: uri ( xsd:string )"@pt
+	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
+	Annotations: rdfs:label "link.100"@pt
+
+DataProperty: bim:urn
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: urn ( xsd:string )"@pt
+	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
+	Annotations: rdfs:label "link.101"@pt
+
+DataProperty: bim:url
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: url ( xsd:string )"@pt
+	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
+	Annotations: rdfs:label "link.102"@pt
+
+DataProperty: bim:iri
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: iri ( xsd:string )"@pt
+	Annotations: rdfs:label "Internationalized Resource Identifier. Identificador web que aceita caracteres internacionais."@pt
+	Annotations: rdfs:label "link.103"@pt
+
+DataProperty: bim:ipv4
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: ipv4 ( xsd:string )"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v4. 100.000.0.0"@pt
+	Annotations: rdfs:label "link.104"@pt
+
+DataProperty: bim:ipv6
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: ipv6 ( xsd:string )"@pt
+	Annotations: rdfs:label "Número de Internet Protocol v6. 000a:000b:000a:0000:0000:0000:0000:0000"@pt
+	Annotations: rdfs:label "link.105"@pt
+
+DataProperty: bim:hipervínculo
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: hipervínculo ( xsd:string )"@pt
+	Annotations: rdfs:label "Hipervínculo ou link."@pt
+	Annotations: rdfs:label "link.106"@pt
+
+DataProperty: bim:link
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: link ( xsd:string )"@pt
+	Annotations: rdfs:label "Link ou Hipervínculo."@pt
+	Annotations: rdfs:label "link.107"@pt
+
+DataProperty: bim:orcid
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: orcid ( xsd:string )"@pt
+	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
+	Annotations: rdfs:label "link.108"@pt
+
+DataProperty: bim:lattes
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: lattes ( xsd:string )"@pt
+	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
+	Annotations: rdfs:label "link.109"@pt
+
+DataProperty: bim:protocolo.http
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: protocolo.http ( xsd:string )"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em Internet. HTTP HyperText Transfer Protocol."@pt
+	Annotations: rdfs:label "link.110"@pt
+
+DataProperty: bim:protocolo.https
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: protocolo.https ( xsd:string )"@pt
+	Annotations: rdfs:label "Protocolo seguro de transmissão em Internet. HTTPS HyperText Transfer Protocol Secure."@pt
+	Annotations: rdfs:label "link.111"@pt
+
+DataProperty: bim:protocolo.ftp
+	SubPropertyOf: bim:d.linkar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar: protocolo.ftp ( xsd:string )"@pt
+	Annotations: rdfs:label "Protocolo de transmissão em rede FTP File Transfer Protocol."@pt
+	Annotations: rdfs:label "link.112"@pt
 
 DataProperty: bim:d.mapear
 	SubPropertyOf: bim:BIMData
@@ -11129,7 +11575,7 @@ DataProperty: bim:módulo.a
 	Domain: bim:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para modular: módulo.a ( xsd:integer )"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular A."@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular A."@pt
 	Annotations: rdfs:label "modu.101"@pt
 
 DataProperty: bim:módulo.b
@@ -11137,7 +11583,7 @@ DataProperty: bim:módulo.b
 	Domain: bim:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para modular: módulo.b ( xsd:integer )"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular B."@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular B."@pt
 	Annotations: rdfs:label "modu.102"@pt
 
 DataProperty: bim:módulo.c
@@ -11145,22 +11591,24 @@ DataProperty: bim:módulo.c
 	Domain: bim:BIM
 	Range: xsd:integer
 	Annotations: rdfs:label "Dado para modular: módulo.c ( xsd:integer )"@pt
-	Annotations: rdfs:label "Valor numérico inteiro modular C."@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular C."@pt
 	Annotations: rdfs:label "modu.103"@pt
 
-DataProperty: bim:d.modular
-	SubPropertyOf: bim:BIMData
+DataProperty: bim:módulo.d
+	SubPropertyOf: bim:d.modular
 	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado de Objeto d.modular"@pt
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para modular: módulo.d ( xsd:integer )"@pt
+	Annotations: rdfs:label "Valor numérico inteiro utilizado como módulo. Modular D."@pt
+	Annotations: rdfs:label "modu.104"@pt
 
 DataProperty: bim:proporção
 	SubPropertyOf: bim:d.modular
 	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para modular: proporção ( xsd:double )"@pt
-	Annotations: rdfs:label "Denominador numérico da proporção 1 / X."@pt
-	Annotations: rdfs:label "modu.104"@pt
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para modular: proporção ( xsd:integer )"@pt
+	Annotations: rdfs:label "Denominador numérico inteiro da proporção 1 / X."@pt
+	Annotations: rdfs:label "modu.105"@pt
 
 DataProperty: bim:d.normatizar
 	SubPropertyOf: bim:BIMData
@@ -12618,13 +13066,21 @@ DataProperty: bim:aplicado.para
 	Annotations: rdfs:label "Um objeto que se aplica para cumprir algum objetivo."@pt
 	Annotations: rdfs:label "rela.107"@pt
 
+DataProperty: bim:precisa.de
+	SubPropertyOf: bim:d.relacionar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para relacionar: precisa.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara que é necessário ou preciso de um outro objeto."@pt
+	Annotations: rdfs:label "rela.108"@pt
+
 DataProperty: bim:destino
 	SubPropertyOf: bim:d.relacionar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para relacionar: destino ( xsd:string )"@pt
 	Annotations: rdfs:label "Um objeto é destino de algo."@pt
-	Annotations: rdfs:label "rela.108"@pt
+	Annotations: rdfs:label "rela.109"@pt
 
 DataProperty: bim:d.sensorizar
 	SubPropertyOf: bim:BIMData
@@ -12637,7 +13093,7 @@ DataProperty: bim:beacon
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: beacon ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação de um beacon."@pt
+	Annotations: rdfs:label "Identificação de um beacon. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.100"@pt
 
 DataProperty: bim:sensor.térmico
@@ -12645,7 +13101,7 @@ DataProperty: bim:sensor.térmico
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.térmico ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação de um sensor de temperatura e umidade."@pt
+	Annotations: rdfs:label "Identificação de um sensor de temperatura e umidade. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.101"@pt
 
 DataProperty: bim:sensor.de.vibração
@@ -12653,7 +13109,7 @@ DataProperty: bim:sensor.de.vibração
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.de.vibração ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação da um beacon."@pt
+	Annotations: rdfs:label "Identificação da um sensor de vibração. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.102"@pt
 
 DataProperty: bim:sensor.de.iluminação
@@ -12661,7 +13117,7 @@ DataProperty: bim:sensor.de.iluminação
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.de.iluminação ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação da um sensor de vibração."@pt
+	Annotations: rdfs:label "Identificação da um sensor de iluminação. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.103"@pt
 
 DataProperty: bim:sensor.de.movimento
@@ -12669,7 +13125,7 @@ DataProperty: bim:sensor.de.movimento
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.de.movimento ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação da um sensor de movimento."@pt
+	Annotations: rdfs:label "Identificação da um sensor de movimento. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.104"@pt
 
 DataProperty: bim:sensor.de.presença
@@ -12677,7 +13133,7 @@ DataProperty: bim:sensor.de.presença
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.de.presença ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação da um sensor de presença."@pt
+	Annotations: rdfs:label "Identificação da um sensor de presença. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.105"@pt
 
 DataProperty: bim:sensor.de.acesso
@@ -12685,7 +13141,7 @@ DataProperty: bim:sensor.de.acesso
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.de.acesso ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação da um sensor de acesso."@pt
+	Annotations: rdfs:label "Identificação da um sensor de acesso. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.106"@pt
 
 DataProperty: bim:sensor.de.fumaça
@@ -12693,7 +13149,7 @@ DataProperty: bim:sensor.de.fumaça
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sensorizar: sensor.de.fumaça ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação da um sensor de fumaça para sistemas de combate a incêndio."@pt
+	Annotations: rdfs:label "Identificação da um sensor de fumaça para sistemas de combate a incêndio. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "sens.107"@pt
 
 DataProperty: bim:d.separar
@@ -13122,167 +13578,135 @@ DataProperty: bim:operação.urbana
 	Annotations: rdfs:label "Declara uma operação urbana consorciada que utiliza o mecanismo de CEPACs."@pt
 	Annotations: rdfs:label "urba.110"@pt
 
-DataProperty: bim:d.vincular
+DataProperty: bim:area.de.planejamento
+	SubPropertyOf: bim:d.urbanizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para urbanizar: area.de.planejamento ( xsd:string )"@pt
+	Annotations: rdfs:label "Código de Area de Planejamento (AP.01 por exemplo)."@pt
+	Annotations: rdfs:label "urba.111"@pt
+
+DataProperty: bim:região.administrativa
+	SubPropertyOf: bim:d.urbanizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para urbanizar: região.administrativa ( xsd:string )"@pt
+	Annotations: rdfs:label "Código de Região Administrativa (RA.20  por exemplo)."@pt
+	Annotations: rdfs:label "urba.112"@pt
+
+DataProperty: bim:d.vestir
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado de Objeto d.vincular"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado de Objeto d.vestir"@pt
 
-DataProperty: bim:uri
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:uniformizado
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: uri ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso"@pt
-	Annotations: rdfs:label "vinc.100"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: uniformizado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está uniformizado."@pt
+	Annotations: rdfs:label "vest.100"@pt
 
-DataProperty: bim:urn
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:calçado
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: urn ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Name. Identifica pelo nome sem mostrar o endereço. Por exemplo urn:isbn:0451450523"@pt
-	Annotations: rdfs:label "vinc.101"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: calçado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está corretamente calçado com botas ou acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.101"@pt
 
-DataProperty: bim:url
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:mascarado
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: url ( xsd:string )"@pt
-	Annotations: rdfs:label "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso"@pt
-	Annotations: rdfs:label "vinc.102"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: mascarado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está usando máscara acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.102"@pt
 
-DataProperty: bim:iri
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:epi
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: iri ( xsd:string )"@pt
-	Annotations: rdfs:label "Internationalized Resource Identifier. Identificador web que aceita caracteres internacionais."@pt
-	Annotations: rdfs:label "vinc.103"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: epi ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está usando todos os EPI Equipamentos de Proteção Individual acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.103"@pt
 
-DataProperty: bim:ipv4
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:cintado
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: ipv4 ( xsd:string )"@pt
-	Annotations: rdfs:label "Número de Internet Protocol v4. 100.000.0.0"@pt
-	Annotations: rdfs:label "vinc.104"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: cintado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está corretamente cintado com arneses apropriados conforme a exigência da atividade."@pt
+	Annotations: rdfs:label "vest.104"@pt
 
-DataProperty: bim:ipv6
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:enluvado
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: ipv6 ( xsd:string )"@pt
-	Annotations: rdfs:label "Número de Internet Protocol v6. 000a:000b:000a:0000:0000:0000:0000:0000"@pt
-	Annotations: rdfs:label "vinc.105"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: enluvado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está usando luvas acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.105"@pt
 
-DataProperty: bim:hipervínculo
-	SubPropertyOf: bim:d.vincular
+DataProperty: bim:capacete
+	SubPropertyOf: bim:d.vestir
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: hipervínculo ( xsd:string )"@pt
-	Annotations: rdfs:label "Hipervínculo ou link."@pt
-	Annotations: rdfs:label "vinc.106"@pt
-
-DataProperty: bim:link
-	SubPropertyOf: bim:d.vincular
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: link ( xsd:string )"@pt
-	Annotations: rdfs:label "Link ou Hipervínculo."@pt
-	Annotations: rdfs:label "vinc.107"@pt
-
-DataProperty: bim:orcid
-	SubPropertyOf: bim:d.vincular
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: orcid ( xsd:string )"@pt
-	Annotations: rdfs:label "Open Researcher and Contributor ID. Identificador web para pesquisadores."@pt
-	Annotations: rdfs:label "vinc.108"@pt
-
-DataProperty: bim:lattes
-	SubPropertyOf: bim:d.vincular
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: lattes ( xsd:string )"@pt
-	Annotations: rdfs:label "Número de currículo Lattes dos pesquisadores em Brasil."@pt
-	Annotations: rdfs:label "vinc.109"@pt
-
-DataProperty: bim:protocolo.http
-	SubPropertyOf: bim:d.vincular
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: protocolo.http ( xsd:string )"@pt
-	Annotations: rdfs:label "Protocolo de transmissão em Internet. HTTP HyperText Transfer Protocol."@pt
-	Annotations: rdfs:label "vinc.110"@pt
-
-DataProperty: bim:protocolo.https
-	SubPropertyOf: bim:d.vincular
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: protocolo.https ( xsd:string )"@pt
-	Annotations: rdfs:label "Protocolo seguro de transmissão em Internet. HTTPS HyperText Transfer Protocol Secure."@pt
-	Annotations: rdfs:label "vinc.111"@pt
-
-DataProperty: bim:protocolo.ftp
-	SubPropertyOf: bim:d.vincular
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vincular: protocolo.ftp ( xsd:string )"@pt
-	Annotations: rdfs:label "Protocolo de transmissão em rede FTP File Transfer Protocol."@pt
-	Annotations: rdfs:label "vinc.112"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vestir: capacete ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o operário está usando capacete de segurança acorde à sua atividade."@pt
+	Annotations: rdfs:label "vest.106"@pt
 
 DataProperty: bim:d.vistoriar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
-	Range: xsd:string
+	Range: xsd:boolean
 	Annotations: rdfs:label "Dado de Objeto d.vistoriar"@pt
 
 DataProperty: bim:conservado
 	SubPropertyOf: bim:d.vistoriar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vistoriar: conservado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vistoriar: conservado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Estado de conservação. Pode ser bom, médio, precisa reparo, precisa troca."@pt
 	Annotations: rdfs:label "vist.100"@pt
 
 DataProperty: bim:conforme
 	SubPropertyOf: bim:d.vistoriar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vistoriar: conforme ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vistoriar: conforme ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Conformidade técnica com alguma norma. Pode ser Ok, Não ou Não aplicável."@pt
 	Annotations: rdfs:label "vist.101"@pt
 
 DataProperty: bim:operacional
 	SubPropertyOf: bim:d.vistoriar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vistoriar: operacional ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vistoriar: operacional ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Define se o compomente está operativo e funcional."@pt
 	Annotations: rdfs:label "vist.102"@pt
 
 DataProperty: bim:defeituoso
 	SubPropertyOf: bim:d.vistoriar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vistoriar: defeituoso ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vistoriar: defeituoso ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que apresenta alguma anomalia que pode derivar em algum risco de funcionamento."@pt
 	Annotations: rdfs:label "vist.103"@pt
 
 DataProperty: bim:clausurado
 	SubPropertyOf: bim:d.vistoriar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vistoriar: clausurado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vistoriar: clausurado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o objeto vistoriado é clausurado por presentar risco."@pt
 	Annotations: rdfs:label "vist.104"@pt
 
 DataProperty: bim:interditado
 	SubPropertyOf: bim:d.vistoriar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para vistoriar: interditado ( xsd:string )"@pt
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para vistoriar: interditado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o objeto vistoriado é interditado."@pt
 	Annotations: rdfs:label "vist.105"@pt
 
