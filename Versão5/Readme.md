@@ -114,8 +114,8 @@ A coluna Y é reservada para futuro desenvolvimento.
 ![Properties_02](https://github.com/user-attachments/assets/b93a281e-7e44-431f-ba12-45d427df0afd)
 
 ### Preenchimento do arquivo de Classes e Fatos de cada Domínio.
-A planilha de classes define a estrutura hierárquica dos conceitos com as condições de existência. As classes são definidas em Maiúsculas com as palavras separadas por pontos. A coluna F que **não pode ter classes repetidas**, por isso essa coluna tem uma regra para verificar e destacar as células que sejam repetidas, situação que deverá se corrigida.  
-As colunas G a K são utilizadas para colocar condições existenciais, que definam conceitos universais e particulares. Cada condição faz referência a uma ou mais condições de existência.
+A planilha de classes define a estrutura hierárquica dos conceitos com as condições existenciais. As classes devem ser definidas iniciando em letra Maiúscula com os termos separados por pontos. A coluna F **não pode ter classes repetidas**. Essa coluna tem uma regra para verificar e destacar as células repetidas, situação que deverá ser corrigida.  
+As colunas G a K são utilizadas para colocar condições existenciais, que definam a universalidade ou particularidade do conceito. Cada condição faz referência a uma ou mais condições de existência.
 
    * some
    * only
@@ -132,7 +132,7 @@ Exemplo 1: a classe **Red** que é subclasse de **Canal** tem uma condição def
 
 Exemplo 2: para uma classe **Bairro** (na coluna F) a condição é declarada na coluna K. Ela afirma com a propriedade de objeto **é.dentro.de**, associada existencialmente como **some** à classe **Cidade**.
 
-   *interpretação: (um bairro) é.dentro.de some Cidade  um Bairro é.dentro.de alguma Cidade.
+   *interpretação: (um bairro) é.dentro.de some Cidade  um Bairro é dentro de alguma Cidade.
 
 As condições podem ser escritas concatenando condições de conjunções (and) ou disjunções (or). Essas afirmações agrupadas entre parênteses devem ser escritas deixando um espaço em branco depois de cada elemento da proposição. As condições expressam premisas válidas conhecidas.
 
@@ -150,8 +150,7 @@ As colunas L M N O são preenchidas automaticamente. A coluna P é preenchida ma
 
 ### Preenchimento dos Fatos de cada Domínio.
 
-Se as Classes e as Propriedades de Objetos e Dados definem o esquema abstrato dos conceitos, os Fatos descrevem realidades concretas conhecidas utilizando as definições de classes e propriedades. A coluna B da planilha de Fatos é utilizada para declarar um indivíduo (que pode ter qualquer nome sem espaços). A coluna C define o tipo de indivíduo que deve ser alguma classe existente. As colunas seguintes Azuis e verdes são utilizadas 
-para descrever as propriedades de cada indivíduo. No momento o construtor limita a quantidade de propriedades a 10. Cada propriedade usa duas colunas, a primeira para colocar o nome da propriedade definido pelo esquema e a segunda para definir o seu valor. As propriedades de objetos relacionam as Classes com os Indivíduos ou Indivíduos entre se. As propriedades de dados qualificam os indivíduos. 
+Se as Classes e as Propriedades de Objetos e Dados definem o esquema abstrato dos conceitos, os Fatos descrevem realidades concretas conhecidas utilizando as definições de classes e propriedades. A coluna B da planilha de Fatos é utilizada para declarar um indivíduo (que pode ter qualquer nome sem espaços). A coluna C define o tipo de indivíduo que deve ser associado a alguma classe existente. As colunas seguintes, nas cores azul ou verde, são utilizadas para descrever as propriedades de cada indivíduo. No momento, o construtor limita em 10 propriedades atribuidas a cada indivíduo. Cada propriedade usa duas colunas, a primeira para colocar o nome da propriedade definido pelo esquema e a segunda para definir o seu valor. As propriedades de objetos relacionam as Classes com os Indivíduos ou Indivíduos entre si. As propriedades de dados qualificam os indivíduos. 
 Os indivíduos são conhecimentos factuais, representam a descrição de fatos válidos. Por exemplo, todos os códigos da NBR 15.965 são fatos válidos.  
 
 ![Fatos_01](https://github.com/user-attachments/assets/570183c0-e2e8-450c-8804-72fd646f9707)
@@ -175,7 +174,7 @@ Em sintaxe Manchester um indivíduo tem a seguinte leitura:
 	*      Facts: bim:é.dentro.de  bim:Zona.Sul  
 	*      Facts: bim:descrição  "Bairro N° B.024 RA.05 Copacabana"  
 
-Os fatos conhecidos descrever a realidade concreta e são de dois tipos. 1) Fatos que são conhecidos e independentes de cualquer projeto. Podem descrever indivíduos que representam componentes de construção, normas técnicas, dados urbanos, restrições de regulamentos, etc.
+Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fatos que são conhecidos e independentes de cualquer projeto. Eles podem descrever indivíduos que representam componentes de construção, normas técnicas, dados urbanos concretos, restrições presentes em regulamentos, etc.
 
 	*  Fabricantes de componentes podem publicar ontologias de seus produtos, descrevendo indivíduos do catálogo de produtos.    
  	*  A prefeitura de uma cidade, pode publicar ontologias descrevendo os diversos aspectos urbanos conhecidos.  
