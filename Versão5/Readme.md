@@ -184,4 +184,26 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
 2) O segundo tipo de Indivíduos descreve a realidade do projeto. A realidade do projeto é factualmente descrita por indivíduos extraídos desde o modelo BIM que está sendo concebido. Neste aplicativo, o botão de extração está sendo preparado para executar a função de criação da ontologia do projeto a partir da leitura do modelo.
 
 
-https://github.com/JLMenegotto/OntologiaBIM/tree/main
+### **Exemplos de uso de ontologia como recurso RDF aplicando filtros SPARQL em plataforma Yasgui-Triply**
+
+- [Veja exemplos de uso de tecnologia RDF](https://triplydb.com/JoseLuisMenegotto/-/overview)
+
+### **Exemplos de uso de ontologia como recurso RDF aplicando filtros SPARQL em plataforma AllegroGraph**
+
+          Nota: o servidor do AllegroGraph foi configurado com uma licença acadêmica gratuita.  
+          Se ele permanecer inativo por 8 hs, o servidor pausa até ser reinicializado.  
+          Caso a plataforma esteja fora do ar, retorne mais tarde para fazer a consulta.   
+ 
+- [Exemplo 01: Filtra Ambientes IMA](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/Centro_de_Tecnologia/exec-query/anonymous/Sd_CNI8TtRDgvESIDjg_H/results?text=select+%3Fs+%3Fp+%3Fd+%3Fa%0Awhere+%0A%7B%0A+++%3Fs+a+bim%3AAmbiente+%3B%0A++++++++bim%3A%C3%A9.dentro.de+%3Fp+%3B%0A++++++++bim%3Anome+%3Fd+%3B%0A++++++++bim%3A%C3%A1rea+%3Fa+.%0A++++++++filter+%28contains+%28str+%28%3Fp%29%2C+%22Macro%22%29%29+%0A%7D%0Aorder+by+%3Fa&language=SPARQL)
+
+
+#### **Exemplos com filtros SPARQL em plataforma Stardog usando recursos RDF**
+
+  ![Tela_Stardog_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/97afb135-f525-4887-a92f-cd68f006c1db)
+
+- [Exemplo 01: Filtra Elementos IFC](https://cloud.stardog.com/share/fe71d0581acbde7b)
+
+##### Mais informaçoes sobre o tema no Livro (Portugûes e español):
+- [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
+
+- [**_El modelo digital. Técnica y arte algorítmica en BIM._**](https://bibliotecadigital.cp67.com/reader/el-modelo-digital-tecnica-y-arte-algoritmica-en-bim)
