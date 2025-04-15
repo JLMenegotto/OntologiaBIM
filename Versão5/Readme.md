@@ -181,4 +181,7 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
   	*  O corpo de bombeiros poderia descrever situações espaciais a levar em conta no projeto ontologizando o conhecimento.  
    	*  A ABNT poderia descrever uma normativa.  
 
-2) O segundo tipo de Indivíduos descreve a realidade do projeto. A realidade do projeto é factualmente descrita por indivíduos extraídos desde o modelo BIM que está sendo concebido. Neste aplicativo, o botão de extração está sendo preparado para executar a função de criação da ontologia do projeto a partir da leitura do modelo. 
+2) O segundo tipo de Indivíduos descreve a realidade do projeto. A realidade do projeto é factualmente descrita por indivíduos extraídos desde o modelo BIM que está sendo concebido. Neste aplicativo, o botão de extração está sendo preparado para executar a função de criação da ontologia do projeto a partir da leitura do modelo.
+
+
+https://github.com/JLMenegotto/OntologiaBIM/tree/main
