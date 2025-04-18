@@ -146,6 +146,8 @@ As colunas L M N O são preenchidas automaticamente. A coluna P é preenchida ma
 
     * =TRADUZIR(P20; "pt"; "es")
 
+Ainda que tenha utilizado a fórmula sugerida para traduzir o texto, não esqueça que os sistemas de tradução podem falhar na interpretação por utilizar um domínio semántico diferente ao da construção. Revise sempre as traduções feitas pelo mecanismo tradutor.   
+
 ![PreenchimentoClasses_02](https://github.com/user-attachments/assets/53a13c2d-0785-42f0-a99a-2ff6cb988db8)
 
 ### Preenchimento dos Fatos de cada Domínio.
