@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_2_0M>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 09/04/2025 19:28:34"@pt
+  Annotations: rdfs:label "DataHora: 25/04/2025 8:59:23"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -925,8 +925,10 @@ ObjectProperty: bim:é.registro.inpi
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para atestar: é.registro.inpi"@pt
-	Annotations: rdfs:label "Identificação de número de registro no INPI Instituto Nacional de Propriedade Industrial."@pt
+	Annotations: rdfs:label "Identificação de número de registro no INPI Instituto Nacional de Propriedade Industrial no Brasil."@pt
 	Annotations: rdfs:label "ates.105"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:é.registro.cau
 	SubPropertyOf: bim:p.atestar
@@ -935,6 +937,8 @@ ObjectProperty: bim:é.registro.cau
 	Annotations: rdfs:label "Propriedade para atestar: é.registro.cau"@pt
 	Annotations: rdfs:label "Identificação de número de registro no CAU Conselho Regional de Engenharia e Agronomia no Brasil."@pt
 	Annotations: rdfs:label "ates.106"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:é.registro.crea
 	SubPropertyOf: bim:p.atestar
@@ -943,6 +947,8 @@ ObjectProperty: bim:é.registro.crea
 	Annotations: rdfs:label "Propriedade para atestar: é.registro.crea"@pt
 	Annotations: rdfs:label "Identificação de número de registro no CREA Conselho Regional de Engenharia e Agronomia no Brasil."@pt
 	Annotations: rdfs:label "ates.107"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:é.registro.confea
 	SubPropertyOf: bim:p.atestar
@@ -951,6 +957,8 @@ ObjectProperty: bim:é.registro.confea
 	Annotations: rdfs:label "Propriedade para atestar: é.registro.confea"@pt
 	Annotations: rdfs:label "Identificação de número de registro no CONFEA Conselho Federal de Engenharia e Agronomia no Brasil."@pt
 	Annotations: rdfs:label "ates.108"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:é.carteira.habilitante
 	SubPropertyOf: bim:p.atestar
@@ -959,6 +967,8 @@ ObjectProperty: bim:é.carteira.habilitante
 	Annotations: rdfs:label "Propriedade para atestar: é.carteira.habilitante"@pt
 	Annotations: rdfs:label "Identificação de número de alguma carteira de habilitação para exercer alguma função."@pt
 	Annotations: rdfs:label "ates.109"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
 
 ObjectProperty: bim:é.fiscalizado.por
 	SubPropertyOf: bim:p.atestar
@@ -997,6 +1007,28 @@ ObjectProperty: bim:é.criptografado
 	Annotations: rdfs:label "Propriedade para autenticar: é.criptografado"@pt
 	Annotations: rdfs:label "Autenticado por critografia."@pt
 	Annotations: rdfs:label "aute.102"@pt
+
+ObjectProperty: bim:p.calcular
+	SubPropertyOf: bim:BIMProp
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade de Objeto para p.calcular"@pt
+
+ObjectProperty: bim:é.malha.de.pontos
+	SubPropertyOf: bim:p.calcular
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para calcular: é.malha.de.pontos"@pt
+	Annotations: rdfs:label "Declara uma malha UV de pontos para cálculos diversos, preferivelmente com densidade de 0,5 a 2,0 m. Por exemplo, aplicada em NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "calc.100"@pt
+
+ObjectProperty: bim:é.matriz
+	SubPropertyOf: bim:p.calcular
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para calcular: é.matriz"@pt
+	Annotations: rdfs:label "Declara uma matriz 4x4."@pt
+	Annotations: rdfs:label "calc.101"@pt
 
 ObjectProperty: bim:p.captar
 	SubPropertyOf: bim:BIMProp
@@ -1185,6 +1217,22 @@ ObjectProperty: bim:é.zincado
 	Annotations: rdfs:label "Propriedade para caracterizar: é.zincado"@pt
 	Annotations: rdfs:label "Finalização do acabamento zincado."@pt
 	Annotations: rdfs:label "cara.116"@pt
+
+ObjectProperty: bim:é.fator.transparência
+	SubPropertyOf: bim:p.caracterizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para caracterizar: é.fator.transparência"@pt
+	Annotations: rdfs:label "Declara o Percentual de elementos transparentes da norma NBR 15575 para cálculos térnicos. É uma característica da envoltória."@pt
+	Annotations: rdfs:label "cara.117"@pt
+
+ObjectProperty: bim:é.fator.abertura
+	SubPropertyOf: bim:p.caracterizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para caracterizar: é.fator.abertura"@pt
+	Annotations: rdfs:label "Declara o Percentual de elementos de abertura para ventilação da norma NBR 15575 para cálculos térnicos. É uma característica da envoltória."@pt
+	Annotations: rdfs:label "cara.118"@pt
 
 ObjectProperty: bim:p.carregar
 	SubPropertyOf: bim:BIMProp
@@ -1745,6 +1793,334 @@ ObjectProperty: bim:é.terminal.duto
 	Annotations: rdfs:label "Propriedade para climatizar: é.terminal.duto"@pt
 	Annotations: rdfs:label "É elemento terminal da linha de dutos de AVAC (HVAC)."@pt
 	Annotations: rdfs:label "clim.104"@pt
+
+ObjectProperty: bim:é.ar.externo.por.pessoa
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.ar.externo.por.pessoa"@pt
+	Annotations: rdfs:label "Declara ar externo por pessoa."@pt
+	Annotations: rdfs:label "clim.105"@pt
+
+ObjectProperty: bim:é.ar.externo.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.ar.externo.por.área"@pt
+	Annotations: rdfs:label "Declara ar externo por área."@pt
+	Annotations: rdfs:label "clim.106"@pt
+
+ObjectProperty: bim:é.área.por.pessoa
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.área.por.pessoa"@pt
+	Annotations: rdfs:label "Declara área por pessoa."@pt
+	Annotations: rdfs:label "clim.107"@pt
+
+ObjectProperty: bim:é.carga.avac.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.avac.por.área"@pt
+	Annotations: rdfs:label "Declara carga avac por área."@pt
+	Annotations: rdfs:label "clim.108"@pt
+
+ObjectProperty: bim:é.carga.avac.real
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.avac.real"@pt
+	Annotations: rdfs:label "Declara carga avac real."@pt
+	Annotations: rdfs:label "clim.109"@pt
+
+ObjectProperty: bim:é.carga.de.aquecimento
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.aquecimento"@pt
+	Annotations: rdfs:label "Declara carga de aquecimento."@pt
+	Annotations: rdfs:label "clim.110"@pt
+
+ObjectProperty: bim:é.carga.de.aquecimento.calculada
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.aquecimento.calculada"@pt
+	Annotations: rdfs:label "Declara carga de aquecimento calculada."@pt
+	Annotations: rdfs:label "clim.111"@pt
+
+ObjectProperty: bim:é.carga.de.aquecimento.calculada.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.aquecimento.calculada.por.área"@pt
+	Annotations: rdfs:label "Declara carga de aquecimento calculada por área."@pt
+	Annotations: rdfs:label "clim.112"@pt
+
+ObjectProperty: bim:é.carga.de.energia
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.energia"@pt
+	Annotations: rdfs:label "Declara carga de energia."@pt
+	Annotations: rdfs:label "clim.113"@pt
+
+ObjectProperty: bim:é.carga.de.energia.necessária
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.energia.necessária"@pt
+	Annotations: rdfs:label "Declara carga de energia necessária."@pt
+	Annotations: rdfs:label "clim.114"@pt
+
+ObjectProperty: bim:é.carga.de.energia.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.energia.por.área"@pt
+	Annotations: rdfs:label "Declara carga de energia por área."@pt
+	Annotations: rdfs:label "clim.115"@pt
+
+ObjectProperty: bim:é.carga.de.resfriamento
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.resfriamento"@pt
+	Annotations: rdfs:label "Declara carga de resfriamento."@pt
+	Annotations: rdfs:label "clim.116"@pt
+
+ObjectProperty: bim:é.carga.de.resfriamento.calculada
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.resfriamento.calculada"@pt
+	Annotations: rdfs:label "Declara carga de resfriamento calculada."@pt
+	Annotations: rdfs:label "clim.117"@pt
+
+ObjectProperty: bim:é.carga.de.resfriamento.calculada.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.de.resfriamento.calculada.por.área"@pt
+	Annotations: rdfs:label "Declara carga de resfriamento calculada por área."@pt
+	Annotations: rdfs:label "clim.118"@pt
+
+ObjectProperty: bim:é.carga.real.alternativa
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.real.alternativa"@pt
+	Annotations: rdfs:label "Declara carga real alternativa."@pt
+	Annotations: rdfs:label "clim.119"@pt
+
+ObjectProperty: bim:é.carga.real.de.energia
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.real.de.energia"@pt
+	Annotations: rdfs:label "Declara carga real de energia."@pt
+	Annotations: rdfs:label "clim.120"@pt
+
+ObjectProperty: bim:é.carga.real.de.energia.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.real.de.energia.por.área"@pt
+	Annotations: rdfs:label "Declara carga real de energia por área."@pt
+	Annotations: rdfs:label "clim.121"@pt
+
+ObjectProperty: bim:é.carga.real.de.força.motriz
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.real.de.força.motriz"@pt
+	Annotations: rdfs:label "Declara carga real de força motriz."@pt
+	Annotations: rdfs:label "clim.122"@pt
+
+ObjectProperty: bim:é.carga.real.de.reserva
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.carga.real.de.reserva"@pt
+	Annotations: rdfs:label "Declara carga real de reserva."@pt
+	Annotations: rdfs:label "clim.123"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.de.alimentação
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.de.alimentação"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de alimentação."@pt
+	Annotations: rdfs:label "clim.124"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.de.exaustão
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.de.exaustão"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de exaustão."@pt
+	Annotations: rdfs:label "clim.125"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.de.exaustão.real
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.de.exaustão.real"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de exaustão real."@pt
+	Annotations: rdfs:label "clim.126"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.de.retorno
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.de.retorno"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de retorno."@pt
+	Annotations: rdfs:label "clim.127"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.de.insuflamento
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.de.insuflamento"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de insuflamento."@pt
+	Annotations: rdfs:label "clim.128"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.de.insuflamento.por.área
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.de.insuflamento.por.área"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de insuflamento por área."@pt
+	Annotations: rdfs:label "clim.129"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.externo
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.externo"@pt
+	Annotations: rdfs:label "Declara fluxo de ar externo."@pt
+	Annotations: rdfs:label "clim.130"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.real.de.retorno
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.real.de.retorno"@pt
+	Annotations: rdfs:label "Declara fluxo de ar real de retorno."@pt
+	Annotations: rdfs:label "clim.131"@pt
+
+ObjectProperty: bim:é.fluxo.de.ar.real.de.insuflamento
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.fluxo.de.ar.real.de.insuflamento"@pt
+	Annotations: rdfs:label "Declara fluxo de ar real de insuflamento."@pt
+	Annotations: rdfs:label "clim.132"@pt
+
+ObjectProperty: bim:é.ganho.de.calor.latente.por.pessoa
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.ganho.de.calor.latente.por.pessoa"@pt
+	Annotations: rdfs:label "Declara ganho de calor latente por pessoa."@pt
+	Annotations: rdfs:label "clim.133"@pt
+
+ObjectProperty: bim:é.ganho.de.calor.sensível.por.pessoa
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.ganho.de.calor.sensível.por.pessoa"@pt
+	Annotations: rdfs:label "Declara ganho de calor sensível por pessoa."@pt
+	Annotations: rdfs:label "clim.134"@pt
+
+ObjectProperty: bim:é.ganho.total.de.calor.por.pessoa
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.ganho.total.de.calor.por.pessoa"@pt
+	Annotations: rdfs:label "Declara ganho total de calor por pessoa."@pt
+	Annotations: rdfs:label "clim.135"@pt
+
+ObjectProperty: bim:é.método.de.ar.externo
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.método.de.ar.externo"@pt
+	Annotations: rdfs:label "Declara método de ar externo."@pt
+	Annotations: rdfs:label "clim.136"@pt
+
+ObjectProperty: bim:é.pleno
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.pleno"@pt
+	Annotations: rdfs:label "Declara pleno."@pt
+	Annotations: rdfs:label "clim.137"@pt
+
+ObjectProperty: bim:é.quantidade.de.pessoas
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.quantidade.de.pessoas"@pt
+	Annotations: rdfs:label "Declara quantidade de pessoas."@pt
+	Annotations: rdfs:label "clim.138"@pt
+
+ObjectProperty: bim:é.razão.cavidade.da.sala
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.razão.cavidade.da.sala"@pt
+	Annotations: rdfs:label "Declara razão cavidade da sala."@pt
+	Annotations: rdfs:label "clim.139"@pt
+
+ObjectProperty: bim:é.tipo.de.condição
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.tipo.de.condição"@pt
+	Annotations: rdfs:label "Declara tipo de condição."@pt
+	Annotations: rdfs:label "clim.140"@pt
+
+ObjectProperty: bim:é.tipo.de.construção
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.tipo.de.construção"@pt
+	Annotations: rdfs:label "Declara tipo de construção."@pt
+	Annotations: rdfs:label "clim.141"@pt
+
+ObjectProperty: bim:é.tipo.de.espaço
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.tipo.de.espaço"@pt
+	Annotations: rdfs:label "Declara tipo de espaço."@pt
+	Annotations: rdfs:label "clim.142"@pt
+
+ObjectProperty: bim:é.trocas.de.ar.por.hora
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.trocas.de.ar.por.hora"@pt
+	Annotations: rdfs:label "Declara trocas de ar por hora."@pt
+	Annotations: rdfs:label "clim.143"@pt
+
+ObjectProperty: bim:é.unidade.de.ocupação
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.unidade.de.ocupação"@pt
+	Annotations: rdfs:label "Declara unidade de ocupação."@pt
+	Annotations: rdfs:label "clim.144"@pt
+
+ObjectProperty: bim:é.unidade.de.carga.de.energia
+	SubPropertyOf: bim:p.climatizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para climatizar: é.unidade.de.carga.de.energia"@pt
+	Annotations: rdfs:label "Declara unidade de carga de energia."@pt
+	Annotations: rdfs:label "clim.145"@pt
 
 ObjectProperty: bim:p.comunicar
 	SubPropertyOf: bim:BIMProp
@@ -2870,6 +3246,82 @@ ObjectProperty: bim:é.renovável
 	Annotations: rdfs:label "Declara se o insumo é de fonte renovável. Energia gerada por painel solar por exemplo."@pt
 	Annotations: rdfs:label "ener.108"@pt
 
+ObjectProperty: bim:é.condutividade.térmica
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.condutividade.térmica"@pt
+	Annotations: rdfs:label "Mede a capacidade de conduzir calor. Representada pela letra k ou λ, é expressa em W/m·K (watts por metro por kelvin)."@pt
+	Annotations: rdfs:label "ener.109"@pt
+
+ObjectProperty: bim:é.calor.específico
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.calor.específico"@pt
+	Annotations: rdfs:label "Mede a quantidade de calor que eleva a temperatura de uma unidade de massa de uma substância em 1°C ou 1 K. Expresso em J/kg·K (joules por quilograma por kelvin) ou cal/g·°C (calorias por grama por grau Celsius)."@pt
+	Annotations: rdfs:label "ener.110"@pt
+
+ObjectProperty: bim:é.densidade.de.massa.aparente
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.densidade.de.massa.aparente"@pt
+	Annotations: rdfs:label "Mede a relação entre a massa de um material e o volume que ele ocupa. Expressada como kg/m³ ou g/cm³."@pt
+	Annotations: rdfs:label "ener.111"@pt
+
+ObjectProperty: bim:é.emissividade
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.emissividade"@pt
+	Annotations: rdfs:label "Mede a capacidade de um material emitir energia na forma de radiação térmica. Representada pela letra ε varia entre 0 e 1. Um corpo negro perfeito emitindo o máximo de radiação é 1."@pt
+	Annotations: rdfs:label "ener.112"@pt
+
+ObjectProperty: bim:é.absortância.radiação.solar
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.absortância.radiação.solar"@pt
+	Annotations: rdfs:label "Mede a quantidade de energia solar que é absorvida pelo material em relação à energia solar que incide sobre ele. Expressada entre 0 e 1. Quanto menor é o valor menos energia absorve."@pt
+	Annotations: rdfs:label "ener.113"@pt
+
+ObjectProperty: bim:é.resistência.térmica
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.resistência.térmica"@pt
+	Annotations: rdfs:label "Mede a capacidade de um material resistir à passagem de calor. Expressado em m²·K/W. A maior resistência melhor isolamento."@pt
+	Annotations: rdfs:label "ener.114"@pt
+	InverseOf: bim:é.transmitância.térmica
+
+ObjectProperty: bim:é.transmitância.térmica
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.transmitância.térmica"@pt
+	Annotations: rdfs:label "Mede a quantidade de calor que atravessa um elemento construtivo por unidade de área e por diferença de temperatura. Expressada em W/m²·K (Watts por metro quadrado vezes Kelvin). A menor transmitância, melhor isolamento."@pt
+	Annotations: rdfs:label "ener.115"@pt
+	InverseOf: bim:é.resistência.térmica
+
+ObjectProperty: bim:é.fator.solar
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.fator.solar"@pt
+	Annotations: rdfs:label "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa."@pt
+	Annotations: rdfs:label "ener.116"@pt
+	EquivalentTo: bim:é.fator.fotoenergético
+
+ObjectProperty: bim:é.fator.fotoenergético
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para energizar: é.fator.fotoenergético"@pt
+	Annotations: rdfs:label "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt
+	Annotations: rdfs:label "ener.117"@pt
+	EquivalentTo: bim:é.fator.solar
+
 ObjectProperty: bim:p.esgotar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -3002,13 +3454,29 @@ ObjectProperty: bim:é.de.serviço
 	Annotations: rdfs:label "Declara que o ambiente tem função de serviço como cozinhas."@pt
 	Annotations: rdfs:label "esta.102"@pt
 
+ObjectProperty: bim:é.de.permanência.prolongada
+	SubPropertyOf: bim:p.estar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para estar: é.de.permanência.prolongada"@pt
+	Annotations: rdfs:label "Declara que o ambiente é usado por tempos longos, como locais de trabalho ou dormitórios, requerindo conforto térmico, acústico, etc. A norma NBR 15575 trata de Padrões de ocupação diários dos APP."@pt
+	Annotations: rdfs:label "esta.103"@pt
+
+ObjectProperty: bim:é.de.permanência.transitória
+	SubPropertyOf: bim:p.estar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para estar: é.de.permanência.transitória"@pt
+	Annotations: rdfs:label "Declara que o ambiente é usado por tempos curtos. A norma NBR 15575 trata de Padrões de ocupação diários dos APP."@pt
+	Annotations: rdfs:label "esta.104"@pt
+
 ObjectProperty: bim:é.de.guarda
 	SubPropertyOf: bim:p.estar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.guarda"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de guarda como depósitos etc."@pt
-	Annotations: rdfs:label "esta.103"@pt
+	Annotations: rdfs:label "esta.105"@pt
 
 ObjectProperty: bim:é.de.higiene
 	SubPropertyOf: bim:p.estar
@@ -3016,7 +3484,7 @@ ObjectProperty: bim:é.de.higiene
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.higiene"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de higiene como banheiros."@pt
-	Annotations: rdfs:label "esta.104"@pt
+	Annotations: rdfs:label "esta.106"@pt
 
 ObjectProperty: bim:é.de.habitação
 	SubPropertyOf: bim:p.estar
@@ -3024,7 +3492,7 @@ ObjectProperty: bim:é.de.habitação
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.habitação"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de habitação como quartos e espaços residenciais."@pt
-	Annotations: rdfs:label "esta.105"@pt
+	Annotations: rdfs:label "esta.107"@pt
 
 ObjectProperty: bim:é.de.espera
 	SubPropertyOf: bim:p.estar
@@ -3032,7 +3500,7 @@ ObjectProperty: bim:é.de.espera
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.espera"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de espera para recepções."@pt
-	Annotations: rdfs:label "esta.106"@pt
+	Annotations: rdfs:label "esta.108"@pt
 
 ObjectProperty: bim:é.de.lazer
 	SubPropertyOf: bim:p.estar
@@ -3040,7 +3508,7 @@ ObjectProperty: bim:é.de.lazer
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.lazer"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de lazer como shopping centers, parques etc."@pt
-	Annotations: rdfs:label "esta.107"@pt
+	Annotations: rdfs:label "esta.109"@pt
 
 ObjectProperty: bim:é.de.contemplação
 	SubPropertyOf: bim:p.estar
@@ -3048,7 +3516,7 @@ ObjectProperty: bim:é.de.contemplação
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.contemplação"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de contemplação para museus, igrejas etc..."@pt
-	Annotations: rdfs:label "esta.108"@pt
+	Annotations: rdfs:label "esta.110"@pt
 
 ObjectProperty: bim:é.de.ensino
 	SubPropertyOf: bim:p.estar
@@ -3056,7 +3524,7 @@ ObjectProperty: bim:é.de.ensino
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.ensino"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao ensino como aulas ou auditórios etc."@pt
-	Annotations: rdfs:label "esta.109"@pt
+	Annotations: rdfs:label "esta.111"@pt
 
 ObjectProperty: bim:é.de.estudo
 	SubPropertyOf: bim:p.estar
@@ -3064,7 +3532,7 @@ ObjectProperty: bim:é.de.estudo
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.estudo"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao estudo como bibliotecas, salas de leitura."@pt
-	Annotations: rdfs:label "esta.110"@pt
+	Annotations: rdfs:label "esta.112"@pt
 
 ObjectProperty: bim:é.de.cuidado
 	SubPropertyOf: bim:p.estar
@@ -3072,7 +3540,7 @@ ObjectProperty: bim:é.de.cuidado
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.cuidado"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao cuidado de idosos ou pacientes em ambientes hospitalares."@pt
-	Annotations: rdfs:label "esta.111"@pt
+	Annotations: rdfs:label "esta.113"@pt
 
 ObjectProperty: bim:é.de.apóio
 	SubPropertyOf: bim:p.estar
@@ -3080,7 +3548,7 @@ ObjectProperty: bim:é.de.apóio
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.apóio"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao apóio de outras funções."@pt
-	Annotations: rdfs:label "esta.112"@pt
+	Annotations: rdfs:label "esta.114"@pt
 
 ObjectProperty: bim:é.de.espetáculo
 	SubPropertyOf: bim:p.estar
@@ -3088,7 +3556,7 @@ ObjectProperty: bim:é.de.espetáculo
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.espetáculo"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao apresentação de espetáculos como teatros, cines etc.."@pt
-	Annotations: rdfs:label "esta.113"@pt
+	Annotations: rdfs:label "esta.115"@pt
 
 ObjectProperty: bim:é.de.trabalho
 	SubPropertyOf: bim:p.estar
@@ -3096,7 +3564,7 @@ ObjectProperty: bim:é.de.trabalho
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.trabalho"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades laborais como escritórios ou gabinetes."@pt
-	Annotations: rdfs:label "esta.114"@pt
+	Annotations: rdfs:label "esta.116"@pt
 
 ObjectProperty: bim:é.de.pesquisa
 	SubPropertyOf: bim:p.estar
@@ -3104,7 +3572,7 @@ ObjectProperty: bim:é.de.pesquisa
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.pesquisa"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades de pesquisa, como laboratórios ou salas preparadas etc."@pt
-	Annotations: rdfs:label "esta.115"@pt
+	Annotations: rdfs:label "esta.117"@pt
 
 ObjectProperty: bim:é.de.exposição
 	SubPropertyOf: bim:p.estar
@@ -3112,7 +3580,7 @@ ObjectProperty: bim:é.de.exposição
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.exposição"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de exposição como showrooms etc."@pt
-	Annotations: rdfs:label "esta.116"@pt
+	Annotations: rdfs:label "esta.118"@pt
 
 ObjectProperty: bim:é.de.comércio
 	SubPropertyOf: bim:p.estar
@@ -3120,7 +3588,7 @@ ObjectProperty: bim:é.de.comércio
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.comércio"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades de compra venda de produtos etc."@pt
-	Annotations: rdfs:label "esta.117"@pt
+	Annotations: rdfs:label "esta.119"@pt
 
 ObjectProperty: bim:é.de.fabricação
 	SubPropertyOf: bim:p.estar
@@ -3128,7 +3596,15 @@ ObjectProperty: bim:é.de.fabricação
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para estar: é.de.fabricação"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades de fabricação, como oficinas de produção, espaço industrial, FABLAB, usinas etc."@pt
-	Annotations: rdfs:label "esta.118"@pt
+	Annotations: rdfs:label "esta.120"@pt
+
+ObjectProperty: bim:é.taxa.metabólica
+	SubPropertyOf: bim:p.estar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para estar: é.taxa.metabólica"@pt
+	Annotations: rdfs:label "Declara a quantidade de energia que o corpo utiliza para realizar suas funções vitais. Expressa em watts por metro quadrado (W/m²). Atividade Leve 100, media 200 e intensa 300 por pessoa. Ver norma NBR 15575."@pt
+	Annotations: rdfs:label "esta.121"@pt
 
 ObjectProperty: bim:p.extinguir
 	SubPropertyOf: bim:BIMProp
@@ -3848,13 +4324,22 @@ ObjectProperty: bim:é.matrícula
 	Annotations: rdfs:label "iden.109"@pt
 	Characteristics: Functional
 
+ObjectProperty: bim:é.título.eleitoral
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.título.eleitoral"@pt
+	Annotations: rdfs:label "Identificador do número do título eleitoral utilizado em Brasil."@pt
+	Annotations: rdfs:label "iden.110"@pt
+	Characteristics: Functional
+
 ObjectProperty: bim:é.número.serial
 	SubPropertyOf: bim:p.identificar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: é.número.serial"@pt
 	Annotations: rdfs:label "Identificador tipo número de série de um produto."@pt
-	Annotations: rdfs:label "iden.110"@pt
+	Annotations: rdfs:label "iden.111"@pt
 	Characteristics: Functional
 	Characteristics: InverseFunctional
 
@@ -3864,17 +4349,17 @@ ObjectProperty: bim:é.número.mac
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: é.número.mac"@pt
 	Annotations: rdfs:label "Identificador tipo MAC (Media Access Control). Formado por 48 bits (6 bytes) com 12 caracteres hexadecimais. 3 bytes são atribuidos pelo IEEE e 3 bytes pelo fabricante do equipamento ou dispositivo. xx:xx:xx:yy:yy:yy"@pt
-	Annotations: rdfs:label "iden.111"@pt
+	Annotations: rdfs:label "iden.112"@pt
 	Characteristics: Functional
 	Characteristics: InverseFunctional
 
-ObjectProperty: bim:é.número.lote
+ObjectProperty: bim:é.número.de.lote
 	SubPropertyOf: bim:p.identificar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para identificar: é.número.lote"@pt
+	Annotations: rdfs:label "Propriedade para identificar: é.número.de.lote"@pt
 	Annotations: rdfs:label "Identificador do lote de produção de algum produto."@pt
-	Annotations: rdfs:label "iden.112"@pt
+	Annotations: rdfs:label "iden.113"@pt
 	Characteristics: Functional
 
 ObjectProperty: bim:é.uuid
@@ -3883,7 +4368,7 @@ ObjectProperty: bim:é.uuid
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: é.uuid"@pt
 	Annotations: rdfs:label "Identificador tipo UUID (Universally Unique Identifier). Formado por 128 bits (16 bytes). É uma sequência de 32 caracteres hexadecimais xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"@pt
-	Annotations: rdfs:label "iden.113"@pt
+	Annotations: rdfs:label "iden.114"@pt
 	Characteristics: Functional
 	Characteristics: InverseFunctional
 
@@ -3893,7 +4378,7 @@ ObjectProperty: bim:é.cnpj
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: é.cnpj"@pt
 	Annotations: rdfs:label "Identificação do CNPJ. Cadastro Nacional da Pessoa Jurídica no Brasil."@pt
-	Annotations: rdfs:label "iden.114"@pt
+	Annotations: rdfs:label "iden.115"@pt
 	Characteristics: Functional
 	Characteristics: InverseFunctional
 
@@ -3903,9 +4388,107 @@ ObjectProperty: bim:é.cpf
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para identificar: é.cpf"@pt
 	Annotations: rdfs:label "Identificação do CPF. Cadastro Nacional da Pessoa Física no Brasil."@pt
-	Annotations: rdfs:label "iden.115"@pt
+	Annotations: rdfs:label "iden.116"@pt
 	Characteristics: Functional
 	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.pis
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.pis"@pt
+	Annotations: rdfs:label "PIS (Programa de Integração Social): Identifica trabalhadores do setor privado para benefícios como FGTS e seguro-desemprego. Consta no Cadastro Nacional de Informações Sociais (CNIS). Fundo extinto pela Medida Provisória 946/20."@pt
+	Annotations: rdfs:label "iden.117"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.pasep
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.pasep"@pt
+	Annotations: rdfs:label "PASEP (Programa de Formação do Patrimônio do Servidor Público): Similar ao PIS, mas voltado para servidores públicos. Consta no Cadastro Nacional de Informações Sociais (CNIS). Fundo extinto pela Medida Provisória 946/20."@pt
+	Annotations: rdfs:label "iden.118"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.rg
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.rg"@pt
+	Annotations: rdfs:label "Registro Geral é um número identificador de pessoas que seve como carteira de Identidade pessoal no Brasil."@pt
+	Annotations: rdfs:label "iden.119"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.rne
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.rne"@pt
+	Annotations: rdfs:label "RNE. Registro Nacional de Estrangeiros. É um número que identifica pessoas extrangeiras com permisão para morar no Brasil. Formado por letras e números."@pt
+	Annotations: rdfs:label "iden.120"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.carteira.de.trabalho
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.carteira.de.trabalho"@pt
+	Annotations: rdfs:label "Carteira de Trabalho e Previdência Social (CTPS): Número identificador de pessoas para informar sobre vínculos empregatícios. É o número de registro do trabalhador."@pt
+	Annotations: rdfs:label "iden.121"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.cnh
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.cnh"@pt
+	Annotations: rdfs:label "CNH (Carteira Nacional de Habilitação). Número identificador de pessoas que precisam dirigir veículos ou que são motoristas."@pt
+	Annotations: rdfs:label "iden.122"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.inss
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.inss"@pt
+	Annotations: rdfs:label "INSS (Instituto Nacional do Seguro Social) é número identificador de pessoas para previdência social, como aposentadorias e pensões."@pt
+	Annotations: rdfs:label "iden.123"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.nis
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.nis"@pt
+	Annotations: rdfs:label "NIS (Número de Identificação Social) identificador de pessoas para benefícios de assistência social, como bolsa família."@pt
+	Annotations: rdfs:label "iden.124"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.renavan
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.renavan"@pt
+	Annotations: rdfs:label "Renavam (Registro Nacional de Veículos Automotores) é o número de identificação de veículos."@pt
+	Annotations: rdfs:label "iden.125"@pt
+	Characteristics: Functional
+	Characteristics: InverseFunctional
+
+ObjectProperty: bim:é.inscrição
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para identificar: é.inscrição"@pt
+	Annotations: rdfs:label "A inscrição é um número para ser usado como número identificador em eventos diversos. Por exemplo, em congressos, sorteios ou sempre que seja necessário atribuir um número a um participante."@pt
+	Annotations: rdfs:label "iden.126"@pt
 
 ObjectProperty: bim:p.iluminar
 	SubPropertyOf: bim:BIMProp
@@ -3913,20 +4496,20 @@ ObjectProperty: bim:p.iluminar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade de Objeto para p.iluminar"@pt
 
-ObjectProperty: bim:é.luminária
+ObjectProperty: bim:é.iluminador.de
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.luminária"@pt
-	Annotations: rdfs:label "Identificação do elemento de iluminação. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "Propriedade para iluminar: é.iluminador.de"@pt
+	Annotations: rdfs:label "Identificação do elemento de iluminação. Pode ser uma luminária ou poste de luz. Pode ser declarado com o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "ilum.100"@pt
 
-ObjectProperty: bim:é.poste.de.luz
+ObjectProperty: bim:é.iluminado.por
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.poste.de.luz"@pt
-	Annotations: rdfs:label "Identificação do elemento de poste de luz. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "Propriedade para iluminar: é.iluminado.por"@pt
+	Annotations: rdfs:label "Declara que o elemento é iluminado por algum outro elemento.  Pode ser declarado com o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "ilum.101"@pt
 
 ObjectProperty: bim:é.luz.natural
@@ -4033,13 +4616,144 @@ ObjectProperty: bim:é.irc
 	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100."@pt
 	Annotations: rdfs:label "ilum.114"@pt
 
-ObjectProperty: bim:é.iluminado.por
+ObjectProperty: bim:é.insolação.direta.excessiva
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.iluminado.por"@pt
-	Annotations: rdfs:label "Declara que o elemento é iluminado por algum outro elemento."@pt
+	Annotations: rdfs:label "Propriedade para iluminar: é.insolação.direta.excessiva"@pt
+	Annotations: rdfs:label "Declara que o valor de incidência da luz natural é acima de 1000 lux aproximadamente (NBR 15215-3)."@pt
 	Annotations: rdfs:label "ilum.115"@pt
+
+ObjectProperty: bim:é.iluminância.alvo
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.iluminância.alvo"@pt
+	Annotations: rdfs:label "Declara o valor de iluminancia alvo pretendida recomendada em lux (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.116"@pt
+
+ObjectProperty: bim:é.iluminância.alvo.mímina
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.iluminância.alvo.mímina"@pt
+	Annotations: rdfs:label "Declara o valor de iluminancia alvo mínima em lux (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.117"@pt
+
+ObjectProperty: bim:é.plano.de.trabalho
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.plano.de.trabalho"@pt
+	Annotations: rdfs:label "Declara a altura do plano de trabalho para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.118"@pt
+	EquivalentTo: bim:é.plano.de.referência
+
+ObjectProperty: bim:é.plano.de.referência
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.plano.de.referência"@pt
+	Annotations: rdfs:label "Declara a altura do plano de referência para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.119"@pt
+	EquivalentTo: bim:é.plano.de.iluminação
+
+ObjectProperty: bim:é.plano.de.iluminação
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.plano.de.iluminação"@pt
+	Annotations: rdfs:label "Declara plano de iluminação."@pt
+	Annotations: rdfs:label "ilum.120"@pt
+	EquivalentTo: bim:é.plano.de.trabalho
+
+ObjectProperty: bim:é.carga.de.iluminação
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.carga.de.iluminação"@pt
+	Annotations: rdfs:label "Declara carga de iluminação."@pt
+	Annotations: rdfs:label "ilum.121"@pt
+
+ObjectProperty: bim:é.carga.de.iluminação.necessária
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.carga.de.iluminação.necessária"@pt
+	Annotations: rdfs:label "Declara carga de iluminação necessária."@pt
+	Annotations: rdfs:label "ilum.122"@pt
+
+ObjectProperty: bim:é.carga.de.iluminação.por.área
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.carga.de.iluminação.por.área"@pt
+	Annotations: rdfs:label "Declara carga de iluminação por área."@pt
+	Annotations: rdfs:label "ilum.123"@pt
+
+ObjectProperty: bim:é.carga.real.de.iluminação
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.carga.real.de.iluminação"@pt
+	Annotations: rdfs:label "Declara carga real de iluminação."@pt
+	Annotations: rdfs:label "ilum.124"@pt
+
+ObjectProperty: bim:é.carga.real.de.iluminação.por.área
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.carga.real.de.iluminação.por.área"@pt
+	Annotations: rdfs:label "Declara carga real de iluminação por área."@pt
+	Annotations: rdfs:label "ilum.125"@pt
+
+ObjectProperty: bim:é.contribuição.da.iluminação.pleno
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.contribuição.da.iluminação.pleno"@pt
+	Annotations: rdfs:label "Declara contribuição da iluminação pleno."@pt
+	Annotations: rdfs:label "ilum.126"@pt
+
+ObjectProperty: bim:é.iluminação.média.estimada
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.iluminação.média.estimada"@pt
+	Annotations: rdfs:label "Declara a iluminação média estimada. Calculada Pelo total de lumens fornecidos pelas luminárias dividido pelo área iluminada."@pt
+	Annotations: rdfs:label "ilum.127"@pt
+
+ObjectProperty: bim:é.refletância.da.parede
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.da.parede"@pt
+	Annotations: rdfs:label "Declara a refletância da parede. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para uma parede clara."@pt
+	Annotations: rdfs:label "ilum.128"@pt
+
+ObjectProperty: bim:é.refletância.do.piso
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.do.piso"@pt
+	Annotations: rdfs:label "Declara a refletância do piso. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 10% para pisos escuros."@pt
+	Annotations: rdfs:label "ilum.129"@pt
+
+ObjectProperty: bim:é.refletância.do.teto
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.do.teto"@pt
+	Annotations: rdfs:label "Declara a refletância do teto. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para um forro branco."@pt
+	Annotations: rdfs:label "ilum.130"@pt
+
+ObjectProperty: bim:é.unidade.de.carga.de.iluminação
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para iluminar: é.unidade.de.carga.de.iluminação"@pt
+	Annotations: rdfs:label "Declara a unidade de carga de iluminação.Carga elétrica consumida pelo sistemas de iluminação do edifício ou ambiente."@pt
+	Annotations: rdfs:label "ilum.131"@pt
 
 ObjectProperty: bim:p.incentivar
 	SubPropertyOf: bim:BIMProp
@@ -5752,6 +6466,46 @@ ObjectProperty: bim:é.verbal
 	Annotations: rdfs:label "Indica se o recurso tem a permissão verbalmente concedida"@pt
 	Annotations: rdfs:label "perm.113"@pt
 
+ObjectProperty: bim:é.visto.refugiado
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para permitir: é.visto.refugiado"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto de refugiado ou asilado. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.114"@pt
+
+ObjectProperty: bim:é.visto.permanente
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para permitir: é.visto.permanente"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto permanente. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.115"@pt
+
+ObjectProperty: bim:é.visto.temporário
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para permitir: é.visto.temporário"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto temporário. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.116"@pt
+
+ObjectProperty: bim:é.visto.turístico
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para permitir: é.visto.turístico"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto de turista. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.117"@pt
+
+ObjectProperty: bim:é.visto.trânsito
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para permitir: é.visto.trânsito"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto de trânsito. Aplicado normalmente à passagem de pessoas pelo país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.118"@pt
+
 ObjectProperty: bim:p.pesar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -5793,7 +6547,7 @@ ObjectProperty: bim:é.cor
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para pintar: é.cor"@pt
-	Annotations: rdfs:label "O nome de uma cor."@pt
+	Annotations: rdfs:label "Define o nome de uma cor."@pt
 	Annotations: rdfs:label "pint.100"@pt
 
 ObjectProperty: bim:é.tonalidade
@@ -5801,7 +6555,7 @@ ObjectProperty: bim:é.tonalidade
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para pintar: é.tonalidade"@pt
-	Annotations: rdfs:label "O nome de uma tonalidade de cor."@pt
+	Annotations: rdfs:label "Define a intensidade do matiz que pode ser mais claro ou escuro."@pt
 	Annotations: rdfs:label "pint.101"@pt
 
 ObjectProperty: bim:é.matiz
@@ -5809,7 +6563,7 @@ ObjectProperty: bim:é.matiz
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para pintar: é.matiz"@pt
-	Annotations: rdfs:label "O nome de um matiz de cor."@pt
+	Annotations: rdfs:label "Define a característica cromática ou a composição da cor."@pt
 	Annotations: rdfs:label "pint.102"@pt
 
 ObjectProperty: bim:é.red
@@ -6257,13 +7011,21 @@ ObjectProperty: bim:p.prever
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade de Objeto para p.prever"@pt
 
+ObjectProperty: bim:é.estação.meteorológica
+	SubPropertyOf: bim:p.prever
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para prever : é.estação.meteorológica"@pt
+	Annotations: rdfs:label "Número da Estação Meteorológica mais próxima do INMET."@pt
+	Annotations: rdfs:label "prev.100"@pt
+
 ObjectProperty: bim:é.precipitação.diária
 	SubPropertyOf: bim:p.prever
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.precipitação.diária"@pt
 	Annotations: rdfs:label "Valor de precipitação de chuva diária"@pt
-	Annotations: rdfs:label "prev.100"@pt
+	Annotations: rdfs:label "prev.101"@pt
 
 ObjectProperty: bim:é.precipitação.mensal
 	SubPropertyOf: bim:p.prever
@@ -6271,7 +7033,7 @@ ObjectProperty: bim:é.precipitação.mensal
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.precipitação.mensal"@pt
 	Annotations: rdfs:label "Valor de precipitação de chuva mensal"@pt
-	Annotations: rdfs:label "prev.101"@pt
+	Annotations: rdfs:label "prev.102"@pt
 
 ObjectProperty: bim:é.velocidade.do.vento
 	SubPropertyOf: bim:p.prever
@@ -6279,7 +7041,7 @@ ObjectProperty: bim:é.velocidade.do.vento
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.velocidade.do.vento"@pt
 	Annotations: rdfs:label "Indica a previsão das correntes de ar. Pode ser indicada em m/s."@pt
-	Annotations: rdfs:label "prev.102"@pt
+	Annotations: rdfs:label "prev.103"@pt
 
 ObjectProperty: bim:é.direção.do.vento
 	SubPropertyOf: bim:p.prever
@@ -6287,7 +7049,7 @@ ObjectProperty: bim:é.direção.do.vento
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.direção.do.vento"@pt
 	Annotations: rdfs:label "Indica a previsão da direção do vento. Pode ser indicada com as direções cardinais ou em graus, sendo Norte Verdadeiro = 0°."@pt
-	Annotations: rdfs:label "prev.103"@pt
+	Annotations: rdfs:label "prev.104"@pt
 
 ObjectProperty: bim:é.radiação.solar
 	SubPropertyOf: bim:p.prever
@@ -6295,7 +7057,7 @@ ObjectProperty: bim:é.radiação.solar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.radiação.solar"@pt
 	Annotations: rdfs:label "Indica a quantidade de energia solar. Medir em watt por metro quadrado (W/m²)."@pt
-	Annotations: rdfs:label "prev.104"@pt
+	Annotations: rdfs:label "prev.105"@pt
 
 ObjectProperty: bim:é.pressão.atmosférica
 	SubPropertyOf: bim:p.prever
@@ -6303,7 +7065,7 @@ ObjectProperty: bim:é.pressão.atmosférica
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.pressão.atmosférica"@pt
 	Annotations: rdfs:label "Indica a pressão atmosférica. Medida em unidades como pascal (Pa), milibar (mb) ou milímetros de mercúrio (mmHg)."@pt
-	Annotations: rdfs:label "prev.105"@pt
+	Annotations: rdfs:label "prev.106"@pt
 
 ObjectProperty: bim:é.temperatura
 	SubPropertyOf: bim:p.prever
@@ -6311,7 +7073,15 @@ ObjectProperty: bim:é.temperatura
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.temperatura"@pt
 	Annotations: rdfs:label "Indica a temperatura do ar."@pt
-	Annotations: rdfs:label "prev.106"@pt
+	Annotations: rdfs:label "prev.107"@pt
+
+ObjectProperty: bim:é.sensação.térmica
+	SubPropertyOf: bim:p.prever
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para prever : é.sensação.térmica"@pt
+	Annotations: rdfs:label "Indica a sensação térmica."@pt
+	Annotations: rdfs:label "prev.108"@pt
 
 ObjectProperty: bim:é.umidade.relativa
 	SubPropertyOf: bim:p.prever
@@ -6319,7 +7089,7 @@ ObjectProperty: bim:é.umidade.relativa
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.umidade.relativa"@pt
 	Annotations: rdfs:label "Indica a unidade relativa do ar."@pt
-	Annotations: rdfs:label "prev.107"@pt
+	Annotations: rdfs:label "prev.109"@pt
 
 ObjectProperty: bim:é.qualidade.do.ar
 	SubPropertyOf: bim:p.prever
@@ -6327,15 +7097,23 @@ ObjectProperty: bim:é.qualidade.do.ar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para prever : é.qualidade.do.ar"@pt
 	Annotations: rdfs:label "AQI (Air Quality Index) é um índice que representa a qualidade do ar. Precisa sensores tipo Gaia para detectar particulados nocivos à saúde e que possam transmitir dados."@pt
-	Annotations: rdfs:label "prev.108"@pt
+	Annotations: rdfs:label "prev.110"@pt
 
-ObjectProperty: bim:é.estação.meteorológica
+ObjectProperty: bim:é.hora.utc
 	SubPropertyOf: bim:p.prever
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para prever : é.estação.meteorológica"@pt
-	Annotations: rdfs:label "Número da Estação Meteorológica mais próxima do INMET."@pt
-	Annotations: rdfs:label "prev.109"@pt
+	Annotations: rdfs:label "Propriedade para prever : é.hora.utc"@pt
+	Annotations: rdfs:label "Curva IDF, Intensidade Duração e Frequência pluviométrica.  A curva relaciona o Volume de chuva em mm/h, a Duração e Probabilidade do evento acontecer como Tempo de Retorno em anos (10 anos, 50 anos, etc), Usada para o cálculo de redes."@pt
+	Annotations: rdfs:label "prev.111"@pt
+
+ObjectProperty: bim:é.curva.idf
+	SubPropertyOf: bim:p.prever
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para prever : é.curva.idf"@pt
+	Annotations: rdfs:label "Hora em UTC do dia para tabelas de duração climática."@pt
+	Annotations: rdfs:label "prev.112"@pt
 
 ObjectProperty: bim:p.produzir
 	SubPropertyOf: bim:BIMProp
@@ -7241,6 +8019,36 @@ ObjectProperty: bim:é.membro.flexionado
 	Annotations: rdfs:label "Qualifica elemento estrutural em momento fletor."@pt
 	Annotations: rdfs:label "resi.109"@pt
 
+ObjectProperty: bim:p.sanear
+	SubPropertyOf: bim:BIMProp
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade de Objeto para p.sanear"@pt
+
+ObjectProperty: bim:é.coliforme.total
+	SubPropertyOf: bim:p.sanear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sanear: é.coliforme.total"@pt
+	Annotations: rdfs:label "Bactérias cuya presença pode indicar contaminação ambiental."@pt
+	Annotations: rdfs:label "sane.100"@pt
+
+ObjectProperty: bim:é.coliforme.termotolerante
+	SubPropertyOf: bim:p.sanear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sanear: é.coliforme.termotolerante"@pt
+	Annotations: rdfs:label "Microorganismos contaminantes da água. Não deve haver presença de coliformes termotolerantes para que a água seja considerada potável."@pt
+	Annotations: rdfs:label "sane.101"@pt
+
+ObjectProperty: bim:é.cloro.residual.livre
+	SubPropertyOf: bim:p.sanear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sanear: é.cloro.residual.livre"@pt
+	Annotations: rdfs:label "Quantidade de cloro em água que ainda não reagiu com contaminantes."@pt
+	Annotations: rdfs:label "sane.102"@pt
+
 ObjectProperty: bim:p.sensorizar
 	SubPropertyOf: bim:BIMProp
 	Domain: bim:BIM
@@ -7479,7 +8287,7 @@ ObjectProperty: bim:é.brise.horizontal
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.brise.horizontal"@pt
-	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Norte (sol incidindo com maior inclinação)."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. No Brasil usadas em fachadas com orientação Norte (sol incidindo com maior inclinação)."@pt
 	Annotations: rdfs:label "somb.101"@pt
 
 ObjectProperty: bim:é.brise.vertical
@@ -7487,7 +8295,7 @@ ObjectProperty: bim:é.brise.vertical
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.brise.vertical"@pt
-	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Leste - Oeste (sol incidindo com menor inclinação)."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. No Brasil usadas em fachadas com orientação Leste - Oeste (sol incidindo com menor inclinação)."@pt
 	Annotations: rdfs:label "somb.102"@pt
 
 ObjectProperty: bim:é.brise.móvel
@@ -7495,7 +8303,7 @@ ObjectProperty: bim:é.brise.móvel
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.brise.móvel"@pt
-	Annotations: rdfs:label "O brise tem aletas móveis."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. O brise tem aletas móveis."@pt
 	Annotations: rdfs:label "somb.103"@pt
 
 ObjectProperty: bim:é.cobogó
@@ -7503,8 +8311,40 @@ ObjectProperty: bim:é.cobogó
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para sombrear: é.cobogó"@pt
-	Annotations: rdfs:label "Identificação do cobogó. Pode ser o ID de Revit ou o GlobalId em IFC. Blocos vazados. Nome é homenagem aos criadores Coimbra, Boeckmann e de Góis."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. Identificação do cobogó. O nome dado ao fechamento de blocos vazados é homenagem aos criadores Coimbra, Boeckmann e de Góis."@pt
 	Annotations: rdfs:label "somb.104"@pt
+
+ObjectProperty: bim:é.ângulo.de.visão.horizontal
+	SubPropertyOf: bim:p.sombrear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sombrear: é.ângulo.de.visão.horizontal"@pt
+	Annotations: rdfs:label "Ângulo de visão é um parámetro da NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "somb.105"@pt
+
+ObjectProperty: bim:é.distância.externa
+	SubPropertyOf: bim:p.sombrear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sombrear: é.distância.externa"@pt
+	Annotations: rdfs:label "Distância externa de visão é um parámetro da NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "somb.106"@pt
+
+ObjectProperty: bim:é.camada.visível
+	SubPropertyOf: bim:p.sombrear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sombrear: é.camada.visível"@pt
+	Annotations: rdfs:label "Camada visível é um parámetro da NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "somb.107"@pt
+
+ObjectProperty: bim:é.probabilidade.de.ofuscamento
+	SubPropertyOf: bim:p.sombrear
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para sombrear: é.probabilidade.de.ofuscamento"@pt
+	Annotations: rdfs:label "Probabilidade de ofuscamento (DGP, Daylight Glare Probability) é um parámetro da NBR 15215-3 de cálculo de incidência de luz natural em ambientes. Indica o desconforto visual causado pelo brilho excessivo."@pt
+	Annotations: rdfs:label "somb.108"@pt
 
 ObjectProperty: bim:p.tabular
 	SubPropertyOf: bim:BIMProp
@@ -8771,13 +9611,21 @@ DataProperty: bim:patente
 	Annotations: rdfs:label "Identificação de número de patente."@pt
 	Annotations: rdfs:label "ates.104"@pt
 
+DataProperty: bim:d.atestar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.atestar"@pt
+	Characteristics: Functional
+
 DataProperty: bim:registro.inpi
 	SubPropertyOf: bim:d.atestar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para atestar: registro.inpi ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação de número de registro no INPI Instituto Nacional de Propriedade Industrial."@pt
+	Annotations: rdfs:label "Identificação de número de registro no INPI Instituto Nacional de Propriedade Industrial no Brasil."@pt
 	Annotations: rdfs:label "ates.105"@pt
+	Characteristics: Functional
 
 DataProperty: bim:registro.cau
 	SubPropertyOf: bim:d.atestar
@@ -8786,6 +9634,7 @@ DataProperty: bim:registro.cau
 	Annotations: rdfs:label "Dado para atestar: registro.cau ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de número de registro no CAU Conselho Regional de Engenharia e Agronomia no Brasil."@pt
 	Annotations: rdfs:label "ates.106"@pt
+	Characteristics: Functional
 
 DataProperty: bim:registro.crea
 	SubPropertyOf: bim:d.atestar
@@ -8794,6 +9643,7 @@ DataProperty: bim:registro.crea
 	Annotations: rdfs:label "Dado para atestar: registro.crea ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de número de registro no CREA Conselho Regional de Engenharia e Agronomia no Brasil."@pt
 	Annotations: rdfs:label "ates.107"@pt
+	Characteristics: Functional
 
 DataProperty: bim:registro.confea
 	SubPropertyOf: bim:d.atestar
@@ -8802,6 +9652,7 @@ DataProperty: bim:registro.confea
 	Annotations: rdfs:label "Dado para atestar: registro.confea ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de número de registro no CONFEA Conselho Federal de Engenharia e Agronomia no Brasil."@pt
 	Annotations: rdfs:label "ates.108"@pt
+	Characteristics: Functional
 
 DataProperty: bim:carteira.habilitante
 	SubPropertyOf: bim:d.atestar
@@ -8810,6 +9661,7 @@ DataProperty: bim:carteira.habilitante
 	Annotations: rdfs:label "Dado para atestar: carteira.habilitante ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de número de alguma carteira de habilitação para exercer alguma função."@pt
 	Annotations: rdfs:label "ates.109"@pt
+	Characteristics: Functional
 
 DataProperty: bim:fiscalizado.por
 	SubPropertyOf: bim:d.atestar
@@ -8848,6 +9700,28 @@ DataProperty: bim:criptografado
 	Annotations: rdfs:label "Dado para autenticar: criptografado ( xsd:string )"@pt
 	Annotations: rdfs:label "Autenticado por critografia."@pt
 	Annotations: rdfs:label "aute.102"@pt
+
+DataProperty: bim:d.calcular
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.calcular"@pt
+
+DataProperty: bim:malha.de.pontos
+	SubPropertyOf: bim:d.calcular
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para calcular: malha.de.pontos ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara uma malha UV de pontos para cálculos diversos, preferivelmente com densidade de 0,5 a 2,0 m. Por exemplo, aplicada em NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "calc.100"@pt
+
+DataProperty: bim:matriz
+	SubPropertyOf: bim:d.calcular
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para calcular: matriz ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara uma matriz 4x4."@pt
+	Annotations: rdfs:label "calc.101"@pt
 
 DataProperty: bim:d.captar
 	SubPropertyOf: bim:BIMData
@@ -9036,6 +9910,28 @@ DataProperty: bim:zincado
 	Annotations: rdfs:label "Dado para caracterizar: zincado ( xsd:string )"@pt
 	Annotations: rdfs:label "Finalização do acabamento zincado."@pt
 	Annotations: rdfs:label "cara.116"@pt
+
+DataProperty: bim:d.caracterizar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.caracterizar"@pt
+
+DataProperty: bim:fator.transparência
+	SubPropertyOf: bim:d.caracterizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para caracterizar: fator.transparência ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara o Percentual de elementos transparentes da norma NBR 15575 para cálculos térnicos. É uma característica da envoltória."@pt
+	Annotations: rdfs:label "cara.117"@pt
+
+DataProperty: bim:fator.abertura
+	SubPropertyOf: bim:d.caracterizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para caracterizar: fator.abertura ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara o Percentual de elementos de abertura para ventilação da norma NBR 15575 para cálculos térnicos. É uma característica da envoltória."@pt
+	Annotations: rdfs:label "cara.118"@pt
 
 DataProperty: bim:d.carregar
 	SubPropertyOf: bim:BIMData
@@ -9602,6 +10498,346 @@ DataProperty: bim:terminal.duto
 	Annotations: rdfs:label "Dado para climatizar: terminal.duto ( xsd:string )"@pt
 	Annotations: rdfs:label "É elemento terminal da linha de dutos de AVAC (HVAC)."@pt
 	Annotations: rdfs:label "clim.104"@pt
+
+DataProperty: bim:d.climatizar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.climatizar"@pt
+
+DataProperty: bim:ar.externo.por.pessoa
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: ar.externo.por.pessoa ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara ar externo por pessoa."@pt
+	Annotations: rdfs:label "clim.105"@pt
+
+DataProperty: bim:ar.externo.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: ar.externo.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara ar externo por área."@pt
+	Annotations: rdfs:label "clim.106"@pt
+
+DataProperty: bim:área.por.pessoa
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: área.por.pessoa ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara área por pessoa."@pt
+	Annotations: rdfs:label "clim.107"@pt
+
+DataProperty: bim:carga.avac.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.avac.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga avac por área."@pt
+	Annotations: rdfs:label "clim.108"@pt
+
+DataProperty: bim:carga.avac.real
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.avac.real ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga avac real."@pt
+	Annotations: rdfs:label "clim.109"@pt
+
+DataProperty: bim:carga.de.aquecimento
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.aquecimento ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de aquecimento."@pt
+	Annotations: rdfs:label "clim.110"@pt
+
+DataProperty: bim:carga.de.aquecimento.calculada
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.aquecimento.calculada ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de aquecimento calculada."@pt
+	Annotations: rdfs:label "clim.111"@pt
+
+DataProperty: bim:carga.de.aquecimento.calculada.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.aquecimento.calculada.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de aquecimento calculada por área."@pt
+	Annotations: rdfs:label "clim.112"@pt
+
+DataProperty: bim:carga.de.energia
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.energia ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de energia."@pt
+	Annotations: rdfs:label "clim.113"@pt
+
+DataProperty: bim:carga.de.energia.necessária
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.energia.necessária ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de energia necessária."@pt
+	Annotations: rdfs:label "clim.114"@pt
+
+DataProperty: bim:carga.de.energia.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.energia.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de energia por área."@pt
+	Annotations: rdfs:label "clim.115"@pt
+
+DataProperty: bim:carga.de.resfriamento
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.resfriamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de resfriamento."@pt
+	Annotations: rdfs:label "clim.116"@pt
+
+DataProperty: bim:carga.de.resfriamento.calculada
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.resfriamento.calculada ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de resfriamento calculada."@pt
+	Annotations: rdfs:label "clim.117"@pt
+
+DataProperty: bim:carga.de.resfriamento.calculada.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.de.resfriamento.calculada.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de resfriamento calculada por área."@pt
+	Annotations: rdfs:label "clim.118"@pt
+
+DataProperty: bim:carga.real.alternativa
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.real.alternativa ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real alternativa."@pt
+	Annotations: rdfs:label "clim.119"@pt
+
+DataProperty: bim:carga.real.de.energia
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.real.de.energia ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real de energia."@pt
+	Annotations: rdfs:label "clim.120"@pt
+
+DataProperty: bim:carga.real.de.energia.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.real.de.energia.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real de energia por área."@pt
+	Annotations: rdfs:label "clim.121"@pt
+
+DataProperty: bim:carga.real.de.força.motriz
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.real.de.força.motriz ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real de força motriz."@pt
+	Annotations: rdfs:label "clim.122"@pt
+
+DataProperty: bim:carga.real.de.reserva
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: carga.real.de.reserva ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real de reserva."@pt
+	Annotations: rdfs:label "clim.123"@pt
+
+DataProperty: bim:fluxo.de.ar.de.alimentação
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.de.alimentação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de alimentação."@pt
+	Annotations: rdfs:label "clim.124"@pt
+
+DataProperty: bim:fluxo.de.ar.de.exaustão
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.de.exaustão ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de exaustão."@pt
+	Annotations: rdfs:label "clim.125"@pt
+
+DataProperty: bim:fluxo.de.ar.de.exaustão.real
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.de.exaustão.real ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de exaustão real."@pt
+	Annotations: rdfs:label "clim.126"@pt
+
+DataProperty: bim:fluxo.de.ar.de.retorno
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.de.retorno ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de retorno."@pt
+	Annotations: rdfs:label "clim.127"@pt
+
+DataProperty: bim:fluxo.de.ar.de.insuflamento
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.de.insuflamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de insuflamento."@pt
+	Annotations: rdfs:label "clim.128"@pt
+
+DataProperty: bim:fluxo.de.ar.de.insuflamento.por.área
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.de.insuflamento.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar de insuflamento por área."@pt
+	Annotations: rdfs:label "clim.129"@pt
+
+DataProperty: bim:fluxo.de.ar.externo
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.externo ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar externo."@pt
+	Annotations: rdfs:label "clim.130"@pt
+
+DataProperty: bim:fluxo.de.ar.real.de.retorno
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.real.de.retorno ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar real de retorno."@pt
+	Annotations: rdfs:label "clim.131"@pt
+
+DataProperty: bim:fluxo.de.ar.real.de.insuflamento
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: fluxo.de.ar.real.de.insuflamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara fluxo de ar real de insuflamento."@pt
+	Annotations: rdfs:label "clim.132"@pt
+
+DataProperty: bim:ganho.de.calor.latente.por.pessoa
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: ganho.de.calor.latente.por.pessoa ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara ganho de calor latente por pessoa."@pt
+	Annotations: rdfs:label "clim.133"@pt
+
+DataProperty: bim:ganho.de.calor.sensível.por.pessoa
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: ganho.de.calor.sensível.por.pessoa ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara ganho de calor sensível por pessoa."@pt
+	Annotations: rdfs:label "clim.134"@pt
+
+DataProperty: bim:ganho.total.de.calor.por.pessoa
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: ganho.total.de.calor.por.pessoa ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara ganho total de calor por pessoa."@pt
+	Annotations: rdfs:label "clim.135"@pt
+
+DataProperty: bim:método.de.ar.externo
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para climatizar: método.de.ar.externo ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara método de ar externo."@pt
+	Annotations: rdfs:label "clim.136"@pt
+
+DataProperty: bim:pleno
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para climatizar: pleno ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara pleno."@pt
+	Annotations: rdfs:label "clim.137"@pt
+
+DataProperty: bim:d.climatizar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado de Objeto d.climatizar"@pt
+
+DataProperty: bim:quantidade.de.pessoas
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para climatizar: quantidade.de.pessoas ( xsd:integer )"@pt
+	Annotations: rdfs:label "Declara quantidade de pessoas."@pt
+	Annotations: rdfs:label "clim.138"@pt
+
+DataProperty: bim:razão.cavidade.da.sala
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: razão.cavidade.da.sala ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara razão cavidade da sala."@pt
+	Annotations: rdfs:label "clim.139"@pt
+
+DataProperty: bim:tipo.de.condição
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para climatizar: tipo.de.condição ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara tipo de condição."@pt
+	Annotations: rdfs:label "clim.140"@pt
+
+DataProperty: bim:tipo.de.construção
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para climatizar: tipo.de.construção ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara tipo de construção."@pt
+	Annotations: rdfs:label "clim.141"@pt
+
+DataProperty: bim:tipo.de.espaço
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para climatizar: tipo.de.espaço ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara tipo de espaço."@pt
+	Annotations: rdfs:label "clim.142"@pt
+
+DataProperty: bim:trocas.de.ar.por.hora
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: trocas.de.ar.por.hora ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara trocas de ar por hora."@pt
+	Annotations: rdfs:label "clim.143"@pt
+
+DataProperty: bim:unidade.de.ocupação
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: unidade.de.ocupação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara unidade de ocupação."@pt
+	Annotations: rdfs:label "clim.144"@pt
+
+DataProperty: bim:unidade.de.carga.de.energia
+	SubPropertyOf: bim:d.climatizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para climatizar: unidade.de.carga.de.energia ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara unidade de carga de energia."@pt
+	Annotations: rdfs:label "clim.145"@pt
 
 DataProperty: bim:d.comunicar
 	SubPropertyOf: bim:BIMData
@@ -10717,6 +11953,84 @@ DataProperty: bim:renovável
 	Annotations: rdfs:label "Declara se o insumo é de fonte renovável. Energia gerada por painel solar por exemplo."@pt
 	Annotations: rdfs:label "ener.108"@pt
 
+DataProperty: bim:d.energizar
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.energizar"@pt
+
+DataProperty: bim:condutividade.térmica
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: condutividade.térmica ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a capacidade de conduzir calor. Representada pela letra k ou λ, é expressa em W/m·K (watts por metro por kelvin)."@pt
+	Annotations: rdfs:label "ener.109"@pt
+
+DataProperty: bim:calor.específico
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: calor.específico ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a quantidade de calor que eleva a temperatura de uma unidade de massa de uma substância em 1°C ou 1 K. Expresso em J/kg·K (joules por quilograma por kelvin) ou cal/g·°C (calorias por grama por grau Celsius)."@pt
+	Annotations: rdfs:label "ener.110"@pt
+
+DataProperty: bim:densidade.de.massa.aparente
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: densidade.de.massa.aparente ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a relação entre a massa de um material e o volume que ele ocupa. Expressada como kg/m³ ou g/cm³."@pt
+	Annotations: rdfs:label "ener.111"@pt
+
+DataProperty: bim:emissividade
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: emissividade ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a capacidade de um material emitir energia na forma de radiação térmica. Representada pela letra ε varia entre 0 e 1. Um corpo negro perfeito emitindo o máximo de radiação é 1."@pt
+	Annotations: rdfs:label "ener.112"@pt
+
+DataProperty: bim:absortância.radiação.solar
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: absortância.radiação.solar   ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a quantidade de energia solar que é absorvida pelo material em relação à energia solar que incide sobre ele. Expressada entre 0 e 1. Quanto menor é o valor menos energia absorve."@pt
+	Annotations: rdfs:label "ener.113"@pt
+
+DataProperty: bim:resistência.térmica
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: resistência.térmica ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a capacidade de um material resistir à passagem de calor. Expressado em m²·K/W. A maior resistência melhor isolamento."@pt
+	Annotations: rdfs:label "ener.114"@pt
+
+DataProperty: bim:transmitância.térmica
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: transmitância.térmica ( xsd:double )"@pt
+	Annotations: rdfs:label "Mede a quantidade de calor que atravessa um elemento construtivo por unidade de área e por diferença de temperatura. Expressada em W/m²·K (Watts por metro quadrado vezes Kelvin). A menor transmitância, melhor isolamento."@pt
+	Annotations: rdfs:label "ener.115"@pt
+
+DataProperty: bim:fator.solar
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: fator.solar ( xsd:double )"@pt
+	Annotations: rdfs:label "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa."@pt
+	Annotations: rdfs:label "ener.116"@pt
+
+DataProperty: bim:fator.fotoenergético
+	SubPropertyOf: bim:d.energizar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar: fator.fotoenergético ( xsd:double )"@pt
+	Annotations: rdfs:label "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt
+	Annotations: rdfs:label "ener.117"@pt
+
 DataProperty: bim:d.esgotar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
@@ -10855,13 +12169,29 @@ DataProperty: bim:de.serviço
 	Annotations: rdfs:label "Declara que o ambiente tem função de serviço como cozinhas."@pt
 	Annotations: rdfs:label "esta.102"@pt
 
+DataProperty: bim:de.permanência.prolongada
+	SubPropertyOf: bim:d.estar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para estar: de.permanência.prolongada ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o ambiente é usado por tempos longos, como locais de trabalho ou dormitórios, requerindo conforto térmico, acústico, etc. A norma NBR 15575 trata de Padrões de ocupação diários dos APP."@pt
+	Annotations: rdfs:label "esta.103"@pt
+
+DataProperty: bim:de.permanência.transitória
+	SubPropertyOf: bim:d.estar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para estar: de.permanência.transitória ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara que o ambiente é usado por tempos curtos. A norma NBR 15575 trata de Padrões de ocupação diários dos APP."@pt
+	Annotations: rdfs:label "esta.104"@pt
+
 DataProperty: bim:de.guarda
 	SubPropertyOf: bim:d.estar
 	Domain: bim:BIM
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.guarda ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de guarda como depósitos etc."@pt
-	Annotations: rdfs:label "esta.103"@pt
+	Annotations: rdfs:label "esta.105"@pt
 
 DataProperty: bim:de.higiene
 	SubPropertyOf: bim:d.estar
@@ -10869,7 +12199,7 @@ DataProperty: bim:de.higiene
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.higiene ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de higiene como banheiros."@pt
-	Annotations: rdfs:label "esta.104"@pt
+	Annotations: rdfs:label "esta.106"@pt
 
 DataProperty: bim:de.habitação
 	SubPropertyOf: bim:d.estar
@@ -10877,7 +12207,7 @@ DataProperty: bim:de.habitação
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.habitação ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de habitação como quartos e espaços residenciais."@pt
-	Annotations: rdfs:label "esta.105"@pt
+	Annotations: rdfs:label "esta.107"@pt
 
 DataProperty: bim:de.espera
 	SubPropertyOf: bim:d.estar
@@ -10885,7 +12215,7 @@ DataProperty: bim:de.espera
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.espera ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de espera para recepções."@pt
-	Annotations: rdfs:label "esta.106"@pt
+	Annotations: rdfs:label "esta.108"@pt
 
 DataProperty: bim:de.lazer
 	SubPropertyOf: bim:d.estar
@@ -10893,7 +12223,7 @@ DataProperty: bim:de.lazer
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.lazer ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de lazer como shopping centers, parques etc."@pt
-	Annotations: rdfs:label "esta.107"@pt
+	Annotations: rdfs:label "esta.109"@pt
 
 DataProperty: bim:de.contemplação
 	SubPropertyOf: bim:d.estar
@@ -10901,7 +12231,7 @@ DataProperty: bim:de.contemplação
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.contemplação ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função de contemplação para museus, igrejas etc..."@pt
-	Annotations: rdfs:label "esta.108"@pt
+	Annotations: rdfs:label "esta.110"@pt
 
 DataProperty: bim:de.ensino
 	SubPropertyOf: bim:d.estar
@@ -10909,7 +12239,7 @@ DataProperty: bim:de.ensino
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.ensino ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao ensino como aulas ou auditórios etc."@pt
-	Annotations: rdfs:label "esta.109"@pt
+	Annotations: rdfs:label "esta.111"@pt
 
 DataProperty: bim:de.estudo
 	SubPropertyOf: bim:d.estar
@@ -10917,7 +12247,7 @@ DataProperty: bim:de.estudo
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.estudo ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao estudo como bibliotecas, salas de leitura."@pt
-	Annotations: rdfs:label "esta.110"@pt
+	Annotations: rdfs:label "esta.112"@pt
 
 DataProperty: bim:de.cuidado
 	SubPropertyOf: bim:d.estar
@@ -10925,7 +12255,7 @@ DataProperty: bim:de.cuidado
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.cuidado ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao cuidado de idosos ou pacientes em ambientes hospitalares."@pt
-	Annotations: rdfs:label "esta.111"@pt
+	Annotations: rdfs:label "esta.113"@pt
 
 DataProperty: bim:de.apóio
 	SubPropertyOf: bim:d.estar
@@ -10933,7 +12263,7 @@ DataProperty: bim:de.apóio
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.apóio ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao apóio de outras funções."@pt
-	Annotations: rdfs:label "esta.112"@pt
+	Annotations: rdfs:label "esta.114"@pt
 
 DataProperty: bim:de.espetáculo
 	SubPropertyOf: bim:d.estar
@@ -10941,7 +12271,7 @@ DataProperty: bim:de.espetáculo
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.espetáculo ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao apresentação de espetáculos como teatros, cines etc.."@pt
-	Annotations: rdfs:label "esta.113"@pt
+	Annotations: rdfs:label "esta.115"@pt
 
 DataProperty: bim:de.trabalho
 	SubPropertyOf: bim:d.estar
@@ -10949,7 +12279,7 @@ DataProperty: bim:de.trabalho
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.trabalho ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades laborais como escritórios ou gabinetes."@pt
-	Annotations: rdfs:label "esta.114"@pt
+	Annotations: rdfs:label "esta.116"@pt
 
 DataProperty: bim:de.pesquisa
 	SubPropertyOf: bim:d.estar
@@ -10957,7 +12287,7 @@ DataProperty: bim:de.pesquisa
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.pesquisa ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades de pesquisa, como laboratórios ou salas preparadas etc."@pt
-	Annotations: rdfs:label "esta.115"@pt
+	Annotations: rdfs:label "esta.117"@pt
 
 DataProperty: bim:de.exposição
 	SubPropertyOf: bim:d.estar
@@ -10965,7 +12295,7 @@ DataProperty: bim:de.exposição
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.exposição ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de exposição como showrooms etc."@pt
-	Annotations: rdfs:label "esta.116"@pt
+	Annotations: rdfs:label "esta.118"@pt
 
 DataProperty: bim:de.comércio
 	SubPropertyOf: bim:d.estar
@@ -10973,7 +12303,7 @@ DataProperty: bim:de.comércio
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.comércio ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades de compra venda de produtos etc."@pt
-	Annotations: rdfs:label "esta.117"@pt
+	Annotations: rdfs:label "esta.119"@pt
 
 DataProperty: bim:de.fabricação
 	SubPropertyOf: bim:d.estar
@@ -10981,7 +12311,15 @@ DataProperty: bim:de.fabricação
 	Range: xsd:boolean
 	Annotations: rdfs:label "Dado para estar: de.fabricação ( xsd:boolean )"@pt
 	Annotations: rdfs:label "Declara que o ambiente tem função relativa ao exercício de atividades de fabricação, como oficinas de produção, espaço industrial, FABLAB, usinas etc."@pt
-	Annotations: rdfs:label "esta.118"@pt
+	Annotations: rdfs:label "esta.120"@pt
+
+DataProperty: bim:taxa.metabólica
+	SubPropertyOf: bim:d.estar
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para estar: taxa.metabólica ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Declara a quantidade de energia que o corpo utiliza para realizar suas funções vitais. Expressa em watts por metro quadrado (W/m²). Atividade Leve 100, media 200 e intensa 300 por pessoa. Ver norma NBR 15575."@pt
+	Annotations: rdfs:label "esta.121"@pt
 
 DataProperty: bim:d.extinguir
 	SubPropertyOf: bim:BIMData
@@ -11715,13 +13053,22 @@ DataProperty: bim:matrícula
 	Annotations: rdfs:label "iden.109"@pt
 	Characteristics: Functional
 
+DataProperty: bim:título.eleitoral
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: título.eleitoral ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificador do número do título eleitoral utilizado em Brasil."@pt
+	Annotations: rdfs:label "iden.110"@pt
+	Characteristics: Functional
+
 DataProperty: bim:número.serial
 	SubPropertyOf: bim:d.identificar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: número.serial ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificador tipo número de série de um produto."@pt
-	Annotations: rdfs:label "iden.110"@pt
+	Annotations: rdfs:label "iden.111"@pt
 	Characteristics: Functional
 
 DataProperty: bim:número.mac
@@ -11730,16 +13077,16 @@ DataProperty: bim:número.mac
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: número.mac ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificador tipo MAC (Media Access Control). Formado por 48 bits (6 bytes) com 12 caracteres hexadecimais. 3 bytes são atribuidos pelo IEEE e 3 bytes pelo fabricante do equipamento ou dispositivo. xx:xx:xx:yy:yy:yy"@pt
-	Annotations: rdfs:label "iden.111"@pt
+	Annotations: rdfs:label "iden.112"@pt
 	Characteristics: Functional
 
-DataProperty: bim:número.lote
+DataProperty: bim:número.de.lote
 	SubPropertyOf: bim:d.identificar
 	Domain: bim:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para identificar: número.lote ( xsd:string )"@pt
+	Annotations: rdfs:label "Dado para identificar: número.de.lote ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificador do lote de produção de algum produto."@pt
-	Annotations: rdfs:label "iden.112"@pt
+	Annotations: rdfs:label "iden.113"@pt
 	Characteristics: Functional
 
 DataProperty: bim:uuid
@@ -11748,7 +13095,7 @@ DataProperty: bim:uuid
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: uuid ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificador tipo UUID (Universally Unique Identifier). Formado por 128 bits (16 bytes). É uma sequência de 32 caracteres hexadecimais xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"@pt
-	Annotations: rdfs:label "iden.113"@pt
+	Annotations: rdfs:label "iden.114"@pt
 	Characteristics: Functional
 
 DataProperty: bim:cnpj
@@ -11757,7 +13104,7 @@ DataProperty: bim:cnpj
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: cnpj ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do CNPJ. Cadastro Nacional da Pessoa Jurídica no Brasil."@pt
-	Annotations: rdfs:label "iden.114"@pt
+	Annotations: rdfs:label "iden.115"@pt
 	Characteristics: Functional
 
 DataProperty: bim:cpf
@@ -11766,36 +13113,125 @@ DataProperty: bim:cpf
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para identificar: cpf ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação do CPF. Cadastro Nacional da Pessoa Física no Brasil."@pt
-	Annotations: rdfs:label "iden.115"@pt
+	Annotations: rdfs:label "iden.116"@pt
 	Characteristics: Functional
 
+DataProperty: bim:pis
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: pis ( xsd:string )"@pt
+	Annotations: rdfs:label "PIS (Programa de Integração Social): Identifica trabalhadores do setor privado para benefícios como FGTS e seguro-desemprego. Consta no Cadastro Nacional de Informações Sociais (CNIS). Fundo extinto pela Medida Provisória 946/20."@pt
+	Annotations: rdfs:label "iden.117"@pt
+	Characteristics: Functional
+
+DataProperty: bim:pasep
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: pasep ( xsd:string )"@pt
+	Annotations: rdfs:label "PASEP (Programa de Formação do Patrimônio do Servidor Público): Similar ao PIS, mas voltado para servidores públicos. Consta no Cadastro Nacional de Informações Sociais (CNIS). Fundo extinto pela Medida Provisória 946/20."@pt
+	Annotations: rdfs:label "iden.118"@pt
+	Characteristics: Functional
+
+DataProperty: bim:rg
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: rg ( xsd:string )"@pt
+	Annotations: rdfs:label "Registro Geral é um número identificador de pessoas que seve como carteira de Identidade pessoal no Brasil."@pt
+	Annotations: rdfs:label "iden.119"@pt
+	Characteristics: Functional
+
+DataProperty: bim:rne
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: rne ( xsd:string )"@pt
+	Annotations: rdfs:label "RNE. Registro Nacional de Estrangeiros. É um número que identifica pessoas extrangeiras com permisão para morar no Brasil. Formado por letras e números."@pt
+	Annotations: rdfs:label "iden.120"@pt
+	Characteristics: Functional
+
+DataProperty: bim:carteira.de.trabalho
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: carteira.de.trabalho ( xsd:string )"@pt
+	Annotations: rdfs:label "Carteira de Trabalho e Previdência Social (CTPS): Número identificador de pessoas para informar sobre vínculos empregatícios. É o número de registro do trabalhador."@pt
+	Annotations: rdfs:label "iden.121"@pt
+	Characteristics: Functional
+
+DataProperty: bim:cnh
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: cnh ( xsd:string )"@pt
+	Annotations: rdfs:label "CNH (Carteira Nacional de Habilitação). Número identificador de pessoas que precisam dirigir veículos ou que são motoristas."@pt
+	Annotations: rdfs:label "iden.122"@pt
+	Characteristics: Functional
+
+DataProperty: bim:inss
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: inss ( xsd:string )"@pt
+	Annotations: rdfs:label "INSS (Instituto Nacional do Seguro Social) é número identificador de pessoas para previdência social, como aposentadorias e pensões."@pt
+	Annotations: rdfs:label "iden.123"@pt
+	Characteristics: Functional
+
+DataProperty: bim:nis
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: nis ( xsd:string )"@pt
+	Annotations: rdfs:label "NIS (Número de Identificação Social) identificador de pessoas para benefícios de assistência social, como bolsa família."@pt
+	Annotations: rdfs:label "iden.124"@pt
+	Characteristics: Functional
+
+DataProperty: bim:renavan
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: renavan ( xsd:string )"@pt
+	Annotations: rdfs:label "Renavam (Registro Nacional de Veículos Automotores) é o número de identificação de veículos."@pt
+	Annotations: rdfs:label "iden.125"@pt
+	Characteristics: Functional
+
+DataProperty: bim:inscrição
+	SubPropertyOf: bim:d.identificar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar: inscrição ( xsd:string )"@pt
+	Annotations: rdfs:label "A inscrição é um número para ser usado como número identificador em eventos diversos. Por exemplo, em congressos, sorteios ou sempre que seja necessário atribuir um número a um participante."@pt
+	Annotations: rdfs:label "iden.126"@pt
+
 DataProperty: bim:d.iluminar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
 
-DataProperty: bim:luminária
+DataProperty: bim:iluminador.de
 	SubPropertyOf: bim:d.iluminar
 	Domain: bim:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para iluminar: luminária ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação do elemento de iluminação. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "Dado para iluminar: iluminador.de ( xsd:string )"@pt
+	Annotations: rdfs:label "Identificação do elemento de iluminação. Pode ser uma luminária ou poste de luz. Pode ser declarado com o ID de Revit ou o GlobalId em IFC."@pt
 	Annotations: rdfs:label "ilum.100"@pt
 
+DataProperty: bim:iluminado.por
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para iluminar: iluminado.por ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara que o elemento é iluminado por algum outro elemento.  Pode ser declarado com o ID de Revit ou o GlobalId em IFC."@pt
+	Annotations: rdfs:label "ilum.101"@pt
+
 DataProperty: bim:d.iluminar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado de Objeto d.iluminar"@pt
-
-DataProperty: bim:poste.de.luz
-	SubPropertyOf: bim:d.iluminar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para iluminar: poste.de.luz ( xsd:double )"@pt
-	Annotations: rdfs:label "Identificação do elemento de poste de luz. Pode ser o ID de Revit ou o GlobalId em IFC."@pt
-	Annotations: rdfs:label "ilum.101"@pt
 
 DataProperty: bim:luz.natural
 	SubPropertyOf: bim:d.iluminar
@@ -11907,13 +13343,141 @@ DataProperty: bim:irc
 	Annotations: rdfs:label "Índice de reprodução de cor. Valores limites 0 a 100."@pt
 	Annotations: rdfs:label "ilum.114"@pt
 
-DataProperty: bim:iluminado.por
+DataProperty: bim:insolação.direta.excessiva
 	SubPropertyOf: bim:d.iluminar
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para iluminar: iluminado.por ( xsd:string )"@pt
-	Annotations: rdfs:label "Declara que o elemento é iluminado por algum outro elemento."@pt
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: insolação.direta.excessiva ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara que o valor de incidência da luz natural é acima de 1000 lux aproximadamente (NBR 15215-3)."@pt
 	Annotations: rdfs:label "ilum.115"@pt
+
+DataProperty: bim:iluminância.alvo
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: iluminância.alvo ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara o valor de iluminancia alvo pretendida recomendada em lux (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.116"@pt
+
+DataProperty: bim:iluminância.alvo.mímina
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: iluminância.alvo.mímina ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara o valor de iluminancia alvo mínima em lux (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.117"@pt
+
+DataProperty: bim:plano.de.trabalho
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: plano.de.trabalho ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a altura do plano de trabalho para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.118"@pt
+
+DataProperty: bim:plano.de.referência
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: plano.de.referência ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a altura do plano de referência para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: rdfs:label "ilum.119"@pt
+
+DataProperty: bim:plano.de.iluminação
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: plano.de.iluminação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara plano de iluminação."@pt
+	Annotations: rdfs:label "ilum.120"@pt
+
+DataProperty: bim:carga.de.iluminação
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: carga.de.iluminação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de iluminação."@pt
+	Annotations: rdfs:label "ilum.121"@pt
+
+DataProperty: bim:carga.de.iluminação.necessária
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: carga.de.iluminação.necessária ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de iluminação necessária."@pt
+	Annotations: rdfs:label "ilum.122"@pt
+
+DataProperty: bim:carga.de.iluminação.por.área
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: carga.de.iluminação.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga de iluminação por área."@pt
+	Annotations: rdfs:label "ilum.123"@pt
+
+DataProperty: bim:carga.real.de.iluminação
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: carga.real.de.iluminação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real de iluminação."@pt
+	Annotations: rdfs:label "ilum.124"@pt
+
+DataProperty: bim:carga.real.de.iluminação.por.área
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: carga.real.de.iluminação.por.área ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara carga real de iluminação por área."@pt
+	Annotations: rdfs:label "ilum.125"@pt
+
+DataProperty: bim:contribuição.da.iluminação.pleno
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: contribuição.da.iluminação.pleno ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara contribuição da iluminação pleno."@pt
+	Annotations: rdfs:label "ilum.126"@pt
+
+DataProperty: bim:iluminação.média.estimada
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: iluminação.média.estimada ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a iluminação média estimada. Calculada Pelo total de lumens fornecidos pelas luminárias dividido pelo área iluminada."@pt
+	Annotations: rdfs:label "ilum.127"@pt
+
+DataProperty: bim:refletância.da.parede
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: refletância.da.parede ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a refletância da parede. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para uma parede clara."@pt
+	Annotations: rdfs:label "ilum.128"@pt
+
+DataProperty: bim:refletância.do.piso
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: refletância.do.piso ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a refletância do piso. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 10% para pisos escuros."@pt
+	Annotations: rdfs:label "ilum.129"@pt
+
+DataProperty: bim:refletância.do.teto
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: refletância.do.teto ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a refletância do teto. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para um forro branco."@pt
+	Annotations: rdfs:label "ilum.130"@pt
+
+DataProperty: bim:unidade.de.carga.de.iluminação
+	SubPropertyOf: bim:d.iluminar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar: unidade.de.carga.de.iluminação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara a unidade de carga de iluminação.Carga elétrica consumida pelo sistemas de iluminação do edifício ou ambiente."@pt
+	Annotations: rdfs:label "ilum.131"@pt
 
 DataProperty: bim:d.incentivar
 	SubPropertyOf: bim:BIMData
@@ -13629,6 +15193,46 @@ DataProperty: bim:verbal
 	Annotations: rdfs:label "Indica se o recurso tem a permissão verbalmente concedida"@pt
 	Annotations: rdfs:label "perm.113"@pt
 
+DataProperty: bim:visto.refugiado
+	SubPropertyOf: bim:d.permitir
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir: visto.refugiado ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto de refugiado ou asilado. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.114"@pt
+
+DataProperty: bim:visto.permanente
+	SubPropertyOf: bim:d.permitir
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir: visto.permanente ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto permanente. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.115"@pt
+
+DataProperty: bim:visto.temporário
+	SubPropertyOf: bim:d.permitir
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir: visto.temporário ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto temporário. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.116"@pt
+
+DataProperty: bim:visto.turístico
+	SubPropertyOf: bim:d.permitir
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir: visto.turístico ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto de turista. Aplicado normalmente à estadia de pessoas no país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.117"@pt
+
+DataProperty: bim:visto.trânsito
+	SubPropertyOf: bim:d.permitir
+	Domain: bim:BIM
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir: visto.trânsito ( xsd:boolean )"@pt
+	Annotations: rdfs:label "Indica se o recurso tem a permissão de visto de trânsito. Aplicado normalmente à passagem de pessoas pelo país. Definido pela Lei de Migração (Lei nº 13.445/2017)."@pt
+	Annotations: rdfs:label "perm.118"@pt
+
 DataProperty: bim:d.pesar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
@@ -13670,7 +15274,7 @@ DataProperty: bim:cor
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para pintar: cor ( xsd:string )"@pt
-	Annotations: rdfs:label "O nome de uma cor."@pt
+	Annotations: rdfs:label "Define o nome de uma cor."@pt
 	Annotations: rdfs:label "pint.100"@pt
 
 DataProperty: bim:tonalidade
@@ -13678,7 +15282,7 @@ DataProperty: bim:tonalidade
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para pintar: tonalidade ( xsd:string )"@pt
-	Annotations: rdfs:label "O nome de uma tonalidade de cor."@pt
+	Annotations: rdfs:label "Define a intensidade do matiz que pode ser mais claro ou escuro."@pt
 	Annotations: rdfs:label "pint.101"@pt
 
 DataProperty: bim:matiz
@@ -13686,7 +15290,7 @@ DataProperty: bim:matiz
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para pintar: matiz ( xsd:string )"@pt
-	Annotations: rdfs:label "O nome de um matiz de cor."@pt
+	Annotations: rdfs:label "Define a característica cromática ou a composição da cor."@pt
 	Annotations: rdfs:label "pint.102"@pt
 
 DataProperty: bim:d.pintar
@@ -14100,6 +15704,20 @@ DataProperty: bim:coordenada.topográfica
 DataProperty: bim:d.prever
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado de Objeto d.prever"@pt
+
+DataProperty: bim:estação.meteorológica
+	SubPropertyOf: bim:d.prever
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para prever : estação.meteorológica ( xsd:string )"@pt
+	Annotations: rdfs:label "Número da Estação Meteorológica mais próxima do INMET."@pt
+	Annotations: rdfs:label "prev.100"@pt
+
+DataProperty: bim:d.prever
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado de Objeto d.prever"@pt
 
@@ -14109,7 +15727,7 @@ DataProperty: bim:precipitação.diária
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : precipitação.diária ( xsd:double )"@pt
 	Annotations: rdfs:label "Valor de precipitação de chuva diária"@pt
-	Annotations: rdfs:label "prev.100"@pt
+	Annotations: rdfs:label "prev.101"@pt
 
 DataProperty: bim:precipitação.mensal
 	SubPropertyOf: bim:d.prever
@@ -14117,7 +15735,7 @@ DataProperty: bim:precipitação.mensal
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : precipitação.mensal ( xsd:double )"@pt
 	Annotations: rdfs:label "Valor de precipitação de chuva mensal"@pt
-	Annotations: rdfs:label "prev.101"@pt
+	Annotations: rdfs:label "prev.102"@pt
 
 DataProperty: bim:velocidade.do.vento
 	SubPropertyOf: bim:d.prever
@@ -14125,13 +15743,7 @@ DataProperty: bim:velocidade.do.vento
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : velocidade.do.vento ( xsd:double )"@pt
 	Annotations: rdfs:label "Indica a previsão das correntes de ar. Pode ser indicada em m/s."@pt
-	Annotations: rdfs:label "prev.102"@pt
-
-DataProperty: bim:d.prever
-	SubPropertyOf: bim:BIMData
-	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado de Objeto d.prever"@pt
+	Annotations: rdfs:label "prev.103"@pt
 
 DataProperty: bim:direção.do.vento
 	SubPropertyOf: bim:d.prever
@@ -14139,7 +15751,7 @@ DataProperty: bim:direção.do.vento
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para prever : direção.do.vento ( xsd:string )"@pt
 	Annotations: rdfs:label "Indica a previsão da direção do vento. Pode ser indicada com as direções cardinais ou em graus, sendo Norte Verdadeiro = 0°."@pt
-	Annotations: rdfs:label "prev.103"@pt
+	Annotations: rdfs:label "prev.104"@pt
 
 DataProperty: bim:radiação.solar
 	SubPropertyOf: bim:d.prever
@@ -14147,7 +15759,7 @@ DataProperty: bim:radiação.solar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : radiação.solar ( xsd:double )"@pt
 	Annotations: rdfs:label "Indica a quantidade de energia solar. Medir em watt por metro quadrado (W/m²)."@pt
-	Annotations: rdfs:label "prev.104"@pt
+	Annotations: rdfs:label "prev.105"@pt
 
 DataProperty: bim:pressão.atmosférica
 	SubPropertyOf: bim:d.prever
@@ -14155,7 +15767,7 @@ DataProperty: bim:pressão.atmosférica
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : pressão.atmosférica ( xsd:double )"@pt
 	Annotations: rdfs:label "Indica a pressão atmosférica. Medida em unidades como pascal (Pa), milibar (mb) ou milímetros de mercúrio (mmHg)."@pt
-	Annotations: rdfs:label "prev.105"@pt
+	Annotations: rdfs:label "prev.106"@pt
 
 DataProperty: bim:temperatura
 	SubPropertyOf: bim:d.prever
@@ -14163,7 +15775,15 @@ DataProperty: bim:temperatura
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : temperatura ( xsd:double )"@pt
 	Annotations: rdfs:label "Indica a temperatura do ar."@pt
-	Annotations: rdfs:label "prev.106"@pt
+	Annotations: rdfs:label "prev.107"@pt
+
+DataProperty: bim:sensação.térmica
+	SubPropertyOf: bim:d.prever
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para prever : sensação.térmica ( xsd:double )"@pt
+	Annotations: rdfs:label "Indica a sensação térmica."@pt
+	Annotations: rdfs:label "prev.108"@pt
 
 DataProperty: bim:umidade.relativa
 	SubPropertyOf: bim:d.prever
@@ -14171,7 +15791,7 @@ DataProperty: bim:umidade.relativa
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : umidade.relativa ( xsd:double )"@pt
 	Annotations: rdfs:label "Indica a unidade relativa do ar."@pt
-	Annotations: rdfs:label "prev.107"@pt
+	Annotations: rdfs:label "prev.109"@pt
 
 DataProperty: bim:qualidade.do.ar
 	SubPropertyOf: bim:d.prever
@@ -14179,15 +15799,29 @@ DataProperty: bim:qualidade.do.ar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para prever : qualidade.do.ar ( xsd:double )"@pt
 	Annotations: rdfs:label "AQI (Air Quality Index) é um índice que representa a qualidade do ar. Precisa sensores tipo Gaia para detectar particulados nocivos à saúde e que possam transmitir dados."@pt
-	Annotations: rdfs:label "prev.108"@pt
+	Annotations: rdfs:label "prev.110"@pt
 
-DataProperty: bim:estação.meteorológica
+DataProperty: bim:d.prever
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado de Objeto d.prever"@pt
+
+DataProperty: bim:hora.utc
 	SubPropertyOf: bim:d.prever
 	Domain: bim:BIM
-	Range: xsd:string
-	Annotations: rdfs:label "Dado para prever : estação.meteorológica ( xsd:string )"@pt
-	Annotations: rdfs:label "Número da Estação Meteorológica mais próxima do INMET."@pt
-	Annotations: rdfs:label "prev.109"@pt
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para prever : hora.utc ( xsd:integer )"@pt
+	Annotations: rdfs:label "Curva IDF, Intensidade Duração e Frequência pluviométrica.  A curva relaciona o Volume de chuva em mm/h, a Duração e Probabilidade do evento acontecer como Tempo de Retorno em anos (10 anos, 50 anos, etc), Usada para o cálculo de redes."@pt
+	Annotations: rdfs:label "prev.111"@pt
+
+DataProperty: bim:curva.idf
+	SubPropertyOf: bim:d.prever
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para prever : curva.idf ( xsd:double )"@pt
+	Annotations: rdfs:label "Hora em UTC do dia para tabelas de duração climática."@pt
+	Annotations: rdfs:label "prev.112"@pt
 
 DataProperty: bim:d.produzir
 	SubPropertyOf: bim:BIMData
@@ -15095,6 +16729,36 @@ DataProperty: bim:membro.flexionado
 	Annotations: rdfs:label "Qualifica elemento estrutural em momento fletor."@pt
 	Annotations: rdfs:label "resi.109"@pt
 
+DataProperty: bim:d.sanear
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.sanear"@pt
+
+DataProperty: bim:coliforme.total
+	SubPropertyOf: bim:d.sanear
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para sanear: coliforme.total ( xsd:double )"@pt
+	Annotations: rdfs:label "Bactérias cuya presença pode indicar contaminação ambiental."@pt
+	Annotations: rdfs:label "sane.100"@pt
+
+DataProperty: bim:coliforme.termotolerante
+	SubPropertyOf: bim:d.sanear
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para sanear: coliforme.termotolerante ( xsd:double )"@pt
+	Annotations: rdfs:label "Microorganismos contaminantes da água. Não deve haver presença de coliformes termotolerantes para que a água seja considerada potável."@pt
+	Annotations: rdfs:label "sane.101"@pt
+
+DataProperty: bim:cloro.residual.livre
+	SubPropertyOf: bim:d.sanear
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para sanear: cloro.residual.livre ( xsd:double )"@pt
+	Annotations: rdfs:label "Quantidade de cloro em água que ainda não reagiu com contaminantes."@pt
+	Annotations: rdfs:label "sane.102"@pt
+
 DataProperty: bim:d.sensorizar
 	SubPropertyOf: bim:BIMData
 	Domain: bim:BIM
@@ -15332,7 +16996,7 @@ DataProperty: bim:brise.horizontal
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise.horizontal ( xsd:string )"@pt
-	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Norte (sol incidindo com maior inclinação)."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. No Brasil usadas em fachadas com orientação Norte (sol incidindo com maior inclinação)."@pt
 	Annotations: rdfs:label "somb.101"@pt
 
 DataProperty: bim:brise.vertical
@@ -15340,7 +17004,7 @@ DataProperty: bim:brise.vertical
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise.vertical ( xsd:string )"@pt
-	Annotations: rdfs:label "No Brasil usadas em fachadas com orientação Leste - Oeste (sol incidindo com menor inclinação)."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. No Brasil usadas em fachadas com orientação Leste - Oeste (sol incidindo com menor inclinação)."@pt
 	Annotations: rdfs:label "somb.102"@pt
 
 DataProperty: bim:brise.móvel
@@ -15348,7 +17012,7 @@ DataProperty: bim:brise.móvel
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: brise.móvel ( xsd:string )"@pt
-	Annotations: rdfs:label "O brise tem aletas móveis."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. O brise tem aletas móveis."@pt
 	Annotations: rdfs:label "somb.103"@pt
 
 DataProperty: bim:cobogó
@@ -15356,8 +17020,46 @@ DataProperty: bim:cobogó
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para sombrear: cobogó ( xsd:string )"@pt
-	Annotations: rdfs:label "Identificação do cobogó. Pode ser o ID de Revit ou o GlobalId em IFC. Blocos vazados. Nome é homenagem aos criadores Coimbra, Boeckmann e de Góis."@pt
+	Annotations: rdfs:label "Identificação do brise. Pode ser o ID de Revit ou o GlobalId em IFC. Identificação do cobogó. O nome dado ao fechamento de blocos vazados é homenagem aos criadores Coimbra, Boeckmann e de Góis."@pt
 	Annotations: rdfs:label "somb.104"@pt
+
+DataProperty: bim:d.sombrear
+	SubPropertyOf: bim:BIMData
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado de Objeto d.sombrear"@pt
+
+DataProperty: bim:ângulo.de.visão.horizontal
+	SubPropertyOf: bim:d.sombrear
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para sombrear: ângulo.de.visão.horizontal ( xsd:double )"@pt
+	Annotations: rdfs:label "Ângulo de visão é um parámetro da NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "somb.105"@pt
+
+DataProperty: bim:distância.externa
+	SubPropertyOf: bim:d.sombrear
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para sombrear: distância.externa  ( xsd:double )"@pt
+	Annotations: rdfs:label "Distância externa de visão é um parámetro da NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "somb.106"@pt
+
+DataProperty: bim:camada.visível
+	SubPropertyOf: bim:d.sombrear
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para sombrear: camada.visível ( xsd:string )"@pt
+	Annotations: rdfs:label "Camada visível é um parámetro da NBR 15215-3 para calcular incidência de luz natural em ambientes."@pt
+	Annotations: rdfs:label "somb.107"@pt
+
+DataProperty: bim:probabilidade.de.ofuscamento
+	SubPropertyOf: bim:d.sombrear
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para sombrear: probabilidade.de.ofuscamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Probabilidade de ofuscamento (DGP, Daylight Glare Probability) é um parámetro da NBR 15215-3 de cálculo de incidência de luz natural em ambientes. Indica o desconforto visual causado pelo brilho excessivo."@pt
+	Annotations: rdfs:label "somb.108"@pt
 
 DataProperty: bim:d.tabular
 	SubPropertyOf: bim:BIMData
