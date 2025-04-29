@@ -27,7 +27,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Urbanismo>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados do Brasil e Rio de Janeiro"@pt
-  Annotations: rdfs:label "DataHora: 25/04/2025 9:58:18"@pt
+  Annotations: rdfs:label "DataHora: 29/04/2025 16:16:34"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -192,6 +192,17 @@ Class: bim:Nação
 	Annotations: bim:Espécie "-"@pt
 	Annotations: bim:Tema "-"@pt
 
+Class: bim:Região
+	SubClassOf: bim:Política
+	Annotations: bim:Disciplina "Urbanismo"@pt
+	Annotations: bim:Tradução "Región"@pt
+	Annotations: bim:Traducción "Región"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+	EquivalentTo:  bim:é.dentro.de some bim:País
+
 Class: bim:Estado
 	SubClassOf: bim:Política
 	Annotations: bim:Disciplina "Urbanismo"@pt
@@ -223,6 +234,17 @@ Class: bim:Província
 	Annotations: bim:Espécie "-"@pt
 	Annotations: bim:Tema "-"@pt
 	EquivalentTo:  bim:é.dentro.de some bim:Nação
+
+Class: bim:Capital
+	SubClassOf: bim:Política
+	Annotations: bim:Disciplina "Urbanismo"@pt
+	Annotations: bim:Tradução "Capital"@pt
+	Annotations: bim:Traducción "Capital"@es
+	Annotations: bim:Interoperabilidade "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+	EquivalentTo:  bim:é.dentro.de some bim:Estado
 
 Class: bim:Cidade
 	SubClassOf: bim:Política
@@ -1133,13 +1155,21 @@ ObjectProperty: bim:é.cobertura.temporal.final
 	Annotations: rdfs:label "Indica data final do recurso."@pt
 	Annotations: rdfs:label "admi.111"@pt
 
+ObjectProperty: bim:é.abrangência
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para administrar: é.abrangência"@pt
+	Annotations: rdfs:label "Indica a extensão de abrangência dos dados disponibilizados (nacional, estadual, barrial), indica o local."@pt
+	Annotations: rdfs:label "admi.112"@pt
+
 ObjectProperty: bim:é.cobertura.espacial
 	SubPropertyOf: bim:p.administrar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.cobertura.espacial"@pt
-	Annotations: rdfs:label "Indica a extensão geográfica abrangida pelos dados disponibilizados (nacional, estadual, barrial), indica o local."@pt
-	Annotations: rdfs:label "admi.112"@pt
+	Annotations: rdfs:label "Indica a extensão geográfica dos dados disponibilizados (nacional, estadual, barrial), indica o local."@pt
+	Annotations: rdfs:label "admi.113"@pt
 
 ObjectProperty: bim:é.granularidade.espacial
 	SubPropertyOf: bim:p.administrar
@@ -1147,7 +1177,7 @@ ObjectProperty: bim:é.granularidade.espacial
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.granularidade.espacial"@pt
 	Annotations: rdfs:label "Indica nível de detalhe espacial dos dados disponibilizados (amplos, finos, prediais), indica a precisão do dado."@pt
-	Annotations: rdfs:label "admi.113"@pt
+	Annotations: rdfs:label "admi.114"@pt
 
 ObjectProperty: bim:é.unidade.académica
 	SubPropertyOf: bim:p.administrar
@@ -1155,7 +1185,7 @@ ObjectProperty: bim:é.unidade.académica
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.unidade.académica"@pt
 	Annotations: rdfs:label "Identificação de Unidade Acadêmica de instituição de ensino brasileira."@pt
-	Annotations: rdfs:label "admi.114"@pt
+	Annotations: rdfs:label "admi.115"@pt
 
 ObjectProperty: bim:é.unidade.administrativa
 	SubPropertyOf: bim:p.administrar
@@ -1163,7 +1193,7 @@ ObjectProperty: bim:é.unidade.administrativa
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.unidade.administrativa"@pt
 	Annotations: rdfs:label "Identificação de Unidade Administrativa alguma instituição ou edifício."@pt
-	Annotations: rdfs:label "admi.115"@pt
+	Annotations: rdfs:label "admi.116"@pt
 
 ObjectProperty: bim:é.unidade.funcional
 	SubPropertyOf: bim:p.administrar
@@ -1171,7 +1201,7 @@ ObjectProperty: bim:é.unidade.funcional
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.unidade.funcional"@pt
 	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde."@pt
-	Annotations: rdfs:label "admi.116"@pt
+	Annotations: rdfs:label "admi.117"@pt
 
 ObjectProperty: bim:é.departamento
 	SubPropertyOf: bim:p.administrar
@@ -1179,7 +1209,7 @@ ObjectProperty: bim:é.departamento
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.departamento"@pt
 	Annotations: rdfs:label "Identificação departamental."@pt
-	Annotations: rdfs:label "admi.117"@pt
+	Annotations: rdfs:label "admi.118"@pt
 
 ObjectProperty: bim:é.sigla.departamento
 	SubPropertyOf: bim:p.administrar
@@ -1187,7 +1217,7 @@ ObjectProperty: bim:é.sigla.departamento
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.sigla.departamento"@pt
 	Annotations: rdfs:label "Sigla departamental."@pt
-	Annotations: rdfs:label "admi.118"@pt
+	Annotations: rdfs:label "admi.119"@pt
 
 ObjectProperty: bim:é.área.técnica
 	SubPropertyOf: bim:p.administrar
@@ -1195,7 +1225,7 @@ ObjectProperty: bim:é.área.técnica
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.área.técnica"@pt
 	Annotations: rdfs:label "Identificação de uma Área técnica de uma instituição."@pt
-	Annotations: rdfs:label "admi.119"@pt
+	Annotations: rdfs:label "admi.120"@pt
 
 ObjectProperty: bim:é.área.técnica.responsável
 	SubPropertyOf: bim:p.administrar
@@ -1203,7 +1233,7 @@ ObjectProperty: bim:é.área.técnica.responsável
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.área.técnica.responsável"@pt
 	Annotations: rdfs:label "É a identificação de uma Área técnica responsável por um trabalho de uma instituição."@pt
-	Annotations: rdfs:label "admi.120"@pt
+	Annotations: rdfs:label "admi.121"@pt
 
 ObjectProperty: bim:é.zonal
 	SubPropertyOf: bim:p.administrar
@@ -1211,7 +1241,7 @@ ObjectProperty: bim:é.zonal
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.zonal"@pt
 	Annotations: rdfs:label "Identificação Zonal de instituição."@pt
-	Annotations: rdfs:label "admi.121"@pt
+	Annotations: rdfs:label "admi.122"@pt
 
 ObjectProperty: bim:é.divisão
 	SubPropertyOf: bim:p.administrar
@@ -1219,7 +1249,7 @@ ObjectProperty: bim:é.divisão
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.divisão"@pt
 	Annotations: rdfs:label "Identificação Divisional de instituição."@pt
-	Annotations: rdfs:label "admi.122"@pt
+	Annotations: rdfs:label "admi.123"@pt
 
 ObjectProperty: bim:é.setor
 	SubPropertyOf: bim:p.administrar
@@ -1227,7 +1257,7 @@ ObjectProperty: bim:é.setor
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.setor"@pt
 	Annotations: rdfs:label "Identificação Setorial de instituição."@pt
-	Annotations: rdfs:label "admi.123"@pt
+	Annotations: rdfs:label "admi.124"@pt
 
 ObjectProperty: bim:é.turno
 	SubPropertyOf: bim:p.administrar
@@ -1235,7 +1265,7 @@ ObjectProperty: bim:é.turno
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para administrar: é.turno"@pt
 	Annotations: rdfs:label "Qualifica um espaço temporal como um turno a ser preenchido por uma atividade."@pt
-	Annotations: rdfs:label "admi.124"@pt
+	Annotations: rdfs:label "admi.125"@pt
 
 ObjectProperty: bim:p.afirmar
 	SubPropertyOf: bim:BIMProp
@@ -4747,13 +4777,21 @@ ObjectProperty: bim:é.coordenada.utm
 	Annotations: rdfs:label "Valor da coordenada geográfica expressada em UTM (Universal Transverse Mercator)."@pt
 	Annotations: rdfs:label "geol.108"@pt
 
+ObjectProperty: bim:é.região.geográfica
+	SubPropertyOf: bim:p.geolocalizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para geolocalizar: é.região.geográfica"@pt
+	Annotations: rdfs:label "Código de IBGE da Região Geográfica do Brasil."@pt
+	Annotations: rdfs:label "geol.109"@pt
+
 ObjectProperty: bim:é.região.geográfica.imediata
 	SubPropertyOf: bim:p.geolocalizar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para geolocalizar: é.região.geográfica.imediata"@pt
 	Annotations: rdfs:label "Código de IBGE da Região Geográfica Imediata."@pt
-	Annotations: rdfs:label "geol.109"@pt
+	Annotations: rdfs:label "geol.110"@pt
 
 ObjectProperty: bim:é.região.geográfica.intermediária
 	SubPropertyOf: bim:p.geolocalizar
@@ -4761,7 +4799,7 @@ ObjectProperty: bim:é.região.geográfica.intermediária
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para geolocalizar: é.região.geográfica.intermediária"@pt
 	Annotations: rdfs:label "Código de IBGE da Região Geográfica Intermediária."@pt
-	Annotations: rdfs:label "geol.110"@pt
+	Annotations: rdfs:label "geol.111"@pt
 
 ObjectProperty: bim:é.código.de.município
 	SubPropertyOf: bim:p.geolocalizar
@@ -4769,7 +4807,7 @@ ObjectProperty: bim:é.código.de.município
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para geolocalizar: é.código.de.município"@pt
 	Annotations: rdfs:label "Código de IBGE numérico para cada município."@pt
-	Annotations: rdfs:label "geol.111"@pt
+	Annotations: rdfs:label "geol.112"@pt
 
 ObjectProperty: bim:é.código.de.município.completo
 	SubPropertyOf: bim:p.geolocalizar
@@ -4777,7 +4815,7 @@ ObjectProperty: bim:é.código.de.município.completo
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para geolocalizar: é.código.de.município.completo"@pt
 	Annotations: rdfs:label "Código de IBGE formado pela concatenação de número de UF (nuf) e o código de município."@pt
-	Annotations: rdfs:label "geol.112"@pt
+	Annotations: rdfs:label "geol.113"@pt
 
 ObjectProperty: bim:p.graduar
 	SubPropertyOf: bim:BIMProp
@@ -5438,27 +5476,27 @@ ObjectProperty: bim:é.iluminação.média.estimada
 	Annotations: rdfs:label "Declara a iluminação média estimada. Calculada Pelo total de lumens fornecidos pelas luminárias dividido pelo área iluminada."@pt
 	Annotations: rdfs:label "ilum.127"@pt
 
-ObjectProperty: bim:é.refletância.da.parede
+ObjectProperty: bim:é.refletância.de.parede
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.da.parede"@pt
+	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.de.parede"@pt
 	Annotations: rdfs:label "Declara a refletância da parede. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para uma parede clara."@pt
 	Annotations: rdfs:label "ilum.128"@pt
 
-ObjectProperty: bim:é.refletância.do.piso
+ObjectProperty: bim:é.refletância.de.piso
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.do.piso"@pt
+	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.de.piso"@pt
 	Annotations: rdfs:label "Declara a refletância do piso. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 10% para pisos escuros."@pt
 	Annotations: rdfs:label "ilum.129"@pt
 
-ObjectProperty: bim:é.refletância.do.teto
+ObjectProperty: bim:é.refletância.de.teto
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.do.teto"@pt
+	Annotations: rdfs:label "Propriedade para iluminar: é.refletância.de.teto"@pt
 	Annotations: rdfs:label "Declara a refletância do teto. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para um forro branco."@pt
 	Annotations: rdfs:label "ilum.130"@pt
 
@@ -6460,101 +6498,277 @@ ObjectProperty: bim:p.orçamentar
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade de Objeto para p.orçamentar"@pt
 
-ObjectProperty: bim:é.custo
+ObjectProperty: bim:é.coeficiente
 	SubPropertyOf: bim:p.orçamentar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.custo"@pt
-	Annotations: rdfs:label "Valor de custo de um componente ou evento."@pt
+	Annotations: rdfs:label "Propriedade para orçamentar: é.coeficiente"@pt
+	Annotations: rdfs:label "Declara coeficiente"@pt
 	Annotations: rdfs:label "orça.100"@pt
 
-ObjectProperty: bim:é.imposto.municipal
+ObjectProperty: bim:é.custo.de.equipamento
 	SubPropertyOf: bim:p.orçamentar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.imposto.municipal"@pt
-	Annotations: rdfs:label "Valor de imposto municipal aplicado."@pt
+	Annotations: rdfs:label "Propriedade para orçamentar: é.custo.de.equipamento"@pt
+	Annotations: rdfs:label "Declara custo de equipamento"@pt
 	Annotations: rdfs:label "orça.101"@pt
+
+ObjectProperty: bim:é.custo.de.mão.de.obra
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.custo.de.mão.de.obra"@pt
+	Annotations: rdfs:label "Declara custo de mão de obra"@pt
+	Annotations: rdfs:label "orça.102"@pt
+
+ObjectProperty: bim:é.custo.de.material
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.custo.de.material"@pt
+	Annotations: rdfs:label "Declara custo de material"@pt
+	Annotations: rdfs:label "orça.103"@pt
+
+ObjectProperty: bim:é.custo.de.serviço.terceirizado
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.custo.de.serviço.terceirizado"@pt
+	Annotations: rdfs:label "Declara custo de serviço terceirizado"@pt
+	Annotations: rdfs:label "orça.104"@pt
+
+ObjectProperty: bim:é.custo.total
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.custo.total"@pt
+	Annotations: rdfs:label "Declara custo total"@pt
+	Annotations: rdfs:label "orça.105"@pt
+
+ObjectProperty: bim:é.encargo.social
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.encargo.social"@pt
+	Annotations: rdfs:label "Declara encargo social"@pt
+	Annotations: rdfs:label "orça.106"@pt
+
+ObjectProperty: bim:é.imposto.de.valor.agregado
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.imposto.de.valor.agregado"@pt
+	Annotations: rdfs:label "Declara imposto de valor agregado"@pt
+	Annotations: rdfs:label "orça.107"@pt
 
 ObjectProperty: bim:é.imposto.estadual
 	SubPropertyOf: bim:p.orçamentar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para orçamentar: é.imposto.estadual"@pt
-	Annotations: rdfs:label "Valor de imposto estadual aplicado."@pt
-	Annotations: rdfs:label "orça.102"@pt
+	Annotations: rdfs:label "Declara imposto estadual"@pt
+	Annotations: rdfs:label "orça.108"@pt
 
 ObjectProperty: bim:é.imposto.federal
 	SubPropertyOf: bim:p.orçamentar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para orçamentar: é.imposto.federal"@pt
-	Annotations: rdfs:label "Valor de imposto federal aplicado."@pt
-	Annotations: rdfs:label "orça.103"@pt
-
-ObjectProperty: bim:é.iva
-	SubPropertyOf: bim:p.orçamentar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.iva"@pt
-	Annotations: rdfs:label "Valor de Imposto de Valor Agregado."@pt
-	Annotations: rdfs:label "orça.104"@pt
-
-ObjectProperty: bim:é.salário
-	SubPropertyOf: bim:p.orçamentar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.salário"@pt
-	Annotations: rdfs:label "Valor de salário pago."@pt
-	Annotations: rdfs:label "orça.105"@pt
-
-ObjectProperty: bim:é.bônus
-	SubPropertyOf: bim:p.orçamentar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.bônus"@pt
-	Annotations: rdfs:label "Valor de bônus pago."@pt
-	Annotations: rdfs:label "orça.106"@pt
-
-ObjectProperty: bim:é.gratificação
-	SubPropertyOf: bim:p.orçamentar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.gratificação"@pt
-	Annotations: rdfs:label "Valor de gratificação pago."@pt
-	Annotations: rdfs:label "orça.107"@pt
-
-ObjectProperty: bim:é.comissão
-	SubPropertyOf: bim:p.orçamentar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.comissão"@pt
-	Annotations: rdfs:label "Valor de comissão pago."@pt
-	Annotations: rdfs:label "orça.108"@pt
-
-ObjectProperty: bim:é.lucro
-	SubPropertyOf: bim:p.orçamentar
-	Domain: bim:BIM
-	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.lucro"@pt
-	Annotations: rdfs:label "Valor do lucro ou beneficio monetário planejado."@pt
+	Annotations: rdfs:label "Declara imposto federal"@pt
 	Annotations: rdfs:label "orça.109"@pt
+
+ObjectProperty: bim:é.imposto.municipal
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.imposto.municipal"@pt
+	Annotations: rdfs:label "Declara imposto municipal"@pt
+	Annotations: rdfs:label "orça.110"@pt
+
+ObjectProperty: bim:é.item.codificado
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.item.codificado"@pt
+	Annotations: rdfs:label "Declara item codificado"@pt
+	Annotations: rdfs:label "orça.111"@pt
+
+ObjectProperty: bim:é.item.de.classe
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.item.de.classe"@pt
+	Annotations: rdfs:label "Declara item de classe"@pt
+	Annotations: rdfs:label "orça.112"@pt
+
+ObjectProperty: bim:é.item.de.composição
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.item.de.composição"@pt
+	Annotations: rdfs:label "Declara item de composição"@pt
+	Annotations: rdfs:label "orça.113"@pt
+
+ObjectProperty: bim:é.item.unidade
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.item.unidade"@pt
+	Annotations: rdfs:label "Declara item unidade"@pt
+	Annotations: rdfs:label "orça.114"@pt
+
+ObjectProperty: bim:é.local
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.local"@pt
+	Annotations: rdfs:label "Declara local"@pt
+	Annotations: rdfs:label "orça.115"@pt
+
+ObjectProperty: bim:é.origem.do.preço
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.origem.do.preço"@pt
+	Annotations: rdfs:label "Declara origem do preço de acordo a metodologia SINAPI  Pode ser C coletado pelo IBGE ou CAIXA, CR valor referencial ou atribuido a São Paulo (AS)"@pt
+	Annotations: rdfs:label "orça.116"@pt
+
+ObjectProperty: bim:é.percentual.de.equipamento
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.percentual.de.equipamento"@pt
+	Annotations: rdfs:label "Declara percentual de equipamento"@pt
+	Annotations: rdfs:label "orça.117"@pt
+
+ObjectProperty: bim:é.percentual.de.mão.de.obra
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.percentual.de.mão.de.obra"@pt
+	Annotations: rdfs:label "Declara percentual de mão de obra"@pt
+	Annotations: rdfs:label "orça.118"@pt
+
+ObjectProperty: bim:é.percentual.de.material
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.percentual.de.material"@pt
+	Annotations: rdfs:label "Declara percentual de material"@pt
+	Annotations: rdfs:label "orça.119"@pt
+
+ObjectProperty: bim:é.percentual.de.servico.terceirizado
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.percentual.de.servico.terceirizado"@pt
+	Annotations: rdfs:label "Declara percentual de servico terceirizado"@pt
+	Annotations: rdfs:label "orça.120"@pt
 
 ObjectProperty: bim:é.preço
 	SubPropertyOf: bim:p.orçamentar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade para orçamentar: é.preço"@pt
-	Annotations: rdfs:label "Valor de preço de um componente ou evento."@pt
-	Annotations: rdfs:label "orça.110"@pt
+	Annotations: rdfs:label "Declara preço"@pt
+	Annotations: rdfs:label "orça.121"@pt
 
-ObjectProperty: bim:é.ofertado
+ObjectProperty: bim:é.preço.ofertado
 	SubPropertyOf: bim:p.orçamentar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade para orçamentar: é.ofertado"@pt
-	Annotations: rdfs:label "Valor de um bem em oferta."@pt
-	Annotations: rdfs:label "orça.111"@pt
+	Annotations: rdfs:label "Propriedade para orçamentar: é.preço.ofertado"@pt
+	Annotations: rdfs:label "Declara preço ofertado"@pt
+	Annotations: rdfs:label "orça.122"@pt
+
+ObjectProperty: bim:é.preço.unitário
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.preço.unitário"@pt
+	Annotations: rdfs:label "Declara preço unitário"@pt
+	Annotations: rdfs:label "orça.123"@pt
+
+ObjectProperty: bim:é.sinapi.agrupador
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.sinapi.agrupador"@pt
+	Annotations: rdfs:label "Declara sinapi agrupador"@pt
+	Annotations: rdfs:label "orça.124"@pt
+
+ObjectProperty: bim:é.sinapi.analítico
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.sinapi.analítico"@pt
+	Annotations: rdfs:label "Declara sinapi analítico"@pt
+	Annotations: rdfs:label "orça.125"@pt
+
+ObjectProperty: bim:é.sinapi.código.representativo
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.sinapi.código.representativo"@pt
+	Annotations: rdfs:label "Declara sinapi código representativo"@pt
+	Annotations: rdfs:label "orça.126"@pt
+
+ObjectProperty: bim:é.sinapi.composição
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.sinapi.composição"@pt
+	Annotations: rdfs:label "Declara sinapi composição"@pt
+	Annotations: rdfs:label "orça.127"@pt
+
+ObjectProperty: bim:é.sinapi.insumo
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.sinapi.insumo"@pt
+	Annotations: rdfs:label "Declara sinapi insumo"@pt
+	Annotations: rdfs:label "orça.128"@pt
+
+ObjectProperty: bim:é.valor.de.comissão
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.valor.de.comissão"@pt
+	Annotations: rdfs:label "Declara valor de comissão"@pt
+	Annotations: rdfs:label "orça.129"@pt
+
+ObjectProperty: bim:é.valor.de.gratificação
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.valor.de.gratificação"@pt
+	Annotations: rdfs:label "Declara valor de gratificação"@pt
+	Annotations: rdfs:label "orça.130"@pt
+
+ObjectProperty: bim:é.valor.de.lucro
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.valor.de.lucro"@pt
+	Annotations: rdfs:label "Declara valor de lucro"@pt
+	Annotations: rdfs:label "orça.131"@pt
+
+ObjectProperty: bim:é.valor.de.salário
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.valor.de.salário"@pt
+	Annotations: rdfs:label "Declara valor de salário"@pt
+	Annotations: rdfs:label "orça.132"@pt
+
+ObjectProperty: bim:é.valor.do.bônus
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade para orçamentar: é.valor.do.bônus"@pt
+	Annotations: rdfs:label "Declara valor do bônus"@pt
+	Annotations: rdfs:label "orça.133"@pt
 
 ObjectProperty: bim:p.orientar
 	SubPropertyOf: bim:BIMProp
@@ -9816,13 +10030,21 @@ DataProperty: bim:cobertura.temporal.final
 	Annotations: rdfs:label "Indica data final do recurso."@pt
 	Annotations: rdfs:label "admi.111"@pt
 
+DataProperty: bim:abrangência
+	SubPropertyOf: bim:d.administrar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para administrar: abrangência ( xsd:string )"@pt
+	Annotations: rdfs:label "Indica a extensão de abrangência dos dados disponibilizados (nacional, estadual, barrial), indica o local."@pt
+	Annotations: rdfs:label "admi.112"@pt
+
 DataProperty: bim:cobertura.espacial
 	SubPropertyOf: bim:d.administrar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: cobertura.espacial ( xsd:string )"@pt
-	Annotations: rdfs:label "Indica a extensão geográfica abrangida pelos dados disponibilizados (nacional, estadual, barrial), indica o local."@pt
-	Annotations: rdfs:label "admi.112"@pt
+	Annotations: rdfs:label "Indica a extensão geográfica dos dados disponibilizados (nacional, estadual, barrial), indica o local."@pt
+	Annotations: rdfs:label "admi.113"@pt
 
 DataProperty: bim:granularidade.espacial
 	SubPropertyOf: bim:d.administrar
@@ -9830,7 +10052,7 @@ DataProperty: bim:granularidade.espacial
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: granularidade.espacial ( xsd:string )"@pt
 	Annotations: rdfs:label "Indica nível de detalhe espacial dos dados disponibilizados (amplos, finos, prediais), indica a precisão do dado."@pt
-	Annotations: rdfs:label "admi.113"@pt
+	Annotations: rdfs:label "admi.114"@pt
 
 DataProperty: bim:unidade.académica
 	SubPropertyOf: bim:d.administrar
@@ -9838,7 +10060,7 @@ DataProperty: bim:unidade.académica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: unidade.académica ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de Unidade Acadêmica de instituição de ensino brasileira."@pt
-	Annotations: rdfs:label "admi.114"@pt
+	Annotations: rdfs:label "admi.115"@pt
 
 DataProperty: bim:unidade.administrativa
 	SubPropertyOf: bim:d.administrar
@@ -9846,7 +10068,7 @@ DataProperty: bim:unidade.administrativa
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: unidade.administrativa ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de Unidade Administrativa alguma instituição ou edifício."@pt
-	Annotations: rdfs:label "admi.115"@pt
+	Annotations: rdfs:label "admi.116"@pt
 
 DataProperty: bim:unidade.funcional
 	SubPropertyOf: bim:d.administrar
@@ -9854,7 +10076,7 @@ DataProperty: bim:unidade.funcional
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: unidade.funcional ( xsd:string )"@pt
 	Annotations: rdfs:label "Unidade funcional do Sistema Único de Saúde."@pt
-	Annotations: rdfs:label "admi.116"@pt
+	Annotations: rdfs:label "admi.117"@pt
 
 DataProperty: bim:departamento
 	SubPropertyOf: bim:d.administrar
@@ -9862,7 +10084,7 @@ DataProperty: bim:departamento
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: departamento ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação departamental."@pt
-	Annotations: rdfs:label "admi.117"@pt
+	Annotations: rdfs:label "admi.118"@pt
 
 DataProperty: bim:sigla.departamento
 	SubPropertyOf: bim:d.administrar
@@ -9870,7 +10092,7 @@ DataProperty: bim:sigla.departamento
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: sigla.departamento ( xsd:string )"@pt
 	Annotations: rdfs:label "Sigla departamental."@pt
-	Annotations: rdfs:label "admi.118"@pt
+	Annotations: rdfs:label "admi.119"@pt
 
 DataProperty: bim:área.técnica
 	SubPropertyOf: bim:d.administrar
@@ -9878,7 +10100,7 @@ DataProperty: bim:área.técnica
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: área.técnica ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação de uma Área técnica de uma instituição."@pt
-	Annotations: rdfs:label "admi.119"@pt
+	Annotations: rdfs:label "admi.120"@pt
 
 DataProperty: bim:área.técnica.responsável
 	SubPropertyOf: bim:d.administrar
@@ -9886,7 +10108,7 @@ DataProperty: bim:área.técnica.responsável
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: área.técnica.responsável ( xsd:string )"@pt
 	Annotations: rdfs:label "É a identificação de uma Área técnica responsável por um trabalho de uma instituição."@pt
-	Annotations: rdfs:label "admi.120"@pt
+	Annotations: rdfs:label "admi.121"@pt
 
 DataProperty: bim:zonal
 	SubPropertyOf: bim:d.administrar
@@ -9894,7 +10116,7 @@ DataProperty: bim:zonal
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: zonal ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação Zonal de instituição."@pt
-	Annotations: rdfs:label "admi.121"@pt
+	Annotations: rdfs:label "admi.122"@pt
 
 DataProperty: bim:divisão
 	SubPropertyOf: bim:d.administrar
@@ -9902,7 +10124,7 @@ DataProperty: bim:divisão
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: divisão ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação Divisional de instituição."@pt
-	Annotations: rdfs:label "admi.122"@pt
+	Annotations: rdfs:label "admi.123"@pt
 
 DataProperty: bim:setor
 	SubPropertyOf: bim:d.administrar
@@ -9910,7 +10132,7 @@ DataProperty: bim:setor
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: setor ( xsd:string )"@pt
 	Annotations: rdfs:label "Identificação Setorial de instituição."@pt
-	Annotations: rdfs:label "admi.123"@pt
+	Annotations: rdfs:label "admi.124"@pt
 
 DataProperty: bim:turno
 	SubPropertyOf: bim:d.administrar
@@ -9918,7 +10140,7 @@ DataProperty: bim:turno
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para administrar: turno ( xsd:string )"@pt
 	Annotations: rdfs:label "Qualifica um espaço temporal como um turno a ser preenchido por uma atividade."@pt
-	Annotations: rdfs:label "admi.124"@pt
+	Annotations: rdfs:label "admi.125"@pt
 
 DataProperty: bim:d.afirmar
 	SubPropertyOf: bim:BIMData
@@ -13476,13 +13698,21 @@ DataProperty: bim:coordenada.utm
 	Annotations: rdfs:label "Valor da coordenada geográfica expressada em UTM (Universal Transverse Mercator)."@pt
 	Annotations: rdfs:label "geol.108"@pt
 
+DataProperty: bim:região.geográfica
+	SubPropertyOf: bim:d.geolocalizar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para geolocalizar: região.geográfica ( xsd:string )"@pt
+	Annotations: rdfs:label "Código de IBGE da Região Geográfica do Brasil."@pt
+	Annotations: rdfs:label "geol.109"@pt
+
 DataProperty: bim:região.geográfica.imediata
 	SubPropertyOf: bim:d.geolocalizar
 	Domain: bim:BIM
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: região.geográfica.imediata ( xsd:string )"@pt
 	Annotations: rdfs:label "Código de IBGE da Região Geográfica Imediata."@pt
-	Annotations: rdfs:label "geol.109"@pt
+	Annotations: rdfs:label "geol.110"@pt
 
 DataProperty: bim:região.geográfica.intermediária
 	SubPropertyOf: bim:d.geolocalizar
@@ -13490,7 +13720,7 @@ DataProperty: bim:região.geográfica.intermediária
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: região.geográfica.intermediária ( xsd:string )"@pt
 	Annotations: rdfs:label "Código de IBGE da Região Geográfica Intermediária."@pt
-	Annotations: rdfs:label "geol.110"@pt
+	Annotations: rdfs:label "geol.111"@pt
 
 DataProperty: bim:código.de.município
 	SubPropertyOf: bim:d.geolocalizar
@@ -13498,7 +13728,7 @@ DataProperty: bim:código.de.município
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: código.de.município ( xsd:string )"@pt
 	Annotations: rdfs:label "Código de IBGE numérico para cada município."@pt
-	Annotations: rdfs:label "geol.111"@pt
+	Annotations: rdfs:label "geol.112"@pt
 
 DataProperty: bim:código.de.município.completo
 	SubPropertyOf: bim:d.geolocalizar
@@ -13506,7 +13736,7 @@ DataProperty: bim:código.de.município.completo
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para geolocalizar: código.de.município.completo ( xsd:string )"@pt
 	Annotations: rdfs:label "Código de IBGE formado pela concatenação de número de UF (nuf) e o código de município."@pt
-	Annotations: rdfs:label "geol.112"@pt
+	Annotations: rdfs:label "geol.113"@pt
 
 DataProperty: bim:d.graduar
 	SubPropertyOf: bim:BIMData
@@ -14162,27 +14392,27 @@ DataProperty: bim:iluminação.média.estimada
 	Annotations: rdfs:label "Declara a iluminação média estimada. Calculada Pelo total de lumens fornecidos pelas luminárias dividido pelo área iluminada."@pt
 	Annotations: rdfs:label "ilum.127"@pt
 
-DataProperty: bim:refletância.da.parede
+DataProperty: bim:refletância.de.parede
 	SubPropertyOf: bim:d.iluminar
 	Domain: bim:BIM
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para iluminar: refletância.da.parede ( xsd:double )"@pt
+	Annotations: rdfs:label "Dado para iluminar: refletância.de.parede ( xsd:double )"@pt
 	Annotations: rdfs:label "Declara a refletância da parede. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para uma parede clara."@pt
 	Annotations: rdfs:label "ilum.128"@pt
 
-DataProperty: bim:refletância.do.piso
+DataProperty: bim:refletância.de.piso
 	SubPropertyOf: bim:d.iluminar
 	Domain: bim:BIM
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para iluminar: refletância.do.piso ( xsd:double )"@pt
+	Annotations: rdfs:label "Dado para iluminar: refletância.de.piso ( xsd:double )"@pt
 	Annotations: rdfs:label "Declara a refletância do piso. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 10% para pisos escuros."@pt
 	Annotations: rdfs:label "ilum.129"@pt
 
-DataProperty: bim:refletância.do.teto
+DataProperty: bim:refletância.de.teto
 	SubPropertyOf: bim:d.iluminar
 	Domain: bim:BIM
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para iluminar: refletância.do.teto ( xsd:double )"@pt
+	Annotations: rdfs:label "Dado para iluminar: refletância.de.teto ( xsd:double )"@pt
 	Annotations: rdfs:label "Declara a refletância do teto. Capacidade que a superfície tem para refletir a luz incidente. Expressa como porcentagem do fluxo luminoso refletido em relação ao fluxo luminoso incidente. Por exemplo, 50% para um forro branco."@pt
 	Annotations: rdfs:label "ilum.130"@pt
 
@@ -15174,92 +15404,92 @@ DataProperty: bim:d.orçamentar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado de Objeto d.orçamentar"@pt
 
-DataProperty: bim:custo
+DataProperty: bim:coeficiente
 	SubPropertyOf: bim:d.orçamentar
 	Domain: bim:BIM
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: custo ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de custo de um componente ou evento."@pt
+	Annotations: rdfs:label "Dado para orçamentar: coeficiente ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara coeficiente"@pt
 	Annotations: rdfs:label "orça.100"@pt
 
-DataProperty: bim:imposto.municipal
+DataProperty: bim:custo.de.equipamento
 	SubPropertyOf: bim:d.orçamentar
 	Domain: bim:BIM
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: imposto.municipal ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de imposto municipal aplicado."@pt
+	Annotations: rdfs:label "Dado para orçamentar: custo.de.equipamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara custo de equipamento"@pt
 	Annotations: rdfs:label "orça.101"@pt
+
+DataProperty: bim:custo.de.mão.de.obra
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: custo.de.mão.de.obra ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara custo de mão de obra"@pt
+	Annotations: rdfs:label "orça.102"@pt
+
+DataProperty: bim:custo.de.material
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: custo.de.material ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara custo de material"@pt
+	Annotations: rdfs:label "orça.103"@pt
+
+DataProperty: bim:custo.de.serviço.terceirizado
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: custo.de.serviço.terceirizado ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara custo de serviço terceirizado"@pt
+	Annotations: rdfs:label "orça.104"@pt
+
+DataProperty: bim:custo.total
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: custo.total ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara custo total"@pt
+	Annotations: rdfs:label "orça.105"@pt
+
+DataProperty: bim:encargo.social
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: encargo.social ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara encargo social"@pt
+	Annotations: rdfs:label "orça.106"@pt
+
+DataProperty: bim:imposto.de.valor.agregado
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: imposto.de.valor.agregado ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara imposto de valor agregado"@pt
+	Annotations: rdfs:label "orça.107"@pt
 
 DataProperty: bim:imposto.estadual
 	SubPropertyOf: bim:d.orçamentar
 	Domain: bim:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para orçamentar: imposto.estadual ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de imposto estadual aplicado."@pt
-	Annotations: rdfs:label "orça.102"@pt
+	Annotations: rdfs:label "Declara imposto estadual"@pt
+	Annotations: rdfs:label "orça.108"@pt
 
 DataProperty: bim:imposto.federal
 	SubPropertyOf: bim:d.orçamentar
 	Domain: bim:BIM
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para orçamentar: imposto.federal ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de imposto federal aplicado."@pt
-	Annotations: rdfs:label "orça.103"@pt
-
-DataProperty: bim:iva
-	SubPropertyOf: bim:d.orçamentar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: iva ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de Imposto de Valor Agregado."@pt
-	Annotations: rdfs:label "orça.104"@pt
-
-DataProperty: bim:salário
-	SubPropertyOf: bim:d.orçamentar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: salário ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de salário pago."@pt
-	Annotations: rdfs:label "orça.105"@pt
-
-DataProperty: bim:bônus
-	SubPropertyOf: bim:d.orçamentar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: bônus ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de bônus pago."@pt
-	Annotations: rdfs:label "orça.106"@pt
-
-DataProperty: bim:gratificação
-	SubPropertyOf: bim:d.orçamentar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: gratificação ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de gratificação pago."@pt
-	Annotations: rdfs:label "orça.107"@pt
-
-DataProperty: bim:comissão
-	SubPropertyOf: bim:d.orçamentar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: comissão ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de comissão pago."@pt
-	Annotations: rdfs:label "orça.108"@pt
-
-DataProperty: bim:lucro
-	SubPropertyOf: bim:d.orçamentar
-	Domain: bim:BIM
-	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: lucro ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor do lucro ou beneficio monetário planejado."@pt
+	Annotations: rdfs:label "Declara imposto federal"@pt
 	Annotations: rdfs:label "orça.109"@pt
 
-DataProperty: bim:preço
+DataProperty: bim:imposto.municipal
 	SubPropertyOf: bim:d.orçamentar
 	Domain: bim:BIM
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para orçamentar: preço ( xsd:double )"@pt
-	Annotations: rdfs:label "Valor de preço de um componente ou evento."@pt
+	Annotations: rdfs:label "Dado para orçamentar: imposto.municipal ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara imposto municipal"@pt
 	Annotations: rdfs:label "orça.110"@pt
 
 DataProperty: bim:d.orçamentar
@@ -15268,13 +15498,189 @@ DataProperty: bim:d.orçamentar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado de Objeto d.orçamentar"@pt
 
-DataProperty: bim:ofertado
+DataProperty: bim:item.codificado
 	SubPropertyOf: bim:d.orçamentar
 	Domain: bim:BIM
 	Range: xsd:string
-	Annotations: rdfs:label "Dado para orçamentar: ofertado ( xsd:string )"@pt
-	Annotations: rdfs:label "Valor de um bem em oferta."@pt
+	Annotations: rdfs:label "Dado para orçamentar: item.codificado ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara item codificado"@pt
 	Annotations: rdfs:label "orça.111"@pt
+
+DataProperty: bim:item.de.classe
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: item.de.classe ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara item de classe"@pt
+	Annotations: rdfs:label "orça.112"@pt
+
+DataProperty: bim:item.de.composição
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: item.de.composição ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara item de composição"@pt
+	Annotations: rdfs:label "orça.113"@pt
+
+DataProperty: bim:item.unidade
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: item.unidade ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara item unidade"@pt
+	Annotations: rdfs:label "orça.114"@pt
+
+DataProperty: bim:local
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: local ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara local"@pt
+	Annotations: rdfs:label "orça.115"@pt
+
+DataProperty: bim:origem.do.preço
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: origem.do.preço ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara origem do preço de acordo a metodologia SINAPI  Pode ser C coletado pelo IBGE ou CAIXA, CR valor referencial ou atribuido a São Paulo (AS)"@pt
+	Annotations: rdfs:label "orça.116"@pt
+
+DataProperty: bim:percentual.de.equipamento
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: percentual.de.equipamento ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara percentual de equipamento"@pt
+	Annotations: rdfs:label "orça.117"@pt
+
+DataProperty: bim:percentual.de.mão.de.obra
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: percentual.de.mão.de.obra ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara percentual de mão de obra"@pt
+	Annotations: rdfs:label "orça.118"@pt
+
+DataProperty: bim:percentual.de.material
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: percentual.de.material ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara percentual de material"@pt
+	Annotations: rdfs:label "orça.119"@pt
+
+DataProperty: bim:percentual.de.servico.terceirizado
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: percentual.de.servico.terceirizado ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara percentual de servico terceirizado"@pt
+	Annotations: rdfs:label "orça.120"@pt
+
+DataProperty: bim:preço
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: preço ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara preço"@pt
+	Annotations: rdfs:label "orça.121"@pt
+
+DataProperty: bim:preço.ofertado
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: preço.ofertado ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara preço ofertado"@pt
+	Annotations: rdfs:label "orça.122"@pt
+
+DataProperty: bim:preço.unitário
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: preço.unitário ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara preço unitário"@pt
+	Annotations: rdfs:label "orça.123"@pt
+
+DataProperty: bim:sinapi.agrupador
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: sinapi.agrupador ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara sinapi agrupador"@pt
+	Annotations: rdfs:label "orça.124"@pt
+
+DataProperty: bim:sinapi.analítico
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: sinapi.analítico ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara sinapi analítico"@pt
+	Annotations: rdfs:label "orça.125"@pt
+
+DataProperty: bim:sinapi.código.representativo
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: sinapi.código.representativo ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara sinapi código representativo"@pt
+	Annotations: rdfs:label "orça.126"@pt
+
+DataProperty: bim:sinapi.composição
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: sinapi.composição ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara sinapi composição"@pt
+	Annotations: rdfs:label "orça.127"@pt
+
+DataProperty: bim:sinapi.insumo
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para orçamentar: sinapi.insumo ( xsd:string )"@pt
+	Annotations: rdfs:label "Declara sinapi insumo"@pt
+	Annotations: rdfs:label "orça.128"@pt
+
+DataProperty: bim:valor.de.comissão
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: valor.de.comissão ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara valor de comissão"@pt
+	Annotations: rdfs:label "orça.129"@pt
+
+DataProperty: bim:valor.de.gratificação
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: valor.de.gratificação ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara valor de gratificação"@pt
+	Annotations: rdfs:label "orça.130"@pt
+
+DataProperty: bim:valor.de.lucro
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: valor.de.lucro ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara valor de lucro"@pt
+	Annotations: rdfs:label "orça.131"@pt
+
+DataProperty: bim:valor.de.salário
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: valor.de.salário ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara valor de salário"@pt
+	Annotations: rdfs:label "orça.132"@pt
+
+DataProperty: bim:valor.do.bônus
+	SubPropertyOf: bim:d.orçamentar
+	Domain: bim:BIM
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar: valor.do.bônus ( xsd:double )"@pt
+	Annotations: rdfs:label "Declara valor do bônus"@pt
+	Annotations: rdfs:label "orça.133"@pt
 
 DataProperty: bim:d.orientar
 	SubPropertyOf: bim:BIMData
@@ -21769,6 +22175,166 @@ Individual: bim:Zona.Sul
 	Types: bim:Zona
 	Facts: bim:é.dentro.de  bim:Rio
 	Facts: bim:descrição  "Zona Sul"
+
+Individual: bim:Manaus
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:AM
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:Belém
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:PA
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:Rio.Branco
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:AC
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:Porto.Velho
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:RO
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:Palmas
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:TO
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:Macapá
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:AP
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:Boa.Vista
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:RR
+	Facts: bim:é.dentro.de  bim:Região.Norte
+
+Individual: bim:São.Luís
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:MA
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Teresina
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:PI
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Fortaleza
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:CE
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Natal
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:RN
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:João.Pessoa
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:PB
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Recife
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:PE
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Maceió
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:AL
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Aracaju
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:SE
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Salvador
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:BA
+	Facts: bim:é.dentro.de  bim:Região.Nordeste
+
+Individual: bim:Cuiabá
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:MT
+	Facts: bim:é.dentro.de  bim:Região.Centro-Oeste
+
+Individual: bim:Goiana
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:GO
+	Facts: bim:é.dentro.de  bim:Região.Centro-Oeste
+
+Individual: bim:Campo.Grande
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:MS
+	Facts: bim:é.dentro.de  bim:Região.Centro-Oeste
+
+Individual: bim:Brasília
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:DF
+	Facts: bim:é.dentro.de  bim:Região.Centro-Oeste
+
+Individual: bim:Curitiba
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:PR
+	Facts: bim:é.dentro.de  bim:Região.Sul
+
+Individual: bim:Florianópolis
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:SC
+	Facts: bim:é.dentro.de  bim:Região.Sul
+
+Individual: bim:Porto.Alegre
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:RS
+	Facts: bim:é.dentro.de  bim:Região.Sul
+
+Individual: bim:Belo.Horizonte
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:MG
+	Facts: bim:é.dentro.de  bim:Região.Sudeste
+
+Individual: bim:Vitória
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:ES
+	Facts: bim:é.dentro.de  bim:Região.Sudeste
+
+Individual: bim:São.Paulo
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:SP
+	Facts: bim:é.dentro.de  bim:Região.Sudeste
+
+Individual: bim:Rio.de.Janeiro
+	Types: bim:Capital
+	Facts: bim:é.dentro.de  bim:RJ
+	Facts: bim:é.dentro.de  bim:Região.Sudeste
+
+Individual: bim:Região.Norte
+	Types: bim:Região
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "Região Norte do Brasil"
+
+Individual: bim:Região.Nordeste
+	Types: bim:Região
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "Região Nordeste do Brasil"
+
+Individual: bim:Região.Centro-Oeste
+	Types: bim:Região
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "Região Centro-Oeste do Brasil"
+
+Individual: bim:Região.Sul
+	Types: bim:Região
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "Região Sul do Brasil"
+
+Individual: bim:Região.Sudeste
+	Types: bim:Região
+	Facts: bim:é.dentro.de  bim:Brasil
+	Facts: bim:descrição  "Região Sudeste do Brasil"
 
 
 ##Fatos do Modelo BIM ---------------------------------------------------------
