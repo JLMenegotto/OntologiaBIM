@@ -7,6 +7,8 @@
 
 ##### Instalação para executar em Revit como API 
 
+Na API com data em 20 de maio foi modificada a arquitetura do processamento das planilhas obtendo um ganho considerável de performance.
+
  1. Criar as pastas  
       * **C:\APIBIM\Onto2025**  
       * **C:\APIBIM\Onto2025\Ico**  
