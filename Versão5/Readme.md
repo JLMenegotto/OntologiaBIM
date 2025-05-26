@@ -93,16 +93,16 @@ As propriedades de objetos (colunas C e D) são construídas automaticamente a p
 A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. 
 
 #### Características das propriedades de Objeto.
-A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características. Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. 
+As possibilidades de inferências que uma ontologia pode oferecer, depende da exploração das características das propriedades de objeto, que podem ou não ser definidas a critério do usuário. A sua presença ou ausência definirá a capacidade que a ontologia terá para inferir fatos verdadeiros. Cada propriedade de objeto pode ser associada às características listadas nas colunas J a R da planilha. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características. Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. A seguir o significado de cada tipo de característica.
 
-  * **Functional**          Indica que a propriedade deve ter, no máximo, um valor único para cada sujeito. (exemplo: data de nascimento ou número de CPF).
-  * **Inverse Functional**  Indica que o valor da propriedade é unívoco entre sujeito e predicado. (exemplo: um número de CPF identifica como máximo uma pessoa).
-  * **Transitive**          é.dentro.de  é uma propriedade com característica de transitividade, pois se A é.dentro.de B e B é.dentro.de C é verdade que A e.dentro.de C.
-  * **Symmetric**           ser.irmão.de é uma propriedade com característica simétrica, pois se A é.irmão.de B , também é verdade que B é.irmão.de A.
-  * **Asymmetric**          é.avô.de     é uma propriedade com característica antisimétrica, pois se A é.avô.de B, não pode ser verdade que B é.avô.de de A. Evitam contradições entre individuos diferentes.
-  * **Reflexive**           uma propriedade reflexiva indica uma relação que aponta também para o proprio indivíduo que a tem. (exemplo: é.igual.a é uma propriedade reflexiva). 
-  * **Irreflexive**         uma propriedade irreflexiva indica que é sempre falso que um objeto se relacione a si mesmo com essa propriedade (exemplo: 'é.avô.de' é uma propriedade irreflexiva, pois ninguém pode ser avô de si mesmo). Evitam auto-relações inválidas.
-  * **Inverse Of**	         uma propridade inversa indica que se um objeto A se relaciona com outro B por essa propriedade, então será verdade indicar que B se relaciona com A pela propriedade inversa (exemplo: se A é.acima de B é verdade, então B é.abaixo.de A também é verdade, pois a propriedade é.acima.de foi definida como a inversa da propriedade é.abaixo.de). 
+  * **Functional**         Indica que a propriedade deve ter, no máximo, um valor único para cada sujeito. (exemplo: data de nascimento ou número de CPF).
+  * **Inverse Functional** Indica que o valor da propriedade é unívoco entre sujeito e predicado. (exemplo: um número de CPF identifica como máximo uma pessoa).
+  * **Transitive**         é.dentro.de  é uma propriedade com característica de transitividade, pois se A é.dentro.de B e B é.dentro.de C é verdade que A e.dentro.de C.
+  * **Symmetric**          ser.irmão.de é uma propriedade com característica simétrica, pois se A é.irmão.de B , também é verdade que B é.irmão.de A.
+  * **Asymmetric**         é.avô.de     é uma propriedade com característica antisimétrica, pois se A é.avô.de B, não pode ser verdade que B é.avô.de de A. Evitam contradições entre individuos diferentes.
+  * **Reflexive**          Uma propriedade reflexiva indica uma relação que aponta também para o proprio indivíduo que a tem. (exemplo: é.igual.a é uma propriedade reflexiva). 
+  * **Irreflexive**        Uma propriedade irreflexiva indica que é sempre falso que um objeto se relacione a si mesmo com essa propriedade (exemplo: 'é.avô.de' é uma propriedade irreflexiva, pois ninguém pode ser avô de si mesmo). Evitam auto-relações inválidas.
+  * **Inverse Of**	   Uma propridade inversa indica que se um objeto A se relaciona com outro B por essa propriedade, então será verdade indicar que B se relaciona com A pela propriedade inversa (exemplo: se A é.acima de B é verdade, então B é.abaixo.de A também é verdade, pois a propriedade é.acima.de foi definida como a inversa da propriedade é.abaixo.de). 
     
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
