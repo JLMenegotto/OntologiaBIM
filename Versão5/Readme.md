@@ -95,8 +95,8 @@ A coluna G tem uma regra de verificação de valores duplicados para ajudar a cr
 #### Características das propriedades de Objeto.
 A propriedade de objeto pode ser associada às características das colunas J a R. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características. Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. 
 
-  * **Functional**          Indica que deve ter, no máximo, um valor único para cada sujeito. (exemplo: número de CPF).
-  * **Inverse Functional**  Indica que seu valor é unívoco entre sujeito e predicado. (exemplo: carteira de CPF).
+  * **Functional**          Indica que a propriedade deve ter, no máximo, um valor único para cada sujeito. (exemplo: data de nascimento ou número de CPF).
+  * **Inverse Functional**  Indica que o valor da propriedade é unívoco entre sujeito e predicado. (exemplo: um número de CPF identifica como máximo uma pessoa).
   * **Transitive**          é.dentro.de  é uma propriedade com característica de transitividade, pois se A é.dentro.de B e B é.dentro.de C é verdade que A e.dentro.de C.
   * **Symmetric**           ser.irmão.de é uma propriedade com característica simétrica, pois se A é.irmão.de B , também é verdade que B é.irmão.de A.
   * **Asymmetric**          é.avô.de     é uma propriedade com característica antisimétrica, pois se A é.avô.de B, não pode ser verdade que B é.avô.de de A. Evitam contradições entre individuos diferentes.
