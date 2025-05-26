@@ -1,12 +1,7 @@
-
-Prefix:   owl:  <http://www.w3.org/2002/07/owl#>
-Prefix:   rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-Prefix:   foaf: <http://xmlns.com/foaf/0.1/#>
-Prefix:   rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-Prefix:   xsd:  <http://www.w3.org/2001/XMLSchema#>
-Prefix:   skos: <http://www.w3.org/2004/02/skos/core#>
-Prefix:   dc:   <http://purl.org/dc/elements/1.1/>
-Prefix:   tem:  <http://www.w3.org/2006/time#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
 Prefix: bim: <https://github.com/JLMenegotto/RepoOnto#>
 
 Ontology:  <https://github.com/JLMenegotto/RepoOnto#Cromática>
@@ -27,7 +22,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Cromática>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos cromáticos"@pt
-  Annotations: rdfs:label "DataHora: 21/05/2025 14:15:19"@pt
+  Annotations: rdfs:label "DataHora: 26/05/2025 14:03:57"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -437,6 +432,7 @@ Individual: bim:Paleta.DNIT
 	Facts: bim:nome  "Paleta Cromática DNIT"
 	Facts: bim:esfera  "Federal"
 	Facts: bim:descrição  "Cores utilizadas pelo DNIT para as placas da rede viária"
+	Facts: bim:descrição  "O DNIT utiliza as cores de um catálogo Pantone"
 
 Individual: bim:Paleta.Pantone
 	Types: bim:Catálogo
@@ -1008,6 +1004,35 @@ DataProperty: bim:fraudulento
 	Annotations: bim:Definição "Declara que um objeto é fraudulento."@pt
 	Annotations: bim:Definición "Declara que un objeto es fraudulento."@es
 
+ObjectProperty: bim:p.atributar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.valor
+	SubPropertyOf: bim:p.atributar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a atributar: é.valor"@pt
+	Annotations: bim:Chave "atri.104"
+	Annotations: bim:Ação "Ação atributar"@pt
+	Annotations: bim:Definição "Valor atribuido ao parâmetro ou atributo criado pelo usuário. Propriedade Valor inespecífica, pode ser utilizada quando não há uma propriedade de valor específica."@pt
+	Annotations: bim:Definición "Valor asignado al parámetro o atributo creado por el usuario. La propiedad Value no específica se puede utilizar cuando no hay ninguna propiedad de valor específica."@es
+
+DataProperty: bim:d.atributar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:valor
+	SubPropertyOf: bim:d.atributar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para atributar:  valor  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "atri.104"
+	Annotations: bim:Ação "Ação atributar"@pt
+	Annotations: bim:Definição "Valor atribuido ao parâmetro ou atributo criado pelo usuário. Propriedade Valor inespecífica, pode ser utilizada quando não há uma propriedade de valor específica."@pt
+	Annotations: bim:Definición "Valor asignado al parámetro o atributo creado por el usuario. La propiedad Value no específica se puede utilizar cuando no hay ninguna propiedad de valor específica."@es
+
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
 
@@ -1318,8 +1343,8 @@ ObjectProperty: bim:é.nome
 	Annotations: rdfs:label "Propriedade destinada a identificar: é.nome"@pt
 	Annotations: bim:Chave "iden.102"
 	Annotations: bim:Ação "Ação identificar"@pt
-	Annotations: bim:Definição "Nome de algum objeto definido."@pt
-	Annotations: bim:Definición "Nombre de algún objeto definido."@es
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
 	Characteristics: Functional
 
 DataProperty: bim:d.identificar
@@ -1333,8 +1358,8 @@ DataProperty: bim:nome
 	Annotations: rdfs:label "Dado para identificar:  nome  Deve ser formatado como (xsd:string)"@pt
 	Annotations: bim:Chave "iden.102"
 	Annotations: bim:Ação "Ação identificar"@pt
-	Annotations: bim:Definição "Nome de algum objeto definido."@pt
-	Annotations: bim:Definición "Nombre de algún objeto definido."@es
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
 
 ObjectProperty: bim:p.iluminar
 	SubPropertyOf: bim:BIMProp
