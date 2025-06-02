@@ -2,6 +2,7 @@ Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: sh: <http://www.w3.org/ns/shacl#>
 Prefix: bim: <https://github.com/JLMenegotto/RepoOnto#>
 
 Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_BIM>
@@ -22,28 +23,28 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_BIM>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Modelo de informação IFC 4x3 e Categorias Revit 2026"@pt
-  Annotations: rdfs:label "DataHora: 26/05/2025 14:01:00"@pt
+  Annotations: rdfs:label "DataHora: 02/06/2025 18:18:39"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
   Annotations: rdfs:label "Explicação: Formalizar elementos do projeto BIM. Ontologia orientativa da relação de correspondência entre Classes IFC e categorias Revit. Uma BuiltInCategory de Revit é uma enumeração usada pela API (Application Program Interface) do programa que permite orientar a coleção dos diversos elementos utilizados no modelo. Por exemplo, para os objetos da categoria Paredes a su BuiltInCategory é OST_Walls. Graças a estas enumerações os programadores de aplicações podem iniciar o processo de manipulação e controle dos objetos do modelo. Foram usadas as Versões 4x3 do IFC e Revit 2026. As classes de Modelado Indefinido ainda serão catalogadas."@pt
   Annotations: rdfs:label "Explicación: Formalización  de elementos de un projeto BIM. Ontología orientativa de la relación de correspondencia entre Clases IFC y categorías de Revit. Una BuiltInCategory de Revit es una enumeración usada por la API (Interfaz de Programación de Aplicaciones) del programa que permite orientar la colección de los diversos elementos utilizados en el modelo. Por ejemplo, para los objetos de la categoría Paredes, su BuiltInCategory es OST_Walls. Gracias a estas enumeraciones, los programadores de aplicaciones pueden iniciar el proceso de manipulación y control de los objetos del modelo. Se utilizaron las versiones IFC 4x3 y Revit 2026. Las classes de Modelado Indefinido aún serán catalogadas."@pt
 
-Datatype: xsd:string
-Datatype: xsd:decimal
-Datatype: xsd:double
-Datatype: xsd:integer
-Datatype: xsd:dateTime
-Datatype: xsd:dayTimeDuration
-Datatype: xsd:duration
-Datatype: xsd:gDay
-Datatype: xsd:gMonth
-Datatype: xsd:gYear
-Datatype: xsd:date
-Datatype: xsd:time
-Datatype: xsd:boolean
-Datatype: rdfs:Literal
-Datatype: rdf:PlainLiteral
+Datatype:  xsd:string
+Datatype:  xsd:decimal
+Datatype:  xsd:double
+Datatype:  xsd:integer
+Datatype:  xsd:dateTime
+Datatype:  xsd:dayTimeDuration
+Datatype:  xsd:duration
+Datatype:  xsd:gDay
+Datatype:  xsd:gMonth
+Datatype:  xsd:gYear
+Datatype:  xsd:date
+Datatype:  xsd:time
+Datatype:  xsd:boolean
+Datatype:  rdfs:Literal
+Datatype:  rdf:PlainLiteral
 
 Class: bim:BIM
 	Annotations: rdfs:label "Raiz das Classes"@pt
@@ -54,6 +55,22 @@ ObjectProperty: bim:BIMProp
 DataProperty: bim:BIMData
 	Annotations: rdfs:label "Raiz dos Dados"@pt
 
+
+AnnotationProperty: bim:Natureza
+AnnotationProperty: bim:Espécie
+AnnotationProperty: bim:Disciplina
+AnnotationProperty: bim:Tema
+AnnotationProperty: bim:Interoperar
+AnnotationProperty: bim:Definição
+AnnotationProperty: bim:Definición
+AnnotationProperty: bim:Chave
+AnnotationProperty: bim:Ação
+AnnotationProperty: bim:CatRevit
+AnnotationProperty: bim:ClasseIfc
+AnnotationProperty: bim:Identifica
+AnnotationProperty: bim:Parâmetro
+
+ ## Classes em sintaxe Manchester --------------------------------
 
 
 Class: bim:Projeto
@@ -26486,6 +26503,7 @@ Class: bim:OST_ToposolidSurfacePattern
 	Annotations: bim:Disciplina "Topografia"@pt
 	Annotations: bim:Chave "Key-IFC43-2032"
 
+ ## Indivíduos em sintaxe Manchester -----------------------------
 
 
 Individual: bim:Projeto1
@@ -26529,21 +26547,7 @@ Individual: bim:Andar3
 	Facts: bim:é.acima.de  bim:Andar2
 	Facts: bim:nome  "3° Pavto"
 
-
-AnnotationProperty: bim:Natureza
-AnnotationProperty: bim:Espécie
-AnnotationProperty: bim:Disciplina
-AnnotationProperty: bim:Tema
-AnnotationProperty: bim:Interoperabilidade
-AnnotationProperty: bim:Definição
-AnnotationProperty: bim:Definición
-AnnotationProperty: bim:Chave
-AnnotationProperty: bim:Ação
-AnnotationProperty: bim:CategoriaRevit
-AnnotationProperty: bim:ClasseIfc
-AnnotationProperty: bim:Identificação
-AnnotationProperty: bim:Parâmetro
-
+ ## Propriedades em sintaxe Manchester ---------------------------
 
 
 ObjectProperty: bim:p.abastecer
@@ -27188,7 +27192,7 @@ ObjectProperty: bim:é.ide
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a identificar: é.ide"@pt
-	Annotations: bim:Chave "iden.109"
+	Annotations: bim:Chave "iden.111"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "Identifica o código ID de Revit ou GlobalId IFC ou identificador único de um objeto."@pt
 	Annotations: bim:Definición "Identifica el código Revit ID o IFC GlobalId, o el identificador único de un objeto."@es
@@ -27205,7 +27209,7 @@ DataProperty: bim:ide
 	Range: xsd:string
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para identificar:  ide  Deve ser formatado como (xsd:string)"@pt
-	Annotations: bim:Chave "iden.109"
+	Annotations: bim:Chave "iden.111"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "Identifica o código ID de Revit ou GlobalId IFC ou identificador único de um objeto."@pt
 	Annotations: bim:Definición "Identifica el código Revit ID o IFC GlobalId, o el identificador único de un objeto."@es
@@ -29042,7 +29046,7 @@ ObjectProperty: bim:é.sensor.de.movimento
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de movimento."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de movimiento."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	EquivalentTo: bim:é.sensor.de.presença
 
@@ -29059,7 +29063,7 @@ DataProperty: bim:sensor.de.movimento
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de movimento."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de movimiento."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
 ObjectProperty: bim:p.sensorizar
@@ -29076,7 +29080,7 @@ ObjectProperty: bim:é.sensor.de.presença
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de presença."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de presencia."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
 DataProperty: bim:d.sensorizar
@@ -29092,7 +29096,7 @@ DataProperty: bim:sensor.de.presença
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de presença."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de presencia."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
 
