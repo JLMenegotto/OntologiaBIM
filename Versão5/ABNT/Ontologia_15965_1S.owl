@@ -2,6 +2,7 @@ Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: sh: <http://www.w3.org/ns/shacl#>
 Prefix: bim: <https://github.com/JLMenegotto/RepoOnto#>
 
 Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_3_1S>
@@ -22,28 +23,28 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_3_1S>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 26/05/2025 14:01:50"@pt
+  Annotations: rdfs:label "DataHora: 02/06/2025 18:19:39"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
   Annotations: rdfs:label "Explicação: Formalizar a Norma brasileira NBR15965 no domínio do Sistema de classificação ABNT da construção."@pt
   Annotations: rdfs:label "Explicación: Formalizar la Norma brasilera NBR15965 en el dominio del Sistema de classificación de la construcción."@pt
 
-Datatype: xsd:string
-Datatype: xsd:decimal
-Datatype: xsd:double
-Datatype: xsd:integer
-Datatype: xsd:dateTime
-Datatype: xsd:dayTimeDuration
-Datatype: xsd:duration
-Datatype: xsd:gDay
-Datatype: xsd:gMonth
-Datatype: xsd:gYear
-Datatype: xsd:date
-Datatype: xsd:time
-Datatype: xsd:boolean
-Datatype: rdfs:Literal
-Datatype: rdf:PlainLiteral
+Datatype:  xsd:string
+Datatype:  xsd:decimal
+Datatype:  xsd:double
+Datatype:  xsd:integer
+Datatype:  xsd:dateTime
+Datatype:  xsd:dayTimeDuration
+Datatype:  xsd:duration
+Datatype:  xsd:gDay
+Datatype:  xsd:gMonth
+Datatype:  xsd:gYear
+Datatype:  xsd:date
+Datatype:  xsd:time
+Datatype:  xsd:boolean
+Datatype:  rdfs:Literal
+Datatype:  rdf:PlainLiteral
 
 Class: bim:BIM
 	Annotations: rdfs:label "Raiz das Classes"@pt
@@ -54,6 +55,22 @@ ObjectProperty: bim:BIMProp
 DataProperty: bim:BIMData
 	Annotations: rdfs:label "Raiz dos Dados"@pt
 
+
+AnnotationProperty: bim:Natureza
+AnnotationProperty: bim:Espécie
+AnnotationProperty: bim:Disciplina
+AnnotationProperty: bim:Tema
+AnnotationProperty: bim:Interoperar
+AnnotationProperty: bim:Definição
+AnnotationProperty: bim:Definición
+AnnotationProperty: bim:Chave
+AnnotationProperty: bim:Ação
+AnnotationProperty: bim:CatRevit
+AnnotationProperty: bim:ClasseIfc
+AnnotationProperty: bim:Identifica
+AnnotationProperty: bim:Parâmetro
+
+ ## Classes em sintaxe Manchester --------------------------------
 
 
 Class: bim:Projeto
@@ -80,12 +97,14 @@ Class: bim:Código
 	Annotations: rdfs:label "Código"@pt
 	Annotations: bim:Definição "Código ABNT do sistema de classificação da construção do Brasil. NBR 15.965."@pt
 	Annotations: bim:Definición "Código ABNT del Sistema de Classificación de la Construcción de Brasil.  NBR 15.965."@es
+	Annotations: bim:Interoperar "."@pt
 	Annotations: bim:Natureza "Norma"@pt
 	Annotations: bim:Espécie "ABNT"@pt
 	Annotations: bim:Tema "Parte"@pt
 	Annotations: bim:Disciplina "Interdiciplinar"@pt
 	Annotations: bim:Chave "Key.ABNT.2"
 
+ ## Indivíduos em sintaxe Manchester -----------------------------
 
 
 Individual: bim:NBR15965
@@ -2515,21 +2534,7 @@ Individual: bim:1S.94.60.03
 	Facts: bim:descrição  "Orientação"
 	Facts: bim:subtema  "Serviços adicionais"
 
-
-AnnotationProperty: bim:Natureza
-AnnotationProperty: bim:Espécie
-AnnotationProperty: bim:Disciplina
-AnnotationProperty: bim:Tema
-AnnotationProperty: bim:Interoperabilidade
-AnnotationProperty: bim:Definição
-AnnotationProperty: bim:Definición
-AnnotationProperty: bim:Chave
-AnnotationProperty: bim:Ação
-AnnotationProperty: bim:CategoriaRevit
-AnnotationProperty: bim:ClasseIfc
-AnnotationProperty: bim:Identificação
-AnnotationProperty: bim:Parâmetro
-
+ ## Propriedades em sintaxe Manchester ---------------------------
 
 
 ObjectProperty: bim:p.abastecer
@@ -4991,7 +4996,7 @@ ObjectProperty: bim:é.sensor.de.movimento
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de movimento."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de movimiento."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	EquivalentTo: bim:é.sensor.de.presença
 
@@ -5008,7 +5013,7 @@ DataProperty: bim:sensor.de.movimento
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de movimento."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de movimiento."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
 ObjectProperty: bim:p.sensorizar
@@ -5025,7 +5030,7 @@ ObjectProperty: bim:é.sensor.de.presença
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de presença."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de presencia."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
 DataProperty: bim:d.sensorizar
@@ -5041,7 +5046,7 @@ DataProperty: bim:sensor.de.presença
 	Annotations: bim:Ação "Ação sensorizar"@pt
 	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de presença."@pt
 	Annotations: bim:Definición "Revit ID o IFC GlobalId o identificador único de objeto. Identificación de un sensor de presencia."@es
-	Annotations: bim:CategoriaRevit "OST_LightingDevices"
+	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
 
