@@ -7,6 +7,7 @@
 ## 
 
 O construtor é atualizado regularmente. Ainda que no repositório sejam mantidas todas as versões, a Versão 5.0 é a mais recente. Nela poderá encontrar os arquivos Excel contendo a última arquitetura de conceitos propuesta para a ontologia. Os resultado em formato OWL (sintaxe Mancheste) e ttl (formato Turtle) se encontram na pasta junto aos arquivos Excel. Não foram incorporados nessa pasta novos filtros em SPARQL, estes podem ser consultados nas pastas das versões anteriores.<br>
+Cada ontologia tem a data e hora da sua criação registrada.
 
 ### [Versão5.00 do Construtor](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
 
