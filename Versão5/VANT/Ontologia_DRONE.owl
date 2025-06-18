@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 18/06/2025 17:40:54"@pt
+  Annotations: rdfs:label "DataHora: 18/06/2025 17:45:45"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -248,6 +248,7 @@ Individual: bim:Voo1
 	Facts: bim:é.data  bim:Data01
 	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
 	Facts: bim:formato.kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
+	Facts: bim:é.pertencente.a  bim:BancoIma01
 
 Individual: bim:Voo2
 	Types: bim:Voo.Autônomo
@@ -256,6 +257,7 @@ Individual: bim:Voo2
 	Facts: bim:é.data  bim:Data02
 	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
 	Facts: bim:formato.kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
+	Facts: bim:é.pertencente.a  bim:BancoIma02
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -3190,6 +3192,35 @@ DataProperty: bim:passado
 	Annotations: bim:Definição "Qualifica um elemento como passado. Um valor antíguo."@pt
 	Annotations: bim:Definición "Califica un elemento como pasado. Un valor milenario."@es
 
+ObjectProperty: bim:p.relacionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.pertencente.a
+	SubPropertyOf: bim:p.relacionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.pertencente.a"@pt
+	Annotations: bim:Chave "rela.106"
+	Annotations: bim:Ação "Ação relacionar"@pt
+	Annotations: bim:Definição "O elemento pertence a um outro."@pt
+	Annotations: bim:Definición "El elemento pertenece a otro."@es
+
+DataProperty: bim:d.relacionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:pertencente.a
+	SubPropertyOf: bim:d.relacionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para relacionar:  pertencente.a  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "rela.106"
+	Annotations: bim:Ação "Ação relacionar"@pt
+	Annotations: bim:Definição "O elemento pertence a um outro."@pt
+	Annotations: bim:Definición "El elemento pertenece a otro."@es
+
 ObjectProperty: bim:p.resistir
 	SubPropertyOf: bim:BIMProp
 
@@ -3437,5 +3468,5 @@ DataProperty: bim:voo.realizado
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/06/2025 17:40:54
+##  Criada em 18/06/2025 17:45:46
 #################################################################
