@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 18/06/2025 17:40:54"@pt ;
+	  rdfs:label "DataHora: 18/06/2025 17:45:45"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -342,14 +342,16 @@ bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
      bim:é.voo.realizado    bim:Plano01 ;
      bim:é.data    bim:Data01 ;
      bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
-     bim:formato.kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"  .
+     bim:formato.kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml" ;
+     bim:é.pertencente.a    bim:BancoIma01  .
 
 bim:Voo2  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
      bim:é.drone    bim:DJI001 ;
      bim:é.voo.realizado    bim:Plano02 ;
      bim:é.data    bim:Data02 ;
      bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
-     bim:formato.kml    "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"  .
+     bim:formato.kml    "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml" ;
+     bim:é.pertencente.a    bim:BancoIma02  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -3285,6 +3287,35 @@ bim:passado   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Califica un elemento como pasado. Un valor milenario."@es  .
 
 
+bim:p.relacionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.pertencente.a   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.relacionar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a relacionar: é.pertencente.a" ;
+                    bim:Chave               "rela.106" ;
+                    bim:Ação                "Ação relacionar" ;
+                    bim:Definição           "O elemento pertence a um outro."@pt ;
+                    bim:Definición          "El elemento pertenece a otro."@es  .
+
+
+bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.relacionar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para relacionar:  pertencente.a  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "rela.106" ;
+                    bim:Ação                "Ação relacionar" ;
+                    bim:Definição           "O elemento pertence a um outro."@pt ;
+                    bim:Definición          "El elemento pertenece a otro."@es  .
+
+
 bim:p.resistir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -3531,5 +3562,5 @@ bim:voo.realizado   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/06/2025 17:40:54
+##  Criada em 18/06/2025 17:45:46
 #################################################################
