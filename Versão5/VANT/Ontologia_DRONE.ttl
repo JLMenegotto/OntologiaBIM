@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 18/06/2025 12:35:56"@pt ;
+	  rdfs:label "DataHora: 18/06/2025 12:42:15"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -342,14 +342,14 @@ bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
      bim:é.voo.realizado    bim:Plano01 ;
      bim:é.data    bim:Data01 ;
      bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
-     bim:kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"  .
+     bim:formato.kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"  .
 
 bim:Voo2  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
      bim:é.drone    bim:DJI001 ;
      bim:é.voo.realizado    bim:Plano02 ;
      bim:é.data    bim:Data02 ;
      bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
-     bim:kml    "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"  .
+     bim:formato.kml    "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -746,6 +746,35 @@ bim:recurso   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação concursar" ;
                     bim:Definição           "Declara que é um recurso aberto no contexto do concurso, licitação ou certame."@pt ;
                     bim:Definición          "Declara que se trata de un recurso abierto en el marco de la licitación, licitación o concurso."@es  .
+
+
+bim:p.digitalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.formato.kml   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.digitalizar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a digitalizar: é.formato.kml" ;
+                    bim:Chave               "digi.107" ;
+                    bim:Ação                "Ação digitalizar" ;
+                    bim:Definição           "É um arquivo digital KML Keyhole Markup Language."@pt ;
+                    bim:Definición          "Es un archivo digital de lenguaje de marcado de ojo de cerradura KML."@es  .
+
+
+bim:d.digitalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:formato.kml   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.digitalizar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para digitalizar:  formato.kml  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "digi.107" ;
+                    bim:Ação                "Ação digitalizar" ;
+                    bim:Definição           "É um arquivo digital KML Keyhole Markup Language."@pt ;
+                    bim:Definición          "Es un archivo digital de lenguaje de marcado de ojo de cerradura KML."@es  .
 
 
 bim:p.energizar   rdf:type  owl:ObjectProperty ;
@@ -3502,5 +3531,5 @@ bim:voo.realizado   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/06/2025 12:35:56
+##  Criada em 18/06/2025 12:42:16
 #################################################################
