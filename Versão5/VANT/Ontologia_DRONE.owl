@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 18/06/2025 12:35:56"@pt
+  Annotations: rdfs:label "DataHora: 18/06/2025 12:42:15"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -232,7 +232,7 @@ Individual: bim:Voo1
 	Facts: bim:é.voo.realizado  bim:Plano01
 	Facts: bim:é.data  bim:Data01
 	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
-	Facts: bim:kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
+	Facts: bim:formato.kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
 
 Individual: bim:Voo2
 	Types: bim:Voo.Autônomo
@@ -240,7 +240,7 @@ Individual: bim:Voo2
 	Facts: bim:é.voo.realizado  bim:Plano02
 	Facts: bim:é.data  bim:Data02
 	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
-	Facts: bim:kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
+	Facts: bim:formato.kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -637,6 +637,35 @@ DataProperty: bim:recurso
 	Annotations: bim:Ação "Ação concursar"@pt
 	Annotations: bim:Definição "Declara que é um recurso aberto no contexto do concurso, licitação ou certame."@pt
 	Annotations: bim:Definición "Declara que se trata de un recurso abierto en el marco de la licitación, licitación o concurso."@es
+
+ObjectProperty: bim:p.digitalizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.formato.kml
+	SubPropertyOf: bim:p.digitalizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a digitalizar: é.formato.kml"@pt
+	Annotations: bim:Chave "digi.107"
+	Annotations: bim:Ação "Ação digitalizar"@pt
+	Annotations: bim:Definição "É um arquivo digital KML Keyhole Markup Language."@pt
+	Annotations: bim:Definición "Es un archivo digital de lenguaje de marcado de ojo de cerradura KML."@es
+
+DataProperty: bim:d.digitalizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:formato.kml
+	SubPropertyOf: bim:d.digitalizar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para digitalizar:  formato.kml  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "digi.107"
+	Annotations: bim:Ação "Ação digitalizar"@pt
+	Annotations: bim:Definição "É um arquivo digital KML Keyhole Markup Language."@pt
+	Annotations: bim:Definición "Es un archivo digital de lenguaje de marcado de ojo de cerradura KML."@es
 
 ObjectProperty: bim:p.energizar
 	SubPropertyOf: bim:BIMProp
@@ -3393,5 +3422,5 @@ DataProperty: bim:voo.realizado
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/06/2025 12:35:56
+##  Criada em 18/06/2025 12:42:16
 #################################################################
