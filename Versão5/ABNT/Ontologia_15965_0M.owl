@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_2_0M>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 16/06/2025 20:12:15"@pt
+  Annotations: rdfs:label "DataHora: 18/06/2025 14:54:32"@pt
   Annotations: rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -70,30 +70,30 @@ AnnotationProperty: bim:ClasseIfc
 AnnotationProperty: bim:Identifica
 AnnotationProperty: bim:Parâmetro
 
- ## Classes em sintaxe Manchester --------------------------------
-
+#################################################################
+#     Classes em Sintaxe Manchester                              
+#################################################################
 
 Class: bim:Projeto
 	SubClassOf: bim:BIM
 
 
 Class: bim:Norma
-	SubClassOf: bim:Projeto
 	Annotations: rdfs:label "Norma"@pt
+	SubClassOf: bim:Projeto
 
 
 Class: bim:ABNT
-	SubClassOf: bim:Norma
 	Annotations: rdfs:label "ABNT"@pt
+	SubClassOf: bim:Norma
 
 
 Class: bim:Parte
-	SubClassOf: bim:ABNT
 	Annotations: rdfs:label "Parte"@pt
+	SubClassOf: bim:ABNT
 
 
 Class: bim:Código
-	SubClassOf: bim:Parte
 	Annotations: rdfs:label "Código"@pt
 	Annotations: bim:Definição "Código ABNT do sistema de classificação da construção do Brasil. NBR 15.965."@pt
 	Annotations: bim:Definición "Código ABNT del Sistema de Classificación de la Construcción de Brasil.  NBR 15.965."@es
@@ -103,9 +103,11 @@ Class: bim:Código
 	Annotations: bim:Tema "Parte"@pt
 	Annotations: bim:Disciplina "Interdisciplinar"@pt
 	Annotations: bim:Chave "Key.ABNT.2"
+	SubClassOf: bim:Parte
 
- ## Indivíduos em sintaxe Manchester -----------------------------
-
+#################################################################
+#     Indivíduos em Sintaxe Manchester                           
+#################################################################
 
 Individual: bim:NBR15965
 	Types: bim:Norma
@@ -3073,8 +3075,9 @@ Individual: bim:0M.40.40.01.02
 	Facts: bim:categoria.revit  "OST_Material"
 	Facts: bim:classe.ifc  "IfcMaterial"
 
- ## Propriedades em sintaxe Manchester ---------------------------
-
+#################################################################
+#     Propriedades de Objetos e Dados em Sintaxe Manchester      
+#################################################################
 
 ObjectProperty: bim:p.abastecer
 	SubPropertyOf: bim:BIMProp
@@ -6188,7 +6191,97 @@ DataProperty: bim:sensor.de.presença
 	Annotations: bim:CatRevit "OST.LightingDevices"
 	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.uas
+	SubPropertyOf: bim:p.vistoriar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.uas"@pt
+	Annotations: bim:Chave "vist.105"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
+	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
+	EquivalentTo: bim:é.drone
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:uas
+	SubPropertyOf: bim:d.vistoriar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  uas  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "vist.105"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
+	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.drone
+	SubPropertyOf: bim:p.vistoriar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.drone"@pt
+	Annotations: bim:Chave "vist.106"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do drone."@pt
+	Annotations: bim:Definición "Declara la identificación del dron."@es
+	EquivalentTo: bim:é.vant
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:drone
+	SubPropertyOf: bim:d.vistoriar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  drone  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "vist.106"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do drone."@pt
+	Annotations: bim:Definición "Declara la identificación del dron."@es
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.vant
+	SubPropertyOf: bim:p.vistoriar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.vant"@pt
+	Annotations: bim:Chave "vist.107"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
+	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
+	EquivalentTo: bim:é.uas
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vant
+	SubPropertyOf: bim:d.vistoriar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  vant  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "vist.107"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
+	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
+
 #################################################################
 ##  Fim da Ontologia 15965_0M
-##  Criada em 16/06/2025 20:12:16
+##  Criada em 18/06/2025 14:54:32
 #################################################################
