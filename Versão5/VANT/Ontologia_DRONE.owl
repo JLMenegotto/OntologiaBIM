@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 18/06/2025 09:23:31"@pt
+  Annotations: rdfs:label "DataHora: 18/06/2025 12:35:56"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -158,6 +158,19 @@ Class: bim:De.Campo
 	Annotations: bim:Chave "Key.Ope.6"
 
 
+Class: bim:Banco.Imagens
+	SubClassOf: bim:Vistoria
+	Annotations: rdfs:label "Banco Imagens"@pt
+	Annotations: bim:Definição "Banco de imagens e vídeos dos voos."@pt
+	Annotations: bim:Definición "Imágenes y videos de archivo de los vuelos."@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "-"@pt
+	Annotations: bim:Espécie "-"@pt
+	Annotations: bim:Tema "-"@pt
+	Annotations: bim:Disciplina "Urbanismo"@pt
+	Annotations: bim:Chave "Key.Ope.7"
+
+
 Class: bim:Data
 	SubClassOf: bim:Vistoria
 	Annotations: rdfs:label "Data"@pt
@@ -168,7 +181,7 @@ Class: bim:Data
 	Annotations: bim:Espécie "-"@pt
 	Annotations: bim:Tema "-"@pt
 	Annotations: bim:Disciplina "Urbanismo"@pt
-	Annotations: bim:Chave "Key.Ope.7"
+	Annotations: bim:Chave "Key.Ope.8"
 
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
@@ -176,12 +189,12 @@ Class: bim:Data
 
 Individual: bim:Data01
 	Types: bim:Data
-	Facts: bim:data  "01/01/2025"
+	Facts: bim:data  "08/08/2024"
 	Facts: bim:descrição  "É data de voo de vistoria"
 
 Individual: bim:Data02
 	Types: bim:Data
-	Facts: bim:data  "20/06/2025"
+	Facts: bim:data  "08/08/2024"
 	Facts: bim:descrição  "É data de voo de vistoria"
 
 Individual: bim:DJI001
@@ -189,31 +202,45 @@ Individual: bim:DJI001
 	Facts: bim:modelo  "Mavic 2 Pro"
 	Facts: bim:descrição  "É aparelho de drone modelo Mavic"
 
+Individual: bim:BancoIma01
+	Types: bim:Banco.Imagens
+	Facts: bim:url  "http://ufrj//ct//vistorias//predio//banco01"
+	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
+	Facts: bim:descrição  "É um voo de drone autônomo"
+
+Individual: bim:BancoIma02
+	Types: bim:Banco.Imagens
+	Facts: bim:url  "http://ufrj//ct//vistorias//predio//banco02"
+	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
+	Facts: bim:descrição  "É um voo de drone autônomo"
+
 Individual: bim:Plano01
 	Types: bim:Voo.Plano
 	Facts: bim:é.drone  bim:DJI001
 	Facts: bim:descrição  "É um plano de voo planejado para drone Mavic 2"
-	Facts: bim:descrição  "É um voo de drone autônomo"
+	Facts: bim:descrição  "É um voo de drone autônomo sobre o CT da UFRJ"
 
 Individual: bim:Plano02
 	Types: bim:Voo.Plano
 	Facts: bim:é.drone  bim:DJI001
 	Facts: bim:descrição  "É um plano de voo planejado para drone Mavic 2"
-	Facts: bim:descrição  "É um voo de drone autônomo"
+	Facts: bim:descrição  "É um voo de drone autônomo sobre o CT da UFRJ"
 
 Individual: bim:Voo1
 	Types: bim:Voo.Autônomo
 	Facts: bim:é.drone  bim:DJI001
 	Facts: bim:é.voo.realizado  bim:Plano01
 	Facts: bim:é.data  bim:Data01
-	Facts: bim:descrição  "É um voo de drone autônomo"
+	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
+	Facts: bim:kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
 
 Individual: bim:Voo2
 	Types: bim:Voo.Autônomo
 	Facts: bim:é.drone  bim:DJI001
 	Facts: bim:é.voo.realizado  bim:Plano02
 	Facts: bim:é.data  bim:Data02
-	Facts: bim:descrição  "É um voo de drone realizado manualmente"
+	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
+	Facts: bim:kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -1513,6 +1540,36 @@ DataProperty: bim:uri
 	Annotations: bim:Ação "Ação linkar"@pt
 	Annotations: bim:Definição "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso."@pt
 	Annotations: bim:Definición "Identificación uniforme de recursos. Apunta a la dirección web. Puede ser URN o URL Ejemplo: http://example.com/recurso."@es
+
+ObjectProperty: bim:p.linkar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.url
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a linkar: é.url"@pt
+	Annotations: bim:Chave "link.102"
+	Annotations: bim:Ação "Ação linkar"@pt
+	Annotations: bim:Definição "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso."@pt
+	Annotations: bim:Definición "Localizador uniforme de recursos. Señala la ubicación del recurso en Internet. http://example.com/recurso."@es
+	Characteristics: Functional
+
+DataProperty: bim:d.linkar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:url
+	SubPropertyOf: bim:d.linkar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar:  url  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "link.102"
+	Annotations: bim:Ação "Ação linkar"@pt
+	Annotations: bim:Definição "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso."@pt
+	Annotations: bim:Definición "Localizador uniforme de recursos. Señala la ubicación del recurso en Internet. http://example.com/recurso."@es
 
 ObjectProperty: bim:p.linkar
 	SubPropertyOf: bim:BIMProp
@@ -3336,5 +3393,5 @@ DataProperty: bim:voo.realizado
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/06/2025 09:23:31
+##  Criada em 18/06/2025 12:35:56
 #################################################################
