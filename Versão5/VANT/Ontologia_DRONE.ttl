@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 18/06/2025 09:23:31"@pt ;
+	  rdfs:label "DataHora: 18/06/2025 12:35:56"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -257,6 +257,38 @@ bim:Vistoria rdf:type  owl:Class  ;
       rdfs:label  "Vistoria"@pt  .
 
 
+bim:Banco.Imagens rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Vistoria ;
+      rdfs:label  "Banco Imagens"@pt ;
+      bim:Definição   "Banco de imagens e vídeos dos voos."@pt ;
+      bim:Definición  "Imágenes y videos de archivo de los vuelos."@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "-"@pt ;
+      bim:Espécie     "-"@pt ;
+      bim:Tema        "-"@pt ;
+      bim:Disciplina  "Urbanismo"@pt ;
+      bim:Chave       "Key.Ope.7"@pt  .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Operação rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Operação"@pt  .
+
+
+bim:Manutenção rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Operação ;
+      rdfs:label  "Manutenção"@pt  .
+
+
+bim:Vistoria rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Manutenção ;
+      rdfs:label  "Vistoria"@pt  .
+
+
 bim:Data rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Vistoria ;
       rdfs:label  "Data"@pt ;
@@ -267,45 +299,57 @@ bim:Data rdf:type  owl:Class  ;
       bim:Espécie     "-"@pt ;
       bim:Tema        "-"@pt ;
       bim:Disciplina  "Urbanismo"@pt ;
-      bim:Chave       "Key.Ope.7"@pt  .
+      bim:Chave       "Key.Ope.8"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
 
 bim:Data01  rdf:type  owl:NamedIndividual , bim:Data ;
-     bim:data    "01/01/2025" ;
+     bim:data    "08/08/2024" ;
      bim:descrição    "É data de voo de vistoria"  .
 
 bim:Data02  rdf:type  owl:NamedIndividual , bim:Data ;
-     bim:data    "20/06/2025" ;
+     bim:data    "08/08/2024" ;
      bim:descrição    "É data de voo de vistoria"  .
 
 bim:DJI001  rdf:type  owl:NamedIndividual , bim:Drone ;
      bim:modelo    "Mavic 2 Pro" ;
      bim:descrição    "É aparelho de drone modelo Mavic"  .
 
+bim:BancoIma01  rdf:type  owl:NamedIndividual , bim:Banco.Imagens ;
+     bim:url    "http://ufrj//ct//vistorias//predio//banco01" ;
+     bim:descrição    "É o banco de imagens de voo de manutenção predial" ;
+     bim:descrição    "É um voo de drone autônomo"  .
+
+bim:BancoIma02  rdf:type  owl:NamedIndividual , bim:Banco.Imagens ;
+     bim:url    "http://ufrj//ct//vistorias//predio//banco02" ;
+     bim:descrição    "É o banco de imagens de voo de manutenção predial" ;
+     bim:descrição    "É um voo de drone autônomo"  .
+
 bim:Plano01  rdf:type  owl:NamedIndividual , bim:Voo.Plano ;
      bim:é.drone    bim:DJI001 ;
      bim:descrição    "É um plano de voo planejado para drone Mavic 2" ;
-     bim:descrição    "É um voo de drone autônomo"  .
+     bim:descrição    "É um voo de drone autônomo sobre o CT da UFRJ"  .
 
 bim:Plano02  rdf:type  owl:NamedIndividual , bim:Voo.Plano ;
      bim:é.drone    bim:DJI001 ;
      bim:descrição    "É um plano de voo planejado para drone Mavic 2" ;
-     bim:descrição    "É um voo de drone autônomo"  .
+     bim:descrição    "É um voo de drone autônomo sobre o CT da UFRJ"  .
 
 bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
      bim:é.drone    bim:DJI001 ;
      bim:é.voo.realizado    bim:Plano01 ;
      bim:é.data    bim:Data01 ;
-     bim:descrição    "É um voo de drone autônomo"  .
+     bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
+     bim:kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"  .
 
 bim:Voo2  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
      bim:é.drone    bim:DJI001 ;
      bim:é.voo.realizado    bim:Plano02 ;
      bim:é.data    bim:Data02 ;
-     bim:descrição    "É um voo de drone realizado manualmente"  .
+     bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
+     bim:kml    "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -1605,6 +1649,36 @@ bim:uri   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação linkar" ;
                     bim:Definição           "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso."@pt ;
                     bim:Definición          "Identificación uniforme de recursos. Apunta a la dirección web. Puede ser URN o URL Ejemplo: http://example.com/recurso."@es  .
+
+
+bim:p.linkar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.url   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.linkar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a linkar: é.url" ;
+                    bim:Chave               "link.102" ;
+                    bim:Ação                "Ação linkar" ;
+                    bim:Definição           "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso."@pt ;
+                    bim:Definición          "Localizador uniforme de recursos. Señala la ubicación del recurso en Internet. http://example.com/recurso."@es ;
+                    rdf:type                owl:FunctionalProperty  .
+
+
+bim:d.linkar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:url   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.linkar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para linkar:  url  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "link.102" ;
+                    bim:Ação                "Ação linkar" ;
+                    bim:Definição           "Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso."@pt ;
+                    bim:Definición          "Localizador uniforme de recursos. Señala la ubicación del recurso en Internet. http://example.com/recurso."@es  .
 
 
 bim:p.linkar   rdf:type  owl:ObjectProperty ;
@@ -3428,5 +3502,5 @@ bim:voo.realizado   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/06/2025 09:23:31
+##  Criada em 18/06/2025 12:35:56
 #################################################################
