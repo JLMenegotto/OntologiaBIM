@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de perfis metálicos"@pt ;
-	  rdfs:label "DataHora: 03/09/2025 15:52:50"@pt ;
+	  rdfs:label "DataHora: 03/09/2025 16:03:53"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -871,44 +871,52 @@ bim:Estrutura.Secundária  rdf:type  owl:NamedIndividual , bim:Metálica ;
 bim:Estrutura.de.Apoio  rdf:type  owl:NamedIndividual , bim:Metálica ;
      bim:descrição    "Perfil estrutural de aço"  .
 
+bim:Coluna.de.Aço  rdf:type  owl:NamedIndividual , bim:Metálica ;
+     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:descrição    "Perfil estrutural de aço"  .
+
+bim:Viga.de.Aço  rdf:type  owl:NamedIndividual , bim:Metálica ;
+     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:descrição    "Perfil estrutural de aço"  .
+
 bim:VP.01  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x13 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga perimetral da fachada"  .
 
 bim:VP.02  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x13 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga perimetral da fachada"  .
 
 bim:VP.03  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x18 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga perimetral da fachada"  .
 
 bim:VP.04  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x18 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga perimetral da fachada"  .
 
 bim:VI.01  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x18 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga interior"  .
 
 bim:VI.02  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x19 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga interior"  .
 
 bim:VI.03  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x20 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga interior"  .
 
 bim:VI.04  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
      bim:é.bitola    bim:W150x21 ;
-     bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:é.viga.estrutural    bim:Viga.de.Aço ;
      bim:descrição    "Viga interior"  .
 
 bim:HP150x22  rdf:type  owl:NamedIndividual , bim:Perfil.HP ;
@@ -2772,6 +2780,39 @@ bim:fraudulento   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação afirmar" ;
                     bim:Definição           "Declara que um objeto é fraudulento."@pt ;
                     bim:Definición          "Declara que un objeto es fraudulento."@es  .
+
+
+bim:p.aplicar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.viga.estrutural   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.aplicar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a aplicar: é.viga.estrutural" ;
+                    bim:Chave               "apli.101" ;
+                    bim:Ação                "Ação aplicar" ;
+                    bim:Definição           "Declara que o objeto é apto para usar como viga estrutural."@pt ;
+                    bim:Definición          "Declara que el objeto es adecuado para su uso como viga estructural."@es ;
+                    bim:CatRevit            "OST_StructuralFraming" ;
+                    bim:ClasseIfc           "IfcBeam"  .
+
+
+bim:d.aplicar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:viga.estrutural   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.aplicar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para aplicar:  viga.estrutural  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "apli.101" ;
+                    bim:Ação                "Ação aplicar" ;
+                    bim:Definição           "Declara que o objeto é apto para usar como viga estrutural."@pt ;
+                    bim:Definición          "Declara que el objeto es adecuado para su uso como viga estructural."@es ;
+                    bim:CatRevit            "OST_StructuralFraming" ;
+                    bim:ClasseIfc           "IfcBeam"  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -5790,5 +5831,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 03/09/2025 15:52:51
+##  Criada em 03/09/2025 16:03:54
 #################################################################
