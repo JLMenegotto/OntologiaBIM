@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 03/09/2025 15:52:50"@pt
+  Annotations: rdfs:label "DataHora: 03/09/2025 16:03:53"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -464,52 +464,62 @@ Individual: bim:Estrutura.de.Apoio
 	Types: bim:Metálica
 	Facts: bim:descrição  "Perfil estrutural de aço"
 
+Individual: bim:Coluna.de.Aço
+	Types: bim:Metálica
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:descrição  "Perfil estrutural de aço"
+
+Individual: bim:Viga.de.Aço
+	Types: bim:Metálica
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:descrição  "Perfil estrutural de aço"
+
 Individual: bim:VP.01
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x13
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga perimetral da fachada"
 
 Individual: bim:VP.02
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x13
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga perimetral da fachada"
 
 Individual: bim:VP.03
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga perimetral da fachada"
 
 Individual: bim:VP.04
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga perimetral da fachada"
 
 Individual: bim:VI.01
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga interior"
 
 Individual: bim:VI.02
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x19
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga interior"
 
 Individual: bim:VI.03
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x20
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga interior"
 
 Individual: bim:VI.04
 	Types: bim:Perfil.Estrutural
 	Facts: bim:é.bitola  bim:W150x21
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.viga.estrutural  bim:Viga.de.Aço
 	Facts: bim:descrição  "Viga interior"
 
 Individual: bim:HP150x22
@@ -2500,6 +2510,39 @@ DataProperty: bim:fraudulento
 	Annotations: bim:Ação "Ação afirmar"@pt
 	Annotations: bim:Definição "Declara que um objeto é fraudulento."@pt
 	Annotations: bim:Definición "Declara que un objeto es fraudulento."@es
+
+ObjectProperty: bim:p.aplicar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.viga.estrutural
+	SubPropertyOf: bim:p.aplicar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a aplicar: é.viga.estrutural"@pt
+	Annotations: bim:Chave "apli.101"
+	Annotations: bim:Ação "Ação aplicar"@pt
+	Annotations: bim:Definição "Declara que o objeto é apto para usar como viga estrutural."@pt
+	Annotations: bim:Definición "Declara que el objeto es adecuado para su uso como viga estructural."@es
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+
+DataProperty: bim:d.aplicar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:viga.estrutural
+	SubPropertyOf: bim:d.aplicar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para aplicar:  viga.estrutural  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "apli.101"
+	Annotations: bim:Ação "Ação aplicar"@pt
+	Annotations: bim:Definição "Declara que o objeto é apto para usar como viga estrutural."@pt
+	Annotations: bim:Definición "Declara que el objeto es adecuado para su uso como viga estructural."@es
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
@@ -5518,5 +5561,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 03/09/2025 15:52:51
+##  Criada em 03/09/2025 16:03:54
 #################################################################
