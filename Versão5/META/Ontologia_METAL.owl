@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 04/09/2025 12:58:02"@pt
+  Annotations: rdfs:label "DataHora: 04/09/2025 15:43:58"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -583,11 +583,15 @@ Individual: bim:Estrutura.de.Apoio
 Individual: bim:Coluna.de.Aço
 	Types: bim:Metálica
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:categoria.revit  "OST_StructuralColumns"
+	Facts: bim:classe.ifc  "IfcBeam"
 	Facts: bim:descrição  "Perfil estrutural de aço"
 
 Individual: bim:Viga.de.Aço
 	Types: bim:Metálica
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcColumn"
 	Facts: bim:descrição  "Perfil estrutural de aço"
 
 Individual: bim:VP.01
@@ -3427,6 +3431,64 @@ DataProperty: bim:aparafusado
 	Annotations: bim:Definição "Declara que deve ser instalado aparafusado."@pt
 	Annotations: bim:Definición "Establece que debe instalarse atornillado."@es
 
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.categoria.revit
+	SubPropertyOf: bim:p.interoperar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.categoria.revit"@pt
+	Annotations: bim:Chave "inte.100"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma categoria OST Revit."@pt
+	Annotations: bim:Definición "Identifica la asociación con una categoría OST de Revit."@es
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:categoria.revit
+	SubPropertyOf: bim:d.interoperar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  categoria.revit  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "inte.100"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma categoria OST Revit."@pt
+	Annotations: bim:Definición "Identifica la asociación con una categoría OST de Revit."@es
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.classe.ifc
+	SubPropertyOf: bim:p.interoperar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.classe.ifc"@pt
+	Annotations: bim:Chave "inte.101"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma classe IFC."@pt
+	Annotations: bim:Definición "Identifica la asociación con una clase IFC."@es
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:classe.ifc
+	SubPropertyOf: bim:d.interoperar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  classe.ifc  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "inte.101"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma classe IFC."@pt
+	Annotations: bim:Definición "Identifica la asociación con una clase IFC."@es
+
 ObjectProperty: bim:p.legislar
 	SubPropertyOf: bim:BIMProp
 
@@ -5697,5 +5759,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 04/09/2025 12:58:04
+##  Criada em 04/09/2025 15:43:59
 #################################################################
