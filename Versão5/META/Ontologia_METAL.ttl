@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de perfis metálicos"@pt ;
-	  rdfs:label "DataHora: 04/09/2025 12:58:02"@pt ;
+	  rdfs:label "DataHora: 04/09/2025 15:43:58"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -1097,10 +1097,14 @@ bim:Estrutura.de.Apoio  rdf:type  owl:NamedIndividual , bim:Metálica ;
 
 bim:Coluna.de.Aço  rdf:type  owl:NamedIndividual , bim:Metálica ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:categoria.revit    "OST_StructuralColumns" ;
+     bim:classe.ifc    "IfcBeam" ;
      bim:descrição    "Perfil estrutural de aço"  .
 
 bim:Viga.de.Aço  rdf:type  owl:NamedIndividual , bim:Metálica ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
+     bim:categoria.revit    "OST_StructuralFraming" ;
+     bim:classe.ifc    "IfcColumn" ;
      bim:descrição    "Perfil estrutural de aço"  .
 
 bim:VP.01  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
@@ -3802,6 +3806,64 @@ bim:aparafusado   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Establece que debe instalarse atornillado."@es  .
 
 
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.categoria.revit   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.categoria.revit" ;
+                    bim:Chave               "inte.100" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma categoria OST Revit."@pt ;
+                    bim:Definición          "Identifica la asociación con una categoría OST de Revit."@es  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:categoria.revit   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para interoperar:  categoria.revit  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "inte.100" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma categoria OST Revit."@pt ;
+                    bim:Definición          "Identifica la asociación con una categoría OST de Revit."@es  .
+
+
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.classe.ifc   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.classe.ifc" ;
+                    bim:Chave               "inte.101" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma classe IFC."@pt ;
+                    bim:Definición          "Identifica la asociación con una clase IFC."@es  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:classe.ifc   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para interoperar:  classe.ifc  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "inte.101" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma classe IFC."@pt ;
+                    bim:Definición          "Identifica la asociación con una clase IFC."@es  .
+
+
 bim:p.legislar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -6071,5 +6133,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 04/09/2025 12:58:04
+##  Criada em 04/09/2025 15:43:59
 #################################################################
