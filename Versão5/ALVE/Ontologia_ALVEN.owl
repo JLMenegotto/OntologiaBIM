@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Alvenarias>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever alvenarias."@pt
-  Annotations: rdfs:label "DataHora: 09/09/2025 16:51:22"@pt
+  Annotations: rdfs:label "DataHora: 09/09/2025 17:03:38"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -421,43 +421,43 @@ Individual: bim:Alv_ALV
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_COM
+Individual: bim:Tijolo.Común
 	Types: bim:Comúm
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 	Facts: bim:resistência.ao.fogo  120
 
-Individual: bim:Alv_RUS
+Individual: bim:Tijolo.Rústico
 	Types: bim:Rústico
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_TIJ
+Individual: bim:Tijolo.Tijolito
 	Types: bim:Tijolito
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_06F
+Individual: bim:Bloco.06F
 	Types: bim:6.Furos
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_08F
+Individual: bim:Bloco.08F
 	Types: bim:8.Furos
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_09F
+Individual: bim:Bloco.09F
 	Types: bim:9.Furos
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_12F
+Individual: bim:Bloco.12F
 	Types: bim:12.Furos
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
 
-Individual: bim:Alv_21F
+Individual: bim:Bloco.21F
 	Types: bim:21.Furos
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
@@ -489,21 +489,24 @@ Individual: bim:Div_SAN
 
 Individual: bim:Parede_01
 	Types: bim:Comúm
-	Facts: bim:é.meia.vez  bim:Alv_COM
+	Facts: bim:é.meia.vez  bim:Tijolo.Común
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
+	Facts: bim:descrição  "Parede de tijolo comúm, assentada com os tijolos em meia vez"
 
 Individual: bim:Parede_02
 	Types: bim:Comúm
-	Facts: bim:é.meia.vez  bim:Alv_COM
+	Facts: bim:é.meia.vez  bim:Tijolo.Común
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
+	Facts: bim:descrição  "Parede de tijolo comúm, assentada com os tijolos em meia vez"
 
 Individual: bim:Parede_03
 	Types: bim:Comúm
-	Facts: bim:é.uma.vez  bim:Alv_COM
+	Facts: bim:é.meia.vez  bim:Bloco.08F
 	Facts: bim:categoria.revit  "OST_Walls"
 	Facts: bim:classe.ifc  "IfcWall"
+	Facts: bim:descrição  "Parede de bloco cerâmico furado de 8 furos, assentada com os tijolos em meia vez"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -842,34 +845,34 @@ DataProperty: bim:meia.vez
 	Annotations: bim:Definição "Declara que a parede é formada assentando o tijolo de modo que a espessura é a menor dimensão do tijolo.Também chamada de 'Cutelo' ou 'Facão'."@pt
 	Annotations: bim:Definición "Establece que la pared se forma colocando el ladrillo de modo que el grosor sea la dimensión más pequeña del ladrillo. También llamado 'Cleaver' o 'Machete'."@es
 
-ObjectProperty: bim:p.assentar
+ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
 
 
 
-ObjectProperty: bim:é.uma.vez
-	SubPropertyOf: bim:p.assentar
+ObjectProperty: bim:é.descrição
+	SubPropertyOf: bim:p.catalogar
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a assentar: é.uma.vez"@pt
-	Annotations: bim:Chave "asse.103"
-	Annotations: bim:Ação "Ação assentar"@pt
-	Annotations: bim:Definição "Declara que a parede é formada assentando o tijolo de modo que a espessura é a maior dimensão do tijolo.Também chamada de 'Tição'."@pt
-	Annotations: bim:Definición "Establece que la pared se forma colocando el ladrillo de modo que el grosor sea la dimensión más grande del ladrillo. También llamado 'Tição'."@es
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.descrição"@pt
+	Annotations: bim:Chave "cata.106"
+	Annotations: bim:Ação "Ação catalogar"@pt
+	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
+	Annotations: bim:Definición "Declara la descripción del objeto que puede ser una explicación sucinta."@es
 
-DataProperty: bim:d.assentar
+DataProperty: bim:d.catalogar
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:uma.vez
-	SubPropertyOf: bim:d.assentar
-	Range: xsd:boolean
-	Annotations: rdfs:label "Dado para assentar:  uma.vez  Deve ser formatado como (xsd:boolean)"@pt
-	Annotations: bim:Chave "asse.103"
-	Annotations: bim:Ação "Ação assentar"@pt
-	Annotations: bim:Definição "Declara que a parede é formada assentando o tijolo de modo que a espessura é a maior dimensão do tijolo.Também chamada de 'Tição'."@pt
-	Annotations: bim:Definición "Establece que la pared se forma colocando el ladrillo de modo que el grosor sea la dimensión más grande del ladrillo. También llamado 'Tição'."@es
+DataProperty: bim:descrição
+	SubPropertyOf: bim:d.catalogar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  descrição  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "cata.106"
+	Annotations: bim:Ação "Ação catalogar"@pt
+	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
+	Annotations: bim:Definición "Declara la descripción del objeto que puede ser una explicación sucinta."@es
 
 ObjectProperty: bim:p.concursar
 	SubPropertyOf: bim:BIMProp
@@ -2477,7 +2480,7 @@ ObjectProperty: bim:é.proibida
 	Annotations: bim:Chave "perm.101"
 	Annotations: bim:Ação "Ação permitir"@pt
 	Annotations: bim:Definição "Indica se o recurso tem a permissão proibida por autoridade competente."@pt
-	Annotations: bim:Definición "-2146826237"@es
+	Annotations: bim:Definición "Indica si una autoridad competente prohíbe el permiso del recurso."@es
 
 DataProperty: bim:d.permitir
 	SubPropertyOf: bim:BIMData
@@ -2491,7 +2494,7 @@ DataProperty: bim:proibida
 	Annotations: bim:Chave "perm.101"
 	Annotations: bim:Ação "Ação permitir"@pt
 	Annotations: bim:Definição "Indica se o recurso tem a permissão proibida por autoridade competente."@pt
-	Annotations: bim:Definición "-2146826237"@es
+	Annotations: bim:Definición "Indica si una autoridad competente prohíbe el permiso del recurso."@es
 
 ObjectProperty: bim:p.permitir
 	SubPropertyOf: bim:BIMProp
@@ -3655,5 +3658,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ALVEN
-##  Criada em 09/09/2025 16:51:26
+##  Criada em 09/09/2025 17:03:42
 #################################################################
