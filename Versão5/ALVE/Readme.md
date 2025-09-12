@@ -7,5 +7,6 @@
 
 ### Pasta ALVE: Ontologia com conceitos de elementos de alvenaria - Prefixo bim:
 
-<img width="804" height="2852" alt="Alve" src="https://github.com/user-attachments/assets/911ad697-7120-430b-ac6f-1aac646ab427" />
+<img width="804" height="2936" alt="Alve" src="https://github.com/user-attachments/assets/151323c6-d870-49ef-be27-0a1c1abe0f09" />
+
 
