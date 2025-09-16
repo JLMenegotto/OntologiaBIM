@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Portos>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de navegação marítima."@pt
-  Annotations: rdfs:label "DataHora: 16/09/2025 12:52:28"@pt
+  Annotations: rdfs:label "DataHora: 16/09/2025 15:58:25"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -1091,8 +1091,9 @@ Individual: bim:Portuária
 Individual: bim:PETRO
 	Types: bim:Petroleiro
 	Facts: bim:descrição  "Navio tipo petroleiro."
-	Facts: bim:nome  "Navio tipo petroleiro."
+	Facts: bim:nome  "Petro-A"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 1234567"
 	Facts: bim:eslora  "200"
 	Facts: bim:calado  "10"
 	Facts: bim:manga  "25"
@@ -1100,68 +1101,79 @@ Individual: bim:PETRO
 Individual: bim:CARGA
 	Types: bim:Cargueiro
 	Facts: bim:descrição  "Navio tipo de cargas."
-	Facts: bim:nome  "Navio tipo de cargas."
+	Facts: bim:nome  "Carga-A"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 2345678"
 
 Individual: bim:REBOC
 	Types: bim:Rebocador
 	Facts: bim:descrição  "Embarcação tipo Rebocador."
-	Facts: bim:nome  "Embarcação tipo Rebocador."
+	Facts: bim:nome  "Reboca-A"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 3456789"
 
 Individual: bim:HANDY
 	Types: bim:Handysize
 	Facts: bim:descrição  "Navio tipo Handysize."
-	Facts: bim:nome  "Navio tipo Handysize."
+	Facts: bim:nome  "HandySize"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 7654321"
 
 Individual: bim:HAMAX
 	Types: bim:Handymax
 	Facts: bim:descrição  "Navio tipo Handymax."
-	Facts: bim:nome  "Navio tipo Handymax."
+	Facts: bim:nome  "HandyMax"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 8765432"
 
 Individual: bim:SUPRA
 	Types: bim:Supramax
 	Facts: bim:descrição  "Navio tipo Supramax."
-	Facts: bim:nome  "Navio tipo Supramax."
+	Facts: bim:nome  "Maxim"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 9876543"
 
 Individual: bim:PAMAX
 	Types: bim:Panamax
 	Facts: bim:descrição  "Navio tipo Panamax."
-	Facts: bim:nome  "Navio tipo Panamax."
+	Facts: bim:nome  "Panamax."
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 1237654"
 
 Individual: bim:NEOPA
 	Types: bim:Neopanamax
 	Facts: bim:descrição  "Navio tipo Neopanamax."
-	Facts: bim:nome  "Navio tipo Neopanamax."
+	Facts: bim:nome  "NeoMax"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 1238765"
 
 Individual: bim:AFMAX
 	Types: bim:Aframax
 	Facts: bim:descrição  "Navio tipo Aframax."
-	Facts: bim:nome  "Navio tipo Aframax."
+	Facts: bim:nome  "Aframax-Max"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 1239876"
 
 Individual: bim:SUMAX
 	Types: bim:Suezmax
 	Facts: bim:descrição  "Navio tipo Suezmax."
-	Facts: bim:nome  "Navio tipo Suezmax."
+	Facts: bim:nome  "Suezmax-Max."
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 9876123"
 
 Individual: bim:CAPE
 	Types: bim:Capesize
 	Facts: bim:descrição  "Navio tipo Capesize."
-	Facts: bim:nome  "Navio tipo Capesize."
+	Facts: bim:nome  "Capesize-01"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 8765123"
 
 Individual: bim:CRUZE
 	Types: bim:Cruzeiro
 	Facts: bim:descrição  "Navio tipo Cruzeiro."
-	Facts: bim:nome  "Navio tipo Cruzeiro."
+	Facts: bim:nome  "CruzeiroMSC"
 	Facts: bim:classe.ifc  "IfcTransportElement"
+	Facts: bim:número.imo  "IMO 7654123"
 
 Individual: bim:PORTO.RIO
 	Types: bim:Porto.Marítimo
@@ -2002,6 +2014,35 @@ DataProperty: bim:nome
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.número.imo
+	SubPropertyOf: bim:p.identificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.número.imo"@pt
+	Annotations: bim:Chave "iden.133"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Número IMO (International Maritime Organization) identifica um navio de forma única no mundo todo."@pt
+	Annotations: bim:Definición "Número IMO (International Maritime Organization) identifica un navio de forma única en el mundo entero."@es
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:número.imo
+	SubPropertyOf: bim:d.identificar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para identificar:  número.imo  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "iden.133"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Número IMO (International Maritime Organization) identifica um navio de forma única no mundo todo."@pt
+	Annotations: bim:Definición "Número IMO (International Maritime Organization) identifica un navio de forma única en el mundo entero."@es
 
 ObjectProperty: bim:p.iluminar
 	SubPropertyOf: bim:BIMProp
@@ -4308,5 +4349,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia PORTO
-##  Criada em 16/09/2025 12:52:29
+##  Criada em 16/09/2025 15:58:27
 #################################################################
