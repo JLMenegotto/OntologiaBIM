@@ -7,7 +7,8 @@
 
 ### Pasta PORT: Ontologia com conceitos de elementos de infraestrutura portuária - Prefixo bim:
 
-<img width="978" height="3644" alt="Porto" src="https://github.com/user-attachments/assets/1cd35eaa-ad70-48f9-8b10-83850e90202f" />
+<img width="936" height="3686" alt="Porto" src="https://github.com/user-attachments/assets/a62de5b6-cd2c-47bf-bccf-6534db70cab7" />
+
 
 
 
