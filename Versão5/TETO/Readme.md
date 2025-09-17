@@ -7,3 +7,5 @@
 
 ### Pasta TETO: Ontologia com conceitos de elementos de tetos e forros - Prefixo bim:
 
+<img width="763" height="1172" alt="TETO" src="https://github.com/user-attachments/assets/0a0f6904-89ed-4af9-af04-e5fdbddb4f25" />
+
