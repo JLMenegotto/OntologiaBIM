@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de navegação marítima."@pt ;
-	  rdfs:label "DataHora: 18/09/2025 7:39:52"@pt ;
+	  rdfs:label "DataHora: 18/09/2025 10:40:58"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -3145,7 +3145,12 @@ bim:PORTO.RIO  rdf:type  owl:NamedIndividual , bim:Porto.Marítimo ;
      bim:é.habilitado.para    bim:NV.ULTRA ;
      bim:descrição    "Representa um elemento que define todo o Porto de Rio de Janeiro." ;
      bim:nome    "Porto do Rio de Janeiro" ;
-     bim:classe.ifc    "IfcMarineFacilityPORT"  .
+     bim:classe.ifc    "IfcMarineFacilityPORT" ;
+     bim:latitude   -22.891934 ;
+     bim:longitude   -43.19528 ;
+     bim:quantidade.de.berços   29 ;
+     bim:profundidade   15 ;
+     bim:cais.acostável   6800  .
 
 bim:CAISRIO  rdf:type  owl:NamedIndividual , bim:Cais ;
      bim:é.pertencente.a    bim:PORTO.RIO ;
@@ -4930,6 +4935,35 @@ bim:p.medir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.profundidade   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.profundidade" ;
+                    bim:Chave               "medi.109" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de profundidade de um objeto."@pt ;
+                    bim:Definición          "Valor de profundidad de un objeto."@es  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:profundidade   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  profundidade  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.109" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de profundidade de um objeto."@pt ;
+                    bim:Definición          "Valor de profundidad de un objeto."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.comprimento   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.medir ;
                     rdfs:Domain             bim:BIM ;
@@ -5185,6 +5219,64 @@ bim:dwt.máximo   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação navegar" ;
                     bim:Definição           "Max. Deadweight Tonnage representa a capacidade total de carga que um navio pode transportar com segurança."@pt ;
                     bim:Definición          "Max. Deadweight Tonnage representa la capacidad total de carga que un navio puede transportar con seguridad."@es  .
+
+
+bim:p.navegar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.cais.acostável   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.navegar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a navegar: é.cais.acostável" ;
+                    bim:Chave               "nave.108" ;
+                    bim:Ação                "Ação navegar" ;
+                    bim:Definição           "Dimensão lineal disponível para atracar no cais."@pt ;
+                    bim:Definición          "Dimensión lineal disponible para atracar en el muelle."@es  .
+
+
+bim:d.navegar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:cais.acostável   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.navegar ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para navegar:  cais.acostável  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "nave.108" ;
+                    bim:Ação                "Ação navegar" ;
+                    bim:Definição           "Dimensão lineal disponível para atracar no cais."@pt ;
+                    bim:Definición          "Dimensión lineal disponible para atracar en el muelle."@es  .
+
+
+bim:p.navegar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.quantidade.de.berços   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.navegar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a navegar: é.quantidade.de.berços" ;
+                    bim:Chave               "nave.109" ;
+                    bim:Ação                "Ação navegar" ;
+                    bim:Definição           "Quantidade de berços define a quantidade de espaços de água disponíveis para que os navios atraquem no cais."@pt ;
+                    bim:Definición          "La cantidad de atracaderos define el número de espacios en el agua disponibles para que los barcos atraquen en el muelle."@es  .
+
+
+bim:d.navegar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:quantidade.de.berços   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.navegar ;
+                    rdfs:Range              xsd:integer ;
+                    rdfs:label              "Dado para navegar:  quantidade.de.berços  Deve ser formatado como (xsd:integer)" ;
+                    bim:Chave               "nave.109" ;
+                    bim:Ação                "Ação navegar" ;
+                    bim:Definição           "Quantidade de berços define a quantidade de espaços de água disponíveis para que os navios atraquem no cais."@pt ;
+                    bim:Definición          "La cantidad de atracaderos define el número de espacios en el agua disponibles para que los barcos atraquen en el muelle."@es  .
 
 
 bim:p.orçamentar   rdf:type  owl:ObjectProperty ;
@@ -6977,5 +7069,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia PORTO
-##  Criada em 18/09/2025 7:39:53
+##  Criada em 18/09/2025 10:41:04
 #################################################################
