@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Portos>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de navegação marítima."@pt
-  Annotations: rdfs:label "DataHora: 18/09/2025 7:39:52"@pt
+  Annotations: rdfs:label "DataHora: 18/09/2025 10:40:58"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -1579,6 +1579,11 @@ Individual: bim:PORTO.RIO
 	Facts: bim:descrição  "Representa um elemento que define todo o Porto de Rio de Janeiro."
 	Facts: bim:nome  "Porto do Rio de Janeiro"
 	Facts: bim:classe.ifc  "IfcMarineFacilityPORT"
+	Facts: bim:latitude  -22.891934
+	Facts: bim:longitude  -43.19528
+	Facts: bim:quantidade.de.berços  29
+	Facts: bim:profundidade  15
+	Facts: bim:cais.acostável  6800
 
 Individual: bim:CAISRIO
 	Types: bim:Cais
@@ -3368,6 +3373,35 @@ ObjectProperty: bim:p.medir
 
 
 
+ObjectProperty: bim:é.profundidade
+	SubPropertyOf: bim:p.medir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a medir: é.profundidade"@pt
+	Annotations: bim:Chave "medi.109"
+	Annotations: bim:Ação "Ação medir"@pt
+	Annotations: bim:Definição "Valor de profundidade de um objeto."@pt
+	Annotations: bim:Definición "Valor de profundidad de un objeto."@es
+
+DataProperty: bim:d.medir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:profundidade
+	SubPropertyOf: bim:d.medir
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para medir:  profundidade  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "medi.109"
+	Annotations: bim:Ação "Ação medir"@pt
+	Annotations: bim:Definição "Valor de profundidade de um objeto."@pt
+	Annotations: bim:Definición "Valor de profundidad de un objeto."@es
+
+ObjectProperty: bim:p.medir
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.comprimento
 	SubPropertyOf: bim:p.medir
 	Domain: bim:BIM
@@ -3623,6 +3657,64 @@ DataProperty: bim:dwt.máximo
 	Annotations: bim:Ação "Ação navegar"@pt
 	Annotations: bim:Definição "Max. Deadweight Tonnage representa a capacidade total de carga que um navio pode transportar com segurança."@pt
 	Annotations: bim:Definición "Max. Deadweight Tonnage representa la capacidad total de carga que un navio puede transportar con seguridad."@es
+
+ObjectProperty: bim:p.navegar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.cais.acostável
+	SubPropertyOf: bim:p.navegar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a navegar: é.cais.acostável"@pt
+	Annotations: bim:Chave "nave.108"
+	Annotations: bim:Ação "Ação navegar"@pt
+	Annotations: bim:Definição "Dimensão lineal disponível para atracar no cais."@pt
+	Annotations: bim:Definición "Dimensión lineal disponible para atracar en el muelle."@es
+
+DataProperty: bim:d.navegar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:cais.acostável
+	SubPropertyOf: bim:d.navegar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para navegar:  cais.acostável  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "nave.108"
+	Annotations: bim:Ação "Ação navegar"@pt
+	Annotations: bim:Definição "Dimensão lineal disponível para atracar no cais."@pt
+	Annotations: bim:Definición "Dimensión lineal disponible para atracar en el muelle."@es
+
+ObjectProperty: bim:p.navegar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.quantidade.de.berços
+	SubPropertyOf: bim:p.navegar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a navegar: é.quantidade.de.berços"@pt
+	Annotations: bim:Chave "nave.109"
+	Annotations: bim:Ação "Ação navegar"@pt
+	Annotations: bim:Definição "Quantidade de berços define a quantidade de espaços de água disponíveis para que os navios atraquem no cais."@pt
+	Annotations: bim:Definición "La cantidad de atracaderos define el número de espacios en el agua disponibles para que los barcos atraquen en el muelle."@es
+
+DataProperty: bim:d.navegar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:quantidade.de.berços
+	SubPropertyOf: bim:d.navegar
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para navegar:  quantidade.de.berços  Deve ser formatado como (xsd:integer)"@pt
+	Annotations: bim:Chave "nave.109"
+	Annotations: bim:Ação "Ação navegar"@pt
+	Annotations: bim:Definição "Quantidade de berços define a quantidade de espaços de água disponíveis para que os navios atraquem no cais."@pt
+	Annotations: bim:Definición "La cantidad de atracaderos define el número de espacios en el agua disponibles para que los barcos atraquen en el muelle."@es
 
 ObjectProperty: bim:p.orçamentar
 	SubPropertyOf: bim:BIMProp
@@ -5415,5 +5507,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia PORTO
-##  Criada em 18/09/2025 7:39:53
+##  Criada em 18/09/2025 10:41:04
 #################################################################
