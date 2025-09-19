@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados da organização geográfica do Brasil e Rio de Janeiro"@pt ;
-	  rdfs:label "DataHora: 19/09/2025 15:35:38"@pt ;
+	  rdfs:label "DataHora: 19/09/2025 15:40:56"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -5195,6 +5195,17 @@ bim:Zona.Sul  rdf:type  owl:NamedIndividual , bim:Zona ;
      bim:é.dentro.de    bim:Rio ;
      bim:descrição    "Zona Sul"  .
 
+bim:EMC.82353  rdf:type  owl:NamedIndividual , bim:Estação.Meteorológica ;
+     bim:é.dentro.de    bim:PA ;
+     bim:situação    "Operante" ;
+     bim:latitude    "-3.21416666" ;
+     bim:longitude    "-52.21305555" ;
+     bim:altitude    "101.51" ;
+     bim:aberta.em    "23-04-1927" ;
+     bim:estação.meteorológica    "82353" ;
+     bim:nome    "ALTAMIRA" ;
+     bim:descrição    "Estação meteorológica convencional."  .
+
 
 bim:Lote rdf:type owl:Class;  owl:equivalentClass bim:Parcela . 
 
@@ -5553,6 +5564,35 @@ bim:descrição   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara la descripción del objeto que puede ser una explicación sucinta."@es  .
 
 
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.aberta.em   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.aberta.em" ;
+                    bim:Chave               "cata.141" ;
+                    bim:Ação                "Ação catalogar" ;
+                    bim:Definição           "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt ;
+                    bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:aberta.em   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para catalogar:  aberta.em  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "cata.141" ;
+                    bim:Ação                "Ação catalogar" ;
+                    bim:Definição           "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt ;
+                    bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es  .
+
+
 bim:p.concursar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -5851,6 +5891,93 @@ bim:fator.fotoenergético   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação energizar" ;
                     bim:Definição           "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt ;
                     bim:Definición          "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es  .
+
+
+bim:p.geolocalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.latitude   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.geolocalizar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a geolocalizar: é.latitude" ;
+                    bim:Chave               "geol.102" ;
+                    bim:Ação                "Ação geolocalizar" ;
+                    bim:Definição           "Latitude formatada em sistema WGS84."@pt ;
+                    bim:Definición          "Latitud formateada en el sistema WGS84."@es  .
+
+
+bim:d.geolocalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:latitude   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.geolocalizar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para geolocalizar:  latitude  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "geol.102" ;
+                    bim:Ação                "Ação geolocalizar" ;
+                    bim:Definição           "Latitude formatada em sistema WGS84."@pt ;
+                    bim:Definición          "Latitud formateada en el sistema WGS84."@es  .
+
+
+bim:p.geolocalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.longitude   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.geolocalizar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a geolocalizar: é.longitude" ;
+                    bim:Chave               "geol.103" ;
+                    bim:Ação                "Ação geolocalizar" ;
+                    bim:Definição           "Longitude formatada em sistema WGS84."@pt ;
+                    bim:Definición          "Longitud formateada en el sistema WGS84."@es  .
+
+
+bim:d.geolocalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:longitude   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.geolocalizar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para geolocalizar:  longitude  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "geol.103" ;
+                    bim:Ação                "Ação geolocalizar" ;
+                    bim:Definição           "Longitude formatada em sistema WGS84."@pt ;
+                    bim:Definición          "Longitud formateada en el sistema WGS84."@es  .
+
+
+bim:p.geolocalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.altitude   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.geolocalizar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a geolocalizar: é.altitude" ;
+                    bim:Chave               "geol.104" ;
+                    bim:Ação                "Ação geolocalizar" ;
+                    bim:Definição           "Valor de altitude de um local."@pt ;
+                    bim:Definición          "Valor de altitud de una ubicación."@es  .
+
+
+bim:d.geolocalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:altitude   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.geolocalizar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para geolocalizar:  altitude  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "geol.104" ;
+                    bim:Ação                "Ação geolocalizar" ;
+                    bim:Definição           "Valor de altitude de um local."@pt ;
+                    bim:Definición          "Valor de altitud de una ubicación."@es  .
 
 
 bim:p.gestionar   rdf:type  owl:ObjectProperty ;
@@ -7881,6 +8008,35 @@ bim:no.prumo   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "El elemento que está a plomo es vertical. Las coordenadas XY de sus extremos deben ser iguales."@es  .
 
 
+bim:p.prever    rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.estação.meteorológica   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.prever  ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a prever : é.estação.meteorológica" ;
+                    bim:Chave               "prev.100" ;
+                    bim:Ação                "Ação prever " ;
+                    bim:Definição           "Número da Estação Meteorológica mais próxima do INMET."@pt ;
+                    bim:Definición          "Número de la estación meteorológica más cercana al INMET."@es  .
+
+
+bim:d.prever    rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:estação.meteorológica   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.prever  ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para prever :  estação.meteorológica  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "prev.100" ;
+                    bim:Ação                "Ação prever " ;
+                    bim:Definição           "Número da Estação Meteorológica mais próxima do INMET."@pt ;
+                    bim:Definición          "Número de la estación meteorológica más cercana al INMET."@es  .
+
+
 bim:p.qualificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -8301,6 +8457,35 @@ bim:passado   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Califica un elemento como pasado. Un valor antiguo."@es  .
 
 
+bim:p.qualificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.situação   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.qualificar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a qualificar: é.situação" ;
+                    bim:Chave               "qual.159" ;
+                    bim:Ação                "Ação qualificar" ;
+                    bim:Definição           "Declara a situação atual de um recurso, pode ser operacional, fechado, disponível etc."@pt ;
+                    bim:Definición          "Declara la situación actual del estado de un recurso. Puede ser operacional, cerrado, disponible etc."@es  .
+
+
+bim:d.qualificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:situação   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.qualificar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para qualificar:  situação  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "qual.159" ;
+                    bim:Ação                "Ação qualificar" ;
+                    bim:Definição           "Declara a situação atual de um recurso, pode ser operacional, fechado, disponível etc."@pt ;
+                    bim:Definición          "Declara la situación actual del estado de un recurso. Puede ser operacional, cerrado, disponible etc."@es  .
+
+
 bim:p.relacionar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -8607,5 +8792,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia URBA_Rio
-##  Criada em 19/09/2025 15:35:38
+##  Criada em 19/09/2025 15:40:57
 #################################################################
