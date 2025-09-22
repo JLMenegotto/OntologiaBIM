@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 21/09/2025 13:55:19"@pt ;
+	  rdfs:label "DataHora: 22/09/2025 12:12:46"@pt ;
 	  rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -102,12 +102,13 @@ bim:Código rdf:type  owl:Class  ;
       rdfs:label  "Código"@pt ;
       bim:Definição   "Código ABNT do sistema de classificação da construção do Brasil. NBR 15.965."@pt ;
       bim:Definición  "Código ABNT del Sistema de Classificación de la Construcción de Brasil.  NBR 15.965."@es ;
-      bim:Interoperar "."@pt ;
       bim:Natureza    "Norma"@pt ;
       bim:Espécie     "ABNT"@pt ;
       bim:Tema        "Parte"@pt ;
       bim:Disciplina  "Interdiciplinar"@pt ;
-      bim:Chave       "Key.ABNT.2"@pt  .
+      bim:Chave       "Key.ABNT.2"@pt ;
+      bim:CatRevit    "OST_Rooms"   ;
+      bim:ClasseIfc   "IfcSpace"    .
 
 #################################################################
 #     Indivíduos em Turtle                                       
@@ -12010,7 +12011,7 @@ bim:é.abastecido.por   rdf:type  owl:ObjectProperty ;
                     bim:Definição           "Declara que é um elemento que é abastecido por algum outro elemento."@pt ;
                     bim:Definición          "Afirma que es un elemento que es suministrado por algún otro elemento."@es ;
                     rdf:type                owl:IrreflexiveProperty ;
-                    owl:inverseOf           bim:é.abastece.a  .
+                    owl:inverseOf           bim:é.abastecedor.de  .
 
 
 bim:d.abastecer   rdf:type  owl:DatatypeProperty ;
@@ -15014,6 +15015,40 @@ bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.sensor.térmico   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.sensorizar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a sensorizar: é.sensor.térmico" ;
+                    bim:Chave               "sens.101" ;
+                    bim:Ação                "Ação sensorizar" ;
+                    bim:Definição           "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de temperatura e umidade."@pt ;
+                    bim:Definición          "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de un sensor de temperatura y humedad."@es ;
+                    bim:CatRevit            "OST_SecurityDevices" ;
+                    bim:ClasseIfc           "IfcSensor" ;
+                    owl:equivalentProperty  bim:é.câmera.termográfica  .
+
+
+bim:d.sensorizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:sensor.térmico   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.sensorizar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para sensorizar:  sensor.térmico  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "sens.101" ;
+                    bim:Ação                "Ação sensorizar" ;
+                    bim:Definição           "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de temperatura e umidade."@pt ;
+                    bim:Definición          "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de un sensor de temperatura y humedad."@es ;
+                    bim:CatRevit            "OST_SecurityDevices" ;
+                    bim:ClasseIfc           "IfcSensor"  .
+
+
+bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.câmera.termográfica   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.sensorizar ;
                     rdfs:Domain             bim:BIM ;
@@ -15135,5 +15170,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia 15965_4A
-##  Criada em 21/09/2025 13:55:21
+##  Criada em 22/09/2025 12:12:47
 #################################################################
