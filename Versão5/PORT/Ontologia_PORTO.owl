@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Portos>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de navegação marítima."@pt
-  Annotations: rdfs:label "DataHora: 22/09/2025 10:13:45"@pt
+  Annotations: rdfs:label "DataHora: 22/09/2025 10:18:22"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -1420,7 +1420,7 @@ Individual: bim:NV.CruzeiroGeral
 	Facts: bim:tripulação  2000
 	Facts: bim:passageiros  6000
 	Facts: bim:companhia  "Imaginária"
-	Facts: bim:propulsão  "Gás Natural Liquefeito (GNL) e células de combustível"
+	Facts: bim:para.propulsão  "Gás Natural Liquefeito (GNL) e células de combustível"
 
 Individual: bim:NV.ISeas
 	Types: bim:Cruzeiro
@@ -1434,7 +1434,7 @@ Individual: bim:NV.ISeas
 	Facts: bim:tripulação  2350
 	Facts: bim:passageiros  7600
 	Facts: bim:companhia  "Royal Caribean"
-	Facts: bim:propulsão  "Gás Natural Liquefeito (GNL) e células de combustível"
+	Facts: bim:para.propulsão  "Gás Natural Liquefeito (GNL) e células de combustível"
 	Facts: bim:tonelagem.bruta  250800
 
 Individual: bim:NV.WSeas
@@ -1450,7 +1450,7 @@ Individual: bim:NV.WSeas
 	Facts: bim:tripulação  2204
 	Facts: bim:passageiros  7000
 	Facts: bim:companhia  "Royal Caribean"
-	Facts: bim:propulsão  "Diesel Marítimo de Baixo Teor de Enxofre (LSMGO Low Sulfur Marine Gas Oil)"
+	Facts: bim:para.propulsão  "Diesel Marítimo de Baixo Teor de Enxofre (LSMGO Low Sulfur Marine Gas Oil)"
 	Facts: bim:tonelagem.bruta  236857
 
 Individual: bim:NV.MSCWE
@@ -1465,7 +1465,7 @@ Individual: bim:NV.MSCWE
 	Facts: bim:tripulação  2100
 	Facts: bim:passageiros  6762
 	Facts: bim:companhia  "MSC Cruzeiros"
-	Facts: bim:propulsão  "Gás Natural Liquefeito (GNL)"
+	Facts: bim:para.propulsão  "Gás Natural Liquefeito (GNL)"
 	Facts: bim:tonelagem.bruta  215863
 
 Individual: bim:NV.OSeas
@@ -1481,7 +1481,7 @@ Individual: bim:NV.OSeas
 	Facts: bim:tripulação  2138
 	Facts: bim:passageiros  6800
 	Facts: bim:companhia  "Royal Caribean"
-	Facts: bim:propulsão  "Diesel Marítimo (LSMGO Low Sulfur Marine Gas Oil) e óleo combustível pesado (HFO – Heavy Fuel Oil)"
+	Facts: bim:para.propulsão  "Diesel Marítimo (LSMGO Low Sulfur Marine Gas Oil) e óleo combustível pesado (HFO – Heavy Fuel Oil)"
 	Facts: bim:tonelagem.bruta  226838
 
 Individual: bim:NV.QMary2
@@ -1497,7 +1497,7 @@ Individual: bim:NV.QMary2
 	Facts: bim:tripulação  1173
 	Facts: bim:passageiros  2691
 	Facts: bim:companhia  "Cunard Line"
-	Facts: bim:propulsão  "Diesel Marítimo e Turbinas a Gás"
+	Facts: bim:para.propulsão  "Diesel Marítimo e Turbinas a Gás"
 	Facts: bim:tonelagem.bruta  149215
 
 Individual: bim:NV.NEpic
@@ -1513,7 +1513,7 @@ Individual: bim:NV.NEpic
 	Facts: bim:tripulação  1724
 	Facts: bim:passageiros  4100
 	Facts: bim:companhia  "Norwegian Cruise Line"
-	Facts: bim:propulsão  "Diesel Marítimo (LSMGO Low Sulfur Marine Gas Oil) e óleo combustível pesado (HFO – Heavy Fuel Oil)"
+	Facts: bim:para.propulsão  "Diesel Marítimo (LSMGO Low Sulfur Marine Gas Oil) e óleo combustível pesado (HFO – Heavy Fuel Oil)"
 	Facts: bim:tonelagem.bruta  155873
 
 Individual: bim:NV.VikStar
@@ -1528,7 +1528,7 @@ Individual: bim:NV.VikStar
 	Facts: bim:tripulação  465
 	Facts: bim:passageiros  925
 	Facts: bim:companhia  "Viking Ocean Cruises"
-	Facts: bim:propulsão  "Diesel-elétrico"
+	Facts: bim:para.propulsão  "Diesel-elétrico"
 	Facts: bim:tonelagem.bruta  47800
 
 Individual: bim:CDryBox
@@ -1789,6 +1789,35 @@ DataProperty: bim:abastecido.por
 	Annotations: bim:Ação "Ação abastecer"@pt
 	Annotations: bim:Definição "Declara que é um elemento que é abastecido por algum outro elemento."@pt
 	Annotations: bim:Definición "Afirma que es un elemento que es suministrado por algún otro elemento."@es
+
+ObjectProperty: bim:p.abastecer
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.para.propulsão
+	SubPropertyOf: bim:p.abastecer
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a abastecer: é.para.propulsão"@pt
+	Annotations: bim:Chave "abas.115"
+	Annotations: bim:Ação "Ação abastecer"@pt
+	Annotations: bim:Definição "Declara o tipo de combustível ou energia utilizada para a propulsão de um veículo de transporte."@pt
+	Annotations: bim:Definición "Declara el tipo de combustible o energía utilizados para la propulsión de un vehículo de transporte."@es
+
+DataProperty: bim:d.abastecer
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:para.propulsão
+	SubPropertyOf: bim:d.abastecer
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para abastecer:  para.propulsão  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "abas.115"
+	Annotations: bim:Ação "Ação abastecer"@pt
+	Annotations: bim:Definição "Declara o tipo de combustível ou energia utilizada para a propulsão de um veículo de transporte."@pt
+	Annotations: bim:Definición "Declara el tipo de combustible o energía utilizados para la propulsión de un vehículo de transporte."@es
 
 ObjectProperty: bim:p.administrar
 	SubPropertyOf: bim:BIMProp
@@ -5636,5 +5665,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia PORTO
-##  Criada em 22/09/2025 10:13:46
+##  Criada em 22/09/2025 10:18:22
 #################################################################
