@@ -7,5 +7,4 @@
 
 ### Pasta VEIC: Ontologia com conceitos de elementos de infraestrutura rodoviária e ferroviária.
 
-<img width="827" height="4532" alt="Veic" src="https://github.com/user-attachments/assets/3640642b-4ca5-4fbb-8ffe-b04c0b25f2fe" />
-
+<img width="827" height="4532" alt="Veic" src="https://github.com/user-attachments/assets/2e594df2-31ef-4885-a59c-d1d3f8136128" />
