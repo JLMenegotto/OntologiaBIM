@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt
-  Annotations: rdfs:label "DataHora: 24/09/2025 15:28:47"@pt
+  Annotations: rdfs:label "DataHora: 24/09/2025 15:43:45"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -298,32 +298,22 @@ Class: bim:Forro.300
 	SubClassOf: bim:ND.300
 
 
-Class: bim:Camada
-	Annotations: rdfs:label "Camada"@pt
-	SubClassOf: bim:Projeto
-
-
-Class: bim:Composição
-	Annotations: rdfs:label "Composição"@pt
-	SubClassOf: bim:Camada
-
-
 Class: bim:Núcleo
 	Annotations: rdfs:label "Núcleo"@pt
-	SubClassOf: bim:Composição
+	SubClassOf: bim:LoD
 
 
 Class: bim:Núcleo.Piso
 	Annotations: rdfs:label "Núcleo.Piso"@pt
 	Annotations: bim:Definição "Estrutura do núcleo do Piso."@pt
 	Annotations: bim:Definición "Estructura del núcleo del piso."@es
-	Annotations: bim:Natureza "Camada"@pt
-	Annotations: bim:Espécie "Composição"@pt
+	Annotations: bim:Natureza "Projeto Básico"@pt
+	Annotations: bim:Espécie "LoD"@pt
 	Annotations: bim:Tema "Núcleo"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cam.15"
-	Annotations: bim:CatRevit "OST_CeilingsStructure"
-	Annotations: bim:ClasseIfc "IfcCovering"
+	Annotations: bim:Chave "Key.Pro.15"
+	Annotations: bim:CatRevit "OST_FloorsStructure"
+	Annotations: bim:ClasseIfc "IfcSlab"
 	SubClassOf: bim:Núcleo
 
 
@@ -331,12 +321,12 @@ Class: bim:Núcleo.Parede
 	Annotations: rdfs:label "Núcleo.Parede"@pt
 	Annotations: bim:Definição "Estrutura do núcleo da  Parede."@pt
 	Annotations: bim:Definición "Estructura del núcleo de la pared."@es
-	Annotations: bim:Natureza "Camada"@pt
-	Annotations: bim:Espécie "Composição"@pt
+	Annotations: bim:Natureza "Projeto Básico"@pt
+	Annotations: bim:Espécie "LoD"@pt
 	Annotations: bim:Tema "Núcleo"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cam.16"
-	Annotations: bim:CatRevit "OST_CeilingsStructure"
+	Annotations: bim:Chave "Key.Pro.16"
+	Annotations: bim:CatRevit "OST_WallsStructure"
 	Annotations: bim:ClasseIfc "IfcCovering"
 	SubClassOf: bim:Núcleo
 
@@ -345,12 +335,12 @@ Class: bim:Núcleo.Divisória
 	Annotations: rdfs:label "Núcleo.Divisória"@pt
 	Annotations: bim:Definição "Estrutura do núcleo da Divisória."@pt
 	Annotations: bim:Definición "Estructura del núcleo de la divisória."@es
-	Annotations: bim:Natureza "Camada"@pt
-	Annotations: bim:Espécie "Composição"@pt
+	Annotations: bim:Natureza "Projeto Básico"@pt
+	Annotations: bim:Espécie "LoD"@pt
 	Annotations: bim:Tema "Núcleo"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cam.17"
-	Annotations: bim:CatRevit "OST_CeilingsStructure"
+	Annotations: bim:Chave "Key.Pro.17"
+	Annotations: bim:CatRevit "OST_WallsStructure"
 	Annotations: bim:ClasseIfc "IfcCovering"
 	SubClassOf: bim:Núcleo
 
@@ -359,14 +349,24 @@ Class: bim:Núcleo.Teto
 	Annotations: rdfs:label "Núcleo.Teto"@pt
 	Annotations: bim:Definição "Laje de concreto estruturante do Teto."@pt
 	Annotations: bim:Definición "Losa de hormigón estructurando del teto."@es
-	Annotations: bim:Natureza "Camada"@pt
-	Annotations: bim:Espécie "Composição"@pt
+	Annotations: bim:Natureza "Projeto Básico"@pt
+	Annotations: bim:Espécie "LoD"@pt
 	Annotations: bim:Tema "Núcleo"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cam.18"
-	Annotations: bim:CatRevit "OST_FloorsStructure"
-	Annotations: bim:ClasseIfc "IfcSlab"
+	Annotations: bim:Chave "Key.Pro.18"
+	Annotations: bim:CatRevit "OST_CeilingsStructure"
+	Annotations: bim:ClasseIfc "IfcCovering"
 	SubClassOf: bim:Núcleo
+
+
+Class: bim:Camada
+	Annotations: rdfs:label "Camada"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Composição
+	Annotations: rdfs:label "Composição"@pt
+	SubClassOf: bim:Camada
 
 
 Class: bim:Argamassa
@@ -589,8 +589,8 @@ Class: bim:Para.Louças
 	SubClassOf: bim:Cola
 
 
-Class: bim:Pré.Fabricado
-	Annotations: rdfs:label "Pré Fabricado"@pt
+Class: bim:Central
+	Annotations: rdfs:label "Central"@pt
 	SubClassOf: bim:Composição
 
 
@@ -600,12 +600,12 @@ Class: bim:Painel.Maciço
 	Annotations: bim:Definición "Panel sólido de hormigón prefabricado de alto rendimiento."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Pré Fabricado"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.34"
 	Annotations: bim:CatRevit "OST_Walls"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Pré.Fabricado
+	SubClassOf: bim:Central
 
 
 Class: bim:Painel.Alveolar
@@ -614,17 +614,12 @@ Class: bim:Painel.Alveolar
 	Annotations: bim:Definición "Panel prefabricado de hormigón pretensado en nido de abeja."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Pré Fabricado"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.35"
 	Annotations: bim:CatRevit "OST_Walls"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Pré.Fabricado
-
-
-Class: bim:Concreto.Armado
-	Annotations: rdfs:label "Concreto Armado"@pt
-	SubClassOf: bim:Composição
+	SubClassOf: bim:Central
 
 
 Class: bim:Parede.CA
@@ -633,17 +628,12 @@ Class: bim:Parede.CA
 	Annotations: bim:Definición "Muros estructurales moldeados in situ de hormigón armado."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Concreto Armado"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.36"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Concreto.Armado
-
-
-Class: bim:Bloco.Concreto
-	Annotations: rdfs:label "Bloco Concreto"@pt
-	SubClassOf: bim:Composição
+	SubClassOf: bim:Central
 
 
 Class: bim:Bloco.CCA
@@ -652,78 +642,68 @@ Class: bim:Bloco.CCA
 	Annotations: bim:Definición "Bloques de hormigón celular autoclavado (CCA). Aislamiento térmico y acústico para paredes internas no portantes."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Concreto"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.37"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Concreto
+	SubClassOf: bim:Central
 
 
-Class: bim:Bloco.Estrutural
-	Annotations: rdfs:label "Bloco.Estrutural"@pt
+Class: bim:Bloco.Concreto.Estrutural
+	Annotations: rdfs:label "Bloco.Concreto.Estrutural"@pt
 	Annotations: bim:Definição "Blocos de concreto estrutural."@pt
 	Annotations: bim:Definición "Bloques de hormigón portantes."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Concreto"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.38"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Concreto
+	SubClassOf: bim:Central
 
 
-Class: bim:Bloco.Vedação
-	Annotations: rdfs:label "Bloco.Vedação"@pt
+Class: bim:Bloco.Concreto.Vedação
+	Annotations: rdfs:label "Bloco.Concreto.Vedação"@pt
 	Annotations: bim:Definição "Blocos de concreto para vedação."@pt
 	Annotations: bim:Definición "Bloques de hormigón para cerramientos."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Concreto"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.39"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Concreto
+	SubClassOf: bim:Central
 
 
-Class: bim:Bloco.Gesso
-	Annotations: rdfs:label "Bloco Gesso"@pt
-	SubClassOf: bim:Composição
-
-
-Class: bim:Bloco.Maciço
-	Annotations: rdfs:label "Bloco.Maciço"@pt
+Class: bim:Bloco.Gesso.Maciço
+	Annotations: rdfs:label "Bloco.Gesso.Maciço"@pt
 	Annotations: bim:Definição "Blocos de gesso maciço para paredes internas não portantes. Rapidez de execução e obtenção de parede limpa e lisa."@pt
 	Annotations: bim:Definición "Bloques de yeso macizo para paredes internas no portantes. Rapidez de ejecución y obtención de una pared limpia y lisa."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Gesso"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.40"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Gesso
+	SubClassOf: bim:Central
 
 
-Class: bim:Bloco.Alveolar
-	Annotations: rdfs:label "Bloco.Alveolar"@pt
+Class: bim:Bloco.Gesso.Alveolar
+	Annotations: rdfs:label "Bloco.Gesso.Alveolar"@pt
 	Annotations: bim:Definição "Blocos de gesso vazado para paredes internas não portantes. Rapidez de execução e obtenção de parede limpa e lisa."@pt
 	Annotations: bim:Definición "Bloques de yeso huecos para paredes internas no portantes. Rapidez de ejecución y obtención de una pared limpia y lisa."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Gesso"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.41"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Gesso
-
-
-Class: bim:Bloco.Cerâmico
-	Annotations: rdfs:label "Bloco Cerâmico"@pt
-	SubClassOf: bim:Composição
+	SubClassOf: bim:Central
 
 
 Class: bim:Tijolo.Comúm
@@ -732,12 +712,12 @@ Class: bim:Tijolo.Comúm
 	Annotations: bim:Definición "Bloques cerámicos común. Según la norma NBR 15270-1."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.42"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
+	SubClassOf: bim:Central
 
 
 Class: bim:Tijolo.Laminado
@@ -746,12 +726,12 @@ Class: bim:Tijolo.Laminado
 	Annotations: bim:Definición "Bloques cerámicos macizos para mampostería a la vista."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.43"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
+	SubClassOf: bim:Central
 
 
 Class: bim:Tijolo.Refratário
@@ -760,12 +740,26 @@ Class: bim:Tijolo.Refratário
 	Annotations: bim:Definición "Bloques cerámicos refractários para hornos, hogares o expuestos al fuego."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.44"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
+	SubClassOf: bim:Central
+
+
+Class: bim:Tijolo.Ecológico
+	Annotations: rdfs:label "Tijolo.Ecológico"@pt
+	Annotations: bim:Definição "Blocos de tijolo furado de solo-cimento prensado em prensa hidráulica, com encaixe vertical tipo macho e fêmea, dispensa argamassa de assentamento. Chamado 'Tijolito', foi desenvolvido pela Andrade Gutierrez e o prof. João B. Santos de Assis da PUC Minas."@pt
+	Annotations: bim:Definición "Bloques de ladrillo perforados de suelo-cemento con encaje vertical tipo machihembrado, no necesita mortero de asentar. Llamado 'Tijolito', fue desarrollado por Andrade Gutierrez y el prof. João B. Santos de Assis de PUC Minas."@es
+	Annotations: bim:Natureza "Camada"@pt
+	Annotations: bim:Espécie "Composição"@pt
+	Annotations: bim:Tema "Central"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Cam.45"
+	Annotations: bim:CatRevit "OST_WallCoreLayer"
+	Annotations: bim:ClasseIfc "IfcWall"
+	SubClassOf: bim:Central
 
 
 Class: bim:Bloco.Furado
@@ -774,26 +768,12 @@ Class: bim:Bloco.Furado
 	Annotations: bim:Definición "Bloques de ladrillo cerámico perforados y ranurados en las superficies. También llamado ladrillo bahiano. Según la norma NBR 15270-1."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
-	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cam.45"
-	Annotations: bim:CatRevit "OST_WallCoreLayer"
-	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
-
-
-Class: bim:Ecológico
-	Annotations: rdfs:label "Ecológico"@pt
-	Annotations: bim:Definição "Blocos de tijolo furado de solo-cimento prensado em prensa hidráulica, com encaixe vertical tipo macho e fêmea, dispensa argamassa de assentamento. Chamado 'Tijolito', foi desenvolvido pela Andrade Gutierrez e o prof. João B. Santos de Assis da PUC Minas."@pt
-	Annotations: bim:Definición "Bloques de ladrillo perforados de suelo-cemento con encaje vertical tipo machihembrado, no necesita mortero de asentar. Llamado 'Tijolito', fue desarrollado por Andrade Gutierrez y el prof. João B. Santos de Assis de PUC Minas."@es
-	Annotations: bim:Natureza "Camada"@pt
-	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.46"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
+	SubClassOf: bim:Central
 
 
 Class: bim:Canaleta.J
@@ -802,12 +782,12 @@ Class: bim:Canaleta.J
 	Annotations: bim:Definición "Canaleta cerámica con forma de J."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.47"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
+	SubClassOf: bim:Central
 
 
 Class: bim:Canaleta.U
@@ -816,17 +796,12 @@ Class: bim:Canaleta.U
 	Annotations: bim:Definición "Canaleta cerámica con forma de U."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Cerâmico"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.48"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Cerâmico
-
-
-Class: bim:Bloco.Translúcido
-	Annotations: rdfs:label "Bloco Translúcido"@pt
-	SubClassOf: bim:Composição
+	SubClassOf: bim:Central
 
 
 Class: bim:Cobogô
@@ -835,12 +810,12 @@ Class: bim:Cobogô
 	Annotations: bim:Definición "Bloque de ladrillo hueco para fachadas ou interiores. Pueden ser rústicas o acristaladas. El nombre 'Cobogó' hace referencia a sus creadores Coimbra, Boeckmann y Góis."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Translúcido"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.49"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Translúcido
+	SubClassOf: bim:Central
 
 
 Class: bim:Tijolo.Vidro
@@ -849,12 +824,12 @@ Class: bim:Tijolo.Vidro
 	Annotations: bim:Definición "Bloques de vidrio para fachadas o interiores."@es
 	Annotations: bim:Natureza "Camada"@pt
 	Annotations: bim:Espécie "Composição"@pt
-	Annotations: bim:Tema "Bloco Translúcido"@pt
+	Annotations: bim:Tema "Central"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Cam.50"
 	Annotations: bim:CatRevit "OST_WallCoreLayer"
 	Annotations: bim:ClasseIfc "IfcWall"
-	SubClassOf: bim:Bloco.Translúcido
+	SubClassOf: bim:Central
 
 
 Class: bim:Finalização
@@ -2604,7 +2579,7 @@ Individual: bim:FOR.01
 	Facts: bim:nrc  0.85
 
 Individual: bim:BCE.M.10x40
-	Types: bim:Bloco.Estrutural
+	Types: bim:Bloco.Concreto.Estrutural
 	Facts: bim:descrição  "Bloco de concreto estrutural para paredes de 10 cm nominal."
 	Facts: bim:espessura  9
 	Facts: bim:largura  19
@@ -2613,7 +2588,7 @@ Individual: bim:BCE.M.10x40
 	Facts: bim:fabricante  "JCRB"
 
 Individual: bim:BCE.M.15x40
-	Types: bim:Bloco.Estrutural
+	Types: bim:Bloco.Concreto.Estrutural
 	Facts: bim:descrição  "Bloco de concreto estrutural para paredes de 15 cm nominal."
 	Facts: bim:espessura  14
 	Facts: bim:largura  19
@@ -2622,7 +2597,7 @@ Individual: bim:BCE.M.15x40
 	Facts: bim:fabricante  "JCRB"
 
 Individual: bim:BCE.M.20x40
-	Types: bim:Bloco.Estrutural
+	Types: bim:Bloco.Concreto.Estrutural
 	Facts: bim:descrição  "Bloco de concreto estrutural para paredes de 20 cm nominal."
 	Facts: bim:espessura  19
 	Facts: bim:largura  19
@@ -2941,7 +2916,7 @@ Individual: bim:CAJ.M.20x30
 	Facts: bim:fabricante  "Empo"
 
 Individual: bim:BGEA
-	Types: bim:Bloco.Alveolar
+	Types: bim:Bloco.Gesso.Alveolar
 	Facts: bim:descrição  "Bloco de gesso alveolar."
 	Facts: bim:espessura  7
 	Facts: bim:largura  66.7
@@ -2977,7 +2952,7 @@ Individual: bim:Tijolo.C
 	Facts: bim:fabricante  "Cerâmica RBR"
 
 Individual: bim:TJ100
-	Types: bim:Ecológico
+	Types: bim:Tijolo.Ecológico
 	Facts: bim:descrição  "Tijolo de solo-cimento prensado tipo Tijolito."
 	Facts: bim:espessura  11
 	Facts: bim:largura  10
@@ -2985,7 +2960,7 @@ Individual: bim:TJ100
 	Facts: bim:fabricante  "Em obra"
 
 Individual: bim:TJ101
-	Types: bim:Ecológico
+	Types: bim:Tijolo.Ecológico
 	Facts: bim:descrição  "Meio-Tijolo de solo-cimento prensado tipo Tijolito."
 	Facts: bim:espessura  11
 	Facts: bim:largura  10
@@ -2993,7 +2968,7 @@ Individual: bim:TJ101
 	Facts: bim:fabricante  "Em obra"
 
 Individual: bim:TJ102
-	Types: bim:Ecológico
+	Types: bim:Tijolo.Ecológico
 	Facts: bim:descrição  "Tijolo de solo-cimento prensado tipo Tijolito com 1 abertura para instações."
 	Facts: bim:espessura  11
 	Facts: bim:largura  10
@@ -3001,7 +2976,7 @@ Individual: bim:TJ102
 	Facts: bim:fabricante  "Em obra"
 
 Individual: bim:TJ103
-	Types: bim:Ecológico
+	Types: bim:Tijolo.Ecológico
 	Facts: bim:descrição  "Tijolo de solo-cimento prensado tipo Tijolito com 1 abertura para instações."
 	Facts: bim:espessura  11
 	Facts: bim:largura  10
@@ -3009,7 +2984,7 @@ Individual: bim:TJ103
 	Facts: bim:fabricante  "Em obra"
 
 Individual: bim:TJ104
-	Types: bim:Ecológico
+	Types: bim:Tijolo.Ecológico
 	Facts: bim:descrição  "Tijolo de solo-cimento prensado tipo Tijolito com 2 aberturas para instações."
 	Facts: bim:espessura  11
 	Facts: bim:largura  10
@@ -3139,7 +3114,7 @@ Individual: bim:Divisória.04
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Divisória.05
-	Types: bim:de.Sanitário
+	Types: bim:de.Pedra
 	Facts: bim:descrição  "Divisória sanitária de placas Alcoplac."
 	Facts: bim:é.chapa.de  bim:SAN.01
 	Facts: bim:fabricante  "Em obra"
@@ -3147,7 +3122,7 @@ Individual: bim:Divisória.05
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.01
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de tijolo comúm com tijolos assentados meia vez (assentamento cutelo ou fação)."
 	Facts: bim:é.assentada.com  bim:Tijolo.C
 	Facts: bim:é.meia.vez  bim:Tijolo.C
@@ -3158,7 +3133,7 @@ Individual: bim:Parede.01
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.02
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de tijolo comúm com tijolos assentados uma vez (assentamento tição)."
 	Facts: bim:é.assentada.com  bim:Tijolo.C
 	Facts: bim:é.uma.vez  bim:Tijolo.C
@@ -3169,7 +3144,7 @@ Individual: bim:Parede.02
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.03
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de tijolo comúm com tijolos assentados uma vez (assentamento tição)."
 	Facts: bim:é.assentada.com  bim:Tijolo.A
 	Facts: bim:é.uma.vez  bim:Tijolo.A
@@ -3180,7 +3155,7 @@ Individual: bim:Parede.03
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.04
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de blocos de concreto para vedação assentados meia vez."
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3189,7 +3164,7 @@ Individual: bim:Parede.04
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.05
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de blocos de concreto para vedação assentados meia vez."
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3198,7 +3173,7 @@ Individual: bim:Parede.05
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.06
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de blocos de concreto para vedação assentados meia vez."
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3207,7 +3182,7 @@ Individual: bim:Parede.06
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.07
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de blocos de concreto para vedação assentados meia vez."
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3216,7 +3191,7 @@ Individual: bim:Parede.07
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.08
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de bloco cerâmico furado"
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3225,7 +3200,7 @@ Individual: bim:Parede.08
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.09
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de bloco cerâmico furado"
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3234,7 +3209,7 @@ Individual: bim:Parede.09
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.10
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de bloco cerâmico furado"
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3243,7 +3218,7 @@ Individual: bim:Parede.10
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.11
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de bloco cerâmico furado"
 	Facts: bim:é.assentada.com  bim:BFU.M.10x40
 	Facts: bim:é.meia.vez  bim:BFU.M.10x40
@@ -3252,7 +3227,7 @@ Individual: bim:Parede.11
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.12
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de bloco de gesso alveolar"
 	Facts: bim:é.assentada.com  bim:BGEA
 	Facts: bim:fabricante  "Em obra"
@@ -3260,7 +3235,7 @@ Individual: bim:Parede.12
 	Facts: bim:classe.ifc  "IfcWall"
 
 Individual: bim:Parede.13
-	Types: bim:Interna
+	Types: bim:Interna.Alta
 	Facts: bim:descrição  "Parede de bloco de concreto celular autoclavado."
 	Facts: bim:é.assentada.com  bim:BCCA
 	Facts: bim:fabricante  "Em obra"
@@ -7143,5 +7118,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 24/09/2025 15:28:49
+##  Criada em 24/09/2025 15:43:47
 #################################################################
