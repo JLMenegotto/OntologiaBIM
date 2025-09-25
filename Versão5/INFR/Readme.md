@@ -7,4 +7,5 @@
 
 ### Pasta INFR: Ontologia com conceitos de insfraestrutura portuaria, ferroviária, rodoviária e urbana - Prefixo bim:
 
-<img width="1127" height="11942" alt="Infra" src="https://github.com/user-attachments/assets/afac2762-1bba-4ef9-a754-0bb63f1af3ba" />
+<img width="1127" height="11810" alt="Infra" src="https://github.com/user-attachments/assets/b2ae7b04-38bd-4a09-a0db-5eb4bea23aed" />
+
