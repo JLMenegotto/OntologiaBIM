@@ -7,7 +7,8 @@
 
 ### Pasta ARQU: Ontologia com conceitos de elementos arquitetônicos - Prefixo bim:
 
-<img width="940" height="14738" alt="Arqui" src="https://github.com/user-attachments/assets/384a495f-d7ce-490a-8594-2dc22c946edb" />
+<img width="936" height="20618" alt="Arqui" src="https://github.com/user-attachments/assets/383ccedf-db1a-4a2f-897e-b5869d51c23f" />
+
 
 
 
