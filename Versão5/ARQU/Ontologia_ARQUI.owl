@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt
-  Annotations: rdfs:label "DataHora: 27/09/2025 17:32:18"@pt
+  Annotations: rdfs:label "DataHora: 28/09/2025 7:04:44"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -1856,6 +1856,7 @@ Class: bim:Acessórios
 Class: bim:De.Fixação
 	Annotations: rdfs:label "De Fixação"@pt
 	SubClassOf: bim:Acessórios
+	EquivalentTo:  bim:é.componente.de some bim:Divisórias
 
 
 Class: bim:Parafuso
@@ -3171,6 +3172,7 @@ Class: bim:Guardacorpo.Projeção
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Pro.200"
 	Annotations: bim:CatRevit "OST_StairsRailingAboveCut"
+	Annotations: bim:ClasseIfc "IfcRailing"
 	SubClassOf: bim:Guardacorpos
 
 
@@ -3565,7 +3567,7 @@ Class: bim:Barras.Chatas
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Ved.225"
 	Annotations: bim:CatRevit "OST_Curtain_Systems"
-	Annotations: bim:ClasseIfc "IfcWall"
+	Annotations: bim:ClasseIfc "IfcRailingFENCE"
 	SubClassOf: bim:Gradil
 
 
@@ -3579,18 +3581,20 @@ Class: bim:Aramado
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Ved.226"
 	Annotations: bim:CatRevit "OST_Curtain_Systems"
-	Annotations: bim:ClasseIfc "IfcWall"
+	Annotations: bim:ClasseIfc "IfcRailingFENCE"
 	SubClassOf: bim:Gradil
 
 
 Class: bim:Equipamentos
 	Annotations: rdfs:label "Equipamentos"@pt
 	SubClassOf: bim:Projeto
+	EquivalentTo:  bim:é.componente.de some bim:Ambientes
 
 
 Class: bim:Sanitários
 	Annotations: rdfs:label "Sanitários"@pt
 	SubClassOf: bim:Equipamentos
+	EquivalentTo:  bim:é.componente.de some bim:Ambiente.Sanitário
 
 
 Class: bim:De.Banheiro
@@ -3835,6 +3839,7 @@ Class: bim:Bancada.Biológica
 Class: bim:Elétricos
 	Annotations: rdfs:label "Elétricos"@pt
 	SubClassOf: bim:Equipamentos
+	EquivalentTo:  bim:é.componente.de some bim:Ambientes
 
 
 Class: bim:Elétrica.Geral
@@ -4304,6 +4309,7 @@ Class: bim:Sintonizador
 Class: bim:Hospitalares
 	Annotations: rdfs:label "Hospitalares"@pt
 	SubClassOf: bim:Equipamentos
+	EquivalentTo:  bim:é.componente.de some bim:Ambiente.Hospitalar
 
 
 Class: bim:Aparelho.Saúde
@@ -4405,6 +4411,7 @@ Class: bim:Chamada.Enfermagem
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Equ.280"
 	Annotations: bim:CatRevit "OST_NurseCallDevices"
+	Annotations: bim:ClasseIfc "IfcDistributionSystemTELEPHONE"
 	SubClassOf: bim:Aparelho.Saúde
 
 
@@ -5093,6 +5100,7 @@ Class: bim:Vista
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Esp.326"
 	Annotations: bim:CatRevit "OST_Elev"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Elevação
 
 
@@ -5106,6 +5114,7 @@ Class: bim:Vista.Símbolo
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Esp.327"
 	Annotations: bim:CatRevit "OST_ElevationMarks"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Elevação
 
 
@@ -5229,13 +5238,55 @@ Class: bim:Interiores
 
 Class: bim:Ambiente.Interior
 	Annotations: rdfs:label "Ambiente Interior"@pt
-	Annotations: bim:Definição "Espaço representa uma área, ou volume, delimitado física ou teoricamente."@pt
-	Annotations: bim:Definición "El espacio representa un área, o volumen, física o teóricamente delimitado."@es
+	Annotations: bim:Definição "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente seco residencial ou comercial."@pt
+	Annotations: bim:Definición "El espacio representa un área, o volumen, física o teóricamente delimitado de un ambiente seco residencial o comercial."@es
 	Annotations: bim:Natureza "Espacial"@pt
 	Annotations: bim:Espécie "Ambientes"@pt
 	Annotations: bim:Tema "Interiores"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Esp.335"
+	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
+	Annotations: bim:ClasseIfc "IfcSpace"
+	SubClassOf: bim:Interiores
+
+
+Class: bim:Ambiente.Sanitário
+	Annotations: rdfs:label "Ambiente Sanitário"@pt
+	Annotations: bim:Definição "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente sanitário (banheiros ou ambientes que fornecem hidráulica)."@pt
+	Annotations: bim:Definición "El espacio representa un área, o volumen, física o teóricamente delimitado de um ambiente sanitário (baños o ambientes que deben tener hidráulica)."@es
+	Annotations: bim:Natureza "Espacial"@pt
+	Annotations: bim:Espécie "Ambientes"@pt
+	Annotations: bim:Tema "Interiores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Esp.336"
+	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
+	Annotations: bim:ClasseIfc "IfcSpace"
+	SubClassOf: bim:Interiores
+
+
+Class: bim:Ambiente.Hospitalar
+	Annotations: rdfs:label "Ambiente Hospitalar"@pt
+	Annotations: bim:Definição "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente hospitalar."@pt
+	Annotations: bim:Definición "El espacio representa un área, o volumen, física o teóricamente delimitado de um ambiente hospitalar."@es
+	Annotations: bim:Natureza "Espacial"@pt
+	Annotations: bim:Espécie "Ambientes"@pt
+	Annotations: bim:Tema "Interiores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Esp.337"
+	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
+	Annotations: bim:ClasseIfc "IfcSpace"
+	SubClassOf: bim:Interiores
+
+
+Class: bim:Ambiente.Escolar
+	Annotations: rdfs:label "Ambiente Escolar"@pt
+	Annotations: bim:Definição "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente escolar."@pt
+	Annotations: bim:Definición "El espacio representa un área, o volumen, física o teóricamente delimitado de um ambiente escolar."@es
+	Annotations: bim:Natureza "Espacial"@pt
+	Annotations: bim:Espécie "Ambientes"@pt
+	Annotations: bim:Tema "Interiores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Esp.338"
 	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
 	Annotations: bim:ClasseIfc "IfcSpace"
 	SubClassOf: bim:Interiores
@@ -5249,7 +5300,7 @@ Class: bim:Ambiente.Funcional
 	Annotations: bim:Espécie "Ambientes"@pt
 	Annotations: bim:Tema "Interiores"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.336"
+	Annotations: bim:Chave "Key.Esp.339"
 	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
 	Annotations: bim:ClasseIfc "IfcSpaceBERTH"
 	SubClassOf: bim:Interiores
@@ -5263,7 +5314,7 @@ Class: bim:Ambiente.Interno
 	Annotations: bim:Espécie "Ambientes"@pt
 	Annotations: bim:Tema "Interiores"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.337"
+	Annotations: bim:Chave "Key.Esp.340"
 	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
 	Annotations: bim:ClasseIfc "IfcSpaceINTERNAL"
 	SubClassOf: bim:Interiores
@@ -5277,7 +5328,7 @@ Class: bim:Utilizável
 	Annotations: bim:Espécie "Ambientes"@pt
 	Annotations: bim:Tema "Interiores"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.338"
+	Annotations: bim:Chave "Key.Esp.341"
 	Annotations: bim:CatRevit "OST_Rooms , OST_MEPSpaces"
 	Annotations: bim:ClasseIfc "IfcSpaceSPACE"
 	SubClassOf: bim:Interiores
@@ -5301,7 +5352,7 @@ Class: bim:Zona.Espacial
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.339"
+	Annotations: bim:Chave "Key.Esp.342"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZone"
 	SubClassOf: bim:Zona
@@ -5315,7 +5366,7 @@ Class: bim:Zona.de.Construção
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.340"
+	Annotations: bim:Chave "Key.Esp.343"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneCONSTRUCTION"
 	SubClassOf: bim:Zona
@@ -5329,7 +5380,7 @@ Class: bim:Zona.de.Segurança.Incêndio
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.341"
+	Annotations: bim:Chave "Key.Esp.344"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneFIRESAFETY"
 	SubClassOf: bim:Zona
@@ -5343,7 +5394,7 @@ Class: bim:Zona.de.Interferência
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.342"
+	Annotations: bim:Chave "Key.Esp.345"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneINTERFERENCE"
 	SubClassOf: bim:Zona
@@ -5357,7 +5408,7 @@ Class: bim:Zona.de.Iluminação
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.343"
+	Annotations: bim:Chave "Key.Esp.346"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneLIGHTING"
 	SubClassOf: bim:Zona
@@ -5371,7 +5422,7 @@ Class: bim:Zona.de.Ocupação
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.344"
+	Annotations: bim:Chave "Key.Esp.347"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneOCCUPANCY"
 	SubClassOf: bim:Zona
@@ -5385,7 +5436,7 @@ Class: bim:Zona.de.Reserva
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.345"
+	Annotations: bim:Chave "Key.Esp.348"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneRESERVATION"
 	SubClassOf: bim:Zona
@@ -5399,7 +5450,7 @@ Class: bim:Zona.de.Segurança
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.346"
+	Annotations: bim:Chave "Key.Esp.349"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneSECURITY"
 	SubClassOf: bim:Zona
@@ -5413,7 +5464,7 @@ Class: bim:Zona.de.Térmica
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.347"
+	Annotations: bim:Chave "Key.Esp.350"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneTHERMAL"
 	SubClassOf: bim:Zona
@@ -5427,7 +5478,7 @@ Class: bim:Zona.de.Transporte
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.348"
+	Annotations: bim:Chave "Key.Esp.351"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneTRANSPORT"
 	SubClassOf: bim:Zona
@@ -5441,7 +5492,7 @@ Class: bim:Zona.de.Ventilação
 	Annotations: bim:Espécie "Zonas"@pt
 	Annotations: bim:Tema "Zona"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Esp.349"
+	Annotations: bim:Chave "Key.Esp.352"
 	Annotations: bim:CatRevit "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"
 	Annotations: bim:ClasseIfc "IfcSpatialZoneVENTILATION"
 	SubClassOf: bim:Zona
@@ -5450,6 +5501,7 @@ Class: bim:Zona.de.Ventilação
 Class: bim:Mobiliários
 	Annotations: rdfs:label "Mobiliários"@pt
 	SubClassOf: bim:Projeto
+	EquivalentTo:  bim:é.componente.de some bim:Ambientes
 
 
 Class: bim:Mobílias
@@ -5460,6 +5512,7 @@ Class: bim:Mobílias
 Class: bim:Domésticas
 	Annotations: rdfs:label "Domésticas"@pt
 	SubClassOf: bim:Mobílias
+	EquivalentTo:  bim:é.componente.de some bim:Ambiente.Interior
 
 
 Class: bim:Móvel
@@ -5470,7 +5523,7 @@ Class: bim:Móvel
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.350"
+	Annotations: bim:Chave "Key.Mob.353"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurniture"
 	SubClassOf: bim:Domésticas
@@ -5484,7 +5537,7 @@ Class: bim:Móvel.Sistema
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.351"
+	Annotations: bim:Chave "Key.Mob.354"
 	Annotations: bim:CatRevit "OST_FurnitureSystems"
 	Annotations: bim:ClasseIfc "IfcFurniture"
 	SubClassOf: bim:Domésticas
@@ -5498,7 +5551,7 @@ Class: bim:Cama.Solteire
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.352"
+	Annotations: bim:Chave "Key.Mob.355"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:Domésticas
@@ -5512,7 +5565,7 @@ Class: bim:Cama.Viuve
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.353"
+	Annotations: bim:Chave "Key.Mob.356"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:Domésticas
@@ -5526,7 +5579,7 @@ Class: bim:Cama.Casal
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.354"
+	Annotations: bim:Chave "Key.Mob.357"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:Domésticas
@@ -5540,7 +5593,7 @@ Class: bim:Cama.Queen
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.355"
+	Annotations: bim:Chave "Key.Mob.358"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:Domésticas
@@ -5554,7 +5607,7 @@ Class: bim:Cama.King
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.356"
+	Annotations: bim:Chave "Key.Mob.359"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:Domésticas
@@ -5568,7 +5621,7 @@ Class: bim:Cadeira
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.357"
+	Annotations: bim:Chave "Key.Mob.360"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureCHAIR"
 	SubClassOf: bim:Domésticas
@@ -5582,7 +5635,7 @@ Class: bim:Escribania
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.358"
+	Annotations: bim:Chave "Key.Mob.361"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureDESK"
 	SubClassOf: bim:Domésticas
@@ -5596,7 +5649,7 @@ Class: bim:Poltrona
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.359"
+	Annotations: bim:Chave "Key.Mob.362"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSOFA"
 	SubClassOf: bim:Domésticas
@@ -5610,7 +5663,7 @@ Class: bim:Sofá.2.Lugares
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.360"
+	Annotations: bim:Chave "Key.Mob.363"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSOFA"
 	SubClassOf: bim:Domésticas
@@ -5624,7 +5677,7 @@ Class: bim:Sofá.3.Lugares
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.361"
+	Annotations: bim:Chave "Key.Mob.364"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSOFA"
 	SubClassOf: bim:Domésticas
@@ -5638,7 +5691,7 @@ Class: bim:Mesa
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.362"
+	Annotations: bim:Chave "Key.Mob.365"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureTABLE"
 	SubClassOf: bim:Domésticas
@@ -5652,7 +5705,7 @@ Class: bim:Armário.de.Livros
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.363"
+	Annotations: bim:Chave "Key.Mob.366"
 	Annotations: bim:CatRevit "ST_Casework"
 	Annotations: bim:ClasseIfc "IfcFurnitureFILECABINET"
 	SubClassOf: bim:Domésticas
@@ -5666,7 +5719,7 @@ Class: bim:Armário.de.Ferramentas
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.364"
+	Annotations: bim:Chave "Key.Mob.367"
 	Annotations: bim:CatRevit "ST_Casework"
 	Annotations: bim:ClasseIfc "IfcFurnitureTECHNICALCABINET"
 	SubClassOf: bim:Domésticas
@@ -5680,7 +5733,7 @@ Class: bim:Prateleira
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "Domésticas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.365"
+	Annotations: bim:Chave "Key.Mob.368"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSHELF"
 	SubClassOf: bim:Domésticas
@@ -5689,6 +5742,7 @@ Class: bim:Prateleira
 Class: bim:De.Ensino
 	Annotations: rdfs:label "De Ensino"@pt
 	SubClassOf: bim:Mobílias
+	EquivalentTo:  bim:é.componente.de some bim:Ambiente.Escolar
 
 
 Class: bim:Cadeira.Aula
@@ -5699,7 +5753,7 @@ Class: bim:Cadeira.Aula
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Ensino"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.366"
+	Annotations: bim:Chave "Key.Mob.369"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureCHAIR"
 	SubClassOf: bim:De.Ensino
@@ -5713,7 +5767,7 @@ Class: bim:Mesa.Desenho
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Ensino"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.367"
+	Annotations: bim:Chave "Key.Mob.370"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureDESK"
 	SubClassOf: bim:De.Ensino
@@ -5727,7 +5781,7 @@ Class: bim:Mesa.Computador
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Ensino"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.368"
+	Annotations: bim:Chave "Key.Mob.371"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureTABLE"
 	SubClassOf: bim:De.Ensino
@@ -5741,7 +5795,7 @@ Class: bim:Armário.Modelos
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Ensino"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.369"
+	Annotations: bim:Chave "Key.Mob.372"
 	Annotations: bim:CatRevit "ST_Casework"
 	Annotations: bim:ClasseIfc "IfcFurnitureFILECABINET"
 	SubClassOf: bim:De.Ensino
@@ -5755,7 +5809,7 @@ Class: bim:Armário.Livros
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Ensino"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.370"
+	Annotations: bim:Chave "Key.Mob.373"
 	Annotations: bim:CatRevit "ST_Casework"
 	Annotations: bim:ClasseIfc "IfcFurnitureTECHNICALCABINET"
 	SubClassOf: bim:De.Ensino
@@ -5769,7 +5823,7 @@ Class: bim:Prateleira.Livros
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Ensino"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.371"
+	Annotations: bim:Chave "Key.Mob.374"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSHELF"
 	SubClassOf: bim:De.Ensino
@@ -5778,6 +5832,7 @@ Class: bim:Prateleira.Livros
 Class: bim:De.Hospital
 	Annotations: rdfs:label "De Hospital"@pt
 	SubClassOf: bim:Mobílias
+	EquivalentTo:  bim:é.componente.de some bim:Ambiente.Hospitalar
 
 
 Class: bim:Cama.Hospitalar
@@ -5788,7 +5843,7 @@ Class: bim:Cama.Hospitalar
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.372"
+	Annotations: bim:Chave "Key.Mob.375"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:De.Hospital
@@ -5802,7 +5857,7 @@ Class: bim:Maca
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.373"
+	Annotations: bim:Chave "Key.Mob.376"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureBED"
 	SubClassOf: bim:De.Hospital
@@ -5816,7 +5871,7 @@ Class: bim:Cadeira.Paciente
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.374"
+	Annotations: bim:Chave "Key.Mob.377"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureCHAIR"
 	SubClassOf: bim:De.Hospital
@@ -5830,7 +5885,7 @@ Class: bim:Poltrona.Paciente
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.375"
+	Annotations: bim:Chave "Key.Mob.378"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSOFA"
 	SubClassOf: bim:De.Hospital
@@ -5844,7 +5899,7 @@ Class: bim:Mesa.Atendimento
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.376"
+	Annotations: bim:Chave "Key.Mob.379"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureTABLE"
 	SubClassOf: bim:De.Hospital
@@ -5858,7 +5913,7 @@ Class: bim:Armário.de.Roupa
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.377"
+	Annotations: bim:Chave "Key.Mob.380"
 	Annotations: bim:CatRevit "ST_Casework"
 	Annotations: bim:ClasseIfc "IfcFurnitureFILECABINET"
 	SubClassOf: bim:De.Hospital
@@ -5872,7 +5927,7 @@ Class: bim:Armário.de.Medicinas
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.378"
+	Annotations: bim:Chave "Key.Mob.381"
 	Annotations: bim:CatRevit "ST_Casework"
 	Annotations: bim:ClasseIfc "IfcFurnitureTECHNICALCABINET"
 	SubClassOf: bim:De.Hospital
@@ -5886,7 +5941,7 @@ Class: bim:Prateleira.Medicinas
 	Annotations: bim:Espécie "Mobílias"@pt
 	Annotations: bim:Tema "De Hospital"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mob.379"
+	Annotations: bim:Chave "Key.Mob.382"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurnitureSHELF"
 	SubClassOf: bim:De.Hospital
@@ -5915,7 +5970,7 @@ Class: bim:Telhado
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.380"
+	Annotations: bim:Chave "Key.Cob.383"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Formas
@@ -5929,7 +5984,7 @@ Class: bim:Telhado.Verde
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.381"
+	Annotations: bim:Chave "Key.Cob.384"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Formas
@@ -5943,7 +5998,7 @@ Class: bim:Telhado.Barril
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.382"
+	Annotations: bim:Chave "Key.Cob.385"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofBARREL_ROOF"
 	SubClassOf: bim:Formas
@@ -5957,7 +6012,7 @@ Class: bim:Telhado.Borboleta
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.383"
+	Annotations: bim:Chave "Key.Cob.386"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofBUTTERFLY_ROOF"
 	SubClassOf: bim:Formas
@@ -5971,7 +6026,7 @@ Class: bim:Telhado.Cúpula
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.384"
+	Annotations: bim:Chave "Key.Cob.387"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofDOME_ROOF"
 	SubClassOf: bim:Formas
@@ -5985,7 +6040,7 @@ Class: bim:Telhado.Plano
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.385"
+	Annotations: bim:Chave "Key.Cob.388"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofFLAT_ROOF"
 	SubClassOf: bim:Formas
@@ -5999,7 +6054,7 @@ Class: bim:Telhado.Livre
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.386"
+	Annotations: bim:Chave "Key.Cob.389"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofFREEFORM"
 	SubClassOf: bim:Formas
@@ -6013,7 +6068,7 @@ Class: bim:Telhado.Inclinado
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.387"
+	Annotations: bim:Chave "Key.Cob.390"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofSHED_ROOF"
 	SubClassOf: bim:Formas
@@ -6027,7 +6082,7 @@ Class: bim:Telhado.2.Aguas
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.388"
+	Annotations: bim:Chave "Key.Cob.391"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofGABLE_ROOF"
 	SubClassOf: bim:Formas
@@ -6041,7 +6096,7 @@ Class: bim:Telhado.4.Aguas
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.389"
+	Annotations: bim:Chave "Key.Cob.392"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofHIP_ROOF"
 	SubClassOf: bim:Formas
@@ -6055,7 +6110,7 @@ Class: bim:Telhado.com.Agua.Furtada
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.390"
+	Annotations: bim:Chave "Key.Cob.393"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofHIPPED_GABLE_ROOF"
 	SubClassOf: bim:Formas
@@ -6069,7 +6124,7 @@ Class: bim:Telhado.Mansarda
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.391"
+	Annotations: bim:Chave "Key.Cob.394"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofMANSARD_ROOF"
 	SubClassOf: bim:Formas
@@ -6083,7 +6138,7 @@ Class: bim:Telhado.Mansarda.Americana
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.392"
+	Annotations: bim:Chave "Key.Cob.395"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofGAMBREL_ROOF"
 	SubClassOf: bim:Formas
@@ -6097,7 +6152,7 @@ Class: bim:Telhado.Pavilhão
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.393"
+	Annotations: bim:Chave "Key.Cob.396"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofPAVILION_ROOF"
 	SubClassOf: bim:Formas
@@ -6111,7 +6166,7 @@ Class: bim:Telhado.Arco.Iris
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Formas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.394"
+	Annotations: bim:Chave "Key.Cob.397"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoofRAINBOW_ROOF"
 	SubClassOf: bim:Formas
@@ -6130,7 +6185,7 @@ Class: bim:Beiral.Frente
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Beiral"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.395"
+	Annotations: bim:Chave "Key.Cob.398"
 	Annotations: bim:CatRevit "OST_Fascia"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Beiral
@@ -6144,7 +6199,7 @@ Class: bim:Beiral.Calha
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Beiral"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.396"
+	Annotations: bim:Chave "Key.Cob.399"
 	Annotations: bim:CatRevit "OST_Gutter"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Beiral
@@ -6158,7 +6213,7 @@ Class: bim:Beiral.Forro
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Beiral"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.397"
+	Annotations: bim:Chave "Key.Cob.400"
 	Annotations: bim:CatRevit "OST_RoofSoffit"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Beiral
@@ -6177,7 +6232,7 @@ Class: bim:Telhado.Abertura
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Perímetro"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.398"
+	Annotations: bim:Chave "Key.Cob.401"
 	Annotations: bim:CatRevit "OST_RoofOpening"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Perímetro
@@ -6191,7 +6246,7 @@ Class: bim:Telhado.Perímetro
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Perímetro"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.399"
+	Annotations: bim:Chave "Key.Cob.402"
 	Annotations: bim:CatRevit "OST_RoofsInteriorEdges"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Perímetro
@@ -6210,7 +6265,7 @@ Class: bim:Telhado.Projeção
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Camada de Telhado"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.400"
+	Annotations: bim:Chave "Key.Cob.403"
 	Annotations: bim:CatRevit "OST_RoofsProjection"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Camada.de.Telhado
@@ -6224,7 +6279,7 @@ Class: bim:Telhado.Núcleo
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Camada de Telhado"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.401"
+	Annotations: bim:Chave "Key.Cob.404"
 	Annotations: bim:CatRevit "OST_RoofsStructure"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Camada.de.Telhado
@@ -6238,7 +6293,7 @@ Class: bim:Telhado.Substrato
 	Annotations: bim:Espécie "Telhados"@pt
 	Annotations: bim:Tema "Camada de Telhado"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cob.402"
+	Annotations: bim:Chave "Key.Cob.405"
 	Annotations: bim:CatRevit "OST_RoofsSubstrate"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Camada.de.Telhado
@@ -6267,7 +6322,7 @@ Class: bim:Lâmpada
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.403"
+	Annotations: bim:Chave "Key.Lum.406"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLamp"
 	SubClassOf: bim:Lâmpadas
@@ -6281,7 +6336,7 @@ Class: bim:Lâmpada.Fluorescente.Compacta
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.404"
+	Annotations: bim:Chave "Key.Lum.407"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampCOMPACTFLUORESCENT"
 	SubClassOf: bim:Lâmpadas
@@ -6295,7 +6350,7 @@ Class: bim:Lâmpada.Fluorescente
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.405"
+	Annotations: bim:Chave "Key.Lum.408"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampFLUORESCENT"
 	SubClassOf: bim:Lâmpadas
@@ -6309,7 +6364,7 @@ Class: bim:Lâmpada.Alta.Pressão.Mercúrio
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.406"
+	Annotations: bim:Chave "Key.Lum.409"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampHIGHPRESSUREMERCURY"
 	SubClassOf: bim:Lâmpadas
@@ -6323,7 +6378,7 @@ Class: bim:Lâmpada.Alta.Pressão.Sódio
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.407"
+	Annotations: bim:Chave "Key.Lum.410"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampHIGHPRESSURESODIUM"
 	SubClassOf: bim:Lâmpadas
@@ -6337,7 +6392,7 @@ Class: bim:Lâmpada.LED
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.408"
+	Annotations: bim:Chave "Key.Lum.411"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampLED"
 	SubClassOf: bim:Lâmpadas
@@ -6351,7 +6406,7 @@ Class: bim:Lâmpada.OLED
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.409"
+	Annotations: bim:Chave "Key.Lum.412"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampOLED"
 	SubClassOf: bim:Lâmpadas
@@ -6365,7 +6420,7 @@ Class: bim:Lâmpada.Halógena
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.410"
+	Annotations: bim:Chave "Key.Lum.413"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampHALOGEN"
 	SubClassOf: bim:Lâmpadas
@@ -6379,7 +6434,7 @@ Class: bim:Lâmpada.Iodetos.Metálicos
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.411"
+	Annotations: bim:Chave "Key.Lum.414"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampMETALHALIDE"
 	SubClassOf: bim:Lâmpadas
@@ -6393,7 +6448,7 @@ Class: bim:Lâmpada.Incandescente
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Lâmpadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.412"
+	Annotations: bim:Chave "Key.Lum.415"
 	Annotations: bim:CatRevit "OST_LightingDevices"
 	Annotations: bim:ClasseIfc "IfcLampTUNGSTENFILAMENT"
 	SubClassOf: bim:Lâmpadas
@@ -6412,7 +6467,7 @@ Class: bim:Luminária
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.413"
+	Annotations: bim:Chave "Key.Lum.416"
 	Annotations: bim:CatRevit "OST_LightingFixtures"
 	Annotations: bim:ClasseIfc "IfcLightFixture"
 	SubClassOf: bim:Luminárias
@@ -6426,7 +6481,7 @@ Class: bim:Luminária.Direcional
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.414"
+	Annotations: bim:Chave "Key.Lum.417"
 	Annotations: bim:CatRevit "OST_LightingFixtures"
 	Annotations: bim:ClasseIfc "IfcLightFixtureDIRECTIONSOURCE"
 	SubClassOf: bim:Luminárias
@@ -6440,7 +6495,7 @@ Class: bim:Luminária.Spot
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.415"
+	Annotations: bim:Chave "Key.Lum.418"
 	Annotations: bim:CatRevit "OST_LightingFixtures"
 	Annotations: bim:ClasseIfc "IfcLightFixturePOINTSOURCE"
 	SubClassOf: bim:Luminárias
@@ -6454,7 +6509,7 @@ Class: bim:Luminária.de.Segurança
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.416"
+	Annotations: bim:Chave "Key.Lum.419"
 	Annotations: bim:CatRevit "OST_LightingFixtures"
 	Annotations: bim:ClasseIfc "IfcLightFixtureSECURITYLIGHTING"
 	SubClassOf: bim:Luminárias
@@ -6468,8 +6523,9 @@ Class: bim:Fonte.de.Iluminação
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.417"
+	Annotations: bim:Chave "Key.Lum.420"
 	Annotations: bim:CatRevit "OST_LightingFixtureSource"
+	Annotations: bim:ClasseIfc "IfcLightFixture"
 	SubClassOf: bim:Luminárias
 
 
@@ -6481,8 +6537,9 @@ Class: bim:Feixe.de.Luz
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.418"
+	Annotations: bim:Chave "Key.Lum.421"
 	Annotations: bim:CatRevit "OST_LightLine"
+	Annotations: bim:ClasseIfc "IfcLightFixture"
 	SubClassOf: bim:Luminárias
 
 
@@ -6494,8 +6551,9 @@ Class: bim:Luz
 	Annotations: bim:Espécie "Iluminação"@pt
 	Annotations: bim:Tema "Luminárias"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Lum.419"
+	Annotations: bim:Chave "Key.Lum.422"
 	Annotations: bim:CatRevit "OST_Lights"
+	Annotations: bim:ClasseIfc "IfcLightFixture"
 	SubClassOf: bim:Luminárias
 
 
@@ -6522,7 +6580,7 @@ Class: bim:Placa.Informativa
 	Annotations: bim:Espécie "Visual"@pt
 	Annotations: bim:Tema "Informativa"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Com.420"
+	Annotations: bim:Chave "Key.Com.423"
 	Annotations: bim:CatRevit "OST_Signage"
 	Annotations: bim:ClasseIfc "IfcSignal"
 	SubClassOf: bim:Informativa
@@ -6536,7 +6594,7 @@ Class: bim:Totem.Informativo
 	Annotations: bim:Espécie "Visual"@pt
 	Annotations: bim:Tema "Informativa"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Com.421"
+	Annotations: bim:Chave "Key.Com.424"
 	Annotations: bim:CatRevit "OST_Signage"
 	Annotations: bim:ClasseIfc "IfcSignal"
 	SubClassOf: bim:Informativa
@@ -6565,7 +6623,7 @@ Class: bim:Cornija
 	Annotations: bim:Espécie "De Paredes"@pt
 	Annotations: bim:Tema "Frisos"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Orn.422"
+	Annotations: bim:Chave "Key.Orn.425"
 	Annotations: bim:CatRevit "OST_Cornices"
 	Annotations: bim:ClasseIfc "IfcOpeningElementRECESS"
 	SubClassOf: bim:Frisos
@@ -6579,7 +6637,7 @@ Class: bim:Borda.Laje
 	Annotations: bim:Espécie "De Paredes"@pt
 	Annotations: bim:Tema "Frisos"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Orn.423"
+	Annotations: bim:Chave "Key.Orn.426"
 	Annotations: bim:CatRevit "OST_EdgeSlab"
 	Annotations: bim:ClasseIfc "IfcSlab"
 	SubClassOf: bim:Frisos
@@ -6593,7 +6651,7 @@ Class: bim:Nicho.Entalhado
 	Annotations: bim:Espécie "De Paredes"@pt
 	Annotations: bim:Tema "Frisos"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Orn.424"
+	Annotations: bim:Chave "Key.Orn.427"
 	Annotations: bim:CatRevit "OST_Reveals"
 	Annotations: bim:ClasseIfc "IfcOpeningElementRECESS"
 	SubClassOf: bim:Frisos
@@ -6622,8 +6680,9 @@ Class: bim:Elevador
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Elevadores"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.425"
+	Annotations: bim:Chave "Key.Cir.428"
 	Annotations: bim:CatRevit "OST_VerticalCirculation"
+	Annotations: bim:ClasseIfc "IfcTransportElementELEVATOR"
 	SubClassOf: bim:Elevadores
 
 
@@ -6640,7 +6699,7 @@ Class: bim:Rampa
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.426"
+	Annotations: bim:Chave "Key.Cir.429"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRamp"
 	SubClassOf: bim:Rampas
@@ -6654,7 +6713,7 @@ Class: bim:Lance.Rampa
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.427"
+	Annotations: bim:Chave "Key.Cir.430"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampFlight"
 	SubClassOf: bim:Rampas
@@ -6668,7 +6727,7 @@ Class: bim:Lance.Curvo.Rampa
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.428"
+	Annotations: bim:Chave "Key.Cir.431"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampFlightSPIRAL"
 	SubClassOf: bim:Rampas
@@ -6682,7 +6741,7 @@ Class: bim:Lance.Reto.Rampa
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.429"
+	Annotations: bim:Chave "Key.Cir.432"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampFlightSTRAIGHT"
 	SubClassOf: bim:Rampas
@@ -6696,7 +6755,7 @@ Class: bim:Rampa.Espiral
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.430"
+	Annotations: bim:Chave "Key.Cir.433"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampSPIRAL_RAMP"
 	SubClassOf: bim:Rampas
@@ -6710,7 +6769,7 @@ Class: bim:Rampa.U
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.431"
+	Annotations: bim:Chave "Key.Cir.434"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampHALF_TURN_RAMP"
 	SubClassOf: bim:Rampas
@@ -6724,7 +6783,7 @@ Class: bim:Rampa.U.Longo
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.432"
+	Annotations: bim:Chave "Key.Cir.435"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampTWO_QUARTER_TURN_RAMP"
 	SubClassOf: bim:Rampas
@@ -6738,7 +6797,7 @@ Class: bim:Rampa.L
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.433"
+	Annotations: bim:Chave "Key.Cir.436"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampQUARTER_TURN_RAMP"
 	SubClassOf: bim:Rampas
@@ -6752,7 +6811,7 @@ Class: bim:Rampa.Reta
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.434"
+	Annotations: bim:Chave "Key.Cir.437"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampSTRAIGHT_RUN_RAMP"
 	SubClassOf: bim:Rampas
@@ -6766,7 +6825,7 @@ Class: bim:Rampa.Reta.Dois.Lances
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.435"
+	Annotations: bim:Chave "Key.Cir.438"
 	Annotations: bim:CatRevit "OST_Ramps"
 	Annotations: bim:ClasseIfc "IfcRampTWO_STRAIGHT_RUN_RAMP"
 	SubClassOf: bim:Rampas
@@ -6780,8 +6839,9 @@ Class: bim:Rampa.Incompleta
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.436"
+	Annotations: bim:Chave "Key.Cir.439"
 	Annotations: bim:CatRevit "OST_RampsIncomplete"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6793,8 +6853,9 @@ Class: bim:Rampa.Suporte.Lateral
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.437"
+	Annotations: bim:Chave "Key.Cir.440"
 	Annotations: bim:CatRevit "OST_RampsStringer"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6806,8 +6867,9 @@ Class: bim:Rampa.Suporte.Lateral.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.438"
+	Annotations: bim:Chave "Key.Cir.441"
 	Annotations: bim:CatRevit "OST_RampsStringerAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6819,8 +6881,9 @@ Class: bim:Rampa.Seta.Sobe
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.439"
+	Annotations: bim:Chave "Key.Cir.442"
 	Annotations: bim:CatRevit "OST_RampsUpArrow"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6832,8 +6895,9 @@ Class: bim:Rampa.Seta.Desce
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.440"
+	Annotations: bim:Chave "Key.Cir.443"
 	Annotations: bim:CatRevit "OST_RampsDownArrow"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6845,8 +6909,9 @@ Class: bim:Rampa.Texto.Sobe
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.441"
+	Annotations: bim:Chave "Key.Cir.444"
 	Annotations: bim:CatRevit "OST_RampsUpText"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6858,8 +6923,9 @@ Class: bim:Rampa.Texto.Desce
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.442"
+	Annotations: bim:Chave "Key.Cir.445"
 	Annotations: bim:CatRevit "OST_RampsDownText"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6871,8 +6937,9 @@ Class: bim:Rampa.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Rampas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.443"
+	Annotations: bim:Chave "Key.Cir.446"
 	Annotations: bim:CatRevit "OST_RampsAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Rampas
 
 
@@ -6889,7 +6956,7 @@ Class: bim:Escada
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.444"
+	Annotations: bim:Chave "Key.Cir.447"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStair"
 	SubClassOf: bim:Escadas
@@ -6903,7 +6970,7 @@ Class: bim:Lance.Escada
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.445"
+	Annotations: bim:Chave "Key.Cir.448"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairFlight"
 	SubClassOf: bim:Escadas
@@ -6917,7 +6984,7 @@ Class: bim:Lance.Escada.Curvo
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.446"
+	Annotations: bim:Chave "Key.Cir.449"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairFlightCURVED"
 	SubClassOf: bim:Escadas
@@ -6931,7 +6998,7 @@ Class: bim:Lance.Escada.Livre
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.447"
+	Annotations: bim:Chave "Key.Cir.450"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairFlightFREEFORM"
 	SubClassOf: bim:Escadas
@@ -6945,7 +7012,7 @@ Class: bim:Lance.Escada.Espiral
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.448"
+	Annotations: bim:Chave "Key.Cir.451"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairFlightSPIRAL"
 	SubClassOf: bim:Escadas
@@ -6959,7 +7026,7 @@ Class: bim:Lance.Escada.Reto
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.449"
+	Annotations: bim:Chave "Key.Cir.452"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairFlightSTRAIGHT"
 	SubClassOf: bim:Escadas
@@ -6973,7 +7040,7 @@ Class: bim:Lance.Escada.Compensado
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.450"
+	Annotations: bim:Chave "Key.Cir.453"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairFlightWINDER"
 	SubClassOf: bim:Escadas
@@ -6987,7 +7054,7 @@ Class: bim:Escada.Marinheiro
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.451"
+	Annotations: bim:Chave "Key.Cir.454"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairLADDER"
 	SubClassOf: bim:Escadas
@@ -7001,7 +7068,7 @@ Class: bim:Escada.Caracol
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.452"
+	Annotations: bim:Chave "Key.Cir.455"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairSPIRAL_STAIR"
 	SubClassOf: bim:Escadas
@@ -7015,7 +7082,7 @@ Class: bim:Escada.T
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.453"
+	Annotations: bim:Chave "Key.Cir.456"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairDOUBLE_RETURN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7029,7 +7096,7 @@ Class: bim:Escada.U
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.454"
+	Annotations: bim:Chave "Key.Cir.457"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairHALF_TURN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7043,7 +7110,7 @@ Class: bim:Escada.U.Compensada
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.455"
+	Annotations: bim:Chave "Key.Cir.458"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairHALF_WINDING_STAIR"
 	SubClassOf: bim:Escadas
@@ -7057,7 +7124,7 @@ Class: bim:Escada.L
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.456"
+	Annotations: bim:Chave "Key.Cir.459"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairQUARTER_TURN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7071,7 +7138,7 @@ Class: bim:Escada.L.Compensada
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.457"
+	Annotations: bim:Chave "Key.Cir.460"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairQUARTER_WINDING_STAIR"
 	SubClassOf: bim:Escadas
@@ -7085,7 +7152,7 @@ Class: bim:Escada.3.Lances
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.458"
+	Annotations: bim:Chave "Key.Cir.461"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairTWO_QUARTER_TURN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7099,7 +7166,7 @@ Class: bim:Escada.3.Lances.Compensada
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.459"
+	Annotations: bim:Chave "Key.Cir.462"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairTWO_QUARTER_WINDING_STAIR"
 	SubClassOf: bim:Escadas
@@ -7113,7 +7180,7 @@ Class: bim:Escada.4.Lances
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.460"
+	Annotations: bim:Chave "Key.Cir.463"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairTHREE_QUARTER_TURN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7127,7 +7194,7 @@ Class: bim:Escada.4.Lances.Compensada
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.461"
+	Annotations: bim:Chave "Key.Cir.464"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairTHREE_QUARTER_WINDING_STAIR"
 	SubClassOf: bim:Escadas
@@ -7141,7 +7208,7 @@ Class: bim:Escada.Reta
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.462"
+	Annotations: bim:Chave "Key.Cir.465"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairSTRAIGHT_RUN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7155,7 +7222,7 @@ Class: bim:Escada.Reta.Dois.Lances
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.463"
+	Annotations: bim:Chave "Key.Cir.466"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairTWO_STRAIGHT_RUN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7169,7 +7236,7 @@ Class: bim:Escada.Curva
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.464"
+	Annotations: bim:Chave "Key.Cir.467"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairCURVED_RUN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7183,7 +7250,7 @@ Class: bim:Escada.Curva.2.Lances
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.465"
+	Annotations: bim:Chave "Key.Cir.468"
 	Annotations: bim:CatRevit "OST_Stairs"
 	Annotations: bim:ClasseIfc "IfcStairTWO_CURVED_RUN_STAIR"
 	SubClassOf: bim:Escadas
@@ -7197,8 +7264,9 @@ Class: bim:Escada.Multiplos.Andares
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.466"
+	Annotations: bim:Chave "Key.Cir.469"
 	Annotations: bim:CatRevit "OST_MultistoryStairs"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7210,8 +7278,9 @@ Class: bim:Escada.Interrupção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.467"
+	Annotations: bim:Chave "Key.Cir.470"
 	Annotations: bim:CatRevit "OST_StairsCutMarks"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7223,8 +7292,9 @@ Class: bim:Escada.Interrupção.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.468"
+	Annotations: bim:Chave "Key.Cir.471"
 	Annotations: bim:CatRevit "OST_StairsCutMarksAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7236,8 +7306,9 @@ Class: bim:Escada.Patamar
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.469"
+	Annotations: bim:Chave "Key.Cir.472"
 	Annotations: bim:CatRevit "OST_StairsLandings"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7249,8 +7320,9 @@ Class: bim:Escada.Naris
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.470"
+	Annotations: bim:Chave "Key.Cir.473"
 	Annotations: bim:CatRevit "OST_StairsNosingLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7262,8 +7334,9 @@ Class: bim:Escada.Naris.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.471"
+	Annotations: bim:Chave "Key.Cir.474"
 	Annotations: bim:CatRevit "OST_StairsNosingLinesAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7275,8 +7348,9 @@ Class: bim:Escada.Contorno
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.472"
+	Annotations: bim:Chave "Key.Cir.475"
 	Annotations: bim:CatRevit "OST_StairsOutlines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7288,8 +7362,9 @@ Class: bim:Escada.Contorno.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.473"
+	Annotations: bim:Chave "Key.Cir.476"
 	Annotations: bim:CatRevit "OST_StairsOutlinesAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7301,8 +7376,9 @@ Class: bim:Escada.Seta
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.474"
+	Annotations: bim:Chave "Key.Cir.477"
 	Annotations: bim:CatRevit "OST_StairsPaths"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7314,8 +7390,9 @@ Class: bim:Escada.Seta.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.475"
+	Annotations: bim:Chave "Key.Cir.478"
 	Annotations: bim:CatRevit "OST_StairsPathsAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7327,8 +7404,9 @@ Class: bim:Escada.Degrau.Linha
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.476"
+	Annotations: bim:Chave "Key.Cir.479"
 	Annotations: bim:CatRevit "OST_StairsRiserLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7340,8 +7418,9 @@ Class: bim:Escada.Degrau.Linha.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.477"
+	Annotations: bim:Chave "Key.Cir.480"
 	Annotations: bim:CatRevit "OST_StairsRiserLinesAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7353,8 +7432,9 @@ Class: bim:Escada.Lance
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.478"
+	Annotations: bim:Chave "Key.Cir.481"
 	Annotations: bim:CatRevit "OST_StairsRuns"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7366,8 +7446,9 @@ Class: bim:Escada.Esboço.Limite
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.479"
+	Annotations: bim:Chave "Key.Cir.482"
 	Annotations: bim:CatRevit "OST_StairsSketchBoundaryLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7379,8 +7460,9 @@ Class: bim:Escada.Esboço.Patamar
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.480"
+	Annotations: bim:Chave "Key.Cir.483"
 	Annotations: bim:CatRevit "OST_StairsSketchLandingCenterLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7392,8 +7474,9 @@ Class: bim:Escada.Esboço.Caminho
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.481"
+	Annotations: bim:Chave "Key.Cir.484"
 	Annotations: bim:CatRevit "OST_StairsSketchPathLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7405,8 +7488,9 @@ Class: bim:Escada.Esboço.Degraus
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.482"
+	Annotations: bim:Chave "Key.Cir.485"
 	Annotations: bim:CatRevit "OST_StairsSketchRiserLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7418,8 +7502,9 @@ Class: bim:Escada.Esboço.Lances
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.483"
+	Annotations: bim:Chave "Key.Cir.486"
 	Annotations: bim:CatRevit "OST_StairsSketchRunLines"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7431,8 +7516,9 @@ Class: bim:Escada.Suporte
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.484"
+	Annotations: bim:Chave "Key.Cir.487"
 	Annotations: bim:CatRevit "OST_StairsSupports"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7444,8 +7530,9 @@ Class: bim:Escada.Suporte.Lateral
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.485"
+	Annotations: bim:Chave "Key.Cir.488"
 	Annotations: bim:CatRevit "OST_StairsStringerCarriage"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7457,8 +7544,9 @@ Class: bim:Escada.Suporte.Projeção
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.486"
+	Annotations: bim:Chave "Key.Cir.489"
 	Annotations: bim:CatRevit "OST_StairsSupportsAboveCut"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7470,8 +7558,9 @@ Class: bim:Escada.Degraus
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.487"
+	Annotations: bim:Chave "Key.Cir.490"
 	Annotations: bim:CatRevit "OST_StairsTrisers"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7483,8 +7572,9 @@ Class: bim:Escada.Degraus.Numeração
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.488"
+	Annotations: bim:Chave "Key.Cir.491"
 	Annotations: bim:CatRevit "OST_StairsTriserNumbers"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7496,8 +7586,9 @@ Class: bim:Escada.Seta.Sobe
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.489"
+	Annotations: bim:Chave "Key.Cir.492"
 	Annotations: bim:CatRevit "OST_StairsUpArrows"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7509,8 +7600,9 @@ Class: bim:Escada.Texto.Sobe
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.490"
+	Annotations: bim:Chave "Key.Cir.493"
 	Annotations: bim:CatRevit "OST_StairsUpText"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7522,8 +7614,9 @@ Class: bim:Escada.Seta.Desce
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.491"
+	Annotations: bim:Chave "Key.Cir.494"
 	Annotations: bim:CatRevit "OST_StairsDownArrows"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 
@@ -7535,8 +7628,9 @@ Class: bim:Escada.Texto.Desce
 	Annotations: bim:Espécie "Verticales"@pt
 	Annotations: bim:Tema "Escadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Cir.492"
+	Annotations: bim:Chave "Key.Cir.495"
 	Annotations: bim:CatRevit "OST_StairsDownText"
+	Annotations: bim:ClasseIfc "IfcBuildingElementProxy"
 	SubClassOf: bim:Escadas
 
 #################################################################
@@ -12534,5 +12628,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 27/09/2025 17:32:19
+##  Criada em 28/09/2025 7:04:45
 #################################################################
