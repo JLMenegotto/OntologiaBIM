@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt ;
-	  rdfs:label "DataHora: 27/09/2025 17:32:18"@pt ;
+	  rdfs:label "DataHora: 28/09/2025 7:04:44"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -3930,6 +3930,8 @@ bim:Acessórios rdf:type  owl:Class  ;
 
 bim:De.Fixação rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Acessórios ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Divisórias ];    
       rdfs:label  "De Fixação"@pt  .
 
 
@@ -6649,7 +6651,8 @@ bim:Guardacorpo.Projeção rdf:type  owl:Class  ;
       bim:Tema        "Guardacorpos"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Pro.200"@pt ;
-      bim:CatRevit    "OST_StairsRailingAboveCut"    .
+      bim:CatRevit    "OST_StairsRailingAboveCut"   ;
+      bim:ClasseIfc   "IfcRailing"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -7474,7 +7477,7 @@ bim:Barras.Chatas rdf:type  owl:Class  ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Ved.225"@pt ;
       bim:CatRevit    "OST_Curtain_Systems"   ;
-      bim:ClasseIfc   "IfcWall"    .
+      bim:ClasseIfc   "IfcRailingFENCE"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -7507,7 +7510,7 @@ bim:Aramado rdf:type  owl:Class  ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Ved.226"@pt ;
       bim:CatRevit    "OST_Curtain_Systems"   ;
-      bim:ClasseIfc   "IfcWall"    .
+      bim:ClasseIfc   "IfcRailingFENCE"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -7516,11 +7519,15 @@ bim:Projeto rdf:type  owl:Class  ;
 
 bim:Equipamentos rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambientes ];    
       rdfs:label  "Equipamentos"@pt  .
 
 
 bim:Sanitários rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Equipamentos ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambiente.Sanitário ];    
       rdfs:label  "Sanitários"@pt  .
 
 
@@ -8049,6 +8056,8 @@ bim:Equipamentos rdf:type  owl:Class  ;
 
 bim:Elétricos rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Equipamentos ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambientes ];    
       rdfs:label  "Elétricos"@pt  .
 
 
@@ -9072,6 +9081,8 @@ bim:Equipamentos rdf:type  owl:Class  ;
 
 bim:Hospitalares rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Equipamentos ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambiente.Hospitalar ];    
       rdfs:label  "Hospitalares"@pt  .
 
 
@@ -9288,7 +9299,8 @@ bim:Chamada.Enfermagem rdf:type  owl:Class  ;
       bim:Tema        "Aparelho Saúde"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Equ.280"@pt ;
-      bim:CatRevit    "OST_NurseCallDevices"    .
+      bim:CatRevit    "OST_NurseCallDevices"   ;
+      bim:ClasseIfc   "IfcDistributionSystemTELEPHONE"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -10805,7 +10817,8 @@ bim:Vista rdf:type  owl:Class  ;
       bim:Tema        "Elevação"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Esp.326"@pt ;
-      bim:CatRevit    "OST_Elev"    .
+      bim:CatRevit    "OST_Elev"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -10837,7 +10850,8 @@ bim:Vista.Símbolo rdf:type  owl:Class  ;
       bim:Tema        "Elevação"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Esp.327"@pt ;
-      bim:CatRevit    "OST_ElevationMarks"    .
+      bim:CatRevit    "OST_ElevationMarks"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -11093,13 +11107,112 @@ bim:Interiores rdf:type  owl:Class  ;
 bim:Ambiente.Interior rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Interiores ;
       rdfs:label  "Ambiente Interior"@pt ;
-      bim:Definição   "Espaço representa uma área, ou volume, delimitado física ou teoricamente."@pt ;
-      bim:Definición  "El espacio representa un área, o volumen, física o teóricamente delimitado."@es ;
+      bim:Definição   "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente seco residencial ou comercial."@pt ;
+      bim:Definición  "El espacio representa un área, o volumen, física o teóricamente delimitado de un ambiente seco residencial o comercial."@es ;
       bim:Natureza    "Espacial"@pt ;
       bim:Espécie     "Ambientes"@pt ;
       bim:Tema        "Interiores"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
       bim:Chave       "Key.Esp.335"@pt ;
+      bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
+      bim:ClasseIfc   "IfcSpace"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Espacial rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Espacial"@pt  .
+
+
+bim:Ambientes rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Espacial ;
+      rdfs:label  "Ambientes"@pt  .
+
+
+bim:Interiores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Ambientes ;
+      rdfs:label  "Interiores"@pt  .
+
+
+bim:Ambiente.Sanitário rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Interiores ;
+      rdfs:label  "Ambiente Sanitário"@pt ;
+      bim:Definição   "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente sanitário (banheiros ou ambientes que fornecem hidráulica)."@pt ;
+      bim:Definición  "El espacio representa un área, o volumen, física o teóricamente delimitado de um ambiente sanitário (baños o ambientes que deben tener hidráulica)."@es ;
+      bim:Natureza    "Espacial"@pt ;
+      bim:Espécie     "Ambientes"@pt ;
+      bim:Tema        "Interiores"@pt ;
+      bim:Disciplina  "Arquitetura"@pt ;
+      bim:Chave       "Key.Esp.336"@pt ;
+      bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
+      bim:ClasseIfc   "IfcSpace"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Espacial rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Espacial"@pt  .
+
+
+bim:Ambientes rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Espacial ;
+      rdfs:label  "Ambientes"@pt  .
+
+
+bim:Interiores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Ambientes ;
+      rdfs:label  "Interiores"@pt  .
+
+
+bim:Ambiente.Hospitalar rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Interiores ;
+      rdfs:label  "Ambiente Hospitalar"@pt ;
+      bim:Definição   "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente hospitalar."@pt ;
+      bim:Definición  "El espacio representa un área, o volumen, física o teóricamente delimitado de um ambiente hospitalar."@es ;
+      bim:Natureza    "Espacial"@pt ;
+      bim:Espécie     "Ambientes"@pt ;
+      bim:Tema        "Interiores"@pt ;
+      bim:Disciplina  "Arquitetura"@pt ;
+      bim:Chave       "Key.Esp.337"@pt ;
+      bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
+      bim:ClasseIfc   "IfcSpace"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Espacial rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Espacial"@pt  .
+
+
+bim:Ambientes rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Espacial ;
+      rdfs:label  "Ambientes"@pt  .
+
+
+bim:Interiores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Ambientes ;
+      rdfs:label  "Interiores"@pt  .
+
+
+bim:Ambiente.Escolar rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Interiores ;
+      rdfs:label  "Ambiente Escolar"@pt ;
+      bim:Definição   "Espaço representa uma área ou volume delimitado física ou teoricamente de um ambiente escolar."@pt ;
+      bim:Definición  "El espacio representa un área, o volumen, física o teóricamente delimitado de um ambiente escolar."@es ;
+      bim:Natureza    "Espacial"@pt ;
+      bim:Espécie     "Ambientes"@pt ;
+      bim:Tema        "Interiores"@pt ;
+      bim:Disciplina  "Arquitetura"@pt ;
+      bim:Chave       "Key.Esp.338"@pt ;
       bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
       bim:ClasseIfc   "IfcSpace"    .
 
@@ -11132,7 +11245,7 @@ bim:Ambiente.Funcional rdf:type  owl:Class  ;
       bim:Espécie     "Ambientes"@pt ;
       bim:Tema        "Interiores"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.336"@pt ;
+      bim:Chave       "Key.Esp.339"@pt ;
       bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
       bim:ClasseIfc   "IfcSpaceBERTH"    .
 
@@ -11165,7 +11278,7 @@ bim:Ambiente.Interno rdf:type  owl:Class  ;
       bim:Espécie     "Ambientes"@pt ;
       bim:Tema        "Interiores"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.337"@pt ;
+      bim:Chave       "Key.Esp.340"@pt ;
       bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
       bim:ClasseIfc   "IfcSpaceINTERNAL"    .
 
@@ -11198,7 +11311,7 @@ bim:Utilizável rdf:type  owl:Class  ;
       bim:Espécie     "Ambientes"@pt ;
       bim:Tema        "Interiores"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.338"@pt ;
+      bim:Chave       "Key.Esp.341"@pt ;
       bim:CatRevit    "OST_Rooms , OST_MEPSpaces"   ;
       bim:ClasseIfc   "IfcSpaceSPACE"    .
 
@@ -11231,7 +11344,7 @@ bim:Zona.Espacial rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.339"@pt ;
+      bim:Chave       "Key.Esp.342"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZone"    .
 
@@ -11264,7 +11377,7 @@ bim:Zona.de.Construção rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.340"@pt ;
+      bim:Chave       "Key.Esp.343"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneCONSTRUCTION"    .
 
@@ -11297,7 +11410,7 @@ bim:Zona.de.Segurança.Incêndio rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.341"@pt ;
+      bim:Chave       "Key.Esp.344"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneFIRESAFETY"    .
 
@@ -11330,7 +11443,7 @@ bim:Zona.de.Interferência rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.342"@pt ;
+      bim:Chave       "Key.Esp.345"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneINTERFERENCE"    .
 
@@ -11363,7 +11476,7 @@ bim:Zona.de.Iluminação rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.343"@pt ;
+      bim:Chave       "Key.Esp.346"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneLIGHTING"    .
 
@@ -11396,7 +11509,7 @@ bim:Zona.de.Ocupação rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.344"@pt ;
+      bim:Chave       "Key.Esp.347"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneOCCUPANCY"    .
 
@@ -11429,7 +11542,7 @@ bim:Zona.de.Reserva rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.345"@pt ;
+      bim:Chave       "Key.Esp.348"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneRESERVATION"    .
 
@@ -11462,7 +11575,7 @@ bim:Zona.de.Segurança rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.346"@pt ;
+      bim:Chave       "Key.Esp.349"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneSECURITY"    .
 
@@ -11495,7 +11608,7 @@ bim:Zona.de.Térmica rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.347"@pt ;
+      bim:Chave       "Key.Esp.350"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneTHERMAL"    .
 
@@ -11528,7 +11641,7 @@ bim:Zona.de.Transporte rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.348"@pt ;
+      bim:Chave       "Key.Esp.351"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneTRANSPORT"    .
 
@@ -11561,7 +11674,7 @@ bim:Zona.de.Ventilação rdf:type  owl:Class  ;
       bim:Espécie     "Zonas"@pt ;
       bim:Tema        "Zona"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Esp.349"@pt ;
+      bim:Chave       "Key.Esp.352"@pt ;
       bim:CatRevit    "OST_ZoneEquipment , OST_MEPSystemZone , OST_MEPZone"   ;
       bim:ClasseIfc   "IfcSpatialZoneVENTILATION"    .
 
@@ -11572,6 +11685,8 @@ bim:Projeto rdf:type  owl:Class  ;
 
 bim:Mobiliários rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambientes ];    
       rdfs:label  "Mobiliários"@pt  .
 
 
@@ -11582,6 +11697,8 @@ bim:Mobílias rdf:type  owl:Class  ;
 
 bim:Domésticas rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Mobílias ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambiente.Interior ];    
       rdfs:label  "Domésticas"@pt  .
 
 
@@ -11594,7 +11711,7 @@ bim:Móvel rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.350"@pt ;
+      bim:Chave       "Key.Mob.353"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurniture"    .
 
@@ -11627,7 +11744,7 @@ bim:Móvel.Sistema rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.351"@pt ;
+      bim:Chave       "Key.Mob.354"@pt ;
       bim:CatRevit    "OST_FurnitureSystems"   ;
       bim:ClasseIfc   "IfcFurniture"    .
 
@@ -11660,7 +11777,7 @@ bim:Cama.Solteire rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.352"@pt ;
+      bim:Chave       "Key.Mob.355"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -11693,7 +11810,7 @@ bim:Cama.Viuve rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.353"@pt ;
+      bim:Chave       "Key.Mob.356"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -11726,7 +11843,7 @@ bim:Cama.Casal rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.354"@pt ;
+      bim:Chave       "Key.Mob.357"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -11759,7 +11876,7 @@ bim:Cama.Queen rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.355"@pt ;
+      bim:Chave       "Key.Mob.358"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -11792,7 +11909,7 @@ bim:Cama.King rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.356"@pt ;
+      bim:Chave       "Key.Mob.359"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -11825,7 +11942,7 @@ bim:Cadeira rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.357"@pt ;
+      bim:Chave       "Key.Mob.360"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureCHAIR"    .
 
@@ -11858,7 +11975,7 @@ bim:Escribania rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.358"@pt ;
+      bim:Chave       "Key.Mob.361"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureDESK"    .
 
@@ -11891,7 +12008,7 @@ bim:Poltrona rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.359"@pt ;
+      bim:Chave       "Key.Mob.362"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSOFA"    .
 
@@ -11924,7 +12041,7 @@ bim:Sofá.2.Lugares rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.360"@pt ;
+      bim:Chave       "Key.Mob.363"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSOFA"    .
 
@@ -11957,7 +12074,7 @@ bim:Sofá.3.Lugares rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.361"@pt ;
+      bim:Chave       "Key.Mob.364"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSOFA"    .
 
@@ -11990,7 +12107,7 @@ bim:Mesa rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.362"@pt ;
+      bim:Chave       "Key.Mob.365"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureTABLE"    .
 
@@ -12023,7 +12140,7 @@ bim:Armário.de.Livros rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.363"@pt ;
+      bim:Chave       "Key.Mob.366"@pt ;
       bim:CatRevit    "ST_Casework"   ;
       bim:ClasseIfc   "IfcFurnitureFILECABINET"    .
 
@@ -12056,7 +12173,7 @@ bim:Armário.de.Ferramentas rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.364"@pt ;
+      bim:Chave       "Key.Mob.367"@pt ;
       bim:CatRevit    "ST_Casework"   ;
       bim:ClasseIfc   "IfcFurnitureTECHNICALCABINET"    .
 
@@ -12089,7 +12206,7 @@ bim:Prateleira rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "Domésticas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.365"@pt ;
+      bim:Chave       "Key.Mob.368"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSHELF"    .
 
@@ -12110,6 +12227,8 @@ bim:Mobílias rdf:type  owl:Class  ;
 
 bim:De.Ensino rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Mobílias ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambiente.Escolar ];    
       rdfs:label  "De Ensino"@pt  .
 
 
@@ -12122,7 +12241,7 @@ bim:Cadeira.Aula rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Ensino"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.366"@pt ;
+      bim:Chave       "Key.Mob.369"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureCHAIR"    .
 
@@ -12155,7 +12274,7 @@ bim:Mesa.Desenho rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Ensino"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.367"@pt ;
+      bim:Chave       "Key.Mob.370"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureDESK"    .
 
@@ -12188,7 +12307,7 @@ bim:Mesa.Computador rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Ensino"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.368"@pt ;
+      bim:Chave       "Key.Mob.371"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureTABLE"    .
 
@@ -12221,7 +12340,7 @@ bim:Armário.Modelos rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Ensino"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.369"@pt ;
+      bim:Chave       "Key.Mob.372"@pt ;
       bim:CatRevit    "ST_Casework"   ;
       bim:ClasseIfc   "IfcFurnitureFILECABINET"    .
 
@@ -12254,7 +12373,7 @@ bim:Armário.Livros rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Ensino"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.370"@pt ;
+      bim:Chave       "Key.Mob.373"@pt ;
       bim:CatRevit    "ST_Casework"   ;
       bim:ClasseIfc   "IfcFurnitureTECHNICALCABINET"    .
 
@@ -12287,7 +12406,7 @@ bim:Prateleira.Livros rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Ensino"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.371"@pt ;
+      bim:Chave       "Key.Mob.374"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSHELF"    .
 
@@ -12308,6 +12427,8 @@ bim:Mobílias rdf:type  owl:Class  ;
 
 bim:De.Hospital rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Mobílias ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Ambiente.Hospitalar ];    
       rdfs:label  "De Hospital"@pt  .
 
 
@@ -12320,7 +12441,7 @@ bim:Cama.Hospitalar rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.372"@pt ;
+      bim:Chave       "Key.Mob.375"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -12353,7 +12474,7 @@ bim:Maca rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.373"@pt ;
+      bim:Chave       "Key.Mob.376"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureBED"    .
 
@@ -12386,7 +12507,7 @@ bim:Cadeira.Paciente rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.374"@pt ;
+      bim:Chave       "Key.Mob.377"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureCHAIR"    .
 
@@ -12419,7 +12540,7 @@ bim:Poltrona.Paciente rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.375"@pt ;
+      bim:Chave       "Key.Mob.378"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSOFA"    .
 
@@ -12452,7 +12573,7 @@ bim:Mesa.Atendimento rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.376"@pt ;
+      bim:Chave       "Key.Mob.379"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureTABLE"    .
 
@@ -12485,7 +12606,7 @@ bim:Armário.de.Roupa rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.377"@pt ;
+      bim:Chave       "Key.Mob.380"@pt ;
       bim:CatRevit    "ST_Casework"   ;
       bim:ClasseIfc   "IfcFurnitureFILECABINET"    .
 
@@ -12518,7 +12639,7 @@ bim:Armário.de.Medicinas rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.378"@pt ;
+      bim:Chave       "Key.Mob.381"@pt ;
       bim:CatRevit    "ST_Casework"   ;
       bim:ClasseIfc   "IfcFurnitureTECHNICALCABINET"    .
 
@@ -12551,7 +12672,7 @@ bim:Prateleira.Medicinas rdf:type  owl:Class  ;
       bim:Espécie     "Mobílias"@pt ;
       bim:Tema        "De Hospital"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mob.379"@pt ;
+      bim:Chave       "Key.Mob.382"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurnitureSHELF"    .
 
@@ -12584,7 +12705,7 @@ bim:Telhado rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.380"@pt ;
+      bim:Chave       "Key.Cob.383"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -12617,7 +12738,7 @@ bim:Telhado.Verde rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.381"@pt ;
+      bim:Chave       "Key.Cob.384"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -12650,7 +12771,7 @@ bim:Telhado.Barril rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.382"@pt ;
+      bim:Chave       "Key.Cob.385"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofBARREL_ROOF"    .
 
@@ -12683,7 +12804,7 @@ bim:Telhado.Borboleta rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.383"@pt ;
+      bim:Chave       "Key.Cob.386"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofBUTTERFLY_ROOF"    .
 
@@ -12716,7 +12837,7 @@ bim:Telhado.Cúpula rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.384"@pt ;
+      bim:Chave       "Key.Cob.387"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofDOME_ROOF"    .
 
@@ -12749,7 +12870,7 @@ bim:Telhado.Plano rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.385"@pt ;
+      bim:Chave       "Key.Cob.388"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofFLAT_ROOF"    .
 
@@ -12782,7 +12903,7 @@ bim:Telhado.Livre rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.386"@pt ;
+      bim:Chave       "Key.Cob.389"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofFREEFORM"    .
 
@@ -12815,7 +12936,7 @@ bim:Telhado.Inclinado rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.387"@pt ;
+      bim:Chave       "Key.Cob.390"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofSHED_ROOF"    .
 
@@ -12848,7 +12969,7 @@ bim:Telhado.2.Aguas rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.388"@pt ;
+      bim:Chave       "Key.Cob.391"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofGABLE_ROOF"    .
 
@@ -12881,7 +13002,7 @@ bim:Telhado.4.Aguas rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.389"@pt ;
+      bim:Chave       "Key.Cob.392"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofHIP_ROOF"    .
 
@@ -12914,7 +13035,7 @@ bim:Telhado.com.Agua.Furtada rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.390"@pt ;
+      bim:Chave       "Key.Cob.393"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofHIPPED_GABLE_ROOF"    .
 
@@ -12947,7 +13068,7 @@ bim:Telhado.Mansarda rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.391"@pt ;
+      bim:Chave       "Key.Cob.394"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofMANSARD_ROOF"    .
 
@@ -12980,7 +13101,7 @@ bim:Telhado.Mansarda.Americana rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.392"@pt ;
+      bim:Chave       "Key.Cob.395"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofGAMBREL_ROOF"    .
 
@@ -13013,7 +13134,7 @@ bim:Telhado.Pavilhão rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.393"@pt ;
+      bim:Chave       "Key.Cob.396"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofPAVILION_ROOF"    .
 
@@ -13046,7 +13167,7 @@ bim:Telhado.Arco.Iris rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Formas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.394"@pt ;
+      bim:Chave       "Key.Cob.397"@pt ;
       bim:CatRevit    "OST_Roofs"   ;
       bim:ClasseIfc   "IfcRoofRAINBOW_ROOF"    .
 
@@ -13079,7 +13200,7 @@ bim:Beiral.Frente rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Beiral"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.395"@pt ;
+      bim:Chave       "Key.Cob.398"@pt ;
       bim:CatRevit    "OST_Fascia"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13112,7 +13233,7 @@ bim:Beiral.Calha rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Beiral"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.396"@pt ;
+      bim:Chave       "Key.Cob.399"@pt ;
       bim:CatRevit    "OST_Gutter"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13145,7 +13266,7 @@ bim:Beiral.Forro rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Beiral"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.397"@pt ;
+      bim:Chave       "Key.Cob.400"@pt ;
       bim:CatRevit    "OST_RoofSoffit"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13178,7 +13299,7 @@ bim:Telhado.Abertura rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Perímetro"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.398"@pt ;
+      bim:Chave       "Key.Cob.401"@pt ;
       bim:CatRevit    "OST_RoofOpening"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13211,7 +13332,7 @@ bim:Telhado.Perímetro rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Perímetro"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.399"@pt ;
+      bim:Chave       "Key.Cob.402"@pt ;
       bim:CatRevit    "OST_RoofsInteriorEdges"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13244,7 +13365,7 @@ bim:Telhado.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Camada de Telhado"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.400"@pt ;
+      bim:Chave       "Key.Cob.403"@pt ;
       bim:CatRevit    "OST_RoofsProjection"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13277,7 +13398,7 @@ bim:Telhado.Núcleo rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Camada de Telhado"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.401"@pt ;
+      bim:Chave       "Key.Cob.404"@pt ;
       bim:CatRevit    "OST_RoofsStructure"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13310,7 +13431,7 @@ bim:Telhado.Substrato rdf:type  owl:Class  ;
       bim:Espécie     "Telhados"@pt ;
       bim:Tema        "Camada de Telhado"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cob.402"@pt ;
+      bim:Chave       "Key.Cob.405"@pt ;
       bim:CatRevit    "OST_RoofsSubstrate"   ;
       bim:ClasseIfc   "IfcRoof"    .
 
@@ -13343,7 +13464,7 @@ bim:Lâmpada rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.403"@pt ;
+      bim:Chave       "Key.Lum.406"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLamp"    .
 
@@ -13376,7 +13497,7 @@ bim:Lâmpada.Fluorescente.Compacta rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.404"@pt ;
+      bim:Chave       "Key.Lum.407"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampCOMPACTFLUORESCENT"    .
 
@@ -13409,7 +13530,7 @@ bim:Lâmpada.Fluorescente rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.405"@pt ;
+      bim:Chave       "Key.Lum.408"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampFLUORESCENT"    .
 
@@ -13442,7 +13563,7 @@ bim:Lâmpada.Alta.Pressão.Mercúrio rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.406"@pt ;
+      bim:Chave       "Key.Lum.409"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampHIGHPRESSUREMERCURY"    .
 
@@ -13475,7 +13596,7 @@ bim:Lâmpada.Alta.Pressão.Sódio rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.407"@pt ;
+      bim:Chave       "Key.Lum.410"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampHIGHPRESSURESODIUM"    .
 
@@ -13508,7 +13629,7 @@ bim:Lâmpada.LED rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.408"@pt ;
+      bim:Chave       "Key.Lum.411"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampLED"    .
 
@@ -13541,7 +13662,7 @@ bim:Lâmpada.OLED rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.409"@pt ;
+      bim:Chave       "Key.Lum.412"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampOLED"    .
 
@@ -13574,7 +13695,7 @@ bim:Lâmpada.Halógena rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.410"@pt ;
+      bim:Chave       "Key.Lum.413"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampHALOGEN"    .
 
@@ -13607,7 +13728,7 @@ bim:Lâmpada.Iodetos.Metálicos rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.411"@pt ;
+      bim:Chave       "Key.Lum.414"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampMETALHALIDE"    .
 
@@ -13640,7 +13761,7 @@ bim:Lâmpada.Incandescente rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Lâmpadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.412"@pt ;
+      bim:Chave       "Key.Lum.415"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
       bim:ClasseIfc   "IfcLampTUNGSTENFILAMENT"    .
 
@@ -13673,7 +13794,7 @@ bim:Luminária rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.413"@pt ;
+      bim:Chave       "Key.Lum.416"@pt ;
       bim:CatRevit    "OST_LightingFixtures"   ;
       bim:ClasseIfc   "IfcLightFixture"    .
 
@@ -13706,7 +13827,7 @@ bim:Luminária.Direcional rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.414"@pt ;
+      bim:Chave       "Key.Lum.417"@pt ;
       bim:CatRevit    "OST_LightingFixtures"   ;
       bim:ClasseIfc   "IfcLightFixtureDIRECTIONSOURCE"    .
 
@@ -13739,7 +13860,7 @@ bim:Luminária.Spot rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.415"@pt ;
+      bim:Chave       "Key.Lum.418"@pt ;
       bim:CatRevit    "OST_LightingFixtures"   ;
       bim:ClasseIfc   "IfcLightFixturePOINTSOURCE"    .
 
@@ -13772,7 +13893,7 @@ bim:Luminária.de.Segurança rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.416"@pt ;
+      bim:Chave       "Key.Lum.419"@pt ;
       bim:CatRevit    "OST_LightingFixtures"   ;
       bim:ClasseIfc   "IfcLightFixtureSECURITYLIGHTING"    .
 
@@ -13805,8 +13926,9 @@ bim:Fonte.de.Iluminação rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.417"@pt ;
-      bim:CatRevit    "OST_LightingFixtureSource"    .
+      bim:Chave       "Key.Lum.420"@pt ;
+      bim:CatRevit    "OST_LightingFixtureSource"   ;
+      bim:ClasseIfc   "IfcLightFixture"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -13837,8 +13959,9 @@ bim:Feixe.de.Luz rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.418"@pt ;
-      bim:CatRevit    "OST_LightLine"    .
+      bim:Chave       "Key.Lum.421"@pt ;
+      bim:CatRevit    "OST_LightLine"   ;
+      bim:ClasseIfc   "IfcLightFixture"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -13869,8 +13992,9 @@ bim:Luz rdf:type  owl:Class  ;
       bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Luminárias"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Lum.419"@pt ;
-      bim:CatRevit    "OST_Lights"    .
+      bim:Chave       "Key.Lum.422"@pt ;
+      bim:CatRevit    "OST_Lights"   ;
+      bim:ClasseIfc   "IfcLightFixture"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -13901,7 +14025,7 @@ bim:Placa.Informativa rdf:type  owl:Class  ;
       bim:Espécie     "Visual"@pt ;
       bim:Tema        "Informativa"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Com.420"@pt ;
+      bim:Chave       "Key.Com.423"@pt ;
       bim:CatRevit    "OST_Signage"   ;
       bim:ClasseIfc   "IfcSignal"    .
 
@@ -13934,7 +14058,7 @@ bim:Totem.Informativo rdf:type  owl:Class  ;
       bim:Espécie     "Visual"@pt ;
       bim:Tema        "Informativa"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Com.421"@pt ;
+      bim:Chave       "Key.Com.424"@pt ;
       bim:CatRevit    "OST_Signage"   ;
       bim:ClasseIfc   "IfcSignal"    .
 
@@ -13967,7 +14091,7 @@ bim:Cornija rdf:type  owl:Class  ;
       bim:Espécie     "De Paredes"@pt ;
       bim:Tema        "Frisos"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Orn.422"@pt ;
+      bim:Chave       "Key.Orn.425"@pt ;
       bim:CatRevit    "OST_Cornices"   ;
       bim:ClasseIfc   "IfcOpeningElementRECESS"    .
 
@@ -14000,7 +14124,7 @@ bim:Borda.Laje rdf:type  owl:Class  ;
       bim:Espécie     "De Paredes"@pt ;
       bim:Tema        "Frisos"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Orn.423"@pt ;
+      bim:Chave       "Key.Orn.426"@pt ;
       bim:CatRevit    "OST_EdgeSlab"   ;
       bim:ClasseIfc   "IfcSlab"    .
 
@@ -14033,7 +14157,7 @@ bim:Nicho.Entalhado rdf:type  owl:Class  ;
       bim:Espécie     "De Paredes"@pt ;
       bim:Tema        "Frisos"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Orn.424"@pt ;
+      bim:Chave       "Key.Orn.427"@pt ;
       bim:CatRevit    "OST_Reveals"   ;
       bim:ClasseIfc   "IfcOpeningElementRECESS"    .
 
@@ -14066,8 +14190,9 @@ bim:Elevador rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Elevadores"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.425"@pt ;
-      bim:CatRevit    "OST_VerticalCirculation"    .
+      bim:Chave       "Key.Cir.428"@pt ;
+      bim:CatRevit    "OST_VerticalCirculation"   ;
+      bim:ClasseIfc   "IfcTransportElementELEVATOR"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14098,7 +14223,7 @@ bim:Rampa rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.426"@pt ;
+      bim:Chave       "Key.Cir.429"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRamp"    .
 
@@ -14131,7 +14256,7 @@ bim:Lance.Rampa rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.427"@pt ;
+      bim:Chave       "Key.Cir.430"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampFlight"    .
 
@@ -14164,7 +14289,7 @@ bim:Lance.Curvo.Rampa rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.428"@pt ;
+      bim:Chave       "Key.Cir.431"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampFlightSPIRAL"    .
 
@@ -14197,7 +14322,7 @@ bim:Lance.Reto.Rampa rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.429"@pt ;
+      bim:Chave       "Key.Cir.432"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampFlightSTRAIGHT"    .
 
@@ -14230,7 +14355,7 @@ bim:Rampa.Espiral rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.430"@pt ;
+      bim:Chave       "Key.Cir.433"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampSPIRAL_RAMP"    .
 
@@ -14263,7 +14388,7 @@ bim:Rampa.U rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.431"@pt ;
+      bim:Chave       "Key.Cir.434"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampHALF_TURN_RAMP"    .
 
@@ -14296,7 +14421,7 @@ bim:Rampa.U.Longo rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.432"@pt ;
+      bim:Chave       "Key.Cir.435"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampTWO_QUARTER_TURN_RAMP"    .
 
@@ -14329,7 +14454,7 @@ bim:Rampa.L rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.433"@pt ;
+      bim:Chave       "Key.Cir.436"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampQUARTER_TURN_RAMP"    .
 
@@ -14362,7 +14487,7 @@ bim:Rampa.Reta rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.434"@pt ;
+      bim:Chave       "Key.Cir.437"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampSTRAIGHT_RUN_RAMP"    .
 
@@ -14395,7 +14520,7 @@ bim:Rampa.Reta.Dois.Lances rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.435"@pt ;
+      bim:Chave       "Key.Cir.438"@pt ;
       bim:CatRevit    "OST_Ramps"   ;
       bim:ClasseIfc   "IfcRampTWO_STRAIGHT_RUN_RAMP"    .
 
@@ -14428,8 +14553,9 @@ bim:Rampa.Incompleta rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.436"@pt ;
-      bim:CatRevit    "OST_RampsIncomplete"    .
+      bim:Chave       "Key.Cir.439"@pt ;
+      bim:CatRevit    "OST_RampsIncomplete"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14460,8 +14586,9 @@ bim:Rampa.Suporte.Lateral rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.437"@pt ;
-      bim:CatRevit    "OST_RampsStringer"    .
+      bim:Chave       "Key.Cir.440"@pt ;
+      bim:CatRevit    "OST_RampsStringer"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14492,8 +14619,9 @@ bim:Rampa.Suporte.Lateral.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.438"@pt ;
-      bim:CatRevit    "OST_RampsStringerAboveCut"    .
+      bim:Chave       "Key.Cir.441"@pt ;
+      bim:CatRevit    "OST_RampsStringerAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14524,8 +14652,9 @@ bim:Rampa.Seta.Sobe rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.439"@pt ;
-      bim:CatRevit    "OST_RampsUpArrow"    .
+      bim:Chave       "Key.Cir.442"@pt ;
+      bim:CatRevit    "OST_RampsUpArrow"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14556,8 +14685,9 @@ bim:Rampa.Seta.Desce rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.440"@pt ;
-      bim:CatRevit    "OST_RampsDownArrow"    .
+      bim:Chave       "Key.Cir.443"@pt ;
+      bim:CatRevit    "OST_RampsDownArrow"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14588,8 +14718,9 @@ bim:Rampa.Texto.Sobe rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.441"@pt ;
-      bim:CatRevit    "OST_RampsUpText"    .
+      bim:Chave       "Key.Cir.444"@pt ;
+      bim:CatRevit    "OST_RampsUpText"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14620,8 +14751,9 @@ bim:Rampa.Texto.Desce rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.442"@pt ;
-      bim:CatRevit    "OST_RampsDownText"    .
+      bim:Chave       "Key.Cir.445"@pt ;
+      bim:CatRevit    "OST_RampsDownText"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14652,8 +14784,9 @@ bim:Rampa.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Rampas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.443"@pt ;
-      bim:CatRevit    "OST_RampsAboveCut"    .
+      bim:Chave       "Key.Cir.446"@pt ;
+      bim:CatRevit    "OST_RampsAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -14684,7 +14817,7 @@ bim:Escada rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.444"@pt ;
+      bim:Chave       "Key.Cir.447"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStair"    .
 
@@ -14717,7 +14850,7 @@ bim:Lance.Escada rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.445"@pt ;
+      bim:Chave       "Key.Cir.448"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairFlight"    .
 
@@ -14750,7 +14883,7 @@ bim:Lance.Escada.Curvo rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.446"@pt ;
+      bim:Chave       "Key.Cir.449"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairFlightCURVED"    .
 
@@ -14783,7 +14916,7 @@ bim:Lance.Escada.Livre rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.447"@pt ;
+      bim:Chave       "Key.Cir.450"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairFlightFREEFORM"    .
 
@@ -14816,7 +14949,7 @@ bim:Lance.Escada.Espiral rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.448"@pt ;
+      bim:Chave       "Key.Cir.451"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairFlightSPIRAL"    .
 
@@ -14849,7 +14982,7 @@ bim:Lance.Escada.Reto rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.449"@pt ;
+      bim:Chave       "Key.Cir.452"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairFlightSTRAIGHT"    .
 
@@ -14882,7 +15015,7 @@ bim:Lance.Escada.Compensado rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.450"@pt ;
+      bim:Chave       "Key.Cir.453"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairFlightWINDER"    .
 
@@ -14915,7 +15048,7 @@ bim:Escada.Marinheiro rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.451"@pt ;
+      bim:Chave       "Key.Cir.454"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairLADDER"    .
 
@@ -14948,7 +15081,7 @@ bim:Escada.Caracol rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.452"@pt ;
+      bim:Chave       "Key.Cir.455"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairSPIRAL_STAIR"    .
 
@@ -14981,7 +15114,7 @@ bim:Escada.T rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.453"@pt ;
+      bim:Chave       "Key.Cir.456"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairDOUBLE_RETURN_STAIR"    .
 
@@ -15014,7 +15147,7 @@ bim:Escada.U rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.454"@pt ;
+      bim:Chave       "Key.Cir.457"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairHALF_TURN_STAIR"    .
 
@@ -15047,7 +15180,7 @@ bim:Escada.U.Compensada rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.455"@pt ;
+      bim:Chave       "Key.Cir.458"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairHALF_WINDING_STAIR"    .
 
@@ -15080,7 +15213,7 @@ bim:Escada.L rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.456"@pt ;
+      bim:Chave       "Key.Cir.459"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairQUARTER_TURN_STAIR"    .
 
@@ -15113,7 +15246,7 @@ bim:Escada.L.Compensada rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.457"@pt ;
+      bim:Chave       "Key.Cir.460"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairQUARTER_WINDING_STAIR"    .
 
@@ -15146,7 +15279,7 @@ bim:Escada.3.Lances rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.458"@pt ;
+      bim:Chave       "Key.Cir.461"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairTWO_QUARTER_TURN_STAIR"    .
 
@@ -15179,7 +15312,7 @@ bim:Escada.3.Lances.Compensada rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.459"@pt ;
+      bim:Chave       "Key.Cir.462"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairTWO_QUARTER_WINDING_STAIR"    .
 
@@ -15212,7 +15345,7 @@ bim:Escada.4.Lances rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.460"@pt ;
+      bim:Chave       "Key.Cir.463"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairTHREE_QUARTER_TURN_STAIR"    .
 
@@ -15245,7 +15378,7 @@ bim:Escada.4.Lances.Compensada rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.461"@pt ;
+      bim:Chave       "Key.Cir.464"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairTHREE_QUARTER_WINDING_STAIR"    .
 
@@ -15278,7 +15411,7 @@ bim:Escada.Reta rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.462"@pt ;
+      bim:Chave       "Key.Cir.465"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairSTRAIGHT_RUN_STAIR"    .
 
@@ -15311,7 +15444,7 @@ bim:Escada.Reta.Dois.Lances rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.463"@pt ;
+      bim:Chave       "Key.Cir.466"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairTWO_STRAIGHT_RUN_STAIR"    .
 
@@ -15344,7 +15477,7 @@ bim:Escada.Curva rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.464"@pt ;
+      bim:Chave       "Key.Cir.467"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairCURVED_RUN_STAIR"    .
 
@@ -15377,7 +15510,7 @@ bim:Escada.Curva.2.Lances rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.465"@pt ;
+      bim:Chave       "Key.Cir.468"@pt ;
       bim:CatRevit    "OST_Stairs"   ;
       bim:ClasseIfc   "IfcStairTWO_CURVED_RUN_STAIR"    .
 
@@ -15410,8 +15543,9 @@ bim:Escada.Multiplos.Andares rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.466"@pt ;
-      bim:CatRevit    "OST_MultistoryStairs"    .
+      bim:Chave       "Key.Cir.469"@pt ;
+      bim:CatRevit    "OST_MultistoryStairs"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15442,8 +15576,9 @@ bim:Escada.Interrupção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.467"@pt ;
-      bim:CatRevit    "OST_StairsCutMarks"    .
+      bim:Chave       "Key.Cir.470"@pt ;
+      bim:CatRevit    "OST_StairsCutMarks"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15474,8 +15609,9 @@ bim:Escada.Interrupção.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.468"@pt ;
-      bim:CatRevit    "OST_StairsCutMarksAboveCut"    .
+      bim:Chave       "Key.Cir.471"@pt ;
+      bim:CatRevit    "OST_StairsCutMarksAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15506,8 +15642,9 @@ bim:Escada.Patamar rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.469"@pt ;
-      bim:CatRevit    "OST_StairsLandings"    .
+      bim:Chave       "Key.Cir.472"@pt ;
+      bim:CatRevit    "OST_StairsLandings"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15538,8 +15675,9 @@ bim:Escada.Naris rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.470"@pt ;
-      bim:CatRevit    "OST_StairsNosingLines"    .
+      bim:Chave       "Key.Cir.473"@pt ;
+      bim:CatRevit    "OST_StairsNosingLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15570,8 +15708,9 @@ bim:Escada.Naris.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.471"@pt ;
-      bim:CatRevit    "OST_StairsNosingLinesAboveCut"    .
+      bim:Chave       "Key.Cir.474"@pt ;
+      bim:CatRevit    "OST_StairsNosingLinesAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15602,8 +15741,9 @@ bim:Escada.Contorno rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.472"@pt ;
-      bim:CatRevit    "OST_StairsOutlines"    .
+      bim:Chave       "Key.Cir.475"@pt ;
+      bim:CatRevit    "OST_StairsOutlines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15634,8 +15774,9 @@ bim:Escada.Contorno.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.473"@pt ;
-      bim:CatRevit    "OST_StairsOutlinesAboveCut"    .
+      bim:Chave       "Key.Cir.476"@pt ;
+      bim:CatRevit    "OST_StairsOutlinesAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15666,8 +15807,9 @@ bim:Escada.Seta rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.474"@pt ;
-      bim:CatRevit    "OST_StairsPaths"    .
+      bim:Chave       "Key.Cir.477"@pt ;
+      bim:CatRevit    "OST_StairsPaths"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15698,8 +15840,9 @@ bim:Escada.Seta.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.475"@pt ;
-      bim:CatRevit    "OST_StairsPathsAboveCut"    .
+      bim:Chave       "Key.Cir.478"@pt ;
+      bim:CatRevit    "OST_StairsPathsAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15730,8 +15873,9 @@ bim:Escada.Degrau.Linha rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.476"@pt ;
-      bim:CatRevit    "OST_StairsRiserLines"    .
+      bim:Chave       "Key.Cir.479"@pt ;
+      bim:CatRevit    "OST_StairsRiserLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15762,8 +15906,9 @@ bim:Escada.Degrau.Linha.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.477"@pt ;
-      bim:CatRevit    "OST_StairsRiserLinesAboveCut"    .
+      bim:Chave       "Key.Cir.480"@pt ;
+      bim:CatRevit    "OST_StairsRiserLinesAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15794,8 +15939,9 @@ bim:Escada.Lance rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.478"@pt ;
-      bim:CatRevit    "OST_StairsRuns"    .
+      bim:Chave       "Key.Cir.481"@pt ;
+      bim:CatRevit    "OST_StairsRuns"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15826,8 +15972,9 @@ bim:Escada.Esboço.Limite rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.479"@pt ;
-      bim:CatRevit    "OST_StairsSketchBoundaryLines"    .
+      bim:Chave       "Key.Cir.482"@pt ;
+      bim:CatRevit    "OST_StairsSketchBoundaryLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15858,8 +16005,9 @@ bim:Escada.Esboço.Patamar rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.480"@pt ;
-      bim:CatRevit    "OST_StairsSketchLandingCenterLines"    .
+      bim:Chave       "Key.Cir.483"@pt ;
+      bim:CatRevit    "OST_StairsSketchLandingCenterLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15890,8 +16038,9 @@ bim:Escada.Esboço.Caminho rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.481"@pt ;
-      bim:CatRevit    "OST_StairsSketchPathLines"    .
+      bim:Chave       "Key.Cir.484"@pt ;
+      bim:CatRevit    "OST_StairsSketchPathLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15922,8 +16071,9 @@ bim:Escada.Esboço.Degraus rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.482"@pt ;
-      bim:CatRevit    "OST_StairsSketchRiserLines"    .
+      bim:Chave       "Key.Cir.485"@pt ;
+      bim:CatRevit    "OST_StairsSketchRiserLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15954,8 +16104,9 @@ bim:Escada.Esboço.Lances rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.483"@pt ;
-      bim:CatRevit    "OST_StairsSketchRunLines"    .
+      bim:Chave       "Key.Cir.486"@pt ;
+      bim:CatRevit    "OST_StairsSketchRunLines"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -15986,8 +16137,9 @@ bim:Escada.Suporte rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.484"@pt ;
-      bim:CatRevit    "OST_StairsSupports"    .
+      bim:Chave       "Key.Cir.487"@pt ;
+      bim:CatRevit    "OST_StairsSupports"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16018,8 +16170,9 @@ bim:Escada.Suporte.Lateral rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.485"@pt ;
-      bim:CatRevit    "OST_StairsStringerCarriage"    .
+      bim:Chave       "Key.Cir.488"@pt ;
+      bim:CatRevit    "OST_StairsStringerCarriage"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16050,8 +16203,9 @@ bim:Escada.Suporte.Projeção rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.486"@pt ;
-      bim:CatRevit    "OST_StairsSupportsAboveCut"    .
+      bim:Chave       "Key.Cir.489"@pt ;
+      bim:CatRevit    "OST_StairsSupportsAboveCut"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16082,8 +16236,9 @@ bim:Escada.Degraus rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.487"@pt ;
-      bim:CatRevit    "OST_StairsTrisers"    .
+      bim:Chave       "Key.Cir.490"@pt ;
+      bim:CatRevit    "OST_StairsTrisers"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16114,8 +16269,9 @@ bim:Escada.Degraus.Numeração rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.488"@pt ;
-      bim:CatRevit    "OST_StairsTriserNumbers"    .
+      bim:Chave       "Key.Cir.491"@pt ;
+      bim:CatRevit    "OST_StairsTriserNumbers"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16146,8 +16302,9 @@ bim:Escada.Seta.Sobe rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.489"@pt ;
-      bim:CatRevit    "OST_StairsUpArrows"    .
+      bim:Chave       "Key.Cir.492"@pt ;
+      bim:CatRevit    "OST_StairsUpArrows"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16178,8 +16335,9 @@ bim:Escada.Texto.Sobe rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.490"@pt ;
-      bim:CatRevit    "OST_StairsUpText"    .
+      bim:Chave       "Key.Cir.493"@pt ;
+      bim:CatRevit    "OST_StairsUpText"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16210,8 +16368,9 @@ bim:Escada.Seta.Desce rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.491"@pt ;
-      bim:CatRevit    "OST_StairsDownArrows"    .
+      bim:Chave       "Key.Cir.494"@pt ;
+      bim:CatRevit    "OST_StairsDownArrows"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -16242,8 +16401,9 @@ bim:Escada.Texto.Desce rdf:type  owl:Class  ;
       bim:Espécie     "Verticales"@pt ;
       bim:Tema        "Escadas"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Cir.492"@pt ;
-      bim:CatRevit    "OST_StairsDownText"    .
+      bim:Chave       "Key.Cir.495"@pt ;
+      bim:CatRevit    "OST_StairsDownText"   ;
+      bim:ClasseIfc   "IfcBuildingElementProxy"    .
 
 #################################################################
 #     Indivíduos em Turtle                                       
@@ -21124,5 +21284,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 27/09/2025 17:32:19
+##  Criada em 28/09/2025 7:04:45
 #################################################################
