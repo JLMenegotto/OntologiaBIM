@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt
-  Annotations: rdfs:label "DataHora: 28/09/2025 17:36:29"@pt
+  Annotations: rdfs:label "DataHora: 29/09/2025 9:38:15"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -8593,6 +8593,7 @@ Class: bim:Escada.Texto.Desce
 Class: bim:Telemetria
 	Annotations: rdfs:label "Telemetria"@pt
 	SubClassOf: bim:Projeto
+	EquivalentTo:  bim:é.componente.de some bim:Ambientes
 
 
 Class: bim:MQTT
@@ -9067,14 +9068,15 @@ Class: bim:Sensor.de.Vento
 	SubClassOf: bim:Sensores
 
 
-Class: bim:Insumos
-	Annotations: rdfs:label "Insumos"@pt
+Class: bim:Insumos.Elétricos
+	Annotations: rdfs:label "Insumos.Elétricos"@pt
 	SubClassOf: bim:Projeto
+	EquivalentTo:  bim:é.componente.de some bim:Ambientes
 
 
 Class: bim:Conectados
 	Annotations: rdfs:label "Conectados"@pt
-	SubClassOf: bim:Insumos
+	SubClassOf: bim:Insumos.Elétricos
 
 
 Class: bim:Tomadas
@@ -9086,12 +9088,12 @@ Class: bim:Tomada
 	Annotations: rdfs:label "Tomada"@pt
 	Annotations: bim:Definição "Tomada é um dispositivo instalado num ponto para receber um ou mais plugues inseridos."@pt
 	Annotations: bim:Definición "Enchufes son dispositivos instalados para recibir uno o más enchufes insertados."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Ins.592"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcOutlet"
 	SubClassOf: bim:Tomadas
 
@@ -9100,12 +9102,12 @@ Class: bim:Tomada.de.AudioVídeo
 	Annotations: rdfs:label "Tomada de AudioVídeo"@pt
 	Annotations: bim:Definição "Tomada ou conector usada para um áudio ou dispositivo visual."@pt
 	Annotations: bim:Definición "Enchufe utilizado por dispositivos audiovisuales."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Ins.593"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcOutletAUDIOVISUALOUTLET"
 	SubClassOf: bim:Tomadas
 
@@ -9114,54 +9116,96 @@ Class: bim:Tomada.de.Comunicação
 	Annotations: rdfs:label "Tomada de Comunicação"@pt
 	Annotations: bim:Definição "Tomada ou conector usada para equipamentos de comunicação de conexão."@pt
 	Annotations: bim:Definición "Enchufe utilizado para conectar equipos de telecomunicación."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Ins.594"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcOutletCOMMUNICATIONSOUTLET"
-	SubClassOf: bim:Tomadas
-
-
-Class: bim:Tomada.de.Dados
-	Annotations: rdfs:label "Tomada de Dados"@pt
-	Annotations: bim:Definição "Tomada ou conector para dados usada para conectar equipamentos de comunicações de dados."@pt
-	Annotations: bim:Definición "Enchufe de red de datos usados por equipos informáticos."@es
-	Annotations: bim:Natureza "Insumos"@pt
-	Annotations: bim:Espécie "Conectados"@pt
-	Annotations: bim:Tema "Tomadas"@pt
-	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.595"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
-	Annotations: bim:ClasseIfc "IfcOutletDATAOUTLET"
 	SubClassOf: bim:Tomadas
 
 
 Class: bim:Tomada.de.Energia
 	Annotations: rdfs:label "Tomada de Energia"@pt
-	Annotations: bim:Definição "Tomada ou conector usada para dispositivos elétricos que requerem energia."@pt
-	Annotations: bim:Definición "Enchufe tomacorriente utilizado por dispositivos eléctricos que requieren energía."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Definição "Tomada de energia embutida na parede usada para dispositivos elétricos."@pt
+	Annotations: bim:Definición "Enchufe de energia embutido en la pared, usada para dispositivos eléctricos."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.596"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.595"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcOutletPOWEROUTLET"
 	SubClassOf: bim:Tomadas
 
 
-Class: bim:Tomada.de.Telefonia
-	Annotations: rdfs:label "Tomada de Telefonia"@pt
-	Annotations: bim:Definição "Tomada usada para conectar equipamentos de comunicações telefônicas."@pt
-	Annotations: bim:Definición "Enchufe utilizado para conectar equipos de comunicaciones telefónicas."@es
-	Annotations: bim:Natureza "Insumos"@pt
+Class: bim:Tomada.de.Energia.Sobrepor
+	Annotations: rdfs:label "Tomada de Energia Sobrepor"@pt
+	Annotations: bim:Definição "Tomada de energia de sobrepor na parede usada para dispositivos elétricos."@pt
+	Annotations: bim:Definición "Enchufe de energia externa a la pared, usada para dispositivos eléctricos."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.596"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletPOWEROUTLET"
+	SubClassOf: bim:Tomadas
+
+
+Class: bim:Tomada.RJ45
+	Annotations: rdfs:label "Tomada RJ45"@pt
+	Annotations: bim:Definição "Tomada RJ45 para dados usada para conectar equipamentos de comunicações de dados em redes."@pt
+	Annotations: bim:Definición "Enchufe RJ45 embutido en la pared para red de datos usados por equipos informáticos."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
 	Annotations: bim:Chave "Key.Ins.597"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletDATAOUTLET"
+	SubClassOf: bim:Tomadas
+
+
+Class: bim:Tomada.RJ11
+	Annotations: rdfs:label "Tomada RJ11"@pt
+	Annotations: bim:Definição "Tomada RJ11 usada para conectar equipamentos telefônicos."@pt
+	Annotations: bim:Definición "Enchufe RJ11 embutido en la pared para conectar equipos de comunicaciones telefónicas."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.598"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletTELEPHONEOUTLET"
+	SubClassOf: bim:Tomadas
+
+
+Class: bim:Tomada.RJ45.Sobrepor
+	Annotations: rdfs:label "Tomada RJ45 Sobrepor"@pt
+	Annotations: bim:Definição "Tomada RJ45 de sobrepor para dados usada para conectar equipamentos de comunicações de dados em redes."@pt
+	Annotations: bim:Definición "Enchufe RJ45 externo de la pared para red de datos usados por equipos informáticos."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.599"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletDATAOUTLET"
+	SubClassOf: bim:Tomadas
+
+
+Class: bim:Tomada.RJ11.Sobrepor
+	Annotations: rdfs:label "Tomada RJ11 Sobrepor"@pt
+	Annotations: bim:Definição "Tomada RJ11 de sobrepor usada para conectar equipamentos telefônicos."@pt
+	Annotations: bim:Definición "Enchufe RJ11 externo de la pared para conectar equipos de comunicaciones telefónicas."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.600"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcOutletTELEPHONEOUTLET"
 	SubClassOf: bim:Tomadas
 
@@ -9170,14 +9214,318 @@ Class: bim:Porta.de.Conexão
 	Annotations: rdfs:label "Porta de Conexão"@pt
 	Annotations: bim:Definição "Porta fornece os meios para um elemento se conectar a outros elementos."@pt
 	Annotations: bim:Definición "Proporciona los medios para que un elemento se conecte con otros elementos."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.598"
-	Annotations: bim:CatRevit "OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.601"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcPort"
 	SubClassOf: bim:Tomadas
+
+
+Class: bim:Tomadas.Piso
+	Annotations: rdfs:label "Tomadas Piso"@pt
+	SubClassOf: bim:Conectados
+
+
+Class: bim:Caixa.3E
+	Annotations: rdfs:label "Caixa 3E"@pt
+	Annotations: bim:Definição "Caixa de 3 tomadas de Energia para instalar em contrapisos ou pisos elevados. 116 x 116 x 110 mm."@pt
+	Annotations: bim:Definición "Caja de 3 enchufes de Energia combinados para instalar en contrapisos o pisos elevados. 116 x 116 x 110 mm."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas Piso"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.602"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletCOMMUNICATIONSOUTLET"
+	SubClassOf: bim:Tomadas.Piso
+
+
+Class: bim:Caixa.8ED
+	Annotations: rdfs:label "Caixa 8ED"@pt
+	Annotations: bim:Definição "Caixa de 4 tomadas de Energia e 4 tomadas de rede  RJ45 combinadas para instalar em contrapisos. 158 x 252 x 50 mm."@pt
+	Annotations: bim:Definición "Caja de 4 enchufes de Energia y 4 enchufes RJ45 de datos, combinados para instalar en contrapisos. 158 x 252 x 50 mm."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas Piso"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.603"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletCOMMUNICATIONSOUTLET"
+	SubClassOf: bim:Tomadas.Piso
+
+
+Class: bim:Caixa.PAS.Cega
+	Annotations: rdfs:label "Caixa PAS Cega"@pt
+	Annotations: bim:Definição "Caixa de passagem para instalar em contrapisos, apoiada e aparafusada na laje. 170 x 170 x 42 mm"@pt
+	Annotations: bim:Definición "Caja pasaje para instalar em contrapisos, apoyada y atornillada a la losa. 170 x 170 x 42 mm."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Tomadas Piso"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.604"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcOutletCOMMUNICATIONSOUTLET"
+	SubClassOf: bim:Tomadas.Piso
+
+
+Class: bim:Interruptores
+	Annotations: rdfs:label "Interruptores"@pt
+	SubClassOf: bim:Conectados
+
+
+Class: bim:Interruptor
+	Annotations: rdfs:label "Interruptor"@pt
+	Annotations: bim:Definição "Interruptor de luz simples. Aciona uma única lâmpada ou conjunto de lâmpadas. É o mais comum em residências."@pt
+	Annotations: bim:Definición "Interruptor de luz simple. Activa una sola lámpara o conjunto de lámparas. Es el más común en los hogares."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.605"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Duplo
+	Annotations: rdfs:label "Interruptor Duplo"@pt
+	Annotations: bim:Definição "Interruptor de luz duplo. Possui duas teclas para controlar duas lâmpadas ou circuitos distintos."@pt
+	Annotations: bim:Definición "Interruptor de luz doble. Dispone de dos teclas para controlar dos lámparas o circuitos diferentes."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.606"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceKEYPAD"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Triplo
+	Annotations: rdfs:label "Interruptor Triplo"@pt
+	Annotations: bim:Definição "Interruptor de luz triplo. Possui três teclas para controlar lâmpadas ou circuitos distintos."@pt
+	Annotations: bim:Definición "Interruptor de luz doble. Dispone de dos teclas para controlar dos lámparas o circuitos diferentes."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.607"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceKEYPAD"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.3W
+	Annotations: rdfs:label "Interruptor 3W"@pt
+	Annotations: bim:Definição "Interruptor de luz paralelo Three-Way. Permite acionar uma mesma lâmpada de dois locais diferentes, ideal para corredores e escadas."@pt
+	Annotations: bim:Definición "Interruptor de luz paralelo de tres vías. Permite activar la misma lámpara desde dos lugares diferentes, ideal para pasillos y escaleras."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.608"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceTOGGLESWITCH"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.4W
+	Annotations: rdfs:label "Interruptor 4W"@pt
+	Annotations: bim:Definição "Interruptor de luz intermediário Four-Way. Usado em conjunto com dois interruptores paralelos para controlar uma lâmpada de três ou mais pontos."@pt
+	Annotations: bim:Definición "Interruptor de luz intermedio de cuatro vías. Se utiliza junto con dos interruptores paralelos para controlar una lámpara de tres o más puntos."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.609"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceTOGGLESWITCH"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Dimmer
+	Annotations: rdfs:label "Interruptor Dimmer"@pt
+	Annotations: bim:Definição "Interruptor que permite ajustar a intensidade da luz."@pt
+	Annotations: bim:Definición "Interruptor que le permite ajustar la intensidad de la luz."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.610"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceDIMMERSWITCH"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.de.Toque
+	Annotations: rdfs:label "Interruptor de Toque"@pt
+	Annotations: bim:Definição "Interruptor de acionamento por toque."@pt
+	Annotations: bim:Definición "Interruptor de gatillo táctil."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.611"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Inteligente
+	Annotations: rdfs:label "Interruptor Inteligente"@pt
+	Annotations: bim:Definição "Interruptor inteligente. Pode ser controlado por celular ou assistente virtual, ideal para automação residencial."@pt
+	Annotations: bim:Definición "Interruptor inteligente. Se puede controlar por celular o asistente virtual, ideal para domótica."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.612"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Temporizador
+	Annotations: rdfs:label "Interruptor Temporizador"@pt
+	Annotations: bim:Definição "Interruptor temporizador. Desliga a luz após um tempo programado, útil para economia de energia."@pt
+	Annotations: bim:Definición "Interruptor temporizador. Apaga la luz después de un tiempo programado, útil para ahorrar energía."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.613"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Corda
+	Annotations: rdfs:label "Interruptor Corda"@pt
+	Annotations: bim:Definição "Interruptor de corda. Acionado por uma cordinha, usado em locais como banheiros ou closets."@pt
+	Annotations: bim:Definición "Interruptor de cuerda. Se activa mediante una cuerda, utilizada en lugares como baños o armarios."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.614"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Cartão.Chave
+	Annotations: rdfs:label "Interruptor Cartão Chave"@pt
+	Annotations: bim:Definição "Interruptor Cartão. Comum em hotéis, ativa a energia do quarto ao inserir o cartão."@pt
+	Annotations: bim:Definición "Interruptor de tarjeta. Común en los hoteles, activa la energía de la habitación al insertar la tarjeta."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.615"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.de.Parada
+	Annotations: rdfs:label "Interruptor de Parada"@pt
+	Annotations: bim:Definição "Interruptor Botão de pressão. Aciona um equipamento."@pt
+	Annotations: bim:Definición "Interruptor de botón. Activa un equipo."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.616"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSWITCHDISCONNECTOR"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Botão
+	Annotations: rdfs:label "Interruptor Botão"@pt
+	Annotations: bim:Definição "Interruptor Botão de pressão. Aciona um equipamento."@pt
+	Annotations: bim:Definición "Interruptor de botón. Activa un equipo."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.617"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTART_AND_STOP_EQUIPMENT"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Momentâneo
+	Annotations: rdfs:label "Interruptor Momentâneo"@pt
+	Annotations: bim:Definição "Interruptor acionador de pressão. Aciona um equipamento enquanto estiver sendo pressionado."@pt
+	Annotations: bim:Definición "Interruptor de botón. Activa un equipo mientras es presionado."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.618"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceMOMENTARYSWITCH"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Emergência
+	Annotations: rdfs:label "Interruptor Emergência"@pt
+	Annotations: bim:Definição "Interruptor de parada de emergência. Desliga um equipamento."@pt
+	Annotations: bim:Definición "Interruptor de parada de emergencia. Apaga un equipo."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.619"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceEMERGENCYSTOP"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.MultiPosição
+	Annotations: rdfs:label "Interruptor MultiPosição"@pt
+	Annotations: bim:Definição "Interruptor de parada de emergência. Desliga um equipamento."@pt
+	Annotations: bim:Definición "Interruptor de parada de emergencia. Apaga un equipo."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.620"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSELECTORSWITCH"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Contactor
+	Annotations: rdfs:label "Interruptor Contactor"@pt
+	Annotations: bim:Definição "Interruptor de contacto. Controla o acionamento de cargas elétricas de forma segura e eficiente em sistemas de alta potência. É um tipo de relé eletromecânico robusto, projetado para ligar e desligar motores, aquecedores, iluminação industrial e outros equipamentos pesados."@pt
+	Annotations: bim:Definición "Interruptor de contacto. Controla el accionamiento de cargas eléctricas de forma segura y eficiente en sistemas de alta potencia. Es un tipo de relé electromecánico resistente que está diseñado para encender y apagar motores, calentadores, iluminación industrial y otros equipos pesados."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.621"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceCONTACTOR"
+	SubClassOf: bim:Interruptores
+
+
+Class: bim:Interruptor.Relé
+	Annotations: rdfs:label "Interruptor Relé"@pt
+	Annotations: bim:Definição "Interruptor relé. Controlar circuitos elétricos de forma indireta, permitindo que uma corrente elétrica pequena acione ou desligue uma corrente maior. Atua como um comutador eletromecânico ou eletrônico, muito usado em automação residencial e industrial."@pt
+	Annotations: bim:Definición "Interruptor de relé. Controlar los circuitos eléctricos indirectamente, permitiendo que una pequeña corriente eléctrica active o apague una corriente mayor. Actúa como un interruptor electromecánico o electrónico, ampliamente utilizado en la automatización doméstica e industrial."@es
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
+	Annotations: bim:Espécie "Conectados"@pt
+	Annotations: bim:Tema "Interruptores"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Ins.622"
+	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
+	Annotations: bim:ClasseIfc "IfcSwitchingDeviceRELAY"
+	SubClassOf: bim:Interruptores
 
 
 Class: bim:Quadros.Elétrica
@@ -9189,12 +9537,12 @@ Class: bim:QDL.Quadro.Distribuição
 	Annotations: rdfs:label "QDL Quadro Distribuição"@pt
 	Annotations: bim:Definição "QDL Quadro Distribuição"@pt
 	Annotations: bim:Definición "Cuadro de distribución QDL"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.599"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.623"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoard"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9203,12 +9551,12 @@ Class: bim:QDL.Quadro.Distribuição.Residencial
 	Annotations: rdfs:label "QDL Quadro Distribuição Residencial"@pt
 	Annotations: bim:Definição "QDL Quadro Distribuição Residencial"@pt
 	Annotations: bim:Definición "Cuadro de distribución residencial QDL"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.600"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.624"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardCONSUMERUNIT"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9217,12 +9565,12 @@ Class: bim:QDF.Quadro.de.Força
 	Annotations: rdfs:label "QDF Quadro de Força"@pt
 	Annotations: bim:Definição "QDF Quadro de Força"@pt
 	Annotations: bim:Definición "Cuadro de distribución de fuerza QDF"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.601"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.625"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardDISTRIBUTIONBOARD"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9231,12 +9579,12 @@ Class: bim:QGBT.Quadro.Geral.Baixa.Tensão
 	Annotations: rdfs:label "QGBT Quadro Geral Baixa Tensão"@pt
 	Annotations: bim:Definição "QGBT Quadro Geral Baixa Tensão"@pt
 	Annotations: bim:Definición "Cuadro de distribución general de baja tensión QGBT"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.602"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.626"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardSWITCHBOARD"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9245,12 +9593,12 @@ Class: bim:RDT.Rack.Distribuição.Telecom
 	Annotations: rdfs:label "RDT Rack Distribuição Telecom"@pt
 	Annotations: bim:Definição "RDT Rack Distribuição Telecom"@pt
 	Annotations: bim:Definición "Rack de distribución de telecomunicaciones RDT"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.603"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.627"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardDISTRIBUTIONFRAME"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9259,12 +9607,12 @@ Class: bim:RDA.Rack.Distribuição.Automação
 	Annotations: rdfs:label "RDA Rack Distribuição Automação"@pt
 	Annotations: bim:Definição "RDA Rack Distribuição Automação"@pt
 	Annotations: bim:Definición "Rack de distribución de automatización RDA"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.604"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.628"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardDISTRIBUTIONFRAME"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9273,12 +9621,12 @@ Class: bim:RDS.Rack.Distribuição.Servidores
 	Annotations: rdfs:label "RDS Rack Distribuição Servidores"@pt
 	Annotations: bim:Definição "RDS Rack Distribuição Servidores"@pt
 	Annotations: bim:Definición "Rack de distribución de servidores RDS"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.605"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.629"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardDISTRIBUTIONFRAME"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9287,12 +9635,12 @@ Class: bim:CLP.Quadro.Lógico.Programável
 	Annotations: rdfs:label "CLP Quadro Lógico Programável"@pt
 	Annotations: bim:Definição "CLP Quadro Lógico Programável"@pt
 	Annotations: bim:Definición "Placa lógica programable PLC"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.606"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.630"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardDISPATCHINGBOARD"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9301,12 +9649,12 @@ Class: bim:IHM.Interface.Homem.Máquina
 	Annotations: rdfs:label "IHM Interface Homem Máquina"@pt
 	Annotations: bim:Definição "IHM Interface Homem Máquina"@pt
 	Annotations: bim:Definición "IHM Interface Hombre Máquina"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.607"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.631"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardDISPATCHINGBOARD"
 	SubClassOf: bim:Quadros.Elétrica
 
@@ -9315,19 +9663,24 @@ Class: bim:CCM.Centro.Controle.de.Motores
 	Annotations: rdfs:label "CCM Centro Controle de Motores"@pt
 	Annotations: bim:Definição "CCM Centro Controle de Motores"@pt
 	Annotations: bim:Definición "Centro de control de motores CCM"@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Elétricos"@pt
 	Annotations: bim:Espécie "Conectados"@pt
 	Annotations: bim:Tema "Quadros Elétrica"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.608"
-	Annotations: bim:CatRevit "OST_ElectricalPowerSource , OST_ElectricalFixtures"
+	Annotations: bim:Chave "Key.Ins.632"
+	Annotations: bim:CatRevit "OST_ElectricalFixtures , OST_ElectricalConnector , OST_ElectricalPowerSource"
 	Annotations: bim:ClasseIfc "IfcDistributionBoardMOTORCONTROLCENTRE"
 	SubClassOf: bim:Quadros.Elétrica
 
 
+Class: bim:Insumos.Líquidos
+	Annotations: rdfs:label "Insumos.Líquidos"@pt
+	SubClassOf: bim:Projeto
+
+
 Class: bim:Armazenados
 	Annotations: rdfs:label "Armazenados"@pt
-	SubClassOf: bim:Insumos
+	SubClassOf: bim:Insumos.Líquidos
 
 
 Class: bim:Tanques
@@ -9339,11 +9692,11 @@ Class: bim:Tanque
 	Annotations: rdfs:label "Tanque"@pt
 	Annotations: bim:Definição "Tanque é um reservatório ou um recipiente onde um fluido ou gás é armazenado para uso posterior."@pt
 	Annotations: bim:Definición "Un tanque es un depósito o un recipiente donde se almacena un fluido o gas para su uso posterior."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.609"
+	Annotations: bim:Chave "Key.Ins.633"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTank"
 	SubClassOf: bim:Tanques
@@ -9353,11 +9706,11 @@ Class: bim:Reservatório.Aberto
 	Annotations: rdfs:label "Reservatório Aberto"@pt
 	Annotations: bim:Definição "Reservatório aberto para contenção de algum insumo."@pt
 	Annotations: bim:Definición "Reserva abierta para contener algún insumo."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.610"
+	Annotations: bim:Chave "Key.Ins.634"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankBASIN"
 	SubClassOf: bim:Tanques
@@ -9367,11 +9720,11 @@ Class: bim:Reservatório.Fechado
 	Annotations: rdfs:label "Reservatório Fechado"@pt
 	Annotations: bim:Definição "Reservatório fechado utilizado para armazenar um fluido à pressão ambiente."@pt
 	Annotations: bim:Definición "Reserva cerrada que se utiliza para almacenar algún insumo a presión ambiente."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.611"
+	Annotations: bim:Chave "Key.Ins.635"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankSTORAGE"
 	SubClassOf: bim:Tanques
@@ -9381,11 +9734,11 @@ Class: bim:Tanque.de.Pressão
 	Annotations: rdfs:label "Tanque de Pressão"@pt
 	Annotations: bim:Definição "Armazenar fluidos (líquidos ou gases) sob pressão interna superior à pressão atmosférica. Usado em diversos setores industriais, prediais e hospitalares. Sua função varia conforme o tipo de fluido, aplicação e sistema envolvido."@pt
 	Annotations: bim:Definición "Almacene fluidos (líquidos o gases) a una presión interna superior a la presión atmosférica. Utilizado en diversos sectores industriales, de la construcción y hospitalarios. Su función varía según el tipo de fluido, la aplicación y el sistema involucrado."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.612"
+	Annotations: bim:Chave "Key.Ins.636"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankBREAKPRESSURE"
 	SubClassOf: bim:Tanques
@@ -9395,11 +9748,11 @@ Class: bim:Tanque.de.Expansão
 	Annotations: rdfs:label "Tanque de Expansão"@pt
 	Annotations: bim:Definição "Tanque em sistemas hidráulicos e térmicos fechados. Projetado para absorver variações de volume do fluido causadas por mudanças de temperatura. Ele protege o sistema contra sobrecarga de pressão, evitando danos a tubulações, válvulas e equipamentos."@pt
 	Annotations: bim:Definición "Depósito en sistemas hidráulicos y térmicos cerrados. Diseñado para absorber las variaciones de volumen de fluido causadas por los cambios de temperatura. Protege el sistema de sobrecargas de presión, evitando daños a tuberías, válvulas y equipos."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.613"
+	Annotations: bim:Chave "Key.Ins.637"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankEXPANSION"
 	SubClassOf: bim:Tanques
@@ -9409,11 +9762,11 @@ Class: bim:Tanque.de.Expansão.e.Alimentação
 	Annotations: rdfs:label "Tanque de Expansão e Alimentação"@pt
 	Annotations: bim:Definição "Tanque em sistemas hidráulicos e térmicos fechados. Projetado para alimentar o sistema e absorver variações de volume do fluido causadas por mudanças de temperatura. Ele protege o sistema contra sobrecarga de pressão, evitando danos a tubulações, válvulas e equipamentos."@pt
 	Annotations: bim:Definición "Depósito en sistemas hidráulicos y térmicos cerrados. Diseñado para alimentar el sistema y absorber las variaciones de volumen de fluido causadas por los cambios de temperatura. Protege el sistema de sobrecargas de presión, evitando daños a tuberías, válvulas y equipos."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.614"
+	Annotations: bim:Chave "Key.Ins.638"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankFEEDANDEXPANSION"
 	SubClassOf: bim:Tanques
@@ -9423,11 +9776,11 @@ Class: bim:Bandeja.de.Retenção.de.Óleo
 	Annotations: rdfs:label "Bandeja de Retenção de Óleo"@pt
 	Annotations: bim:Definição "Contem vazamentos ou derramamentos de óleo em equipamentos industriais, elétricos ou mecânicos. Evita que o óleo contaminado se espalhe, protegendo o ambiente e facilitando a manutenção."@pt
 	Annotations: bim:Definición "Contiene fugas o derrames de aceite en equipos industriales, eléctricos o mecánicos. Evita que el aceite contaminado se propague, protegiendo el medio ambiente y facilitando el mantenimiento."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.615"
+	Annotations: bim:Chave "Key.Ins.639"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankOILRETENTIONTRAY"
 	SubClassOf: bim:Tanques
@@ -9437,11 +9790,11 @@ Class: bim:Vaso.de.Pressão
 	Annotations: rdfs:label "Vaso de Pressão"@pt
 	Annotations: bim:Definição "Recipiente fechado usado para armazenar fluidos ou gases a uma pressão diferente da pressão do ambiente."@pt
 	Annotations: bim:Definición "Un recipiente sin abrir que se utiliza para almacenar fluidos o gases a una presión distinta a la presión ambiente."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.616"
+	Annotations: bim:Chave "Key.Ins.640"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankPRESSUREVESSEL"
 	SubClassOf: bim:Tanques
@@ -9451,11 +9804,11 @@ Class: bim:Vaso.de.Contenção
 	Annotations: rdfs:label "Vaso de Contenção"@pt
 	Annotations: bim:Definição "Modelo de reservatório fechado."@pt
 	Annotations: bim:Definición "Modelo de reservorio cerrado."@es
-	Annotations: bim:Natureza "Insumos"@pt
+	Annotations: bim:Natureza "Insumos Líquidos"@pt
 	Annotations: bim:Espécie "Armazenados"@pt
 	Annotations: bim:Tema "Tanques"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Ins.617"
+	Annotations: bim:Chave "Key.Ins.641"
 	Annotations: bim:CatRevit "OST_FabricationContainment , OST_SpecialityEquipment"
 	Annotations: bim:ClasseIfc "IfcTankVESSEL"
 	SubClassOf: bim:Tanques
@@ -14455,5 +14808,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 28/09/2025 17:36:30
+##  Criada em 29/09/2025 9:38:16
 #################################################################
