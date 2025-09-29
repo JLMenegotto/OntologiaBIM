@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt
-  Annotations: rdfs:label "DataHora: 29/09/2025 12:01:20"@pt
+  Annotations: rdfs:label "DataHora: 29/09/2025 12:33:12"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -9550,6 +9550,7 @@ Class: bim:Interruptor
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTARTER"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.Duplo
@@ -9564,6 +9565,7 @@ Class: bim:Interruptor.Duplo
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceKEYPAD"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 2
 
 
 Class: bim:Interruptor.Triplo
@@ -9578,6 +9580,7 @@ Class: bim:Interruptor.Triplo
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceKEYPAD"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 3
 
 
 Class: bim:Interruptor.3W
@@ -9704,6 +9707,7 @@ Class: bim:Interruptor.de.Parada
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSWITCHDISCONNECTOR"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.Botão
@@ -9718,6 +9722,7 @@ Class: bim:Interruptor.Botão
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSTART_AND_STOP_EQUIPMENT"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.Momentâneo
@@ -9732,6 +9737,7 @@ Class: bim:Interruptor.Momentâneo
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceMOMENTARYSWITCH"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.Emergência
@@ -9746,6 +9752,7 @@ Class: bim:Interruptor.Emergência
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceEMERGENCYSTOP"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.MultiPosição
@@ -9760,6 +9767,7 @@ Class: bim:Interruptor.MultiPosição
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceSELECTORSWITCH"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.Contactor
@@ -9774,6 +9782,7 @@ Class: bim:Interruptor.Contactor
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceCONTACTOR"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Interruptor.Relé
@@ -9788,6 +9797,7 @@ Class: bim:Interruptor.Relé
 	Annotations: bim:CatRevit "OST_LightingFixtures , OST_ElectricalConnector"
 	Annotations: bim:ClasseIfc "IfcSwitchingDeviceRELAY"
 	SubClassOf: bim:Interruptores
+	EquivalentTo:  bim:é.controlador.de exactly 1
 
 
 Class: bim:Quadros.Elétricos
@@ -12630,12 +12640,45 @@ ObjectProperty: bim:p.iluminar
 
 
 
+ObjectProperty: bim:é.controlador.de
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a iluminar: é.controlador.de"@pt
+	Annotations: bim:Chave "ilum.116"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "Declara a quantidade de lámpadas que controla."@pt
+	Annotations: bim:Definición "Declara la cantidad de lámparas que controla."@es
+	Annotations: bim:CatRevit "OST_ElectricalDevices"
+	Annotations: bim:ClasseIfc "IfcLamp"
+
+DataProperty: bim:d.iluminar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:controlador.de
+	SubPropertyOf: bim:d.iluminar
+	Range: xsd:integer
+	Annotations: rdfs:label "Dado para iluminar:  controlador.de  Deve ser formatado como (xsd:integer)"@pt
+	Annotations: bim:Chave "ilum.116"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "Declara a quantidade de lámpadas que controla."@pt
+	Annotations: bim:Definición "Declara la cantidad de lámparas que controla."@es
+	Annotations: bim:CatRevit "OST_ElectricalDevices"
+	Annotations: bim:ClasseIfc "IfcLamp"
+
+ObjectProperty: bim:p.iluminar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.superfície.de.trabalho
 	SubPropertyOf: bim:p.iluminar
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a iluminar: é.superfície.de.trabalho"@pt
-	Annotations: bim:Chave "ilum.119"
+	Annotations: bim:Chave "ilum.121"
 	Annotations: bim:Ação "Ação iluminar"@pt
 	Annotations: bim:Definição "NBR 15215-3: Declara a altura da superfície de trabalho para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
 	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de trabajo para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
@@ -12650,7 +12693,7 @@ DataProperty: bim:superfície.de.trabalho
 	SubPropertyOf: bim:d.iluminar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para iluminar:  superfície.de.trabalho  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "ilum.119"
+	Annotations: bim:Chave "ilum.121"
 	Annotations: bim:Ação "Ação iluminar"@pt
 	Annotations: bim:Definição "NBR 15215-3: Declara a altura da superfície de trabalho para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
 	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de trabajo para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
@@ -12665,7 +12708,7 @@ ObjectProperty: bim:é.superfície.de.referência
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a iluminar: é.superfície.de.referência"@pt
-	Annotations: bim:Chave "ilum.120"
+	Annotations: bim:Chave "ilum.122"
 	Annotations: bim:Ação "Ação iluminar"@pt
 	Annotations: bim:Definição "NBR 15215-3: Declara a altura  da superfície de referência para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
 	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de referencia para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
@@ -12680,7 +12723,7 @@ DataProperty: bim:superfície.de.referência
 	SubPropertyOf: bim:d.iluminar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para iluminar:  superfície.de.referência  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "ilum.120"
+	Annotations: bim:Chave "ilum.122"
 	Annotations: bim:Ação "Ação iluminar"@pt
 	Annotations: bim:Definição "NBR 15215-3: Declara a altura  da superfície de referência para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
 	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de referencia para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
@@ -12695,7 +12738,7 @@ ObjectProperty: bim:é.superfície.de.iluminação
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a iluminar: é.superfície.de.iluminação"@pt
-	Annotations: bim:Chave "ilum.121"
+	Annotations: bim:Chave "ilum.123"
 	Annotations: bim:Ação "Ação iluminar"@pt
 	Annotations: bim:Definição "Declara a altura da superfície que será iluminada."@pt
 	Annotations: bim:Definición "Declara la altura de la superficie que se iluminará."@es
@@ -12710,7 +12753,7 @@ DataProperty: bim:superfície.de.iluminação
 	SubPropertyOf: bim:d.iluminar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para iluminar:  superfície.de.iluminação  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "ilum.121"
+	Annotations: bim:Chave "ilum.123"
 	Annotations: bim:Ação "Ação iluminar"@pt
 	Annotations: bim:Definição "Declara a altura da superfície que será iluminada."@pt
 	Annotations: bim:Definición "Declara la altura de la superficie que se iluminará."@es
@@ -15221,5 +15264,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 29/09/2025 12:01:21
+##  Criada em 29/09/2025 12:33:13
 #################################################################
