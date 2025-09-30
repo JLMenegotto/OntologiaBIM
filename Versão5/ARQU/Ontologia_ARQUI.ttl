@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt ;
-	  rdfs:label "DataHora: 30/09/2025 12:25:20"@pt ;
+	  rdfs:label "DataHora: 30/09/2025 12:27:09"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -25108,31 +25108,31 @@ bim:Luz.1  rdf:type  owl:NamedIndividual , bim:Lâmpada ;
 
 bim:Acesso  rdf:type  owl:NamedIndividual , bim:Andar.Acesso ;
      bim:descrição    "Andar de acesso ao prédio." ;
-     bim:é.embaixo.de    bim:Andar1  .
+     bim:é.abaixo.de    bim:Andar1  .
 
 bim:Andar1  rdf:type  owl:NamedIndividual , bim:Andar.Tipo ;
      bim:descrição    "Pavimento 1." ;
-     bim:é.embaixo.de    bim:Andar2  .
+     bim:é.abaixo.de    bim:Andar2  .
 
 bim:Andar2  rdf:type  owl:NamedIndividual , bim:Andar.Tipo ;
      bim:descrição    "Pavimento 2." ;
-     bim:é.embaixo.de    bim:Andar3  .
+     bim:é.abaixo.de    bim:Andar3  .
 
 bim:Andar3  rdf:type  owl:NamedIndividual , bim:Andar.Tipo ;
      bim:descrição    "Pavimento 3." ;
-     bim:é.embaixo.de    bim:Andar4  .
+     bim:é.abaixo.de    bim:Andar4  .
 
 bim:Andar4  rdf:type  owl:NamedIndividual , bim:Andar.Tipo ;
      bim:descrição    "Pavimento 4." ;
-     bim:é.embaixo.de    bim:Andar5  .
+     bim:é.abaixo.de    bim:Andar5  .
 
 bim:Andar5  rdf:type  owl:NamedIndividual , bim:Andar.Tipo ;
      bim:descrição    "Pavimento 5." ;
-     bim:é.embaixo.de    bim:Andar6  .
+     bim:é.abaixo.de    bim:Andar6  .
 
 bim:Andar6  rdf:type  owl:NamedIndividual , bim:Andar.Tipo ;
      bim:descrição    "Pavimento 6." ;
-     bim:é.embaixo.de    bim:Cobertura  .
+     bim:é.abaixo.de    bim:Cobertura  .
 
 bim:Cobertura  rdf:type  owl:NamedIndividual , bim:Andar.Cobertura ;
      bim:descrição    "Cobertura do prédio."  .
@@ -28373,6 +28373,38 @@ bim:no.prumo   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "El elemento que está a plomo es vertical. Las coordenadas XY de sus extremos deben ser iguales."@es  .
 
 
+bim:p.posicionar    rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.abaixo.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.posicionar  ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a posicionar : é.abaixo.de" ;
+                    bim:Chave               "posi.120" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado abaixo de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente debajo de otro objeto."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty  .
+
+
+bim:d.posicionar    rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:abaixo.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.posicionar  ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para posicionar :  abaixo.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "posi.120" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado abaixo de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente debajo de otro objeto."@es  .
+
+
 bim:p.qualificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -29071,5 +29103,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 30/09/2025 12:25:23
+##  Criada em 30/09/2025 12:27:12
 #################################################################
