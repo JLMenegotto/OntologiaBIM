@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt ;
-	  rdfs:label "DataHora: 30/09/2025 12:11:46"@pt ;
+	  rdfs:label "DataHora: 30/09/2025 12:21:22"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -85,7 +85,7 @@ bim:Projeto rdf:type  owl:Class  ;
 bim:Gestão rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componenete.de ;      owl:someValuesFrom    bim:Projeto ];    
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:someValuesFrom    bim:Projeto ];    
       rdfs:label  "Gestão"@pt  .
 
 
@@ -12565,7 +12565,7 @@ bim:Eq.Geral rdf:type  owl:Class  ;
 bim:Seca.Mãos rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Eq.Geral ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente ;      owl:hasValue    bim:Amb.Banheiros ];    
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:hasValue    bim:Amb.Banheiros ];    
       rdfs:label  "Seca Mãos"@pt ;
       bim:Definição   "Aparelho elétrico que tem como função principal secar as mãos."@pt ;
       bim:Definición  "Dispositivo eléctrico cuya función principal es secarse las manos."@es ;
@@ -17625,7 +17625,7 @@ bim:Iluminação rdf:type  owl:Class  ;
 bim:Lâmpadas rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Iluminação ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componentem.de ;      owl:hasValue    bim:Luminárias ];    
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.componente.de ;      owl:hasValue    bim:Luminárias ];    
       rdfs:label  "Lâmpadas"@pt  .
 
 
@@ -25969,6 +25969,35 @@ bim:recurso   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara que se trata de un recurso abierto en el contexto de la licitación, licitación o concurso."@es  .
 
 
+bim:p.controlar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.controlador.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.controlar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a controlar: é.controlador.de" ;
+                    bim:Chave               "cont.111" ;
+                    bim:Ação                "Ação controlar" ;
+                    bim:Definição           "Declara que o elemento é controlador de outro elemento."@pt ;
+                    bim:Definición          "Declara que el elemento es controlador de otro elemento."@es  .
+
+
+bim:d.controlar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:controlador.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.controlar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para controlar:  controlador.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "cont.111" ;
+                    bim:Ação                "Ação controlar" ;
+                    bim:Definição           "Declara que o elemento é controlador de outro elemento."@pt ;
+                    bim:Definición          "Declara que el elemento es controlador de otro elemento."@es  .
+
+
 bim:p.energizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -29013,5 +29042,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 30/09/2025 12:11:49
+##  Criada em 30/09/2025 12:21:25
 #################################################################
