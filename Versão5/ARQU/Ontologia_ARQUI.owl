@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt
-  Annotations: rdfs:label "DataHora: 30/09/2025 12:11:46"@pt
+  Annotations: rdfs:label "DataHora: 30/09/2025 12:21:22"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -81,7 +81,7 @@ Class: bim:Projeto
 Class: bim:Gestão
 	Annotations: rdfs:label "Gestão"@pt
 	SubClassOf: bim:Projeto
-	EquivalentTo:  bim:é.componenete.de some bim:Projeto
+	EquivalentTo:  bim:é.componente.de some bim:Projeto
 
 
 Class: bim:Produzido
@@ -5956,7 +5956,7 @@ Class: bim:Seca.Mãos
 	Annotations: bim:CatRevit "OST_ElectricalEquipment"
 	Annotations: bim:ClasseIfc "IfcElectricAppliance HANDDRYER"
 	SubClassOf: bim:Eq.Geral
-	EquivalentTo:  bim:é.componente only bim:Amb.Banheiros
+	EquivalentTo:  bim:é.componente.de only bim:Amb.Banheiros
 
 
 Class: bim:Eq.Cozinha
@@ -8246,7 +8246,7 @@ Class: bim:Iluminação
 Class: bim:Lâmpadas
 	Annotations: rdfs:label "Lâmpadas"@pt
 	SubClassOf: bim:Iluminação
-	EquivalentTo:  bim:é.componentem.de only bim:Luminárias
+	EquivalentTo:  bim:é.componente.de only bim:Luminárias
 
 
 Class: bim:Lâmpada
@@ -13152,6 +13152,35 @@ DataProperty: bim:recurso
 	Annotations: bim:Definição "Declara que é um recurso aberto no contexto do concurso, licitação ou certame."@pt
 	Annotations: bim:Definición "Declara que se trata de un recurso abierto en el contexto de la licitación, licitación o concurso."@es
 
+ObjectProperty: bim:p.controlar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.controlador.de
+	SubPropertyOf: bim:p.controlar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a controlar: é.controlador.de"@pt
+	Annotations: bim:Chave "cont.111"
+	Annotations: bim:Ação "Ação controlar"@pt
+	Annotations: bim:Definição "Declara que o elemento é controlador de outro elemento."@pt
+	Annotations: bim:Definición "Declara que el elemento es controlador de otro elemento."@es
+
+DataProperty: bim:d.controlar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:controlador.de
+	SubPropertyOf: bim:d.controlar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para controlar:  controlador.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "cont.111"
+	Annotations: bim:Ação "Ação controlar"@pt
+	Annotations: bim:Definição "Declara que o elemento é controlador de outro elemento."@pt
+	Annotations: bim:Definición "Declara que el elemento es controlador de otro elemento."@es
+
 ObjectProperty: bim:p.energizar
 	SubPropertyOf: bim:BIMProp
 
@@ -16197,5 +16226,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 30/09/2025 12:11:49
+##  Criada em 30/09/2025 12:21:25
 #################################################################
