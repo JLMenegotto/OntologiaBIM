@@ -9,6 +9,9 @@
 
 <img width="999" height="31916" alt="Arqui" src="https://github.com/user-attachments/assets/57c5983e-40a0-4e9c-b801-3e0e17a9465f" />
 
+<img width="3323" height="27238" alt="Arqui_I" src="https://github.com/user-attachments/assets/7d345db2-2493-4633-837d-f149a64eb69e" />
+
+
 
 
 
