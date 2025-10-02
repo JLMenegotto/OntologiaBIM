@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de perfis metálicos"@pt ;
-	  rdfs:label "DataHora: 02/10/2025 7:49:52"@pt ;
+	  rdfs:label "DataHora: 02/10/2025 16:38:16"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -84,26 +84,26 @@ bim:Projeto rdf:type  owl:Class  ;
                              [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Projeto ];    .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Materialidade rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Estrutura ];    
-      rdfs:label  "Estrutura"@pt  .
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Materialidade ];    
+      rdfs:label  "Materialidade"@pt  .
 
 
-bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
-      rdfs:label  "Metálica"@pt  .
+bim:Da.Estrutura rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Materialidade ;
+      rdfs:label  "Da Estrutura"@pt  .
 
 
-bim:Liga.Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Liga Metálica"@pt  .
+bim:Ligas.Metálicas rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Da.Estrutura ;
+      rdfs:label  "Ligas Metálicas"@pt  .
 
 
-bim:Aço rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Liga.Metálica ;
-      rdfs:label  "Aço"@pt ;
+bim:Aço.Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Ligas.Metálicas ;
+      rdfs:label  "Aço Estrutural"@pt ;
       bim:Definição   "Ligas de aço utilizadas no projeto"@pt ;
       bim:Definición  "Aleación de acero utilizadas en el proyecto"@es ;
       bim:Interoperar "-"@pt ;
@@ -111,7 +111,9 @@ bim:Aço rdf:type  owl:Class  ;
       bim:Espécie     "Material"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.2"@pt  .
+      bim:Chave       "Key.Mat.2"@pt ;
+      bim:CatRevit    "OST_Materials"   ;
+      bim:ClasseIfc   "IfcMaterial"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -120,26 +122,26 @@ bim:Projeto rdf:type  owl:Class  ;
                              [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Projeto ];    .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Materialidade rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Estrutura ];    
-      rdfs:label  "Estrutura"@pt  .
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Materialidade ];    
+      rdfs:label  "Materialidade"@pt  .
 
 
-bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
-      rdfs:label  "Metálica"@pt  .
+bim:Da.Estrutura rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Materialidade ;
+      rdfs:label  "Da Estrutura"@pt  .
 
 
-bim:Liga.Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Liga Metálica"@pt  .
+bim:Ligas.Metálicas rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Da.Estrutura ;
+      rdfs:label  "Ligas Metálicas"@pt  .
 
 
-bim:Alumínio rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Liga.Metálica ;
-      rdfs:label  "Alumínio"@pt ;
+bim:Alumínio.Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Ligas.Metálicas ;
+      rdfs:label  "Alumínio Estrutural"@pt ;
       bim:Definição   "Ligas de alumínio utilizadas no projeto"@pt ;
       bim:Definición  "Aleación de aluminio utilizadas en el proyecto"@es ;
       bim:Interoperar "-"@pt ;
@@ -147,30 +149,32 @@ bim:Alumínio rdf:type  owl:Class  ;
       bim:Espécie     "Material"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.3"@pt  .
+      bim:Chave       "Key.Mat.3"@pt ;
+      bim:CatRevit    "OST_Materials"   ;
+      bim:ClasseIfc   "IfcMaterial"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Perfil.Estrutural rdf:type  owl:Class  ;
+bim:Perfis.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Perfil Estrutural"@pt  .
+      rdfs:label  "Perfis Estruturais"@pt  .
 
 
 bim:Perfil.I rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Perfil.Estrutural ;
+      rdfs:subClassOf  bim:Perfis.Estruturais ;
       rdfs:label  "Perfil I"@pt ;
       bim:Definição   "Abas Paralelas I"@pt ;
       bim:Definición  "Flanges paralelos I"@es ;
@@ -179,30 +183,32 @@ bim:Perfil.I rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.4"@pt  .
+      bim:Chave       "Key.Est.4"@pt ;
+      bim:CatRevit    "OST_StructuralColumns , OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcColumn , IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Perfil.Estrutural rdf:type  owl:Class  ;
+bim:Perfis.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Perfil Estrutural"@pt  .
+      rdfs:label  "Perfis Estruturais"@pt  .
 
 
 bim:Perfil.HP rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Perfil.Estrutural ;
+      rdfs:subClassOf  bim:Perfis.Estruturais ;
       rdfs:label  "Perfil HP"@pt ;
       bim:Definição   "Abas Paralelas HP"@pt ;
       bim:Definición  "Flanges paralelos HP"@es ;
@@ -211,30 +217,32 @@ bim:Perfil.HP rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.5"@pt  .
+      bim:Chave       "Key.Est.5"@pt ;
+      bim:CatRevit    "OST_StructuralColumns , OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcColumn , IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Perfil.Estrutural rdf:type  owl:Class  ;
+bim:Perfis.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Perfil Estrutural"@pt  .
+      rdfs:label  "Perfis Estruturais"@pt  .
 
 
 bim:Perfil.W rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Perfil.Estrutural ;
+      rdfs:subClassOf  bim:Perfis.Estruturais ;
       rdfs:label  "Perfil W"@pt ;
       bim:Definição   "Abas Paralelas W"@pt ;
       bim:Definición  "Flanges paralelos W"@es ;
@@ -243,30 +251,32 @@ bim:Perfil.W rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.6"@pt  .
+      bim:Chave       "Key.Est.6"@pt ;
+      bim:CatRevit    "OST_StructuralColumns , OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcColumn , IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Perfil.Estrutural rdf:type  owl:Class  ;
+bim:Perfis.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Perfil Estrutural"@pt  .
+      rdfs:label  "Perfis Estruturais"@pt  .
 
 
 bim:Perfil.T rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Perfil.Estrutural ;
+      rdfs:subClassOf  bim:Perfis.Estruturais ;
       rdfs:label  "Perfil T"@pt ;
       bim:Definição   "Perfil T"@pt ;
       bim:Definición  "Perfil T"@es ;
@@ -275,30 +285,32 @@ bim:Perfil.T rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.7"@pt  .
+      bim:Chave       "Key.Est.7"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Perfil.Estrutural rdf:type  owl:Class  ;
+bim:Perfis.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Perfil Estrutural"@pt  .
+      rdfs:label  "Perfis Estruturais"@pt  .
 
 
 bim:Perfil.U rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Perfil.Estrutural ;
+      rdfs:subClassOf  bim:Perfis.Estruturais ;
       rdfs:label  "Perfil U"@pt ;
       bim:Definição   "Perfil U"@pt ;
       bim:Definición  "Perfil U"@es ;
@@ -307,30 +319,32 @@ bim:Perfil.U rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.8"@pt  .
+      bim:Chave       "Key.Est.8"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Perfil.Estrutural rdf:type  owl:Class  ;
+bim:Perfis.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Perfil Estrutural"@pt  .
+      rdfs:label  "Perfis Estruturais"@pt  .
 
 
 bim:Perfil.U.Enrijecido rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Perfil.Estrutural ;
+      rdfs:subClassOf  bim:Perfis.Estruturais ;
       rdfs:label  "Perfil U Enrijecido"@pt ;
       bim:Definição   "Perfil U Dobrado Enrijecido"@pt ;
       bim:Definición  "Perfil en U doblado rígido"@es ;
@@ -339,30 +353,32 @@ bim:Perfil.U.Enrijecido rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.9"@pt  .
+      bim:Chave       "Key.Est.9"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Cantoneira rdf:type  owl:Class  ;
+bim:Cantoneiras rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Cantoneira"@pt  .
+      rdfs:label  "Cantoneiras"@pt  .
 
 
 bim:Abas.Iguais rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Cantoneira ;
+      rdfs:subClassOf  bim:Cantoneiras ;
       rdfs:label  "Abas Iguais"@pt ;
       bim:Definição   "Abas Iguais"@pt ;
       bim:Definición  "Perfil L angular de lados iguales"@es ;
@@ -371,30 +387,32 @@ bim:Abas.Iguais rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.10"@pt  .
+      bim:Chave       "Key.Est.10"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
-bim:Cantoneira rdf:type  owl:Class  ;
+bim:Cantoneiras rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Cantoneira"@pt  .
+      rdfs:label  "Cantoneiras"@pt  .
 
 
 bim:Abas.Desiguais rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Cantoneira ;
+      rdfs:subClassOf  bim:Cantoneiras ;
       rdfs:label  "Abas Desiguais"@pt ;
       bim:Definição   "Abas Desiguais"@pt ;
       bim:Definición  "Perfil L angular de lados desiguales"@es ;
@@ -403,20 +421,22 @@ bim:Abas.Desiguais rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.11"@pt  .
+      bim:Chave       "Key.Est.11"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -435,20 +455,22 @@ bim:Quadrada.Laminada rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.12"@pt  .
+      bim:Chave       "Key.Est.12"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -467,20 +489,22 @@ bim:Quadrada.Trefilada rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.13"@pt  .
+      bim:Chave       "Key.Est.13"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -499,20 +523,22 @@ bim:Quadrada.Formada.a.Frio rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.14"@pt  .
+      bim:Chave       "Key.Est.14"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -531,20 +557,22 @@ bim:Hexagonal rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.15"@pt  .
+      bim:Chave       "Key.Est.15"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -563,20 +591,22 @@ bim:Redonda rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.16"@pt  .
+      bim:Chave       "Key.Est.16"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -595,20 +625,22 @@ bim:Redonda.Mecânica rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.17"@pt  .
+      bim:Chave       "Key.Est.17"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -627,20 +659,22 @@ bim:Redonda.Trefilada rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.18"@pt  .
+      bim:Chave       "Key.Est.18"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -659,20 +693,88 @@ bim:Redonda.Formada.a.Frio rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.19"@pt  .
+      bim:Chave       "Key.Est.19"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Metálica"@pt  .
+
+
+bim:Treliças rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Metálica ;
+      rdfs:label  "Treliças"@pt  .
+
+
+bim:Treliça rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Treliças ;
+      rdfs:label  "Treliça"@pt ;
+      bim:Definição   "Redonda trefilada"@pt ;
+      bim:Definición  "Barra redonda formada a frio"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Sustentação"@pt ;
+      bim:Tema        "Aço"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.20"@pt ;
+      bim:CatRevit    "OST_StructuralTruss"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Metálica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Metálica"@pt  .
+
+
+bim:Treliças rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Metálica ;
+      rdfs:label  "Treliças"@pt  .
+
+
+bim:Treliça.Ponte rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Treliças ;
+      rdfs:label  "Treliça Ponte"@pt ;
+      bim:Definição   "Redonda trefilada"@pt ;
+      bim:Definición  "Barra redonda formada a frio"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Sustentação"@pt ;
+      bim:Tema        "Aço"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.21"@pt ;
+      bim:CatRevit    "OST_StructuralTruss"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Metálica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -691,84 +793,22 @@ bim:Chata rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.20"@pt  .
+      bim:Chave       "Key.Est.22"@pt ;
+      bim:CatRevit    "OST_StructuralFraming"   ;
+      bim:ClasseIfc   "IfcBeam"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
-      rdfs:label  "Metálica"@pt  .
-
-
-bim:Placa rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Placa"@pt  .
-
-
-bim:Base rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Placa ;
-      rdfs:label  "Base"@pt ;
-      bim:Definição   "Placa de base"@pt ;
-      bim:Definición  "Placa de base"@es ;
-      bim:Interoperar "-"@pt ;
-      bim:Natureza    "Estrutural"@pt ;
-      bim:Espécie     "Sustentação"@pt ;
-      bim:Tema        "Aço"@pt ;
-      bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.21"@pt  .
-
-
-bim:Projeto rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:BIM  .
-
-
-bim:Estrutura rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
-
-
-bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
-      rdfs:label  "Metálica"@pt  .
-
-
-bim:Placa rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Metálica ;
-      rdfs:label  "Placa"@pt  .
-
-
-bim:Interface rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Placa ;
-      rdfs:label  "Interface"@pt ;
-      bim:Definição   "Placa de interface aço-concreto"@pt ;
-      bim:Definición  "Placa para interface acero-hormigón armado"@es ;
-      bim:Interoperar "-"@pt ;
-      bim:Natureza    "Estrutural"@pt ;
-      bim:Espécie     "Sustentação"@pt ;
-      bim:Tema        "Aço"@pt ;
-      bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.22"@pt  .
-
-
-bim:Projeto rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:BIM  .
-
-
-bim:Estrutura rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
-
-
-bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -787,20 +827,90 @@ bim:Enrijecedora rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.23"@pt  .
+      bim:Chave       "Key.Est.25"@pt ;
+      bim:CatRevit    "OST_StructuralStiffener"   ;
+      bim:ClasseIfc   "IfcMemberSTIFFENING_RIB"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Metálica"@pt  .
+
+
+bim:Placa rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Metálica ;
+      rdfs:label  "Placa"@pt  .
+
+
+bim:Base rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Placa ;
+      rdfs:label  "Base"@pt ;
+      bim:Definição   "Placa de base"@pt ;
+      bim:Definición  "Placa de base"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Sustentação"@pt ;
+      bim:Tema        "Aço"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.23"@pt ;
+      bim:CatRevit    "OST_StructConnectionPlates"   ;
+      bim:ClasseIfc   "IfcMemberPLATE"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Metálica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Metálica"@pt  .
+
+
+bim:Placa rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Metálica ;
+      rdfs:label  "Placa"@pt  .
+
+
+bim:Interface rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Placa ;
+      rdfs:label  "Interface"@pt ;
+      bim:Definição   "Placa de interface aço-concreto"@pt ;
+      bim:Definición  "Placa para interface acero-hormigón armado"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Sustentação"@pt ;
+      bim:Tema        "Aço"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.24"@pt ;
+      bim:CatRevit    "OST_StructConnectionPlates"   ;
+      bim:ClasseIfc   "IfcMemberPLATE"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Metálica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -819,20 +929,22 @@ bim:Emenda rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.24"@pt  .
+      bim:Chave       "Key.Est.26"@pt ;
+      bim:CatRevit    "OST_StructConnectionPlates"   ;
+      bim:ClasseIfc   "IfcMemberPLATE"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Metálica rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Metálica"@pt  .
 
 
@@ -851,20 +963,22 @@ bim:Fechamento rdf:type  owl:Class  ;
       bim:Espécie     "Sustentação"@pt ;
       bim:Tema        "Aço"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.25"@pt  .
+      bim:Chave       "Key.Est.27"@pt ;
+      bim:CatRevit    "OST_StructConnectionPlates"   ;
+      bim:ClasseIfc   "IfcMemberPLATE"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Tensionada rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Tensionada"@pt  .
 
 
@@ -883,20 +997,22 @@ bim:Ancora rdf:type  owl:Class  ;
       bim:Espécie     "Tensionadas"@pt ;
       bim:Tema        "Estrutura leve"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.26"@pt  .
+      bim:Chave       "Key.Est.28"@pt ;
+      bim:CatRevit    "OST_StructConnectionAnchors"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Tensionada rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Tensionada"@pt  .
 
 
@@ -915,52 +1031,531 @@ bim:Conector rdf:type  owl:Class  ;
       bim:Espécie     "Tensionadas"@pt ;
       bim:Tema        "Estrutura leve"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.27"@pt  .
+      bim:Chave       "Key.Est.29"@pt ;
+      bim:CatRevit    "OST_StructConnections"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Tensionada rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Tensionada"@pt  .
 
 
-bim:Tensor rdf:type  owl:Class  ;
+bim:Tensores rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Tensionada ;
-      rdfs:label  "Tensor"@pt  .
+      rdfs:label  "Tensores"@pt  .
 
 
 bim:Estai rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Tensor ;
+      rdfs:subClassOf  bim:Tensores ;
       rdfs:label  "Estai"@pt ;
-      bim:Definição   "Cabo ou estai"@pt ;
-      bim:Definición  "Cable o tirante"@es ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "Estrutural"@pt ;
       bim:Espécie     "Tensionadas"@pt ;
       bim:Tema        "Estrutura leve"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.28"@pt  .
+      bim:Chave       "Key.Est.30"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendon"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Tensionada rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Ancoragem.de.Estai rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Ancoragem de Estai"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.31"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonAnchor"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Ancoragem.Acoplador rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Ancoragem Acoplador"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.32"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonAnchorCOUPLER"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Ancoragem.Extremidade Fixa rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Ancoragem Extremidade Fixa"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.33"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonAnchorFIXED_END"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Ancoragem.Extremidade Tensionamento rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Ancoragem Extremidade Tensionamento"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.34"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonAnchorTENSIONING_END"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Barra rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Barra"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.35"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonBAR"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Revestido rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Revestido"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.36"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonCOATED"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Bainha rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Bainha"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.37"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonConduit"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Bainha.Acoplador rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Bainha Acoplador"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.38"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonConduitCOUPLER"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Bainha.Diabolo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Bainha Diabolo"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.39"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonConduitDIABOLO"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Bainha.Cabo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Bainha Cabo"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.40"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonConduitDUCT"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Injetor rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Injetor"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.41"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonConduitGROUTING_DUCT"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Trombeta rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Trombeta"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.42"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonConduitTRUMPET"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Corda rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Corda"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.43"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonSTRAND"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
+      rdfs:label  "Tensionada"@pt  .
+
+
+bim:Tensores rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensionada ;
+      rdfs:label  "Tensores"@pt  .
+
+
+bim:Tensor.Fio rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensores ;
+      rdfs:label  "Tensor Fio"@pt ;
+      bim:Definição   "Tensores"@pt ;
+      bim:Definición  "Tensores"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Estrutural"@pt ;
+      bim:Espécie     "Tensionadas"@pt ;
+      bim:Tema        "Estrutura leve"@pt ;
+      bim:Disciplina  "Metálica"@pt ;
+      bim:Chave       "Key.Est.44"@pt ;
+      bim:CatRevit    "OST_StructuralTendons"   ;
+      bim:ClasseIfc   "IfcTendonWIRE"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Estrutural rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Estrutural"@pt  .
+
+
+bim:Tensionada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Tensionada"@pt  .
 
 
@@ -979,20 +1574,21 @@ bim:Mastro rdf:type  owl:Class  ;
       bim:Espécie     "Tensionadas"@pt ;
       bim:Tema        "Estrutura leve"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.29"@pt  .
+      bim:Chave       "Key.Est.45"@pt ;
+      bim:CatRevit    "OST_StructuralColumns"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Estrutura rdf:type  owl:Class  ;
+bim:Estrutural rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Estrutura"@pt  .
+      rdfs:label  "Estrutural"@pt  .
 
 
 bim:Tensionada rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Estrutura ;
+      rdfs:subClassOf  bim:Estrutural ;
       rdfs:label  "Tensionada"@pt  .
 
 
@@ -1011,25 +1607,27 @@ bim:Membrana rdf:type  owl:Class  ;
       bim:Espécie     "Tensionadas"@pt ;
       bim:Tema        "Estrutura leve"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Est.30"@pt  .
+      bim:Chave       "Key.Est.46"@pt ;
+      bim:CatRevit    "OST_AreaRein"   ;
+      bim:ClasseIfc   "IfcStructuralSurfaceMember"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
 bim:Chumbadores rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
+      rdfs:subClassOf  bim:Fixações ;
       rdfs:label  "Chumbadores"@pt  .
 
 
@@ -1043,25 +1641,27 @@ bim:Chumbador.Interno rdf:type  owl:Class  ;
       bim:Espécie     "Chumbador"@pt ;
       bim:Tema        "Ligações"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Mon.31"@pt  .
+      bim:Chave       "Key.Con.47"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerANCHORBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
 bim:Chumbadores rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
+      rdfs:subClassOf  bim:Fixações ;
       rdfs:label  "Chumbadores"@pt  .
 
 
@@ -1075,30 +1675,32 @@ bim:Chumbador.Externo rdf:type  owl:Class  ;
       bim:Espécie     "Chumbador"@pt ;
       bim:Tema        "Ligações"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Mon.32"@pt  .
+      bim:Chave       "Key.Con.48"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerANCHORBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
-bim:Parafuso rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
-      rdfs:label  "Parafuso"@pt  .
+bim:Parafusos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fixações ;
+      rdfs:label  "Parafusos"@pt  .
 
 
 bim:Parafuso.DIN rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Parafuso ;
+      rdfs:subClassOf  bim:Parafusos ;
       rdfs:label  "Parafuso DIN"@pt ;
       bim:Definição   "Parafuso estrutural norma DIN"@pt ;
       bim:Definición  "Perno norma DIN para conexão estrutural"@es ;
@@ -1107,30 +1709,32 @@ bim:Parafuso.DIN rdf:type  owl:Class  ;
       bim:Espécie     "Parafuso"@pt ;
       bim:Tema        "Ligações"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Mon.33"@pt  .
+      bim:Chave       "Key.Con.49"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
-bim:Parafuso rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
-      rdfs:label  "Parafuso"@pt  .
+bim:Parafusos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fixações ;
+      rdfs:label  "Parafusos"@pt  .
 
 
 bim:Parafuso.ASTM rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Parafuso ;
+      rdfs:subClassOf  bim:Parafusos ;
       rdfs:label  "Parafuso ASTM"@pt ;
       bim:Definição   "Parafuso estrutural ASTM linha pesada"@pt ;
       bim:Definición  "Perno ASTM de rosca para conexão estrutural"@es ;
@@ -1139,30 +1743,32 @@ bim:Parafuso.ASTM rdf:type  owl:Class  ;
       bim:Espécie     "Parafuso"@pt ;
       bim:Tema        "Ligações"@pt ;
       bim:Disciplina  "Metálica"@pt ;
-      bim:Chave       "Key.Mon.34"@pt  .
+      bim:Chave       "Key.Con.50"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
-bim:Parafuso rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
-      rdfs:label  "Parafuso"@pt  .
+bim:Parafusos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fixações ;
+      rdfs:label  "Parafusos"@pt  .
 
 
 bim:Parafuso.Drywall rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Parafuso ;
+      rdfs:subClassOf  bim:Parafusos ;
       rdfs:label  "Parafuso Drywall"@pt ;
       bim:Definição   "Parafuso Drywall"@pt ;
       bim:Definición  "Tornillo para paneles de Drywall"@es ;
@@ -1171,30 +1777,32 @@ bim:Parafuso.Drywall rdf:type  owl:Class  ;
       bim:Espécie     "Parafuso"@pt ;
       bim:Tema        "Drywall"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mon.35"@pt  .
+      bim:Chave       "Key.Con.51"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
-bim:Parafuso rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
-      rdfs:label  "Parafuso"@pt  .
+bim:Parafusos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fixações ;
+      rdfs:label  "Parafusos"@pt  .
 
 
 bim:Parafuso.Brocante rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Parafuso ;
+      rdfs:subClassOf  bim:Parafusos ;
       rdfs:label  "Parafuso Brocante"@pt ;
       bim:Definição   "Parafuso Brocante"@pt ;
       bim:Definición  "Tornillo de perforación"@es ;
@@ -1203,30 +1811,32 @@ bim:Parafuso.Brocante rdf:type  owl:Class  ;
       bim:Espécie     "Parafuso"@pt ;
       bim:Tema        "Drywall"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mon.36"@pt  .
+      bim:Chave       "Key.Con.52"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:Montagem rdf:type  owl:Class  ;
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Montagem"@pt  .
+      rdfs:label  "Conexões.Estruturais"@pt  .
 
 
-bim:Fixação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Montagem ;
-      rdfs:label  "Fixação"@pt  .
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
 
 
-bim:Parafuso rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Fixação ;
-      rdfs:label  "Parafuso"@pt  .
+bim:Parafusos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fixações ;
+      rdfs:label  "Parafusos"@pt  .
 
 
 bim:Parafuso.Auto.Atarraxante rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Parafuso ;
+      rdfs:subClassOf  bim:Parafusos ;
       rdfs:label  "Parafuso Auto Atarraxante"@pt ;
       bim:Definição   "Parafuso Autoatarraxante"@pt ;
       bim:Definición  "Tornillo autorroscante"@es ;
@@ -1235,46 +1845,82 @@ bim:Parafuso.Auto.Atarraxante rdf:type  owl:Class  ;
       bim:Espécie     "Parafuso"@pt ;
       bim:Tema        "Drywall"@pt ;
       bim:Disciplina  "Arquitetura"@pt ;
-      bim:Chave       "Key.Mon.37"@pt  .
+      bim:Chave       "Key.Con.53"@pt ;
+      bim:CatRevit    "OST_StructConnectionBolts"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Conexões.Estruturais rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Conexões.Estruturais"@pt  .
+
+
+bim:Fixações rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conexões.Estruturais ;
+      rdfs:label  "Fixações"@pt  .
+
+
+bim:Pinos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fixações ;
+      rdfs:label  "Pinos"@pt  .
+
+
+bim:Pino.de.Cisalhamento rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Pinos ;
+      rdfs:label  "Pino de Cisalhamento"@pt ;
+      bim:Definição   "Pino Cisalhamento para lajes Steel Deck"@pt ;
+      bim:Definición  "Pino de corte para losas Steel Deck"@es ;
+      bim:Interoperar "-"@pt ;
+      bim:Natureza    "Fixação"@pt ;
+      bim:Espécie     "Parafuso"@pt ;
+      bim:Tema        "Drywall"@pt ;
+      bim:Disciplina  "Arquitetura"@pt ;
+      bim:Chave       "Key.Con.54"@pt ;
+      bim:CatRevit    "OST_StructConnectionShearStuds"   ;
+      bim:ClasseIfc   "IfcMechanicalFastenerBOLT"    .
 
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:A36  rdf:type  owl:NamedIndividual , bim:Aço ;
+bim:A36  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   250 ;
      bim:resistência.à.tração   400 ;
      bim:descrição    "Liga de aço carbono de baixa liga"  .
 
-bim:A572-50  rdf:type  owl:NamedIndividual , bim:Aço ;
+bim:A572-50  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   345 ;
      bim:resistência.à.tração   450 ;
      bim:descrição    "Liga de aço estrutural de alta resistência e baixa liga"  .
 
-bim:A572-60  rdf:type  owl:NamedIndividual , bim:Aço ;
+bim:A572-60  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   415 ;
      bim:resistência.à.tração   520 ;
      bim:descrição    "Liga de aço estrutural de alta resistência e baixa liga"  .
 
-bim:A242  rdf:type  owl:NamedIndividual , bim:Aço ;
+bim:A242  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   345 ;
      bim:resistência.à.tração   480 ;
      bim:descrição    "Liga de aço patinável Corten A para aplicação arquitetônica não estrutural"  .
 
-bim:A588-A  rdf:type  owl:NamedIndividual , bim:Aço ;
+bim:A588-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   345 ;
      bim:resistência.à.tração   485 ;
      bim:descrição    "Liga de aço patinável Corten B para aplicação estrutural"  .
 
-bim:WS350-Gerdau  rdf:type  owl:NamedIndividual , bim:Aço ;
+bim:WS350-Gerdau  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   350 ;
      bim:resistência.à.tração   500 ;
      bim:descrição    "Liga de aço patinável resistente à intempérie produzida pela Gerdau"  .
 
-bim:Alumínio_6060  rdf:type  owl:NamedIndividual , bim:Alumínio ;
+bim:Alumínio_6060  rdf:type  owl:NamedIndividual , bim:Alumínio.Estrutural ;
      bim:descrição    "Liga de alumínio com média resistência mecânica, alta resistência à corrosão e excelente acabamento para anodização ou pintura eletrostática"  .
 
-bim:Alumínio_7075  rdf:type  owl:NamedIndividual , bim:Alumínio ;
+bim:Alumínio_7075  rdf:type  owl:NamedIndividual , bim:Alumínio.Estrutural ;
      bim:descrição    "Liga de alumínio de alta resistência mecânica com teores maiores de de zinco e magnésio"  .
 
 bim:HP150x22  rdf:type  owl:NamedIndividual , bim:Perfil.HP ;
@@ -3124,56 +3770,56 @@ bim:Estrutura.Secundária  rdf:type  owl:NamedIndividual , bim:Metálica ;
 bim:Estrutura.de.Apoio  rdf:type  owl:NamedIndividual , bim:Metálica ;
      bim:descrição    "Aço utilizado nas estruturas de apoio do projeto"  .
 
-bim:VP.01  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VP.01  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x13 ;
      bim:descrição    "Viga perimetral da fachada" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VP.02  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VP.02  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x13 ;
      bim:descrição    "Viga perimetral da fachada" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VP.03  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VP.03  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x18 ;
      bim:descrição    "Viga perimetral da fachada" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VP.04  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VP.04  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x18 ;
      bim:descrição    "Viga perimetral da fachada" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VI.01  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VI.01  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x18 ;
      bim:descrição    "Viga interior" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VI.02  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VI.02  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x19 ;
      bim:descrição    "Viga interior" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VI.03  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VI.03  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x20 ;
      bim:descrição    "Viga interior" ;
      bim:categoria.revit    "OST_StructuralFraming" ;
      bim:classe.ifc    "IfcBeam"  .
 
-bim:VI.04  rdf:type  owl:NamedIndividual , bim:Perfil.Estrutural ;
+bim:VI.04  rdf:type  owl:NamedIndividual , bim:Perfis.Estruturais ;
      bim:é.pertencente.a    bim:Estrutura.Principal ;
      bim:é.bitola    bim:W150x21 ;
      bim:descrição    "Viga interior" ;
@@ -3695,6 +4341,70 @@ bim:fator.fotoenergético   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação energizar" ;
                     bim:Definição           "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt ;
                     bim:Definición          "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es  .
+
+
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.jusante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.jusante.de" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.montante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.jusante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
+
+
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.montante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.montante.de" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.jusante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.montante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
 
 
 bim:p.gestionar   rdf:type  owl:ObjectProperty ;
@@ -6628,5 +7338,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 02/10/2025 7:49:56
+##  Criada em 02/10/2025 16:38:17
 #################################################################
