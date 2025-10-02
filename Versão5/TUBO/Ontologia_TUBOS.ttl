@@ -25,7 +25,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para incorporar tubulações."@pt ;
-	  rdfs:label "DataHora: 02/10/2025 14:34:19"@pt ;
+	  rdfs:label "DataHora: 02/10/2025 14:45:14"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -5001,6 +5001,21 @@ bim:EURO22.0300.10  rdf:type  owl:NamedIndividual , bim:Euro20 ;
      bim:categoria.revit    "OST_PipeFitting" ;
      bim:classe.ifc    "IfcValve"  .
 
+bim:CxaPa_01  rdf:type  owl:NamedIndividual , bim:Caixa.de.Passagem ;
+     bim:descrição    "Uma caixa de passagem"  .
+
+bim:CxaPa_02  rdf:type  owl:NamedIndividual , bim:Caixa.de.Passagem ;
+     bim:é.a.jusante.de    bim:CxaPa_01 ;
+     bim:descrição    "Uma caixa de passagem"  .
+
+bim:CxaPa_03  rdf:type  owl:NamedIndividual , bim:Caixa.de.Passagem ;
+     bim:é.a.jusante.de    bim:CxaPa_02 ;
+     bim:descrição    "Uma caixa de passagem"  .
+
+bim:CxaPa_04  rdf:type  owl:NamedIndividual , bim:Caixa.de.Passagem ;
+     bim:é.a.jusante.de    bim:CxaPa_03 ;
+     bim:descrição    "Uma caixa de passagem"  .
+
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
 #################################################################
@@ -5603,6 +5618,70 @@ bim:fator.fotoenergético   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação energizar" ;
                     bim:Definição           "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt ;
                     bim:Definición          "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es  .
+
+
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.jusante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.jusante.de" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.montante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.jusante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
+
+
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.montante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.montante.de" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.jusante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.montante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
 
 
 bim:p.fluir   rdf:type  owl:ObjectProperty ;
@@ -8855,5 +8934,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia TUBOS
-##  Criada em 02/10/2025 14:34:22
+##  Criada em 02/10/2025 14:45:18
 #################################################################
