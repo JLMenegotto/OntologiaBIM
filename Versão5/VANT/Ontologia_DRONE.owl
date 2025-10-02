@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 02/10/2025 7:50:06"@pt
+  Annotations: rdfs:label "DataHora: 02/10/2025 16:38:13"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -803,6 +803,70 @@ DataProperty: bim:fator.fotoenergético
 	Annotations: bim:Ação "Ação energizar"@pt
 	Annotations: bim:Definição "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt
 	Annotations: bim:Definición "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es
+
+ObjectProperty: bim:p.esgotar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.jusante.de
+	SubPropertyOf: bim:p.esgotar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a esgotar: é.a.jusante.de"@pt
+	Annotations: bim:Chave "esgo.113"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	InverseOf: bim:é.a.montante.de
+
+DataProperty: bim:d.esgotar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.jusante.de
+	SubPropertyOf: bim:d.esgotar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "esgo.113"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+
+ObjectProperty: bim:p.esgotar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.montante.de
+	SubPropertyOf: bim:p.esgotar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a esgotar: é.a.montante.de"@pt
+	Annotations: bim:Chave "esgo.114"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	InverseOf: bim:é.a.jusante.de
+
+DataProperty: bim:d.esgotar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.montante.de
+	SubPropertyOf: bim:d.esgotar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "esgo.114"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
 
 ObjectProperty: bim:p.gestionar
 	SubPropertyOf: bim:BIMProp
@@ -3533,5 +3597,5 @@ DataProperty: bim:voo.realizado
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 02/10/2025 7:50:08
+##  Criada em 02/10/2025 16:38:14
 #################################################################
