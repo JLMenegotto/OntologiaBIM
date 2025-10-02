@@ -23,7 +23,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 02/10/2025 7:49:52"@pt
+  Annotations: rdfs:label "DataHora: 02/10/2025 16:38:16"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -79,24 +79,24 @@ Class: bim:Projeto
 	EquivalentTo:  bim:é.nome some bim:Projeto
 
 
-Class: bim:Estrutura
-	Annotations: rdfs:label "Estrutura"@pt
+Class: bim:Materialidade
+	Annotations: rdfs:label "Materialidade"@pt
 	SubClassOf: bim:Projeto
-	EquivalentTo:  bim:é.nome some bim:Estrutura
+	EquivalentTo:  bim:é.nome some bim:Materialidade
 
 
-Class: bim:Metálica
-	Annotations: rdfs:label "Metálica"@pt
-	SubClassOf: bim:Estrutura
+Class: bim:Da.Estrutura
+	Annotations: rdfs:label "Da Estrutura"@pt
+	SubClassOf: bim:Materialidade
 
 
-Class: bim:Liga.Metálica
-	Annotations: rdfs:label "Liga Metálica"@pt
-	SubClassOf: bim:Metálica
+Class: bim:Ligas.Metálicas
+	Annotations: rdfs:label "Ligas Metálicas"@pt
+	SubClassOf: bim:Da.Estrutura
 
 
-Class: bim:Aço
-	Annotations: rdfs:label "Aço"@pt
+Class: bim:Aço.Estrutural
+	Annotations: rdfs:label "Aço Estrutural"@pt
 	Annotations: bim:Definição "Ligas de aço utilizadas no projeto"@pt
 	Annotations: bim:Definición "Aleación de acero utilizadas en el proyecto"@es
 	Annotations: bim:Interoperar "-"@pt
@@ -104,12 +104,14 @@ Class: bim:Aço
 	Annotations: bim:Espécie "Material"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.2"
-	SubClassOf: bim:Liga.Metálica
+	Annotations: bim:Chave "Key.Mat.2"
+	Annotations: bim:CatRevit "OST_Materials"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Ligas.Metálicas
 
 
-Class: bim:Alumínio
-	Annotations: rdfs:label "Alumínio"@pt
+Class: bim:Alumínio.Estrutural
+	Annotations: rdfs:label "Alumínio Estrutural"@pt
 	Annotations: bim:Definição "Ligas de alumínio utilizadas no projeto"@pt
 	Annotations: bim:Definición "Aleación de aluminio utilizadas en el proyecto"@es
 	Annotations: bim:Interoperar "-"@pt
@@ -117,12 +119,24 @@ Class: bim:Alumínio
 	Annotations: bim:Espécie "Material"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.3"
-	SubClassOf: bim:Liga.Metálica
+	Annotations: bim:Chave "Key.Mat.3"
+	Annotations: bim:CatRevit "OST_Materials"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Ligas.Metálicas
 
 
-Class: bim:Perfil.Estrutural
-	Annotations: rdfs:label "Perfil Estrutural"@pt
+Class: bim:Estrutural
+	Annotations: rdfs:label "Estrutural"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Metálica
+	Annotations: rdfs:label "Metálica"@pt
+	SubClassOf: bim:Estrutural
+
+
+Class: bim:Perfis.Estruturais
+	Annotations: rdfs:label "Perfis Estruturais"@pt
 	SubClassOf: bim:Metálica
 
 
@@ -136,7 +150,9 @@ Class: bim:Perfil.I
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.4"
-	SubClassOf: bim:Perfil.Estrutural
+	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
+	SubClassOf: bim:Perfis.Estruturais
 
 
 Class: bim:Perfil.HP
@@ -149,7 +165,9 @@ Class: bim:Perfil.HP
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.5"
-	SubClassOf: bim:Perfil.Estrutural
+	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
+	SubClassOf: bim:Perfis.Estruturais
 
 
 Class: bim:Perfil.W
@@ -162,7 +180,9 @@ Class: bim:Perfil.W
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.6"
-	SubClassOf: bim:Perfil.Estrutural
+	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
+	SubClassOf: bim:Perfis.Estruturais
 
 
 Class: bim:Perfil.T
@@ -175,7 +195,9 @@ Class: bim:Perfil.T
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.7"
-	SubClassOf: bim:Perfil.Estrutural
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Perfis.Estruturais
 
 
 Class: bim:Perfil.U
@@ -188,7 +210,9 @@ Class: bim:Perfil.U
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.8"
-	SubClassOf: bim:Perfil.Estrutural
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Perfis.Estruturais
 
 
 Class: bim:Perfil.U.Enrijecido
@@ -201,11 +225,13 @@ Class: bim:Perfil.U.Enrijecido
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.9"
-	SubClassOf: bim:Perfil.Estrutural
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Perfis.Estruturais
 
 
-Class: bim:Cantoneira
-	Annotations: rdfs:label "Cantoneira"@pt
+Class: bim:Cantoneiras
+	Annotations: rdfs:label "Cantoneiras"@pt
 	SubClassOf: bim:Metálica
 
 
@@ -219,7 +245,9 @@ Class: bim:Abas.Iguais
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.10"
-	SubClassOf: bim:Cantoneira
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Cantoneiras
 
 
 Class: bim:Abas.Desiguais
@@ -232,7 +260,9 @@ Class: bim:Abas.Desiguais
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.11"
-	SubClassOf: bim:Cantoneira
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Cantoneiras
 
 
 Class: bim:Barra
@@ -250,6 +280,8 @@ Class: bim:Quadrada.Laminada
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.12"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -263,6 +295,8 @@ Class: bim:Quadrada.Trefilada
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.13"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -276,6 +310,8 @@ Class: bim:Quadrada.Formada.a.Frio
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.14"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -289,6 +325,8 @@ Class: bim:Hexagonal
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.15"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -302,6 +340,8 @@ Class: bim:Redonda
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.16"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -315,6 +355,8 @@ Class: bim:Redonda.Mecânica
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.17"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -328,6 +370,8 @@ Class: bim:Redonda.Trefilada
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.18"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
@@ -341,7 +385,42 @@ Class: bim:Redonda.Formada.a.Frio
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
 	Annotations: bim:Chave "Key.Est.19"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
+
+
+Class: bim:Treliças
+	Annotations: rdfs:label "Treliças"@pt
+	SubClassOf: bim:Metálica
+
+
+Class: bim:Treliça
+	Annotations: rdfs:label "Treliça"@pt
+	Annotations: bim:Definição "Redonda trefilada"@pt
+	Annotations: bim:Definición "Barra redonda formada a frio"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.20"
+	Annotations: bim:CatRevit "OST_StructuralTruss"
+	SubClassOf: bim:Treliças
+
+
+Class: bim:Treliça.Ponte
+	Annotations: rdfs:label "Treliça Ponte"@pt
+	Annotations: bim:Definição "Redonda trefilada"@pt
+	Annotations: bim:Definición "Barra redonda formada a frio"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.21"
+	Annotations: bim:CatRevit "OST_StructuralTruss"
+	SubClassOf: bim:Treliças
 
 
 Class: bim:Chata
@@ -353,13 +432,30 @@ Class: bim:Chata
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.20"
+	Annotations: bim:Chave "Key.Est.22"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barra
 
 
 Class: bim:Placa
 	Annotations: rdfs:label "Placa"@pt
 	SubClassOf: bim:Metálica
+
+
+Class: bim:Enrijecedora
+	Annotations: rdfs:label "Enrijecedora"@pt
+	Annotations: bim:Definição "Placa de interface aço-concreto"@pt
+	Annotations: bim:Definición "Placa para interface acero-hormigón armado"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.25"
+	Annotations: bim:CatRevit "OST_StructuralStiffener"
+	Annotations: bim:ClasseIfc "IfcMemberSTIFFENING_RIB"
+	SubClassOf: bim:Placa
 
 
 Class: bim:Base
@@ -371,7 +467,9 @@ Class: bim:Base
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.21"
+	Annotations: bim:Chave "Key.Est.23"
+	Annotations: bim:CatRevit "OST_StructConnectionPlates"
+	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placa
 
 
@@ -384,20 +482,9 @@ Class: bim:Interface
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.22"
-	SubClassOf: bim:Placa
-
-
-Class: bim:Enrijecedora
-	Annotations: rdfs:label "Enrijecedora"@pt
-	Annotations: bim:Definição "Placa de interface aço-concreto"@pt
-	Annotations: bim:Definición "Placa para interface acero-hormigón armado"@es
-	Annotations: bim:Interoperar "-"@pt
-	Annotations: bim:Natureza "Estrutural"@pt
-	Annotations: bim:Espécie "Sustentação"@pt
-	Annotations: bim:Tema "Aço"@pt
-	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.23"
+	Annotations: bim:Chave "Key.Est.24"
+	Annotations: bim:CatRevit "OST_StructConnectionPlates"
+	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placa
 
 
@@ -410,7 +497,9 @@ Class: bim:Emenda
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.24"
+	Annotations: bim:Chave "Key.Est.26"
+	Annotations: bim:CatRevit "OST_StructConnectionPlates"
+	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placa
 
 
@@ -423,13 +512,15 @@ Class: bim:Fechamento
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Aço"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.25"
+	Annotations: bim:Chave "Key.Est.27"
+	Annotations: bim:CatRevit "OST_StructConnectionPlates"
+	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placa
 
 
 Class: bim:Tensionada
 	Annotations: rdfs:label "Tensionada"@pt
-	SubClassOf: bim:Estrutura
+	SubClassOf: bim:Estrutural
 
 
 Class: bim:Tensor
@@ -446,7 +537,9 @@ Class: bim:Ancora
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Estrutura leve"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.26"
+	Annotations: bim:Chave "Key.Est.28"
+	Annotations: bim:CatRevit "OST_StructConnectionAnchors"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Tensor
 
 
@@ -459,21 +552,239 @@ Class: bim:Conector
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Estrutura leve"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.27"
+	Annotations: bim:Chave "Key.Est.29"
+	Annotations: bim:CatRevit "OST_StructConnections"
 	SubClassOf: bim:Tensor
+
+
+Class: bim:Tensores
+	Annotations: rdfs:label "Tensores"@pt
+	SubClassOf: bim:Tensionada
 
 
 Class: bim:Estai
 	Annotations: rdfs:label "Estai"@pt
-	Annotations: bim:Definição "Cabo ou estai"@pt
-	Annotations: bim:Definición "Cable o tirante"@es
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
 	Annotations: bim:Interoperar "-"@pt
 	Annotations: bim:Natureza "Estrutural"@pt
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Estrutura leve"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.28"
-	SubClassOf: bim:Tensor
+	Annotations: bim:Chave "Key.Est.30"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendon"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Ancoragem.de.Estai
+	Annotations: rdfs:label "Ancoragem de Estai"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.31"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonAnchor"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Ancoragem.Acoplador
+	Annotations: rdfs:label "Ancoragem Acoplador"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.32"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonAnchorCOUPLER"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Ancoragem.Extremidade Fixa
+	Annotations: rdfs:label "Ancoragem Extremidade Fixa"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.33"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonAnchorFIXED_END"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Ancoragem.Extremidade Tensionamento
+	Annotations: rdfs:label "Ancoragem Extremidade Tensionamento"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.34"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonAnchorTENSIONING_END"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Barra
+	Annotations: rdfs:label "Tensor Barra"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.35"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonBAR"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Revestido
+	Annotations: rdfs:label "Tensor Revestido"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.36"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonCOATED"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Bainha
+	Annotations: rdfs:label "Tensor Bainha"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.37"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonConduit"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Bainha.Acoplador
+	Annotations: rdfs:label "Tensor Bainha Acoplador"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.38"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonConduitCOUPLER"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Bainha.Diabolo
+	Annotations: rdfs:label "Tensor Bainha Diabolo"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.39"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonConduitDIABOLO"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Bainha.Cabo
+	Annotations: rdfs:label "Tensor Bainha Cabo"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.40"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonConduitDUCT"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Injetor
+	Annotations: rdfs:label "Tensor Injetor"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.41"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonConduitGROUTING_DUCT"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Trombeta
+	Annotations: rdfs:label "Tensor Trombeta"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.42"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonConduitTRUMPET"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Corda
+	Annotations: rdfs:label "Tensor Corda"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.43"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonSTRAND"
+	SubClassOf: bim:Tensores
+
+
+Class: bim:Tensor.Fio
+	Annotations: rdfs:label "Tensor Fio"@pt
+	Annotations: bim:Definição "Tensores"@pt
+	Annotations: bim:Definición "Tensores"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Tensionadas"@pt
+	Annotations: bim:Tema "Estrutura leve"@pt
+	Annotations: bim:Disciplina "Metálica"@pt
+	Annotations: bim:Chave "Key.Est.44"
+	Annotations: bim:CatRevit "OST_StructuralTendons"
+	Annotations: bim:ClasseIfc "IfcTendonWIRE"
+	SubClassOf: bim:Tensores
 
 
 Class: bim:Mastro
@@ -485,7 +796,8 @@ Class: bim:Mastro
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Estrutura leve"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.29"
+	Annotations: bim:Chave "Key.Est.45"
+	Annotations: bim:CatRevit "OST_StructuralColumns"
 	SubClassOf: bim:Tensor
 
 
@@ -498,23 +810,25 @@ Class: bim:Membrana
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Estrutura leve"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Est.30"
+	Annotations: bim:Chave "Key.Est.46"
+	Annotations: bim:CatRevit "OST_AreaRein"
+	Annotations: bim:ClasseIfc "IfcStructuralSurfaceMember"
 	SubClassOf: bim:Tensor
 
 
-Class: bim:Montagem
-	Annotations: rdfs:label "Montagem"@pt
+Class: bim:Conexões.Estruturais
+	Annotations: rdfs:label "Conexões.Estruturais"@pt
 	SubClassOf: bim:Projeto
 
 
-Class: bim:Fixação
-	Annotations: rdfs:label "Fixação"@pt
-	SubClassOf: bim:Montagem
+Class: bim:Fixações
+	Annotations: rdfs:label "Fixações"@pt
+	SubClassOf: bim:Conexões.Estruturais
 
 
 Class: bim:Chumbadores
 	Annotations: rdfs:label "Chumbadores"@pt
-	SubClassOf: bim:Fixação
+	SubClassOf: bim:Fixações
 
 
 Class: bim:Chumbador.Interno
@@ -526,7 +840,9 @@ Class: bim:Chumbador.Interno
 	Annotations: bim:Espécie "Chumbador"@pt
 	Annotations: bim:Tema "Ligações"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Mon.31"
+	Annotations: bim:Chave "Key.Con.47"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerANCHORBOLT"
 	SubClassOf: bim:Chumbadores
 
 
@@ -539,13 +855,15 @@ Class: bim:Chumbador.Externo
 	Annotations: bim:Espécie "Chumbador"@pt
 	Annotations: bim:Tema "Ligações"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Mon.32"
+	Annotations: bim:Chave "Key.Con.48"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerANCHORBOLT"
 	SubClassOf: bim:Chumbadores
 
 
-Class: bim:Parafuso
-	Annotations: rdfs:label "Parafuso"@pt
-	SubClassOf: bim:Fixação
+Class: bim:Parafusos
+	Annotations: rdfs:label "Parafusos"@pt
+	SubClassOf: bim:Fixações
 
 
 Class: bim:Parafuso.DIN
@@ -557,8 +875,10 @@ Class: bim:Parafuso.DIN
 	Annotations: bim:Espécie "Parafuso"@pt
 	Annotations: bim:Tema "Ligações"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Mon.33"
-	SubClassOf: bim:Parafuso
+	Annotations: bim:Chave "Key.Con.49"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
+	SubClassOf: bim:Parafusos
 
 
 Class: bim:Parafuso.ASTM
@@ -570,8 +890,10 @@ Class: bim:Parafuso.ASTM
 	Annotations: bim:Espécie "Parafuso"@pt
 	Annotations: bim:Tema "Ligações"@pt
 	Annotations: bim:Disciplina "Metálica"@pt
-	Annotations: bim:Chave "Key.Mon.34"
-	SubClassOf: bim:Parafuso
+	Annotations: bim:Chave "Key.Con.50"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
+	SubClassOf: bim:Parafusos
 
 
 Class: bim:Parafuso.Drywall
@@ -583,8 +905,10 @@ Class: bim:Parafuso.Drywall
 	Annotations: bim:Espécie "Parafuso"@pt
 	Annotations: bim:Tema "Drywall"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mon.35"
-	SubClassOf: bim:Parafuso
+	Annotations: bim:Chave "Key.Con.51"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
+	SubClassOf: bim:Parafusos
 
 
 Class: bim:Parafuso.Brocante
@@ -596,8 +920,10 @@ Class: bim:Parafuso.Brocante
 	Annotations: bim:Espécie "Parafuso"@pt
 	Annotations: bim:Tema "Drywall"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mon.36"
-	SubClassOf: bim:Parafuso
+	Annotations: bim:Chave "Key.Con.52"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
+	SubClassOf: bim:Parafusos
 
 
 Class: bim:Parafuso.Auto.Atarraxante
@@ -609,55 +935,77 @@ Class: bim:Parafuso.Auto.Atarraxante
 	Annotations: bim:Espécie "Parafuso"@pt
 	Annotations: bim:Tema "Drywall"@pt
 	Annotations: bim:Disciplina "Arquitetura"@pt
-	Annotations: bim:Chave "Key.Mon.37"
-	SubClassOf: bim:Parafuso
+	Annotations: bim:Chave "Key.Con.53"
+	Annotations: bim:CatRevit "OST_StructConnectionBolts"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
+	SubClassOf: bim:Parafusos
+
+
+Class: bim:Pinos
+	Annotations: rdfs:label "Pinos"@pt
+	SubClassOf: bim:Fixações
+
+
+Class: bim:Pino.de.Cisalhamento
+	Annotations: rdfs:label "Pino de Cisalhamento"@pt
+	Annotations: bim:Definição "Pino Cisalhamento para lajes Steel Deck"@pt
+	Annotations: bim:Definición "Pino de corte para losas Steel Deck"@es
+	Annotations: bim:Interoperar "-"@pt
+	Annotations: bim:Natureza "Fixação"@pt
+	Annotations: bim:Espécie "Parafuso"@pt
+	Annotations: bim:Tema "Drywall"@pt
+	Annotations: bim:Disciplina "Arquitetura"@pt
+	Annotations: bim:Chave "Key.Con.54"
+	Annotations: bim:CatRevit "OST_StructConnectionShearStuds"
+	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
+	SubClassOf: bim:Pinos
 
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
 Individual: bim:A36
-	Types: bim:Aço
+	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  250
 	Facts: bim:resistência.à.tração  400
 	Facts: bim:descrição  "Liga de aço carbono de baixa liga"
 
 Individual: bim:A572-50
-	Types: bim:Aço
+	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  345
 	Facts: bim:resistência.à.tração  450
 	Facts: bim:descrição  "Liga de aço estrutural de alta resistência e baixa liga"
 
 Individual: bim:A572-60
-	Types: bim:Aço
+	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  415
 	Facts: bim:resistência.à.tração  520
 	Facts: bim:descrição  "Liga de aço estrutural de alta resistência e baixa liga"
 
 Individual: bim:A242
-	Types: bim:Aço
+	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  345
 	Facts: bim:resistência.à.tração  480
 	Facts: bim:descrição  "Liga de aço patinável Corten A para aplicação arquitetônica não estrutural"
 
 Individual: bim:A588-A
-	Types: bim:Aço
+	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  345
 	Facts: bim:resistência.à.tração  485
 	Facts: bim:descrição  "Liga de aço patinável Corten B para aplicação estrutural"
 
 Individual: bim:WS350-Gerdau
-	Types: bim:Aço
+	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  350
 	Facts: bim:resistência.à.tração  500
 	Facts: bim:descrição  "Liga de aço patinável resistente à intempérie produzida pela Gerdau"
 
 Individual: bim:Alumínio_6060
-	Types: bim:Alumínio
+	Types: bim:Alumínio.Estrutural
 	Facts: bim:descrição  "Liga de alumínio com média resistência mecânica, alta resistência à corrosão e excelente acabamento para anodização ou pintura eletrostática"
 
 Individual: bim:Alumínio_7075
-	Types: bim:Alumínio
+	Types: bim:Alumínio.Estrutural
 	Facts: bim:descrição  "Liga de alumínio de alta resistência mecânica com teores maiores de de zinco e magnésio"
 
 Individual: bim:HP150x22
@@ -2646,7 +2994,7 @@ Individual: bim:Estrutura.de.Apoio
 	Facts: bim:descrição  "Aço utilizado nas estruturas de apoio do projeto"
 
 Individual: bim:VP.01
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x13
 	Facts: bim:descrição  "Viga perimetral da fachada"
@@ -2654,7 +3002,7 @@ Individual: bim:VP.01
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VP.02
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x13
 	Facts: bim:descrição  "Viga perimetral da fachada"
@@ -2662,7 +3010,7 @@ Individual: bim:VP.02
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VP.03
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x18
 	Facts: bim:descrição  "Viga perimetral da fachada"
@@ -2670,7 +3018,7 @@ Individual: bim:VP.03
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VP.04
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x18
 	Facts: bim:descrição  "Viga perimetral da fachada"
@@ -2678,7 +3026,7 @@ Individual: bim:VP.04
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VI.01
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x18
 	Facts: bim:descrição  "Viga interior"
@@ -2686,7 +3034,7 @@ Individual: bim:VI.01
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VI.02
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x19
 	Facts: bim:descrição  "Viga interior"
@@ -2694,7 +3042,7 @@ Individual: bim:VI.02
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VI.03
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x20
 	Facts: bim:descrição  "Viga interior"
@@ -2702,7 +3050,7 @@ Individual: bim:VI.03
 	Facts: bim:classe.ifc  "IfcBeam"
 
 Individual: bim:VI.04
-	Types: bim:Perfil.Estrutural
+	Types: bim:Perfis.Estruturais
 	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
 	Facts: bim:é.bitola  bim:W150x21
 	Facts: bim:descrição  "Viga interior"
@@ -3224,6 +3572,70 @@ DataProperty: bim:fator.fotoenergético
 	Annotations: bim:Ação "Ação energizar"@pt
 	Annotations: bim:Definição "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt
 	Annotations: bim:Definición "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es
+
+ObjectProperty: bim:p.esgotar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.jusante.de
+	SubPropertyOf: bim:p.esgotar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a esgotar: é.a.jusante.de"@pt
+	Annotations: bim:Chave "esgo.113"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	InverseOf: bim:é.a.montante.de
+
+DataProperty: bim:d.esgotar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.jusante.de
+	SubPropertyOf: bim:d.esgotar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "esgo.113"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+
+ObjectProperty: bim:p.esgotar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.montante.de
+	SubPropertyOf: bim:p.esgotar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a esgotar: é.a.montante.de"@pt
+	Annotations: bim:Chave "esgo.114"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	InverseOf: bim:é.a.jusante.de
+
+DataProperty: bim:d.esgotar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.montante.de
+	SubPropertyOf: bim:d.esgotar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "esgo.114"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
 
 ObjectProperty: bim:p.gestionar
 	SubPropertyOf: bim:BIMProp
@@ -6157,5 +6569,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 02/10/2025 7:49:56
+##  Criada em 02/10/2025 16:38:17
 #################################################################
