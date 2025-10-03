@@ -7,5 +7,6 @@
 
 ### Pasta META: Ontologia com conceitos de estrutura metálica - Prefixo bim:
 
-<img width="932" height="2852" alt="Metal" src="https://github.com/user-attachments/assets/da1e6c97-230e-41d5-8f00-e382a31972a6" />
+<img width="880" height="2978" alt="Metal" src="https://github.com/user-attachments/assets/94086a17-253f-4f68-af07-f7218386d5b5" />
+
 
