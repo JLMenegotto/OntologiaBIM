@@ -1,0 +1,5056 @@
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: sh: <http://www.w3.org/ns/shacl#>
+Prefix: bim: <https://github.com/JLMenegotto/RepoOnto#>
+
+Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaConcretoArmado>
+
+  Annotations: rdfs:label "OntologiaPrefixo: bim:"@pt
+  Annotations: rdfs:label "OntologiaTema: EstruturaConcretoArmado"@pt
+  Annotations: rdfs:label "RaizClass: BIM"@pt
+  Annotations: rdfs:label "RaizProp: BIMProp"@pt
+  Annotations: rdfs:label "RaizData: BIMData"@pt
+  Annotations: rdfs:label "URI: https://github.com/JLMenegotto/RepoOnto#"@pt
+  Annotations: rdfs:label "Autor: Jefte Correa da Silva"@pt
+  Annotations: rdfs:label "Organização: Escola Politécnica da UFRJ"@pt
+  Annotations: rdfs:label "NormaNúmero: -"@pt
+  Annotations: rdfs:label "Edição: -"@pt
+  Annotations: rdfs:label "ISBN: -"@pt
+  Annotations: rdfs:label "NormaEscopo: -"@pt
+  Annotations: rdfs:label "NormaReferência1: -"@pt
+  Annotations: rdfs:label "NormaReferência2: -"@pt
+  Annotations: rdfs:label "NormaReferência3: -"@pt
+  Annotations: rdfs:label "Observações: Dados de porticos de Concreto armado"@pt
+  Annotations: rdfs:label "DataHora: 06/10/2025 14:35:19"@pt
+  Annotations: rdfs:label "Advertência1: -"@pt
+  Annotations: rdfs:label "Prédio: -"@pt
+  Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
+  Annotations: rdfs:label "Explicação: Formalizar dados de elementos de concreto armado"@pt
+  Annotations: rdfs:label "Explicación: Formalizar datos para elementos de hormigón armado"@pt
+  Annotations: rdfs:label "SourceIFC: IFC4"@pt
+  Annotations: rdfs:label "ABNT_NBR_6118_Versao: 2014 (em vigor com emendas)"@pt
+  Annotations: rdfs:label "UnidadesPadrao: SI"@pt
+
+Datatype:  xsd:string
+Datatype:  xsd:decimal
+Datatype:  xsd:double
+Datatype:  xsd:integer
+Datatype:  xsd:dateTime
+Datatype:  xsd:dayTimeDuration
+Datatype:  xsd:duration
+Datatype:  xsd:gDay
+Datatype:  xsd:gMonth
+Datatype:  xsd:gYear
+Datatype:  xsd:date
+Datatype:  xsd:time
+Datatype:  xsd:boolean
+Datatype:  rdfs:Literal
+Datatype:  rdf:PlainLiteral
+
+Class: bim:BIM
+	Annotations: rdfs:label "Raiz das Classes."@pt
+
+ObjectProperty: bim:BIMProp
+	Annotations: rdfs:label "Raiz das Propriedades. As propriedades de objetos e dados atualmente presentes na ontologia são apenas parte das propriedades. O arquivo Excel de propriedades contem todas as propriedades de objetos e dados planejadas para uso. A participação de uma propriedade na ontologia dependerá se foi incorporada a algum indivíduo da ontologia."@pt
+
+DataProperty: bim:BIMData
+	Annotations: rdfs:label "Raiz dos Dados. As propriedades de objetos e dados atualmente presentes na ontologia são apenas parte das propriedades. O arquivo Excel de propriedades contem todas as propriedades de objetos e dados planejadas para uso. A participação de uma propriedade na ontologia dependerá se foi incorporada a algum indivíduo da ontologia."@pt
+
+
+AnnotationProperty: bim:Natureza
+AnnotationProperty: bim:Espécie
+AnnotationProperty: bim:Disciplina
+AnnotationProperty: bim:Tema
+AnnotationProperty: bim:Interoperar
+AnnotationProperty: bim:Definição
+AnnotationProperty: bim:Definición
+AnnotationProperty: bim:Chave
+AnnotationProperty: bim:Ação
+AnnotationProperty: bim:CatRevit
+AnnotationProperty: bim:ClasseIfc
+AnnotationProperty: bim:Identifica
+AnnotationProperty: bim:Parâmetro
+
+#################################################################
+#     Classes em Sintaxe Manchester                              
+#################################################################
+
+Class: bim:Projeto
+	SubClassOf: bim:BIM
+
+
+Class: bim:Estrutura.CA
+	Annotations: rdfs:label "Estrutura CA"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Armação
+	Annotations: rdfs:label "Armação"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Aços.CA50
+	Annotations: rdfs:label "Aços CA50"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Aco.CA50.10.0mm
+	Annotations: rdfs:label "Aco CA50 10 0mm"@pt
+	Annotations: bim:Definição ""Aco CA50 10 0mm""@pt
+	Annotations: bim:Definición ""CA50 Steel 10 0mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.11"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.12.5mm
+	Annotations: rdfs:label "Aco CA50 12 5mm"@pt
+	Annotations: bim:Definição ""Aco CA50 12 5mm""@pt
+	Annotations: bim:Definición ""CA50 12 5mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.12"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.16.0mm
+	Annotations: rdfs:label "Aco CA50 16 0mm"@pt
+	Annotations: bim:Definição ""Aco CA50 16 0mm""@pt
+	Annotations: bim:Definición ""CA50 16 0mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.13"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.20.0mm
+	Annotations: rdfs:label "Aco CA50 20 0mm"@pt
+	Annotations: bim:Definição ""Aco CA50 20 0mm""@pt
+	Annotations: bim:Definición ""CA50 20 0mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.14"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.25.0mm
+	Annotations: rdfs:label "Aco CA50 25 0mm"@pt
+	Annotations: bim:Definição ""Aco CA50 25 0mm""@pt
+	Annotations: bim:Definición ""CA50 25 0mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.15"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.32.0mm
+	Annotations: rdfs:label "Aco CA50 32 0mm"@pt
+	Annotations: bim:Definição ""Aco CA50 32 0mm""@pt
+	Annotations: bim:Definición ""CA50 Steel 32 0mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.16"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.6.3mm
+	Annotations: rdfs:label "Aco CA50 6 3mm"@pt
+	Annotations: bim:Definição ""Aco CA50 6 3mm""@pt
+	Annotations: bim:Definición ""CA50 Steel 6 3mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.9"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aco.CA50.8.0mm
+	Annotations: rdfs:label "Aco CA50 8 0mm"@pt
+	Annotations: bim:Definição ""Aco CA50 8 0mm""@pt
+	Annotations: bim:Definición ""CA50 Steel 8 0mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.10"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA50
+
+
+Class: bim:Aço.CA60
+	Annotations: rdfs:label "Aço CA60"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Aco.CA60.10.0mm
+	Annotations: rdfs:label "Aco CA60 10 0mm"@pt
+	Annotations: bim:Definição ""Aco CA60 10 0mm""@pt
+	Annotations: bim:Definición ""CA60 10 0mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araço..18"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aço.CA60
+
+
+Class: bim:Aco.CA60.12.5mm
+	Annotations: rdfs:label "Aco CA60 12 5mm"@pt
+	Annotations: bim:Definição ""Aco CA60 12 5mm""@pt
+	Annotations: bim:Definición ""CA60 12 5mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araço..19"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aço.CA60
+
+
+Class: bim:Aco.CA60.16.0mm
+	Annotations: rdfs:label "Aco CA60 16 0mm"@pt
+	Annotations: bim:Definição ""Aco CA60 16 0mm""@pt
+	Annotations: bim:Definición ""CA60 16 0mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araço..20"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aço.CA60
+
+
+Class: bim:Aco.CA60.20.0mm
+	Annotations: rdfs:label "Aco CA60 20 0mm"@pt
+	Annotations: bim:Definição ""Aco CA60 20 0mm""@pt
+	Annotations: bim:Definición ""CA60 20 0mm Steel""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araço..21"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aço.CA60
+
+
+Class: bim:Aco.CA60.25.0mm
+	Annotations: rdfs:label "Aco CA60 25 0mm"@pt
+	Annotations: bim:Definição ""Aco CA60 25 0mm""@pt
+	Annotations: bim:Definición ""CA60 Steel 25 0mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araço..22"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aço.CA60
+
+
+Class: bim:Aco.CA60.32.0mm
+	Annotations: rdfs:label "Aco CA60 32 0mm"@pt
+	Annotations: bim:Definição ""Aco CA60 32 0mm""@pt
+	Annotations: bim:Definición ""CA60 Steel 32 0mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araço..23"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aço.CA60
+
+
+Class: bim:Aços.CA60
+	Annotations: rdfs:label "Aços CA60"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Aco.CA60.8.0mm
+	Annotations: rdfs:label "Aco CA60 8 0mm"@pt
+	Annotations: bim:Definição ""Aco CA60 8 0mm""@pt
+	Annotations: bim:Definición ""CA60 Steel 8 0mm""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.araços.17"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Aços.CA60
+
+
+Class: bim:Materialidade
+	Annotations: rdfs:label "Materialidade"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Da.Estrutura
+	Annotations: rdfs:label "Da Estrutura"@pt
+	SubClassOf: bim:Materialidade
+
+
+Class: bim:Adicao.Mineral
+	Annotations: rdfs:label "Adicao Mineral"@pt
+	SubClassOf: bim:Da.Estrutura
+
+
+Class: bim:Adicao.Cinza.Volante
+	Annotations: rdfs:label "Adicao Cinza Volante"@pt
+	Annotations: bim:Definição ""Adicao Cinza Volante""@pt
+	Annotations: bim:Definición ""Flywheel Gray Addition""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Adição"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadic.91"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Adicao.Mineral
+
+
+Class: bim:Adicao.Metacaulim
+	Annotations: rdfs:label "Adicao Metacaulim"@pt
+	Annotations: bim:Definição ""Adicao Metacaulim""@pt
+	Annotations: bim:Definición ""Metakaolin Addition""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Adição"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadic.92"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Adicao.Mineral
+
+
+Class: bim:Adicao.Silica.Ativa
+	Annotations: rdfs:label "Adicao Silica Ativa"@pt
+	Annotations: bim:Definição ""Adicao Silica Ativa""@pt
+	Annotations: bim:Definición ""Active Silica Addition""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Adição"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadic.93"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Adicao.Mineral
+
+
+Class: bim:Aditivos
+	Annotations: rdfs:label "Aditivos"@pt
+	SubClassOf: bim:Da.Estrutura
+
+
+Class: bim:Aditivo.Acelerador.De.Pega
+	Annotations: rdfs:label "Aditivo Acelerador De Pega"@pt
+	Annotations: bim:Definição ""Aditivo Acelerador De Pega""@pt
+	Annotations: bim:Definición ""Grip accelerator additive""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aditivo"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadit.98"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Aditivos
+
+
+Class: bim:Aditivo.Incorporador.De.Ar
+	Annotations: rdfs:label "Aditivo Incorporador De Ar"@pt
+	Annotations: bim:Definição ""Aditivo Incorporador De Ar""@pt
+	Annotations: bim:Definición ""Air Incorporator Additive""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aditivo"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadit.96"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Aditivos
+
+
+Class: bim:Aditivo.Plastificante
+	Annotations: rdfs:label "Aditivo Plastificante"@pt
+	Annotations: bim:Definição ""Aditivo Plastificante""@pt
+	Annotations: bim:Definición ""Plasticizing additive""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aditivo"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadit.94"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Aditivos
+
+
+Class: bim:Aditivo.Retardador.De.Pega
+	Annotations: rdfs:label "Aditivo Retardador De Pega"@pt
+	Annotations: bim:Definição ""Aditivo Retardador De Pega""@pt
+	Annotations: bim:Definición ""Retardant Setting Additive""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aditivo"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadit.97"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Aditivos
+
+
+Class: bim:Aditivo.Superplastificante
+	Annotations: rdfs:label "Aditivo Superplastificante"@pt
+	Annotations: bim:Definição ""Aditivo Superplastificante""@pt
+	Annotations: bim:Definición ""Superplasticizer Additive""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aditivo"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daadit.95"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Aditivos
+
+
+Class: bim:Agregados
+	Annotations: rdfs:label "Agregados"@pt
+	SubClassOf: bim:Da.Estrutura
+
+
+Class: bim:Agregado.Brita.0
+	Annotations: rdfs:label "Agregado Brita 0"@pt
+	Annotations: bim:Definição ""Agregado Brita 0""@pt
+	Annotations: bim:Definición ""Gravel Aggregate 0""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Agregado"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daagre.87"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Agregados
+
+
+Class: bim:Agregado.Brita.1
+	Annotations: rdfs:label "Agregado Brita 1"@pt
+	Annotations: bim:Definição ""Agregado Brita 1""@pt
+	Annotations: bim:Definición ""Gravel Aggregate 1""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Agregado"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daagre.88"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Agregados
+
+
+Class: bim:Agregado.Brita.2
+	Annotations: rdfs:label "Agregado Brita 2"@pt
+	Annotations: bim:Definição ""Agregado Brita 2""@pt
+	Annotations: bim:Definición ""Gravel Aggregate 2""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Agregado"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daagre.89"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Agregados
+
+
+Class: bim:Agregado.Miudo.Areia.Media
+	Annotations: rdfs:label "Agregado Miudo Areia Media"@pt
+	Annotations: bim:Definição ""Agregado Miudo Areia Media""@pt
+	Annotations: bim:Definición ""Aggregate Miúdo Areia Media""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Agregado"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.daagre.90"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Agregados
+
+
+Class: bim:Durabilidade
+	Annotations: rdfs:label "Durabilidade"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Agressividades
+	Annotations: rdfs:label "Agressividades"@pt
+	SubClassOf: bim:Durabilidade
+
+
+Class: bim:Agressividade.I
+	Annotations: rdfs:label "Agressividade I"@pt
+	Annotations: bim:Definição ""Agressividade I""@pt
+	Annotations: bim:Definición ""Aggressiveness I""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.duagre.48"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Agressividades
+
+
+Class: bim:Agressividade.II
+	Annotations: rdfs:label "Agressividade II"@pt
+	Annotations: bim:Definição ""Agressividade II""@pt
+	Annotations: bim:Definición ""Aggressiveness II""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.duagre.49"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Agressividades
+
+
+Class: bim:Agressividade.III
+	Annotations: rdfs:label "Agressividade III"@pt
+	Annotations: bim:Definição ""Agressividade III""@pt
+	Annotations: bim:Definición ""Aggressiveness III""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.duagre.50"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Agressividades
+
+
+Class: bim:Agressividade.IV
+	Annotations: rdfs:label "Agressividade IV"@pt
+	Annotations: bim:Definição ""Agressividade IV""@pt
+	Annotations: bim:Definición ""Aggressiveness IV""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.duagre.51"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Agressividades
+
+
+Class: bim:Ancoragens
+	Annotations: rdfs:label "Ancoragens"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Ancoragem.Gancho135
+	Annotations: rdfs:label "Ancoragem Gancho135"@pt
+	Annotations: bim:Definição ""Ancoragem Gancho135""@pt
+	Annotations: bim:Definición ""Anchor Hook135""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Ligação"@pt
+	Annotations: bim:Tema "Armadura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.aranco.6"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Ancoragens
+
+
+Class: bim:Ancoragem.Gancho90
+	Annotations: rdfs:label "Ancoragem Gancho90"@pt
+	Annotations: bim:Definição ""Ancoragem Gancho90""@pt
+	Annotations: bim:Definición ""Anchoring Hook90""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Ligação"@pt
+	Annotations: bim:Tema "Armadura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.aranco.5"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Ancoragens
+
+
+Class: bim:Armadura.Longitudinal
+	Annotations: rdfs:label "Armadura Longitudinal"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Armadura.Longitudinal.CA50
+	Annotations: rdfs:label "Armadura Longitudinal CA50"@pt
+	Annotations: bim:Definição ""Armadura Longitudinal CA50""@pt
+	Annotations: bim:Definición ""CA50 Longitudinal Reinforcement""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ararma.1"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Armadura.Longitudinal
+
+
+Class: bim:Armadura.Longitudinal.CA60
+	Annotations: rdfs:label "Armadura Longitudinal CA60"@pt
+	Annotations: bim:Definição ""Armadura Longitudinal CA60""@pt
+	Annotations: bim:Definición ""CA60 Longitudinal Reinforcement""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Aço"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ararma.2"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Armadura.Longitudinal
+
+
+Class: bim:Elemento.Fundacao
+	Annotations: rdfs:label "Elemento Fundacao"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Bloco
+	Annotations: rdfs:label "Bloco"@pt
+	SubClassOf: bim:Elemento.Fundacao
+
+
+Class: bim:Bloco.Fundacao
+	Annotations: rdfs:label "Bloco Fundacao"@pt
+	Annotations: bim:Definição ""Bloco Fundacao""@pt
+	Annotations: bim:Definición ""Foundation Block""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Bloco"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elbloc.64"
+	Annotations: bim:ClasseIfc "IfcFooting"
+	SubClassOf: bim:Bloco
+
+
+Class: bim:Cimentos
+	Annotations: rdfs:label "Cimentos"@pt
+	SubClassOf: bim:Da.Estrutura
+
+
+Class: bim:Cimento.CPII
+	Annotations: rdfs:label "Cimento CPII"@pt
+	Annotations: bim:Definição ""Cimento CPII""@pt
+	Annotations: bim:Definición ""CPII Cement""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Cimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.dacime.84"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Cimentos
+
+
+Class: bim:Cimento.CPIII
+	Annotations: rdfs:label "Cimento CPIII"@pt
+	Annotations: bim:Definição ""Cimento CPIII""@pt
+	Annotations: bim:Definición ""CPIII cement""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Cimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.dacime.85"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Cimentos
+
+
+Class: bim:Cimento.CPV
+	Annotations: rdfs:label "Cimento CPV"@pt
+	Annotations: bim:Definição ""Cimento CPV""@pt
+	Annotations: bim:Definición ""COGS cement""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Cimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.dacime.86"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcMaterial"
+	SubClassOf: bim:Cimentos
+
+
+Class: bim:Cobrimentos
+	Annotations: rdfs:label "Cobrimentos"@pt
+	SubClassOf: bim:Durabilidade
+
+
+Class: bim:Cobrimento.Laje.Superior
+	Annotations: rdfs:label "Cobrimento Laje Superior"@pt
+	Annotations: bim:Definição ""Cobrimento Laje Superior""@pt
+	Annotations: bim:Definición ""Upper Slab Covering""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ducobr.56"
+	Annotations: bim:ClasseIfc "IfcCovering"
+	SubClassOf: bim:Cobrimentos
+
+
+Class: bim:Cobrimento.Pilar.Fachada
+	Annotations: rdfs:label "Cobrimento Pilar Fachada"@pt
+	Annotations: bim:Definição ""Cobrimento Pilar Fachada""@pt
+	Annotations: bim:Definición ""Pillar Façade Covering""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ducobr.53"
+	Annotations: bim:ClasseIfc "IfcCovering"
+	SubClassOf: bim:Cobrimentos
+
+
+Class: bim:Cobrimento.Pilar.Interior
+	Annotations: rdfs:label "Cobrimento Pilar Interior"@pt
+	Annotations: bim:Definição ""Cobrimento Pilar Interior""@pt
+	Annotations: bim:Definición ""Interior Pillar Covering""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ducobr.52"
+	Annotations: bim:ClasseIfc "IfcCovering"
+	SubClassOf: bim:Cobrimentos
+
+
+Class: bim:Cobrimento.Viga.Fachada
+	Annotations: rdfs:label "Cobrimento Viga Fachada"@pt
+	Annotations: bim:Definição ""Cobrimento Viga Fachada""@pt
+	Annotations: bim:Definición ""Façade Beam Covering""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ducobr.55"
+	Annotations: bim:ClasseIfc "IfcCovering"
+	SubClassOf: bim:Cobrimentos
+
+
+Class: bim:Cobrimento.Viga.Interior
+	Annotations: rdfs:label "Cobrimento Viga Interior"@pt
+	Annotations: bim:Definição ""Cobrimento Viga Interior""@pt
+	Annotations: bim:Definición ""Interior Beam Covering""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Durabilidade"@pt
+	Annotations: bim:Espécie "Proteção"@pt
+	Annotations: bim:Tema "Cobrimento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ducobr.54"
+	Annotations: bim:ClasseIfc "IfcCovering"
+	SubClassOf: bim:Cobrimentos
+
+
+Class: bim:Concretos
+	Annotations: rdfs:label "Concretos"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Consistência
+	Annotations: rdfs:label "Consistência"@pt
+	SubClassOf: bim:Concretos
+
+
+Class: bim:Concreto.AbatimentoAlto
+	Annotations: rdfs:label "Concreto AbatimentoAlto"@pt
+	Annotations: bim:Definição ""Concreto AbatimentoAlto""@pt
+	Annotations: bim:Definición ""High Slump Concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Propriedade"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cocons.33"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Consistência
+
+
+Class: bim:Concreto.AbatimentoBaixo
+	Annotations: rdfs:label "Concreto AbatimentoBaixo"@pt
+	Annotations: bim:Definição ""Concreto AbatimentoBaixo""@pt
+	Annotations: bim:Definición ""Concrete SlumpLow""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Propriedade"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cocons.31"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Consistência
+
+
+Class: bim:Concreto.AbatimentoMedio
+	Annotations: rdfs:label "Concreto AbatimentoMedio"@pt
+	Annotations: bim:Definição ""Concreto AbatimentoMedio""@pt
+	Annotations: bim:Definición ""Concrete SlumpMedium""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Propriedade"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cocons.32"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Consistência
+
+
+Class: bim:Resistência
+	Annotations: rdfs:label "Resistência"@pt
+	SubClassOf: bim:Concretos
+
+
+Class: bim:Concreto.C20
+	Annotations: rdfs:label "Concreto C20"@pt
+	Annotations: bim:Definição ""Concreto C20""@pt
+	Annotations: bim:Definición ""C20 Concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.24"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Concreto.C25
+	Annotations: rdfs:label "Concreto C25"@pt
+	Annotations: bim:Definição ""Concreto C25""@pt
+	Annotations: bim:Definición ""C25 concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.25"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Concreto.C30
+	Annotations: rdfs:label "Concreto C30"@pt
+	Annotations: bim:Definição ""Concreto C30""@pt
+	Annotations: bim:Definición ""C30 concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.26"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Concreto.C35
+	Annotations: rdfs:label "Concreto C35"@pt
+	Annotations: bim:Definição ""Concreto C35""@pt
+	Annotations: bim:Definición ""C35 concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.27"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Concreto.C40
+	Annotations: rdfs:label "Concreto C40"@pt
+	Annotations: bim:Definição ""Concreto C40""@pt
+	Annotations: bim:Definición ""C40 concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.28"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Concreto.C50
+	Annotations: rdfs:label "Concreto C50"@pt
+	Annotations: bim:Definição ""Concreto C50""@pt
+	Annotations: bim:Definición ""C50 Concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.29"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Concreto.C60
+	Annotations: rdfs:label "Concreto C60"@pt
+	Annotations: bim:Definição ""Concreto C60""@pt
+	Annotations: bim:Definición ""C60 Concrete""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Material"@pt
+	Annotations: bim:Tema "Concreto"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coresi.30"
+	Annotations: bim:CatRevit "OST_Material"
+	Annotations: bim:ClasseIfc "IfcConcreteElement"
+	SubClassOf: bim:Resistência
+
+
+Class: bim:Construtivo
+	Annotations: rdfs:label "Construtivo"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Curas
+	Annotations: rdfs:label "Curas"@pt
+	SubClassOf: bim:Construtivo
+
+
+Class: bim:Cura.Membrana
+	Annotations: rdfs:label "Cura Membrana"@pt
+	Annotations: bim:Definição ""Cura Membrana""@pt
+	Annotations: bim:Definición ""Membrane Healing""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Processo"@pt
+	Annotations: bim:Tema "Cura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cocura.41"
+	Annotations: bim:ClasseIfc "IfcProcess"
+	SubClassOf: bim:Curas
+
+
+Class: bim:Cura.Umida
+	Annotations: rdfs:label "Cura Umida"@pt
+	Annotations: bim:Definição ""Cura Umida""@pt
+	Annotations: bim:Definición ""Wet Healing""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Processo"@pt
+	Annotations: bim:Tema "Cura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cocura.40"
+	Annotations: bim:ClasseIfc "IfcProcess"
+	SubClassOf: bim:Curas
+
+
+Class: bim:Emendas
+	Annotations: rdfs:label "Emendas"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Emenda.Mangote
+	Annotations: rdfs:label "Emenda Mangote"@pt
+	Annotations: bim:Definição ""Emenda Mangote""@pt
+	Annotations: bim:Definición ""Mangote Amendment""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Ligação"@pt
+	Annotations: bim:Tema "Armadura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.aremen.8"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Emendas
+
+
+Class: bim:Emenda.Transpasse
+	Annotations: rdfs:label "Emenda Transpasse"@pt
+	Annotations: bim:Definição ""Emenda Transpasse""@pt
+	Annotations: bim:Definición ""Amendment Transpass""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Ligação"@pt
+	Annotations: bim:Tema "Armadura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.aremen.7"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Emendas
+
+
+Class: bim:ExecucaoControle
+	Annotations: rdfs:label "ExecucaoControle"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Ensaios.Concreto
+	Annotations: rdfs:label "Ensaios Concreto"@pt
+	SubClassOf: bim:ExecucaoControle
+
+
+Class: bim:Ensaio.Abate.Slump
+	Annotations: rdfs:label "Ensaio Abate Slump"@pt
+	Annotations: bim:Definição ""Ensaio Abate Slump""@pt
+	Annotations: bim:Definición ""Slump Slump Essay""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Execução"@pt
+	Annotations: bim:Espécie "Controle"@pt
+	Annotations: bim:Tema "Ensaios"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.exensa.80"
+	Annotations: bim:ClasseIfc "IfcTestMethod"
+	SubClassOf: bim:Ensaios.Concreto
+
+
+Class: bim:Ensaios.Aco
+	Annotations: rdfs:label "Ensaios Aco"@pt
+	SubClassOf: bim:ExecucaoControle
+
+
+Class: bim:Ensaio.AderenciaAcoConcreto
+	Annotations: rdfs:label "Ensaio AderenciaAcoConcreto"@pt
+	Annotations: bim:Definição ""Ensaio AderenciaAcoConcreto""@pt
+	Annotations: bim:Definición ""Concrete SteelAdhesion Test""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Execução"@pt
+	Annotations: bim:Espécie "Controle"@pt
+	Annotations: bim:Tema "Ensaios"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.exensa.81"
+	Annotations: bim:ClasseIfc "IfcTestMethod"
+	SubClassOf: bim:Ensaios.Aco
+
+
+Class: bim:Ensaio.CorposDeProva
+	Annotations: rdfs:label "Ensaio CorposDeProva"@pt
+	Annotations: bim:Definição ""Ensaio CorposDeProva""@pt
+	Annotations: bim:Definición ""Essay BodiesDeProva""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Execução"@pt
+	Annotations: bim:Espécie "Controle"@pt
+	Annotations: bim:Tema "Ensaios"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.exensa.79"
+	Annotations: bim:ClasseIfc "IfcTestMethod"
+	SubClassOf: bim:Ensaios.Concreto
+
+
+Class: bim:Escoramento
+	Annotations: rdfs:label "Escoramento"@pt
+	SubClassOf: bim:Construtivo
+
+
+Class: bim:Escoramento.Metálico
+	Annotations: rdfs:label "Escoramento Metálico"@pt
+	Annotations: bim:Definição ""Escoramento Metálico""@pt
+	Annotations: bim:Definición ""Metal Shoring""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Apoio"@pt
+	Annotations: bim:Tema "Escoramento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coesco.37"
+	Annotations: bim:ClasseIfc "IfcTemporaryStructure"
+	SubClassOf: bim:Escoramento
+
+
+Class: bim:Escoramento.Tubular
+	Annotations: rdfs:label "Escoramento Tubular"@pt
+	Annotations: bim:Definição ""Escoramento Tubular""@pt
+	Annotations: bim:Definición ""Tubular Shoring""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Apoio"@pt
+	Annotations: bim:Tema "Escoramento"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.coesco.36"
+	Annotations: bim:ClasseIfc "IfcTemporaryStructure"
+	SubClassOf: bim:Escoramento
+
+
+Class: bim:Estaca
+	Annotations: rdfs:label "Estaca"@pt
+	SubClassOf: bim:Elemento.Fundacao
+
+
+Class: bim:Estaca.Moldada.Loco
+	Annotations: rdfs:label "Estaca Moldada Loco"@pt
+	Annotations: bim:Definição ""Estaca Moldada Loco""@pt
+	Annotations: bim:Definición ""Loco Molded Pile""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Estaca"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elesta.66"
+	Annotations: bim:ClasseIfc "IfcPile"
+	SubClassOf: bim:Estaca
+
+
+Class: bim:Estaca.PreMoldada
+	Annotations: rdfs:label "Estaca PreMoldada"@pt
+	Annotations: bim:Definição ""Estaca PreMoldada""@pt
+	Annotations: bim:Definición ""Precast Pile""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Estaca"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elesta.67"
+	Annotations: bim:ClasseIfc "IfcPile"
+	SubClassOf: bim:Estaca
+
+
+Class: bim:Armadura.Transversal
+	Annotations: rdfs:label "Armadura Transversal"@pt
+	SubClassOf: bim:Armação
+
+
+Class: bim:Estribo.Aberto
+	Annotations: rdfs:label "Estribo Aberto"@pt
+	Annotations: bim:Definição ""Estribo Aberto""@pt
+	Annotations: bim:Definición ""Open Stirrup""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Armadura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ararma.4"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Armadura.Transversal
+
+
+Class: bim:Estribo.Fechado
+	Annotations: rdfs:label "Estribo Fechado"@pt
+	Annotations: bim:Definição ""Estribo Fechado""@pt
+	Annotations: bim:Definición ""Closed stirrup""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Armadura"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ararma.3"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Armadura.Transversal
+
+
+Class: bim:Fôrmas
+	Annotations: rdfs:label "Fôrmas"@pt
+	SubClassOf: bim:Construtivo
+
+
+Class: bim:Fôrma.Painel.Madeira
+	Annotations: rdfs:label "Fôrma Painel Madeira"@pt
+	Annotations: bim:Definição ""Fôrma Painel Madeira""@pt
+	Annotations: bim:Definición ""Wood Panel Formwork""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Apoio"@pt
+	Annotations: bim:Tema "Forma"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cofôrm.34"
+	Annotations: bim:ClasseIfc "IfcFormwork"
+	SubClassOf: bim:Fôrmas
+
+
+Class: bim:Fôrma.Painel.Metálico
+	Annotations: rdfs:label "Fôrma Painel Metálico"@pt
+	Annotations: bim:Definição ""Fôrma Painel Metálico""@pt
+	Annotations: bim:Definición ""Metal Panel Formwork""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Apoio"@pt
+	Annotations: bim:Tema "Forma"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cofôrm.35"
+	Annotations: bim:ClasseIfc "IfcFormwork"
+	SubClassOf: bim:Fôrmas
+
+
+Class: bim:Inspecao
+	Annotations: rdfs:label "Inspecao"@pt
+	SubClassOf: bim:ExecucaoControle
+
+
+Class: bim:Inspecao.Armação
+	Annotations: rdfs:label "Inspecao Armação"@pt
+	Annotations: bim:Definição ""Inspecao Armação""@pt
+	Annotations: bim:Definición ""Frame inspection""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Execução"@pt
+	Annotations: bim:Espécie "Controle"@pt
+	Annotations: bim:Tema "Inspeção"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.exinsp.83"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Inspecao
+
+
+Class: bim:Inspecao.Cobrimento
+	Annotations: rdfs:label "Inspecao Cobrimento"@pt
+	Annotations: bim:Definição ""Inspecao Cobrimento""@pt
+	Annotations: bim:Definición ""Inspection Covering""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Execução"@pt
+	Annotations: bim:Espécie "Controle"@pt
+	Annotations: bim:Tema "Inspeção"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.exinsp.82"
+	Annotations: bim:ClasseIfc "IfcPropertySet"
+	SubClassOf: bim:Inspecao
+
+
+Class: bim:Juntas
+	Annotations: rdfs:label "Juntas"@pt
+	SubClassOf: bim:Construtivo
+
+
+Class: bim:Junta.Construcao
+	Annotations: rdfs:label "Junta Construcao"@pt
+	Annotations: bim:Definição ""Junta Construcao""@pt
+	Annotations: bim:Definición ""Junta Construção""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Ligação"@pt
+	Annotations: bim:Tema "Junta"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cojunt.38"
+	Annotations: bim:ClasseIfc "IfcJoint"
+	SubClassOf: bim:Juntas
+
+
+Class: bim:Junta.Dilatacao
+	Annotations: rdfs:label "Junta Dilatacao"@pt
+	Annotations: bim:Definição ""Junta Dilatacao""@pt
+	Annotations: bim:Definición ""Expansion Joint""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Construtivo"@pt
+	Annotations: bim:Espécie "Ligação"@pt
+	Annotations: bim:Tema "Junta"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.cojunt.39"
+	Annotations: bim:ClasseIfc "IfcJoint"
+	SubClassOf: bim:Juntas
+
+
+Class: bim:Elemento.Superficie
+	Annotations: rdfs:label "Elemento Superficie"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Lajes
+	Annotations: rdfs:label "Lajes"@pt
+	SubClassOf: bim:Elemento.Superficie
+
+
+Class: bim:Laje.Cogumelo
+	Annotations: rdfs:label "Laje Cogumelo"@pt
+	Annotations: bim:Definição ""Laje Cogumelo""@pt
+	Annotations: bim:Definición ""Mushroom Slab""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Laje"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ellaje.77"
+	Annotations: bim:CatRevit "OST_Floors"
+	Annotations: bim:ClasseIfc "IfcSlab"
+	SubClassOf: bim:Lajes
+
+
+Class: bim:Laje.Macica
+	Annotations: rdfs:label "Laje Macica"@pt
+	Annotations: bim:Definição ""Laje Macica""@pt
+	Annotations: bim:Definición ""Solid Slab""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Laje"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ellaje.75"
+	Annotations: bim:CatRevit "OST_Floors"
+	Annotations: bim:ClasseIfc "IfcSlab"
+	SubClassOf: bim:Lajes
+
+
+Class: bim:Laje.Nervurada
+	Annotations: rdfs:label "Laje Nervurada"@pt
+	Annotations: bim:Definição ""Laje Nervurada""@pt
+	Annotations: bim:Definición ""Ribbed Slab""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Laje"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ellaje.76"
+	Annotations: bim:CatRevit "OST_Floors"
+	Annotations: bim:ClasseIfc "IfcSlab"
+	SubClassOf: bim:Lajes
+
+
+Class: bim:Laje.PreMoldada
+	Annotations: rdfs:label "Laje PreMoldada"@pt
+	Annotations: bim:Definição ""Laje PreMoldada""@pt
+	Annotations: bim:Definición ""Precast Slab""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Laje"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.ellaje.78"
+	Annotations: bim:CatRevit "OST_Floors"
+	Annotations: bim:ClasseIfc "IfcSlab"
+	SubClassOf: bim:Lajes
+
+
+Class: bim:Elemento.Composto
+	Annotations: rdfs:label "Elemento Composto"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Nodo
+	Annotations: rdfs:label "Nodo"@pt
+	SubClassOf: bim:Elemento.Composto
+
+
+Class: bim:No.Rigido
+	Annotations: rdfs:label "No Rigido"@pt
+	Annotations: bim:Definição ""No Rigido""@pt
+	Annotations: bim:Definición ""No Rigid""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Nó"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elnodo.59"
+	Annotations: bim:ClasseIfc "IfcStructuralConnection"
+	SubClassOf: bim:Nodo
+
+
+Class: bim:No.Semirigido
+	Annotations: rdfs:label "No Semirigido"@pt
+	Annotations: bim:Definição ""No Semirigido""@pt
+	Annotations: bim:Definición ""In the Semi-Rigid""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Nó"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elnodo.60"
+	Annotations: bim:ClasseIfc "IfcStructuralConnection"
+	SubClassOf: bim:Nodo
+
+
+Class: bim:Nodos
+	Annotations: rdfs:label "Nodos"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Nodos.Detalhados
+	Annotations: rdfs:label "Nodos Detalhados"@pt
+	SubClassOf: bim:Nodos
+
+
+Class: bim:Nodo.GanchoConfinado
+	Annotations: rdfs:label "Nodo GanchoConfinado"@pt
+	Annotations: bim:Definição ""Nodo GanchoConfinado""@pt
+	Annotations: bim:Definición ""ConfinedHook Node""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Detalhamento"@pt
+	Annotations: bim:Tema "Nó"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.nonodo.42"
+	Annotations: bim:ClasseIfc "IfcStructuralConnection"
+	SubClassOf: bim:Nodos.Detalhados
+
+
+Class: bim:Nodo.TranspasseConfinado
+	Annotations: rdfs:label "Nodo TranspasseConfinado"@pt
+	Annotations: bim:Definição ""Nodo TranspasseConfinado""@pt
+	Annotations: bim:Definición ""ConfinedSmash Node""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Detalhamento"@pt
+	Annotations: bim:Tema "Nó"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.nonodo.43"
+	Annotations: bim:ClasseIfc "IfcStructuralConnection"
+	SubClassOf: bim:Nodos.Detalhados
+
+
+Class: bim:Pilares
+	Annotations: rdfs:label "Pilares"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Pilares.Lineares
+	Annotations: rdfs:label "Pilares Lineares"@pt
+	SubClassOf: bim:Pilares
+
+
+Class: bim:Pilar.Circular
+	Annotations: rdfs:label "Pilar Circular"@pt
+	Annotations: bim:Definição ""Pilar Circular""@pt
+	Annotations: bim:Definición ""Circular Pillar""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Pilar"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.pipila.69"
+	Annotations: bim:CatRevit "OST_StructuralColumns"
+	Annotations: bim:ClasseIfc "IfcColumn"
+	SubClassOf: bim:Pilares.Lineares
+
+
+Class: bim:Pilares.Detalhados
+	Annotations: rdfs:label "Pilares Detalhados"@pt
+	SubClassOf: bim:Pilares
+
+
+Class: bim:Pilar.Estribo.Fechado.Duplo
+	Annotations: rdfs:label "Pilar Estribo Fechado Duplo"@pt
+	Annotations: bim:Definição ""Pilar Estribo Fechado Duplo""@pt
+	Annotations: bim:Definición ""Double Closed Stirrup Pillar""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Detalhamento"@pt
+	Annotations: bim:Tema "Pilar"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.pipila.44"
+	Annotations: bim:CatRevit "OST_StructuralColumns"
+	Annotations: bim:ClasseIfc "IfcColumn"
+	SubClassOf: bim:Pilares.Detalhados
+
+
+Class: bim:Pilar.Parede
+	Annotations: rdfs:label "Pilar Parede"@pt
+	Annotations: bim:Definição ""Pilar Parede""@pt
+	Annotations: bim:Definición ""Wall Pillar""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Pilar"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.pipila.70"
+	Annotations: bim:CatRevit "OST_StructuralColumns"
+	Annotations: bim:ClasseIfc "IfcColumn"
+	SubClassOf: bim:Pilares.Lineares
+
+
+Class: bim:Pilar.Retangular
+	Annotations: rdfs:label "Pilar Retangular"@pt
+	Annotations: bim:Definição ""Pilar Retangular""@pt
+	Annotations: bim:Definición ""Rectangular Pillar""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Pilar"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.pipila.68"
+	Annotations: bim:CatRevit "OST_StructuralColumns"
+	Annotations: bim:ClasseIfc "IfcColumn"
+	SubClassOf: bim:Pilares.Lineares
+
+
+Class: bim:Pórticos
+	Annotations: rdfs:label "Pórticos"@pt
+	SubClassOf: bim:Elemento.Composto
+
+
+Class: bim:Pórtico.Circular
+	Annotations: rdfs:label "Pórtico Circular"@pt
+	Annotations: bim:Definição ""Pórtico Circular""@pt
+	Annotations: bim:Definición ""Circular Portico""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Pórtico"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elpórt.58"
+	Annotations: bim:ClasseIfc "IfcStructuralCurveMember"
+	SubClassOf: bim:Pórticos
+
+
+Class: bim:Pórtico.Retangular
+	Annotations: rdfs:label "Pórtico Retangular"@pt
+	Annotations: bim:Definição ""Pórtico Retangular""@pt
+	Annotations: bim:Definición ""Rectangular Gantry""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Pórtico"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elpórt.57"
+	Annotations: bim:ClasseIfc "IfcStructuralCurveMember"
+	SubClassOf: bim:Pórticos
+
+
+Class: bim:Radier
+	Annotations: rdfs:label "Radier"@pt
+	SubClassOf: bim:Elemento.Fundacao
+
+
+Class: bim:Radier.Macico
+	Annotations: rdfs:label "Radier Macico"@pt
+	Annotations: bim:Definição ""Radier Macico""@pt
+	Annotations: bim:Definición ""Massive Radier""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Radier"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elradi.65"
+	Annotations: bim:ClasseIfc "IfcFooting"
+	SubClassOf: bim:Radier
+
+
+Class: bim:Sapatas
+	Annotations: rdfs:label "Sapatas"@pt
+	SubClassOf: bim:Elemento.Fundacao
+
+
+Class: bim:Sapata.Associada
+	Annotations: rdfs:label "Sapata Associada"@pt
+	Annotations: bim:Definição ""Sapata Associada""@pt
+	Annotations: bim:Definición ""Associated Shoe""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Sapata"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elsapa.62"
+	Annotations: bim:ClasseIfc "IfcFooting"
+	SubClassOf: bim:Sapatas
+
+
+Class: bim:Sapata.Corrida
+	Annotations: rdfs:label "Sapata Corrida"@pt
+	Annotations: bim:Definição ""Sapata Corrida""@pt
+	Annotations: bim:Definición ""Running Shoe""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Sapata"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elsapa.63"
+	Annotations: bim:ClasseIfc "IfcFooting"
+	SubClassOf: bim:Sapatas
+
+
+Class: bim:Sapata.Isolada
+	Annotations: rdfs:label "Sapata Isolada"@pt
+	Annotations: bim:Definição ""Sapata Isolada""@pt
+	Annotations: bim:Definición ""Isolated Shoe""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Fundação"@pt
+	Annotations: bim:Tema "Sapata"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.elsapa.61"
+	Annotations: bim:ClasseIfc "IfcFooting"
+	SubClassOf: bim:Sapatas
+
+
+Class: bim:Verificacao
+	Annotations: rdfs:label "Verificacao"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:EstadoLimiteUltimo
+	Annotations: rdfs:label "EstadoLimiteUltimo"@pt
+	SubClassOf: bim:Verificacao
+
+
+Class: bim:Verificacao.Cisalhamento
+	Annotations: rdfs:label "Verificacao Cisalhamento"@pt
+	Annotations: bim:Definição ""Verificacao Cisalhamento""@pt
+	Annotations: bim:Definición ""Shear Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "ELU"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.veesta.102"
+	Annotations: bim:ClasseIfc "IfcStructuralLoadCase"
+	SubClassOf: bim:EstadoLimiteUltimo
+
+
+Class: bim:EstadoLimiteServico
+	Annotations: rdfs:label "EstadoLimiteServico"@pt
+	SubClassOf: bim:Verificacao
+
+
+Class: bim:Verificacao.Deformacao
+	Annotations: rdfs:label "Verificacao Deformacao"@pt
+	Annotations: bim:Definição ""Verificacao Deformacao""@pt
+	Annotations: bim:Definición ""Deformation Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "ELS"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.veesta.105"
+	Annotations: bim:ClasseIfc "IfcStructuralLoadCase"
+	SubClassOf: bim:EstadoLimiteServico
+
+
+Class: bim:Verificacao.Fissuracao
+	Annotations: rdfs:label "Verificacao Fissuracao"@pt
+	Annotations: bim:Definição ""Verificacao Fissuracao""@pt
+	Annotations: bim:Definición ""Crack Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "ELS"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.veesta.104"
+	Annotations: bim:ClasseIfc "IfcStructuralLoadCase"
+	SubClassOf: bim:EstadoLimiteServico
+
+
+Class: bim:Verificacao.FlexoCompressao
+	Annotations: rdfs:label "Verificacao FlexoCompressao"@pt
+	Annotations: bim:Definição ""Verificacao FlexoCompressao""@pt
+	Annotations: bim:Definición ""FlexoCompression Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "ELU"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.veesta.101"
+	Annotations: bim:ClasseIfc "IfcStructuralLoadCase"
+	SubClassOf: bim:EstadoLimiteUltimo
+
+
+Class: bim:SegundaOrdem
+	Annotations: rdfs:label "SegundaOrdem"@pt
+	SubClassOf: bim:Verificacao
+
+
+Class: bim:Verificacao.PDeltaGlobal
+	Annotations: rdfs:label "Verificacao PDeltaGlobal"@pt
+	Annotations: bim:Definição ""Verificacao PDeltaGlobal""@pt
+	Annotations: bim:Definición ""PDeltaGlobal Verification""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "SegundaOrdem"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.vesegu.99"
+	Annotations: bim:ClasseIfc "IfcStructuralAnalysisModel"
+	SubClassOf: bim:SegundaOrdem
+
+
+Class: bim:Verificacao.PDeltaLocal
+	Annotations: rdfs:label "Verificacao PDeltaLocal"@pt
+	Annotations: bim:Definição ""Verificacao PDeltaLocal""@pt
+	Annotations: bim:Definición ""PDeltaLocal Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "SegundaOrdem"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.vesegu.100"
+	Annotations: bim:ClasseIfc "IfcStructuralAnalysisModel"
+	SubClassOf: bim:SegundaOrdem
+
+
+Class: bim:Verificacao.Puncionamento
+	Annotations: rdfs:label "Verificacao Puncionamento"@pt
+	Annotations: bim:Definição ""Verificacao Puncionamento""@pt
+	Annotations: bim:Definición ""Punching Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "ELU"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.veesta.103"
+	Annotations: bim:ClasseIfc "IfcStructuralLoadCase"
+	SubClassOf: bim:EstadoLimiteUltimo
+
+
+Class: bim:Verificacao.Vibracoes
+	Annotations: rdfs:label "Verificacao Vibracoes"@pt
+	Annotations: bim:Definição ""Verificacao Vibracoes""@pt
+	Annotations: bim:Definición ""Vibrations Check""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Verificação"@pt
+	Annotations: bim:Tema "ELS"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.veesta.106"
+	Annotations: bim:ClasseIfc "IfcStructuralLoadCase"
+	SubClassOf: bim:EstadoLimiteServico
+
+
+Class: bim:Vigas
+	Annotations: rdfs:label "Vigas"@pt
+	SubClassOf: bim:Estrutura.CA
+
+
+Class: bim:Vigas.Detalhadas
+	Annotations: rdfs:label "Vigas Detalhadas"@pt
+	SubClassOf: bim:Vigas
+
+
+Class: bim:Viga.Barra.Pino
+	Annotations: rdfs:label "Viga Barra Pino"@pt
+	Annotations: bim:Definição ""Viga Barra Pino""@pt
+	Annotations: bim:Definición ""Pin Bar Beam""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Detalhamento"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.47"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Detalhadas
+
+
+Class: bim:Vigas.Lineares
+	Annotations: rdfs:label "Vigas Lineares"@pt
+	SubClassOf: bim:Vigas
+
+
+Class: bim:Viga.Caixao
+	Annotations: rdfs:label "Viga Caixao"@pt
+	Annotations: bim:Definição ""Viga Caixao""@pt
+	Annotations: bim:Definición ""Coffin Beam""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.74"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Lineares
+
+
+Class: bim:Viga.Estribo.Inclinado
+	Annotations: rdfs:label "Viga Estribo Inclinado"@pt
+	Annotations: bim:Definição ""Viga Estribo Inclinado""@pt
+	Annotations: bim:Definición ""Inclined Stirrup Beam""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Detalhamento"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.45"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Detalhadas
+
+
+Class: bim:Viga.Estribo.Vertical
+	Annotations: rdfs:label "Viga Estribo Vertical"@pt
+	Annotations: bim:Definição ""Viga Estribo Vertical""@pt
+	Annotations: bim:Definición ""Vertical Stirrup Beam""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Detalhamento"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.46"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Detalhadas
+
+
+Class: bim:Viga.I
+	Annotations: rdfs:label "Viga I"@pt
+	Annotations: bim:Definição ""Viga I""@pt
+	Annotations: bim:Definición ""Beam I""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.73"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Lineares
+
+
+Class: bim:Viga.Retangular
+	Annotations: rdfs:label "Viga Retangular"@pt
+	Annotations: bim:Definição ""Viga Retangular""@pt
+	Annotations: bim:Definición ""Rectangular beam""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.71"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Lineares
+
+
+Class: bim:Viga.T
+	Annotations: rdfs:label "Viga T"@pt
+	Annotations: bim:Definição ""Viga T""@pt
+	Annotations: bim:Definición ""T-beam""@es
+	Annotations: bim:Interoperar "–"@pt
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Sustentação"@pt
+	Annotations: bim:Tema "Viga"@pt
+	Annotations: bim:Disciplina "Concreto"@pt
+	Annotations: bim:Chave "k.viviga.72"
+	Annotations: bim:CatRevit "OST_StructuralFraming"
+	Annotations: bim:ClasseIfc "IfcBeam"
+	SubClassOf: bim:Vigas.Lineares
+
+#################################################################
+#     Indivíduos em Sintaxe Manchester                           
+#################################################################
+
+Individual: bim:PR1
+	Types: bim:Pórtico.Retangular
+	Facts: bim:é.composto.por  bim:P1
+	Facts: bim:é.composto.por  bim:P2
+	Facts: bim:é.composto.por  bim:V1
+	Facts: bim:é.composto.por  bim:F1
+	Facts: bim:é.composto.por  bim:F2
+
+Individual: bim:P1
+	Types: bim:Pilar.Retangular
+	Facts: bim:é.suporte.de  bim:V1
+	Facts: bim:é.apoiado.em  bim:F1
+
+Individual: bim:P2
+	Types: bim:Pilar.Retangular
+	Facts: bim:é.suporte.de  bim:V1
+	Facts: bim:é.apoiado.em  bim:F2
+
+Individual: bim:V1
+	Types: bim:Viga.Retangular
+	Facts: bim:é.suportado.por  bim:P1
+	Facts: bim:é.suportado.por  bim:P2
+
+Individual: bim:F1
+	Types: bim:Sapata.Isolada
+
+Individual: bim:F2
+	Types: bim:Sapata.Isolada
+
+#################################################################
+#     Propriedades de Objetos e Dados em Sintaxe Manchester      
+#################################################################
+
+ObjectProperty: bim:p.abastecer
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.abastecedor.de
+	SubPropertyOf: bim:p.abastecer
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a abastecer: é.abastecedor.de"@pt
+	Annotations: bim:Chave "abas.100"
+	Annotations: bim:Ação "Ação abastecer"@pt
+	Annotations: bim:Definição "Declara que é um elemento que abastece a algum outro elemento."@pt
+	Annotations: bim:Definición "Declara que es un elemento que proporciona algún otro elemento."@es
+	Characteristics: Irreflexive
+	InverseOf: bim:é.abastecido.por
+
+DataProperty: bim:d.abastecer
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:abastecedor.de
+	SubPropertyOf: bim:d.abastecer
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para abastecer:  abastecedor.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "abas.100"
+	Annotations: bim:Ação "Ação abastecer"@pt
+	Annotations: bim:Definição "Declara que é um elemento que abastece a algum outro elemento."@pt
+	Annotations: bim:Definición "Declara que es un elemento que proporciona algún otro elemento."@es
+
+ObjectProperty: bim:p.abastecer
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.abastecido.por
+	SubPropertyOf: bim:p.abastecer
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a abastecer: é.abastecido.por"@pt
+	Annotations: bim:Chave "abas.101"
+	Annotations: bim:Ação "Ação abastecer"@pt
+	Annotations: bim:Definição "Declara que é um elemento que é abastecido por algum outro elemento."@pt
+	Annotations: bim:Definición "Afirma que es un elemento que es suministrado por algún otro elemento."@es
+	Characteristics: Irreflexive
+	InverseOf: bim:é.abastecedor.de
+
+DataProperty: bim:d.abastecer
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:abastecido.por
+	SubPropertyOf: bim:d.abastecer
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para abastecer:  abastecido.por  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "abas.101"
+	Annotations: bim:Ação "Ação abastecer"@pt
+	Annotations: bim:Definição "Declara que é um elemento que é abastecido por algum outro elemento."@pt
+	Annotations: bim:Definición "Afirma que es un elemento que es suministrado por algún otro elemento."@es
+
+ObjectProperty: bim:p.administrar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.privado
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a administrar: é.privado"@pt
+	Annotations: bim:Chave "admi.115"
+	Annotations: bim:Ação "Ação administrar"@pt
+	Annotations: bim:Definição "É um bem ou espaço privado."@pt
+	Annotations: bim:Definición "Es un bien o espacio privado."@es
+	InverseOf: bim:é.público
+
+DataProperty: bim:d.administrar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:privado
+	SubPropertyOf: bim:d.administrar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para administrar:  privado  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "admi.115"
+	Annotations: bim:Ação "Ação administrar"@pt
+	Annotations: bim:Definição "É um bem ou espaço privado."@pt
+	Annotations: bim:Definición "Es un bien o espacio privado."@es
+
+ObjectProperty: bim:p.administrar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.público
+	SubPropertyOf: bim:p.administrar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a administrar: é.público"@pt
+	Annotations: bim:Chave "admi.117"
+	Annotations: bim:Ação "Ação administrar"@pt
+	Annotations: bim:Definição "É um bem ou espaço público."@pt
+	Annotations: bim:Definición "Es un bien o espacio público."@es
+	InverseOf: bim:é.privado
+
+DataProperty: bim:d.administrar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:público
+	SubPropertyOf: bim:d.administrar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para administrar:  público  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "admi.117"
+	Annotations: bim:Ação "Ação administrar"@pt
+	Annotations: bim:Definição "É um bem ou espaço público."@pt
+	Annotations: bim:Definición "Es un bien o espacio público."@es
+
+ObjectProperty: bim:p.afirmar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.positivo
+	SubPropertyOf: bim:p.afirmar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a afirmar: é.positivo"@pt
+	Annotations: bim:Chave "afir.100"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é positivo."@pt
+	Annotations: bim:Definición "Declara que un objeto es positivo."@es
+	InverseOf: bim:é.negativo
+
+DataProperty: bim:d.afirmar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:positivo
+	SubPropertyOf: bim:d.afirmar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para afirmar:  positivo  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "afir.100"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é positivo."@pt
+	Annotations: bim:Definición "Declara que un objeto es positivo."@es
+
+ObjectProperty: bim:p.afirmar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.negativo
+	SubPropertyOf: bim:p.afirmar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a afirmar: é.negativo"@pt
+	Annotations: bim:Chave "afir.101"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é negativo."@pt
+	Annotations: bim:Definición "Declara que un objeto es negativo."@es
+	InverseOf: bim:é.positivo
+
+DataProperty: bim:d.afirmar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:negativo
+	SubPropertyOf: bim:d.afirmar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para afirmar:  negativo  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "afir.101"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é negativo."@pt
+	Annotations: bim:Definición "Declara que un objeto es negativo."@es
+
+ObjectProperty: bim:p.afirmar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.verdadeiro
+	SubPropertyOf: bim:p.afirmar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a afirmar: é.verdadeiro"@pt
+	Annotations: bim:Chave "afir.102"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é logicamente verdadeiro."@pt
+	Annotations: bim:Definición "Declara que un objeto es lógicamente verdadero."@es
+	InverseOf: bim:é.falso
+
+DataProperty: bim:d.afirmar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:verdadeiro
+	SubPropertyOf: bim:d.afirmar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para afirmar:  verdadeiro  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "afir.102"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é logicamente verdadeiro."@pt
+	Annotations: bim:Definición "Declara que un objeto es lógicamente verdadero."@es
+
+ObjectProperty: bim:p.afirmar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.falso
+	SubPropertyOf: bim:p.afirmar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a afirmar: é.falso"@pt
+	Annotations: bim:Chave "afir.103"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é logicamente falso."@pt
+	Annotations: bim:Definición "Declara que un objeto es lógicamente falso."@es
+	InverseOf: bim:é.verdadeiro
+
+DataProperty: bim:d.afirmar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:falso
+	SubPropertyOf: bim:d.afirmar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para afirmar:  falso  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "afir.103"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é logicamente falso."@pt
+	Annotations: bim:Definición "Declara que un objeto es lógicamente falso."@es
+
+ObjectProperty: bim:p.afirmar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fake
+	SubPropertyOf: bim:p.afirmar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a afirmar: é.fake"@pt
+	Annotations: bim:Chave "afir.104"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é fake ou falsificado."@pt
+	Annotations: bim:Definición "Afirma que un objeto es falso o falsificado."@es
+	InverseOf: bim:é.verdadeiro
+	EquivalentTo: bim:é.fraudulento
+
+DataProperty: bim:d.afirmar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fake
+	SubPropertyOf: bim:d.afirmar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para afirmar:  fake  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "afir.104"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é fake ou falsificado."@pt
+	Annotations: bim:Definición "Afirma que un objeto es falso o falsificado."@es
+
+ObjectProperty: bim:p.afirmar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fraudulento
+	SubPropertyOf: bim:p.afirmar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a afirmar: é.fraudulento"@pt
+	Annotations: bim:Chave "afir.105"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é fraudulento."@pt
+	Annotations: bim:Definición "Declara que un objeto es fraudulento."@es
+	InverseOf: bim:é.verdadeiro
+	EquivalentTo: bim:é.fake
+
+DataProperty: bim:d.afirmar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fraudulento
+	SubPropertyOf: bim:d.afirmar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para afirmar:  fraudulento  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "afir.105"
+	Annotations: bim:Ação "Ação afirmar"@pt
+	Annotations: bim:Definição "Declara que um objeto é fraudulento."@pt
+	Annotations: bim:Definición "Declara que un objeto es fraudulento."@es
+
+ObjectProperty: bim:p.concursar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.recurso
+	SubPropertyOf: bim:p.concursar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a concursar: é.recurso"@pt
+	Annotations: bim:Chave "conc.107"
+	Annotations: bim:Ação "Ação concursar"@pt
+	Annotations: bim:Definição "Declara que é um recurso aberto no contexto do concurso, licitação ou certame."@pt
+	Annotations: bim:Definición "Declara que se trata de un recurso abierto en el contexto de la licitación, licitación o concurso."@es
+	EquivalentTo: bim:é.fase.recursal
+
+DataProperty: bim:d.concursar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:recurso
+	SubPropertyOf: bim:d.concursar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para concursar:  recurso  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "conc.107"
+	Annotations: bim:Ação "Ação concursar"@pt
+	Annotations: bim:Definição "Declara que é um recurso aberto no contexto do concurso, licitação ou certame."@pt
+	Annotations: bim:Definición "Declara que se trata de un recurso abierto en el contexto de la licitación, licitación o concurso."@es
+
+ObjectProperty: bim:p.energizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.resistência.térmica
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a energizar: é.resistência.térmica"@pt
+	Annotations: bim:Chave "ener.114"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Mede a capacidade de um material resistir à passagem de calor. Expressado em m²·K/W. A maior resistência melhor isolamento."@pt
+	Annotations: bim:Definición "Mide la capacidad de un material para resistir el paso del calor. Expresado en m²· K/W. Cuanto mayor sea la resistencia, mejor aislamiento."@es
+	InverseOf: bim:é.transmitância.térmica
+
+DataProperty: bim:d.energizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:resistência.térmica
+	SubPropertyOf: bim:d.energizar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar:  resistência.térmica  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ener.114"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Mede a capacidade de um material resistir à passagem de calor. Expressado em m²·K/W. A maior resistência melhor isolamento."@pt
+	Annotations: bim:Definición "Mide la capacidad de un material para resistir el paso del calor. Expresado en m²· K/W. Cuanto mayor sea la resistencia, mejor aislamiento."@es
+
+ObjectProperty: bim:p.energizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.transmitância.térmica
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a energizar: é.transmitância.térmica"@pt
+	Annotations: bim:Chave "ener.115"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Mede a quantidade de calor que atravessa um elemento construtivo por unidade de área e por diferença de temperatura. Expressada em W/m²·K (Watts por metro quadrado vezes Kelvin). A menor transmitância, melhor isolamento."@pt
+	Annotations: bim:Definición "Mide la cantidad de calor que pasa a través de un elemento de construcción por unidad de área y por diferencia de temperatura. Expresado en W/m²· K (Vatios por metro cuadrado por Kelvin). Cuanto menor transmitancia, mejor aislamiento."@es
+	InverseOf: bim:é.resistência.térmica
+
+DataProperty: bim:d.energizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:transmitância.térmica
+	SubPropertyOf: bim:d.energizar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar:  transmitância.térmica  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ener.115"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Mede a quantidade de calor que atravessa um elemento construtivo por unidade de área e por diferença de temperatura. Expressada em W/m²·K (Watts por metro quadrado vezes Kelvin). A menor transmitância, melhor isolamento."@pt
+	Annotations: bim:Definición "Mide la cantidad de calor que pasa a través de un elemento de construcción por unidad de área y por diferencia de temperatura. Expresado en W/m²· K (Vatios por metro cuadrado por Kelvin). Cuanto menor transmitancia, mejor aislamiento."@es
+
+ObjectProperty: bim:p.energizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fator.solar
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a energizar: é.fator.solar"@pt
+	Annotations: bim:Chave "ener.116"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa."@pt
+	Annotations: bim:Definición "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará."@es
+	EquivalentTo: bim:é.fator.fotoenergético
+
+DataProperty: bim:d.energizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fator.solar
+	SubPropertyOf: bim:d.energizar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar:  fator.solar  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ener.116"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa."@pt
+	Annotations: bim:Definición "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará."@es
+
+ObjectProperty: bim:p.energizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fator.fotoenergético
+	SubPropertyOf: bim:p.energizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a energizar: é.fator.fotoenergético"@pt
+	Annotations: bim:Chave "ener.117"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt
+	Annotations: bim:Definición "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es
+	EquivalentTo: bim:é.fator.solar
+
+DataProperty: bim:d.energizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fator.fotoenergético
+	SubPropertyOf: bim:d.energizar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para energizar:  fator.fotoenergético  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ener.117"
+	Annotations: bim:Ação "Ação energizar"@pt
+	Annotations: bim:Definição "Indica a quantidade de energia solar que atravessa o vidro em relação à energia solar que incide sobre ele. Expressado entre 0 a 1. Quanto menor é o valor menos energia atravessa. Equivalente a fator solar."@pt
+	Annotations: bim:Definición "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es
+
+ObjectProperty: bim:p.esgotar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.jusante.de
+	SubPropertyOf: bim:p.esgotar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a esgotar: é.a.jusante.de"@pt
+	Annotations: bim:Chave "esgo.113"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	InverseOf: bim:é.a.montante.de
+
+DataProperty: bim:d.esgotar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.jusante.de
+	SubPropertyOf: bim:d.esgotar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "esgo.113"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+
+ObjectProperty: bim:p.esgotar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.montante.de
+	SubPropertyOf: bim:p.esgotar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a esgotar: é.a.montante.de"@pt
+	Annotations: bim:Chave "esgo.114"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	InverseOf: bim:é.a.jusante.de
+
+DataProperty: bim:d.esgotar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.montante.de
+	SubPropertyOf: bim:d.esgotar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "esgo.114"
+	Annotations: bim:Ação "Ação esgotar"@pt
+	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
+	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+
+ObjectProperty: bim:p.gestionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ciclo.de.vida
+	SubPropertyOf: bim:p.gestionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a gestionar: é.ciclo.de.vida"@pt
+	Annotations: bim:Chave "gest.107"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Vida útil de um ativo desde o estabelecimento de seus requisitos até o seu término. Inclui o projeto, construção, desenvolvimento, operação, manutenção e decomissionamento."@pt
+	Annotations: bim:Definición "NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su terminación. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es
+	EquivalentTo: bim:é.vida.útil
+
+DataProperty: bim:d.gestionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ciclo.de.vida
+	SubPropertyOf: bim:d.gestionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para gestionar:  ciclo.de.vida  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "gest.107"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Vida útil de um ativo desde o estabelecimento de seus requisitos até o seu término. Inclui o projeto, construção, desenvolvimento, operação, manutenção e decomissionamento."@pt
+	Annotations: bim:Definición "NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su terminación. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es
+
+ObjectProperty: bim:p.gestionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.cliente
+	SubPropertyOf: bim:p.gestionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a gestionar: é.cliente"@pt
+	Annotations: bim:Chave "gest.108"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Ator responsável por iniciar um empreendimento ou aprovar o seu escopo."@pt
+	Annotations: bim:Definición "NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es
+	EquivalentTo: bim:é.comitente
+
+DataProperty: bim:d.gestionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:cliente
+	SubPropertyOf: bim:d.gestionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para gestionar:  cliente  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "gest.108"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Ator responsável por iniciar um empreendimento ou aprovar o seu escopo."@pt
+	Annotations: bim:Definición "NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es
+
+ObjectProperty: bim:p.gestionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.comitente
+	SubPropertyOf: bim:p.gestionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a gestionar: é.comitente"@pt
+	Annotations: bim:Chave "gest.110"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "É a pessoa ou organização que encarrega o projeto ou empreendimento, comissionando um representante."@pt
+	Annotations: bim:Definición "Es la persona u organización que se encarga del proyecto o empresa, encargando a un representante."@es
+	EquivalentTo: bim:é.cliente
+
+DataProperty: bim:d.gestionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:comitente
+	SubPropertyOf: bim:d.gestionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para gestionar:  comitente  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "gest.110"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "É a pessoa ou organização que encarrega o projeto ou empreendimento, comissionando um representante."@pt
+	Annotations: bim:Definición "Es la persona u organización que se encarga del proyecto o empresa, encargando a un representante."@es
+
+ObjectProperty: bim:p.gestionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.evento.gatilho
+	SubPropertyOf: bim:p.gestionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a gestionar: é.evento.gatilho"@pt
+	Annotations: bim:Chave "gest.130"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Evento planejado ou não que muda um ativo ou seu estado durante o seu ciclo de vida e que resulta na troca de informações."@pt
+	Annotations: bim:Definición "NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es
+	EquivalentTo: bim:é.evento
+
+DataProperty: bim:d.gestionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:evento.gatilho
+	SubPropertyOf: bim:d.gestionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para gestionar:  evento.gatilho  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "gest.130"
+	Annotations: bim:Ação "Ação gestionar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Evento planejado ou não que muda um ativo ou seu estado durante o seu ciclo de vida e que resulta na troca de informações."@pt
+	Annotations: bim:Definición "NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es
+
+ObjectProperty: bim:p.graduar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.alta
+	SubPropertyOf: bim:p.graduar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a graduar: é.alta"@pt
+	Annotations: bim:Chave "grad.100"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "É um valor de medida ou posição alta."@pt
+	Annotations: bim:Definición "Es un valor de medida o posición alto."@es
+	InverseOf: bim:é.baixa
+
+DataProperty: bim:d.graduar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:alta
+	SubPropertyOf: bim:d.graduar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para graduar:  alta  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "grad.100"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "É um valor de medida ou posição alta."@pt
+	Annotations: bim:Definición "Es un valor de medida o posición alto."@es
+
+ObjectProperty: bim:p.graduar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.alto
+	SubPropertyOf: bim:p.graduar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a graduar: é.alto"@pt
+	Annotations: bim:Chave "grad.101"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "Representa um valor alto."@pt
+	Annotations: bim:Definición "Representa un valor alto."@es
+	InverseOf: bim:é.baixo
+
+DataProperty: bim:d.graduar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:alto
+	SubPropertyOf: bim:d.graduar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para graduar:  alto  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "grad.101"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "Representa um valor alto."@pt
+	Annotations: bim:Definición "Representa un valor alto."@es
+
+ObjectProperty: bim:p.graduar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.baixa
+	SubPropertyOf: bim:p.graduar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a graduar: é.baixa"@pt
+	Annotations: bim:Chave "grad.102"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "É um valor de medida ou posição baixa."@pt
+	Annotations: bim:Definición "Es un valor de medida o posición baja."@es
+	InverseOf: bim:é.alta
+
+DataProperty: bim:d.graduar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:baixa
+	SubPropertyOf: bim:d.graduar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para graduar:  baixa  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "grad.102"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "É um valor de medida ou posição baixa."@pt
+	Annotations: bim:Definición "Es un valor de medida o posición baja."@es
+
+ObjectProperty: bim:p.graduar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.baixo
+	SubPropertyOf: bim:p.graduar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a graduar: é.baixo"@pt
+	Annotations: bim:Chave "grad.103"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "Representa um valor baixo."@pt
+	Annotations: bim:Definición "Representa un valor bajo."@es
+	InverseOf: bim:é.alto
+
+DataProperty: bim:d.graduar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:baixo
+	SubPropertyOf: bim:d.graduar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para graduar:  baixo  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "grad.103"
+	Annotations: bim:Ação "Ação graduar"@pt
+	Annotations: bim:Definição "Representa um valor baixo."@pt
+	Annotations: bim:Definición "Representa un valor bajo."@es
+
+ObjectProperty: bim:p.iluminar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.iluminador.de
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a iluminar: é.iluminador.de"@pt
+	Annotations: bim:Chave "ilum.100"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação da entidade de iluminação. Pode ser uma luminária ou poste de luz."@pt
+	Annotations: bim:Definición "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de la entidad de iluminación. Puede ser una lámpara o un poste de luz."@es
+	InverseOf: bim:é.iluminado.por
+
+DataProperty: bim:d.iluminar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:iluminador.de
+	SubPropertyOf: bim:d.iluminar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para iluminar:  iluminador.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "ilum.100"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação da entidade de iluminação. Pode ser uma luminária ou poste de luz."@pt
+	Annotations: bim:Definición "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de la entidad de iluminación. Puede ser una lámpara o un poste de luz."@es
+
+ObjectProperty: bim:p.iluminar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.iluminado.por
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a iluminar: é.iluminado.por"@pt
+	Annotations: bim:Chave "ilum.101"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um elemento que é iluminado por algum outro elemento."@pt
+	Annotations: bim:Definición "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de un elemento que está iluminado por algún otro elemento."@es
+	InverseOf: bim:é.iluminador.de
+
+DataProperty: bim:d.iluminar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:iluminado.por
+	SubPropertyOf: bim:d.iluminar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para iluminar:  iluminado.por  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "ilum.101"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um elemento que é iluminado por algum outro elemento."@pt
+	Annotations: bim:Definición "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de un elemento que está iluminado por algún otro elemento."@es
+
+ObjectProperty: bim:p.iluminar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.superfície.de.trabalho
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a iluminar: é.superfície.de.trabalho"@pt
+	Annotations: bim:Chave "ilum.119"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "NBR 15215-3: Declara a altura da superfície de trabalho para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de trabajo para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
+	EquivalentTo: bim:é.superfície.de.referência
+
+DataProperty: bim:d.iluminar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:superfície.de.trabalho
+	SubPropertyOf: bim:d.iluminar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar:  superfície.de.trabalho  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ilum.119"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "NBR 15215-3: Declara a altura da superfície de trabalho para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de trabajo para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
+
+ObjectProperty: bim:p.iluminar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.superfície.de.referência
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a iluminar: é.superfície.de.referência"@pt
+	Annotations: bim:Chave "ilum.120"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "NBR 15215-3: Declara a altura  da superfície de referência para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de referencia para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
+	EquivalentTo: bim:é.superfície.de.iluminação
+
+DataProperty: bim:d.iluminar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:superfície.de.referência
+	SubPropertyOf: bim:d.iluminar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar:  superfície.de.referência  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ilum.120"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "NBR 15215-3: Declara a altura  da superfície de referência para o qual a iluminância é calculada. Normalmente a 0.75 m do piso. (NBR 15215-3)."@pt
+	Annotations: bim:Definición "NBR 15215-3: Declara la altura de la superficie de referencia para la que se calcula la iluminancia. Normalmente a 0,75 m del suelo. (NBR 15215-3)."@es
+
+ObjectProperty: bim:p.iluminar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.superfície.de.iluminação
+	SubPropertyOf: bim:p.iluminar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a iluminar: é.superfície.de.iluminação"@pt
+	Annotations: bim:Chave "ilum.121"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "Declara a altura da superfície que será iluminada."@pt
+	Annotations: bim:Definición "Declara la altura de la superficie que se iluminará."@es
+	EquivalentTo: bim:é.superfície.de.trabalho
+
+DataProperty: bim:d.iluminar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:superfície.de.iluminação
+	SubPropertyOf: bim:d.iluminar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para iluminar:  superfície.de.iluminação  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "ilum.121"
+	Annotations: bim:Ação "Ação iluminar"@pt
+	Annotations: bim:Definição "Declara a altura da superfície que será iluminada."@pt
+	Annotations: bim:Definición "Declara la altura de la superficie que se iluminará."@es
+
+ObjectProperty: bim:p.instalar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.aparafusado
+	SubPropertyOf: bim:p.instalar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a instalar: é.aparafusado"@pt
+	Annotations: bim:Chave "inst.104"
+	Annotations: bim:Ação "Ação instalar"@pt
+	Annotations: bim:Definição "Declara que deve ser instalado aparafusado."@pt
+	Annotations: bim:Definición "Establece que debe instalarse atornillado."@es
+	EquivalentTo: bim:é.aparafusada
+
+DataProperty: bim:d.instalar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:aparafusado
+	SubPropertyOf: bim:d.instalar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para instalar:  aparafusado  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "inst.104"
+	Annotations: bim:Ação "Ação instalar"@pt
+	Annotations: bim:Definição "Declara que deve ser instalado aparafusado."@pt
+	Annotations: bim:Definición "Establece que debe instalarse atornillado."@es
+
+ObjectProperty: bim:p.legislar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.dou
+	SubPropertyOf: bim:p.legislar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a legislar: é.dou"@pt
+	Annotations: bim:Chave "legi.100"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "Declara o número de publicação no DOU Diario Oficial da União."@pt
+	Annotations: bim:Definición "Declara el número de publicación en el Diario Oficial de la Unión."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.diário.oficial.da.união
+
+DataProperty: bim:d.legislar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:dou
+	SubPropertyOf: bim:d.legislar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para legislar:  dou  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "legi.100"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "Declara o número de publicação no DOU Diario Oficial da União."@pt
+	Annotations: bim:Definición "Declara el número de publicación en el Diario Oficial de la Unión."@es
+
+ObjectProperty: bim:p.legislar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.diário.oficial.da.união
+	SubPropertyOf: bim:p.legislar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a legislar: é.diário.oficial.da.união"@pt
+	Annotations: bim:Chave "legi.101"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "Se refere às esferas da administração pública: Federal, Estadual ou Municipal."@pt
+	Annotations: bim:Definición "Se refiere a las esferas de la administración pública: Federal, Estatal o Municipal."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.dou
+
+DataProperty: bim:d.legislar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:diário.oficial.da.união
+	SubPropertyOf: bim:d.legislar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para legislar:  diário.oficial.da.união  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "legi.101"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "Se refere às esferas da administração pública: Federal, Estadual ou Municipal."@pt
+	Annotations: bim:Definición "Se refiere a las esferas de la administración pública: Federal, Estatal o Municipal."@es
+
+ObjectProperty: bim:p.legislar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.revogante.de
+	SubPropertyOf: bim:p.legislar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a legislar: é.revogante.de"@pt
+	Annotations: bim:Chave "legi.115"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "A lei ou norma que revoga outra lei."@pt
+	Annotations: bim:Definición "La ley o norma que deroga otra ley."@es
+	InverseOf: bim:é.revogado.por
+
+DataProperty: bim:d.legislar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:revogante.de
+	SubPropertyOf: bim:d.legislar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para legislar:  revogante.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "legi.115"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "A lei ou norma que revoga outra lei."@pt
+	Annotations: bim:Definición "La ley o norma que deroga otra ley."@es
+
+ObjectProperty: bim:p.legislar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.revogado.por
+	SubPropertyOf: bim:p.legislar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a legislar: é.revogado.por"@pt
+	Annotations: bim:Chave "legi.116"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "A lei ou norma foi revogada por alguma outra lei."@pt
+	Annotations: bim:Definición "La ley o norma ha sido derogada por alguna otra ley."@es
+	InverseOf: bim:é.revogante.de
+
+DataProperty: bim:d.legislar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:revogado.por
+	SubPropertyOf: bim:d.legislar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para legislar:  revogado.por  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "legi.116"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "A lei ou norma foi revogada por alguma outra lei."@pt
+	Annotations: bim:Definición "La ley o norma ha sido derogada por alguna otra ley."@es
+
+ObjectProperty: bim:p.legislar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.vetado.por
+	SubPropertyOf: bim:p.legislar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a legislar: é.vetado.por"@pt
+	Annotations: bim:Chave "legi.117"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "A lei ou norma foi vetada por alguma autoridade."@pt
+	Annotations: bim:Definición "La ley o norma fue vetada por alguna autoridad."@es
+	InverseOf: bim:é.revogante.de
+
+DataProperty: bim:d.legislar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vetado.por
+	SubPropertyOf: bim:d.legislar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para legislar:  vetado.por  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "legi.117"
+	Annotations: bim:Ação "Ação legislar"@pt
+	Annotations: bim:Definição "A lei ou norma foi vetada por alguma autoridade."@pt
+	Annotations: bim:Definición "La ley o norma fue vetada por alguna autoridad."@es
+
+ObjectProperty: bim:p.licitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.menor.preço
+	SubPropertyOf: bim:p.licitar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a licitar: é.menor.preço"@pt
+	Annotations: bim:Chave "lici.109"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Critério de menor preço de uma licitação."@pt
+	Annotations: bim:Definición "Criterio del precio más bajo de una oferta."@es
+	EquivalentTo: bim:é.preço.ofertado
+
+DataProperty: bim:d.licitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:menor.preço
+	SubPropertyOf: bim:d.licitar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para licitar:  menor.preço  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "lici.109"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Critério de menor preço de uma licitação."@pt
+	Annotations: bim:Definición "Criterio del precio más bajo de una oferta."@es
+
+ObjectProperty: bim:p.licitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.sitio.eletrônico.oficial
+	SubPropertyOf: bim:p.licitar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a licitar: é.sitio.eletrônico.oficial"@pt
+	Annotations: bim:Chave "lici.116"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Lei 14.133/2021 de licitação. Sítio eletrônico oficial: sítio da internet, certificado digitalmente por autoridade certificadora, no qual o ente federativo divulga de forma centralizada as informações e os serviços de governo digital dos seus órgãos e entidades."@pt
+	Annotations: bim:Definición "Ley 14.133/2021 sobre licitación. Sitio web oficial: sitio web, certificado digitalmente por una autoridad certificadora, en el que la entidad federativa divulga de forma centralizada la información y los servicios de gobierno digital de sus organismos y entidades."@es
+	EquivalentTo: bim:é.uri
+
+DataProperty: bim:d.licitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:sitio.eletrônico.oficial
+	SubPropertyOf: bim:d.licitar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para licitar:  sitio.eletrônico.oficial  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "lici.116"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Lei 14.133/2021 de licitação. Sítio eletrônico oficial: sítio da internet, certificado digitalmente por autoridade certificadora, no qual o ente federativo divulga de forma centralizada as informações e os serviços de governo digital dos seus órgãos e entidades."@pt
+	Annotations: bim:Definición "Ley 14.133/2021 sobre licitación. Sitio web oficial: sitio web, certificado digitalmente por una autoridad certificadora, en el que la entidad federativa divulga de forma centralizada la información y los servicios de gobierno digital de sus organismos y entidades."@es
+
+ObjectProperty: bim:p.licitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fase.recursal
+	SubPropertyOf: bim:p.licitar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a licitar: é.fase.recursal"@pt
+	Annotations: bim:Chave "lici.131"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Fase em que os licitantes tem a oportunidade de contestar as decisões tomadas durante o processo apresentando um recurso."@pt
+	Annotations: bim:Definición "Fase en la que los licitadores tienen la oportunidad de impugnar las decisiones tomadas durante el proceso mediante la presentación de un recurso."@es
+	EquivalentTo: bim:é.recurso
+
+DataProperty: bim:d.licitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fase.recursal
+	SubPropertyOf: bim:d.licitar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para licitar:  fase.recursal  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "lici.131"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Fase em que os licitantes tem a oportunidade de contestar as decisões tomadas durante o processo apresentando um recurso."@pt
+	Annotations: bim:Definición "Fase en la que los licitadores tienen la oportunidad de impugnar las decisiones tomadas durante el proceso mediante la presentación de un recurso."@es
+
+ObjectProperty: bim:p.licitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fase.de.homologação
+	SubPropertyOf: bim:p.licitar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a licitar: é.fase.de.homologação"@pt
+	Annotations: bim:Chave "lici.132"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Fase final em que se homologa o processo e a autoridade competente aprova o resultado."@pt
+	Annotations: bim:Definición "Etapa final en la que se aprueba el proceso y la autoridad competente aprueba el resultado."@es
+	EquivalentTo: bim:é.homologada
+
+DataProperty: bim:d.licitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fase.de.homologação
+	SubPropertyOf: bim:d.licitar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para licitar:  fase.de.homologação  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "lici.132"
+	Annotations: bim:Ação "Ação licitar"@pt
+	Annotations: bim:Definição "Fase final em que se homologa o processo e a autoridade competente aprova o resultado."@pt
+	Annotations: bim:Definición "Etapa final en la que se aprueba el proceso y la autoridad competente aprueba el resultado."@es
+
+ObjectProperty: bim:p.linkar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.uri
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a linkar: é.uri"@pt
+	Annotations: bim:Chave "link.100"
+	Annotations: bim:Ação "Ação linkar"@pt
+	Annotations: bim:Definição "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso."@pt
+	Annotations: bim:Definición "Identificación uniforme de recursos. Apunta a la dirección web. Puede ser URN o URL Ejemplo: http://example.com/recurso."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.sitio.eletrônico.oficial
+
+DataProperty: bim:d.linkar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:uri
+	SubPropertyOf: bim:d.linkar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar:  uri  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "link.100"
+	Annotations: bim:Ação "Ação linkar"@pt
+	Annotations: bim:Definição "Uniform Resource Identification. Aponta o endereço web. Pode ser URN ou URL Exemplo: http://example.com/recurso."@pt
+	Annotations: bim:Definición "Identificación uniforme de recursos. Apunta a la dirección web. Puede ser URN o URL Ejemplo: http://example.com/recurso."@es
+
+ObjectProperty: bim:p.linkar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.link
+	SubPropertyOf: bim:p.linkar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a linkar: é.link"@pt
+	Annotations: bim:Chave "link.107"
+	Annotations: bim:Ação "Ação linkar"@pt
+	Annotations: bim:Definição "Link ou Hipervínculo."@pt
+	Annotations: bim:Definición "Enlace o Hipervínculo."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.uri
+
+DataProperty: bim:d.linkar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:link
+	SubPropertyOf: bim:d.linkar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para linkar:  link  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "link.107"
+	Annotations: bim:Ação "Ação linkar"@pt
+	Annotations: bim:Definição "Link ou Hipervínculo."@pt
+	Annotations: bim:Definición "Enlace o Hipervínculo."@es
+
+ObjectProperty: bim:p.orçamentar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.contribuição.previdenciária
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orçamentar: é.contribuição.previdenciária"@pt
+	Annotations: bim:Chave "orça.103"
+	Annotations: bim:Ação "Ação orçamentar"@pt
+	Annotations: bim:Definição "Declara a contribuição previdenciária."@pt
+	Annotations: bim:Definición "Declara la cotización a la seguridad social."@es
+	EquivalentTo: bim:é.encargo.social
+
+DataProperty: bim:d.orçamentar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:contribuição.previdenciária
+	SubPropertyOf: bim:d.orçamentar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar:  contribuição.previdenciária  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "orça.103"
+	Annotations: bim:Ação "Ação orçamentar"@pt
+	Annotations: bim:Definição "Declara a contribuição previdenciária."@pt
+	Annotations: bim:Definición "Declara la cotización a la seguridad social."@es
+
+ObjectProperty: bim:p.orçamentar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.encargo.social
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orçamentar: é.encargo.social"@pt
+	Annotations: bim:Chave "orça.110"
+	Annotations: bim:Ação "Ação orçamentar"@pt
+	Annotations: bim:Definição "Declara encargo social."@pt
+	Annotations: bim:Definición "Declara una carga social."@es
+	EquivalentTo: bim:é.contribuição.previdenciária
+
+DataProperty: bim:d.orçamentar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:encargo.social
+	SubPropertyOf: bim:d.orçamentar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar:  encargo.social  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "orça.110"
+	Annotations: bim:Ação "Ação orçamentar"@pt
+	Annotations: bim:Definição "Declara encargo social."@pt
+	Annotations: bim:Definición "Declara una carga social."@es
+
+ObjectProperty: bim:p.orçamentar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.preço.ofertado
+	SubPropertyOf: bim:p.orçamentar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orçamentar: é.preço.ofertado"@pt
+	Annotations: bim:Chave "orça.132"
+	Annotations: bim:Ação "Ação orçamentar"@pt
+	Annotations: bim:Definição "Declara preço ofertado."@pt
+	Annotations: bim:Definición "Declara el precio ofrecido."@es
+	EquivalentTo: bim:é.menor.preço
+
+DataProperty: bim:d.orçamentar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:preço.ofertado
+	SubPropertyOf: bim:d.orçamentar
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "orça.132"
+	Annotations: bim:Ação "Ação orçamentar"@pt
+	Annotations: bim:Definição "Declara preço ofertado."@pt
+	Annotations: bim:Definición "Declara el precio ofrecido."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.barlavento
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.a.barlavento"@pt
+	Annotations: bim:Chave "orie.102"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado a barlavento, ou seja exposto à força do vento."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado a barlovento, es decir, expuesto a la fuerza del viento."@es
+	InverseOf: bim:é.a.sotavento
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.barlavento
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  a.barlavento  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.102"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado a barlavento, ou seja exposto à força do vento."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado a barlovento, es decir, expuesto a la fuerza del viento."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.a.sotavento
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.a.sotavento"@pt
+	Annotations: bim:Chave "orie.103"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado a sotavento, ou seja protegido da ação do vento."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado a sotavento, es decir, protegido de la acción del viento."@es
+	InverseOf: bim:é.a.barlavento
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:a.sotavento
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  a.sotavento  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.103"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado a sotavento, ou seja protegido da ação do vento."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado a sotavento, es decir, protegido de la acción del viento."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.norte
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.norte"@pt
+	Annotations: bim:Chave "orie.104"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Norte (N)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Norte (N)."@es
+	InverseOf: bim:é.ao.sul
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.norte
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.norte  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.104"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Norte (N)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Norte (N)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.oeste
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.oeste"@pt
+	Annotations: bim:Chave "orie.105"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Oeste (W)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el oeste (W)."@es
+	InverseOf: bim:é.ao.leste
+	EquivalentTo: bim:é.ao.poente
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.oeste
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.oeste  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.105"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Oeste (W)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el oeste (W)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.sul
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.sul"@pt
+	Annotations: bim:Chave "orie.106"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Sul (S)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Sur (S)."@es
+	InverseOf: bim:é.ao.norte
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.sul
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.sul  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.106"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Sul (S)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Sur (S)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.leste
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.leste"@pt
+	Annotations: bim:Chave "orie.107"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Leste (E)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Este (E)."@es
+	InverseOf: bim:é.ao.oeste
+	EquivalentTo: bim:é.ao.nascente
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.leste
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.leste  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.107"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Leste (E)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Este (E)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.noroeste
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.noroeste"@pt
+	Annotations: bim:Chave "orie.108"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Noroeste (NW)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el noroeste (NO)."@es
+	InverseOf: bim:é.ao.suleste
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.noroeste
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.noroeste  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.108"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Noroeste (NW)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el noroeste (NO)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.suloeste
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.suloeste"@pt
+	Annotations: bim:Chave "orie.109"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Suloeste (SW)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el suroeste (SW)."@es
+	InverseOf: bim:é.ao.nordeste
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.suloeste
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.suloeste  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.109"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Suloeste (SW)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el suroeste (SW)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.suleste
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.suleste"@pt
+	Annotations: bim:Chave "orie.110"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Suleste (SE)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el sureste (SE)."@es
+	InverseOf: bim:é.ao.noroeste
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.suleste
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.suleste  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.110"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Suleste (SE)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el sureste (SE)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.nordeste
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.nordeste"@pt
+	Annotations: bim:Chave "orie.111"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Nordeste (NE)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado al noreste (NE)."@es
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.nordeste
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.nordeste  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.111"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Nordeste (NE)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado al noreste (NE)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.nascente
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.nascente"@pt
+	Annotations: bim:Chave "orie.112"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Nascente (E)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Este (E)."@es
+	EquivalentTo: bim:é.ao.leste
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.nascente
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.nascente  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.112"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Nascente (E)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el Este (E)."@es
+
+ObjectProperty: bim:p.orientar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ao.poente
+	SubPropertyOf: bim:p.orientar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a orientar: é.ao.poente"@pt
+	Annotations: bim:Chave "orie.113"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Poente (W)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el oeste (W)."@es
+	EquivalentTo: bim:é.ao.oeste
+
+DataProperty: bim:d.orientar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ao.poente
+	SubPropertyOf: bim:d.orientar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para orientar:  ao.poente  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "orie.113"
+	Annotations: bim:Ação "Ação orientar"@pt
+	Annotations: bim:Definição "Declara que o elemento está orientado ao Poente (W)."@pt
+	Annotations: bim:Definición "Declara que el elemento está orientado hacia el oeste (W)."@es
+
+ObjectProperty: bim:p.pagar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.despesa
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a pagar: é.despesa"@pt
+	Annotations: bim:Chave "paga.100"
+	Annotations: bim:Ação "Ação pagar"@pt
+	Annotations: bim:Definição "Qualifica o pagamento como despesa."@pt
+	Annotations: bim:Definición "Califica el pago como un gasto."@es
+	InverseOf: bim:é.receita
+
+DataProperty: bim:d.pagar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:despesa
+	SubPropertyOf: bim:d.pagar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para pagar:  despesa  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "paga.100"
+	Annotations: bim:Ação "Ação pagar"@pt
+	Annotations: bim:Definição "Qualifica o pagamento como despesa."@pt
+	Annotations: bim:Definición "Califica el pago como un gasto."@es
+
+ObjectProperty: bim:p.pagar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.receita
+	SubPropertyOf: bim:p.pagar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a pagar: é.receita"@pt
+	Annotations: bim:Chave "paga.108"
+	Annotations: bim:Ação "Ação pagar"@pt
+	Annotations: bim:Definição "Qualifica o pagamento como receita."@pt
+	Annotations: bim:Definición "Califica el pago como ingresos."@es
+	InverseOf: bim:é.despesa
+
+DataProperty: bim:d.pagar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:receita
+	SubPropertyOf: bim:d.pagar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para pagar:  receita  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "paga.108"
+	Annotations: bim:Ação "Ação pagar"@pt
+	Annotations: bim:Definição "Qualifica o pagamento como receita."@pt
+	Annotations: bim:Definición "Califica el pago como ingresos."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.permitida
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.permitida"@pt
+	Annotations: bim:Chave "perm.100"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem uma permissão por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene un permiso de la autoridad competente."@es
+	InverseOf: bim:é.proibida
+	EquivalentTo: bim:é.autorizada
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:permitida
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  permitida  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.100"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem uma permissão por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene un permiso de la autoridad competente."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.proibida
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.proibida"@pt
+	Annotations: bim:Chave "perm.101"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão proibida por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si una autoridad competente prohíbe el permiso del recurso."@es
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:proibida
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  proibida  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.101"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão proibida por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si una autoridad competente prohíbe el permiso del recurso."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.autorizada
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.autorizada"@pt
+	Annotations: bim:Chave "perm.102"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão autorizada por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene permiso autorizado por una autoridad competente."@es
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:autorizada
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  autorizada  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.102"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão autorizada por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene permiso autorizado por una autoridad competente."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.homologada
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.homologada"@pt
+	Annotations: bim:Chave "perm.103"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão homologada por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene permiso aprobado por una autoridad competente."@es
+	EquivalentTo: bim:é.fase.de.homologação
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:homologada
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  homologada  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.103"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão homologada por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene permiso aprobado por una autoridad competente."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ativa
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.ativa"@pt
+	Annotations: bim:Chave "perm.105"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão ativa."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene el permiso activo."@es
+	InverseOf: bim:é.expirada
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ativa
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  ativa  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.105"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão ativa."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene el permiso activo."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.concedida
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.concedida"@pt
+	Annotations: bim:Chave "perm.106"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão concedida por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene el permiso otorgado por una autoridad competente."@es
+	EquivalentTo: bim:é.autorizada
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:concedida
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  concedida  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.106"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão concedida por autoridade competente."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene el permiso otorgado por una autoridad competente."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.expirada
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.expirada"@pt
+	Annotations: bim:Chave "perm.109"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão expirada."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene permiso caducado."@es
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:expirada
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  expirada  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.109"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão expirada."@pt
+	Annotations: bim:Definición "Indica si el recurso tiene permiso caducado."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.deferida
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.deferida"@pt
+	Annotations: bim:Chave "perm.110"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão deferida."@pt
+	Annotations: bim:Definición "Indica si se concede permiso a la apelación."@es
+	InverseOf: bim:é.indeferida
+	EquivalentTo: bim:é.autorizada
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:deferida
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  deferida  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.110"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão deferida."@pt
+	Annotations: bim:Definición "Indica si se concede permiso a la apelación."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.rejeitada
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.rejeitada"@pt
+	Annotations: bim:Chave "perm.111"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão rejeitada."@pt
+	Annotations: bim:Definición "Indica si se rechaza el recurso."@es
+	InverseOf: bim:é.autorizada
+	EquivalentTo: bim:é.indeferida
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:rejeitada
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  rejeitada  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.111"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão rejeitada."@pt
+	Annotations: bim:Definición "Indica si se rechaza el recurso."@es
+
+ObjectProperty: bim:p.permitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.indeferida
+	SubPropertyOf: bim:p.permitir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a permitir: é.indeferida"@pt
+	Annotations: bim:Chave "perm.112"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão indeferida."@pt
+	Annotations: bim:Definición "Indica si la apelación es denegada."@es
+	InverseOf: bim:é.autorizada
+
+DataProperty: bim:d.permitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:indeferida
+	SubPropertyOf: bim:d.permitir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para permitir:  indeferida  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "perm.112"
+	Annotations: bim:Ação "Ação permitir"@pt
+	Annotations: bim:Definição "Indica se o recurso tem a permissão indeferida."@pt
+	Annotations: bim:Definición "Indica si la apelación es denegada."@es
+
+ObjectProperty: bim:p.planejar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.depois.de
+	SubPropertyOf: bim:p.planejar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a planejar: é.depois.de"@pt
+	Annotations: bim:Chave "plan.100"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Se um evento deve acontecer depois de outro evento."@pt
+	Annotations: bim:Definición "Si un evento debe ocurrir después de otro evento."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	Characteristics: Irreflexive
+	InverseOf: bim:é.antes.de
+
+DataProperty: bim:d.planejar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:depois.de
+	SubPropertyOf: bim:d.planejar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para planejar:  depois.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "plan.100"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Se um evento deve acontecer depois de outro evento."@pt
+	Annotations: bim:Definición "Si un evento debe ocurrir después de otro evento."@es
+
+ObjectProperty: bim:p.planejar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.antes.de
+	SubPropertyOf: bim:p.planejar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a planejar: é.antes.de"@pt
+	Annotations: bim:Chave "plan.101"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Se um evento deve acontecer antes de outro evento."@pt
+	Annotations: bim:Definición "Si un evento debe ocurrir antes que otro evento."@es
+	Characteristics: Transitive
+	Characteristics: Asymmetric
+	Characteristics: Irreflexive
+	InverseOf: bim:é.depois.de
+
+DataProperty: bim:d.planejar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:antes.de
+	SubPropertyOf: bim:d.planejar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para planejar:  antes.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "plan.101"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Se um evento deve acontecer antes de outro evento."@pt
+	Annotations: bim:Definición "Si un evento debe ocurrir antes que otro evento."@es
+
+ObjectProperty: bim:p.planejar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.evento
+	SubPropertyOf: bim:p.planejar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a planejar: é.evento"@pt
+	Annotations: bim:Chave "plan.105"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Momento em que acontece o evento. Puede ser data, horário ou marca cronometrica escrita como integer."@pt
+	Annotations: bim:Definición "Momento en el que se produce el evento. Puede ser date, time or marca cronometrica escrita como integer."@es
+	EquivalentTo: bim:é.evento.gatilho
+
+DataProperty: bim:d.planejar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:evento
+	SubPropertyOf: bim:d.planejar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para planejar:  evento  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "plan.105"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Momento em que acontece o evento. Puede ser data, horário ou marca cronometrica escrita como integer."@pt
+	Annotations: bim:Definición "Momento en el que se produce el evento. Puede ser date, time or marca cronometrica escrita como integer."@es
+
+ObjectProperty: bim:p.planejar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.vida.útil
+	SubPropertyOf: bim:p.planejar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a planejar: é.vida.útil"@pt
+	Annotations: bim:Chave "plan.107"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Vida útil de algum componente expressa em horas."@pt
+	Annotations: bim:Definición "Vida útil de cualquier componente expresada en horas."@es
+	EquivalentTo: bim:é.ciclo.de.vida
+
+DataProperty: bim:d.planejar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vida.útil
+	SubPropertyOf: bim:d.planejar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para planejar:  vida.útil  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "plan.107"
+	Annotations: bim:Ação "Ação planejar"@pt
+	Annotations: bim:Definição "Vida útil de algum componente expressa em horas."@pt
+	Annotations: bim:Definición "Vida útil de cualquier componente expresada en horas."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.adjacente.a
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.adjacente.a"@pt
+	Annotations: bim:Chave "posi.105"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente adjacente a outro objeto."@pt
+	Annotations: bim:Definición "Es espacialmente adyacente a otro objeto."@es
+	Characteristics: Symmetric
+	Characteristics: Irreflexive
+	EquivalentTo: bim:é.contíguo.a
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:adjacente.a
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  adjacente.a  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.105"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente adjacente a outro objeto."@pt
+	Annotations: bim:Definición "Es espacialmente adyacente a otro objeto."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.contíguo.a
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.contíguo.a"@pt
+	Annotations: bim:Chave "posi.106"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente contíguo a outro objeto."@pt
+	Annotations: bim:Definición "Es espacialmente contiguo a otro objeto."@es
+	Characteristics: Symmetric
+	Characteristics: Irreflexive
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:contíguo.a
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  contíguo.a  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.106"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente contíguo a outro objeto."@pt
+	Annotations: bim:Definición "Es espacialmente contiguo a otro objeto."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.próximo.a
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.próximo.a"@pt
+	Annotations: bim:Chave "posi.107"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente perto em próximidade a outro objeto."@pt
+	Annotations: bim:Definición "Está espacialmente cerca de otro objeto."@es
+	Characteristics: Symmetric
+	Characteristics: Irreflexive
+	InverseOf: bim:é.longe.a
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:próximo.a
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  próximo.a  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.107"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente perto em próximidade a outro objeto."@pt
+	Annotations: bim:Definición "Está espacialmente cerca de otro objeto."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.longe.a
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.longe.a"@pt
+	Annotations: bim:Chave "posi.108"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente longe a outro objeto."@pt
+	Annotations: bim:Definición "Está espacialmente lejos de otro objeto."@es
+	Characteristics: Symmetric
+	Characteristics: Irreflexive
+	InverseOf: bim:é.próximo.a
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:longe.a
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  longe.a  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.108"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "É espacialmente longe a outro objeto."@pt
+	Annotations: bim:Definición "Está espacialmente lejos de otro objeto."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.vertical
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.vertical"@pt
+	Annotations: bim:Chave "posi.115"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento espacialmente vertical. As coordenadas XY de suas extremidades devem ser iguais."@pt
+	Annotations: bim:Definición "Elemento espacialmente vertical. Las coordenadas XY de sus extremos deben ser iguales."@es
+	EquivalentTo: bim:é.no.prumo
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vertical
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  vertical  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.115"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento espacialmente vertical. As coordenadas XY de suas extremidades devem ser iguais."@pt
+	Annotations: bim:Definición "Elemento espacialmente vertical. Las coordenadas XY de sus extremos deben ser iguales."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.no.prumo
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.no.prumo"@pt
+	Annotations: bim:Chave "posi.116"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento que está no prumo é vertical. As coordenadas XY de suas extremidades devem ser iguais."@pt
+	Annotations: bim:Definición "El elemento que está a plomo es vertical. Las coordenadas XY de sus extremos deben ser iguales."@es
+	EquivalentTo: bim:é.vertical
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:no.prumo
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  no.prumo  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.116"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento que está no prumo é vertical. As coordenadas XY de suas extremidades devem ser iguais."@pt
+	Annotations: bim:Definición "El elemento que está a plomo es vertical. Las coordenadas XY de sus extremos deben ser iguales."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.abaixo.de
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.abaixo.de"@pt
+	Annotations: bim:Chave "posi.120"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento espacialmente posicionado abaixo de outro objeto."@pt
+	Annotations: bim:Definición "Un elemento colocado espacialmente debajo de otro objeto."@es
+	Characteristics: Asymmetric
+	Characteristics: Irreflexive
+	InverseOf: bim:é.acima.de
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:abaixo.de
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  abaixo.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.120"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento espacialmente posicionado abaixo de outro objeto."@pt
+	Annotations: bim:Definición "Un elemento colocado espacialmente debajo de otro objeto."@es
+
+ObjectProperty: bim:p.posicionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.acima.de
+	SubPropertyOf: bim:p.posicionar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a posicionar : é.acima.de"@pt
+	Annotations: bim:Chave "posi.121"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento espacialmente posicionado acima de outro objeto."@pt
+	Annotations: bim:Definición "Un elemento colocado espacialmente sobre otro objeto."@es
+	Characteristics: Asymmetric
+	Characteristics: Irreflexive
+	InverseOf: bim:é.abaixo.de
+
+DataProperty: bim:d.posicionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:acima.de
+	SubPropertyOf: bim:d.posicionar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para posicionar :  acima.de  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "posi.121"
+	Annotations: bim:Ação "Ação posicionar"@pt
+	Annotations: bim:Definição "Elemento espacialmente posicionado acima de outro objeto."@pt
+	Annotations: bim:Definición "Un elemento colocado espacialmente sobre otro objeto."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.aberto
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.aberto"@pt
+	Annotations: bim:Chave "qual.100"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como aberto."@pt
+	Annotations: bim:Definición "Califica un elemento como abierto."@es
+	InverseOf: bim:é.fechado
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:aberto
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  aberto  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.100"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como aberto."@pt
+	Annotations: bim:Definición "Califica un elemento como abierto."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.artificial
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.artificial"@pt
+	Annotations: bim:Chave "qual.103"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como artificial. Um ambiente ou objeto que precisa ser artificial."@pt
+	Annotations: bim:Definición "Califica un elemento como artificial. Un entorno u objeto que necesita ser artificial."@es
+	InverseOf: bim:é.natural
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:artificial
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  artificial  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.103"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como artificial. Um ambiente ou objeto que precisa ser artificial."@pt
+	Annotations: bim:Definición "Califica un elemento como artificial. Un entorno u objeto que necesita ser artificial."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.diurno
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.diurno"@pt
+	Annotations: bim:Chave "qual.114"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como diurno."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como diurno."@es
+	InverseOf: bim:é.noturno
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:diurno
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  diurno  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.114"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como diurno."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como diurno."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.estimado
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.estimado"@pt
+	Annotations: bim:Chave "qual.116"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como estimado. Um valor que se deseja atingir."@pt
+	Annotations: bim:Definición "Califica un elemento como estimado. Un valor que quieres conseguir."@es
+	EquivalentTo: bim:é.hipotético
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:estimado
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  estimado  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.116"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como estimado. Um valor que se deseja atingir."@pt
+	Annotations: bim:Definición "Califica un elemento como estimado. Un valor que quieres conseguir."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.externo
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.externo"@pt
+	Annotations: bim:Chave "qual.117"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como externo. Um ambiente ou objeto que precisa ser externo."@pt
+	Annotations: bim:Definición "Califica un elemento como externo. Un entorno u objeto que debe ser externo."@es
+	InverseOf: bim:é.interno
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:externo
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  externo  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.117"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como externo. Um ambiente ou objeto que precisa ser externo."@pt
+	Annotations: bim:Definición "Califica un elemento como externo. Un entorno u objeto que debe ser externo."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.fechado
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.fechado"@pt
+	Annotations: bim:Chave "qual.118"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como fechado."@pt
+	Annotations: bim:Definición "Califica un elemento como cerrado."@es
+	InverseOf: bim:é.aberto
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:fechado
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  fechado  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.118"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como fechado."@pt
+	Annotations: bim:Definición "Califica un elemento como cerrado."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.feriado
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.feriado"@pt
+	Annotations: bim:Chave "qual.119"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como feriado."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como feriado."@es
+	InverseOf: bim:é.laboral
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:feriado
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  feriado  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.119"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como feriado."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como feriado."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.futuro
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.futuro"@pt
+	Annotations: bim:Chave "qual.120"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como futuro. Um valor que se atingirá no futuro."@pt
+	Annotations: bim:Definición "Califica un elemento como futuro. Un valor que se alcanzará en el futuro."@es
+	InverseOf: bim:é.passado
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:futuro
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  futuro  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.120"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como futuro. Um valor que se atingirá no futuro."@pt
+	Annotations: bim:Definición "Califica un elemento como futuro. Un valor que se alcanzará en el futuro."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.hipotético
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.hipotético"@pt
+	Annotations: bim:Chave "qual.121"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como hipotético. Um valor de projeto que ainda deve ser testado."@pt
+	Annotations: bim:Definición "Califica un elemento como hipotético. Un valor de proyecto que aún debe probarse."@es
+	EquivalentTo: bim:é.estimado
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:hipotético
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  hipotético  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.121"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como hipotético. Um valor de projeto que ainda deve ser testado."@pt
+	Annotations: bim:Definición "Califica un elemento como hipotético. Un valor de proyecto que aún debe probarse."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.interno
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.interno"@pt
+	Annotations: bim:Chave "qual.126"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como interno. Um ambiente ou objeto que precisa ser interno."@pt
+	Annotations: bim:Definición "Califica un elemento como interno. Un entorno u objeto que necesita ser interno."@es
+	InverseOf: bim:é.externo
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:interno
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  interno  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.126"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como interno. Um ambiente ou objeto que precisa ser interno."@pt
+	Annotations: bim:Definición "Califica un elemento como interno. Un entorno u objeto que necesita ser interno."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.laboral
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.laboral"@pt
+	Annotations: bim:Chave "qual.128"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como laboral."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como trabajo."@es
+	InverseOf: bim:é.feriado
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:laboral
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  laboral  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.128"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como laboral."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como trabajo."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.natural
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.natural"@pt
+	Annotations: bim:Chave "qual.133"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como natural. Um ambiente ou objeto que precisa ser natural."@pt
+	Annotations: bim:Definición "Califica un elemento como natural. Un entorno u objeto que necesita ser natural."@es
+	InverseOf: bim:é.artificial
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:natural
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  natural  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.133"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como natural. Um ambiente ou objeto que precisa ser natural."@pt
+	Annotations: bim:Definición "Califica un elemento como natural. Un entorno u objeto que necesita ser natural."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.noturno
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.noturno"@pt
+	Annotations: bim:Chave "qual.136"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como noturno."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como nocturno."@es
+	InverseOf: bim:é.diurno
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:noturno
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  noturno  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.136"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento temporal como noturno."@pt
+	Annotations: bim:Definición "Califica un elemento temporal como nocturno."@es
+
+ObjectProperty: bim:p.qualificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.passado
+	SubPropertyOf: bim:p.qualificar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a qualificar: é.passado"@pt
+	Annotations: bim:Chave "qual.139"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como passado. Um valor antíguo."@pt
+	Annotations: bim:Definición "Califica un elemento como pasado. Un valor antiguo."@es
+	InverseOf: bim:é.futuro
+
+DataProperty: bim:d.qualificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:passado
+	SubPropertyOf: bim:d.qualificar
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para qualificar:  passado  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "qual.139"
+	Annotations: bim:Ação "Ação qualificar"@pt
+	Annotations: bim:Definição "Qualifica um elemento como passado. Um valor antíguo."@pt
+	Annotations: bim:Definición "Califica un elemento como pasado. Un valor antiguo."@es
+
+ObjectProperty: bim:p.requisitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.pir
+	SubPropertyOf: bim:p.requisitar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a requisitar: é.pir"@pt
+	Annotations: bim:Chave "requ.109"
+	Annotations: bim:Ação "Ação requisitar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Requisito de informação de projeto PIR segundo a norma NBR 19650-1 relacionados à entrega de um ativo."@pt
+	Annotations: bim:Definición "NBR 19650-1: Requisito de información del proyecto PIR según NBR 19650-1 relacionado con la entrega de un activo."@es
+	EquivalentTo: bim:é.programa.de.necessidade
+
+DataProperty: bim:d.requisitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:pir
+	SubPropertyOf: bim:d.requisitar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para requisitar:  pir  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "requ.109"
+	Annotations: bim:Ação "Ação requisitar"@pt
+	Annotations: bim:Definição "NBR 19650-1: Requisito de informação de projeto PIR segundo a norma NBR 19650-1 relacionados à entrega de um ativo."@pt
+	Annotations: bim:Definición "NBR 19650-1: Requisito de información del proyecto PIR según NBR 19650-1 relacionado con la entrega de un activo."@es
+
+ObjectProperty: bim:p.requisitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.programa.de.necessidade
+	SubPropertyOf: bim:p.requisitar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a requisitar: é.programa.de.necessidade"@pt
+	Annotations: bim:Chave "requ.110"
+	Annotations: bim:Ação "Ação requisitar"@pt
+	Annotations: bim:Definição "É o documento das necessidades levantadas pelas equipes de projetistas em relação ao tema projetado e às pedidos específicos do comitente."@pt
+	Annotations: bim:Definición "Es el documento de las necesidades planteadas por los equipos de diseñadores en relación con el tema proyectado y las solicitudes específicas del director."@es
+	EquivalentTo: bim:é.pir
+
+DataProperty: bim:d.requisitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:programa.de.necessidade
+	SubPropertyOf: bim:d.requisitar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para requisitar:  programa.de.necessidade  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "requ.110"
+	Annotations: bim:Ação "Ação requisitar"@pt
+	Annotations: bim:Definição "É o documento das necessidades levantadas pelas equipes de projetistas em relação ao tema projetado e às pedidos específicos do comitente."@pt
+	Annotations: bim:Definición "Es el documento de las necesidades planteadas por los equipos de diseñadores en relación con el tema proyectado y las solicitudes específicas del director."@es
+
+ObjectProperty: bim:p.resistir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.aparafusada
+	SubPropertyOf: bim:p.resistir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a resistir: é.aparafusada"@pt
+	Annotations: bim:Chave "resi.112"
+	Annotations: bim:Ação "Ação resistir"@pt
+	Annotations: bim:Definição "Qualifica a união de peças como aparafusadas."@pt
+	Annotations: bim:Definición "Califica las piezas de unión como atornilladas."@es
+	EquivalentTo: bim:é.aparafusado
+
+DataProperty: bim:d.resistir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:aparafusada
+	SubPropertyOf: bim:d.resistir
+	Range: xsd:boolean
+	Annotations: rdfs:label "Dado para resistir:  aparafusada  Deve ser formatado como (xsd:boolean)"@pt
+	Annotations: bim:Chave "resi.112"
+	Annotations: bim:Ação "Ação resistir"@pt
+	Annotations: bim:Definição "Qualifica a união de peças como aparafusadas."@pt
+	Annotations: bim:Definición "Califica las piezas de unión como atornilladas."@es
+
+ObjectProperty: bim:p.sensorizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.sensor.térmico
+	SubPropertyOf: bim:p.sensorizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a sensorizar: é.sensor.térmico"@pt
+	Annotations: bim:Chave "sens.101"
+	Annotations: bim:Ação "Ação sensorizar"@pt
+	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de temperatura e umidade."@pt
+	Annotations: bim:Definición "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de un sensor de temperatura y humedad."@es
+	Annotations: bim:CatRevit "OST_SecurityDevices"
+	Annotations: bim:ClasseIfc "IfcSensor"
+	EquivalentTo: bim:é.câmera.termográfica
+
+DataProperty: bim:d.sensorizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:sensor.térmico
+	SubPropertyOf: bim:d.sensorizar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para sensorizar:  sensor.térmico  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "sens.101"
+	Annotations: bim:Ação "Ação sensorizar"@pt
+	Annotations: bim:Definição "ID de Revit ou GlobalId IFC ou identificador único de objeto. Identificação de um sensor de temperatura e umidade."@pt
+	Annotations: bim:Definición "ID de Revit o GlobalId IFC o identificador de objeto único. Identificación de un sensor de temperatura y humedad."@es
+	Annotations: bim:CatRevit "OST_SecurityDevices"
+	Annotations: bim:ClasseIfc "IfcSensor"
+
+ObjectProperty: bim:p.sensorizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.câmera.termográfica
+	SubPropertyOf: bim:p.sensorizar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a sensorizar: é.câmera.termográfica"@pt
+	Annotations: bim:Chave "sens.121"
+	Annotations: bim:Ação "Ação sensorizar"@pt
+	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou código identificador de uma câmera termográfica. Sensor para medição de temperatura que exibe termograma ou imagem térmica do objeto emissor da energia infravermelha. Usadas para detectar problemas de superaquecimento de equipamentos, presença de umidade em paredes, etc."@pt
+	Annotations: bim:Definición "Declara el ID de Revit o el código IFC GlobalId o identificador de una cortina fotoeléctrica. Transmite señal ultrasónica y detecta la intensidad del eco para detectar objetos y formas."@es
+	Annotations: bim:CatRevit "OST_SecurityDevices"
+	Annotations: bim:ClasseIfc "IfcSensor"
+	EquivalentTo: bim:é.sensor.térmico
+
+DataProperty: bim:d.sensorizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:câmera.termográfica
+	SubPropertyOf: bim:d.sensorizar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para sensorizar:  câmera.termográfica  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "sens.121"
+	Annotations: bim:Ação "Ação sensorizar"@pt
+	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou código identificador de uma câmera termográfica. Sensor para medição de temperatura que exibe termograma ou imagem térmica do objeto emissor da energia infravermelha. Usadas para detectar problemas de superaquecimento de equipamentos, presença de umidade em paredes, etc."@pt
+	Annotations: bim:Definición "Declara el ID de Revit o el código IFC GlobalId o identificador de una cortina fotoeléctrica. Transmite señal ultrasónica y detecta la intensidad del eco para detectar objetos y formas."@es
+	Annotations: bim:CatRevit "OST_SecurityDevices"
+	Annotations: bim:ClasseIfc "IfcSensor"
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.uas
+	SubPropertyOf: bim:p.vistoriar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.uas"@pt
+	Annotations: bim:Chave "vist.105"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
+	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
+	EquivalentTo: bim:é.drone
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:uas
+	SubPropertyOf: bim:d.vistoriar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  uas  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "vist.105"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
+	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.drone
+	SubPropertyOf: bim:p.vistoriar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.drone"@pt
+	Annotations: bim:Chave "vist.106"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do drone."@pt
+	Annotations: bim:Definición "Declara la identificación del dron."@es
+	EquivalentTo: bim:é.vant
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:drone
+	SubPropertyOf: bim:d.vistoriar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  drone  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "vist.106"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do drone."@pt
+	Annotations: bim:Definición "Declara la identificación del dron."@es
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.vant
+	SubPropertyOf: bim:p.vistoriar
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.vant"@pt
+	Annotations: bim:Chave "vist.107"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
+	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
+	EquivalentTo: bim:é.uas
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vant
+	SubPropertyOf: bim:d.vistoriar
+	Range: xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  vant  Deve ser formatado como (xsd:string)"@pt
+	Annotations: bim:Chave "vist.107"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
+	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
+
+#################################################################
+##  Fim da Ontologia JEFTE
+##  Criada em 06/10/2025 14:35:23
+#################################################################
