@@ -5,6 +5,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix xml:  <http://www.w3.org/XML/1998/namespace> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix bsdd: <https://bsdd.buildingsmart.org/def#>
 @prefix bim:  <https://github.com/JLMenegotto/RepoOnto#> .
 @base  <https://github.com/JLMenegotto/RepoOnto#Drones> .
 
@@ -25,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 02/10/2025 16:48:59"@pt ;
+	  rdfs:label "DataHora: 07/10/2025 10:53:02"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -1747,6 +1748,67 @@ bim:link   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Enlace o Hipervínculo."@es  .
 
 
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.área.bruta   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.bruta" ;
+                    bim:Chave               "medi.104" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es ;
+                    rdf:type                owl:FunctionalProperty ;
+                    owl:equivalentProperty  bim:é.área.real  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:área.bruta   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  área.bruta  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.104" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.área.real   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.real" ;
+                    bim:Chave               "medi.116" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es ;
+                    owl:equivalentProperty  bim:é.área.bruta  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:área.real   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  área.real  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.116" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es  .
+
+
 bim:p.orçamentar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -1816,7 +1878,7 @@ bim:é.preço.ofertado   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a orçamentar: é.preço.ofertado" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es ;
@@ -1831,7 +1893,7 @@ bim:preço.ofertado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.orçamentar ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es  .
@@ -3364,7 +3426,7 @@ bim:é.pertencente.a   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a relacionar: é.pertencente.a" ;
-                    bim:Chave               "rela.106" ;
+                    bim:Chave               "rela.105" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "O elemento pertence a um outro."@pt ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
@@ -3378,7 +3440,7 @@ bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.relacionar ;
                     rdfs:Range              xsd:string ;
                     rdfs:label              "Dado para relacionar:  pertencente.a  Deve ser formatado como (xsd:string)" ;
-                    bim:Chave               "rela.106" ;
+                    bim:Chave               "rela.105" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "O elemento pertence a um outro."@pt ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
@@ -3691,5 +3753,5 @@ bim:voo.realizado   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 02/10/2025 16:49:02
+##  Criada em 07/10/2025 10:53:04
 #################################################################
