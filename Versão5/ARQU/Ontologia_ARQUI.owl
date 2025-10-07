@@ -1,8 +1,9 @@
-Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
-Prefix: owl: <http://www.w3.org/2002/07/owl#>
-Prefix: sh: <http://www.w3.org/ns/shacl#>
+Prefix: xsd:  <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl:  <http://www.w3.org/2002/07/owl#>
+Prefix: sh:   <http://www.w3.org/ns/shacl#>
+Prefix: bsdd: <https://bsdd.buildingsmart.org/def#>
 Prefix: bim: <https://github.com/JLMenegotto/RepoOnto#>
 
 Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
@@ -23,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Arquitetura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt
-  Annotations: rdfs:label "DataHora: 02/10/2025 16:38:19"@pt
+  Annotations: rdfs:label "DataHora: 07/10/2025 10:53:11"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -14774,7 +14775,7 @@ ObjectProperty: bim:é.altura
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a medir: é.altura"@pt
-	Annotations: bim:Chave "medi.104"
+	Annotations: bim:Chave "medi.100"
 	Annotations: bim:Ação "Ação medir"@pt
 	Annotations: bim:Definição "Valor de altura total."@pt
 	Annotations: bim:Definición "Valor de altura total."@es
@@ -14788,7 +14789,7 @@ DataProperty: bim:altura
 	SubPropertyOf: bim:d.medir
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir:  altura  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "medi.104"
+	Annotations: bim:Chave "medi.100"
 	Annotations: bim:Ação "Ação medir"@pt
 	Annotations: bim:Definição "Valor de altura total."@pt
 	Annotations: bim:Definición "Valor de altura total."@es
@@ -14798,58 +14799,61 @@ ObjectProperty: bim:p.medir
 
 
 
-ObjectProperty: bim:é.largura
+ObjectProperty: bim:é.área.bruta
 	SubPropertyOf: bim:p.medir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a medir: é.largura"@pt
-	Annotations: bim:Chave "medi.107"
+	Annotations: rdfs:label "Propriedade destinada a medir: é.área.bruta"@pt
+	Annotations: bim:Chave "medi.104"
 	Annotations: bim:Ação "Ação medir"@pt
-	Annotations: bim:Definição "Valor de largura de um objeto."@pt
-	Annotations: bim:Definición "El valor de ancho de un objeto."@es
+	Annotations: bim:Definição "Valor de superfície ou área bruta."@pt
+	Annotations: bim:Definición "Valor de superficie o área bruta."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.área.real
 
 DataProperty: bim:d.medir
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:largura
+DataProperty: bim:área.bruta
 	SubPropertyOf: bim:d.medir
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para medir:  largura  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "medi.107"
+	Annotations: rdfs:label "Dado para medir:  área.bruta  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "medi.104"
 	Annotations: bim:Ação "Ação medir"@pt
-	Annotations: bim:Definição "Valor de largura de um objeto."@pt
-	Annotations: bim:Definición "El valor de ancho de un objeto."@es
+	Annotations: bim:Definição "Valor de superfície ou área bruta."@pt
+	Annotations: bim:Definición "Valor de superficie o área bruta."@es
 
 ObjectProperty: bim:p.medir
 	SubPropertyOf: bim:BIMProp
 
 
 
-ObjectProperty: bim:é.espessura
+ObjectProperty: bim:é.área.real
 	SubPropertyOf: bim:p.medir
 	Domain: bim:BIM
 	Range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a medir: é.espessura"@pt
-	Annotations: bim:Chave "medi.112"
+	Annotations: rdfs:label "Propriedade destinada a medir: é.área.real"@pt
+	Annotations: bim:Chave "medi.116"
 	Annotations: bim:Ação "Ação medir"@pt
-	Annotations: bim:Definição "Valor de espessura de um objeto."@pt
-	Annotations: bim:Definición "Valor de grosor de un objeto."@es
+	Annotations: bim:Definição "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt
+	Annotations: bim:Definición "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es
+	EquivalentTo: bim:é.área.bruta
 
 DataProperty: bim:d.medir
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:espessura
+DataProperty: bim:área.real
 	SubPropertyOf: bim:d.medir
 	Range: xsd:double
-	Annotations: rdfs:label "Dado para medir:  espessura  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "medi.112"
+	Annotations: rdfs:label "Dado para medir:  área.real  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "medi.116"
 	Annotations: bim:Ação "Ação medir"@pt
-	Annotations: bim:Definição "Valor de espessura de um objeto."@pt
-	Annotations: bim:Definición "Valor de grosor de un objeto."@es
+	Annotations: bim:Definição "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt
+	Annotations: bim:Definición "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es
 
 ObjectProperty: bim:p.medir
 	SubPropertyOf: bim:BIMProp
@@ -14861,7 +14865,7 @@ ObjectProperty: bim:é.comprimento
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a medir: é.comprimento"@pt
-	Annotations: bim:Chave "medi.122"
+	Annotations: bim:Chave "medi.123"
 	Annotations: bim:Ação "Ação medir"@pt
 	Annotations: bim:Definição "Valor de comprimento de um objeto."@pt
 	Annotations: bim:Definición "Valor de longitud de un objeto."@es
@@ -14875,7 +14879,7 @@ DataProperty: bim:comprimento
 	SubPropertyOf: bim:d.medir
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir:  comprimento  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "medi.122"
+	Annotations: bim:Chave "medi.123"
 	Annotations: bim:Ação "Ação medir"@pt
 	Annotations: bim:Definição "Valor de comprimento de um objeto."@pt
 	Annotations: bim:Definición "Valor de longitud de un objeto."@es
@@ -14890,7 +14894,7 @@ ObjectProperty: bim:é.diámetro
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a medir: é.diámetro"@pt
-	Annotations: bim:Chave "medi.125"
+	Annotations: bim:Chave "medi.128"
 	Annotations: bim:Ação "Ação medir"@pt
 	Annotations: bim:Definição "Valor de diâmetro de um objeto."@pt
 	Annotations: bim:Definición "El valor de diámetro de un objeto."@es
@@ -14904,10 +14908,68 @@ DataProperty: bim:diámetro
 	SubPropertyOf: bim:d.medir
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para medir:  diámetro  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "medi.125"
+	Annotations: bim:Chave "medi.128"
 	Annotations: bim:Ação "Ação medir"@pt
 	Annotations: bim:Definição "Valor de diâmetro de um objeto."@pt
 	Annotations: bim:Definición "El valor de diámetro de un objeto."@es
+
+ObjectProperty: bim:p.medir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.espessura
+	SubPropertyOf: bim:p.medir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a medir: é.espessura"@pt
+	Annotations: bim:Chave "medi.134"
+	Annotations: bim:Ação "Ação medir"@pt
+	Annotations: bim:Definição "Valor de espessura de um objeto."@pt
+	Annotations: bim:Definición "Valor de grosor de un objeto."@es
+
+DataProperty: bim:d.medir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:espessura
+	SubPropertyOf: bim:d.medir
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para medir:  espessura  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "medi.134"
+	Annotations: bim:Ação "Ação medir"@pt
+	Annotations: bim:Definição "Valor de espessura de um objeto."@pt
+	Annotations: bim:Definición "Valor de grosor de un objeto."@es
+
+ObjectProperty: bim:p.medir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.largura
+	SubPropertyOf: bim:p.medir
+	Domain: bim:BIM
+	Range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a medir: é.largura"@pt
+	Annotations: bim:Chave "medi.136"
+	Annotations: bim:Ação "Ação medir"@pt
+	Annotations: bim:Definição "Valor de largura de um objeto."@pt
+	Annotations: bim:Definición "El valor de ancho de un objeto."@es
+
+DataProperty: bim:d.medir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:largura
+	SubPropertyOf: bim:d.medir
+	Range: xsd:double
+	Annotations: rdfs:label "Dado para medir:  largura  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "medi.136"
+	Annotations: bim:Ação "Ação medir"@pt
+	Annotations: bim:Definição "Valor de largura de um objeto."@pt
+	Annotations: bim:Definición "El valor de ancho de un objeto."@es
 
 ObjectProperty: bim:p.montar
 	SubPropertyOf: bim:BIMProp
@@ -14948,10 +15010,10 @@ ObjectProperty: bim:é.componente.de
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a montar: é.componente.de"@pt
-	Annotations: bim:Chave "mont.104"
+	Annotations: bim:Chave "mont.111"
 	Annotations: bim:Ação "Ação montar"@pt
 	Annotations: bim:Definição "Declara que o elemento é componente de um outro elemento."@pt
-	Annotations: bim:Definición "Declara que el elemento es componente de otro elemento."@es
+	Annotations: bim:Definición "Declara que el elemento es un componente de otro elemento."@es
 
 DataProperty: bim:d.montar
 	SubPropertyOf: bim:BIMData
@@ -14962,10 +15024,10 @@ DataProperty: bim:componente.de
 	SubPropertyOf: bim:d.montar
 	Range: xsd:string
 	Annotations: rdfs:label "Dado para montar:  componente.de  Deve ser formatado como (xsd:string)"@pt
-	Annotations: bim:Chave "mont.104"
+	Annotations: bim:Chave "mont.111"
 	Annotations: bim:Ação "Ação montar"@pt
 	Annotations: bim:Definição "Declara que o elemento é componente de um outro elemento."@pt
-	Annotations: bim:Definición "Declara que el elemento es componente de otro elemento."@es
+	Annotations: bim:Definición "Declara que el elemento es un componente de otro elemento."@es
 
 ObjectProperty: bim:p.orçamentar
 	SubPropertyOf: bim:BIMProp
@@ -15037,7 +15099,7 @@ ObjectProperty: bim:é.preço.ofertado
 	Domain: bim:BIM
 	Range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a orçamentar: é.preço.ofertado"@pt
-	Annotations: bim:Chave "orça.126"
+	Annotations: bim:Chave "orça.132"
 	Annotations: bim:Ação "Ação orçamentar"@pt
 	Annotations: bim:Definição "Declara preço ofertado."@pt
 	Annotations: bim:Definición "Declara el precio ofrecido."@es
@@ -15052,7 +15114,7 @@ DataProperty: bim:preço.ofertado
 	SubPropertyOf: bim:d.orçamentar
 	Range: xsd:double
 	Annotations: rdfs:label "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "orça.126"
+	Annotations: bim:Chave "orça.132"
 	Annotations: bim:Ação "Ação orçamentar"@pt
 	Annotations: bim:Definição "Declara preço ofertado."@pt
 	Annotations: bim:Definición "Declara el precio ofrecido."@es
@@ -16883,5 +16945,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 02/10/2025 16:38:22
+##  Criada em 07/10/2025 10:53:15
 #################################################################
