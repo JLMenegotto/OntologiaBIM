@@ -5,6 +5,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix xml:  <http://www.w3.org/XML/1998/namespace> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix bsdd: <https://bsdd.buildingsmart.org/def#> .
 @prefix bim:  <https://github.com/JLMenegotto/RepoOnto#> .
 @base  <https://github.com/JLMenegotto/RepoOnto#Parte_4_2N> .
 
@@ -25,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 22/09/2025 14:51:30"@pt ;
+	  rdfs:label "DataHora: 07/10/2025 12:07:16"@pt ;
 	  rdfs:label "Advertência1: Norma elaborada pela ABNT/CEE-134"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -1564,6 +1565,70 @@ bim:fator.fotoenergético   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es  .
 
 
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.jusante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.jusante.de" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.montante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.jusante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
+
+
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.montante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.montante.de" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.jusante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.montante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
+
+
 bim:p.gestionar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -2318,6 +2383,67 @@ bim:link   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Enlace o Hipervínculo."@es  .
 
 
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.área.bruta   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.bruta" ;
+                    bim:Chave               "medi.104" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es ;
+                    rdf:type                owl:FunctionalProperty ;
+                    owl:equivalentProperty  bim:é.área.real  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:área.bruta   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  área.bruta  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.104" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.área.real   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.real" ;
+                    bim:Chave               "medi.116" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es ;
+                    owl:equivalentProperty  bim:é.área.bruta  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:área.real   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  área.real  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.116" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es  .
+
+
 bim:p.normatizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -2445,7 +2571,7 @@ bim:é.preço.ofertado   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a orçamentar: é.preço.ofertado" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es ;
@@ -2460,7 +2586,7 @@ bim:preço.ofertado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.orçamentar ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es  .
@@ -3500,6 +3626,70 @@ bim:no.prumo   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "El elemento que está a plomo es vertical. Las coordenadas XY de sus extremos deben ser iguales."@es  .
 
 
+bim:p.posicionar    rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.abaixo.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.posicionar  ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a posicionar : é.abaixo.de" ;
+                    bim:Chave               "posi.120" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado abaixo de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente debajo de otro objeto."@es ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty ;
+                    owl:inverseOf           bim:é.acima.de  .
+
+
+bim:d.posicionar    rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:abaixo.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.posicionar  ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para posicionar :  abaixo.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "posi.120" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado abaixo de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente debajo de otro objeto."@es  .
+
+
+bim:p.posicionar    rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.acima.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.posicionar  ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a posicionar : é.acima.de" ;
+                    bim:Chave               "posi.121" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado acima de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente sobre otro objeto."@es ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty ;
+                    owl:inverseOf           bim:é.abaixo.de  .
+
+
+bim:d.posicionar    rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:acima.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.posicionar  ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para posicionar :  acima.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "posi.121" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado acima de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente sobre otro objeto."@es  .
+
+
 bim:p.qualificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -4169,5 +4359,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia 15965_2N
-##  Criada em 22/09/2025 14:51:30
+##  Criada em 07/10/2025 12:07:18
 #################################################################
