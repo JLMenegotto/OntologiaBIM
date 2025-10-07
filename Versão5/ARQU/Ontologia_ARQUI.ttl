@@ -5,6 +5,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix xml:  <http://www.w3.org/XML/1998/namespace> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix bsdd: <https://bsdd.buildingsmart.org/def#>
 @prefix bim:  <https://github.com/JLMenegotto/RepoOnto#> .
 @base  <https://github.com/JLMenegotto/RepoOnto#Arquitetura> .
 
@@ -25,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt ;
-	  rdfs:label "DataHora: 02/10/2025 16:38:19"@pt ;
+	  rdfs:label "DataHora: 07/10/2025 10:53:11"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -28192,7 +28193,7 @@ bim:é.altura   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.altura" ;
-                    bim:Chave               "medi.104" ;
+                    bim:Chave               "medi.100" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de altura total."@pt ;
                     bim:Definición          "Valor de altura total."@es  .
@@ -28206,7 +28207,7 @@ bim:altura   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  altura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.104" ;
+                    bim:Chave               "medi.100" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de altura total."@pt ;
                     bim:Definición          "Valor de altura total."@es  .
@@ -28216,58 +28217,61 @@ bim:p.medir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.largura   rdf:type  owl:ObjectProperty ;
+bim:é.área.bruta   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.medir ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a medir: é.largura" ;
-                    bim:Chave               "medi.107" ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.bruta" ;
+                    bim:Chave               "medi.104" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de largura de um objeto."@pt ;
-                    bim:Definición          "El valor de ancho de un objeto."@es  .
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es ;
+                    rdf:type                owl:FunctionalProperty ;
+                    owl:equivalentProperty  bim:é.área.real  .
 
 
 bim:d.medir   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:largura   rdf:type  owl:DatatypeProperty ;
+bim:área.bruta   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
-                    rdfs:label              "Dado para medir:  largura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.107" ;
+                    rdfs:label              "Dado para medir:  área.bruta  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.104" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de largura de um objeto."@pt ;
-                    bim:Definición          "El valor de ancho de un objeto."@es  .
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es  .
 
 
 bim:p.medir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.espessura   rdf:type  owl:ObjectProperty ;
+bim:é.área.real   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.medir ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a medir: é.espessura" ;
-                    bim:Chave               "medi.112" ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.real" ;
+                    bim:Chave               "medi.116" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de espessura de um objeto."@pt ;
-                    bim:Definición          "Valor de grosor de un objeto."@es  .
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es ;
+                    owl:equivalentProperty  bim:é.área.bruta  .
 
 
 bim:d.medir   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:espessura   rdf:type  owl:DatatypeProperty ;
+bim:área.real   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
-                    rdfs:label              "Dado para medir:  espessura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.112" ;
+                    rdfs:label              "Dado para medir:  área.real  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.116" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de espessura de um objeto."@pt ;
-                    bim:Definición          "Valor de grosor de un objeto."@es  .
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es  .
 
 
 bim:p.medir   rdf:type  owl:ObjectProperty ;
@@ -28279,7 +28283,7 @@ bim:é.comprimento   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.comprimento" ;
-                    bim:Chave               "medi.122" ;
+                    bim:Chave               "medi.123" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de comprimento de um objeto."@pt ;
                     bim:Definición          "Valor de longitud de un objeto."@es  .
@@ -28293,7 +28297,7 @@ bim:comprimento   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  comprimento  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.122" ;
+                    bim:Chave               "medi.123" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de comprimento de um objeto."@pt ;
                     bim:Definición          "Valor de longitud de un objeto."@es  .
@@ -28308,7 +28312,7 @@ bim:é.diámetro   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.diámetro" ;
-                    bim:Chave               "medi.125" ;
+                    bim:Chave               "medi.128" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de diâmetro de um objeto."@pt ;
                     bim:Definición          "El valor de diámetro de un objeto."@es  .
@@ -28322,10 +28326,68 @@ bim:diámetro   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  diámetro  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.125" ;
+                    bim:Chave               "medi.128" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de diâmetro de um objeto."@pt ;
                     bim:Definición          "El valor de diámetro de un objeto."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.espessura   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.espessura" ;
+                    bim:Chave               "medi.134" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de espessura de um objeto."@pt ;
+                    bim:Definición          "Valor de grosor de un objeto."@es  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:espessura   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  espessura  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.134" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de espessura de um objeto."@pt ;
+                    bim:Definición          "Valor de grosor de un objeto."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.largura   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.largura" ;
+                    bim:Chave               "medi.136" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de largura de um objeto."@pt ;
+                    bim:Definición          "El valor de ancho de un objeto."@es  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:largura   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  largura  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.136" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de largura de um objeto."@pt ;
+                    bim:Definición          "El valor de ancho de un objeto."@es  .
 
 
 bim:p.montar   rdf:type  owl:ObjectProperty ;
@@ -28366,10 +28428,10 @@ bim:é.componente.de   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a montar: é.componente.de" ;
-                    bim:Chave               "mont.104" ;
+                    bim:Chave               "mont.111" ;
                     bim:Ação                "Ação montar" ;
                     bim:Definição           "Declara que o elemento é componente de um outro elemento."@pt ;
-                    bim:Definición          "Declara que el elemento es componente de otro elemento."@es  .
+                    bim:Definición          "Declara que el elemento es un componente de otro elemento."@es  .
 
 
 bim:d.montar   rdf:type  owl:DatatypeProperty ;
@@ -28380,10 +28442,10 @@ bim:componente.de   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.montar ;
                     rdfs:Range              xsd:string ;
                     rdfs:label              "Dado para montar:  componente.de  Deve ser formatado como (xsd:string)" ;
-                    bim:Chave               "mont.104" ;
+                    bim:Chave               "mont.111" ;
                     bim:Ação                "Ação montar" ;
                     bim:Definição           "Declara que o elemento é componente de um outro elemento."@pt ;
-                    bim:Definición          "Declara que el elemento es componente de otro elemento."@es  .
+                    bim:Definición          "Declara que el elemento es un componente de otro elemento."@es  .
 
 
 bim:p.orçamentar   rdf:type  owl:ObjectProperty ;
@@ -28455,7 +28517,7 @@ bim:é.preço.ofertado   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a orçamentar: é.preço.ofertado" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es ;
@@ -28470,7 +28532,7 @@ bim:preço.ofertado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.orçamentar ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es  .
@@ -30301,5 +30363,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 02/10/2025 16:38:22
+##  Criada em 07/10/2025 10:53:15
 #################################################################
