@@ -5,6 +5,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix xml:  <http://www.w3.org/XML/1998/namespace> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix bsdd: <https://bsdd.buildingsmart.org/def#>
 @prefix bim:  <https://github.com/JLMenegotto/RepoOnto#> .
 @base  <https://github.com/JLMenegotto/RepoOnto#Infraestrutura> .
 
@@ -25,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt ;
-	  rdfs:label "DataHora: 26/09/2025 19:25:21"@pt ;
+	  rdfs:label "DataHora: 07/10/2025 10:53:17"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -2119,7 +2120,9 @@ bim:Unidade rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Organização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.62"@pt  .
+      bim:Chave       "Key.Lim.62"@pt ;
+      bim:CatRevit    "OST_Areas"   ;
+      bim:ClasseIfc   "IfcVirtualElement"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2152,7 +2155,9 @@ bim:SetorUrbano rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Organização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.63"@pt  .
+      bim:Chave       "Key.Lim.63"@pt ;
+      bim:CatRevit    "OST_Areas , OST_Rooms"   ;
+      bim:ClasseIfc   "IfcVirtualElement"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2185,7 +2190,9 @@ bim:Divisão rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Organização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.64"@pt  .
+      bim:Chave       "Key.Lim.64"@pt ;
+      bim:CatRevit    "OST_Areas , OST_Rooms"   ;
+      bim:ClasseIfc   "IfcVirtualElement"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2218,7 +2225,9 @@ bim:Departamento rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Organização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.65"@pt  .
+      bim:Chave       "Key.Lim.65"@pt ;
+      bim:CatRevit    "OST_Areas , OST_Rooms"   ;
+      bim:ClasseIfc   "IfcVirtualElement"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2251,7 +2260,9 @@ bim:Ambiente rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Distribuição"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.66"@pt  .
+      bim:Chave       "Key.Lim.66"@pt ;
+      bim:CatRevit    "OST_Rooms"   ;
+      bim:ClasseIfc   "IfcSpace"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2284,7 +2295,9 @@ bim:Apartamento rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Distribuição"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.67"@pt  .
+      bim:Chave       "Key.Lim.67"@pt ;
+      bim:CatRevit    "OST_Areas , OST_Rooms"   ;
+      bim:ClasseIfc   "IfcVirtualElement"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2317,7 +2330,9 @@ bim:Núcleo.de.Circulação rdf:type  owl:Class  ;
       bim:Espécie     "Funcional"@pt ;
       bim:Tema        "De Distribuição"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Lim.68"@pt  .
+      bim:Chave       "Key.Lim.68"@pt ;
+      bim:CatRevit    "OST_Areas , OST_Rooms"   ;
+      bim:ClasseIfc   "IfcVirtualElement"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -2814,24 +2829,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Paisagística rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Paisagística"@pt  .
 
 
-bim:Lagoa rdf:type  owl:Class  ;
+bim:Urbana rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Paisagística ;
+      rdfs:label  "Urbana"@pt  .
+
+
+bim:Lagoa rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Urbana ;
       rdfs:label  "Lagoa"@pt ;
       bim:Definição   "Elemento de parquisação: Lagoa"@pt ;
       bim:Definición  "Elemento del parque: Laguna"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Paisagística"@pt ;
+      bim:Espécie     "Paisagística"@pt ;
+      bim:Tema        "Urbana"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.84"@pt ;
       bim:CatRevit    "OST_SiteRegion , OST_SiteSurface"   ;
@@ -2847,24 +2862,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Paisagística rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Paisagística"@pt  .
 
 
-bim:Árvore rdf:type  owl:Class  ;
+bim:Urbana rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Paisagística ;
+      rdfs:label  "Urbana"@pt  .
+
+
+bim:Árvore rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Urbana ;
       rdfs:label  "Árvore"@pt ;
       bim:Definição   "Elemento de parquisação: Árvore"@pt ;
       bim:Definición  "Elemento de estacionamiento: Árbol"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Paisagística"@pt ;
+      bim:Espécie     "Paisagística"@pt ;
+      bim:Tema        "Urbana"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.85"@pt ;
       bim:CatRevit    "OST_Planting"   ;
@@ -2880,24 +2895,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Paisagística rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Paisagística"@pt  .
 
 
-bim:Gramado rdf:type  owl:Class  ;
+bim:Urbana rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Paisagística ;
+      rdfs:label  "Urbana"@pt  .
+
+
+bim:Gramado rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Urbana ;
       rdfs:label  "Gramado"@pt ;
       bim:Definição   "Elemento de parquisação: Gramado"@pt ;
       bim:Definición  "Elemento de estacionamiento: Césped"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Paisagística"@pt ;
+      bim:Espécie     "Paisagística"@pt ;
+      bim:Tema        "Urbana"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.86"@pt ;
       bim:CatRevit    "OST_Planting"   ;
@@ -2913,24 +2928,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Paisagística rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Paisagística"@pt  .
 
 
-bim:Monumento rdf:type  owl:Class  ;
+bim:Urbana rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Paisagística ;
+      rdfs:label  "Urbana"@pt  .
+
+
+bim:Monumento rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Urbana ;
       rdfs:label  "Monumento"@pt ;
       bim:Definição   "Elemento de parquisação: Monumento urbano"@pt ;
       bim:Definición  "Elemento de aparcamiento: Monumento urbano"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Paisagística"@pt ;
+      bim:Espécie     "Paisagística"@pt ;
+      bim:Tema        "Urbana"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.87"@pt ;
       bim:CatRevit    "OST_Entourage"   ;
@@ -2946,24 +2961,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Paisagística rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Paisagística"@pt  .
 
 
-bim:Ornamento rdf:type  owl:Class  ;
+bim:Urbana rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Paisagística ;
+      rdfs:label  "Urbana"@pt  .
+
+
+bim:Ornamento rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Urbana ;
       rdfs:label  "Ornamento"@pt ;
       bim:Definição   "Elemento de parquisação: Ornamento urbano"@pt ;
       bim:Definición  "Elemento de aparcamiento: Ornamento urbano"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Paisagística"@pt ;
+      bim:Espécie     "Paisagística"@pt ;
+      bim:Tema        "Urbana"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.88"@pt ;
       bim:CatRevit    "OST_Entourage"   ;
@@ -2979,24 +2994,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Paisagística rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Paisagística"@pt  .
 
 
-bim:Fonte.Ornamental rdf:type  owl:Class  ;
+bim:Urbana rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Paisagística ;
+      rdfs:label  "Urbana"@pt  .
+
+
+bim:Fonte.Ornamental rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Urbana ;
       rdfs:label  "Fonte Ornamental"@pt ;
       bim:Definição   "Elemento de parquisação: Fonte ornamental"@pt ;
       bim:Definición  "Elemento de decoración: Fuente ornamental"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Paisagística"@pt ;
+      bim:Espécie     "Paisagística"@pt ;
+      bim:Tema        "Urbana"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.89"@pt ;
       bim:CatRevit    "OST_Entourage"   ;
@@ -3012,24 +3027,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Iluminação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Iluminação"@pt  .
 
 
-bim:Poste.Luz.Pedestre rdf:type  owl:Class  ;
+bim:Sinalização rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Iluminação ;
+      rdfs:label  "Sinalização"@pt  .
+
+
+bim:Poste.Luz.Pedestre rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Sinalização ;
       rdfs:label  "Poste Luz Pedestre"@pt ;
       bim:Definição   "Poste de luz para pedestre de baixa altura"@pt ;
       bim:Definición  "Poste de luz peatonal de baja altura"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Iluminação"@pt ;
+      bim:Espécie     "Iluminação"@pt ;
+      bim:Tema        "Sinalização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.90"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
@@ -3045,24 +3060,24 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
-
-
 bim:Iluminação rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Infraestrutura ;
       rdfs:label  "Iluminação"@pt  .
 
 
-bim:Poste.Luz.Viário rdf:type  owl:Class  ;
+bim:Sinalização rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Iluminação ;
+      rdfs:label  "Sinalização"@pt  .
+
+
+bim:Poste.Luz.Viário rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Sinalização ;
       rdfs:label  "Poste Luz Viário"@pt ;
       bim:Definição   "Poste de luz para iluminação de avenidas altos"@pt ;
       bim:Definición  "Poste de luz para iluminar avenidas altas"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
-      bim:Tema        "Iluminação"@pt ;
+      bim:Espécie     "Iluminação"@pt ;
+      bim:Tema        "Sinalização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.91"@pt ;
       bim:CatRevit    "OST_LightingDevices"   ;
@@ -3078,13 +3093,13 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
+bim:Iluminação rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
+      rdfs:label  "Iluminação"@pt  .
 
 
 bim:Sinalização rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Iluminação ;
       rdfs:label  "Sinalização"@pt  .
 
 
@@ -3094,7 +3109,7 @@ bim:Semáforo rdf:type  owl:Class  ;
       bim:Definição   "Sinal de trânsito urbano."@pt ;
       bim:Definición  "Semáforo urbano."@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
+      bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Sinalização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.92"@pt ;
@@ -3111,13 +3126,13 @@ bim:Infraestrutura rdf:type  owl:Class  ;
       rdfs:label  "Infraestrutura"@pt  .
 
 
-bim:Urbana rdf:type  owl:Class  ;
+bim:Iluminação rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Urbana"@pt  .
+      rdfs:label  "Iluminação"@pt  .
 
 
 bim:Sinalização rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Urbana ;
+      rdfs:subClassOf  bim:Iluminação ;
       rdfs:label  "Sinalização"@pt  .
 
 
@@ -3127,7 +3142,7 @@ bim:Totem.Informação rdf:type  owl:Class  ;
       bim:Definição   "Totem de informação urbana"@pt ;
       bim:Definición  "Tótem de información urbana"@es ;
       bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Urbana"@pt ;
+      bim:Espécie     "Iluminação"@pt ;
       bim:Tema        "Sinalização"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.93"@pt ;
@@ -4342,39 +4357,6 @@ bim:Faixa rdf:type  owl:Class  ;
       rdfs:label  "Faixa"@pt  .
 
 
-bim:Meio.Fio rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Faixa ;
-      rdfs:label  "Meio.Fio"@pt ;
-      bim:Definição   "Elemento que separa a pista de rolamento dos veículos do passeio de pedestres com altura inferior a 35 cm."@pt ;
-      bim:Definición  "Elemento que separa la calzada de los vehículos de acera peatonal con una altura inferior a 35 cm."@es ;
-      bim:Natureza    "Infraestrutura"@pt ;
-      bim:Espécie     "Rodoviária"@pt ;
-      bim:Tema        "Faixa"@pt ;
-      bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Inf.130"@pt ;
-      bim:CatRevit    "OST_Roads"   ;
-      bim:ClasseIfc   "IfcKerb"    .
-
-
-bim:Projeto rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:BIM  .
-
-
-bim:Infraestrutura rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "Infraestrutura"@pt  .
-
-
-bim:Rodoviária rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Infraestrutura ;
-      rdfs:label  "Rodoviária"@pt  .
-
-
-bim:Faixa rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Rodoviária ;
-      rdfs:label  "Faixa"@pt  .
-
-
 bim:Calçada rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Faixa ;
       rdfs:label  "Calçada"@pt ;
@@ -4384,7 +4366,7 @@ bim:Calçada rdf:type  owl:Class  ;
       bim:Espécie     "Rodoviária"@pt ;
       bim:Tema        "Faixa"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Inf.131"@pt ;
+      bim:Chave       "Key.Inf.130"@pt ;
       bim:CatRevit    "OST_Roads"   ;
       bim:ClasseIfc   "IfcCourse"    .
 
@@ -4417,7 +4399,7 @@ bim:Ciclofaixa rdf:type  owl:Class  ;
       bim:Espécie     "Rodoviária"@pt ;
       bim:Tema        "Faixa"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Inf.132"@pt ;
+      bim:Chave       "Key.Inf.131"@pt ;
       bim:CatRevit    "OST_Roads"   ;
       bim:ClasseIfc   "IfcCourse"    .
 
@@ -4450,9 +4432,42 @@ bim:Ciclovia rdf:type  owl:Class  ;
       bim:Espécie     "Rodoviária"@pt ;
       bim:Tema        "Faixa"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
-      bim:Chave       "Key.Inf.133"@pt ;
+      bim:Chave       "Key.Inf.132"@pt ;
       bim:CatRevit    "OST_Roads"   ;
       bim:ClasseIfc   "IfcCourse"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Infraestrutura rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Infraestrutura"@pt  .
+
+
+bim:Rodoviária rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Infraestrutura ;
+      rdfs:label  "Rodoviária"@pt  .
+
+
+bim:Faixa rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Rodoviária ;
+      rdfs:label  "Faixa"@pt  .
+
+
+bim:Meio.Fio rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Faixa ;
+      rdfs:label  "Meio.Fio"@pt ;
+      bim:Definição   "Elemento que separa a pista de rolamento dos veículos do passeio de pedestres com altura inferior a 35 cm."@pt ;
+      bim:Definición  "Elemento que separa la calzada de los vehículos de acera peatonal con una altura inferior a 35 cm."@es ;
+      bim:Natureza    "Infraestrutura"@pt ;
+      bim:Espécie     "Rodoviária"@pt ;
+      bim:Tema        "Faixa"@pt ;
+      bim:Disciplina  "BIM.GIS"@pt ;
+      bim:Chave       "Key.Inf.133"@pt ;
+      bim:CatRevit    "OST_Roads"   ;
+      bim:ClasseIfc   "IfcKerb"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -9698,7 +9713,7 @@ bim:Zona.Aquática rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.292"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9731,7 +9746,7 @@ bim:Zona.Terrestre rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.293"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9764,7 +9779,7 @@ bim:Zona.Navegável rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.294"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9797,7 +9812,7 @@ bim:Zona.Armazenamento rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.295"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9830,7 +9845,7 @@ bim:Zona.Pátio rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.296"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9863,7 +9878,7 @@ bim:Zona.Operação rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.297"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9896,7 +9911,7 @@ bim:Zona.Fabricação rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.298"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 
@@ -9929,7 +9944,7 @@ bim:Zona.Transbordo rdf:type  owl:Class  ;
       bim:Tema        "Porto Zona"@pt ;
       bim:Disciplina  "BIM.GIS"@pt ;
       bim:Chave       "Key.Inf.299"@pt ;
-      bim:CatRevit    "OST_Areas , OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
+      bim:CatRevit    "OST_MEPZone , OST_MEPSystemZone , OST_MassZone"   ;
       bim:ClasseIfc   "IfcZone , IfcSpatialZone"    .
 
 #################################################################
@@ -21952,6 +21967,70 @@ bim:fator.fotoenergético   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Indica la cantidad de energía solar que pasa a través del vidrio en relación con la energía solar que cae sobre él. Expresado entre 0 y 1. Cuanto menor sea el valor, menos energía pasará. Equivalente al factor solar."@es  .
 
 
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.jusante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.jusante.de" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.montante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.jusante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.jusante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.113" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
+
+
+bim:p.esgotar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.a.montante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.esgotar ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a esgotar: é.a.montante.de" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;
+                    rdf:type                owl:TransitiveProperty ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    owl:inverseOf           bim:é.a.jusante.de  .
+
+
+bim:d.esgotar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:a.montante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.esgotar ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para esgotar:  a.montante.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "esgo.114" ;
+                    bim:Ação                "Ação esgotar" ;
+                    bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt ;
+                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es  .
+
+
 bim:p.geolocalizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -22954,7 +23033,7 @@ bim:é.altura   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.altura" ;
-                    bim:Chave               "medi.104" ;
+                    bim:Chave               "medi.100" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de altura total."@pt ;
                     bim:Definición          "Valor de altura total."@es  .
@@ -22968,7 +23047,7 @@ bim:altura   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  altura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.104" ;
+                    bim:Chave               "medi.100" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de altura total."@pt ;
                     bim:Definición          "Valor de altura total."@es  .
@@ -22983,7 +23062,7 @@ bim:é.altura.interna   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.altura.interna" ;
-                    bim:Chave               "medi.105" ;
+                    bim:Chave               "medi.102" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de altura interior de algúm compartimento."@pt ;
                     bim:Definición          "Valor de altura interna de algún compartimento."@es  .
@@ -22997,7 +23076,7 @@ bim:altura.interna   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  altura.interna  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.105" ;
+                    bim:Chave               "medi.102" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de altura interior de algúm compartimento."@pt ;
                     bim:Definición          "Valor de altura interna de algún compartimento."@es  .
@@ -23007,87 +23086,61 @@ bim:p.medir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.largura   rdf:type  owl:ObjectProperty ;
+bim:é.área.bruta   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.medir ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a medir: é.largura" ;
-                    bim:Chave               "medi.107" ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.bruta" ;
+                    bim:Chave               "medi.104" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de largura de um objeto."@pt ;
-                    bim:Definición          "El valor de ancho de un objeto."@es  .
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es ;
+                    rdf:type                owl:FunctionalProperty ;
+                    owl:equivalentProperty  bim:é.área.real  .
 
 
 bim:d.medir   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:largura   rdf:type  owl:DatatypeProperty ;
+bim:área.bruta   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
-                    rdfs:label              "Dado para medir:  largura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.107" ;
+                    rdfs:label              "Dado para medir:  área.bruta  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.104" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de largura de um objeto."@pt ;
-                    bim:Definición          "El valor de ancho de un objeto."@es  .
+                    bim:Definição           "Valor de superfície ou área bruta."@pt ;
+                    bim:Definición          "Valor de superficie o área bruta."@es  .
 
 
 bim:p.medir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.largura.interna   rdf:type  owl:ObjectProperty ;
+bim:é.área.real   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.medir ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a medir: é.largura.interna" ;
-                    bim:Chave               "medi.108" ;
+                    rdfs:label              "Propriedade destinada a medir: é.área.real" ;
+                    bim:Chave               "medi.116" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de largura interior de algúm compartimento."@pt ;
-                    bim:Definición          "El valor de ancho interno de algún compartimento."@es  .
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es ;
+                    owl:equivalentProperty  bim:é.área.bruta  .
 
 
 bim:d.medir   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:largura.interna   rdf:type  owl:DatatypeProperty ;
+bim:área.real   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
-                    rdfs:label              "Dado para medir:  largura.interna  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.108" ;
+                    rdfs:label              "Dado para medir:  área.real  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.116" ;
                     bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de largura interior de algúm compartimento."@pt ;
-                    bim:Definición          "El valor de ancho interno de algún compartimento."@es  .
-
-
-bim:p.medir   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.profundidade   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.medir ;
-                    rdfs:Domain             bim:BIM ;
-                    rdfs:Range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a medir: é.profundidade" ;
-                    bim:Chave               "medi.109" ;
-                    bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de profundidade de um objeto."@pt ;
-                    bim:Definición          "Valor de profundidad de un objeto."@es  .
-
-
-bim:d.medir   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:profundidade   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.medir ;
-                    rdfs:Range              xsd:double ;
-                    rdfs:label              "Dado para medir:  profundidade  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.109" ;
-                    bim:Ação                "Ação medir" ;
-                    bim:Definição           "Valor de profundidade de um objeto."@pt ;
-                    bim:Definición          "Valor de profundidad de un objeto."@es  .
+                    bim:Definição           "Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt ;
+                    bim:Definición          "Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es  .
 
 
 bim:p.medir   rdf:type  owl:ObjectProperty ;
@@ -23099,7 +23152,7 @@ bim:é.comprimento   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.comprimento" ;
-                    bim:Chave               "medi.122" ;
+                    bim:Chave               "medi.123" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de comprimento de um objeto."@pt ;
                     bim:Definición          "Valor de longitud de un objeto."@es  .
@@ -23113,7 +23166,7 @@ bim:comprimento   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  comprimento  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.122" ;
+                    bim:Chave               "medi.123" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de comprimento de um objeto."@pt ;
                     bim:Definición          "Valor de longitud de un objeto."@es  .
@@ -23128,7 +23181,7 @@ bim:é.comprimento.interno   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a medir: é.comprimento.interno" ;
-                    bim:Chave               "medi.123" ;
+                    bim:Chave               "medi.124" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de comprimento interior de algúm compartimento."@pt ;
                     bim:Definición          "Valor de longitud interna de algún compartimento."@es  .
@@ -23142,10 +23195,97 @@ bim:comprimento.interno   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.medir ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para medir:  comprimento.interno  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "medi.123" ;
+                    bim:Chave               "medi.124" ;
                     bim:Ação                "Ação medir" ;
                     bim:Definição           "Valor de comprimento interior de algúm compartimento."@pt ;
                     bim:Definición          "Valor de longitud interna de algún compartimento."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.largura   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.largura" ;
+                    bim:Chave               "medi.136" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de largura de um objeto."@pt ;
+                    bim:Definición          "El valor de ancho de un objeto."@es  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:largura   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  largura  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.136" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de largura de um objeto."@pt ;
+                    bim:Definición          "El valor de ancho de un objeto."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.largura.interna   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.largura.interna" ;
+                    bim:Chave               "medi.138" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de largura interior de algúm compartimento."@pt ;
+                    bim:Definición          "El valor de ancho interno de algún compartimento."@es  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:largura.interna   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  largura.interna  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.138" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de largura interior de algúm compartimento."@pt ;
+                    bim:Definición          "El valor de ancho interno de algún compartimento."@es  .
+
+
+bim:p.medir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.profundidade   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.medir ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a medir: é.profundidade" ;
+                    bim:Chave               "medi.141" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de profundidade de um objeto."@pt ;
+                    bim:Definición          "Valor de profundidad de un objeto."@es  .
+
+
+bim:d.medir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:profundidade   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.medir ;
+                    rdfs:Range              xsd:double ;
+                    rdfs:label              "Dado para medir:  profundidade  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "medi.141" ;
+                    bim:Ação                "Ação medir" ;
+                    bim:Definição           "Valor de profundidade de um objeto."@pt ;
+                    bim:Definición          "Valor de profundidad de un objeto."@es  .
 
 
 bim:p.navegar   rdf:type  owl:ObjectProperty ;
@@ -23507,7 +23647,7 @@ bim:é.preço.ofertado   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a orçamentar: é.preço.ofertado" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es ;
@@ -23522,7 +23662,7 @@ bim:preço.ofertado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.orçamentar ;
                     rdfs:Range              xsd:double ;
                     rdfs:label              "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "orça.126" ;
+                    bim:Chave               "orça.132" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es  .
@@ -24622,6 +24762,70 @@ bim:no.prumo   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "El elemento que está a plomo es vertical. Las coordenadas XY de sus extremos deben ser iguales."@es  .
 
 
+bim:p.posicionar    rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.abaixo.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.posicionar  ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a posicionar : é.abaixo.de" ;
+                    bim:Chave               "posi.120" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado abaixo de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente debajo de otro objeto."@es ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty ;
+                    owl:inverseOf           bim:é.acima.de  .
+
+
+bim:d.posicionar    rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:abaixo.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.posicionar  ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para posicionar :  abaixo.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "posi.120" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado abaixo de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente debajo de otro objeto."@es  .
+
+
+bim:p.posicionar    rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.acima.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.posicionar  ;
+                    rdfs:Domain             bim:BIM ;
+                    rdfs:Range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a posicionar : é.acima.de" ;
+                    bim:Chave               "posi.121" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado acima de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente sobre otro objeto."@es ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty ;
+                    owl:inverseOf           bim:é.abaixo.de  .
+
+
+bim:d.posicionar    rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:acima.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.posicionar  ;
+                    rdfs:Range              xsd:string ;
+                    rdfs:label              "Dado para posicionar :  acima.de  Deve ser formatado como (xsd:string)" ;
+                    bim:Chave               "posi.121" ;
+                    bim:Ação                "Ação posicionar " ;
+                    bim:Definição           "Elemento espacialmente posicionado acima de outro objeto."@pt ;
+                    bim:Definición          "Un elemento colocado espacialmente sobre otro objeto."@es  .
+
+
 bim:p.prever    rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -25109,7 +25313,7 @@ bim:é.agrupador.de   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a relacionar: é.agrupador.de" ;
-                    bim:Chave               "rela.103" ;
+                    bim:Chave               "rela.102" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt ;
                     bim:Definición          "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
@@ -25123,7 +25327,7 @@ bim:agrupador.de   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.relacionar ;
                     rdfs:Range              xsd:string ;
                     rdfs:label              "Dado para relacionar:  agrupador.de  Deve ser formatado como (xsd:string)" ;
-                    bim:Chave               "rela.103" ;
+                    bim:Chave               "rela.102" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt ;
                     bim:Definición          "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
@@ -25138,7 +25342,7 @@ bim:é.agrupado.com   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a relacionar: é.agrupado.com" ;
-                    bim:Chave               "rela.104" ;
+                    bim:Chave               "rela.103" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
                     bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
@@ -25152,7 +25356,7 @@ bim:agrupado.com   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.relacionar ;
                     rdfs:Range              xsd:string ;
                     rdfs:label              "Dado para relacionar:  agrupado.com  Deve ser formatado como (xsd:string)" ;
-                    bim:Chave               "rela.104" ;
+                    bim:Chave               "rela.103" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
                     bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
@@ -25167,7 +25371,7 @@ bim:é.pertencente.a   rdf:type  owl:ObjectProperty ;
                     rdfs:Domain             bim:BIM ;
                     rdfs:Range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a relacionar: é.pertencente.a" ;
-                    bim:Chave               "rela.106" ;
+                    bim:Chave               "rela.105" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "O elemento pertence a um outro."@pt ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
@@ -25181,7 +25385,7 @@ bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.relacionar ;
                     rdfs:Range              xsd:string ;
                     rdfs:label              "Dado para relacionar:  pertencente.a  Deve ser formatado como (xsd:string)" ;
-                    bim:Chave               "rela.106" ;
+                    bim:Chave               "rela.105" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "O elemento pertence a um outro."@pt ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
@@ -25496,5 +25700,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 26/09/2025 19:25:22
+##  Criada em 07/10/2025 10:53:22
 #################################################################
