@@ -10,12 +10,13 @@
 #### Árvore de Classes  Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="1045" height="4868" alt="Metal" src="https://github.com/user-attachments/assets/070eb486-f080-49ee-bc9f-e447decfa956" />
+<img width="1057" height="4952" alt="Metal" src="https://github.com/user-attachments/assets/e714d3aa-2904-4fad-80b7-b0d7eb9f4b3b" />
 
 #### Árvore de Classes  Definidas por declarações axiomáticas e Inferidas com participação do Reasoner ELK  (Clique na imagem para ampliar)
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="1693" height="5099" alt="MetalI" src="https://github.com/user-attachments/assets/0392abf3-3d32-4939-89a2-bb730e606db2" />
+<img width="1717" height="4845" alt="MetalI" src="https://github.com/user-attachments/assets/7dfb4961-60f6-4b2e-90ac-2579a208461a" />
+
 
 
 
