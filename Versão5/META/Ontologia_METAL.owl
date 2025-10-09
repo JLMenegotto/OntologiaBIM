@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 09/10/2025 8:02:21"@pt
+  Annotations: rdfs:label "DataHora: 09/10/2025 10:37:45"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -77,13 +77,13 @@ AnnotationProperty: bim:Parâmetro
 
 Class: bim:Projeto
 	SubClassOf: bim:BIM
-	EquivalentTo:  bim:é.nome some bim:Projeto
+	EquivalentTo:  bim:é.nomeado some bim:Projeto
 
 
 Class: bim:Materialidade
 	Annotations: rdfs:label "Materialidade"@pt
 	SubClassOf: bim:Projeto
-	EquivalentTo:  bim:é.nome some bim:Materialidade
+	EquivalentTo:  bim:é.nomeado some bim:Materialidade
 
 
 Class: bim:Da.Estrutura
@@ -129,6 +129,91 @@ Class: bim:Estrutural
 	SubClassOf: bim:Projeto
 
 
+Class: bim:Armaduras
+	Annotations: rdfs:label "Armaduras"@pt
+	SubClassOf: bim:Estrutural
+
+
+Class: bim:Vergalhões
+	Annotations: rdfs:label "Vergalhões"@pt
+	SubClassOf: bim:Armaduras
+
+
+Class: bim:Vergalhão
+	Annotations: rdfs:label "Vergalhão"@pt
+	Annotations: bim:Definição "Vergalhão para concreto armado."@pt
+	Annotations: bim:Definición "Barras de refuerzo para hormigón armado."@es
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Armaduras"@pt
+	Annotations: bim:Tema "Vergalhões"@pt
+	Annotations: bim:Disciplina "Estrutura"@pt
+	Annotations: bim:Chave "k.arverg.4"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Vergalhões
+
+
+Class: bim:Vergalhão.Liso
+	Annotations: rdfs:label "Vergalhão Liso"@pt
+	Annotations: bim:Definição "Vergalhão liso para concreto armado. Geralmente usado quando a aderência não é uma preocupação primordial, como em lajes e pisos. Pode ser em Aço CA-25."@pt
+	Annotations: bim:Definición "Barras de refuerzo lisas para hormigón armado. Generalmente se usa cuando la adhesión no es una preocupación principal, como en losas y pisos. Puede ser de acero CA-25."@es
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Armaduras"@pt
+	Annotations: bim:Tema "Vergalhões"@pt
+	Annotations: bim:Disciplina "Estrutura"@pt
+	Annotations: bim:Chave "k.arverg.5"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Vergalhões
+
+
+Class: bim:Vergalhão.Nervurado
+	Annotations: rdfs:label "Vergalhão Nervurado"@pt
+	Annotations: bim:Definição "Vergalhão nervurado para concreto armado. Apresentam saliências ao longo de sua superfície, com aderência superior ao concreto. Usados em elementos estruturais sujeitos a cargas elevadas, como vigas e pilares. Podem ser produzidos em Aço CA-50, CA-60 e CA-70."@pt
+	Annotations: bim:Definición "Barras de refuerzo nervadas para hormigón armado. Tienen protuberancias a lo largo de su superficie, con una adhesión superior al hormigón. Se utiliza en elementos estructurales sometidos a altas cargas, como vigas y pilares. Se pueden producir en acero CA-50, CA-60 y CA-70."@es
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Armaduras"@pt
+	Annotations: bim:Tema "Vergalhões"@pt
+	Annotations: bim:Disciplina "Estrutura"@pt
+	Annotations: bim:Chave "k.arverg.6"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Vergalhões
+
+
+Class: bim:Vergalhão.GG70
+	Annotations: rdfs:label "Vergalhão GG70"@pt
+	Annotations: bim:Definição "Vergalhão produzido pela Gerdau. O GG 70 se destaca como uma solução de alta performance que redefine os padrões estruturais, oferecendo mais resistência, produtividade e racionalização de recursos. É produzido em Aço CA-70."@pt
+	Annotations: bim:Definición "Barras de refuerzo producidas por Gerdau. El GG 70 se destaca como una solución de alto rendimiento que redefine los estándares estructurales, ofreciendo más resistencia, productividad y racionalización de recursos. Está fabricado en acero CA-70."@es
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Armaduras"@pt
+	Annotations: bim:Tema "Vergalhões"@pt
+	Annotations: bim:Disciplina "Estrutura"@pt
+	Annotations: bim:Chave "k.arverg.7"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Vergalhões
+
+
+Class: bim:Estribos
+	Annotations: rdfs:label "Estribos"@pt
+	SubClassOf: bim:Armaduras
+
+
+Class: bim:Estribo
+	Annotations: rdfs:label "Estribo"@pt
+	Annotations: bim:Definição "Barra nervurada para estribos e armaduras primárias de concreto armado."@pt
+	Annotations: bim:Definición "Barra nervada para estribos y refuerzo primario de hormigón armado."@es
+	Annotations: bim:Natureza "Estrutural"@pt
+	Annotations: bim:Espécie "Armaduras"@pt
+	Annotations: bim:Tema "Estribos"@pt
+	Annotations: bim:Disciplina "Estrutura"@pt
+	Annotations: bim:Chave "k.arestr.8"
+	Annotations: bim:CatRevit "OST_Rebar"
+	Annotations: bim:ClasseIfc "IfcReinforcingBar"
+	SubClassOf: bim:Estribos
+
+
 Class: bim:Sustentação
 	Annotations: rdfs:label "Sustentação"@pt
 	SubClassOf: bim:Estrutural
@@ -148,7 +233,7 @@ Class: bim:Coluna.Viga.Soldada
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Soldados"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.susold.4"
+	Annotations: bim:Chave "k.susold.9"
 	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
 	SubClassOf: bim:Soldados
@@ -162,7 +247,7 @@ Class: bim:Coluna.Soldada
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Soldados"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.susold.5"
+	Annotations: bim:Chave "k.susold.10"
 	Annotations: bim:CatRevit "OST_StructuralColumns"
 	Annotations: bim:ClasseIfc "IfcColumn"
 	SubClassOf: bim:Soldados
@@ -176,7 +261,7 @@ Class: bim:Viga.Soldada
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Soldados"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.susold.6"
+	Annotations: bim:Chave "k.susold.11"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Soldados
@@ -196,7 +281,7 @@ Class: bim:Perfil.Laminado.I
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Laminados"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sulami.7"
+	Annotations: bim:Chave "k.sulami.12"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Laminados
@@ -210,7 +295,7 @@ Class: bim:Perfil.Laminado.HP
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Laminados"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sulami.8"
+	Annotations: bim:Chave "k.sulami.13"
 	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
 	SubClassOf: bim:Laminados
@@ -224,7 +309,7 @@ Class: bim:Perfil.Laminado.W
 	Annotations: bim:Espécie "Sustentação"@pt
 	Annotations: bim:Tema "Laminados"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sulami.9"
+	Annotations: bim:Chave "k.sulami.14"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Laminados
@@ -249,7 +334,7 @@ Class: bim:Cantoneira
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis L"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.10"
+	Annotations: bim:Chave "k.peperf.15"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.L
@@ -263,7 +348,7 @@ Class: bim:Cantoneira.Abas.Desiguais
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis L"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.11"
+	Annotations: bim:Chave "k.peperf.16"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.L
@@ -282,7 +367,7 @@ Class: bim:Perfil.Sigma
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis S"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.12"
+	Annotations: bim:Chave "k.peperf.17"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.S
@@ -301,7 +386,7 @@ Class: bim:Perfil.T
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis T"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.13"
+	Annotations: bim:Chave "k.peperf.18"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.T
@@ -320,7 +405,7 @@ Class: bim:Perfil.U
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis U"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.14"
+	Annotations: bim:Chave "k.peperf.19"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.U
@@ -334,7 +419,7 @@ Class: bim:Perfil.UE
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis U"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.15"
+	Annotations: bim:Chave "k.peperf.20"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.U
@@ -353,7 +438,7 @@ Class: bim:Perfil.Z
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis Z"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.16"
+	Annotations: bim:Chave "k.peperf.21"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.Z
@@ -372,7 +457,7 @@ Class: bim:Seção.Circular
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis Tubulares"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.17"
+	Annotations: bim:Chave "k.peperf.22"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.Tubulares
@@ -386,7 +471,7 @@ Class: bim:Seção.Quadrada
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis Tubulares"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.18"
+	Annotations: bim:Chave "k.peperf.23"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.Tubulares
@@ -400,7 +485,7 @@ Class: bim:Seção.Retangular
 	Annotations: bim:Espécie "Perfis LSTUZ"@pt
 	Annotations: bim:Tema "Perfis Tubulares"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.peperf.19"
+	Annotations: bim:Chave "k.peperf.24"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Perfis.Tubulares
@@ -424,7 +509,7 @@ Class: bim:Placa.de.Base
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.20"
+	Annotations: bim:Chave "k.emplac.25"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -438,7 +523,7 @@ Class: bim:Placa.Enrijecedora
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.21"
+	Annotations: bim:Chave "k.emplac.26"
 	Annotations: bim:CatRevit "OST_StructuralStiffener"
 	Annotations: bim:ClasseIfc "IfcMemberSTIFFENING_RIB"
 	SubClassOf: bim:Placas
@@ -452,7 +537,7 @@ Class: bim:Placa.de.Interface
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.22"
+	Annotations: bim:Chave "k.emplac.27"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -466,7 +551,7 @@ Class: bim:Placa.de.Emenda
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.23"
+	Annotations: bim:Chave "k.emplac.28"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -480,7 +565,7 @@ Class: bim:Placa.de.Fechamento
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.24"
+	Annotations: bim:Chave "k.emplac.29"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -494,7 +579,7 @@ Class: bim:Placa.de.Mísula
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.25"
+	Annotations: bim:Chave "k.emplac.30"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -509,7 +594,7 @@ Class: bim:Placa.de.Cumeeira
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.26"
+	Annotations: bim:Chave "k.emplac.31"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -524,7 +609,7 @@ Class: bim:Placa.Gusset
 	Annotations: bim:Espécie "Emplacados"@pt
 	Annotations: bim:Tema "Placas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.emplac.27"
+	Annotations: bim:Chave "k.emplac.32"
 	Annotations: bim:CatRevit "OST_StructConnectionPlates"
 	Annotations: bim:ClasseIfc "IfcMemberPLATE"
 	SubClassOf: bim:Placas
@@ -549,7 +634,7 @@ Class: bim:SteelDeck.Trapezoidal
 	Annotations: bim:Espécie "Chapas"@pt
 	Annotations: bim:Tema "SteelDecks"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.chstee.28"
+	Annotations: bim:Chave "k.chstee.33"
 	Annotations: bim:CatRevit "OST_Floors"
 	Annotations: bim:ClasseIfc "IfcSlab"
 	SubClassOf: bim:SteelDecks
@@ -573,7 +658,7 @@ Class: bim:Barra.Redonda
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Laminadas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.29"
+	Annotations: bim:Chave "k.babarr.34"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Laminadas
@@ -587,7 +672,7 @@ Class: bim:Barra.Quadrada
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Laminadas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.30"
+	Annotations: bim:Chave "k.babarr.35"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Laminadas
@@ -601,7 +686,7 @@ Class: bim:Barra.Hexagonal
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Laminadas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.31"
+	Annotations: bim:Chave "k.babarr.36"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Laminadas
@@ -615,7 +700,7 @@ Class: bim:Barra.Chata
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Laminadas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.32"
+	Annotations: bim:Chave "k.babarr.37"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Laminadas
@@ -634,7 +719,7 @@ Class: bim:Barra.Trefilada.Redonda
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Trefiladas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.33"
+	Annotations: bim:Chave "k.babarr.38"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Trefiladas
@@ -648,7 +733,7 @@ Class: bim:Barra.Trefilada.Quadrada
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Trefiladas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.34"
+	Annotations: bim:Chave "k.babarr.39"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Trefiladas
@@ -662,7 +747,7 @@ Class: bim:Barra.Trefilada.Hexagonal
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Trefiladas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.35"
+	Annotations: bim:Chave "k.babarr.40"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Barras.Trefiladas
@@ -681,7 +766,7 @@ Class: bim:Barra.Contraventamento
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Contraventamentos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.36"
+	Annotations: bim:Chave "k.babarr.41"
 	Annotations: bim:CatRevit "OST_HorizontalBracing , OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Barras.Contraventamentos
@@ -696,7 +781,7 @@ Class: bim:Barra.Comprimida
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Contraventamentos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.37"
+	Annotations: bim:Chave "k.babarr.42"
 	Annotations: bim:CatRevit "OST_HorizontalBracing , OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Barras.Contraventamentos
@@ -711,7 +796,7 @@ Class: bim:Barra.Tracionada
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Contraventamentos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.38"
+	Annotations: bim:Chave "k.babarr.43"
 	Annotations: bim:CatRevit "OST_HorizontalBracing , OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Barras.Contraventamentos
@@ -732,7 +817,7 @@ Class: bim:Barra.Montante
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Montantes"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.39"
+	Annotations: bim:Chave "k.babarr.44"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcMemberMULLION"
 	SubClassOf: bim:Barras.Montantes
@@ -753,7 +838,7 @@ Class: bim:Barra.Diagonal
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Barras Diagonais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babarr.40"
+	Annotations: bim:Chave "k.babarr.45"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Barras.Diagonais
@@ -774,7 +859,7 @@ Class: bim:Banzo.Superior
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Banzos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babanz.41"
+	Annotations: bim:Chave "k.babanz.46"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcMemberCHORD"
 	SubClassOf: bim:Banzos
@@ -789,77 +874,11 @@ Class: bim:Banzo.Inferior
 	Annotations: bim:Espécie "Barras"@pt
 	Annotations: bim:Tema "Banzos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.babanz.42"
+	Annotations: bim:Chave "k.babanz.47"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcMemberCHORD"
 	SubClassOf: bim:Banzos
 	EquivalentTo:  bim:é.banzo.inferior.de some bim:Treliçados
-
-
-Class: bim:Armaduras
-	Annotations: rdfs:label "Armaduras"@pt
-	SubClassOf: bim:Estrutural
-
-
-Class: bim:Vergalhões
-	Annotations: rdfs:label "Vergalhões"@pt
-	SubClassOf: bim:Armaduras
-
-
-Class: bim:Vergalhão
-	Annotations: rdfs:label "Vergalhão"@pt
-	Annotations: bim:Definição "Barra para vergalhões de concreto armado."@pt
-	Annotations: bim:Definición "Barra de refuerzo de hormigón armado."@es
-	Annotations: bim:Natureza "Estrutural"@pt
-	Annotations: bim:Espécie "Armaduras"@pt
-	Annotations: bim:Tema "Vergalhões"@pt
-	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.arverg.43"
-	Annotations: bim:CatRevit "OST_Rebar"
-	Annotations: bim:ClasseIfc "IfcReinforcingBar"
-	SubClassOf: bim:Vergalhões
-
-
-Class: bim:Vergalhão.Liso
-	Annotations: rdfs:label "Vergalhão Liso"@pt
-	Annotations: bim:Definição "Barra lisa para estribos e armaduras secundárias de concreto armado."@pt
-	Annotations: bim:Definición "Barra lisa para estribos y armadura secundaria de hormigón armado."@es
-	Annotations: bim:Natureza "Estrutural"@pt
-	Annotations: bim:Espécie "Armaduras"@pt
-	Annotations: bim:Tema "Vergalhões"@pt
-	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.arverg.44"
-	Annotations: bim:CatRevit "OST_Rebar"
-	Annotations: bim:ClasseIfc "IfcReinforcingBar"
-	SubClassOf: bim:Vergalhões
-
-
-Class: bim:Vergalhão.Nervurado
-	Annotations: rdfs:label "Vergalhão Nervurado"@pt
-	Annotations: bim:Definição "Barra nervurada para estribos e armaduras primárias de concreto armado."@pt
-	Annotations: bim:Definición "Barra nervada para estribos y armadura primaria de hormigón armado."@es
-	Annotations: bim:Natureza "Estrutural"@pt
-	Annotations: bim:Espécie "Armaduras"@pt
-	Annotations: bim:Tema "Vergalhões"@pt
-	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.arverg.45"
-	Annotations: bim:CatRevit "OST_Rebar"
-	Annotations: bim:ClasseIfc "IfcReinforcingBar"
-	SubClassOf: bim:Vergalhões
-
-
-Class: bim:Estribo
-	Annotations: rdfs:label "Estribo"@pt
-	Annotations: bim:Definição "Barra nervurada para estribos e armaduras primárias de concreto armado."@pt
-	Annotations: bim:Definición "Barra nervada para estribos y armadura primaria de hormigón armado."@es
-	Annotations: bim:Natureza "Estrutural"@pt
-	Annotations: bim:Espécie "Armaduras"@pt
-	Annotations: bim:Tema "Vergalhões"@pt
-	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.arverg.46"
-	Annotations: bim:CatRevit "OST_Rebar"
-	Annotations: bim:ClasseIfc "IfcReinforcingBar"
-	SubClassOf: bim:Vergalhões
 
 
 Class: bim:ContraVentamentos
@@ -880,7 +899,7 @@ Class: bim:ContraVentamento.Horizontal.Diagonal
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Horizontais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.47"
+	Annotations: bim:Chave "k.cocont.48"
 	Annotations: bim:CatRevit "OST_HorizontalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Horizontais
@@ -894,7 +913,7 @@ Class: bim:ContraVentamento.Horizontal.X
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Horizontais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.48"
+	Annotations: bim:Chave "k.cocont.49"
 	Annotations: bim:CatRevit "OST_HorizontalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Horizontais
@@ -908,7 +927,7 @@ Class: bim:ContraVentamento.Horizontal.K
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Horizontais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.49"
+	Annotations: bim:Chave "k.cocont.50"
 	Annotations: bim:CatRevit "OST_HorizontalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Horizontais
@@ -922,7 +941,7 @@ Class: bim:ContraVentamento.Horizontal.V
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Horizontais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.50"
+	Annotations: bim:Chave "k.cocont.51"
 	Annotations: bim:CatRevit "OST_HorizontalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Horizontais
@@ -936,7 +955,7 @@ Class: bim:ContraVentamento.Horizontal.VI
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Horizontais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.51"
+	Annotations: bim:Chave "k.cocont.52"
 	Annotations: bim:CatRevit "OST_HorizontalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Horizontais
@@ -950,7 +969,7 @@ Class: bim:ContraVentamento.Horizontal.Delta
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Horizontais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.52"
+	Annotations: bim:Chave "k.cocont.53"
 	Annotations: bim:CatRevit "OST_HorizontalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Horizontais
@@ -969,7 +988,7 @@ Class: bim:ContraVentamento.Vertical
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Verticais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.53"
+	Annotations: bim:Chave "k.cocont.54"
 	Annotations: bim:CatRevit "OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Verticais
@@ -983,7 +1002,7 @@ Class: bim:ContraVentamento.Vertical.X
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Verticais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.54"
+	Annotations: bim:Chave "k.cocont.55"
 	Annotations: bim:CatRevit "OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Verticais
@@ -997,7 +1016,7 @@ Class: bim:ContraVentamento.Vertical.K
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Verticais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.55"
+	Annotations: bim:Chave "k.cocont.56"
 	Annotations: bim:CatRevit "OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Verticais
@@ -1011,7 +1030,7 @@ Class: bim:ContraVentamento.Vertical.V
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Verticais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.56"
+	Annotations: bim:Chave "k.cocont.57"
 	Annotations: bim:CatRevit "OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Verticais
@@ -1025,7 +1044,7 @@ Class: bim:ContraVentamento.Vertical.VI
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Verticais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.57"
+	Annotations: bim:Chave "k.cocont.58"
 	Annotations: bim:CatRevit "OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Verticais
@@ -1039,7 +1058,7 @@ Class: bim:ContraVentamento.Vertical.Delta
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Verticais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.58"
+	Annotations: bim:Chave "k.cocont.59"
 	Annotations: bim:CatRevit "OST_VerticalBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Verticais
@@ -1058,7 +1077,7 @@ Class: bim:ContraVentamento.Cabo
 	Annotations: bim:Espécie "ContraVentamentos"@pt
 	Annotations: bim:Tema "ContraVentamentos Cabos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.cocont.59"
+	Annotations: bim:Chave "k.cocont.60"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:ContraVentamentos.Cabos
@@ -1082,7 +1101,7 @@ Class: bim:Treliça.Pratt
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.60"
+	Annotations: bim:Chave "k.trtrel.61"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1096,7 +1115,7 @@ Class: bim:Treliça.Howe
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.61"
+	Annotations: bim:Chave "k.trtrel.62"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1110,7 +1129,7 @@ Class: bim:Treliça.Warren
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.62"
+	Annotations: bim:Chave "k.trtrel.63"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1124,7 +1143,7 @@ Class: bim:Treliça.Fink
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.63"
+	Annotations: bim:Chave "k.trtrel.64"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1138,7 +1157,7 @@ Class: bim:Treliça.Vierendeel
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.64"
+	Annotations: bim:Chave "k.trtrel.65"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1152,7 +1171,7 @@ Class: bim:Tesoura
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.65"
+	Annotations: bim:Chave "k.trtrel.66"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1166,7 +1185,7 @@ Class: bim:Treliça.Ponte
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Planas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.66"
+	Annotations: bim:Chave "k.trtrel.67"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Planas
@@ -1185,7 +1204,7 @@ Class: bim:Treliça.Espacial.Reticulada
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Espaciais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.67"
+	Annotations: bim:Chave "k.trtrel.68"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Espaciais
@@ -1199,7 +1218,7 @@ Class: bim:Treliça.Espacial.Geodésica
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Espaciais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.68"
+	Annotations: bim:Chave "k.trtrel.69"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Espaciais
@@ -1213,7 +1232,7 @@ Class: bim:Treliça.Espacial.Arqueada
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Espaciais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.69"
+	Annotations: bim:Chave "k.trtrel.70"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Espaciais
@@ -1227,7 +1246,7 @@ Class: bim:Treliça.Espacial.Piramidal
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Espaciais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.70"
+	Annotations: bim:Chave "k.trtrel.71"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Espaciais
@@ -1241,7 +1260,7 @@ Class: bim:Treliça.Espacial.Octaédrica
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Espaciais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.71"
+	Annotations: bim:Chave "k.trtrel.72"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Espaciais
@@ -1255,7 +1274,7 @@ Class: bim:Treliça.Espacial.Híbrida
 	Annotations: bim:Espécie "Treliçados"@pt
 	Annotations: bim:Tema "Treliças Espaciais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.trtrel.72"
+	Annotations: bim:Chave "k.trtrel.73"
 	Annotations: bim:CatRevit "OST_StructuralTruss"
 	Annotations: bim:ClasseIfc "IfcElementAssemblyTRUSS"
 	SubClassOf: bim:Treliças.Espaciais
@@ -1279,7 +1298,7 @@ Class: bim:Pórtico.Galpão
 	Annotations: bim:Espécie "Galpões"@pt
 	Annotations: bim:Tema "Pórticos de Galpões"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.gapórt.73"
+	Annotations: bim:Chave "k.gapórt.74"
 	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
 	SubClassOf: bim:Pórticos.de.Galpões
@@ -1293,7 +1312,7 @@ Class: bim:Pórtico.Galpão.e.Anexo
 	Annotations: bim:Espécie "Galpões"@pt
 	Annotations: bim:Tema "Pórticos de Galpões"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.gapórt.74"
+	Annotations: bim:Chave "k.gapórt.75"
 	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
 	SubClassOf: bim:Pórticos.de.Galpões
@@ -1307,7 +1326,7 @@ Class: bim:Pórtico.Galpão.Vãos.Múltiplos
 	Annotations: bim:Espécie "Galpões"@pt
 	Annotations: bim:Tema "Pórticos de Galpões"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.gapórt.75"
+	Annotations: bim:Chave "k.gapórt.76"
 	Annotations: bim:CatRevit "OST_StructuralColumns , OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcColumn , IfcBeam"
 	SubClassOf: bim:Pórticos.de.Galpões
@@ -1331,7 +1350,7 @@ Class: bim:Ancora.Estrutural
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Ancoras"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teanco.76"
+	Annotations: bim:Chave "k.teanco.77"
 	Annotations: bim:CatRevit "OST_StructConnectionAnchors"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Ancoras
@@ -1345,7 +1364,7 @@ Class: bim:Conector.Estrutural
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Ancoras"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teanco.77"
+	Annotations: bim:Chave "k.teanco.78"
 	Annotations: bim:CatRevit "OST_StructConnectionAnchors"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Ancoras
@@ -1359,7 +1378,7 @@ Class: bim:Ancoragem.de.Estai
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Ancoras"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teanco.78"
+	Annotations: bim:Chave "k.teanco.79"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonAnchor"
 	SubClassOf: bim:Ancoras
@@ -1373,7 +1392,7 @@ Class: bim:Ancoragem.Acoplador
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Ancoras"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teanco.79"
+	Annotations: bim:Chave "k.teanco.80"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonAnchorCOUPLER"
 	SubClassOf: bim:Ancoras
@@ -1387,7 +1406,7 @@ Class: bim:Ancoragem.Extremo.Fixo
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Ancoras"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teanco.80"
+	Annotations: bim:Chave "k.teanco.81"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonAnchorFIXED_END"
 	SubClassOf: bim:Ancoras
@@ -1401,7 +1420,7 @@ Class: bim:Ancoragem.Extremo.Tensionado
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Ancoras"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teanco.81"
+	Annotations: bim:Chave "k.teanco.82"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonAnchorTENSIONING_END"
 	SubClassOf: bim:Ancoras
@@ -1420,7 +1439,7 @@ Class: bim:Estai
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.82"
+	Annotations: bim:Chave "k.tetens.83"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendon"
 	SubClassOf: bim:Tensores
@@ -1434,7 +1453,7 @@ Class: bim:Tensor.Barra
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.83"
+	Annotations: bim:Chave "k.tetens.84"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonBAR"
 	SubClassOf: bim:Tensores
@@ -1448,7 +1467,7 @@ Class: bim:Tensor.Revestido
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.84"
+	Annotations: bim:Chave "k.tetens.85"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonCOATED"
 	SubClassOf: bim:Tensores
@@ -1462,7 +1481,7 @@ Class: bim:Tensor.Bainha
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.85"
+	Annotations: bim:Chave "k.tetens.86"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonConduit"
 	SubClassOf: bim:Tensores
@@ -1476,7 +1495,7 @@ Class: bim:Tensor.Bainha.Acoplador
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.86"
+	Annotations: bim:Chave "k.tetens.87"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonConduitCOUPLER"
 	SubClassOf: bim:Tensores
@@ -1490,7 +1509,7 @@ Class: bim:Tensor.Bainha.Diabolo
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.87"
+	Annotations: bim:Chave "k.tetens.88"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonConduitDIABOLO"
 	SubClassOf: bim:Tensores
@@ -1504,7 +1523,7 @@ Class: bim:Tensor.Bainha.Cabo
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.88"
+	Annotations: bim:Chave "k.tetens.89"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonConduitDUCT"
 	SubClassOf: bim:Tensores
@@ -1518,7 +1537,7 @@ Class: bim:Tensor.Injetor
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.89"
+	Annotations: bim:Chave "k.tetens.90"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonConduitGROUTING_DUCT"
 	SubClassOf: bim:Tensores
@@ -1532,7 +1551,7 @@ Class: bim:Tensor.Trombeta
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.90"
+	Annotations: bim:Chave "k.tetens.91"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonConduitTRUMPET"
 	SubClassOf: bim:Tensores
@@ -1546,7 +1565,7 @@ Class: bim:Tensor.Corda
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.91"
+	Annotations: bim:Chave "k.tetens.92"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonSTRAND"
 	SubClassOf: bim:Tensores
@@ -1560,7 +1579,7 @@ Class: bim:Tensor.Fio
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.92"
+	Annotations: bim:Chave "k.tetens.93"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendonWIRE"
 	SubClassOf: bim:Tensores
@@ -1574,7 +1593,7 @@ Class: bim:Mastro.Estrutural
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.93"
+	Annotations: bim:Chave "k.tetens.94"
 	Annotations: bim:CatRevit "OST_StructuralColumns"
 	Annotations: bim:ClasseIfc "IfcColumn"
 	SubClassOf: bim:Tensores
@@ -1588,7 +1607,7 @@ Class: bim:Membrana.Estrutural
 	Annotations: bim:Espécie "Tensionadas"@pt
 	Annotations: bim:Tema "Tensores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetens.94"
+	Annotations: bim:Chave "k.tetens.95"
 	Annotations: bim:CatRevit "OST_AreaRein"
 	Annotations: bim:ClasseIfc "IfcStructuralSurfaceMember"
 	SubClassOf: bim:Tensores
@@ -1617,7 +1636,7 @@ Class: bim:Terça.Cobertura
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Terças"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teterç.95"
+	Annotations: bim:Chave "k.teterç.96"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Terças
@@ -1631,7 +1650,7 @@ Class: bim:Terça.Fachada
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Terças"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teterç.96"
+	Annotations: bim:Chave "k.teterç.97"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Terças
@@ -1645,7 +1664,7 @@ Class: bim:Terça.Cartola
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Terças"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.teterç.97"
+	Annotations: bim:Chave "k.teterç.98"
 	Annotations: bim:CatRevit "OST_StructuralFraming"
 	Annotations: bim:ClasseIfc "IfcBeam"
 	SubClassOf: bim:Terças
@@ -1664,7 +1683,7 @@ Class: bim:Tirante.Beiral
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Tirantes"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetira.98"
+	Annotations: bim:Chave "k.tetira.99"
 	Annotations: bim:CatRevit "OST_KickerBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Tirantes
@@ -1678,7 +1697,7 @@ Class: bim:Tirante.Terça
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Tirantes"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetira.99"
+	Annotations: bim:Chave "k.tetira.100"
 	Annotations: bim:CatRevit "OST_KickerBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Tirantes
@@ -1692,7 +1711,7 @@ Class: bim:Tirante.Cumeeira
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Tirantes"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tetira.100"
+	Annotations: bim:Chave "k.tetira.101"
 	Annotations: bim:CatRevit "OST_KickerBracing"
 	Annotations: bim:ClasseIfc "IfcMemberBRACE"
 	SubClassOf: bim:Tirantes
@@ -1711,7 +1730,7 @@ Class: bim:Frechal.Alinhamento
 	Annotations: bim:Espécie "Terças de Suporte"@pt
 	Annotations: bim:Tema "Frechais"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.tefrec.101"
+	Annotations: bim:Chave "k.tefrec.102"
 	Annotations: bim:CatRevit "OST_StructuralTendons"
 	Annotations: bim:ClasseIfc "IfcTendon"
 	SubClassOf: bim:Frechais
@@ -1740,7 +1759,7 @@ Class: bim:Painel.Sanduíche.Fachada
 	Annotations: bim:Espécie "Sistemas Sanduíches"@pt
 	Annotations: bim:Tema "Paineis Sanduíches"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sipain.102"
+	Annotations: bim:Chave "k.sipain.103"
 	Annotations: bim:CatRevit "OST_Walls , OST_CurtainWallPanels"
 	Annotations: bim:ClasseIfc "IfcWall"
 	SubClassOf: bim:Paineis.Sanduíches
@@ -1754,7 +1773,7 @@ Class: bim:Painel.Sanduíche.Térmico
 	Annotations: bim:Espécie "Sistemas Sanduíches"@pt
 	Annotations: bim:Tema "Paineis Sanduíches"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sipain.103"
+	Annotations: bim:Chave "k.sipain.104"
 	Annotations: bim:CatRevit "OST_Walls , OST_CurtainWallPanels"
 	Annotations: bim:ClasseIfc "IfcWall"
 	SubClassOf: bim:Paineis.Sanduíches
@@ -1773,7 +1792,7 @@ Class: bim:Telha.Sanduíche.Zipada
 	Annotations: bim:Espécie "Sistemas Sanduíches"@pt
 	Annotations: bim:Tema "Telhas Sanduíches"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.104"
+	Annotations: bim:Chave "k.sitelh.105"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Sanduíches
@@ -1787,7 +1806,7 @@ Class: bim:Telha.Sanduíche.Ondulada
 	Annotations: bim:Espécie "Sistemas Sanduíches"@pt
 	Annotations: bim:Tema "Telhas Sanduíches"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.105"
+	Annotations: bim:Chave "k.sitelh.106"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Sanduíches
@@ -1801,7 +1820,7 @@ Class: bim:Telha.Sanduíche.Trapezoidal
 	Annotations: bim:Espécie "Sistemas Sanduíches"@pt
 	Annotations: bim:Tema "Telhas Sanduíches"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.106"
+	Annotations: bim:Chave "k.sitelh.107"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Sanduíches
@@ -1815,7 +1834,7 @@ Class: bim:Telha.Sanduíche.Solar
 	Annotations: bim:Espécie "Sistemas Sanduíches"@pt
 	Annotations: bim:Tema "Telhas Sanduíches"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.107"
+	Annotations: bim:Chave "k.sitelh.108"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Sanduíches
@@ -1839,7 +1858,7 @@ Class: bim:Telha.Trapezoidal
 	Annotations: bim:Espécie "Sistemas Perfilados"@pt
 	Annotations: bim:Tema "Telhas Perfiladas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.108"
+	Annotations: bim:Chave "k.sitelh.109"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Perfiladas
@@ -1853,7 +1872,7 @@ Class: bim:Telha.Ondulada
 	Annotations: bim:Espécie "Sistemas Perfilados"@pt
 	Annotations: bim:Tema "Telhas Perfiladas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.109"
+	Annotations: bim:Chave "k.sitelh.110"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Perfiladas
@@ -1867,7 +1886,7 @@ Class: bim:Telha.Zipada
 	Annotations: bim:Espécie "Sistemas Perfilados"@pt
 	Annotations: bim:Tema "Telhas Perfiladas"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.sitelh.110"
+	Annotations: bim:Chave "k.sitelh.111"
 	Annotations: bim:CatRevit "OST_Roofs"
 	Annotations: bim:ClasseIfc "IfcRoof"
 	SubClassOf: bim:Telhas.Perfiladas
@@ -1896,7 +1915,7 @@ Class: bim:Chumbador.Interno
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Chumbadores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fichum.111"
+	Annotations: bim:Chave "k.fichum.112"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerANCHORBOLT"
 	SubClassOf: bim:Chumbadores
@@ -1910,7 +1929,7 @@ Class: bim:Chumbador.Externo
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Chumbadores"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fichum.112"
+	Annotations: bim:Chave "k.fichum.113"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerANCHORBOLT"
 	SubClassOf: bim:Chumbadores
@@ -1929,7 +1948,7 @@ Class: bim:Parafuso.DIN
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Parafusos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fipara.113"
+	Annotations: bim:Chave "k.fipara.114"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Parafusos
@@ -1943,7 +1962,7 @@ Class: bim:Parafuso.ASTM
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Parafusos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fipara.114"
+	Annotations: bim:Chave "k.fipara.115"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Parafusos
@@ -1957,7 +1976,7 @@ Class: bim:Parafuso.Drywall
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Parafusos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fipara.115"
+	Annotations: bim:Chave "k.fipara.116"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Parafusos
@@ -1971,7 +1990,7 @@ Class: bim:Parafuso.Brocante
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Parafusos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fipara.116"
+	Annotations: bim:Chave "k.fipara.117"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Parafusos
@@ -1985,7 +2004,7 @@ Class: bim:Parafuso.Auto.Atarraxante
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Parafusos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fipara.117"
+	Annotations: bim:Chave "k.fipara.118"
 	Annotations: bim:CatRevit "OST_StructConnectionBolts"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Parafusos
@@ -2004,7 +2023,7 @@ Class: bim:Pino.de.Cisalhamento
 	Annotations: bim:Espécie "Fixações"@pt
 	Annotations: bim:Tema "Pinos"@pt
 	Annotations: bim:Disciplina "Estrutura"@pt
-	Annotations: bim:Chave "k.fipino.118"
+	Annotations: bim:Chave "k.fipino.119"
 	Annotations: bim:CatRevit "OST_StructConnectionShearStuds"
 	Annotations: bim:ClasseIfc "IfcMechanicalFastenerBOLT"
 	SubClassOf: bim:Pinos
@@ -4985,6 +5004,36 @@ DataProperty: bim:nome
 	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
 
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.nomeado
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.nomeado"@pt
+	Annotations: bim:Chave "iden.104"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Characteristics: Functional
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:nomeado
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  nomeado  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "iden.104"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+
 ObjectProperty: bim:p.iluminar
 	SubPropertyOf: bim:BIMProp
 
@@ -7882,5 +7931,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 09/10/2025 8:02:23
+##  Criada em 09/10/2025 10:37:48
 #################################################################
