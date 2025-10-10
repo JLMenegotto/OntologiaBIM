@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 10/10/2025 8:34:11"@pt
+  Annotations: rdfs:label "DataHora: 10/10/2025 8:43:43"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -2154,6 +2154,14 @@ Individual: bim:A588-A
 	Facts: bim:resistência.à.tração  485
 	Facts: bim:descrição  "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica"
 
+Individual: bim:A242
+	Types: bim:Aço.Estrutural
+	SameAs:    bim:Corten-A
+	Facts: bim:limite.de.escoamento  345
+	Facts: bim:resistência.à.tração  480
+	Facts: bim:descrição  "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica"
+	Facts: bim:usado.em  "Em aplicação arquitetônica não estrutural como revestimentos de fachada, por exemplo."
+
 Individual: bim:A36
 	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  250
@@ -2171,12 +2179,6 @@ Individual: bim:A572-60
 	Facts: bim:limite.de.escoamento  415
 	Facts: bim:resistência.à.tração  520
 	Facts: bim:descrição  "Liga de aço estrutural de alta resistência e baixa liga"
-
-Individual: bim:A242
-	Types: bim:Aço.Estrutural
-	Facts: bim:limite.de.escoamento  345
-	Facts: bim:resistência.à.tração  480
-	Facts: bim:descrição  "Liga de aço patinável Corten A para aplicação arquitetônica não estrutural"
 
 Individual: bim:WS350-Gerdau
 	Types: bim:Aço.Estrutural
@@ -7768,6 +7770,35 @@ DataProperty: bim:pertencente.a
 	Annotations: bim:Definição "O elemento pertence a um outro."@pt
 	Annotations: bim:Definición "El elemento pertenece a otro."@es
 
+ObjectProperty: bim:p.relacionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.usado.em
+	SubPropertyOf: bim:p.relacionar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.usado.em"@pt
+	Annotations: bim:Chave "rela.107"
+	Annotations: bim:Ação "Ação relacionar"@pt
+	Annotations: bim:Definição "Se um elemento é usado em alguna aplicação ou elemento."@pt
+	Annotations: bim:Definición "Si un elemento es usado en alguna aplicación o elemento."@es
+
+DataProperty: bim:d.relacionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:usado.em
+	SubPropertyOf: bim:d.relacionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para relacionar:  usado.em  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "rela.107"
+	Annotations: bim:Ação "Ação relacionar"@pt
+	Annotations: bim:Definição "Se um elemento é usado em alguna aplicação ou elemento."@pt
+	Annotations: bim:Definición "Si un elemento es usado en alguna aplicación o elemento."@es
+
 ObjectProperty: bim:p.requisitar
 	SubPropertyOf: bim:BIMProp
 
@@ -8076,5 +8107,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 10/10/2025 8:34:12
+##  Criada em 10/10/2025 8:43:44
 #################################################################
