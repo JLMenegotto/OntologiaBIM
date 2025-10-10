@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Infraestrutura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt
-  Annotations: rdfs:label "DataHora: 10/10/2025 12:53:22"@pt
+  Annotations: rdfs:label "DataHora: 10/10/2025 13:08:32"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -109,7 +109,7 @@ Class: bim:Contêiner
 Class: bim:Fronteiras
 	Annotations: rdfs:label "Fronteiras"@pt
 	SubClassOf: bim:Projeto
-	EquivalentTo:  bim:é.nome some bim:Fronteiras
+	EquivalentTo:  bim:é.nomeada some bim:Fronteiras
 
 
 Class: bim:Geográficas
@@ -132,7 +132,6 @@ Class: bim:Continente
 	Annotations: bim:Disciplina "BIM.GIS"@pt
 	Annotations: bim:Chave "Key.Fro.3"
 	SubClassOf: bim:Naturais
-	EquivalentTo:  bim:é.nome some bim:Continente
 
 
 Class: bim:SubContinente
@@ -730,6 +729,7 @@ Class: bim:Vértice.de.Divisa
 Class: bim:Limites
 	Annotations: rdfs:label "Limites"@pt
 	SubClassOf: bim:Projeto
+	EquivalentTo:  bim:é.nomeado some bim:Limites
 
 
 Class: bim:Urbanísticos
@@ -1055,6 +1055,7 @@ Class: bim:Edícula
 Class: bim:Funcionais
 	Annotations: rdfs:label "Funcionais"@pt
 	SubClassOf: bim:Limites
+	EquivalentTo:  bim:é.nomeado some bim:Funcionais
 
 
 Class: bim:Organizativos
@@ -18428,12 +18429,72 @@ ObjectProperty: bim:p.identificar
 
 
 
+ObjectProperty: bim:é.codificada
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.codificada"@pt
+	Annotations: bim:Chave "iden.101"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica a sigla formadora de um código."@pt
+	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+	EquivalentTo: bim:é.codificado
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:codificada
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  codificada  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "iden.101"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica a sigla formadora de um código."@pt
+	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.codificado
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.codificado"@pt
+	Annotations: bim:Chave "iden.102"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica a sigla formadora de um código."@pt
+	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+	EquivalentTo: bim:é.codificada
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:codificado
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  codificado  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "iden.102"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica a sigla formadora de um código."@pt
+	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.nome
 	SubPropertyOf: bim:p.identificar
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a identificar: é.nome"@pt
-	Annotations: bim:Chave "iden.104"
+	Annotations: bim:Chave "iden.105"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
@@ -18448,7 +18509,69 @@ DataProperty: bim:nome
 	SubPropertyOf: bim:d.identificar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para identificar:  nome  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "iden.104"
+	Annotations: bim:Chave "iden.105"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.nomeada
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.nomeada"@pt
+	Annotations: bim:Chave "iden.106"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.nomeado
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:nomeada
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  nomeada  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "iden.106"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.nomeado
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.nomeado"@pt
+	Annotations: bim:Chave "iden.107"
+	Annotations: bim:Ação "Ação identificar"@pt
+	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
+	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Characteristics: Functional
+	EquivalentTo: bim:é.nomeada
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:nomeado
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  nomeado  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "iden.107"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "Identifica o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
@@ -18463,7 +18586,7 @@ ObjectProperty: bim:é.número.imo
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a identificar: é.número.imo"@pt
-	Annotations: bim:Chave "iden.135"
+	Annotations: bim:Chave "iden.137"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "IMO (International Maritime Organization) identifica um navio de forma única com um número de 7 dígitos."@pt
 	Annotations: bim:Definición "IMO (International Maritime Organization) es la identificación única de 7 dígitos de un navio."@es
@@ -18480,7 +18603,7 @@ DataProperty: bim:número.imo
 	range: rdfs:Literal  or  xsd:string
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para identificar:  número.imo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "iden.135"
+	Annotations: bim:Chave "iden.137"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "IMO (International Maritime Organization) identifica um navio de forma única com um número de 7 dígitos."@pt
 	Annotations: bim:Definición "IMO (International Maritime Organization) es la identificación única de 7 dígitos de un navio."@es
@@ -18495,7 +18618,7 @@ ObjectProperty: bim:é.número.mmsi
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a identificar: é.número.mmsi"@pt
-	Annotations: bim:Chave "iden.136"
+	Annotations: bim:Chave "iden.138"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "MMSI (Maritime Mobile Service Identity) uma identificação única de 9 dígitos usada em sistemas de comunicação marítima radiais."@pt
 	Annotations: bim:Definición "MMSI (Maritime Mobile Service Identity) es la identificación única de 9 dígitos usada en sistemas de comunicaciones marítimas radiales."@es
@@ -18512,7 +18635,7 @@ DataProperty: bim:número.mmsi
 	range: rdfs:Literal  or  xsd:string
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para identificar:  número.mmsi  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "iden.136"
+	Annotations: bim:Chave "iden.138"
 	Annotations: bim:Ação "Ação identificar"@pt
 	Annotations: bim:Definição "MMSI (Maritime Mobile Service Identity) uma identificação única de 9 dígitos usada em sistemas de comunicação marítima radiais."@pt
 	Annotations: bim:Definición "MMSI (Maritime Mobile Service Identity) es la identificación única de 9 dígitos usada en sistemas de comunicaciones marítimas radiales."@es
@@ -22006,5 +22129,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 10/10/2025 12:53:24
+##  Criada em 10/10/2025 13:08:33
 #################################################################
