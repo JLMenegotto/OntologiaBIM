@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt ;
-	  rdfs:label "DataHora: 10/10/2025 12:53:22"@pt ;
+	  rdfs:label "DataHora: 10/10/2025 13:08:32"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -113,13 +113,13 @@ bim:Contêiner rdf:type  owl:Class  ;
 bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Projeto ];    .
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeado ;      owl:someValuesFrom    bim:Projeto ];    .
 
 
 bim:Fronteiras rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
       owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Fronteiras ];    
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeada ;      owl:someValuesFrom    bim:Fronteiras ];    
       rdfs:label  "Fronteiras"@pt  .
 
 
@@ -135,8 +135,6 @@ bim:Naturais rdf:type  owl:Class  ;
 
 bim:Continente rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Naturais ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nome ;      owl:someValuesFrom    bim:Continente ];    
       rdfs:label  "Continente"@pt ;
       bim:Definição   "Continente"@pt ;
       bim:Definición  "Continente"@es ;
@@ -1437,6 +1435,8 @@ bim:Projeto rdf:type  owl:Class  ;
 
 bim:Limites rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeado ;      owl:someValuesFrom    bim:Limites ];    
       rdfs:label  "Limites"@pt  .
 
 
@@ -2134,6 +2134,8 @@ bim:Limites rdf:type  owl:Class  ;
 
 bim:Funcionais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Limites ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeado ;      owl:someValuesFrom    bim:Funcionais ];    
       rdfs:label  "Funcionais"@pt  .
 
 
@@ -22623,12 +22625,72 @@ bim:p.identificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.codificada   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.identificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a identificar: é.codificada" ;
+                    bim:Chave               "iden.101" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica a sigla formadora de um código."@pt ;
+                    bim:Definición          "Identifica el acrónimo que forma un código."@es ;
+                    owl:equivalentProperty  bim:é.codificado  .
+
+
+bim:d.identificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:codificada   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.identificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  codificada  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "iden.101" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica a sigla formadora de um código."@pt ;
+                    bim:Definición          "Identifica el acrónimo que forma un código."@es  .
+
+
+bim:p.identificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.codificado   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.identificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a identificar: é.codificado" ;
+                    bim:Chave               "iden.102" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica a sigla formadora de um código."@pt ;
+                    bim:Definición          "Identifica el acrónimo que forma un código."@es ;
+                    owl:equivalentProperty  bim:é.codificada  .
+
+
+bim:d.identificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:codificado   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.identificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  codificado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "iden.102" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica a sigla formadora de um código."@pt ;
+                    bim:Definición          "Identifica el acrónimo que forma un código."@es  .
+
+
+bim:p.identificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.nome   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.identificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.nome" ;
-                    bim:Chave               "iden.104" ;
+                    bim:Chave               "iden.105" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
                     bim:Definición          "Identifica el nombre de algún objeto definido."@es ;
@@ -22643,7 +22705,69 @@ bim:nome   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.identificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  nome  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "iden.104" ;
+                    bim:Chave               "iden.105" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
+                    bim:Definición          "Identifica el nombre de algún objeto definido."@es  .
+
+
+bim:p.identificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.nomeada   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.identificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a identificar: é.nomeada" ;
+                    bim:Chave               "iden.106" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
+                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;
+                    rdf:type                owl:FunctionalProperty ;
+                    owl:equivalentProperty  bim:é.nomeado  .
+
+
+bim:d.identificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:nomeada   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.identificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  nomeada  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "iden.106" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
+                    bim:Definición          "Identifica el nombre de algún objeto definido."@es  .
+
+
+bim:p.identificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.nomeado   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.identificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a identificar: é.nomeado" ;
+                    bim:Chave               "iden.107" ;
+                    bim:Ação                "Ação identificar" ;
+                    bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
+                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;
+                    rdf:type                owl:FunctionalProperty ;
+                    owl:equivalentProperty  bim:é.nomeada  .
+
+
+bim:d.identificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:nomeado   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.identificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  nomeado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "iden.107" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
                     bim:Definición          "Identifica el nombre de algún objeto definido."@es  .
@@ -22658,7 +22782,7 @@ bim:é.número.imo   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.número.imo" ;
-                    bim:Chave               "iden.135" ;
+                    bim:Chave               "iden.137" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "IMO (International Maritime Organization) identifica um navio de forma única com um número de 7 dígitos."@pt ;
                     bim:Definición          "IMO (International Maritime Organization) es la identificación única de 7 dígitos de un navio."@es ;
@@ -22675,7 +22799,7 @@ bim:número.imo   rdf:type  owl:DatatypeProperty ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdf:type                owl:FunctionalProperty ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  número.imo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "iden.135" ;
+                    bim:Chave               "iden.137" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "IMO (International Maritime Organization) identifica um navio de forma única com um número de 7 dígitos."@pt ;
                     bim:Definición          "IMO (International Maritime Organization) es la identificación única de 7 dígitos de un navio."@es  .
@@ -22690,7 +22814,7 @@ bim:é.número.mmsi   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.número.mmsi" ;
-                    bim:Chave               "iden.136" ;
+                    bim:Chave               "iden.138" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "MMSI (Maritime Mobile Service Identity) uma identificação única de 9 dígitos usada em sistemas de comunicação marítima radiais."@pt ;
                     bim:Definición          "MMSI (Maritime Mobile Service Identity) es la identificación única de 9 dígitos usada en sistemas de comunicaciones marítimas radiales."@es ;
@@ -22707,7 +22831,7 @@ bim:número.mmsi   rdf:type  owl:DatatypeProperty ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdf:type                owl:FunctionalProperty ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  número.mmsi  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "iden.136" ;
+                    bim:Chave               "iden.138" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "MMSI (Maritime Mobile Service Identity) uma identificação única de 9 dígitos usada em sistemas de comunicação marítima radiais."@pt ;
                     bim:Definición          "MMSI (Maritime Mobile Service Identity) es la identificación única de 9 dígitos usada en sistemas de comunicaciones marítimas radiales."@es  .
@@ -26201,5 +26325,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 10/10/2025 12:53:24
+##  Criada em 10/10/2025 13:08:33
 #################################################################
