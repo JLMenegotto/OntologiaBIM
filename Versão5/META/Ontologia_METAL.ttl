@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de perfis metálicos"@pt ;
-	  rdfs:label "DataHora: 10/10/2025 8:43:43"@pt ;
+	  rdfs:label "DataHora: 10/10/2025 8:50:48"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -4250,40 +4250,40 @@ bim:Pórtico.Galpão.Vãos.Múltiplos rdf:type  owl:Class  ;
 bim:Corten-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      owl:sameAs   bim:A588-A ;
      bim:limite.de.escoamento   345 ;
-     bim:resistência.à.tração   485 ;
+     bim:limite.de.resistência   485 ;
      bim:descrição    "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica"  .
 
 bim:A588-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      owl:sameAs   bim:Corten-A ;
      bim:limite.de.escoamento   345 ;
-     bim:resistência.à.tração   485 ;
+     bim:limite.de.resistência   485 ;
      bim:descrição    "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica"  .
 
 bim:A242  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      owl:sameAs   bim:Corten-A ;
      bim:limite.de.escoamento   345 ;
-     bim:resistência.à.tração   480 ;
+     bim:limite.de.resistência   480 ;
      bim:descrição    "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica" ;
      bim:usado.em    "Em aplicação arquitetônica não estrutural como revestimentos de fachada, por exemplo."  .
 
 bim:A36  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   250 ;
-     bim:resistência.à.tração   400 ;
+     bim:limite.de.resistência   400 ;
      bim:descrição    "Liga de aço carbono de baixa liga"  .
 
 bim:A572-50  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   345 ;
-     bim:resistência.à.tração   450 ;
+     bim:limite.de.resistência   450 ;
      bim:descrição    "Liga de aço estrutural de alta resistência e baixa liga"  .
 
 bim:A572-60  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   415 ;
-     bim:resistência.à.tração   520 ;
+     bim:limite.de.resistência   520 ;
      bim:descrição    "Liga de aço estrutural de alta resistência e baixa liga"  .
 
 bim:WS350-Gerdau  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   350 ;
-     bim:resistência.à.tração   500 ;
+     bim:limite.de.resistência   500 ;
      bim:descrição    "Liga de aço patinável resistente à intempérie produzida pela Gerdau"  .
 
 bim:Alumínio_6060  rdf:type  owl:NamedIndividual , bim:Alumínio.Estrutural ;
@@ -9900,6 +9900,35 @@ bim:limite.de.escoamento   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es  .
 
 
+bim:p.resistir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.limite.de.resistência   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.resistir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a resistir: é.limite.de.resistência" ;
+                    bim:Chave               "resi.119" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara o limite de resistência em MPA."@pt ;
+                    bim:Definición          "Declara el límite de resistencia en MPA."@es  .
+
+
+bim:d.resistir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:limite.de.resistência   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.resistir ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para resistir:  limite.de.resistência  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "resi.119" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara o limite de resistência em MPA."@pt ;
+                    bim:Definición          "Declara el límite de resistencia en MPA."@es  .
+
+
 bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -10059,5 +10088,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 10/10/2025 8:43:44
+##  Criada em 10/10/2025 8:50:49
 #################################################################
