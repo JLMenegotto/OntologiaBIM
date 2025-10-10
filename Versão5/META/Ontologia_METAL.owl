@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 10/10/2025 7:02:14"@pt
+  Annotations: rdfs:label "DataHora: 10/10/2025 8:25:28"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -2140,6 +2140,20 @@ Class: bim:Pórtico.Galpão.Vãos.Múltiplos
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
+Individual: bim:Corten-A
+	Types: bim:Aço.Estrutural
+	SameAs:    bim:A588-A
+	Facts: bim:limite.de.escoamento  345
+	Facts: bim:resistência.à.tração  485
+	Facts: bim:descrição  "Liga de aço misturado com outros compostos como cobre, crómio, níquel e fósforo. É um aço patinável resistente à corrosão atmosférica"
+
+Individual: bim:A588-A
+	Types: bim:Aço.Estrutural
+	SameAs:    bim:Corten-A
+	Facts: bim:limite.de.escoamento  345
+	Facts: bim:resistência.à.tração  485
+	Facts: bim:descrição  "Liga de aço misturado com outros compostos como cobre, crómio, níquel e fósforo. É um aço patinável resistente à corrosão atmosférica"
+
 Individual: bim:A36
 	Types: bim:Aço.Estrutural
 	Facts: bim:limite.de.escoamento  250
@@ -2163,12 +2177,6 @@ Individual: bim:A242
 	Facts: bim:limite.de.escoamento  345
 	Facts: bim:resistência.à.tração  480
 	Facts: bim:descrição  "Liga de aço patinável Corten A para aplicação arquitetônica não estrutural"
-
-Individual: bim:A588-A
-	Types: bim:Aço.Estrutural
-	Facts: bim:limite.de.escoamento  345
-	Facts: bim:resistência.à.tração  485
-	Facts: bim:descrição  "Liga de aço patinável Corten B para aplicação estrutural"
 
 Individual: bim:WS350-Gerdau
 	Types: bim:Aço.Estrutural
@@ -7879,6 +7887,35 @@ DataProperty: bim:classe.de.aço
 	Annotations: bim:Definição "Declara a classe de aço (CA50, CA60, etc)."@pt
 	Annotations: bim:Definición "Declara el grado de acero (CA50, CA60, etc.)."@es
 
+ObjectProperty: bim:p.resistir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.limite.de.escoamento
+	SubPropertyOf: bim:p.resistir
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a resistir: é.limite.de.escoamento"@pt
+	Annotations: bim:Chave "resi.118"
+	Annotations: bim:Ação "Ação resistir"@pt
+	Annotations: bim:Definição "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt
+	Annotations: bim:Definición "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es
+
+DataProperty: bim:d.resistir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:limite.de.escoamento
+	SubPropertyOf: bim:d.resistir
+	range: xsd:double
+	Annotations: rdfs:label "Dado para resistir:  limite.de.escoamento  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "resi.118"
+	Annotations: bim:Ação "Ação resistir"@pt
+	Annotations: bim:Definição "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt
+	Annotations: bim:Definición "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es
+
 ObjectProperty: bim:p.sensorizar
 	SubPropertyOf: bim:BIMProp
 
@@ -8039,5 +8076,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 10/10/2025 7:02:15
+##  Criada em 10/10/2025 8:25:28
 #################################################################
