@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de perfis metálicos"@pt ;
-	  rdfs:label "DataHora: 10/10/2025 8:34:11"@pt ;
+	  rdfs:label "DataHora: 10/10/2025 8:43:43"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -4259,6 +4259,13 @@ bim:A588-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:resistência.à.tração   485 ;
      bim:descrição    "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica"  .
 
+bim:A242  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
+     owl:sameAs   bim:Corten-A ;
+     bim:limite.de.escoamento   345 ;
+     bim:resistência.à.tração   480 ;
+     bim:descrição    "Liga de aço de alta resistência composto por carbono, cobre, crómo, níquel, fósforo, enxofre, manganês, silício e vanádio. É um aço que cria uma pátina de ferrugem estável e resiste à corrosão atmosférica" ;
+     bim:usado.em    "Em aplicação arquitetônica não estrutural como revestimentos de fachada, por exemplo."  .
+
 bim:A36  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   250 ;
      bim:resistência.à.tração   400 ;
@@ -4273,11 +4280,6 @@ bim:A572-60  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   415 ;
      bim:resistência.à.tração   520 ;
      bim:descrição    "Liga de aço estrutural de alta resistência e baixa liga"  .
-
-bim:A242  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
-     bim:limite.de.escoamento   345 ;
-     bim:resistência.à.tração   480 ;
-     bim:descrição    "Liga de aço patinável Corten A para aplicação arquitetônica não estrutural"  .
 
 bim:WS350-Gerdau  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   350 ;
@@ -9721,6 +9723,35 @@ bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
 
 
+bim:p.relacionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.usado.em   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.relacionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a relacionar: é.usado.em" ;
+                    bim:Chave               "rela.107" ;
+                    bim:Ação                "Ação relacionar" ;
+                    bim:Definição           "Se um elemento é usado em alguna aplicação ou elemento."@pt ;
+                    bim:Definición          "Si un elemento es usado en alguna aplicación o elemento."@es  .
+
+
+bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:usado.em   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.relacionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  usado.em  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "rela.107" ;
+                    bim:Ação                "Ação relacionar" ;
+                    bim:Definição           "Se um elemento é usado em alguna aplicação ou elemento."@pt ;
+                    bim:Definición          "Si un elemento es usado en alguna aplicación o elemento."@es  .
+
+
 bim:p.requisitar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -10028,5 +10059,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 10/10/2025 8:34:12
+##  Criada em 10/10/2025 8:43:44
 #################################################################
