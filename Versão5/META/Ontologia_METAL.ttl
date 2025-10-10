@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de perfis metálicos"@pt ;
-	  rdfs:label "DataHora: 10/10/2025 7:02:14"@pt ;
+	  rdfs:label "DataHora: 10/10/2025 8:25:28"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -4247,6 +4247,18 @@ bim:Pórtico.Galpão.Vãos.Múltiplos rdf:type  owl:Class  ;
 #     Indivíduos em Turtle                                       
 #################################################################
 
+bim:Corten-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
+     owl:sameAs   bim:A588-A ;
+     bim:limite.de.escoamento   345 ;
+     bim:resistência.à.tração   485 ;
+     bim:descrição    "Liga de aço misturado com outros compostos como cobre, crómio, níquel e fósforo. É um aço patinável resistente à corrosão atmosférica"  .
+
+bim:A588-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
+     owl:sameAs   bim:Corten-A ;
+     bim:limite.de.escoamento   345 ;
+     bim:resistência.à.tração   485 ;
+     bim:descrição    "Liga de aço misturado com outros compostos como cobre, crómio, níquel e fósforo. É um aço patinável resistente à corrosão atmosférica"  .
+
 bim:A36  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   250 ;
      bim:resistência.à.tração   400 ;
@@ -4266,11 +4278,6 @@ bim:A242  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   345 ;
      bim:resistência.à.tração   480 ;
      bim:descrição    "Liga de aço patinável Corten A para aplicação arquitetônica não estrutural"  .
-
-bim:A588-A  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
-     bim:limite.de.escoamento   345 ;
-     bim:resistência.à.tração   485 ;
-     bim:descrição    "Liga de aço patinável Corten B para aplicação estrutural"  .
 
 bim:WS350-Gerdau  rdf:type  owl:NamedIndividual , bim:Aço.Estrutural ;
      bim:limite.de.escoamento   350 ;
@@ -9833,6 +9840,35 @@ bim:classe.de.aço   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara el grado de acero (CA50, CA60, etc.)."@es  .
 
 
+bim:p.resistir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.limite.de.escoamento   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.resistir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a resistir: é.limite.de.escoamento" ;
+                    bim:Chave               "resi.118" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt ;
+                    bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es  .
+
+
+bim:d.resistir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:limite.de.escoamento   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.resistir ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para resistir:  limite.de.escoamento  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "resi.118" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt ;
+                    bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es  .
+
+
 bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -9992,5 +10028,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 10/10/2025 7:02:15
+##  Criada em 10/10/2025 8:25:28
 #################################################################
