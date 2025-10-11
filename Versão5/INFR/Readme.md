@@ -8,9 +8,10 @@
 #### Pasta INFR: Ontologia com conceitos de insfraestrutura portuaria, ferroviária, rodoviária e urbana - Prefixo bim:
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="1239" height="15047" alt="Infra" src="https://github.com/user-attachments/assets/80af324b-5658-43cf-966f-164d7a30ff36" />
+<img width="1216" height="15332" alt="Infra" src="https://github.com/user-attachments/assets/7bea3711-16c6-4521-88c8-ac405a328817" />
 
 #### Árvore de Classes Definidas por declarações axiomáticas e Inferidas com participação do Reasoner ELK  (Clique na imagem para ampliar)
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="3089" height="15983" alt="InfraI" src="https://github.com/user-attachments/assets/f997523b-2356-425f-81b2-39d78510045c" />
+<img width="2689" height="16017" alt="InfraI" src="https://github.com/user-attachments/assets/6be2cc9c-aa07-4e1f-bf5f-2feaa159a510" />
+
