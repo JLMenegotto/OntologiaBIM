@@ -24,10 +24,16 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
   * Pasta **AMBI** aloca ontologias com conceitos espaciais e Fatos conhecidos do **Instituto de Macromoléculas da UFRJ**.
   * Pasta **CROM** aloca ontologia con conceitos **cromáticos** e alguns Fatos conhecidos de paletas cromáticas. 
   * Pasta **CRON** aloca ontologia con conceitos **temporais** e Fatos conhecidos acerca de conceitos temporais. 
-  * Pasta **CSUS** aloca ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
+  * Pasta **CSUS** aloca ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do
+    SomaSUS.
   * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com fatos conhecidos de categorias Revit e classes IFC.
-  * Pasta **URBA** aloca ontologia com conceitos **Urbanos** e Fatos conhecidos da cidade de **Rio de janeiro**.
+  * Pasta **INFR** aloca ontologia com conceitos **Infraestrutura** e Fatos conhecidos da cidade de **Rio de janeiro** ou de instituições como o   	INMET.
   * Pasta **DOCU** aloca ontologia com conceitos de **Documentação** e com alguns fatos conhecidos referentes a Leis e Decretos como exemplo.
+  * Pasta **META** aloca ontologia com conceitos de **Estrutura Metálica** e com alguns fatos conhecidos referentes a catálogo de perfis   			laminados.
+  * Pasta **TUBO** aloca ontologia com conceitos de **Tubulações** e com alguns fatos conhecidos referentes a catálogo de fabricantes do setor.
+  * Pasta **VANT** aloca ontologia com conceitos de **Veículos Aereos não Tripulados** e com alguns fatos conhecidos referentes a processos de
+    manutenção predial que utilizam drones para inspeção e aquisição de imagens.
+  * Pasta **ARQU** aloca ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos.
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
