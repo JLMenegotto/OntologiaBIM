@@ -26,7 +26,6 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
   * Pasta **CRON** aloca ontologia con conceitos **temporais** e Fatos conhecidos acerca de conceitos temporais. 
   * Pasta **CSUS** aloca ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do
     SomaSUS.
-  * Pasta **OBIM** aloca ontologia com conceitos de **objetos BIM**, com fatos conhecidos de categorias Revit e classes IFC.
   * Pasta **INFR** aloca ontologia com conceitos **Infraestrutura** e Fatos conhecidos da cidade de **Rio de janeiro** ou de instituições como o   	INMET.
   * Pasta **DOCU** aloca ontologia com conceitos de **Documentação** e com alguns fatos conhecidos referentes a Leis e Decretos como exemplo.
   * Pasta **META** aloca ontologia com conceitos de **Estrutura Metálica** e com alguns fatos conhecidos referentes a catálogo de perfis   			laminados.
