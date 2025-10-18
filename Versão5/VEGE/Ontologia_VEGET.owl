@@ -1,0 +1,140 @@
+Prefix: rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xsd:  <http://www.w3.org/2001/XMLSchema#>
+Prefix: owl:  <http://www.w3.org/2002/07/owl#>
+Prefix: sh:   <http://www.w3.org/ns/shacl#>
+Prefix: bsdd: <https://bsdd.buildingsmart.org/def#>
+Prefix: bim: <https://github.com/JLMenegotto/RepoOnto#>
+
+Ontology:  <https://github.com/JLMenegotto/RepoOnto#Vegetação>
+
+  Annotations: rdfs:label "OntologiaPrefixo: bim:"@pt
+  Annotations: rdfs:label "OntologiaTema: Vegetação"@pt
+  Annotations: rdfs:label "RaizClass: BIM"@pt
+  Annotations: rdfs:label "RaizProp: BIMProp"@pt
+  Annotations: rdfs:label "RaizData: BIMData"@pt
+  Annotations: rdfs:label "URI: https://github.com/JLMenegotto/RepoOnto#"@pt
+  Annotations: rdfs:label "Autor: José Luis Menegotto"@pt
+  Annotations: rdfs:label "Organização: Escola Politécnica da UFRJ"@pt
+  Annotations: rdfs:label "NormaNúmero: -"@pt
+  Annotations: rdfs:label "Edição: -"@pt
+  Annotations: rdfs:label "ISBN: -"@pt
+  Annotations: rdfs:label "NormaEscopo: -"@pt
+  Annotations: rdfs:label "NormaReferência1: -"@pt
+  Annotations: rdfs:label "NormaReferência2: -"@pt
+  Annotations: rdfs:label "NormaReferência3: -"@pt
+  Annotations: rdfs:label "Observações: Conceitos de elementos de vegetação."@pt
+  Annotations: rdfs:label "DataHora: 18/10/2025 18:32:32"@pt
+  Annotations: rdfs:label "Advertência1: -"@pt
+  Annotations: rdfs:label "Prédio: -"@pt
+  Annotations: rdfs:label "Cidade: -"@pt
+  Annotations: rdfs:label "Explicação: Formalizar conceitos de elementos de vegetação."@pt
+  Annotations: rdfs:label "Explicación: Formalizar conceptos de elementos de vegetação."@pt
+
+Datatype:  xsd:string
+Datatype:  xsd:decimal
+Datatype:  xsd:double
+Datatype:  xsd:integer
+Datatype:  xsd:dateTime
+Datatype:  xsd:dayTimeDuration
+Datatype:  xsd:duration
+Datatype:  xsd:gDay
+Datatype:  xsd:gMonth
+Datatype:  xsd:gYear
+Datatype:  xsd:date
+Datatype:  xsd:time
+Datatype:  xsd:boolean
+Datatype:  rdfs:Literal
+Datatype:  rdf:PlainLiteral
+
+Class: bim:BIM
+	Annotations: rdfs:label "Raiz das Classes."@pt
+
+ObjectProperty: bim:BIMProp
+	Annotations: rdfs:label "Raiz das Propriedades. As propriedades de objetos e dados atualmente presentes na ontologia são apenas parte das propriedades. O arquivo Excel de propriedades contem todas as propriedades de objetos e dados planejadas para uso. A participação de uma propriedade na ontologia dependerá se foi incorporada a algum indivíduo da ontologia."@pt
+
+DataProperty: bim:BIMData
+	Annotations: rdfs:label "Raiz dos Dados. As propriedades de objetos e dados atualmente presentes na ontologia são apenas parte das propriedades. O arquivo Excel de propriedades contem todas as propriedades de objetos e dados planejadas para uso. A participação de uma propriedade na ontologia dependerá se foi incorporada a algum indivíduo da ontologia."@pt
+
+
+AnnotationProperty: bim:Natureza
+AnnotationProperty: bim:Espécie
+AnnotationProperty: bim:Disciplina
+AnnotationProperty: bim:Tema
+AnnotationProperty: bim:Interoperar
+AnnotationProperty: bim:Definição
+AnnotationProperty: bim:Definición
+AnnotationProperty: bim:Chave
+AnnotationProperty: bim:Ação
+AnnotationProperty: bim:CatRevit
+AnnotationProperty: bim:ClasseIfc
+AnnotationProperty: bim:Identifica
+AnnotationProperty: bim:Parâmetro
+
+#################################################################
+#     Classes em Sintaxe Manchester                              
+#################################################################
+
+Class: bim:Projeto
+	SubClassOf: bim:BIM
+
+
+Class: bim:Gestão
+	Annotations: rdfs:label "Gestão"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Produzido
+	Annotations: rdfs:label "Produzido"@pt
+	SubClassOf: bim:Gestão
+
+
+Class: bim:Informação
+	Annotations: rdfs:label "Informação"@pt
+	SubClassOf: bim:Produzido
+
+
+Class: bim:Contêiner
+	Annotations: rdfs:label "Contêiner"@pt
+	Annotations: bim:Definição "Define um contêiner de informção de acordo à norma NBR 19650-1."@pt
+	Annotations: bim:Definición "Define un contenedor de información de acuerdo con la norma NBR 19650-1."@es
+	Annotations: bim:Natureza "Gestão"@pt
+	Annotations: bim:Espécie "Produzido"@pt
+	Annotations: bim:Tema "Informação"@pt
+	Annotations: bim:Disciplina "Gestão"@pt
+	Annotations: bim:Chave "K.Ges.2"
+	SubClassOf: bim:Informação
+
+
+Class: bim:Botânica
+	Annotations: rdfs:label "Botânica"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Reinos
+	Annotations: rdfs:label "Reinos"@pt
+	SubClassOf: bim:Botânica
+
+
+Class: bim:Plantas
+	Annotations: rdfs:label "Plantas"@pt
+	SubClassOf: bim:Reinos
+
+
+Class: bim:Planta
+	Annotations: rdfs:label "Planta"@pt
+	Annotations: bim:Definição "Árvore, palmeira ou arbustos."@pt
+	Annotations: bim:Definición "Árbol, palmera o arbusto."@es
+	Annotations: bim:Natureza "Botânica"@pt
+	Annotations: bim:Espécie "Reinos"@pt
+	Annotations: bim:Tema "Plantas"@pt
+	Annotations: bim:Disciplina "Botânica"@pt
+	Annotations: bim:Chave "K.Bot.3"
+	Annotations: bim:CatRevit "OST_Planting"
+	Annotations: bim:ClasseIfc "IfcGeographicElement"
+	SubClassOf: bim:Plantas
+
+#################################################################
+##  Fim da Ontologia VEGET
+##  Criada em 18/10/2025 18:32:32
+#################################################################
