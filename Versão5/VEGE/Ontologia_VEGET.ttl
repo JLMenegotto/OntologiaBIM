@@ -1,0 +1,148 @@
+
+@prefix : <https://github.com/JLMenegotto/RepoOnto#Vegetação> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix bsdd: <https://bsdd.buildingsmart.org/def#> .
+@prefix bim:  <https://github.com/JLMenegotto/RepoOnto#> .
+@base  <https://github.com/JLMenegotto/RepoOnto#Vegetação> .
+
+<https://github.com/JLMenegotto/RepoOnto#Vegetação> rdf:type owl:Ontology ; 
+	  rdfs:label "OntologiaPrefixo: bim:"@pt ;
+	  rdfs:label "OntologiaTema: Vegetação"@pt ;
+	  rdfs:label "RaizClass: BIM"@pt ;
+	  rdfs:label "RaizProp: BIMProp"@pt ;
+	  rdfs:label "RaizData: BIMData"@pt ;
+	  rdfs:label "URI: https://github.com/JLMenegotto/RepoOnto#"@pt ;
+	  rdfs:label "Autor: José Luis Menegotto"@pt ;
+	  rdfs:label "Organização: Escola Politécnica da UFRJ"@pt ;
+	  rdfs:label "NormaNúmero: -"@pt ;
+	  rdfs:label "Edição: -"@pt ;
+	  rdfs:label "ISBN: -"@pt ;
+	  rdfs:label "NormaEscopo: -"@pt ;
+	  rdfs:label "NormaReferência1: -"@pt ;
+	  rdfs:label "NormaReferência2: -"@pt ;
+	  rdfs:label "NormaReferência3: -"@pt ;
+	  rdfs:label "Observações: Conceitos de elementos de vegetação."@pt ;
+	  rdfs:label "DataHora: 18/10/2025 18:32:32"@pt ;
+	  rdfs:label "Advertência1: -"@pt ;
+	  rdfs:label "Prédio: -"@pt ;
+	  rdfs:label "Cidade: -"@pt ;
+	  rdfs:label "Explicação: Formalizar conceitos de elementos de vegetação."@pt ;
+	  rdfs:label "Explicación: Formalizar conceptos de elementos de vegetação."@pt .
+
+rdf:PlainLiteral       rdf:type  rdfs:Datatype .
+rdfs:Literal           rdf:type  rdfs:Datatype .
+xsd:boolean            rdf:type  rdfs:Datatype .
+xsd:date               rdf:type  rdfs:Datatype .
+xsd:dateTime           rdf:type  rdfs:Datatype .
+xsd:dayTimeDuration    rdf:type  rdfs:Datatype .
+xsd:decimal            rdf:type  rdfs:Datatype .
+xsd:double             rdf:type  rdfs:Datatype .
+xsd:duration           rdf:type  rdfs:Datatype .
+xsd:gDay               rdf:type  rdfs:Datatype .
+xsd:gMonth             rdf:type  rdfs:Datatype .
+xsd:gYear              rdf:type  rdfs:Datatype .
+xsd:integer            rdf:type  rdfs:Datatype .
+xsd:string             rdf:type  rdfs:Datatype .
+xsd:time               rdf:type  rdfs:Datatype .
+
+bim:BIM	 rdf:type  owl:Class ;            
+	 rdfs:label "Raiz de Classes."@pt .
+
+bim:BIMProp	 rdf:type  owl:ObjectProperty ;   
+	 rdfs:label "Raiz de Propriedades. As propriedades de objetos e dados atualmente presentes na ontologia são apenas parte das propriedades. O arquivo Excel de propriedades contem todas as propriedades de objetos e dados planejadas para uso. A participação de uma propriedade na ontologia dependerá se foi incorporada a algum indivíduo da ontologia."@pt .
+
+bim:BIMData	 rdf:type  owl:DatatypeProperty ; 
+	 rdfs:label "Raiz de Dados. As propriedades de objetos e dados atualmente presentes na ontologia são apenas parte das propriedades. O arquivo Excel de propriedades contem todas as propriedades de objetos e dados planejadas para uso. A participação de uma propriedade na ontologia dependerá se foi incorporada a algum indivíduo da ontologia."@pt .
+
+ ## Anotações personalizadas sintaxe Turtle ----------------------------------
+
+bim:Natureza		 rdf:type   owl:AnnotationProperty .
+bim:Espécie		 rdf:type   owl:AnnotationProperty .
+bim:Disciplina		 rdf:type   owl:AnnotationProperty .
+bim:Tema		 rdf:type   owl:AnnotationProperty .
+bim:Interoperar		 rdf:type   owl:AnnotationProperty .
+bim:Definição		 rdf:type   owl:AnnotationProperty .
+bim:Definición		 rdf:type   owl:AnnotationProperty .
+bim:Chave		 rdf:type   owl:AnnotationProperty .
+bim:Ação		 rdf:type   owl:AnnotationProperty .
+bim:CatRevit		 rdf:type   owl:AnnotationProperty .
+bim:ClasseIfc		 rdf:type   owl:AnnotationProperty .
+bim:Identifica		 rdf:type   owl:AnnotationProperty .
+bim:Parâmetro		 rdf:type   owl:AnnotationProperty .
+
+#################################################################
+#     Classes em Turtle                                          
+#################################################################
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Gestão rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Gestão"@pt  .
+
+
+bim:Produzido rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Gestão ;
+      rdfs:label  "Produzido"@pt  .
+
+
+bim:Informação rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Produzido ;
+      rdfs:label  "Informação"@pt  .
+
+
+bim:Contêiner rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Informação ;
+      rdfs:label  "Contêiner"@pt ;
+      bim:Definição   "Define um contêiner de informção de acordo à norma NBR 19650-1."@pt ;
+      bim:Definición  "Define un contenedor de información de acuerdo con la norma NBR 19650-1."@es ;
+      bim:Natureza    "Gestão"@pt ;
+      bim:Espécie     "Produzido"@pt ;
+      bim:Tema        "Informação"@pt ;
+      bim:Disciplina  "Gestão"@pt ;
+      bim:Chave       "K.Ges.2"@pt  .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Botânica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Botânica"@pt  .
+
+
+bim:Reinos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Botânica ;
+      rdfs:label  "Reinos"@pt  .
+
+
+bim:Plantas rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Reinos ;
+      rdfs:label  "Plantas"@pt  .
+
+
+bim:Planta rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Plantas ;
+      rdfs:label  "Planta"@pt ;
+      bim:Definição   "Árvore, palmeira ou arbustos."@pt ;
+      bim:Definición  "Árbol, palmera o arbusto."@es ;
+      bim:Natureza    "Botânica"@pt ;
+      bim:Espécie     "Reinos"@pt ;
+      bim:Tema        "Plantas"@pt ;
+      bim:Disciplina  "Botânica"@pt ;
+      bim:Chave       "K.Bot.3"@pt ;
+      bim:CatRevit    "OST_Planting"   ;
+      bim:ClasseIfc   "IfcGeographicElement"    .
+
+#################################################################
+##  Fim da Ontologia VEGET
+##  Criada em 18/10/2025 18:32:32
+#################################################################
