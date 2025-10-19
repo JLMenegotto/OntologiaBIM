@@ -8,4 +8,4 @@
 #### Pasta VEGE: Ontologia com conceitos de vegetação - Prefixo bim:
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="825" height="122" alt="Veteg" src="https://github.com/user-attachments/assets/144e614b-208b-42b4-9fef-375d0f55e676" />
+<img width="825" height="164" alt="Veteg" src="https://github.com/user-attachments/assets/9df9e0d6-9366-415f-810d-cc6ea2417327" />
