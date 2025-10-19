@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de vegetação."@pt ;
-	  rdfs:label "DataHora: 19/10/2025 11:13:24"@pt ;
+	  rdfs:label "DataHora: 19/10/2025 11:31:55"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -132,13 +132,46 @@ bim:Plantas rdf:type  owl:Class  ;
 bim:Planta rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Plantas ;
       rdfs:label  "Planta"@pt ;
-      bim:Definição   "Árvore, palmeira ou arbustos."@pt ;
-      bim:Definición  "Árbol, palmera o arbusto."@es ;
+      bim:Definição   "Árvores, palmeiras e arbustos fazem fotossíntese."@pt ;
+      bim:Definición  "Árboles, palmeras e arbustos hacen fotosíntesis."@es ;
       bim:Natureza    "Botânica"@pt ;
       bim:Espécie     "Reinos"@pt ;
       bim:Tema        "Plantas"@pt ;
       bim:Disciplina  "Botânica"@pt ;
       bim:Chave       "K.Bot.3"@pt ;
+      bim:CatRevit    "OST_Planting"   ;
+      bim:ClasseIfc   "IfcGeographicElement"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Botânica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Botânica"@pt  .
+
+
+bim:Reinos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Botânica ;
+      rdfs:label  "Reinos"@pt  .
+
+
+bim:Fungos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Reinos ;
+      rdfs:label  "Fungos"@pt  .
+
+
+bim:Fungo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Fungos ;
+      rdfs:label  "Fungo"@pt ;
+      bim:Definição   "Fungos não fazem fotossíntese e obtêm energia por decomposição."@pt ;
+      bim:Definición  "Los hongos no realizan la fotosíntesis y obtienen energía por descomposición."@es ;
+      bim:Natureza    "Botânica"@pt ;
+      bim:Espécie     "Reinos"@pt ;
+      bim:Tema        "Fungos"@pt ;
+      bim:Disciplina  "Botânica"@pt ;
+      bim:Chave       "K.Bot.4"@pt ;
       bim:CatRevit    "OST_Planting"   ;
       bim:ClasseIfc   "IfcGeographicElement"    .
 
@@ -171,7 +204,7 @@ bim:Família.Botânica rdf:type  owl:Class  ;
       bim:Espécie     "Classe Botânica"@pt ;
       bim:Tema        "Ordem Botânica"@pt ;
       bim:Disciplina  "Divisão Botânica"@pt ;
-      bim:Chave       "K.Div.4"@pt ;
+      bim:Chave       "K.Div.5"@pt ;
       bim:CatRevit    "OST_Planting"   ;
       bim:ClasseIfc   "IfcGeographicElement"    .
 
@@ -179,11 +212,11 @@ bim:Família.Botânica rdf:type  owl:Class  ;
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:Fungo  rdf:type  owl:NamedIndividual , bim:Divisão.Botânica ;
-     bim:descrição    "Refere se ao conjunto de espécies Fungi. Incluem cogumelos, bolores e leveduras. São heterotróficos, ou seja, não fazem fotossíntese e obtêm energia por decomposição."  .
+bim:Fungos  rdf:type  owl:NamedIndividual , bim:Fungo ;
+     bim:descrição    "Refere se ao conjunto do reino Fungi. Incluem cogumelos, bolores e leveduras. São heterotróficos, ou seja, não fazem fotossíntese e obtêm energia por decomposição."  .
 
 bim:Briófita  rdf:type  owl:NamedIndividual , bim:Divisão.Botânica ;
-     bim:descrição    "Plantas pequenas e simples, sem vasos condutores, como musgos e hepáticas. Vivem em ambientes úmidos e não produzem sementes nem flores."  .
+     bim:descrição    "Plantas pequenas e simples, sem vasos condutores, como musgos e hepáticas. Vivem em ambientes úmidos e não produzem sementes nem flores. São as plantas terrestres mais primitivas, importantes para a retenção de água no solo e como indicadores ambientais."  .
 
 bim:Angiosperma  rdf:type  owl:NamedIndividual , bim:Divisão.Botânica ;
      bim:descrição    "Plantas que produzem flores e frutos com sementes. Representam o grupo mais diverso do Reino Plantae, incluindo árvores, arbustos, ervas e gramíneas. Exemplos: roseiras, mangueiras, milho."  .
@@ -7001,5 +7034,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia VEGET
-##  Criada em 19/10/2025 11:13:25
+##  Criada em 19/10/2025 11:31:56
 #################################################################
