@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Vegetação>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de vegetação."@pt
-  Annotations: rdfs:label "DataHora: 24/10/2025 13:44:25"@pt
+  Annotations: rdfs:label "DataHora: 26/10/2025 8:12:18"@pt
   Annotations: rdfs:label "Fonte.Consultada.1: https://museunacional.ufrj.br/hortobotanico"@pt
   Annotations: rdfs:label "Fonte.Consultada.2: https://www.embrapa.br/florestas/publicacoes"@pt
   Annotations: rdfs:label "Fonte.Consultada.3: https://www.arvoresgigantes.org"@pt
@@ -183,7 +183,7 @@ Class: bim:Arbóreo
 	Annotations: bim:CatRevit "OST_Planting"
 	Annotations: bim:ClasseIfc "IfcGeographicElement"
 	SubClassOf: bim:Flora
-	EquivalentTo:  bim:Árvore or bim:Arbusto or bim:Subarbusto or bim:Trepadeira
+	EquivalentTo:  ( bim:Árvore or bim:Arbusto or bim:Subarbusto or bim:Trepadeira )
 
 
 Class: bim:Trepadeira
@@ -240,7 +240,7 @@ Class: bim:Gramínea
 	Annotations: bim:CatRevit "OST_Planting"
 	Annotations: bim:ClasseIfc "IfcGeographicElement"
 	SubClassOf: bim:Flora
-	EquivalentTo:  bim:Herbácea or bim:Rasteira
+	EquivalentTo:  ( bim:Herbácea or bim:Rasteira )
 
 
 Class: bim:Rasteira
@@ -255,7 +255,7 @@ Class: bim:Rasteira
 	Annotations: bim:CatRevit "OST_Planting"
 	Annotations: bim:ClasseIfc "IfcGeographicElement"
 	SubClassOf: bim:Flora
-	EquivalentTo:  bim:Herbácea or bim:Arbusto
+	EquivalentTo:  ( bim:Herbácea or bim:Arbusto )
 
 
 Class: bim:Bambu
@@ -298,7 +298,7 @@ Class: bim:Cacto
 	Annotations: bim:CatRevit "OST_Planting"
 	Annotations: bim:ClasseIfc "IfcGeographicElement"
 	SubClassOf: bim:Flora
-	EquivalentTo:  bim:Arbusto or bim:Subarbusto
+	EquivalentTo:  ( bim:Arbusto or bim:Subarbusto )
 
 
 Class: bim:Flor
@@ -313,6 +313,7 @@ Class: bim:Flor
 	Annotations: bim:CatRevit "OST_Planting"
 	Annotations: bim:ClasseIfc "IfcGeographicElement"
 	SubClassOf: bim:Flora
+	EquivalentTo:  bim:é.parte.de some bim:Arbóreo
 
 
 Class: bim:Fungos
@@ -866,6 +867,10 @@ Individual: bim:Sapindales
 	Types: bim:Ordem.Botânica
 	Facts: bim:descrição  "Inclui árvores e arbustos com folhas compostas, flores pequenas, muitas vezes com disco nectarífero. Frutos variados (lichia, guaraná, laranja, limão, manga, caju). Frutas tropicais, óleos essenciais, madeira"
 
+Individual: bim:Solanales
+	Types: bim:Ordem.Botânica
+	Facts: bim:descrição  "Inclui cerca de 5 famílias botânicas. Flores bissexuais com cinco pétalas fundidas (corola simpétala), folhas alternas ou opostas, geralmente simples e sem estípulas. Frutos variados, como bagas, cápsulas ou drupas. Floema interno e sementes com testa lisa. Simetria floral geralmente radial (actinomorfa), podendo ser ligeiramente bilateral (zigomorfa)"
+
 Individual: bim:Zingiberales
 	Types: bim:Ordem.Botânica
 	Facts: bim:descrição  "Inclui flores vistosas, simétricas, com labelo como o gengibre, cúrcuma, helicônia. São plantas tropicais com rizomas aromáticos e flores atrativas"
@@ -1104,6 +1109,11 @@ Individual: bim:Sapindaceae
 	Types: bim:Família.Botânica
 	Facts: bim:tipo.botânico  "Arbustos, árvores e lianas"
 	Facts: bim:descrição  "Inclui árvores e arbusto com folhas compostas, flores pequenas, muitas vezes com disco nectarífero. Frutos variados (lichia, guaraná, laranja, limão, manga, caju). Frutas tropicais, óleos essenciais, madeira. Frutos com cápsulas, sementes oleosas"
+
+Individual: bim:Solanaceae
+	Types: bim:Família.Botânica
+	Facts: bim:tipo.botânico  "Arbustos"
+	Facts: bim:descrição  "Inclui plantas de folhas simples, alternas, sem estípulas, com flores hermafroditas, geralmente actinomorfas. Corola com 5 pétalas fundidas, formando tubo, funil ou campânula. Estames em número igual ao de pétalas, geralmente 5. Ovário súpero, com dois carpelos e placentação axilar. Fruto tipo baga ou cápsula, com sementes planas ou angulosas"
 
 Individual: bim:Theaceae
 	Types: bim:Família.Botânica
@@ -2331,6 +2341,30 @@ Individual: bim:Coqueiro.jerivá
 	Facts: bim:usada.para  "ornamental, frutífera"
 	Facts: bim:descrição  "Fruto comestível, muito usada em paisagismo"
 	Facts: bim:mês.de.floração  "setembro a novembro"
+	Facts: bim:bioma  "Mata Atlântica"
+	Facts: bim:apta.para.calçada  "Sim"
+	Facts: bim:é.código.de.conservação  bim:Pouco.Preocupante
+
+Individual: bim:Dama.da.Noite
+	Types: bim:Arbóreo
+	Facts: bim:nome.científico  "Cestrum nocturnum"
+	Facts: bim:é.divisão.botânica  bim:Angiosperma
+	Facts: bim:é.classe.botânica  bim:Magnoliopsida
+	Facts: bim:é.ordem.botânica  bim:Solanales
+	Facts: bim:é.família.botânica  bim:Solanaceae
+	Facts: bim:tipo.botânico  "Arbusto"
+	Facts: bim:diámetro.do.tronco  0
+	Facts: bim:diámetro.mínimo.da.copa  0
+	Facts: bim:diámetro.máximo.da.copa  0
+	Facts: bim:altura.mínima.da.planta  1
+	Facts: bim:altura.máxima.da.planta  4
+	Facts: bim:tipo.de.raiz  "Fascicular (cabeleira)"
+	Facts: bim:profundidade.da.raiz  "0.0"
+	Facts: bim:tempo.de.crescimento  "2 anos"
+	Facts: bim:longevidade.da.planta  "perenne"
+	Facts: bim:usada.para  "ornamental e medicinal"
+	Facts: bim:descrição  "Planta de flores pequenas, brancas, tubulares, com perfume intenso que se intensifica à noite. Conhecida também como 'Jasmim da noite', tem floração noturna atrai mariposas. É de crescimento rápido, muito usada em cercas e muros"
+	Facts: bim:mês.de.floração  "setembro, outubro, novembro"
 	Facts: bim:bioma  "Mata Atlântica"
 	Facts: bim:apta.para.calçada  "Sim"
 	Facts: bim:é.código.de.conservação  bim:Pouco.Preocupante
@@ -9099,6 +9133,35 @@ DataProperty: bim:passado
 	Annotations: bim:Definição "Qualifica um elemento como passado. Um valor antíguo."@pt
 	Annotations: bim:Definición "Califica un elemento como pasado. Un valor antiguo."@es
 
+ObjectProperty: bim:p.relacionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.parte.de
+	SubPropertyOf: bim:p.relacionar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.parte.de"@pt
+	Annotations: bim:Chave "relac.101"
+	Annotations: bim:Ação "Ação relacionar"@pt
+	Annotations: bim:Definição "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt
+	Annotations: bim:Definición "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es
+
+DataProperty: bim:d.relacionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:parte.de
+	SubPropertyOf: bim:d.relacionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para relacionar:  parte.de  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "relac.101"
+	Annotations: bim:Ação "Ação relacionar"@pt
+	Annotations: bim:Definição "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt
+	Annotations: bim:Definición "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es
+
 ObjectProperty: bim:p.requisitar
 	SubPropertyOf: bim:BIMProp
 
@@ -9499,5 +9562,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia VEGET
-##  Criada em 24/10/2025 13:44:26
+##  Criada em 26/10/2025 8:12:19
 #################################################################
