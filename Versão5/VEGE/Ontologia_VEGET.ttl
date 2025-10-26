@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de vegetação."@pt ;
-	  rdfs:label "DataHora: 24/10/2025 13:44:25"@pt ;
+	  rdfs:label "DataHora: 26/10/2025 8:12:18"@pt ;
 	  rdfs:label "Fonte.Consultada.1: https://museunacional.ufrj.br/hortobotanico"@pt ;
 	  rdfs:label "Fonte.Consultada.2: https://www.embrapa.br/florestas/publicacoes"@pt ;
 	  rdfs:label "Fonte.Consultada.3: https://www.arvoresgigantes.org"@pt ;
@@ -238,7 +238,7 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Arbóreo rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
-      owl:equivalentClass   [ owl:intersectionOf ( bim:Árvore         bim:Arbusto         bim:Subarbusto         bim:Trepadeira ) ; rdf:type  owl:Class ];   
+      owl:equivalentClass       bim:Árvore         bim:Arbusto         bim:Subarbusto               
       rdfs:label  "Arbóreo"@pt ;
       bim:Definição   "Planta cujo crescimento pode ser conduzido para se transformar em árvore, arbusto ou trepadeira. Fazem fotossíntese."@pt ;
       bim:Definición  "Una planta cuyo crecimiento puede convertirse en un árbol, arbusto o enredadera. Realizan la fotosíntesis."@es ;
@@ -371,7 +371,7 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Gramínea rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
-      owl:equivalentClass   [ owl:intersectionOf ( bim:Herbácea         bim:Rasteira ) ; rdf:type  owl:Class ];   
+      owl:equivalentClass       bim:Herbácea               
       rdfs:label  "Gramínea"@pt ;
       bim:Definição   "Planta geralmente herbácea, com folhas estreitas, caules ocos e flores agrupadas em espiguetas."@pt ;
       bim:Definición  "Plantas generalmente herbáceas, con hojas estrechas, tallos huecos y flores agrupadas en espiguillas."@es ;
@@ -405,7 +405,7 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Rasteira rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
-      owl:equivalentClass   [ owl:intersectionOf ( bim:Herbácea         bim:Arbusto ) ; rdf:type  owl:Class ];   
+      owl:equivalentClass       bim:Herbácea               
       rdfs:label  "Rasteira"@pt ;
       bim:Definição   "Termo genérico para plantas cultivadas. Pode incluir herbáceas, arbustos ou trepadeiras, tem uso ornamental. Fazem fotossíntese."@pt ;
       bim:Definición  "Término genérico para plantas cultivadas. Puede incluir plantas herbáceas, arbustos o enredaderas, tiene uso ornamental. Realizan la fotosíntesis."@es ;
@@ -505,7 +505,7 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Cacto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
-      owl:equivalentClass   [ owl:intersectionOf ( bim:Arbusto         bim:Subarbusto ) ; rdf:type  owl:Class ];   
+      owl:equivalentClass       bim:Arbusto               
       rdfs:label  "Cacto"@pt ;
       bim:Definição   "Planta arbustiva ou subarbustiva. Com caule carnoso, fotossintético que armazena água. Pode ter forma globosa, colunar ou em raquete. Folhas modificadas em espinhos, que protegem e reduzem evaporação. Raiz superficial e extensa, absorve rapidamente água após chuvas. Tem aréolas que são estruturas exclusivas dos cactos, de onde surgem espinhos, flores e brotos. Flores grandes, vistosas, hermafroditas, com cores variadas. Metabolismo CAM (fazem fotossíntese noturna), espinhos, armazenamento de água. Muito usados para ornamentação, alimentação (figo da índia), forragem, medicina popular. Para o Serviço Florestal Brasileiro é um Hábito do indivíduo definido no Inventário Florestal Nacional."@pt ;
       bim:Definición  "Planta arbustiva o subarbustiva. Con un tallo carnoso y fotosintético que almacena agua. Puede ser globosa, columnar o en forma de raqueta. Hojas modificadas en espinas, que protegen y reducen la evaporación. Raíz poco profunda y extensa, absorbe agua rápidamente después de las lluvias. Tiene areolas que son estructuras exclusivas de los cactus, de las que emergen espinas, flores y brotes. Flores grandes, vistosas, hermafroditas, con colores variados. Metabolismo CAM (fotosíntesis nocturna), espinas, almacenamiento de agua. Ampliamente utilizado para ornamentación, alimentación (por ejemplo, tuna), forraje, medicina popular.  Para el Servicio Forestal Brasileño, es un hábito del individuo definido en el Inventario Forestal Nacional."@es ;
@@ -539,7 +539,7 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Gramínea rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
-      owl:equivalentClass   [ owl:intersectionOf ( bim:Herbácea         bim:Rasteira ) ; rdf:type  owl:Class ];   
+      owl:equivalentClass       bim:Herbácea               
       rdfs:label  "Gramínea"@pt ;
       bim:Definição   "Plantas geralmente herbáceas, com folhas estreitas, caules ocos e flores agrupadas em espiguetas."@pt ;
       bim:Definición  "Plantas generalmente herbáceas, con hojas estrechas, tallos huecos y flores agrupadas en espiguillas."@es ;
@@ -606,6 +606,8 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Flor rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
+      owl:equivalentClass   
+                             [ rdf:type owl:Restriction; owl:onProperty bim:é.parte.de ;      owl:someValuesFrom    bim:Arbóreo ];    
       rdfs:label  "Flor"@pt ;
       bim:Definição   "Termo genérico para plantas cultivadas ou para partes de uma planta. Pode incluir herbáceas, arbustos ou trepadeiras, tem uso ornamental. Fazem fotossíntese."@pt ;
       bim:Definición  "Un término genérico para plantas cultivadas o para partes de una planta. Puede incluir plantas herbáceas, arbustos o enredaderas, tiene uso ornamental. Realizan la fotosíntesis."@es ;
@@ -1423,6 +1425,9 @@ bim:Santalales  rdf:type  owl:NamedIndividual , bim:Ordem.Botânica ;
 bim:Sapindales  rdf:type  owl:NamedIndividual , bim:Ordem.Botânica ;
      bim:descrição    "Inclui árvores e arbustos com folhas compostas, flores pequenas, muitas vezes com disco nectarífero. Frutos variados (lichia, guaraná, laranja, limão, manga, caju). Frutas tropicais, óleos essenciais, madeira"  .
 
+bim:Solanales  rdf:type  owl:NamedIndividual , bim:Ordem.Botânica ;
+     bim:descrição    "Inclui cerca de 5 famílias botânicas. Flores bissexuais com cinco pétalas fundidas (corola simpétala), folhas alternas ou opostas, geralmente simples e sem estípulas. Frutos variados, como bagas, cápsulas ou drupas. Floema interno e sementes com testa lisa. Simetria floral geralmente radial (actinomorfa), podendo ser ligeiramente bilateral (zigomorfa)"  .
+
 bim:Zingiberales  rdf:type  owl:NamedIndividual , bim:Ordem.Botânica ;
      bim:descrição    "Inclui flores vistosas, simétricas, com labelo como o gengibre, cúrcuma, helicônia. São plantas tropicais com rizomas aromáticos e flores atrativas"  .
 
@@ -1613,6 +1618,10 @@ bim:Salicaceae  rdf:type  owl:NamedIndividual , bim:Família.Botânica ;
 bim:Sapindaceae  rdf:type  owl:NamedIndividual , bim:Família.Botânica ;
      bim:tipo.botânico    "Arbustos, árvores e lianas" ;
      bim:descrição    "Inclui árvores e arbusto com folhas compostas, flores pequenas, muitas vezes com disco nectarífero. Frutos variados (lichia, guaraná, laranja, limão, manga, caju). Frutas tropicais, óleos essenciais, madeira. Frutos com cápsulas, sementes oleosas"  .
+
+bim:Solanaceae  rdf:type  owl:NamedIndividual , bim:Família.Botânica ;
+     bim:tipo.botânico    "Arbustos" ;
+     bim:descrição    "Inclui plantas de folhas simples, alternas, sem estípulas, com flores hermafroditas, geralmente actinomorfas. Corola com 5 pétalas fundidas, formando tubo, funil ou campânula. Estames em número igual ao de pétalas, geralmente 5. Ovário súpero, com dois carpelos e placentação axilar. Fruto tipo baga ou cápsula, com sementes planas ou angulosas"  .
 
 bim:Theaceae  rdf:type  owl:NamedIndividual , bim:Família.Botânica ;
      bim:tipo.botânico    "Arbustos, ervas e raramente árvores" ;
@@ -2784,6 +2793,29 @@ bim:Coqueiro.jerivá  rdf:type  owl:NamedIndividual , bim:Palmeira ;
      bim:usada.para    "ornamental, frutífera" ;
      bim:descrição    "Fruto comestível, muito usada em paisagismo" ;
      bim:mês.de.floração    "setembro a novembro" ;
+     bim:bioma    "Mata Atlântica" ;
+     bim:apta.para.calçada    "Sim" ;
+     bim:é.código.de.conservação    bim:Pouco.Preocupante  .
+
+bim:Dama.da.Noite  rdf:type  owl:NamedIndividual , bim:Arbóreo ;
+     bim:nome.científico    "Cestrum nocturnum" ;
+     bim:é.divisão.botânica    bim:Angiosperma ;
+     bim:é.classe.botânica    bim:Magnoliopsida ;
+     bim:é.ordem.botânica    bim:Solanales ;
+     bim:é.família.botânica    bim:Solanaceae ;
+     bim:tipo.botânico    "Arbusto" ;
+     bim:diámetro.do.tronco   0 ;
+     bim:diámetro.mínimo.da.copa   0 ;
+     bim:diámetro.máximo.da.copa   0 ;
+     bim:altura.mínima.da.planta   1 ;
+     bim:altura.máxima.da.planta   4 ;
+     bim:tipo.de.raiz    "Fascicular (cabeleira)" ;
+     bim:profundidade.da.raiz    "0.0" ;
+     bim:tempo.de.crescimento    "2 anos" ;
+     bim:longevidade.da.planta    "perenne" ;
+     bim:usada.para    "ornamental e medicinal" ;
+     bim:descrição    "Planta de flores pequenas, brancas, tubulares, com perfume intenso que se intensifica à noite. Conhecida também como 'Jasmim da noite', tem floração noturna atrai mariposas. É de crescimento rápido, muito usada em cercas e muros" ;
+     bim:mês.de.floração    "setembro, outubro, novembro" ;
      bim:bioma    "Mata Atlântica" ;
      bim:apta.para.calçada    "Sim" ;
      bim:é.código.de.conservação    bim:Pouco.Preocupante  .
@@ -9421,6 +9453,35 @@ bim:passado   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Califica un elemento como pasado. Un valor antiguo."@es  .
 
 
+bim:p.relacionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.parte.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.relacionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a relacionar: é.parte.de" ;
+                    bim:Chave               "relac.101" ;
+                    bim:Ação                "Ação relacionar" ;
+                    bim:Definição           "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt ;
+                    bim:Definición          "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es  .
+
+
+bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:parte.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.relacionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  parte.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "relac.101" ;
+                    bim:Ação                "Ação relacionar" ;
+                    bim:Definição           "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt ;
+                    bim:Definición          "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es  .
+
+
 bim:p.requisitar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -9820,5 +9881,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia VEGET
-##  Criada em 24/10/2025 13:44:26
+##  Criada em 26/10/2025 8:12:19
 #################################################################
