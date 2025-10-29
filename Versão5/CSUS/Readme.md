@@ -16,3 +16,4 @@
   * **Ontologia_CSUS_4A.xlsx**
   * **Ontologia_CSUS_4A.owl**
 
+<img width="943" height="626" alt="CSIS_4A" src="https://github.com/user-attachments/assets/a81d23ec-0025-4f50-bd3a-a89259484dac" />
