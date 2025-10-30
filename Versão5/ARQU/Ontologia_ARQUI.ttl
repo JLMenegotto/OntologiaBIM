@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt ;
-	  rdfs:label "DataHora: 30/10/2025 7:43:55"@pt ;
+	  rdfs:label "DataHora: 30/10/2025 7:49:20"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -4437,8 +4437,7 @@ bim:Zonas.de.Segurança rdf:type  owl:Class  ;
 
 bim:Zona.de.Biosegurança rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonas.de.Segurança ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.formado.por ;      owl:someValuesFrom        bim:Laboratório.NB1         bim:Laboratório.NB2         bim:Laboratório.NB3               
+      owl:equivalentClass   [ owl:intersectionOf ( bim:Laboratório.NB1         bim:Laboratório.NB2         bim:Laboratório.NB3         bim:Laboratório.NB4 ) ; rdf:type  owl:Class ];   
       rdfs:label  "Zona de Biosegurança"@pt ;
       bim:Definição   "Zona espacial é usada para representar uma zona de biosegurança, normalmente onde a ventilação é crítica."@pt ;
       bim:Definición  "La zona espacial se utiliza para representar una zona de bioseguridad, donde las ventilaciones son críticas."@es ;
@@ -27917,35 +27916,6 @@ bim:fabricante   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Identificación del fabricante del componente constructivo del proyecto."@es  .
 
 
-bim:p.compor   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.formado.por   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.compor ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a compor: é.formado.por" ;
-                    bim:Chave               "compo.102" ;
-                    bim:Ação                "Ação compor" ;
-                    bim:Definição           "Se um elemento é formado por outro. Não há necessariamente uma relação funcional entre os elementos."@pt ;
-                    bim:Definición          "Si un elemento está formado por otro. No existe necesariamente una relación funcional entre los elementos."@es  .
-
-
-bim:d.compor   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:formado.por   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.compor ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para compor:  formado.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "compo.102" ;
-                    bim:Ação                "Ação compor" ;
-                    bim:Definição           "Se um elemento é formado por outro. Não há necessariamente uma relação funcional entre os elementos."@pt ;
-                    bim:Definición          "Si un elemento está formado por otro. No existe necesariamente una relación funcional entre los elementos."@es  .
-
-
 bim:p.concursar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -31629,5 +31599,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 30/10/2025 7:43:59
+##  Criada em 30/10/2025 7:49:24
 #################################################################
