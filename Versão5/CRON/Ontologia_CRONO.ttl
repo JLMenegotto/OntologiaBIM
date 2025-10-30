@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos temporais"@pt ;
-	  rdfs:label "DataHora: 29/10/2025 9:52:31"@pt ;
+	  rdfs:label "DataHora: 30/10/2025 12:58:31"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -2129,6 +2129,36 @@ bim:descrição   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt ;
                     bim:Definición          "Declara la descripción del objeto que puede ser una explicación sucinta."@es  .
+
+
+bim:p.compor   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.agrupado.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.compor ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a compor: é.agrupado.com" ;
+                    bim:Chave               "compo.104" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
+                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es ;
+                    rdf:type                owl:SymmetricProperty  .
+
+
+bim:d.compor   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:agrupado.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.compor ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para compor:  agrupado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "compo.104" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
+                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
 
 
 bim:p.concursar   rdf:type  owl:ObjectProperty ;
@@ -5130,35 +5160,6 @@ bim:passado   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Califica un elemento como pasado. Un valor antiguo."@es  .
 
 
-bim:p.relacionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.agrupado.com   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.relacionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a relacionar: é.agrupado.com" ;
-                    bim:Chave               "relac.103" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
-                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
-
-
-bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:agrupado.com   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.relacionar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  agrupado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "relac.103" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
-                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
-
-
 bim:p.requisitar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -5616,5 +5617,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia CRONO
-##  Criada em 29/10/2025 9:52:32
+##  Criada em 30/10/2025 12:58:33
 #################################################################
