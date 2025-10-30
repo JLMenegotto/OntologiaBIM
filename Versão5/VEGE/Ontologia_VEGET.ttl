@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de vegetação."@pt ;
-	  rdfs:label "DataHora: 29/10/2025 8:43:01"@pt ;
+	  rdfs:label "DataHora: 30/10/2025 12:59:22"@pt ;
 	  rdfs:label "Fonte.Consultada.1: https://museunacional.ufrj.br/hortobotanico"@pt ;
 	  rdfs:label "Fonte.Consultada.2: https://www.embrapa.br/florestas/publicacoes"@pt ;
 	  rdfs:label "Fonte.Consultada.3: https://www.arvoresgigantes.org"@pt ;
@@ -242,7 +242,7 @@ bim:Flora rdf:type  owl:Class  ;
 
 bim:Arbóreo rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Flora ;
-      owl:equivalentClass   [ owl:intersectionOf ( bim:Árvore         bim:Arbusto         bim:Subarbusto         bim:Trepadeira ) ; rdf:type  owl:Class ];   
+      owl:equivalentClass   [ owl:unionOf ( bim:Árvore         bim:Arbusto         bim:Subarbusto         bim:Trepadeira ) ; rdf:type  owl:Class ];   
       rdfs:label  "Arbóreo"@pt ;
       bim:Definição   "Planta cujo crescimento pode ser conduzido para se transformar em árvore, arbusto ou trepadeira. Fazem fotossíntese."@pt ;
       bim:Definición  "Una planta cuyo crecimiento puede convertirse en un árbol, arbusto o enredadera. Realizan la fotosíntesis."@es ;
@@ -7015,6 +7015,35 @@ bim:descrição   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara la descripción del objeto que puede ser una explicación sucinta."@es  .
 
 
+bim:p.compor   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.parte.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.compor ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a compor: é.parte.de" ;
+                    bim:Chave               "compo.105" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt ;
+                    bim:Definición          "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es  .
+
+
+bim:d.compor   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:parte.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.compor ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para compor:  parte.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "compo.105" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt ;
+                    bim:Definición          "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es  .
+
+
 bim:p.concursar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -9981,35 +10010,6 @@ bim:passado   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Califica un elemento como pasado. Un valor antiguo."@es  .
 
 
-bim:p.relacionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.parte.de   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.relacionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a relacionar: é.parte.de" ;
-                    bim:Chave               "relac.101" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt ;
-                    bim:Definición          "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es  .
-
-
-bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:parte.de   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.relacionar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  parte.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "relac.101" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um objeto é parte de outro, mas não sugere uma continuidade funcional. Define um fragmento de um todo."@pt ;
-                    bim:Definición          "Si un objeto es parte de otro, pero no sugiere una continuidad funcional. Define un fragmento de un todo."@es  .
-
-
 bim:p.requisitar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -10409,5 +10409,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia VEGET
-##  Criada em 29/10/2025 8:43:02
+##  Criada em 30/10/2025 12:59:25
 #################################################################
