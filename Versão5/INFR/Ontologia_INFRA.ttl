@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt ;
-	  rdfs:label "DataHora: 29/10/2025 8:42:57"@pt ;
+	  rdfs:label "DataHora: 30/10/2025 12:59:08"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -11808,6 +11808,65 @@ bim:aberta.em   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es  .
 
 
+bim:p.compor   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.agrupador.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.compor ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a compor: é.agrupador.de" ;
+                    bim:Chave               "compo.103" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt ;
+                    bim:Definición          "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
+
+
+bim:d.compor   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:agrupador.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.compor ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para compor:  agrupador.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "compo.103" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt ;
+                    bim:Definición          "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
+
+
+bim:p.compor   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.agrupado.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.compor ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a compor: é.agrupado.com" ;
+                    bim:Chave               "compo.104" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
+                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es ;
+                    rdf:type                owl:SymmetricProperty  .
+
+
+bim:d.compor   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:agrupado.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.compor ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para compor:  agrupado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "compo.104" ;
+                    bim:Ação                "Ação compor" ;
+                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
+                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
+
+
 bim:p.concursar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -15661,70 +15720,12 @@ bim:p.relacionar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.agrupador.de   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.relacionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a relacionar: é.agrupador.de" ;
-                    bim:Chave               "relac.102" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt ;
-                    bim:Definición          "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
-
-
-bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:agrupador.de   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.relacionar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  agrupador.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "relac.102" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt ;
-                    bim:Definición          "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
-
-
-bim:p.relacionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.agrupado.com   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.relacionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a relacionar: é.agrupado.com" ;
-                    bim:Chave               "relac.103" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
-                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
-
-
-bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:agrupado.com   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.relacionar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  agrupado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "relac.103" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt ;
-                    bim:Definición          "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es  .
-
-
-bim:p.relacionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
 bim:é.pertencente.a   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.relacionar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a relacionar: é.pertencente.a" ;
-                    bim:Chave               "relac.105" ;
+                    bim:Chave               "relac.102" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "O elemento pertence a um outro."@pt ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
@@ -15738,7 +15739,7 @@ bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.relacionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "relac.105" ;
+                    bim:Chave               "relac.102" ;
                     bim:Ação                "Ação relacionar" ;
                     bim:Definição           "O elemento pertence a um outro."@pt ;
                     bim:Definición          "El elemento pertenece a otro."@es  .
@@ -16173,5 +16174,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 29/10/2025 8:42:58
+##  Criada em 30/10/2025 12:59:11
 #################################################################
