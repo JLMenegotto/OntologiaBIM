@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Infraestrutura>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt
-  Annotations: rdfs:label "DataHora: 29/10/2025 8:42:57"@pt
+  Annotations: rdfs:label "DataHora: 30/10/2025 12:59:08"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -13101,6 +13101,65 @@ DataProperty: bim:aberta.em
 	Annotations: bim:Definição "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
 	Annotations: bim:Definición "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es
 
+ObjectProperty: bim:p.compor
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.agrupador.de
+	SubPropertyOf: bim:p.compor
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a compor: é.agrupador.de"@pt
+	Annotations: bim:Chave "compo.103"
+	Annotations: bim:Ação "Ação compor"@pt
+	Annotations: bim:Definição "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt
+	Annotations: bim:Definición "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
+
+DataProperty: bim:d.compor
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:agrupador.de
+	SubPropertyOf: bim:d.compor
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para compor:  agrupador.de  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "compo.103"
+	Annotations: bim:Ação "Ação compor"@pt
+	Annotations: bim:Definição "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt
+	Annotations: bim:Definición "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
+
+ObjectProperty: bim:p.compor
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.agrupado.com
+	SubPropertyOf: bim:p.compor
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a compor: é.agrupado.com"@pt
+	Annotations: bim:Chave "compo.104"
+	Annotations: bim:Ação "Ação compor"@pt
+	Annotations: bim:Definição "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt
+	Annotations: bim:Definición "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
+	Characteristics: Symmetric
+
+DataProperty: bim:d.compor
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:agrupado.com
+	SubPropertyOf: bim:d.compor
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para compor:  agrupado.com  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "compo.104"
+	Annotations: bim:Ação "Ação compor"@pt
+	Annotations: bim:Definição "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt
+	Annotations: bim:Definición "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
+
 ObjectProperty: bim:p.concursar
 	SubPropertyOf: bim:BIMProp
 
@@ -16955,70 +17014,12 @@ ObjectProperty: bim:p.relacionar
 
 
 
-ObjectProperty: bim:é.agrupador.de
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.agrupador.de"@pt
-	Annotations: bim:Chave "relac.102"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt
-	Annotations: bim:Definición "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:agrupador.de
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  agrupador.de  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.102"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "Se um elemento agrupa outros. Não há necessariamente uma relação funcional entre os elementos agrupados."@pt
-	Annotations: bim:Definición "Si un elemento agrupa a otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.agrupado.com
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.agrupado.com"@pt
-	Annotations: bim:Chave "relac.103"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt
-	Annotations: bim:Definición "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:agrupado.com
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  agrupado.com  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.103"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "Se um elemento está agrupado com outros. Não há necessariamente uma relação funcional entre elementos agrupados."@pt
-	Annotations: bim:Definición "Si un elemento está agrupado con otros. No existe necesariamente una relación funcional entre los elementos agrupados."@es
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
 ObjectProperty: bim:é.pertencente.a
 	SubPropertyOf: bim:p.relacionar
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a relacionar: é.pertencente.a"@pt
-	Annotations: bim:Chave "relac.105"
+	Annotations: bim:Chave "relac.102"
 	Annotations: bim:Ação "Ação relacionar"@pt
 	Annotations: bim:Definição "O elemento pertence a um outro."@pt
 	Annotations: bim:Definición "El elemento pertenece a otro."@es
@@ -17032,7 +17033,7 @@ DataProperty: bim:pertencente.a
 	SubPropertyOf: bim:d.relacionar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.105"
+	Annotations: bim:Chave "relac.102"
 	Annotations: bim:Ação "Ação relacionar"@pt
 	Annotations: bim:Definição "O elemento pertence a um outro."@pt
 	Annotations: bim:Definición "El elemento pertenece a otro."@es
@@ -17467,5 +17468,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 29/10/2025 8:42:58
+##  Criada em 30/10/2025 12:59:11
 #################################################################
