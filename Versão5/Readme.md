@@ -61,39 +61,6 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
 #### Interface:
 ![Interface_2025](https://github.com/user-attachments/assets/3138138d-e57c-48d6-9ee2-128024440999)
 
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não implementada para extrair os fatos ontológicos do modelo BIM utilizando os esquemas criados. 
-O campo 1 especifica o domínio da ontologia que será criada. Deve ingressar o valor, pressionar enter ou cliclar na pequena seta azul do campo. Podem ser processadas mais de uma ontologia indicando no segundo campo o número da última ontologia que se deseja processar.<br></b></p> 
-
-<p align="justify">Segue a lista de valores numéricos permitidos.<br></b></p>
-
-    * 0  Processa OBIM Categorias Revit e Classes IFC
-    * 1  Processa ABNT 15965_0M  (Materiais)
-    * 2  Processa ABNT 15965_0P  (Propriedades)
-    * 3  Processa ABNT 15965_1D  (Disciplinas)
-    * 4  Processa ABNT 15965_1F  (Fases)
-    * 5  Processa ABNT 15965_1S  (Serviços)
-    * 6  Processa ABNT 15965_2C  (Recursos da construção - Materiais de construção)
-    * 7  Processa ABNT 15965_2N  (Recursos da construção - Recursos Humanos)
-    * 8  Processa ABNT 15965_2Q  (Recursos da construção - Equipamentos)
-    * 9  Processa ABNT 15965_3E  (Elementos)
-    * 10 Processa ABNT 15965_3R  (Resultados da construção)
-    * 11 Processa ABNT 15965_4A  (Ambientes)
-    * 12 Processa ABNT 15965_4U  (Unidades)                                                      
-    * 13 Processa ABNT 15965_5I  (Informação)                                                     
-    * 14 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
-    * 15 Processa CSUS_4A Caderno SomaSUS (Ambientes)                                                            
-    * 16 Processa CSUS_4U Caderno SomaSUS (Unidades Funcionais)                                                    
-    * 17 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
-    * 18 Processa Conceitos urbanos URBA_Rio                                                 
-    * 19 Processa Conceitos temporais CRONO                                             
-    * 20 Processa Conceitos cromáticos CROMA 
-    * 21 Processa Conceitos de documentação DOCUM   
-                                                       
-O campo 2 serve para apontar a segunda ontologia a ser criada. Inicialmente será configurado com o mesmo valor digitado no campo1. Caso queira apenas uma ontologia mantenha esse valor.   
-
-#### Interface:
-![Interface_2025](https://github.com/user-attachments/assets/3138138d-e57c-48d6-9ee2-128024440999)
-
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não liberada para uso que extrai os fatos ontológicos do modelo BIM utilizando os esquemas criados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
     * 0  Processa os Objetos_BIM de Revit e Ifc 
