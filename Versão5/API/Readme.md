@@ -14,7 +14,8 @@ Na API com data em 20 de maio foi modificada a arquitetura do processamento das 
       * **C:\APIBIM\Onto2025\Ico**  
  2. Colocar o arquivo **ONTOBIM_2025.dll** na pasta **C:\APIBIM\Onto2025**.  
  3. Os arquivos **Png** da pasta Ico devem ser colocadados em **C:\APIBIM\Onto2025\Ico**.  
- 4. Criar a pasta **C:\Construtor_Onto** e as subpastas **ABNT, OBIM, DOCU, CRON, CROM, CSUS e URBA** onde pode colocar os arquivos Excel de cada tema. Nessas pastas são criados os arquivos owl.  
+ 4. Criar a pasta **C:\Construtor_Onto**
+ 5. Dentro de **C:\Construtor_Onto** criar as subpastas **ABNT, ARWU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE** onde pode colocar os arquivos Excel de cada tema. Nessas pastas são criados os arquivos owl.  
 
 #### Arquivo Addin para Revit
 Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema. A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**. Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
