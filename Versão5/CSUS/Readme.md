@@ -14,4 +14,5 @@
   * **Ontologia_CSUS_4AU.xlsx**
   * **Ontologia_CSUS_4AU.owl**
     
-<img width="865" height="710" alt="CSUS_4AUI" src="https://github.com/user-attachments/assets/5c382105-cbd7-4e13-9058-597a1598b3a6" />
+<img width="865" height="878" alt="CSIS_2Q" src="https://github.com/user-attachments/assets/c9fc36dc-05c8-4f93-be25-cc97f4632b6c" />
+
