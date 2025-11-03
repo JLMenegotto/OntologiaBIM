@@ -38,13 +38,6 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
 
 Para abrir a ontologia pode-se baixar e instalar o editor [Protégé](https://protege.stanford.edu/) da Universidade de Stanford.
 
-### Construtor de Ontologias BIM GIS. Versão 5.00.
->**Prof. José Luis Menegotto**<br>
->**jlmenegotto@poli.ufrj.br**<br>
->Escola Politécnica da UFRJ - Departamento de Expressão Gráfica.<br>
->PEU Programa de Pós-graduação em Engenharia Urbana<br>
->PPE Programa de Pós-graduação em Estruturas<br>
-
 ##### Instalação para executar em Revit como API 
 
 Na última versão da API foi modificada a arquitetura do processamento das planilhas obtendo um ganho de performance.
