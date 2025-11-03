@@ -6,6 +6,7 @@
 >PPE Programa de Pós-graduação em Estruturas<br>
 
 ##### Instalação para executar em Revit como API 
+###### Estrutura de pastas
 
 Na API com data em 20 de maio foi modificada a arquitetura do processamento das planilhas obtendo um ganho considerável de performance.
 
@@ -15,15 +16,15 @@ Na API com data em 20 de maio foi modificada a arquitetura do processamento das 
  2. Colocar o arquivo **ONTOBIM_2025.dll** na pasta **C:\APIBIM\Onto2025**.  
  3. Os arquivos **Png** da pasta Ico devem ser colocadados em **C:\APIBIM\Onto2025\Ico**.  
  4. Criar a pasta **C:\Construtor_Onto**
- 5. Dentro de **C:\Construtor_Onto** criar as subpastas **ABNT, ARWU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE** onde pode colocar os arquivos Excel de cada tema. Nessas pastas são criados os arquivos owl.  
+ 5. Dentro de **C:\Construtor_Onto** criar as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE** onde pode colocar os arquivos Excel de cada tema. Nessas pastas são criados os arquivos owl.  
+
+![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
+
 
 #### Arquivo Addin para Revit
 Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema. A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**. Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
 
 ![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
-
-#### Estrutura de pastas
-![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
 
 #### Interface:
 ![Interface_2025](https://github.com/user-attachments/assets/3138138d-e57c-48d6-9ee2-128024440999)
