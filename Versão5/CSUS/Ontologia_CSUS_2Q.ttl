@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde"@pt ;
-	  rdfs:label "DataHora: 03/11/2025 11:36:52"@pt ;
+	  rdfs:label "DataHora: 03/11/2025 15:02:26"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -736,14 +736,14 @@ bim:SUS.Hoteleria rdf:type  owl:Class  ;
       rdfs:label  "SUS.Hoteleria"@pt  .
 
 
-bim:SUS.Ropa.de.Cama rdf:type  owl:Class  ;
+bim:SUS.Roupa.de.Cama rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:SUS.Hoteleria ;
-      rdfs:label  "SUS.Ropa.de.Cama"@pt ;
+      rdfs:label  "SUS.Roupa.de.Cama"@pt ;
       bim:Definição   "Ropa de cama usada em hospitais do Sistema Único de Saúde do Brasil."@pt ;
       bim:Definición  "Ropa de cama usada en hospitales del Sistema Único de Salud de Brasil."@es ;
       bim:Natureza    "SUS.Assistência.Médica"@pt ;
       bim:Espécie     "SUS.Hoteleria"@pt ;
-      bim:Tema        "SUS.Ropa.de.Cama"@pt ;
+      bim:Tema        "SUS.Roupa.de.Cama"@pt ;
       bim:Disciplina  "Arquitetura hospitalar"@pt ;
       bim:Chave       "Key.SUS.21"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
@@ -794,10 +794,10 @@ bim:Equipamentos.SUS  rdf:type  owl:NamedIndividual , bim:Contêiner ;
 bim:Código.Disponível  rdf:type  owl:NamedIndividual , bim:SUS ;
      bim:descrição    "É um código disponível para classificar equipamentos ou mobiliários do SUS"  .
 
-bim:Roupa.Limpa  rdf:type  owl:NamedIndividual , bim:SUS.Ropa.de.Cama ;
+bim:Roupa.Limpa  rdf:type  owl:NamedIndividual , bim:SUS.Roupa.de.Cama ;
      bim:descrição    "Roupa limpa que pode ser utilizada para renovar a roupa de cama dos pacientes"  .
 
-bim:Roupa.Contaminada  rdf:type  owl:NamedIndividual , bim:SUS.Ropa.de.Cama ;
+bim:Roupa.Suja  rdf:type  owl:NamedIndividual , bim:SUS.Roupa.de.Cama ;
      bim:descrição    "Roupa utilizada que deve ser destinada a limpeça"  .
 
 bim:Equip.Limpo  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
@@ -805,6 +805,10 @@ bim:Equip.Limpo  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
 
 bim:Equip.Contaminado  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:descrição    "Equipamento sujo ou contaminado que deve ser esterilizado"  .
+
+bim:DIS.PES  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:dispositivo.médico    "Dispositivo de uso pessoal para os pacientes"  .
 
 bim:EQU.GER  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
@@ -826,9 +830,21 @@ bim:EQU.EXT  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:equipamento.médico    "Equipamento utilizado para realizar extrações para análise"  .
 
+bim:EQU.FRE  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:equipamento.médico    "Equipamento tipo freezer utilizado para congelar ou manter amostras"  .
+
+bim:EQU.GAS  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:equipamento.médico    "Equipamento utilizado para fluídos e gases"  .
+
 bim:EQU.LAB  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:equipamento.médico    "Equipamento utilizado para realizar análise laboratórial"  .
+
+bim:EQU.LUZ  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:equipamento.médico    "Equipamento utilizado para iluminar"  .
 
 bim:EQU.MED  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
@@ -841,10 +857,6 @@ bim:EQU.MON  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
 bim:EQU.OBS  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:equipamento.médico    "Equipamento utilizado para observação direta sobre o corpo do paciente"  .
-
-bim:EQU.PES  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
-     bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:equipamento.médico    "Equipamento de uso pessoal dos pacientes"  .
 
 bim:EQU.CIR  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
@@ -872,47 +884,47 @@ bim:INS.MED  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:MOB.APO  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos de apóio"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos de apóio"  .
 
 bim:MOB.BBO  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por biombos"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de  por biombos"  .
 
-bim:MOB.CAD  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:MOB.CAD  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por cadeiras gerais"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de  por cadeiras gerais"  .
 
 bim:MOB.INT  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos para internação tipo camas ou berços"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos para internação tipo camas ou berços"  .
 
 bim:MOB.CIR  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos com funcionalidade cirúrgica"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos com funcionalidade cirúrgica"  .
 
-bim:MOB.CRR  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:MOB.CAR  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por carros de transporte para objetos tipo carros"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de carros de transporte para objetos tipo carros"  .
 
 bim:MOB.EXA  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos equipados para realizar exames"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos equipados para realizar exames"  .
 
 bim:MOB.MAC  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos de transporte para pacientes tipo macas"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos de transporte para pacientes tipo macas"  .
 
 bim:MOB.NAT  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos para berçarios ou medicina Neonatal"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos para berçarios ou medicina Neonatal"  .
 
 bim:MOB.NEC  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos utilizados em necrotérios"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos utilizados em necrotérios"  .
 
 bim:MOB.REA  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:mobília    "Mobiliário constituido por elementos especiais utilizados em reabilitação de pacientes"  .
+     bim:mobília.de.saúde    "Mobiliário hospitalar de elementos especiais utilizados em reabilitação de pacientes"  .
 
 bim:EQU.001  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
@@ -974,6 +986,7 @@ bim:EQU.006  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.007  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:DIS.PES ;
      bim:é.equipamento.médico    bim:EQU.RAD ;
      bim:código    "EQU.007" ;
      bim:tema    "Avental" ;
@@ -1004,8 +1017,8 @@ bim:EQU.009  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.010  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.BBO ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.BBO ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.010" ;
      bim:tema    "Biombo" ;
      bim:descrição    "Biombo" ;
@@ -1015,9 +1028,9 @@ bim:EQU.010  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.011  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.mobília.de.saúde    bim:MOB.BBO ;
      bim:é.equipamento.médico    bim:EQU.RAD ;
-     bim:é.mobília    bim:MOB.BBO ;
-     bim:mobília    "Móbiliário" ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.011" ;
      bim:tema    "Biombo" ;
      bim:descrição    "Biombo plumbífero" ;
@@ -1038,8 +1051,8 @@ bim:EQU.012  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.013  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CAD ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.INT ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.013" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira de rodas" ;
@@ -1049,8 +1062,8 @@ bim:EQU.013  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.014  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.014" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira otorrinológica" ;
@@ -1060,8 +1073,8 @@ bim:EQU.014  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.015  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.015" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira oftalmológica" ;
@@ -1071,6 +1084,7 @@ bim:EQU.015  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.016  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.016" ;
      bim:tema    "Geladeira" ;
      bim:descrição    "Geladeira" ;
@@ -1089,8 +1103,8 @@ bim:EQU.017  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.018  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.INT ;
-     bim:mobília    "Móbiliário de internação" ;
+     bim:é.mobília.de.saúde    bim:MOB.INT ;
+     bim:mobília.de.saúde    "Móbiliário de internação" ;
      bim:código    "EQU.018" ;
      bim:tema    "Cama" ;
      bim:descrição    "Cama hospitalar Fawler com colchão" ;
@@ -1100,8 +1114,8 @@ bim:EQU.018  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.019  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.019" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro de curativos" ;
@@ -1129,27 +1143,28 @@ bim:EQU.021  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.022  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:EQU.022  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.022" ;
      bim:tema    "Conjunto" ;
      bim:descrição    "Conjunto para nebulização contínua" ;
-     bim:equipamento   0 ;
+     bim:equipamento   1 ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.023  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:EQU.023  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:código    "EQU.023" ;
      bim:tema    "Conjunto" ;
      bim:descrição    "Conjunto odontológico" ;
-     bim:equipamento   0 ;
+     bim:equipamento   1 ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
 bim:EQU.024  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.024" ;
      bim:tema    "Comadre" ;
      bim:descrição    "Comadre" ;
@@ -1203,6 +1218,7 @@ bim:EQU.028  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.029  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.029" ;
      bim:tema    "Umidificador" ;
      bim:descrição    "Umidificador aquecedor" ;
@@ -1212,6 +1228,7 @@ bim:EQU.029  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.030  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.030" ;
      bim:tema    "Escada" ;
      bim:descrição    "Escada com dois degraus" ;
@@ -1243,6 +1260,7 @@ bim:EQU.032  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.033  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.033" ;
      bim:tema    "Cuba" ;
      bim:descrição    "Cuba em aço inox" ;
@@ -1312,6 +1330,7 @@ bim:EQU.039  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.040  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.040" ;
      bim:tema    "Bebedouro" ;
      bim:descrição    "Bebedouro" ;
@@ -1343,6 +1362,7 @@ bim:EQU.042  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.043  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.043" ;
      bim:tema    "Impressora" ;
      bim:descrição    "Impressora" ;
@@ -1353,7 +1373,7 @@ bim:EQU.043  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 bim:EQU.044  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.CIR ;
-     bim:dispositivo    "Dispositivo cirúrgico" ;
+     bim:instrumento.médico    "Dispositivo cirúrgico" ;
      bim:código    "EQU.044" ;
      bim:tema    "Instrumentais" ;
      bim:descrição    "Instrumentais cirúrgicos – caixa básica" ;
@@ -1408,8 +1428,8 @@ bim:EQU.048  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.049  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.MAC ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.MAC ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.049" ;
      bim:tema    "Maca" ;
      bim:descrição    "Maca para transporte" ;
@@ -1419,8 +1439,8 @@ bim:EQU.049  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.050  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NAT ;
-     bim:mobília    "Móbiliário para Neonatal e berçarios" ;
+     bim:é.mobília.de.saúde    bim:MOB.NAT ;
+     bim:mobília.de.saúde    "Móbiliário para Neonatal e berçarios" ;
      bim:código    "EQU.050" ;
      bim:tema    "Berço" ;
      bim:descrição    "Berço hospitalar aquecido" ;
@@ -1441,8 +1461,8 @@ bim:EQU.051  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.052  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.052" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa para exames" ;
@@ -1452,9 +1472,8 @@ bim:EQU.052  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.053  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.CIR ;
-     bim:mobília    "Móbiliário cirúrgico" ;
+     bim:é.mobília.de.saúde    bim:MOB.CIR ;
+     bim:mobília.de.saúde    "Móbiliário cirúrgico" ;
      bim:código    "EQU.053" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa auxiliar para instrumental" ;
@@ -1485,8 +1504,8 @@ bim:EQU.055  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.056  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NAT ;
-     bim:mobília    "Móbiliário para Neonatal e berçarios" ;
+     bim:é.mobília.de.saúde    bim:MOB.NAT ;
+     bim:mobília.de.saúde    "Móbiliário para Neonatal e berçarios" ;
      bim:código    "EQU.056" ;
      bim:tema    "Berço" ;
      bim:descrição    "Berço hospitalar com colchão" ;
@@ -1562,7 +1581,7 @@ bim:EQU.062  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.063  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.063" ;
      bim:tema    "Papagaio" ;
      bim:descrição    "Papagaio" ;
@@ -1583,6 +1602,7 @@ bim:EQU.064  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.065  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.065" ;
      bim:tema    "Projetor" ;
      bim:descrição    "Projetor multimídia" ;
@@ -1613,6 +1633,8 @@ bim:EQU.067  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.068  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.LUZ ;
+     bim:é.equipamento.médico    bim:EQU.CIR ;
      bim:código    "EQU.068" ;
      bim:tema    "Refletor" ;
      bim:descrição    "Refletor parabólico de luz fria" ;
@@ -1633,6 +1655,7 @@ bim:EQU.069  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.070  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.FRE ;
      bim:código    "EQU.070" ;
      bim:tema    "Refrigerador" ;
      bim:descrição    "Refrigerador para vacinas" ;
@@ -1642,6 +1665,7 @@ bim:EQU.070  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.071  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.071" ;
      bim:tema    "Régua" ;
      bim:descrição    "Régua de gases" ;
@@ -1651,6 +1675,7 @@ bim:EQU.071  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.072  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.072" ;
      bim:tema    "Relógio" ;
      bim:descrição    "Relógio de parede" ;
@@ -1687,17 +1712,19 @@ bim:EQU.075  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.076  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
+bim:EQU.076  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.mobília.de.saúde    bim:MOB.INT ;
      bim:código    "EQU.076" ;
      bim:tema    "Suporte" ;
      bim:descrição    "Suporte de soro de chão" ;
      bim:equipamento   0 ;
-     bim:dispositivo   1 ;
-     bim:mobiliário   0  .
+     bim:dispositivo   0 ;
+     bim:mobiliário   1  .
 
 bim:EQU.077  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.077" ;
      bim:tema    "Tela" ;
      bim:descrição    "Tela de projeção" ;
@@ -1707,6 +1734,7 @@ bim:EQU.077  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.078  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.078" ;
      bim:tema    "Televisor" ;
      bim:descrição    "Televisor" ;
@@ -1738,6 +1766,7 @@ bim:EQU.080  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.081  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.081" ;
      bim:tema    "Videocassete" ;
      bim:descrição    "Videocassete" ;
@@ -1756,8 +1785,8 @@ bim:EQU.082  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.083  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.083" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa auxiliar" ;
@@ -1767,8 +1796,8 @@ bim:EQU.083  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.084  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.INT ;
-     bim:mobília    "Móbiliário de internação Neonatal e berçarios" ;
+     bim:é.mobília.de.saúde    bim:MOB.INT ;
+     bim:mobília.de.saúde    "Móbiliário de internação Neonatal e berçarios" ;
      bim:código    "EQU.084" ;
      bim:tema    "Cama" ;
      bim:descrição    "Cama hospitalar infantil com colchão" ;
@@ -1787,8 +1816,8 @@ bim:EQU.085  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.086  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.086" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro porta talheres e bandeja" ;
@@ -1798,8 +1827,8 @@ bim:EQU.086  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.087  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.087" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro de anestesia" ;
@@ -1809,8 +1838,8 @@ bim:EQU.087  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.088  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.088" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro de emergência" ;
@@ -1820,8 +1849,8 @@ bim:EQU.088  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.089  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.APO ;
-     bim:mobília    "Móbiliário de apóio" ;
+     bim:é.mobília.de.saúde    bim:MOB.APO ;
+     bim:mobília.de.saúde    "Móbiliário de apóio" ;
      bim:código    "EQU.089" ;
      bim:tema    "Rampa" ;
      bim:descrição    "Rampa com degraus" ;
@@ -1831,8 +1860,8 @@ bim:EQU.089  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.090  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.APO ;
-     bim:mobília    "Móbiliário de apóio" ;
+     bim:é.mobília.de.saúde    bim:MOB.APO ;
+     bim:mobília.de.saúde    "Móbiliário de apóio" ;
      bim:código    "EQU.090" ;
      bim:tema    "Balcão" ;
      bim:descrição    "Balcão refrigerado para alimentos" ;
@@ -1912,6 +1941,7 @@ bim:EQU.097  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 bim:EQU.098  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.equipamento.médico    bim:EQU.CIR ;
+     bim:é.equipamento.médico    bim:EQU.LUZ ;
      bim:equipamento    "Equipamento cirúrgico" ;
      bim:código    "EQU.098" ;
      bim:tema    "Foco" ;
@@ -1923,6 +1953,7 @@ bim:EQU.098  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 bim:EQU.099  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.equipamento.médico    bim:EQU.CIR ;
+     bim:é.equipamento.médico    bim:EQU.LUZ ;
      bim:equipamento    "Equipamento cirúrgico" ;
      bim:código    "EQU.099" ;
      bim:tema    "Foco" ;
@@ -1942,8 +1973,8 @@ bim:EQU.100  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.101  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NAT ;
-     bim:mobília    "Móbiliário para Neonatal e berçarios" ;
+     bim:é.mobília.de.saúde    bim:MOB.NAT ;
+     bim:mobília.de.saúde    "Móbiliário para Neonatal e berçarios" ;
      bim:código    "EQU.101" ;
      bim:tema    "Incubadora" ;
      bim:descrição    "Incubadora" ;
@@ -1953,8 +1984,8 @@ bim:EQU.101  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.102  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NAT ;
-     bim:mobília    "Móbiliário para Neonatal e berçarios" ;
+     bim:é.mobília.de.saúde    bim:MOB.NAT ;
+     bim:mobília.de.saúde    "Móbiliário para Neonatal e berçarios" ;
      bim:código    "EQU.102" ;
      bim:tema    "Incubadora" ;
      bim:descrição    "Incubadora de transporte" ;
@@ -1995,8 +2026,8 @@ bim:EQU.105  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.106  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.106" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa antropométrica" ;
@@ -2006,9 +2037,8 @@ bim:EQU.106  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.107  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.CIR ;
-     bim:mobília    "Móbiliário cirúrgico" ;
+     bim:é.mobília.de.saúde    bim:MOB.CIR ;
+     bim:mobília.de.saúde    "Móbiliário cirúrgico" ;
      bim:código    "EQU.107" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa cirúrgica" ;
@@ -2018,20 +2048,19 @@ bim:EQU.107  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.108  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.CIR ;
-     bim:mobília    "Móbiliário cirúrgico" ;
+     bim:é.mobília.de.saúde    bim:MOB.CIR ;
+     bim:mobília.de.saúde    "Móbiliário cirúrgico" ;
      bim:código    "EQU.108" ;
      bim:tema    "Mesa" ;
-     bim:descrição    "Mesa de mayo" ;
+     bim:descrição    "Mesa de Mayo" ;
      bim:equipamento   0 ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
 bim:EQU.109  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.109" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa ginecológica" ;
@@ -2050,8 +2079,8 @@ bim:EQU.110  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.111  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.111" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira para coleta com braçadeira acoplada" ;
@@ -2133,6 +2162,7 @@ bim:EQU.118  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.119  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.119" ;
      bim:tema    "Gerador" ;
      bim:descrição    "Gerador de ozônio" ;
@@ -2142,11 +2172,11 @@ bim:EQU.119  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.120  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.MAC ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.MAC ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.120" ;
      bim:tema    "Maca" ;
-     bim:descrição    "Maca de morgani" ;
+     bim:descrição    "Maca de Morgani" ;
      bim:equipamento   0 ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
@@ -2164,7 +2194,7 @@ bim:EQU.121  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.122  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.122" ;
      bim:tema    "Escarradeira" ;
      bim:descrição    "Escarradeira" ;
@@ -2185,6 +2215,7 @@ bim:EQU.123  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.124  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.124" ;
      bim:tema    "Caldeira" ;
      bim:descrição    "Caldeira" ;
@@ -2194,8 +2225,8 @@ bim:EQU.124  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.125  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.125" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de material" ;
@@ -2216,6 +2247,7 @@ bim:EQU.126  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.127  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.127" ;
      bim:tema    "Umidificador" ;
      bim:descrição    "Umidificador de O" ;
@@ -2234,6 +2266,7 @@ bim:EQU.128  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.129  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.129" ;
      bim:tema    "Ventilador" ;
      bim:descrição    "Ventilador pulmonar" ;
@@ -2243,6 +2276,7 @@ bim:EQU.129  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.130  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.LAB ;
      bim:código    "EQU.130" ;
      bim:tema    "Lavadora" ;
      bim:descrição    "Lavadora automática de pipetas" ;
@@ -2364,6 +2398,7 @@ bim:EQU.142  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.143  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.FRE ;
      bim:código    "EQU.143" ;
      bim:tema    "Freezer" ;
      bim:descrição    "Freezer científico vertical" ;
@@ -2413,6 +2448,7 @@ bim:EQU.147  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 bim:EQU.148  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.equipamento.médico    bim:EQU.ANA ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.148" ;
      bim:tema    "Analisador" ;
      bim:descrição    "Analisador de gases sanguíneos" ;
@@ -2521,8 +2557,8 @@ bim:EQU.158  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.159  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.MAC ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.MAC ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.159" ;
      bim:tema    "Maca" ;
      bim:descrição    "Maca hospitalar de transporte com cilindro de O" ;
@@ -2551,6 +2587,7 @@ bim:EQU.161  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.162  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.162" ;
      bim:tema    "Bebê" ;
      bim:descrição    "Bebê conforto" ;
@@ -2565,8 +2602,8 @@ bim:EQU.163  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.164  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.APO ;
-     bim:mobília    "Móbiliário de apóio" ;
+     bim:é.mobília.de.saúde    bim:MOB.APO ;
+     bim:mobília.de.saúde    "Móbiliário de apóio" ;
      bim:código    "EQU.164" ;
      bim:tema    "Divã" ;
      bim:descrição    "Divã clínico" ;
@@ -2609,7 +2646,7 @@ bim:EQU.168  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.169  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.169" ;
      bim:tema    "Jarra" ;
      bim:descrição    "Jarra inox" ;
@@ -2628,6 +2665,7 @@ bim:EQU.170  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.171  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.171" ;
      bim:tema    "Central" ;
      bim:descrição    "Central de gases medicinais" ;
@@ -2659,6 +2697,7 @@ bim:EQU.173  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.174  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.174" ;
      bim:tema    "Central" ;
      bim:descrição    "Central de gases, cilindros" ;
@@ -2690,6 +2729,7 @@ bim:EQU.176  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.177  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.177" ;
      bim:tema    "Gravador" ;
      bim:descrição    "Gravador de voz portátil" ;
@@ -2710,8 +2750,8 @@ bim:EQU.178  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.179  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.179" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira pendular otoneurológica" ;
@@ -2721,8 +2761,8 @@ bim:EQU.179  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.180  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.180" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira rotatória tipo gyrus nistagmógrafo" ;
@@ -2742,6 +2782,7 @@ bim:EQU.181  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.182  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.182" ;
      bim:tema    "Central" ;
      bim:descrição    "Central de óxido nitroso" ;
@@ -2751,6 +2792,7 @@ bim:EQU.182  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.183  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GAS ;
      bim:código    "EQU.183" ;
      bim:tema    "Central" ;
      bim:descrição    "Central concentradora de oxigênio" ;
@@ -2958,6 +3000,7 @@ bim:EQU.204  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.205  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.205" ;
      bim:tema    "Freezer" ;
      bim:descrição    "Freezer doméstico" ;
@@ -3003,6 +3046,7 @@ bim:EQU.209  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.210  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.210" ;
      bim:tema    "Jogo" ;
      bim:descrição    "Jogo de polias" ;
@@ -3017,6 +3061,7 @@ bim:EQU.211  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.212  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.212" ;
      bim:tema    "Escada" ;
      bim:descrição    "Escada para ombro e dedo" ;
@@ -3026,7 +3071,7 @@ bim:EQU.212  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.213  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.213" ;
      bim:tema    "Bicicleta" ;
      bim:descrição    "Bicicleta ergométrica" ;
@@ -3045,6 +3090,7 @@ bim:EQU.214  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.215  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.215" ;
      bim:tema    "Jogo" ;
      bim:descrição    "Jogo de halteres" ;
@@ -3071,17 +3117,19 @@ bim:EQU.218  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:código    "EQU.218" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.219  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:EQU.219  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.219" ;
      bim:tema    "Central" ;
      bim:descrição    "Central de vácuo clínico" ;
-     bim:equipamento   0 ;
+     bim:equipamento   1 ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
 bim:EQU.220  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.220" ;
      bim:tema    "Jogo" ;
      bim:descrição    "Jogo de muletas canadenses" ;
@@ -3089,12 +3137,12 @@ bim:EQU.220  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.221  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:EQU.221  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:código    "EQU.221" ;
      bim:tema    "Motogerador" ;
      bim:descrição    "Motogerador" ;
-     bim:equipamento   0 ;
+     bim:equipamento   1 ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
@@ -3132,7 +3180,7 @@ bim:EQU.225  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.225" ;
      bim:tema    "Agitador" ;
-     bim:descrição    "Agitador kline" ;
+     bim:descrição    "Agitador Kline" ;
      bim:equipamento   0 ;
      bim:dispositivo   0 ;
      bim:mobiliário   0 ;
@@ -3206,8 +3254,8 @@ bim:EQU.231  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.232  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.232" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa para exames em madeira" ;
@@ -3292,6 +3340,7 @@ bim:EQU.239  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.240  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.240" ;
      bim:tema    "Processadora" ;
      bim:descrição    "Processadora de filmes" ;
@@ -3330,6 +3379,7 @@ bim:EQU.243  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.244  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.244" ;
      bim:tema    "Suporte" ;
      bim:descrição    "Suporte para tv e vídeo" ;
@@ -3376,6 +3426,7 @@ bim:EQU.248  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.249  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.FRE ;
      bim:código    "EQU.249" ;
      bim:tema    "Refrigerador" ;
      bim:descrição    "Refrigerador laboratorial" ;
@@ -3385,6 +3436,7 @@ bim:EQU.249  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.250  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.250" ;
      bim:tema    "Relógio" ;
      bim:descrição    "Relógio de ponto" ;
@@ -3410,16 +3462,16 @@ bim:EQU.252  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.253  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
+bim:EQU.253  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.253" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro de prontuários" ;
-     bim:equipamento   0 ;
+     bim:equipamento   1 ;
      bim:dispositivo   0 ;
-     bim:mobiliário   1  .
+     bim:mobiliário   0  .
 
 bim:EQU.254  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
@@ -3437,6 +3489,7 @@ bim:EQU.255  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.256  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.256" ;
      bim:tema    "Relógio" ;
      bim:descrição    "Relógio protocolador de documentos" ;
@@ -3480,6 +3533,7 @@ bim:EQU.260  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.261  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.261" ;
      bim:tema    "Escada" ;
      bim:descrição    "Escada de canto" ;
@@ -3489,6 +3543,7 @@ bim:EQU.261  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.262  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.262" ;
      bim:tema    "Espelho" ;
      bim:descrição    "Espelho de postura" ;
@@ -3579,8 +3634,8 @@ bim:EQU.270  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.271  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.MAC ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.MAC ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.271" ;
      bim:tema    "Maca" ;
      bim:descrição    "Maca de transferência" ;
@@ -3590,9 +3645,8 @@ bim:EQU.271  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.272  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.CIR ;
-     bim:mobília    "Móbiliário cirúrgico" ;
+     bim:é.mobília.de.saúde    bim:MOB.CIR ;
+     bim:mobília.de.saúde    "Móbiliário cirúrgico" ;
      bim:código    "EQU.272" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa auxiliar com cuba" ;
@@ -3602,8 +3656,8 @@ bim:EQU.272  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.273  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.273" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira para turbilhão" ;
@@ -3671,6 +3725,7 @@ bim:EQU.279  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.280  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.280" ;
      bim:tema    "Timer" ;
      bim:descrição    "Timer" ;
@@ -3703,9 +3758,8 @@ bim:EQU.283  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.284  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.CIR ;
-     bim:mobília    "Móbiliário cirúrgico" ;
+     bim:é.mobília.de.saúde    bim:MOB.CIR ;
+     bim:mobília.de.saúde    "Móbiliário cirúrgico" ;
      bim:código    "EQU.284" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa cirúrgica obstétrica" ;
@@ -3742,7 +3796,7 @@ bim:EQU.287  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.288  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.288" ;
      bim:tema    "Barra" ;
      bim:descrição    "Barra de apóio" ;
@@ -3752,7 +3806,7 @@ bim:EQU.288  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.289  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.dispositivo.pessoal    bim:EQU.PES ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.289" ;
      bim:tema    "Andadeira" ;
      bim:descrição    "Andadeira" ;
@@ -3859,6 +3913,7 @@ bim:EQU.299  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.300  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.300" ;
      bim:tema    "Carregador" ;
      bim:descrição    "Carregador de bateria" ;
@@ -3868,8 +3923,8 @@ bim:EQU.300  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.301  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.301" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro pallets" ;
@@ -3879,9 +3934,9 @@ bim:EQU.301  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.302  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
      bim:é.limpo    bim:Roupa.Limpa ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte de hoteleria" ;
+     bim:mobília.de.saúde    "Móbiliário de transporte de hoteleria" ;
      bim:código    "EQU.302" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de roupa limpa" ;
@@ -3891,8 +3946,8 @@ bim:EQU.302  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.303  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte de hoteleria" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte de hoteleria" ;
      bim:código    "EQU.303" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de roupa molhada" ;
@@ -3902,8 +3957,8 @@ bim:EQU.303  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.304  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte de hoteleria" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte de hoteleria" ;
      bim:código    "EQU.304" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de roupa seca" ;
@@ -3913,9 +3968,9 @@ bim:EQU.304  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.305  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.contaminado    bim:Roupa.Contaminada ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte de hoteleria" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:é.contaminado    bim:Roupa.Suja ;
+     bim:mobília.de.saúde    "Móbiliário de transporte de hoteleria" ;
      bim:código    "EQU.305" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de roupa suja" ;
@@ -3934,6 +3989,7 @@ bim:EQU.306  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.307  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.307" ;
      bim:tema    "Compressor" ;
      bim:descrição    "Compressor de ar" ;
@@ -3989,6 +4045,7 @@ bim:EQU.312  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.313  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.313" ;
      bim:tema    "Esmerilhadeira" ;
      bim:descrição    "Esmerilhadeira de bancada" ;
@@ -3998,6 +4055,7 @@ bim:EQU.313  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.314  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.314" ;
      bim:tema    "Esmerilhadeira" ;
      bim:descrição    "Esmerilhadeira" ;
@@ -4022,6 +4080,7 @@ bim:EQU.316  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.317  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:é.equipamento.energético    bim:EQU.ENE ;
      bim:código    "EQU.317" ;
      bim:tema    "Fonte" ;
@@ -4042,6 +4101,7 @@ bim:EQU.318  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.319  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.319" ;
      bim:tema    "Fresadora" ;
      bim:descrição    "Fresadora universal" ;
@@ -4051,6 +4111,7 @@ bim:EQU.319  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.320  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.320" ;
      bim:tema    "Furadeira" ;
      bim:descrição    "Furadeira de bancada" ;
@@ -4060,6 +4121,7 @@ bim:EQU.320  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.321  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.321" ;
      bim:tema    "Furadeira" ;
      bim:descrição    "Furadeira de coluna" ;
@@ -4079,6 +4141,7 @@ bim:EQU.322  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.323  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.323" ;
      bim:tema    "Gerador" ;
      bim:descrição    "Gerador de sinais" ;
@@ -4106,6 +4169,7 @@ bim:EQU.325  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.326  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.326" ;
      bim:tema    "Guilhotina" ;
      bim:descrição    "Guilhotina" ;
@@ -4151,8 +4215,8 @@ bim:EQU.330  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.331  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.331" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro plataforma" ;
@@ -4231,6 +4295,7 @@ bim:EQU.338  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.339  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.339" ;
      bim:tema    "Painel" ;
      bim:descrição    "Painel de ferramentas" ;
@@ -4286,6 +4351,7 @@ bim:EQU.344  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.345  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.345" ;
      bim:tema    "Seladora" ;
      bim:descrição    "Seladora de embalagens" ;
@@ -4369,6 +4435,7 @@ bim:EQU.353  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.354  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.354" ;
      bim:tema    "Lavadora" ;
      bim:descrição    "Lavadora de roupas" ;
@@ -4378,6 +4445,7 @@ bim:EQU.354  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.355  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.355" ;
      bim:tema    "Prensa" ;
      bim:descrição    "Prensa para roupas" ;
@@ -4434,6 +4502,7 @@ bim:EQU.360  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.361  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.361" ;
      bim:tema    "Amaciador" ;
      bim:descrição    "Amaciador de carne" ;
@@ -4475,6 +4544,7 @@ bim:EQU.364  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.365  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.365" ;
      bim:tema    "Batedeira" ;
      bim:descrição    "Batedeira industrial" ;
@@ -4499,6 +4569,7 @@ bim:EQU.367  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.368  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.368" ;
      bim:tema    "Cafeteira" ;
      bim:descrição    "Cafeteira industrial" ;
@@ -4508,9 +4579,9 @@ bim:EQU.368  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.369  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
      bim:é.contaminado    bim:Equip.Contaminado ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário" ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.369" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de material contaminado" ;
@@ -4520,8 +4591,8 @@ bim:EQU.369  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.370  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário" ;
      bim:código    "EQU.370" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro fechado para transporte de material" ;
@@ -4549,6 +4620,7 @@ bim:EQU.372  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.373  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.373" ;
      bim:tema    "Descascador" ;
      bim:descrição    "Descascador de alimentos" ;
@@ -4558,6 +4630,7 @@ bim:EQU.373  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.374  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.374" ;
      bim:tema    "Desumidificador" ;
      bim:descrição    "Desumidificador de ambiente" ;
@@ -4596,6 +4669,7 @@ bim:EQU.377  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.378  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.378" ;
      bim:tema    "Filtro" ;
      bim:descrição    "Filtro de água" ;
@@ -4605,6 +4679,7 @@ bim:EQU.378  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.379  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.379" ;
      bim:tema    "Fogão" ;
      bim:descrição    "Fogão industrial" ;
@@ -4614,6 +4689,7 @@ bim:EQU.379  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.380  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.380" ;
      bim:tema    "Fogão" ;
      bim:descrição    "Fogão" ;
@@ -4623,6 +4699,7 @@ bim:EQU.380  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.381  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:é.equipamento.energético    bim:EQU.ENE ;
      bim:código    "EQU.381" ;
      bim:tema    "Forno" ;
@@ -4633,6 +4710,8 @@ bim:EQU.381  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.382  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
+     bim:é.equipamento.energético    bim:EQU.ENE ;
      bim:código    "EQU.382" ;
      bim:tema    "Forno" ;
      bim:descrição    "Forno industrial" ;
@@ -4642,6 +4721,8 @@ bim:EQU.382  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.383  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
+     bim:é.equipamento.energético    bim:EQU.ENE ;
      bim:código    "EQU.383" ;
      bim:tema    "Forno" ;
      bim:descrição    "Forno de micro-ondas" ;
@@ -4670,6 +4751,7 @@ bim:EQU.385  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.386  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.386" ;
      bim:tema    "Lavadora" ;
      bim:descrição    "Lavadora de louça" ;
@@ -4677,16 +4759,15 @@ bim:EQU.386  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.387  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
+bim:EQU.387  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:INS.MED ;
+     bim:é.equipamento.médico    bim:EQU.LAB ;
      bim:código    "EQU.387" ;
      bim:tema    "Lavadora" ;
      bim:descrição    "Lavadora por ultrassom" ;
-     bim:equipamento   0 ;
+     bim:equipamento   1 ;
      bim:dispositivo   0 ;
-     bim:mobiliário   0 ;
-     bim:instrumento.médico   1  .
+     bim:mobiliário   0  .
 
 bim:EQU.388  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
@@ -4718,6 +4799,7 @@ bim:EQU.391  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.392  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.392" ;
      bim:tema    "Processador" ;
      bim:descrição    "Processador de alimentos" ;
@@ -4746,6 +4828,7 @@ bim:EQU.395  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.396  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.396" ;
      bim:tema    "Triturador" ;
      bim:descrição    "Triturador de detritos" ;
@@ -4766,6 +4849,7 @@ bim:EQU.397  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.398  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.GAS ;
      bim:código    "EQU.398" ;
      bim:tema    "Ventilador" ;
      bim:descrição    "Ventilador volumétrico móvel" ;
@@ -4813,8 +4897,8 @@ bim:EQU.402  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.403  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NEC ;
-     bim:mobília    "Móbiliário de necrotério" ;
+     bim:é.mobília.de.saúde    bim:MOB.NEC ;
+     bim:mobília.de.saúde    "Móbiliário de necrotério" ;
      bim:código    "EQU.403" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de cadáveres" ;
@@ -4846,8 +4930,8 @@ bim:EQU.405  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.406  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NEC ;
-     bim:mobília    "Móbiliário de necrotério" ;
+     bim:é.mobília.de.saúde    bim:MOB.NEC ;
+     bim:mobília.de.saúde    "Móbiliário de necrotério" ;
      bim:código    "EQU.406" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa para autópsia" ;
@@ -4857,6 +4941,7 @@ bim:EQU.406  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.407  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.407" ;
      bim:tema    "Secadora" ;
      bim:descrição    "Secadora de roupas" ;
@@ -4871,8 +4956,8 @@ bim:EQU.408  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.409  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.409" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de detritos" ;
@@ -4906,8 +4991,8 @@ bim:EQU.412  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.413  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.413" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de urna funerária" ;
@@ -4926,6 +5011,7 @@ bim:EQU.414  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.415  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.415" ;
      bim:tema    "Impressora" ;
      bim:descrição    "Impressora a seco" ;
@@ -4944,8 +5030,8 @@ bim:EQU.416  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.417  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte de hoteleria" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte de hoteleria" ;
      bim:código    "EQU.417" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de alimento" ;
@@ -4965,8 +5051,8 @@ bim:EQU.418  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.419  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.419" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de medicamentos" ;
@@ -4987,6 +5073,7 @@ bim:EQU.420  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.421  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.LAB ;
      bim:código    "EQU.421" ;
      bim:tema    "Lavadora" ;
      bim:descrição    "Lavadora de vidraria para laboratório" ;
@@ -4996,9 +5083,9 @@ bim:EQU.421  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.422  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
      bim:é.limpo    bim:Equip.Limpo ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de transporte de hoteleria" ;
+     bim:mobília.de.saúde    "Móbiliário de transporte de hoteleria" ;
      bim:código    "EQU.422" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de material limpo" ;
@@ -5177,6 +5264,7 @@ bim:EQU.439  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.440  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.440" ;
      bim:tema    "Notebook" ;
      bim:descrição    "Notebook" ;
@@ -5186,7 +5274,7 @@ bim:EQU.440  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.441  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.ANA ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.441" ;
      bim:tema    "Moedor" ;
      bim:descrição    "Moedor de carne" ;
@@ -5233,8 +5321,8 @@ bim:EQU.446  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.447  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.EXA ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.EXA ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.447" ;
      bim:tema    "Cadeira" ;
      bim:descrição    "Cadeira para doador de sangue" ;
@@ -5255,8 +5343,8 @@ bim:EQU.448  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.449  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.449" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro de anestesia simples" ;
@@ -5288,6 +5376,7 @@ bim:EQU.451  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.452  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.452" ;
      bim:tema    "Jogo" ;
      bim:descrição    "Jogo de bolas bobath" ;
@@ -5297,6 +5386,7 @@ bim:EQU.452  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.453  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.LUZ ;
      bim:código    "EQU.453" ;
      bim:tema    "Luz" ;
      bim:descrição    "Luz infravermelha" ;
@@ -5324,6 +5414,7 @@ bim:EQU.455  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.456  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.456" ;
      bim:tema    "Processadora" ;
      bim:descrição    "Processadora de tecidos" ;
@@ -5333,6 +5424,7 @@ bim:EQU.456  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.457  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:é.limpo    bim:Equip.Limpo ;
      bim:código    "EQU.457" ;
      bim:tema    "Monta" ;
@@ -5343,6 +5435,7 @@ bim:EQU.457  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.458  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:é.contaminado    bim:Equip.Contaminado ;
      bim:código    "EQU.458" ;
      bim:tema    "Monta" ;
@@ -5396,8 +5489,8 @@ bim:EQU.463  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.464  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.NAT ;
-     bim:mobília    "Móbiliário para Neonatal e berçarios" ;
+     bim:é.mobília.de.saúde    bim:MOB.NAT ;
+     bim:mobília.de.saúde    "Móbiliário para Neonatal e berçarios" ;
      bim:código    "EQU.464" ;
      bim:tema    "Cama" ;
      bim:descrição    "Cama PPP" ;
@@ -5407,8 +5500,9 @@ bim:EQU.464  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.465  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:é.equipamento.médico    bim:EQU.RAD ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.465" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro blindado para transporte de rejeitos radioativos" ;
@@ -5447,6 +5541,7 @@ bim:EQU.468  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.469  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.dispositivo.pessoal    bim:DIS.PES ;
      bim:código    "EQU.469" ;
      bim:tema    "Jogo" ;
      bim:descrição    "Jogo de rolos de bobath" ;
@@ -5465,6 +5560,7 @@ bim:EQU.470  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.471  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.471" ;
      bim:tema    "Recipiente" ;
      bim:descrição    "Recipiente para água ultrapura" ;
@@ -5574,6 +5670,7 @@ bim:EQU.483  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.484  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.484" ;
      bim:tema    "Central" ;
      bim:descrição    "Central de ar condicionado" ;
@@ -5632,6 +5729,7 @@ bim:EQU.489  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.490  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.FRE ;
      bim:código    "EQU.490" ;
      bim:tema    "Freezer" ;
      bim:descrição    "Freezer especial" ;
@@ -5650,9 +5748,8 @@ bim:EQU.491  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.492  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.REA ;
-     bim:mobília    "Móbiliário para reabilitação" ;
+     bim:é.mobília.de.saúde    bim:MOB.REA ;
+     bim:mobília.de.saúde    "Móbiliário para reabilitação" ;
      bim:código    "EQU.492" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa ortostática elétrica" ;
@@ -5691,6 +5788,7 @@ bim:EQU.495  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 bim:EQU.496  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
+     bim:é.equipamento.médico    bim:EQU.RAD ;
      bim:código    "EQU.496" ;
      bim:tema    "Óculos" ;
      bim:descrição    "Óculos plumbífero" ;
@@ -5761,8 +5859,8 @@ bim:EQU.502  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
 
 bim:EQU.503  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.CRR ;
-     bim:mobília    "Móbiliário de exame" ;
+     bim:é.mobília.de.saúde    bim:MOB.CAR ;
+     bim:mobília.de.saúde    "Móbiliário de exame" ;
      bim:código    "EQU.503" ;
      bim:tema    "Carro" ;
      bim:descrição    "Carro para transporte de sangue" ;
@@ -5772,9 +5870,8 @@ bim:EQU.503  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.504  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
-     bim:é.mobília    bim:MOB.CIR ;
-     bim:mobília    "Móbiliário cirúrgico" ;
+     bim:é.mobília.de.saúde    bim:MOB.CIR ;
+     bim:mobília.de.saúde    "Móbiliário cirúrgico" ;
      bim:código    "EQU.504" ;
      bim:tema    "Mesa" ;
      bim:descrição    "Mesa cirúrgica ortopédica" ;
@@ -5784,6 +5881,7 @@ bim:EQU.504  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
 
 bim:EQU.505  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.médico    bim:EQU.FRE ;
      bim:código    "EQU.505" ;
      bim:tema    "Refrigerador" ;
      bim:descrição    "Refrigerador para conservação de sangue" ;
@@ -5848,8 +5946,8 @@ bim:EQU.511  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
 
 bim:EQU.512  rdf:type  owl:NamedIndividual , bim:SUS.Mobília.de.Saúde ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.mobília    bim:MOB.MAC ;
-     bim:mobília    "Móbiliário de transporte" ;
+     bim:é.mobília.de.saúde    bim:MOB.MAC ;
+     bim:mobília.de.saúde    "Móbiliário de transporte" ;
      bim:código    "EQU.512" ;
      bim:tema    "Maca" ;
      bim:descrição    "Maca não magnética" ;
@@ -5877,6 +5975,7 @@ bim:EQU.514  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 
 bim:EQU.515  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:é.equipamento.geral    bim:EQU.GER ;
      bim:código    "EQU.515" ;
      bim:tema    "Suporte" ;
      bim:descrição    "Suporte de cestos" ;
@@ -5887,6 +5986,7 @@ bim:EQU.515  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
 bim:EQU.516  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
+     bim:é.equipamento.médico    bim:EQU.RAD ;
      bim:código    "EQU.516" ;
      bim:tema    "Visor" ;
      bim:descrição    "Visor plumbífero" ;
@@ -6446,6 +6546,35 @@ bim:p.equipar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.dispositivo.médico   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.equipar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a equipar: é.dispositivo.médico" ;
+                    bim:Chave               "equip.105" ;
+                    bim:Ação                "Ação equipar" ;
+                    bim:Definição           "É um dispositivo de uso médico para análise ou diagnóstico."@pt ;
+                    bim:Definición          "Es un dispositivo de uso médico para análisis o diagnóstico."@es  .
+
+
+bim:d.equipar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:dispositivo.médico   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.equipar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para equipar:  dispositivo.médico  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "equip.105" ;
+                    bim:Ação                "Ação equipar" ;
+                    bim:Definição           "É um dispositivo de uso médico para análise ou diagnóstico."@pt ;
+                    bim:Definición          "Es un dispositivo de uso médico para análisis o diagnóstico."@es  .
+
+
+bim:p.equipar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.dispositivo.pessoal   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.equipar ;
                     rdfs:domain             bim:BIM ;
@@ -6598,8 +6727,8 @@ bim:é.mobília   rdf:type  owl:ObjectProperty ;
                     rdfs:label              "Propriedade destinada a equipar: é.mobília" ;
                     bim:Chave               "equip.116" ;
                     bim:Ação                "Ação equipar" ;
-                    bim:Definição           "É uma mobília."@pt ;
-                    bim:Definición          "Es un mueble."@es  .
+                    bim:Definição           "É uma mobília comúm."@pt ;
+                    bim:Definición          "Es un mueble común."@es  .
 
 
 bim:d.equipar   rdf:type  owl:DatatypeProperty ;
@@ -6612,8 +6741,37 @@ bim:mobília   rdf:type  owl:DatatypeProperty ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para equipar:  mobília  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
                     bim:Chave               "equip.116" ;
                     bim:Ação                "Ação equipar" ;
-                    bim:Definição           "É uma mobília."@pt ;
-                    bim:Definición          "Es un mueble."@es  .
+                    bim:Definição           "É uma mobília comúm."@pt ;
+                    bim:Definición          "Es un mueble común."@es  .
+
+
+bim:p.equipar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.mobília.de.saúde   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.equipar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a equipar: é.mobília.de.saúde" ;
+                    bim:Chave               "equip.117" ;
+                    bim:Ação                "Ação equipar" ;
+                    bim:Definição           "É uma mobília especial para hospital, como camas Fawler, Cadeiras de rodas, etc."@pt ;
+                    bim:Definición          "Es un mobiliario especial para hospitales, como camas Fawler, sillas de ruedas, etc."@es  .
+
+
+bim:d.equipar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:mobília.de.saúde   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.equipar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para equipar:  mobília.de.saúde  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "equip.117" ;
+                    bim:Ação                "Ação equipar" ;
+                    bim:Definição           "É uma mobília especial para hospital, como camas Fawler, Cadeiras de rodas, etc."@pt ;
+                    bim:Definición          "Es un mobiliario especial para hospitales, como camas Fawler, sillas de ruedas, etc."@es  .
 
 
 bim:p.equipar   rdf:type  owl:ObjectProperty ;
@@ -6625,7 +6783,7 @@ bim:é.contaminado   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a equipar: é.contaminado" ;
-                    bim:Chave               "equip.117" ;
+                    bim:Chave               "equip.118" ;
                     bim:Ação                "Ação equipar" ;
                     bim:Definição           "É uma elemento que está sujo, contaminado ou que precisa de esterilização em hospitais."@pt ;
                     bim:Definición          "Es un elemento que está sucio, contaminado o necesita esterilización en los hospitales."@es  .
@@ -6639,7 +6797,7 @@ bim:contaminado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.equipar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para equipar:  contaminado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "equip.117" ;
+                    bim:Chave               "equip.118" ;
                     bim:Ação                "Ação equipar" ;
                     bim:Definição           "É uma elemento que está sujo, contaminado ou que precisa de esterilização em hospitais."@pt ;
                     bim:Definición          "Es un elemento que está sucio, contaminado o necesita esterilización en los hospitales."@es  .
@@ -6654,7 +6812,7 @@ bim:é.limpo   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a equipar: é.limpo" ;
-                    bim:Chave               "equip.118" ;
+                    bim:Chave               "equip.119" ;
                     bim:Ação                "Ação equipar" ;
                     bim:Definição           "É uma elemento que está limpo, não precisando de esterilização em hospitais."@pt ;
                     bim:Definición          "Es un elemento que está limpio, no necesita ser esterilizado."@es  .
@@ -6668,7 +6826,7 @@ bim:limpo   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.equipar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para equipar:  limpo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "equip.118" ;
+                    bim:Chave               "equip.119" ;
                     bim:Ação                "Ação equipar" ;
                     bim:Definição           "É uma elemento que está limpo, não precisando de esterilização em hospitais."@pt ;
                     bim:Definición          "Es un elemento que está limpio, no necesita ser esterilizado."@es  .
@@ -9864,5 +10022,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia CSUS_2Q
-##  Criada em 03/11/2025 11:36:53
+##  Criada em 03/11/2025 15:02:27
 #################################################################
