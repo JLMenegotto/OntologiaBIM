@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde"@pt ;
-	  rdfs:label "DataHora: 03/11/2025 7:45:55"@pt ;
+	  rdfs:label "DataHora: 03/11/2025 10:11:58"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -570,7 +570,7 @@ bim:SUS.Equipamento rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:SUS.Equipamentos ;
       rdfs:label  "SUS.Equipamento"@pt ;
       bim:Definição   "Equipamentos médicos usados nos hospitais do Sistema Único de Saúde do Brasil."@pt ;
-      bim:Definición  "Equipos médicos utilizados en hospitales del Sistema Único de Salud de Brasil."@es ;
+      bim:Definición  "Equipo médico utilizados en hospitales del Sistema Único de Salud de Brasil."@es ;
       bim:Natureza    "SUS.Assistência.Médica"@pt ;
       bim:Espécie     "SUS.Equipamentos"@pt ;
       bim:Tema        "SUS.Equipamento"@pt ;
@@ -604,13 +604,47 @@ bim:SUS.Dispositivo rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:SUS.Equipamentos ;
       rdfs:label  "SUS.Dispositivo"@pt ;
       bim:Definição   "Dispositivos médicos usados nos hospitais do Sistema Único de Saúde do Brasil."@pt ;
-      bim:Definición  "Dispositivos médicos utilizados en hospitales del Sistema Único de Salud Brasileño."@es ;
+      bim:Definición  "Dispositivo médico utilizados en hospitales del Sistema Único de Salud Brasileño."@es ;
       bim:Natureza    "SUS.Assistência.Médica"@pt ;
       bim:Espécie     "SUS.Equipamentos"@pt ;
       bim:Tema        "SUS.Dispositivo"@pt ;
       bim:Disciplina  "Arquitetura hospitalar"@pt ;
       bim:Chave       "Key.SUS.17"@pt ;
       bim:CatRevit    "OST_MedicalEquipment, OST_NurseCallDevices"   ;
+      bim:ClasseIfc   "IfcMedicalDevice"   ;
+      bim:ABNT        "2C.74"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:SUS rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "SUS"@pt  .
+
+
+bim:SUS.Assistência.Médica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:SUS ;
+      rdfs:label  "SUS.Assistência.Médica"@pt  .
+
+
+bim:SUS.Equipamentos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:SUS.Assistência.Médica ;
+      rdfs:label  "SUS.Equipamentos"@pt  .
+
+
+bim:SUS.Instrumento rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:SUS.Equipamentos ;
+      rdfs:label  "SUS.Instrumento"@pt ;
+      bim:Definição   "Instrumento médico usados nos hospitais do Sistema Único de Saúde do Brasil."@pt ;
+      bim:Definición  "Instrumento médico utilizados en hospitales del Sistema Único de Salud Brasileño."@es ;
+      bim:Natureza    "SUS.Assistência.Médica"@pt ;
+      bim:Espécie     "SUS.Equipamentos"@pt ;
+      bim:Tema        "SUS.Instrumento"@pt ;
+      bim:Disciplina  "Arquitetura hospitalar"@pt ;
+      bim:Chave       "Key.SUS.18"@pt ;
+      bim:CatRevit    "OST_MedicalEquipment"   ;
       bim:ClasseIfc   "IfcMedicalDevice"   ;
       bim:ABNT        "2C.74"    .
 
@@ -643,7 +677,7 @@ bim:SUS.Mobília rdf:type  owl:Class  ;
       bim:Espécie     "SUS.Equipamentos"@pt ;
       bim:Tema        "SUS.Mobília"@pt ;
       bim:Disciplina  "Arquitetura hospitalar"@pt ;
-      bim:Chave       "Key.SUS.18"@pt ;
+      bim:Chave       "Key.SUS.19"@pt ;
       bim:CatRevit    "OST_Furniture"   ;
       bim:ClasseIfc   "IfcFurniture"   ;
       bim:ABNT        "2C.74"    .
@@ -702,7 +736,19 @@ bim:EQU.RAD  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:equipamento    "Equipamento radiológico ou que precisem de isolamento especial para diversos tipos de raios"  .
 
-bim:INS.MED  rdf:type  owl:NamedIndividual , bim:SUS.Equipamentos ;
+bim:INS.ANA  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:instrumento.médico    "Instrumento utilizado para realizar análise clinica"  .
+
+bim:INS.CIR  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:instrumento.médico    "Instrumento utilizado utilizado com função cirúrgica"  .
+
+bim:INS.LAB  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
+     bim:é.pertencente.a    bim:Equipamentos.SUS ;
+     bim:instrumento.médico    "Instrumento utilizado para realizar análise laboratórial"  .
+
+bim:INS.MED  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:instrumento.médico    "Instrumento médico utilizado por diversas especialidades"  .
 
@@ -759,7 +805,7 @@ bim:EQU.001  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.002  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.002  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.002" ;
@@ -861,7 +907,7 @@ bim:EQU.011  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.012  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.012  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.012" ;
@@ -945,9 +991,9 @@ bim:EQU.019  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.020  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.020  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.020" ;
      bim:tema    "Ceratômetro" ;
      bim:descrição    "Ceratômetro" ;
@@ -993,7 +1039,7 @@ bim:EQU.024  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.025  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.025  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.025" ;
@@ -1004,7 +1050,7 @@ bim:EQU.025  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.026  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.026  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.026" ;
@@ -1015,9 +1061,9 @@ bim:EQU.026  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.027  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.027  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.027" ;
      bim:tema    "Dinamômetro" ;
      bim:descrição    "Dinamômetro" ;
@@ -1026,9 +1072,9 @@ bim:EQU.027  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.028  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.028  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.CIR ;
+     bim:é.instrumento.médico    bim:INS.CIR ;
      bim:código    "EQU.028" ;
      bim:tema    "Bisturi" ;
      bim:descrição    "Bisturi elétrico ambulatorial" ;
@@ -1055,9 +1101,9 @@ bim:EQU.030  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.031  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.031  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.031" ;
      bim:tema    "Esfigmomanômetro" ;
      bim:descrição    "Esfigmomanômetro" ;
@@ -1066,9 +1112,9 @@ bim:EQU.031  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.032  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.032  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.032" ;
      bim:tema    "Esfignomanômetro" ;
      bim:descrição    "Esfignomanômetro de pedestal" ;
@@ -1086,7 +1132,7 @@ bim:EQU.033  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.034  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.034  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.034" ;
@@ -1106,7 +1152,7 @@ bim:EQU.035  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.036  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.036  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.036" ;
@@ -1135,7 +1181,7 @@ bim:EQU.038  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.039  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.039  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.039" ;
@@ -1155,9 +1201,9 @@ bim:EQU.040  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.041  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.041  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.041" ;
      bim:tema    "Glicosímetro" ;
      bim:descrição    "Glicosímetro" ;
@@ -1166,9 +1212,9 @@ bim:EQU.041  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.042  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.042  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.042" ;
      bim:tema    "Goniômetro" ;
      bim:descrição    "Goniômetro plástico" ;
@@ -1186,9 +1232,9 @@ bim:EQU.043  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.044  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.044  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
+     bim:é.equipamento.médico    bim:INS.CIR ;
      bim:dispositivo    "Dispositivo cirúrgico" ;
      bim:código    "EQU.044" ;
      bim:tema    "Instrumentais" ;
@@ -1198,7 +1244,7 @@ bim:EQU.044  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.045  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.045  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.045" ;
@@ -1209,7 +1255,7 @@ bim:EQU.045  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.046  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.046  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.046" ;
@@ -1220,9 +1266,9 @@ bim:EQU.046  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.047  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.047  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.047" ;
      bim:tema    "Lensômetro" ;
      bim:descrição    "Lensômetro" ;
@@ -1231,7 +1277,7 @@ bim:EQU.047  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.048  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.048  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.048" ;
@@ -1264,7 +1310,7 @@ bim:EQU.050  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.051  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.051  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.051" ;
@@ -1308,9 +1354,9 @@ bim:EQU.054  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.055  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.055  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.055" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio para otologia" ;
@@ -1330,7 +1376,7 @@ bim:EQU.056  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.057  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.057  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.057" ;
@@ -1341,7 +1387,7 @@ bim:EQU.057  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.058  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.058  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.058" ;
@@ -1352,7 +1398,7 @@ bim:EQU.058  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.059  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.059  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.059" ;
@@ -1363,9 +1409,9 @@ bim:EQU.059  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.060  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.060  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.CIR ;
+     bim:é.instrumento.médico    bim:INS.CIR ;
      bim:código    "EQU.060" ;
      bim:tema    "Bisturi" ;
      bim:descrição    "Bisturi elétrico" ;
@@ -1374,7 +1420,7 @@ bim:EQU.060  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.061  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.061  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.061" ;
@@ -1385,9 +1431,9 @@ bim:EQU.061  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.062  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.062  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.062" ;
      bim:tema    "Oxímetro" ;
      bim:descrição    "Oxímetro de pulso portátil" ;
@@ -1406,7 +1452,7 @@ bim:EQU.063  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.064  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.064  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.064" ;
@@ -1426,9 +1472,9 @@ bim:EQU.065  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.066  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.066  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.066" ;
      bim:tema    "Pupilômetro" ;
      bim:descrição    "Pupilômetro digital" ;
@@ -1456,7 +1502,7 @@ bim:EQU.068  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.069  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.069  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.069" ;
@@ -1494,7 +1540,7 @@ bim:EQU.072  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.073  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.073  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.073" ;
@@ -1550,9 +1596,9 @@ bim:EQU.078  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.079  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.079  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.079" ;
      bim:tema    "Tonômetro" ;
      bim:descrição    "Tonômetro de aplanação" ;
@@ -1561,9 +1607,9 @@ bim:EQU.079  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.080  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.080  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.080" ;
      bim:tema    "Ventilômetro" ;
      bim:descrição    "Ventilômetro" ;
@@ -1694,7 +1740,7 @@ bim:EQU.092  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.093  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.093  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.093" ;
@@ -1734,7 +1780,7 @@ bim:EQU.096  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.097  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.097  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.097" ;
@@ -1798,7 +1844,7 @@ bim:EQU.102  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.103  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.103  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.103" ;
@@ -1818,7 +1864,7 @@ bim:EQU.104  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.105  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.105  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.105" ;
@@ -1945,7 +1991,7 @@ bim:EQU.116  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.117  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.117  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.117" ;
@@ -1956,7 +2002,7 @@ bim:EQU.117  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.118  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.118  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.118" ;
@@ -1987,7 +2033,7 @@ bim:EQU.120  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.121  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.121  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.121" ;
@@ -2008,9 +2054,9 @@ bim:EQU.122  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.123  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.123  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.CIR ;
+     bim:é.instrumento.médico    bim:INS.CIR ;
      bim:código    "EQU.123" ;
      bim:tema    "Serra" ;
      bim:descrição    "Serra elétrica para cortar gesso" ;
@@ -2039,9 +2085,9 @@ bim:EQU.125  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.126  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.126  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.126" ;
      bim:tema    "Termômetro" ;
      bim:descrição    "Termômetro clínico" ;
@@ -2217,9 +2263,9 @@ bim:EQU.144  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.145  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.145  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.145" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio biológico binocular" ;
@@ -2256,9 +2302,9 @@ bim:EQU.148  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.149  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.149  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.149" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio biológico invertido" ;
@@ -2267,9 +2313,9 @@ bim:EQU.149  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.150  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.150  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.150" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio para pesquisa em fotomicrografia" ;
@@ -2288,9 +2334,9 @@ bim:EQU.151  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.152  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.152  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.152" ;
      bim:tema    "Refratômetro" ;
      bim:descrição    "Refratômetro" ;
@@ -2308,7 +2354,7 @@ bim:EQU.153  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.154  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.154  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.154" ;
@@ -2394,7 +2440,7 @@ bim:EQU.162  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.163  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.163  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.163" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2438,7 +2484,7 @@ bim:EQU.167  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.168  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.168  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.168" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2471,9 +2517,9 @@ bim:EQU.171  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.172  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.172  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.172" ;
      bim:tema    "Audiômetro" ;
      bim:descrição    "Audiômetro" ;
@@ -2482,9 +2528,9 @@ bim:EQU.172  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.173  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.173  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.173" ;
      bim:tema    "Audiômetro" ;
      bim:descrição    "Audiômetro automático de Békésy" ;
@@ -2502,9 +2548,9 @@ bim:EQU.174  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.175  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.175  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.175" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio trinocular com imunofluorescência" ;
@@ -2513,7 +2559,7 @@ bim:EQU.175  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.176  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.176  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.176" ;
@@ -2533,9 +2579,9 @@ bim:EQU.177  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.178  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.178  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.178" ;
      bim:tema    "Audiômetro" ;
      bim:descrição    "Audiômetro de tronco cerebral" ;
@@ -2604,7 +2650,7 @@ bim:EQU.184  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.185  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.185  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.185" ;
@@ -2625,9 +2671,9 @@ bim:EQU.186  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.187  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.187  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.187" ;
      bim:tema    "Termômetro" ;
      bim:descrição    "Termômetro" ;
@@ -2646,7 +2692,7 @@ bim:EQU.188  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.189  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.189  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.189" ;
@@ -2667,7 +2713,7 @@ bim:EQU.190  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.191  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.191  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.191" ;
@@ -2687,7 +2733,7 @@ bim:EQU.192  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.193  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.193  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.193" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2710,7 +2756,7 @@ bim:EQU.195  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.196  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.196  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.196" ;
@@ -2730,7 +2776,7 @@ bim:EQU.197  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.198  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.198  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.198" ;
@@ -2741,7 +2787,7 @@ bim:EQU.198  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.199  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.199  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.199" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2801,7 +2847,7 @@ bim:EQU.205  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.206  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.206  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.206" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2826,7 +2872,7 @@ bim:EQU.208  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.209  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.209  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.209" ;
@@ -2846,7 +2892,7 @@ bim:EQU.210  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.211  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.211  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.211" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2897,12 +2943,12 @@ bim:EQU.216  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.217  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.217  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.217" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.218  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.218  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.218" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -2952,9 +2998,9 @@ bim:EQU.223  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.224  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.224  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.LAB ;
+     bim:é.equipamento.médico    bim:INS.LAB ;
      bim:código    "EQU.224" ;
      bim:tema    "Analisador" ;
      bim:descrição    "Analisador automático para Na+ - K+ e Cl" ;
@@ -2963,7 +3009,7 @@ bim:EQU.224  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.225  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.225  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.225" ;
@@ -2974,7 +3020,7 @@ bim:EQU.225  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.226  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.226  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.226" ;
@@ -2985,7 +3031,7 @@ bim:EQU.226  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.227  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.227  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.227" ;
@@ -2996,9 +3042,9 @@ bim:EQU.227  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.228  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.228  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.LAB ;
+     bim:é.equipamento.médico    bim:INS.LAB ;
      bim:código    "EQU.228" ;
      bim:tema    "Analisador" ;
      bim:descrição    "Analisador automático para bioquímica" ;
@@ -3007,9 +3053,9 @@ bim:EQU.228  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.229  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.229  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.229" ;
      bim:tema    "Analisador" ;
      bim:descrição    "Analisador para Ca++ e pH" ;
@@ -3018,9 +3064,9 @@ bim:EQU.229  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.230  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.230  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.230" ;
      bim:tema    "Fotômetro" ;
      bim:descrição    "Fotômetro de chama" ;
@@ -3029,9 +3075,9 @@ bim:EQU.230  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.231  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.231  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.231" ;
      bim:tema    "Fotômetro" ;
      bim:descrição    "Fotômetro para leitura em microplacas" ;
@@ -3051,9 +3097,9 @@ bim:EQU.232  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.233  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.233  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.233" ;
      bim:tema    "Espectrofotômetro" ;
      bim:descrição    "Espectrofotômetro de absorção atômica" ;
@@ -3062,9 +3108,9 @@ bim:EQU.233  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.234  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.234  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.LAB ;
+     bim:é.equipamento.médico    bim:INS.LAB ;
      bim:código    "EQU.234" ;
      bim:tema    "Analisador" ;
      bim:descrição    "Analisador de pH" ;
@@ -3073,7 +3119,7 @@ bim:EQU.234  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.235  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.235  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.235" ;
@@ -3084,7 +3130,7 @@ bim:EQU.235  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.236  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.236  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.236" ;
@@ -3095,7 +3141,7 @@ bim:EQU.236  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.237  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.237  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.237" ;
@@ -3183,12 +3229,12 @@ bim:EQU.245  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.246  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.246  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.246" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.247  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.247  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.247" ;
@@ -3199,9 +3245,9 @@ bim:EQU.247  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.248  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.248  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.248" ;
      bim:tema    "Bilirrubinômetro" ;
      bim:descrição    "Bilirrubinômetro" ;
@@ -3266,7 +3312,7 @@ bim:EQU.254  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.255  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.255  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.255" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -3280,7 +3326,7 @@ bim:EQU.256  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.257  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.257  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.257" ;
@@ -3300,7 +3346,7 @@ bim:EQU.258  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.259  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.259  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.259" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -3332,7 +3378,7 @@ bim:EQU.262  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.263  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.263  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.263" ;
@@ -3352,9 +3398,9 @@ bim:EQU.264  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.265  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.265  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.265" ;
      bim:tema    "Coagulômetro" ;
      bim:descrição    "Coagulômetro" ;
@@ -3363,7 +3409,7 @@ bim:EQU.265  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.266  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.266  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.266" ;
@@ -3374,7 +3420,7 @@ bim:EQU.266  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.267  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.267  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.267" ;
@@ -3456,7 +3502,7 @@ bim:EQU.274  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.275  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.275  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.275" ;
@@ -3494,7 +3540,7 @@ bim:EQU.278  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.279  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.279  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.279" ;
@@ -3532,7 +3578,7 @@ bim:EQU.282  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.283  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.283  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.283" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -3596,7 +3642,7 @@ bim:EQU.289  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.290  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.290  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.290" ;
@@ -3607,7 +3653,7 @@ bim:EQU.290  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.291  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.291  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.291" ;
@@ -3646,7 +3692,7 @@ bim:EQU.294  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.295  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.295  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.295" ;
@@ -3849,7 +3895,7 @@ bim:EQU.315  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.316  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.316  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.316" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4013,9 +4059,9 @@ bim:EQU.333  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.334  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.334  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.334" ;
      bim:tema    "Micrótomo" ;
      bim:descrição    "Micrótomo de congelação" ;
@@ -4255,7 +4301,7 @@ bim:EQU.359  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.360  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.360  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.360" ;
@@ -4275,7 +4321,7 @@ bim:EQU.361  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.362  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.362  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.362" ;
@@ -4286,7 +4332,7 @@ bim:EQU.362  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.363  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.363  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.363" ;
@@ -4316,7 +4362,7 @@ bim:EQU.365  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.366  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.366  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.366" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4407,9 +4453,9 @@ bim:EQU.375  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.376  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.376  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.376" ;
      bim:tema    "Espectrofotômetro" ;
      bim:descrição    "Espectrofotômetro ultravioleta" ;
@@ -4510,7 +4556,7 @@ bim:EQU.386  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.387  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.387  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.387" ;
@@ -4539,12 +4585,12 @@ bim:EQU.389  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.390  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.390  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.390" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.391  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.391  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.391" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4558,7 +4604,7 @@ bim:EQU.392  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.393  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.393  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.393" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4572,7 +4618,7 @@ bim:EQU.394  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.395  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.395  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.395" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4586,7 +4632,7 @@ bim:EQU.396  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.397  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.397  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.397" ;
@@ -4606,9 +4652,9 @@ bim:EQU.398  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.399  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.399  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.399" ;
      bim:tema    "Polarímetro" ;
      bim:descrição    "Polarímetro" ;
@@ -4655,9 +4701,9 @@ bim:EQU.403  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.404  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.404  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.404" ;
      bim:tema    "Fluorímetro" ;
      bim:descrição    "Fluorímetro" ;
@@ -4697,7 +4743,7 @@ bim:EQU.407  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.408  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.408  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.408" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4722,7 +4768,7 @@ bim:EQU.410  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.411  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.411  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.411" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -4838,12 +4884,12 @@ bim:EQU.422  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.423  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.423  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.423" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.424  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.424  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.424" ;
@@ -4863,9 +4909,9 @@ bim:EQU.425  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.426  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.426  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.426" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio trinocular" ;
@@ -4874,9 +4920,9 @@ bim:EQU.426  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.427  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.427  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.427" ;
      bim:tema    "Refrator" ;
      bim:descrição    "Refrator computadorizado" ;
@@ -4885,7 +4931,7 @@ bim:EQU.427  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.428  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.428  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.428" ;
@@ -4896,7 +4942,7 @@ bim:EQU.428  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.429  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.429  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.429" ;
@@ -4925,7 +4971,7 @@ bim:EQU.431  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.432  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.432  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.432" ;
@@ -4936,9 +4982,9 @@ bim:EQU.432  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.433  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.433  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.433" ;
      bim:tema    "Biômetro" ;
      bim:descrição    "Biômetro" ;
@@ -4947,7 +4993,7 @@ bim:EQU.433  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.434  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.434  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.434" ;
@@ -4958,9 +5004,9 @@ bim:EQU.434  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.435  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.435  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.435" ;
      bim:tema    "Hemoglobinômetro" ;
      bim:descrição    "Hemoglobinômetro" ;
@@ -4987,9 +5033,9 @@ bim:EQU.437  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.438  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.438  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.438" ;
      bim:tema    "Retinógrafo" ;
      bim:descrição    "Retinógrafo computadorizado" ;
@@ -5026,12 +5072,12 @@ bim:EQU.441  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.442  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.442  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.442" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.443  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.443  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.443" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -5074,9 +5120,9 @@ bim:EQU.447  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.448  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.448  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.448" ;
      bim:tema    "Campímetro" ;
      bim:descrição    "Campímetro computadorizado" ;
@@ -5096,9 +5142,9 @@ bim:EQU.449  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.450  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.450  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.450" ;
      bim:tema    "Espirômetro" ;
      bim:descrição    "Espirômetro" ;
@@ -5107,7 +5153,7 @@ bim:EQU.450  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.451  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.451  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.451" ;
@@ -5190,9 +5236,9 @@ bim:EQU.459  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.460  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.460  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.460" ;
      bim:tema    "Paquímetro" ;
      bim:descrição    "Paquímetro oftalmológico" ;
@@ -5219,7 +5265,7 @@ bim:EQU.462  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.463  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.463  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.463" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -5264,7 +5310,7 @@ bim:EQU.467  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.468  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.468  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.468" ;
@@ -5311,7 +5357,7 @@ bim:EQU.472  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.473  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.473  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.473" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -5334,17 +5380,17 @@ bim:EQU.475  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.476  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.476  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.476" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.477  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.477  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.477" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.478  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.478  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.478" ;
@@ -5355,12 +5401,12 @@ bim:EQU.478  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.479  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.479  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.479" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.480  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.480  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.480" ;
@@ -5371,7 +5417,7 @@ bim:EQU.480  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.481  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.481  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.481" ;
@@ -5382,7 +5428,7 @@ bim:EQU.481  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.482  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.482  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.482" ;
@@ -5411,7 +5457,7 @@ bim:EQU.484  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.485  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.485  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.485" ;
@@ -5431,7 +5477,7 @@ bim:EQU.486  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.487  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.487  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.487" ;
@@ -5490,9 +5536,9 @@ bim:EQU.492  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:dispositivo   0 ;
      bim:mobiliário   1  .
 
-bim:EQU.493  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.493  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.equipamento.médico    bim:EQU.CIR ;
+     bim:é.equipamento.médico    bim:INS.CIR ;
      bim:dispositivo    "Dispositivo cirúrgico" ;
      bim:código    "EQU.493" ;
      bim:tema    "Microscópio" ;
@@ -5502,9 +5548,9 @@ bim:EQU.493  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.494  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.494  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.494" ;
      bim:tema    "Microscópio" ;
      bim:descrição    "Microscópio especular de córnea de não contato" ;
@@ -5513,12 +5559,12 @@ bim:EQU.494  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.495  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.495  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.495" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
 
-bim:EQU.496  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.496  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.496" ;
@@ -5529,7 +5575,7 @@ bim:EQU.496  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.497  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.497  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.497" ;
@@ -5558,9 +5604,9 @@ bim:EQU.499  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.500  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.500  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
-     bim:é.instrumento.médico    bim:EQU.ANA ;
+     bim:é.instrumento.médico    bim:INS.ANA ;
      bim:código    "EQU.500" ;
      bim:tema    "Termômetro" ;
      bim:descrição    "Termômetro digital" ;
@@ -5578,7 +5624,7 @@ bim:EQU.501  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.502  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.502  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.502" ;
@@ -5621,7 +5667,7 @@ bim:EQU.505  rdf:type  owl:NamedIndividual , bim:SUS.Equipamento ;
      bim:dispositivo   0 ;
      bim:mobiliário   0  .
 
-bim:EQU.506  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.506  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.506" ;
@@ -5641,7 +5687,7 @@ bim:EQU.507  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.508  rdf:type  owl:NamedIndividual , bim:SUS ;
+bim:EQU.508  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:é.código    bim:Disponível ;
      bim:código    "EQU.508" ;
      bim:descrição    "Código de equipamento SUS disponível"  .
@@ -5655,7 +5701,7 @@ bim:EQU.509  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.510  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.510  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.510" ;
@@ -5714,7 +5760,7 @@ bim:EQU.515  rdf:type  owl:NamedIndividual , bim:SUS.Dispositivo ;
      bim:dispositivo   1 ;
      bim:mobiliário   0  .
 
-bim:EQU.516  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.516  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.516" ;
@@ -5725,7 +5771,7 @@ bim:EQU.516  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
      bim:mobiliário   0 ;
      bim:instrumento.médico   1  .
 
-bim:EQU.517  rdf:type  owl:NamedIndividual , bim:SUS.Mobília ;
+bim:EQU.517  rdf:type  owl:NamedIndividual , bim:SUS.Instrumento ;
      bim:é.pertencente.a    bim:Equipamentos.SUS ;
      bim:é.instrumento.médico    bim:INS.MED ;
      bim:código    "EQU.517" ;
@@ -9636,5 +9682,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia CSUS_2Q
-##  Criada em 03/11/2025 7:45:55
+##  Criada em 03/11/2025 10:11:59
 #################################################################
