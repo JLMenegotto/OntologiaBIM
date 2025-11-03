@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#SomaSUS_Equipamentos>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde"@pt
-  Annotations: rdfs:label "DataHora: 03/11/2025 10:11:58"@pt
+  Annotations: rdfs:label "DataHora: 03/11/2025 11:05:47"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -381,19 +381,69 @@ Class: bim:SUS.Instrumento
 	SubClassOf: bim:SUS.Equipamentos
 
 
-Class: bim:SUS.Mobília
-	Annotations: rdfs:label "SUS.Mobília"@pt
+Class: bim:SUS.Mobília.de.Saúde
+	Annotations: rdfs:label "SUS.Mobília.de.Saúde"@pt
 	Annotations: bim:Definição "Mobiliários médicos usados nos hospitais do Sistema Único de Saúde do Brasil."@pt
 	Annotations: bim:Definición "Mobiliario médico utilizado en hospitales del Sistema Único de Salud de Brasil."@es
 	Annotations: bim:Natureza "SUS.Assistência.Médica"@pt
 	Annotations: bim:Espécie "SUS.Equipamentos"@pt
-	Annotations: bim:Tema "SUS.Mobília"@pt
+	Annotations: bim:Tema "SUS.Mobília.de.Saúde"@pt
 	Annotations: bim:Disciplina "Arquitetura hospitalar"@pt
 	Annotations: bim:Chave "Key.SUS.19"
 	Annotations: bim:CatRevit "OST_Furniture"
 	Annotations: bim:ClasseIfc "IfcFurniture"
 	Annotations: bim:ABNT "2C.74"
 	SubClassOf: bim:SUS.Equipamentos
+
+
+Class: bim:SUS.Hoteleria
+	Annotations: rdfs:label "SUS.Hoteleria"@pt
+	SubClassOf: bim:SUS.Assistência.Médica
+
+
+Class: bim:SUS.Mobília
+	Annotations: rdfs:label "SUS.Mobília"@pt
+	Annotations: bim:Definição "Mobiliários médicos usados nos hospitais do Sistema Único de Saúde do Brasil."@pt
+	Annotations: bim:Definición "Mobiliario médico utilizado en hospitales del Sistema Único de Salud de Brasil."@es
+	Annotations: bim:Natureza "SUS.Assistência.Médica"@pt
+	Annotations: bim:Espécie "SUS.Hoteleria"@pt
+	Annotations: bim:Tema "SUS.Mobília"@pt
+	Annotations: bim:Disciplina "Arquitetura hospitalar"@pt
+	Annotations: bim:Chave "Key.SUS.20"
+	Annotations: bim:CatRevit "OST_Furniture"
+	Annotations: bim:ClasseIfc "IfcFurniture"
+	Annotations: bim:ABNT "2C.74"
+	SubClassOf: bim:SUS.Hoteleria
+
+
+Class: bim:SUS.Ropa.de.Cama
+	Annotations: rdfs:label "SUS.Ropa.de.Cama"@pt
+	Annotations: bim:Definição "Ropa de cama usada em hospitais do Sistema Único de Saúde do Brasil."@pt
+	Annotations: bim:Definición "Ropa de cama usada en hospitales del Sistema Único de Salud de Brasil."@es
+	Annotations: bim:Natureza "SUS.Assistência.Médica"@pt
+	Annotations: bim:Espécie "SUS.Hoteleria"@pt
+	Annotations: bim:Tema "SUS.Ropa.de.Cama"@pt
+	Annotations: bim:Disciplina "Arquitetura hospitalar"@pt
+	Annotations: bim:Chave "Key.SUS.21"
+	Annotations: bim:CatRevit "OST_Furniture"
+	Annotations: bim:ClasseIfc "IfcFurniture"
+	Annotations: bim:ABNT "2C.74"
+	SubClassOf: bim:SUS.Hoteleria
+
+
+Class: bim:SUS.Alimentação
+	Annotations: rdfs:label "SUS.Alimentação"@pt
+	Annotations: bim:Definição "Elementos para alimentação usados em hospitais do Sistema Único de Saúde do Brasil."@pt
+	Annotations: bim:Definición "Elementos para alimentación usados en hospitales del Sistema Único de Salud de Brasil."@es
+	Annotations: bim:Natureza "SUS.Assistência.Médica"@pt
+	Annotations: bim:Espécie "SUS.Hoteleria"@pt
+	Annotations: bim:Tema "SUS.Alimentação"@pt
+	Annotations: bim:Disciplina "Arquitetura hospitalar"@pt
+	Annotations: bim:Chave "Key.SUS.22"
+	Annotations: bim:CatRevit "OST_Furniture"
+	Annotations: bim:ClasseIfc "IfcFurniture"
+	Annotations: bim:ABNT "2C.74"
+	SubClassOf: bim:SUS.Hoteleria
 
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
@@ -407,60 +457,81 @@ Individual: bim:Disponível
 	Types: bim:SUS
 	Facts: bim:descrição  "É um código disponível para classificar equipamentos ou mobiliários do SUS"
 
-Individual: bim:EQU.ANA
+Individual: bim:Equip.Limpo
 	Types: bim:SUS.Equipamentos
-	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento utilizado para realizar análise clinica"
+	Facts: bim:descrição  "Equipamento limpo que pode ser utilizado"
 
-Individual: bim:EQU.CLA
+Individual: bim:Equip.Contaminado
 	Types: bim:SUS.Equipamentos
-	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento de esterilização como autoclaves"
+	Facts: bim:descrição  "Equipamento sujo ou contaminado que deve ser esterilizado"
 
-Individual: bim:EQU.ENE
-	Types: bim:SUS.Equipamentos
-	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento energético"
+Individual: bim:Roupa.Limpa
+	Types: bim:SUS.Ropa.de.Cama
+	Facts: bim:descrição  "Roupa limpa que pode ser utilizada para renovar a roupa de cama dos pacientes"
 
-Individual: bim:EQU.EXT
-	Types: bim:SUS.Equipamentos
-	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento utilizado para realizar extrações para análise"
+Individual: bim:Roupa.Contaminada
+	Types: bim:SUS.Ropa.de.Cama
+	Facts: bim:descrição  "Roupa utilizada que deve ser destinada a limpeça"
 
 Individual: bim:EQU.GER
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
 	Facts: bim:equipamento  "Equipamento de uso geral"
 
+Individual: bim:EQU.ENE
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:equipamento  "Equipamento energético"
+
+Individual: bim:EQU.ANA
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:equipamento.médico  "Equipamento utilizado para realizar análise clinica"
+
+Individual: bim:EQU.CLA
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:equipamento.médico  "Equipamento de esterilização como autoclaves"
+
+Individual: bim:EQU.EXT
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:equipamento.médico  "Equipamento utilizado para realizar extrações para análise"
+
 Individual: bim:EQU.LAB
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento utilizado para realizar análise laboratórial"
+	Facts: bim:equipamento.médico  "Equipamento utilizado para realizar análise laboratórial"
 
 Individual: bim:EQU.MED
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento médico utilizado por diversas especialidades"
+	Facts: bim:equipamento.médico  "Equipamento médico utilizado por diversas especialidades"
+
+Individual: bim:EQU.MON
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:equipamento.médico  "Equipamento médico utilizado para monitorar funções corporais."
 
 Individual: bim:EQU.OBS
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento utilizado para observação direta sobre o corpo do paciente"
+	Facts: bim:equipamento.médico  "Equipamento utilizado para observação direta sobre o corpo do paciente"
 
 Individual: bim:EQU.PES
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento de uso pessoal dos pacientes"
+	Facts: bim:equipamento.médico  "Equipamento de uso pessoal dos pacientes"
 
 Individual: bim:EQU.CIR
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento utilizado com função cirúrgica"
+	Facts: bim:equipamento.médico  "Equipamento utilizado com função cirúrgica"
 
 Individual: bim:EQU.RAD
 	Types: bim:SUS.Equipamentos
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:equipamento  "Equipamento radiológico ou que precisem de isolamento especial para diversos tipos de raios"
+	Facts: bim:equipamento.médico  "Equipamento radiológico ou que precisem de isolamento especial para diversos tipos de raios"
 
 Individual: bim:INS.ANA
 	Types: bim:SUS.Instrumento
@@ -570,13 +641,13 @@ Individual: bim:EQU.003
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.004
-	Types: bim:SUS.Mobília
+	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.004"
 	Facts: bim:tema  "Analisador"
 	Facts: bim:descrição  "Analisador automático para hematologia"
-	Facts: bim:equipamento  0
+	Facts: bim:equipamento  1
 	Facts: bim:dispositivo  0
 	Facts: bim:mobiliário  0
 
@@ -1019,7 +1090,7 @@ Individual: bim:EQU.043
 Individual: bim:EQU.044
 	Types: bim:SUS.Instrumento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.equipamento.médico  bim:INS.CIR
+	Facts: bim:é.instrumento.médico  bim:INS.CIR
 	Facts: bim:dispositivo  "Dispositivo cirúrgico"
 	Facts: bim:código  "EQU.044"
 	Facts: bim:tema  "Instrumentais"
@@ -1796,7 +1867,7 @@ Individual: bim:EQU.111
 Individual: bim:EQU.112
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.MON
 	Facts: bim:código  "EQU.112"
 	Facts: bim:tema  "Monitor"
 	Facts: bim:descrição  "Monitor de pressão arterial não invasiva"
@@ -1807,7 +1878,7 @@ Individual: bim:EQU.112
 Individual: bim:EQU.113
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.MON
 	Facts: bim:código  "EQU.113"
 	Facts: bim:tema  "Monitor"
 	Facts: bim:descrição  "Monitor de pressão intracraniana PIC"
@@ -1818,7 +1889,7 @@ Individual: bim:EQU.113
 Individual: bim:EQU.114
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.MON
 	Facts: bim:código  "EQU.114"
 	Facts: bim:tema  "Monitor"
 	Facts: bim:descrição  "Monitor multiparâmetros"
@@ -1829,7 +1900,7 @@ Individual: bim:EQU.114
 Individual: bim:EQU.115
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.MON
 	Facts: bim:código  "EQU.115"
 	Facts: bim:tema  "Monitor"
 	Facts: bim:descrição  "Monitor cardíaco"
@@ -1840,7 +1911,7 @@ Individual: bim:EQU.115
 Individual: bim:EQU.116
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.MON
 	Facts: bim:código  "EQU.116"
 	Facts: bim:tema  "Monitor"
 	Facts: bim:descrição  "Monitor multiparâmetro com capnografia"
@@ -2067,7 +2138,7 @@ Individual: bim:EQU.136
 Individual: bim:EQU.137
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.MON
 	Facts: bim:código  "EQU.137"
 	Facts: bim:tema  "Monitor"
 	Facts: bim:descrição  "Monitor de coagulação ativada TCA"
@@ -2088,7 +2159,7 @@ Individual: bim:EQU.138
 Individual: bim:EQU.139
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.139"
 	Facts: bim:tema  "Analisador"
 	Facts: bim:descrição  "Analisador para imunoensaio com fluorescência"
@@ -2099,7 +2170,7 @@ Individual: bim:EQU.139
 Individual: bim:EQU.140
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.140"
 	Facts: bim:tema  "Espectrofotômetro"
 	Facts: bim:descrição  "Espectrofotômetro"
@@ -2183,7 +2254,7 @@ Individual: bim:EQU.147
 Individual: bim:EQU.148
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.148"
 	Facts: bim:tema  "Analisador"
 	Facts: bim:descrição  "Analisador de gases sanguíneos"
@@ -2218,7 +2289,7 @@ Individual: bim:EQU.150
 Individual: bim:EQU.151
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.151"
 	Facts: bim:tema  "Osmômetro"
 	Facts: bim:descrição  "Osmômetro"
@@ -2344,8 +2415,8 @@ Individual: bim:EQU.162
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.163
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.163"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -2374,7 +2445,7 @@ Individual: bim:EQU.165
 Individual: bim:EQU.166
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.166"
 	Facts: bim:tema  "Cicloergômetro"
 	Facts: bim:descrição  "Cicloergômetro"
@@ -2393,8 +2464,8 @@ Individual: bim:EQU.167
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.168
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.168"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -2567,7 +2638,7 @@ Individual: bim:EQU.183
 Individual: bim:EQU.184
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.CIR
+	Facts: bim:é.equipamento.médico  bim:EQU.CIR
 	Facts: bim:código  "EQU.184"
 	Facts: bim:tema  "Irrigador"
 	Facts: bim:descrição  "Irrigador termoelétrico"
@@ -2590,7 +2661,7 @@ Individual: bim:EQU.185
 Individual: bim:EQU.186
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.CIR
+	Facts: bim:é.equipamento.médico  bim:EQU.CIR
 	Facts: bim:código  "EQU.186"
 	Facts: bim:tema  "Resfriador"
 	Facts: bim:descrição  "Resfriador elétrico"
@@ -2613,7 +2684,7 @@ Individual: bim:EQU.187
 Individual: bim:EQU.188
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.188"
 	Facts: bim:tema  "Cronômetro"
 	Facts: bim:descrição  "Cronômetro"
@@ -2667,8 +2738,8 @@ Individual: bim:EQU.192
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.193
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.193"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -2727,15 +2798,15 @@ Individual: bim:EQU.198
 	Facts: bim:instrumento.médico  1
 
 Individual: bim:EQU.199
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.199"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
 Individual: bim:EQU.200
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.200"
 	Facts: bim:tema  "Termo"
 	Facts: bim:descrição  "Termo higrômetro"
@@ -2794,8 +2865,8 @@ Individual: bim:EQU.205
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.206
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.206"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -2844,8 +2915,8 @@ Individual: bim:EQU.210
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.211
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.211"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -2901,14 +2972,14 @@ Individual: bim:EQU.216
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.217
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.217"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
 Individual: bim:EQU.218
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.218"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -2965,7 +3036,7 @@ Individual: bim:EQU.223
 Individual: bim:EQU.224
 	Types: bim:SUS.Instrumento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.equipamento.médico  bim:INS.LAB
+	Facts: bim:é.instrumento.médico  bim:INS.LAB
 	Facts: bim:código  "EQU.224"
 	Facts: bim:tema  "Analisador"
 	Facts: bim:descrição  "Analisador automático para Na+ - K+ e Cl"
@@ -3013,7 +3084,7 @@ Individual: bim:EQU.227
 Individual: bim:EQU.228
 	Types: bim:SUS.Instrumento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.equipamento.médico  bim:INS.LAB
+	Facts: bim:é.instrumento.médico  bim:INS.LAB
 	Facts: bim:código  "EQU.228"
 	Facts: bim:tema  "Analisador"
 	Facts: bim:descrição  "Analisador automático para bioquímica"
@@ -3085,7 +3156,7 @@ Individual: bim:EQU.233
 Individual: bim:EQU.234
 	Types: bim:SUS.Instrumento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.equipamento.médico  bim:INS.LAB
+	Facts: bim:é.instrumento.médico  bim:INS.LAB
 	Facts: bim:código  "EQU.234"
 	Facts: bim:tema  "Analisador"
 	Facts: bim:descrição  "Analisador de pH"
@@ -3186,7 +3257,7 @@ Individual: bim:EQU.242
 Individual: bim:EQU.243
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.243"
 	Facts: bim:tema  "Modelo"
 	Facts: bim:descrição  "Modelo anatômico"
@@ -3216,8 +3287,8 @@ Individual: bim:EQU.245
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.246
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.246"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -3308,8 +3379,8 @@ Individual: bim:EQU.254
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.255
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.255"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -3346,8 +3417,8 @@ Individual: bim:EQU.258
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.259
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.259"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -3602,8 +3673,8 @@ Individual: bim:EQU.282
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.283
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.283"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -3804,6 +3875,7 @@ Individual: bim:EQU.301
 Individual: bim:EQU.302
 	Types: bim:SUS.Mobília
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:é.limpo  bim:Roupa.Limpa
 	Facts: bim:é.mobília  bim:MOB.CRR
 	Facts: bim:mobília  "Móbiliário de transporte de hoteleria"
 	Facts: bim:código  "EQU.302"
@@ -3840,6 +3912,7 @@ Individual: bim:EQU.304
 Individual: bim:EQU.305
 	Types: bim:SUS.Mobília
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:é.contaminado  bim:Roupa.Contaminada
 	Facts: bim:é.mobília  bim:MOB.CRR
 	Facts: bim:mobília  "Móbiliário de transporte de hoteleria"
 	Facts: bim:código  "EQU.305"
@@ -3952,8 +4025,8 @@ Individual: bim:EQU.315
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.316
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.316"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -3971,7 +4044,7 @@ Individual: bim:EQU.317
 Individual: bim:EQU.318
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.318"
 	Facts: bim:tema  "Frequencímetro"
 	Facts: bim:descrição  "Frequencímetro"
@@ -4125,7 +4198,7 @@ Individual: bim:EQU.332
 Individual: bim:EQU.333
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.333"
 	Facts: bim:tema  "Megômetro"
 	Facts: bim:descrição  "Megômetro"
@@ -4169,7 +4242,7 @@ Individual: bim:EQU.336
 Individual: bim:EQU.337
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.337"
 	Facts: bim:tema  "Multímetro"
 	Facts: bim:descrição  "Multímetro"
@@ -4180,7 +4253,7 @@ Individual: bim:EQU.337
 Individual: bim:EQU.338
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.338"
 	Facts: bim:tema  "Multímetro"
 	Facts: bim:descrição  "Multímetro digital"
@@ -4303,7 +4376,7 @@ Individual: bim:EQU.349
 Individual: bim:EQU.350
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.350"
 	Facts: bim:tema  "Tacômetro"
 	Facts: bim:descrição  "Tacômetro"
@@ -4469,8 +4542,8 @@ Individual: bim:EQU.365
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.366
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.366"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -4498,6 +4571,7 @@ Individual: bim:EQU.368
 Individual: bim:EQU.369
 	Types: bim:SUS.Mobília
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:é.contaminado  bim:Equip.Contaminado
 	Facts: bim:é.mobília  bim:MOB.CRR
 	Facts: bim:mobília  "Móbiliário"
 	Facts: bim:código  "EQU.369"
@@ -4716,14 +4790,14 @@ Individual: bim:EQU.389
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.390
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.390"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
 Individual: bim:EQU.391
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.391"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -4738,8 +4812,8 @@ Individual: bim:EQU.392
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.393
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.393"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -4754,8 +4828,8 @@ Individual: bim:EQU.394
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.395
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.395"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -4892,8 +4966,8 @@ Individual: bim:EQU.407
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.408
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.408"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -4920,8 +4994,8 @@ Individual: bim:EQU.410
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.411
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.411"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5038,6 +5112,7 @@ Individual: bim:EQU.421
 Individual: bim:EQU.422
 	Types: bim:SUS.Mobília
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:é.limpo  bim:Equip.Limpo
 	Facts: bim:é.mobília  bim:MOB.CRR
 	Facts: bim:mobília  "Móbiliário de transporte de hoteleria"
 	Facts: bim:código  "EQU.422"
@@ -5048,8 +5123,8 @@ Individual: bim:EQU.422
 	Facts: bim:mobiliário  1
 
 Individual: bim:EQU.423
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.423"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5246,7 +5321,7 @@ Individual: bim:EQU.440
 Individual: bim:EQU.441
 	Types: bim:SUS.Dispositivo
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.instrumento.médico  bim:EQU.ANA
+	Facts: bim:é.equipamento.médico  bim:EQU.ANA
 	Facts: bim:código  "EQU.441"
 	Facts: bim:tema  "Moedor"
 	Facts: bim:descrição  "Moedor de carne"
@@ -5255,14 +5330,14 @@ Individual: bim:EQU.441
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.442
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.442"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
 Individual: bim:EQU.443
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.443"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5409,6 +5484,7 @@ Individual: bim:EQU.456
 Individual: bim:EQU.457
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:é.limpo  bim:Equip.Limpo
 	Facts: bim:código  "EQU.457"
 	Facts: bim:tema  "Monta"
 	Facts: bim:descrição  "Monta carga limpo"
@@ -5419,6 +5495,7 @@ Individual: bim:EQU.457
 Individual: bim:EQU.458
 	Types: bim:SUS.Equipamento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
+	Facts: bim:é.contaminado  bim:Contaminado
 	Facts: bim:código  "EQU.458"
 	Facts: bim:tema  "Monta"
 	Facts: bim:descrição  "Monta carga sujo"
@@ -5469,8 +5546,8 @@ Individual: bim:EQU.462
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.463
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.463"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5571,8 +5648,8 @@ Individual: bim:EQU.472
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.473
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.473"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5597,14 +5674,14 @@ Individual: bim:EQU.475
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.476
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.476"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
 Individual: bim:EQU.477
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.477"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5621,8 +5698,8 @@ Individual: bim:EQU.478
 	Facts: bim:instrumento.médico  1
 
 Individual: bim:EQU.479
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.479"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5772,7 +5849,7 @@ Individual: bim:EQU.492
 Individual: bim:EQU.493
 	Types: bim:SUS.Instrumento
 	Facts: bim:é.pertencente.a  bim:Equipamentos.SUS
-	Facts: bim:é.equipamento.médico  bim:INS.CIR
+	Facts: bim:é.instrumento.médico  bim:INS.CIR
 	Facts: bim:dispositivo  "Dispositivo cirúrgico"
 	Facts: bim:código  "EQU.493"
 	Facts: bim:tema  "Microscópio"
@@ -5795,8 +5872,8 @@ Individual: bim:EQU.494
 	Facts: bim:instrumento.médico  1
 
 Individual: bim:EQU.495
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.495"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -5936,8 +6013,8 @@ Individual: bim:EQU.507
 	Facts: bim:mobiliário  0
 
 Individual: bim:EQU.508
-	Types: bim:SUS.Mobília
-	Facts: bim:é.código  bim:Disponível
+	Types: bim:SUS.Equipamentos
+	Facts: bim:é.pertencente.a  bim:Disponível
 	Facts: bim:código  "EQU.508"
 	Facts: bim:descrição  "Código de equipamento SUS disponível"
 
@@ -6750,6 +6827,64 @@ DataProperty: bim:mobília
 	Annotations: bim:Ação "Ação equipar"@pt
 	Annotations: bim:Definição "É uma mobília."@pt
 	Annotations: bim:Definición "Es un mueble."@es
+
+ObjectProperty: bim:p.equipar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.contaminado
+	SubPropertyOf: bim:p.equipar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a equipar: é.contaminado"@pt
+	Annotations: bim:Chave "equip.117"
+	Annotations: bim:Ação "Ação equipar"@pt
+	Annotations: bim:Definição "É uma elemento que está sujo, contaminado ou que precisa de esterilização em hospitais."@pt
+	Annotations: bim:Definición "Es un elemento que está sucio, contaminado o necesita esterilización en los hospitales."@es
+
+DataProperty: bim:d.equipar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:contaminado
+	SubPropertyOf: bim:d.equipar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para equipar:  contaminado  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "equip.117"
+	Annotations: bim:Ação "Ação equipar"@pt
+	Annotations: bim:Definição "É uma elemento que está sujo, contaminado ou que precisa de esterilização em hospitais."@pt
+	Annotations: bim:Definición "Es un elemento que está sucio, contaminado o necesita esterilización en los hospitales."@es
+
+ObjectProperty: bim:p.equipar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.limpo
+	SubPropertyOf: bim:p.equipar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a equipar: é.limpo"@pt
+	Annotations: bim:Chave "equip.118"
+	Annotations: bim:Ação "Ação equipar"@pt
+	Annotations: bim:Definição "É uma elemento que está limpo, não precisando de esterilização em hospitais."@pt
+	Annotations: bim:Definición "Es un elemento que está limpio, no necesita ser esterilizado."@es
+
+DataProperty: bim:d.equipar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:limpo
+	SubPropertyOf: bim:d.equipar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para equipar:  limpo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "equip.118"
+	Annotations: bim:Ação "Ação equipar"@pt
+	Annotations: bim:Definição "É uma elemento que está limpo, não precisando de esterilização em hospitais."@pt
+	Annotations: bim:Definición "Es un elemento que está limpio, no necesita ser esterilizado."@es
 
 ObjectProperty: bim:p.esgotar
 	SubPropertyOf: bim:BIMProp
@@ -9942,5 +10077,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia CSUS_2Q
-##  Criada em 03/11/2025 10:11:59
+##  Criada em 03/11/2025 11:05:48
 #################################################################
