@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de codificação interna do Centro de Tecnologia"@pt ;
-	  rdfs:label "DataHora: 10/11/2025 14:30:55"@pt ;
+	  rdfs:label "DataHora: 10/11/2025 14:38:10"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -4725,22 +4725,22 @@ bim:TSB.OBJETIVO.02  rdf:type  owl:NamedIndividual , bim:TSB.Objetivo ;
      bim:contribuição.substancial    "Adaptação à mudança do clima"   .
 
 bim:TSB.CE.01  rdf:type  owl:NamedIndividual , bim:TSB.Condição ;
-     bim:é.nota.aplicada    bim:TSB.CE.01.Nota ;
+     bim:é.complementada.com.nota    bim:TSB.CE.01.Nota ;
      bim:condição.de.elegibilidade    "A construtora responsável pela execução das obras deve ser certificada pelo SIAC do PBQP-H, no nível A."  .
 
 bim:TSB.CE.01.Nota  rdf:type  owl:NamedIndividual , bim:TSB.Condição ;
-     bim:nota    "Para para alinhamento com esta edição da TSB, será aceito que a empresa apresente, como alternativa, sistema de gestão certificado pela norma ABNT NBR ISO9001, desde que inclua requisito que considere a formalidade e legalidade no processo de avaliação de fornecedores, conforme item 8.4.1.2 do regimento geral do SIAC."  .
+     bim:nota    "Para alinhar com esta edição da TSB, será aceito que a empresa apresente, como alternativa, sistema de gestão certificado pela norma ABNT NBR ISO9001, desde que inclua requisito que considere a formalidade e legalidade no processo de avaliação de fornecedores, conforme item 8.4.1.2 do regimento geral do SIAC."  .
 
 bim:EDIF.01  rdf:type  owl:NamedIndividual , bim:TSB.Edificio ;
-     bim:característica    "Edifício não residencial com sistema de iluminação integrado e/ou sistema de climatização integrado e/ou sistema de aquecimento de água" ;
+     bim:característica    "Edifício não residencial COM sistema de iluminação integrado e/ou sistema de climatização integrado e/ou sistema de aquecimento de água" ;
      bim:descrição    "Compreende a construção de edifícios novos, de todos os tipos e a realização de empreendimentos imobiliários, residenciais ou não, provendo recursos financeiros, técnicos e materiais para a sua execução e posterior venda. Compreende as obras de instalações prediais que permitem o funcionamento e a operação do edifício (atividades classificadas na CNAE 43), quando realizadas conjuntamente à fase de construção. A construção de edifícios é realizada tanto pela empresa contratada como por meio da subcontratação de terceiros. A responsabilidade total do desenvolvimento de projetos de construção deve ser assumida por empresas classificadas na CNAE."  .
 
 bim:EDIF.02  rdf:type  owl:NamedIndividual , bim:TSB.Edificio ;
-     bim:característica    "Edifício não residencial sem sistema de iluminação integrado e/ou sistema de climatização integrado e/ou sistema de aquecimento de água" ;
+     bim:característica    "Edifício não residencial SEM sistema de iluminação integrado e/ou sistema de climatização integrado e/ou sistema de aquecimento de água" ;
      bim:descrição    "Compreende a construção de edifícios novos, de todos os tipos e a realização de empreendimentos imobiliários, residenciais ou não, provendo recursos financeiros, técnicos e materiais para a sua execução e posterior venda. Compreende as obras de instalações prediais que permitem o funcionamento e a operação do edifício (atividades classificadas na CNAE 43), quando realizadas conjuntamente à fase de construção. A construção de edifícios é realizada tanto pela empresa contratada como por meio da subcontratação de terceiros. A responsabilidade total do desenvolvimento de projetos de construção deve ser assumida por empresas classificadas na CNAE."  .
 
 bim:EDIF.03  rdf:type  owl:NamedIndividual , bim:TSB.Edificio ;
-     bim:característica    "Edifício não residencial destinado à venda ou locação de unidades comerciais ou de serviços, e entregue sem sistema integrado de climatização e iluminação" ;
+     bim:característica    "Edifício não residencial destinado à venda ou locação de unidades comerciais ou de serviços, e entregue SEM sistema integrado de climatização e iluminação" ;
      bim:descrição    "Compreende a construção de edifícios novos, de todos os tipos e a realização de empreendimentos imobiliários, residenciais ou não, provendo recursos financeiros, técnicos e materiais para a sua execução e posterior venda. Compreende as obras de instalações prediais que permitem o funcionamento e a operação do edifício (atividades classificadas na CNAE 43), quando realizadas conjuntamente à fase de construção. A construção de edifícios é realizada tanto pela empresa contratada como por meio da subcontratação de terceiros. A responsabilidade total do desenvolvimento de projetos de construção deve ser assumida por empresas classificadas na CNAE."  .
 
 bim:EDIF.04  rdf:type  owl:NamedIndividual , bim:TSB.Edificio ;
@@ -9063,6 +9063,35 @@ bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.complementada.com.nota   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.complementada.com.nota" ;
+                    bim:Chave               "taxon.103" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara uma nota complementar"@pt ;
+                    bim:Definición          "Declara una nota complementaria"@es  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:complementada.com.nota   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  complementada.com.nota  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.103" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara uma nota complementar"@pt ;
+                    bim:Definición          "Declara una nota complementaria"@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.condição.de.elegibilidade   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.taxonomizar ;
                     rdfs:domain             bim:BIM ;
@@ -9292,5 +9321,5 @@ bim:para.certificar   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia TSB
-##  Criada em 10/11/2025 14:30:56
+##  Criada em 10/11/2025 14:38:11
 #################################################################
