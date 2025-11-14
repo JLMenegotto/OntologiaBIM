@@ -16,5 +16,6 @@ Ela não pretende ser exaustiva nem substituir os documentos originais publicado
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="857" height="1088" alt="TSB" src="https://github.com/user-attachments/assets/ed1ac698-a371-4c29-94de-fd50d9b45728" />
+<img width="774" height="500" alt="TSB" src="https://github.com/user-attachments/assets/89a8ad57-6c84-4c40-8dd5-4574421ba01c" />
+
 
