@@ -91,7 +91,7 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 
 ![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
-### Preenchimento do arquivo de Propriedades (atualmente 903 propriedades)
+### Preenchimento do arquivo de Propriedades (atualmente 1536 propriedades)
 #### Adicionar ou mudar uma propriedade de Dado.
 
 Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. Ele é atualizado com regularidade pela incorporação de novas propriedades, pela modificação das características de propriedades existentes ou pelo reagrupamento de uma propriedade dentro de outra SubProp1 e SubData1 (colunas C e F). A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
