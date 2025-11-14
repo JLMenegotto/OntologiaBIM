@@ -14,7 +14,7 @@ A presente ontologia está sendo desenvolvida utilizando as categorias definidas
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="869" height="1046" alt="TSB" src="https://github.com/user-attachments/assets/1043a387-5b86-4b0b-88ea-13b5bc1cc581" />
+<img width="766" height="38" alt="TSB" src="https://github.com/user-attachments/assets/c977f2f6-de3c-4cfa-abdd-2e35cd56e0de" />
 
 
 
