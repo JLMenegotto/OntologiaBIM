@@ -11,11 +11,9 @@ A **Taxonomia Sustentável Brasileira (TSB)** é um projeto de impulsionado pelo
 De acordo com o documento introdutório:
 
 <p align="justify"><em><small>
-&nbsp;&nbsp;&nbsp;&nbsp;A Taxonomia Sustentável Brasileira é um dos instrumentos do Novo Brasil – Plano de Transformação Ecológica (PTE) do Governo Federal, iniciativa que tem por objetivo promover uma mudança nos paradigmas econômicos, tecnológicos e culturais em prol do desenvolvimento a partir de relações sustentáveis com a natureza e seus biomas, de forma a possibilitar a geração de riqueza e sua distribuição justa e compartilhada, com melhoria na qualidade de vida das gerações presentes e futuras (BRASIL, MF, 2023b). O PTE está estruturado em seis eixos, sendo a TSB parte do eixo de Finanças Sustentáveis. (Fonte: Taxonomia Sustentável Brasileira. Introdução., 2025)
+&nbsp;&nbsp;&nbsp;&nbsp;A Taxonomia Sustentável Brasileira é um dos instrumentos do Novo Brasil – Plano de Transformação Ecológica (PTE) do  Governo Federal, iniciativa que tem por objetivo promover uma mudança nos paradigmas econômicos, tecnológicos e culturais em prol do  desenvolvimento a partir de relações sustentáveis com a natureza e seus biomas, de forma a possibilitar a geração de riqueza e sua distribuição  justa e compartilhada, com melhoria na qualidade de vida das gerações presentes e futuras (BRASIL, MF, 2023b). O PTE está estruturado em seis  eixos, sendo a TSB parte do eixo de Finanças Sustentáveis. (Fonte: Taxonomia Sustentável Brasileira. Introdução., 2025)
 </small></em></p>
 
-
-   _"A Taxonomia Sustentável Brasileira é um dos instrumentos do Novo Brasil – Plano de Transformação Ecológica (PTE) do Governo Federal, iniciativa que tem por objetivo promover uma mudança nos paradigmas econômicos, tecnológicos e culturais em prol do desenvolvimento a partir de relações sustentáveis com a natureza e seus biomas, de forma a possibilitar a geração de riqueza e sua distribuição justa e compartilhada, com melhoria na qualidade de vida das gerações presentes e futuras (BRASIL, MF, 2023b). O PTE está estruturado em seis eixos, sendo a TSB parte do eixo de Finanças Sustentáveis."_ (Fonte: Taxonomia Sustentável Brasileira. Introdução., 2025)
 
 A presente ontologia está sendo desenvolvida utilizando as categorias definidas pela **TSB**. O desenvolvimento não pretende ser exaustivo nem substituir os documentos oficiais originais publicados pelo Governo Federal. Trata-se de um exercício prático e acadêmico para integrar os documentos pdf formalizando-os numa ontologia OWL e TTL.  
 
