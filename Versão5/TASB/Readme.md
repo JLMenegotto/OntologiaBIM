@@ -28,3 +28,7 @@ As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas
 
 <img width="856" height="1760" alt="TSB" src="https://github.com/user-attachments/assets/a22eb130-13d1-414b-8d78-a90a894d29e0" />
 
+
+🔗 Acesse a ontologia no WebProtégé: [Clique aqui](https://webprotege.stanford.edu/project/TSB)
+
+
