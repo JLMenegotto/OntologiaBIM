@@ -18,4 +18,5 @@ A medida que a TSB evulua a ontologia também evoluirá.
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="848" height="1718" alt="TSB" src="https://github.com/user-attachments/assets/fef371c8-4a93-4aa9-941b-d84ee77cfaa3" />
+<img width="856" height="1760" alt="TSB" src="https://github.com/user-attachments/assets/a22eb130-13d1-414b-8d78-a90a894d29e0" />
+
