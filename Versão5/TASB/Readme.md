@@ -14,9 +14,9 @@ A **Taxonomia Sustentável Brasileira (TSB)** é um projeto impulsionado como po
 </small></em></p>
 
 
-A presente ontologia está sendo desenvolvida utilizando as categorias definidas pela **TSB**. O desenvolvimento não pretende ser exaustivo nem substituir os documentos oficiais originais publicados pelo Governo Federal. Trata-se de um exercício prático e acadêmico para integrar os documentos pdf formalizando-os numa ontologia OWL e TTL.  
+A presente ontologia está sendo desenvolvida utilizando as categorias definidas pela **TSB**. O desenvolvimento não pretende ser exaustivo nem substituir os documentos oficiais originais publicados pelo Governo Federal. Trata-se de um exercício prático e acadêmico que visa integrar a documentação da TSB publicada em arquivos pdf, formalizando-a em ontologias OWL e TTL para leitura de humanos e máquina. Esses documentos podem ser abertos e consultados em Protégé ou serem integrados como conhecimento factual para que os novos agentes gerativos de IA utilizados no setor AECO possam processar.  
 
-Esses documentos podem ser abertos e consultados em Protégé ou serem integrados como conhecimento factual para que os novos agentes gerativos de IA utilizados no setor AECO possam processar. As atividades económicas e os princípios projetuais de arquitetura e engenharia tem pontos de contato com a TSB. Além dos princípios, diretrizes e salvaguardas gerais, são principalmente incorporadas as atividades econômicas (AECO) relativas ao setor F (Construção Civil) e as que se referem à diversos aspectos da infraestrutura.
+As atividades económicas e os princípios projetuais de arquitetura e engenharia tem pontos de contato com a TSB. Além dos princípios, diretrizes e salvaguardas gerais, são principalmente incorporadas as atividades econômicas (AECO) relativas ao setor F (Construção Civil) e as que se referem à diversos aspectos da infraestrutura.
 
 À medida que a TSB evolua, a ontologia também evoluirá.
 
