@@ -10,7 +10,7 @@
 A **Taxonomia Sustentável Brasileira (TSB)** é um projeto de impulsionado pelo Estado Brasileiro que o Governo do Brasil vem desenvolvendo. 
 De acordo com o documento introdutório:
 
-<p align="justify" style="color:#CCCCCC;"><em><small>
+<p align="justify" style="color:#DDDDDD;"><em><small>
 &nbsp;&nbsp;&nbsp;&nbsp;A Taxonomia Sustentável Brasileira é um dos instrumentos do Novo Brasil – Plano de Transformação Ecológica (PTE) do Governo Federal, iniciativa que tem por objetivo promover uma mudança nos paradigmas econômicos, tecnológicos e culturais em prol do desenvolvimento a partir de relações sustentáveis com a natureza e seus biomas, de forma a possibilitar a geração de riqueza e sua distribuição justa e compartilhada, com melhoria na qualidade de vida das gerações presentes e futuras (BRASIL, MF, 2023b). O PTE está estruturado em seis eixos, sendo a TSB parte do eixo de Finanças Sustentáveis.(Fonte: Taxonomia Sustentável Brasileira. Introdução., 2025) <br><br>
 </small></em></p>
 
