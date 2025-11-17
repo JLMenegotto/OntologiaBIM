@@ -23,12 +23,13 @@ As atividades económicas e os princípios projetuais de arquitetura e engenhari
 
 À medida que a TSB evolua, a ontologia também evoluirá.
 
+
+🔗 Acesse a ontologia no WebProtégé: [Clique aqui](https://webprotege.stanford.edu/#projects/65fc7c8f-b307-48da-ab28-bcf6e4e91cc6/edit/Individuals?selection=NamedIndividual(%3Chttps://github.com/JLMenegotto/RepoOnto%23Crit%C3%A9rio.EE.01%3E))
+
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
 <img width="856" height="1760" alt="TSB" src="https://github.com/user-attachments/assets/a22eb130-13d1-414b-8d78-a90a894d29e0" />
 
-
-🔗 Acesse a ontologia no WebProtégé: [Clique aqui]([https://webprotege.stanford.edu/project/TSB](https://webprotege.stanford.edu/#projects/65fc7c8f-b307-48da-ab28-bcf6e4e91cc6/edit/Individuals?selection=NamedIndividual(%3Chttps://github.com/JLMenegotto/RepoOnto%23Crit%C3%A9rio.EE.01%3E)))
 
 
