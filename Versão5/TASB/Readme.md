@@ -16,4 +16,4 @@ A ontologia desenvolvida não pretende ser exaustiva nem substituir os documento
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="848" height="1676" alt="TSB" src="https://github.com/user-attachments/assets/138f990b-d702-4dd0-85d3-c8fcef085d7e" />
+<img width="848" height="1718" alt="TSB" src="https://github.com/user-attachments/assets/fef371c8-4a93-4aa9-941b-d84ee77cfaa3" />
