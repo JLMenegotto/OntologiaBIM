@@ -29,7 +29,7 @@ As atividades económicas e os princípios projetuais de arquitetura e engenhari
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="848" height="1970" alt="TSB" src="https://github.com/user-attachments/assets/98e8cc9f-d21c-4fcd-bce2-0cfb584bbdb0" />
+<img width="860" height="2180" alt="TSB" src="https://github.com/user-attachments/assets/286c2e99-6a25-441d-a5ae-d3531a6bdc9a" />
 
 
 
