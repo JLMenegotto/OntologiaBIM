@@ -16,14 +16,11 @@ A **Taxonomia Sustentável Brasileira (TSB)** é um projeto impulsionado como po
 ativos e/ou categorias de projetos que contribuem substancialmente para objetivos climáticos, ambientais e/ou sociais, por meio de critérios específicos baseados na ciência (BRASIL, MF, 2023a). <br><br>
 </small></em></p>
 
+A ontologia está sendo desenvolvida utilizando as categorias definidas pela **TSB**. O desenvolvimento não pretende substituir a documentação oficial original publicada pelo Governo Federal. Trata-se de um exercício acadêmico que visa a integração da documentação da TSB, publicada em arquivos pdf, formalizando-a em ontologias OWL e TTL para leitura de humanos e máquina em ambientes BIM. Esses documentos podem ser abertos e consultados em Protégé ou serem integrados como conhecimento factual para que os novos agentes de IA utilizados no setor AECO possam acessar e processar.
 
-A presente ontologia está sendo desenvolvida utilizando as categorias definidas pela **TSB**. O desenvolvimento não pretende ser exaustivo nem substituir a documentação oficial original publicada pelo Governo Federal. Trata-se de um exercício prático e acadêmico que visa integrar a documentação da TSB, publicada em arquivos pdf, formalizando-a em ontologias OWL e TTL para leitura de humanos e máquina em ambientes BIM. 
-Esses documentos podem ser abertos e consultados em Protégé ou serem integrados como conhecimento factual para que os novos agentes gerativos de IA utilizados no setor AECO possam acessar e processar.  
-
-As atividades económicas e os princípios projetuais de arquitetura e engenharia tem pontos de contato com a TSB. Além dos princípios, diretrizes e salvaguardas gerais, são principalmente incorporadas as atividades econômicas (AECO) relativas ao setor F (Construção Civil) e as que se referem à diversos aspectos da infraestrutura.
+As atividades económicas dos **Setores da TSB** e os princípios de sustentabilidade aplicados ao projeto de arquitetura e engenharia tem pontos de contato. Além dos princípios, diretrizes e salvaguardas gerais, são principalmente incorporadas as atividades econômicas (AECO) relativas ao setor F (Construção Civil) e as que se referem à diversos aspectos da infraestrutura.
 
 À medida que a TSB evolua, a ontologia também evoluirá.
-
 
 🔗 **Acesse a ontologia no WebProtégé:** [Clique aqui](https://webprotege.stanford.edu/#projects/be31f77c-2c3d-4d9a-bed7-f56b9f1613be/edit/Classes?selection=Class(%3Chttps://github.com/JLMenegotto/RepoOnto%23TSB%3E))
 
