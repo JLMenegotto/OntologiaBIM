@@ -25,13 +25,12 @@ As atividades económicas dos **Setores da TSB** e os princípios de sustentabil
 #### Relacionamento com Objetos BIM e sistemas de classificação.
 Os diversos critérios de alinhamento com os princípios da Taxonomia são conectados às categorias Revit, classes IFC ou códigos como o ABNT, por meio dos indivíduos definidos na Classe **Sistema.Estudado**. 
 
-<img width="2521" height="572" alt="Sistema_Clima" src="https://github.com/user-attachments/assets/9319671f-dec0-4e3c-8553-744106c29a4f" />
 
 	  Individual: bim:Sistemas.Climatização
 		  Types: bim:Sistema.Estudado
 		  Facts: bim:é.pertencente.a  bim:Taxonomia.TSB
 		  acts: bim:categoria.revit  "[ OST_DuctSystem ]"
-		  Facts: bim:classe.ifc  "[ IfcDistributionSystemAIRCONDITIONING , IfcDistributionSystemCHILLEDWATER , 	*   IfcDistributionSystemCOMPRESSEDAIR , IfcDistributionSystemCONDENSERWATER , IfcDistributionSystemEXHAUST , IfcDistributionSystemHEATING ,  IfcDistributionSystemREFRIGERATION , IfcDistributionSystemRETURN_CIRCUIT , IfcDistributionSystemVACUUM , IfcDistributionSystemVENTILATION ]"
+		  Facts: bim:classe.ifc  "[ IfcDistributionSystemAIRCONDITIONING , IfcDistributionSystemCHILLEDWATER ,  IfcDistributionSystemCOMPRESSEDAIR , IfcDistributionSystemCONDENSERWATER , IfcDistributionSystemEXHAUST ,  IfcDistributionSystemHEATING ,  IfcDistributionSystemREFRIGERATION , IfcDistributionSystemRETURN_CIRCUIT , IfcDistributionSystemVACUUM , IfcDistributionSystemVENTILATION ]"
 		  Facts: bim:descrição  "Sistemas de Climatização."
 		  Facts: bim:observação  "Esta instância vincula Sistemas de Climatização com as categorias, classes e demais sistemas de classificação utilizados em ambientes de projeto BIM. Também orienta sobre os critérios de alinhamento específicos do sistema."
 		  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F01.A.a
