@@ -20,19 +20,19 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
 
 <p align="justify">Foram separados os seguintes domínios ontológicos<br></b></p>
 
- *[**Pasta ABNT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ABNT) aloca ontologia com o sistema de classificação da construção **NBR 15.965** ordenado seus códigos como Fatos conhecidos.
- *[**Pasta AMBI**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/AMBI) aloca ontologia com conceitos espaciais e Fatos conhecidos do **Instituto de Macromoléculas da UFRJ**.
- *[**Pasta CROM**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CROM) aloca ontologia con conceitos **cromáticos** e alguns Fatos conhecidos de paletas cromáticas. 
- *[**Pasta CRON**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CRON) aloca ontologia com conceitos de elementos **temporais**. 
- *[**Pasta CSUS**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CSUS) ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
- *[**Pasta INFR**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/INFR) aloca ontologia com conceitos **Infraestrutura** e Fatos conhecidos da cidade de **Rio de janeiro** ou de instituições como o   	INMET.
- *[**Pasta DOCU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/DOCU) aloca ontologia com conceitos de **Documentação** e com alguns fatos conhecidos referentes a Leis e Decretos como exemplo.
- *[**Pasta META**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/META) aloca ontologia com conceitos de **Estrutura Metálica** e com alguns fatos conhecidos referentes a catálogo de perfis laminados.
- *[**Pasta TUBO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TUBO) aloca ontologia com conceitos de **Tubulações** e com alguns fatos conhecidos referentes a catálogo de fabricantes do setor.
- *[**Pasta VANT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VANT) aloca ontologia com conceitos de **Veículos Aereos não Tripulados** e com alguns fatos conhecidos referentes a processos de manutenção predial que utilizam drones para inspeção e aquisição de imagens.  
- *[**Pasta ARQU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ARQU) aloca ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos.
- *[**Pasta TASB**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TASB) aloca ontologia com conceitos da **Taxonomia Sustentável Brasileira** com fatos conhecidos. 
- *[**Pasta VEGE**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VEGE) aloca ontologia com conceitos de **Vegetação** com conhecimento utilizado em projetos paisagísticos.
+ * [**Pasta ABNT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ABNT) aloca ontologia com o sistema de classificação da construção **NBR 15.965** ordenado seus códigos como Fatos conhecidos.
+ * [**Pasta AMBI**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/AMBI) aloca ontologia com conceitos espaciais e Fatos conhecidos do **Instituto de Macromoléculas da UFRJ**.
+ * [**Pasta CROM**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CROM) aloca ontologia con conceitos **cromáticos** e alguns Fatos conhecidos de paletas cromáticas. 
+ * [**Pasta CRON**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CRON) aloca ontologia com conceitos de elementos **temporais**. 
+ * [**Pasta CSUS**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CSUS) ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
+ * [**Pasta INFR**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/INFR) aloca ontologia com conceitos **Infraestrutura** e Fatos conhecidos da cidade de **Rio de janeiro** ou de instituições como o   	INMET.
+ * [**Pasta DOCU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/DOCU) aloca ontologia com conceitos de **Documentação** e com alguns fatos conhecidos referentes a Leis e Decretos como exemplo.
+ * [**Pasta META**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/META) aloca ontologia com conceitos de **Estrutura Metálica** e com alguns fatos conhecidos referentes a catálogo de perfis laminados.
+ * [**Pasta TUBO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TUBO) aloca ontologia com conceitos de **Tubulações** e com alguns fatos conhecidos referentes a catálogo de fabricantes do setor.
+ * [**Pasta VANT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VANT) aloca ontologia com conceitos de **Veículos Aereos não Tripulados** e com alguns fatos conhecidos referentes a processos de manutenção predial que utilizam drones para inspeção e aquisição de imagens.  
+ * [**Pasta ARQU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ARQU) aloca ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos.
+ * [**Pasta TASB**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TASB) aloca ontologia com conceitos da **Taxonomia Sustentável Brasileira** com fatos conhecidos. 
+ * [**Pasta VEGE**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VEGE) aloca ontologia com conceitos de **Vegetação** com conhecimento utilizado em projetos paisagísticos.
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
