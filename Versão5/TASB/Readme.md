@@ -27,6 +27,25 @@ Os diversos critérios de alinhamento com os princípios da Taxonomia são conec
 
 <img width="2521" height="572" alt="Sistema_Clima" src="https://github.com/user-attachments/assets/9319671f-dec0-4e3c-8553-744106c29a4f" />
 
+	*  Individual: bim:Sistemas.Climatização
+		*  Types: bim:Sistema.Estudado
+		*  Facts: bim:é.pertencente.a  bim:Taxonomia.TSB
+		*  acts: bim:categoria.revit  "[ OST_DuctSystem ]"
+		*  Facts: bim:classe.ifc  "[ IfcDistributionSystemAIRCONDITIONING , IfcDistributionSystemCHILLEDWATER , 	*   IfcDistributionSystemCOMPRESSEDAIR , IfcDistributionSystemCONDENSERWATER , IfcDistributionSystemEXHAUST , IfcDistributionSystemHEATING ,  IfcDistributionSystemREFRIGERATION , IfcDistributionSystemRETURN_CIRCUIT , IfcDistributionSystemVACUUM , IfcDistributionSystemVENTILATION ]"
+		*  Facts: bim:descrição  "Sistemas de Climatização."
+		*  Facts: bim:observação  "Esta instância vincula Sistemas de Climatização com as categorias, classes e demais sistemas de classificação utilizados em ambientes de projeto BIM. Também orienta sobre os critérios de alinhamento específicos do sistema."
+		*  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F01.A.a
+		*  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F01.A.b
+		*  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F03.B
+		*  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F03.D
+  
+
+
+
+
+  
+  
+
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
