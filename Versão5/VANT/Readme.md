@@ -12,4 +12,4 @@
 <img width="757" height="290" alt="vant" src="https://github.com/user-attachments/assets/79a8396a-cde8-428b-8bf7-cacbb6c69857" />
 
 
-[Artigo_SBQP205](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Publica%C3%A7%C3%B5es/7528.pdf)
+[Artigo_SBQP205: Drone+Manutanção+Ontologia](https://github.com/JLMenegotto/OntologiaBIM/blob/main/Publica%C3%A7%C3%B5es/7528.pdf)
