@@ -13,7 +13,8 @@
 #### Árvore de Classes  Definidas por declarações axiomáticas e Inferidas com participação do Reasoner ELK  (Clique na imagem para ampliar)
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="1047" height="33008" alt="Arqui_I" src="https://github.com/user-attachments/assets/2140fc74-1b0f-496b-ae70-1485d6245535" />
+<img width="3542" height="28557" alt="Arqui_I" src="https://github.com/user-attachments/assets/70395f3f-5798-4139-b170-ef86edd90aa3" />
+
 
 
 
