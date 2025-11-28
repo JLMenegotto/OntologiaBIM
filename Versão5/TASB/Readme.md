@@ -25,7 +25,7 @@ As atividades económicas dos **Setores da TSB** e os princípios de sustentabil
 #### Relacionamento com Objetos BIM e sistemas de classificação.
 Para vincular os conceitos da taxonomia TSB com os elementos BIM foi criada a classe **Sistema.Estudado**. Os diversos critérios de alinhamento com os princípios da Taxonomia são conectados às categorias Revit, classes IFC ou a códigos de classificação da ABNT, por meio dos indivíduos definidos na Classe **Sistema.Estudado**. 
 
-Neste exemplo, a instância de **Sistemas.Climatização**  pode ser vinculada com as propriedades de objeto **é.qualificada.com** aos critérios de qualificação das atividades, representados por outras instâncias (  Critério.de.Qualificação.F01.A.a , Critério.de.Qualificação.F01.A.b , Critério.de.Qualificação.F03.B , Critério.de.Qualificação.F03.D)
+Neste exemplo, a instância de **Sistemas.Climatização**  está vinculada declarando Fatos que vinculam a propriedade de objeto **é.qualificada.com** aos critérios de qualificação declarados para as atividades e que estão representados por outras instâncias ( Critério.de.Qualificação.F01.A.a , Critério.de.Qualificação.F01.A.b , Critério.de.Qualificação.F03.B , Critério.de.Qualificação.F03.D).
 
 	  Individual: bim:Sistemas.Climatização
 		  Types: bim:Sistema.Estudado
