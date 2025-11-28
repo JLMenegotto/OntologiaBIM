@@ -27,7 +27,7 @@ Os diversos critérios de alinhamento com os princípios da Taxonomia são conec
 
 <img width="2521" height="572" alt="Sistema_Clima" src="https://github.com/user-attachments/assets/9319671f-dec0-4e3c-8553-744106c29a4f" />
 
-	*  Individual: bim:Sistemas.Climatização
+	  Individual: bim:Sistemas.Climatização
 		  Types: bim:Sistema.Estudado
 		  Facts: bim:é.pertencente.a  bim:Taxonomia.TSB
 		  acts: bim:categoria.revit  "[ OST_DuctSystem ]"
