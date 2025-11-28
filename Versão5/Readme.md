@@ -32,7 +32,7 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
   * Pasta **TUBO** aloca ontologia com conceitos de **Tubulações** e com alguns fatos conhecidos referentes a catálogo de fabricantes do setor.
   * Pasta **VANT** aloca ontologia com conceitos de **Veículos Aereos não Tripulados** e com alguns fatos conhecidos referentes a processos de
     manutenção predial que utilizam drones para inspeção e aquisição de imagens.
-  * Pasta **ARQU** aloca ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos.
+  * [**Pasta ARQU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ARQU) aloca ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos.
   * [**Pasta TASB**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TASB) aloca ontologia com conceitos da **Taxonomia Sustentável Brasileira** com fatos conhecidos. 
   * Pasta **VEGE** aloca ontologia com conceitos de **Vegetação** com conhecimento utilizado em projetos paisagísticos.
 
