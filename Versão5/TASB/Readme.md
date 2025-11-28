@@ -25,5 +25,6 @@ As atividades económicas dos **Setores da TSB** e os princípios de sustentabil
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="856" height="1886" alt="TSB" src="https://github.com/user-attachments/assets/f9e071e5-ae4b-4c5e-9a50-50f84010e60e" />
+<img width="856" height="1928" alt="TSB" src="https://github.com/user-attachments/assets/5c221cf4-53c3-49e8-84d3-374ba4c23574" />
+
 
