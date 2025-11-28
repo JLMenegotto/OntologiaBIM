@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 07/11/2025 17:35:07"@pt ;
+	  rdfs:label "DataHora: 28/11/2025 16:26:49"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -67,6 +67,7 @@ bim:Tema		 rdf:type   owl:AnnotationProperty .
 bim:Interoperar		 rdf:type   owl:AnnotationProperty .
 bim:Definição		 rdf:type   owl:AnnotationProperty .
 bim:Definición		 rdf:type   owl:AnnotationProperty .
+bim:Definition		 rdf:type   owl:AnnotationProperty .
 bim:Chave		 rdf:type   owl:AnnotationProperty .
 bim:Ação		 rdf:type   owl:AnnotationProperty .
 bim:CatRevit		 rdf:type   owl:AnnotationProperty .
@@ -104,6 +105,7 @@ bim:Drone rdf:type  owl:Class  ;
       rdfs:label  "Drone"@pt ;
       bim:Definição   "É uma aeronave tipo drone ou UAS."@pt ;
       bim:Definición  "Se trata de una aeronave tipo dron o UAS."@es ;
+       bim:Definition  "It is a drone-type aircraft or UAS."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -136,6 +138,7 @@ bim:Voo.Plano rdf:type  owl:Class  ;
       rdfs:label  "Voo Plano"@pt ;
       bim:Definição   "Plano de voo autônomo."@pt ;
       bim:Definición  "Plan de vuelo autónomo."@es ;
+       bim:Definition  "Autonomous flight plan."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -168,6 +171,7 @@ bim:Voo.Autônomo rdf:type  owl:Class  ;
       rdfs:label  "Voo Autônomo"@pt ;
       bim:Definição   "Voo autônomo realizado com drone."@pt ;
       bim:Definición  "Vuelo autónomo realizado con dron."@es ;
+       bim:Definition  "Autonomous flight carried out with a drone."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -200,6 +204,7 @@ bim:Voo.Manual rdf:type  owl:Class  ;
       rdfs:label  "Voo Manual"@pt ;
       bim:Definição   "Voo manual de realizado com drone."@pt ;
       bim:Definición  "Vuelo manual realizado con dron."@es ;
+       bim:Definition  "Manual flight carried out with drone."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -232,6 +237,7 @@ bim:De.Campo rdf:type  owl:Class  ;
       rdfs:label  "De Campo"@pt ;
       bim:Definição   "Vistoria realizada em campo."@pt ;
       bim:Definición  "Inspección realizada en campo."@es ;
+       bim:Definition  "Inspection carried out in the field."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -264,6 +270,7 @@ bim:Banco.Imagens rdf:type  owl:Class  ;
       rdfs:label  "Banco Imagens"@pt ;
       bim:Definição   "Banco de imagens e vídeos dos voos."@pt ;
       bim:Definición  "Imágenes y videos de archivo de los vuelos."@es ;
+       bim:Definition  "Stock images and videos of the flights."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -296,6 +303,7 @@ bim:Data rdf:type  owl:Class  ;
       rdfs:label  "Data"@pt ;
       bim:Definição   "Data da realização do evento de vistoria."@pt ;
       bim:Definición  "Fecha del evento de inspección."@es ;
+       bim:Definition  "Date of the inspection event."@en ;
       bim:Interoperar "-"@pt ;
       bim:Natureza    "-"@pt ;
       bim:Espécie     "-"@pt ;
@@ -1085,6 +1093,36 @@ bim:evento.gatilho   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es  .
 
 
+bim:p.gestionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.meta   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.gestionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a gestionar: é.meta" ;
+                    bim:Chave               "gesti.137" ;
+                    bim:Ação                "Ação gestionar" ;
+                    bim:Definição           "Identificação de uma meta do tipo ODS ou similares."@pt ;
+                    bim:Definición          "Identificación de un ODS o una meta similar."@es ;
+                    owl:equivalentProperty  bim:é.missão.principal  .
+
+
+bim:d.gestionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:meta   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.gestionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para gestionar:  meta  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "gesti.137" ;
+                    bim:Ação                "Ação gestionar" ;
+                    bim:Definição           "Identificação de uma meta do tipo ODS ou similares."@pt ;
+                    bim:Definición          "Identificación de un ODS o una meta similar."@es  .
+
+
 bim:p.graduar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -1214,7 +1252,7 @@ bim:é.codificada   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.codificada" ;
-                    bim:Chave               "ident.101" ;
+                    bim:Chave               "ident.108" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica a sigla formadora de um código."@pt ;
                     bim:Definición          "Identifica el acrónimo que forma un código."@es ;
@@ -1229,7 +1267,7 @@ bim:codificada   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.identificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  codificada  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "ident.101" ;
+                    bim:Chave               "ident.108" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica a sigla formadora de um código."@pt ;
                     bim:Definición          "Identifica el acrónimo que forma un código."@es  .
@@ -1244,7 +1282,7 @@ bim:é.codificado   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.codificado" ;
-                    bim:Chave               "ident.102" ;
+                    bim:Chave               "ident.109" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica a sigla formadora de um código."@pt ;
                     bim:Definición          "Identifica el acrónimo que forma un código."@es ;
@@ -1259,7 +1297,7 @@ bim:codificado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.identificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  codificado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "ident.102" ;
+                    bim:Chave               "ident.109" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica a sigla formadora de um código."@pt ;
                     bim:Definición          "Identifica el acrónimo que forma un código."@es  .
@@ -1274,7 +1312,7 @@ bim:é.nomeada   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.nomeada" ;
-                    bim:Chave               "ident.107" ;
+                    bim:Chave               "ident.122" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
                     bim:Definición          "Identifica el nombre de algún objeto definido."@es ;
@@ -1290,7 +1328,7 @@ bim:nomeada   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.identificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  nomeada  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "ident.107" ;
+                    bim:Chave               "ident.122" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
                     bim:Definición          "Identifica el nombre de algún objeto definido."@es  .
@@ -1305,7 +1343,7 @@ bim:é.nomeado   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a identificar: é.nomeado" ;
-                    bim:Chave               "ident.108" ;
+                    bim:Chave               "ident.123" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
                     bim:Definición          "Identifica el nombre de algún objeto definido."@es ;
@@ -1321,7 +1359,7 @@ bim:nomeado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.identificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  nomeado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "ident.108" ;
+                    bim:Chave               "ident.123" ;
                     bim:Ação                "Ação identificar" ;
                     bim:Definição           "Identifica o nome de algum objeto definido."@pt ;
                     bim:Definición          "Identifica el nombre de algún objeto definido."@es  .
@@ -1668,7 +1706,7 @@ bim:é.revogante.de   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a legislar: é.revogante.de" ;
-                    bim:Chave               "legis.115" ;
+                    bim:Chave               "legis.121" ;
                     bim:Ação                "Ação legislar" ;
                     bim:Definição           "A lei ou norma que revoga outra lei."@pt ;
                     bim:Definición          "La ley o norma que deroga otra ley."@es ;
@@ -1683,7 +1721,7 @@ bim:revogante.de   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.legislar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para legislar:  revogante.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "legis.115" ;
+                    bim:Chave               "legis.121" ;
                     bim:Ação                "Ação legislar" ;
                     bim:Definição           "A lei ou norma que revoga outra lei."@pt ;
                     bim:Definición          "La ley o norma que deroga otra ley."@es  .
@@ -1698,7 +1736,7 @@ bim:é.revogado.por   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a legislar: é.revogado.por" ;
-                    bim:Chave               "legis.116" ;
+                    bim:Chave               "legis.122" ;
                     bim:Ação                "Ação legislar" ;
                     bim:Definição           "A lei ou norma foi revogada por alguma outra lei."@pt ;
                     bim:Definición          "La ley o norma ha sido derogada por alguna otra ley."@es ;
@@ -1713,7 +1751,7 @@ bim:revogado.por   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.legislar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para legislar:  revogado.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "legis.116" ;
+                    bim:Chave               "legis.122" ;
                     bim:Ação                "Ação legislar" ;
                     bim:Definição           "A lei ou norma foi revogada por alguma outra lei."@pt ;
                     bim:Definición          "La ley o norma ha sido derogada por alguna otra ley."@es  .
@@ -1728,7 +1766,7 @@ bim:é.vetado.por   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a legislar: é.vetado.por" ;
-                    bim:Chave               "legis.117" ;
+                    bim:Chave               "legis.123" ;
                     bim:Ação                "Ação legislar" ;
                     bim:Definição           "A lei ou norma foi vetada por alguma autoridade."@pt ;
                     bim:Definición          "La ley o norma fue vetada por alguna autoridad."@es ;
@@ -1743,7 +1781,7 @@ bim:vetado.por   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.legislar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para legislar:  vetado.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "legis.117" ;
+                    bim:Chave               "legis.123" ;
                     bim:Ação                "Ação legislar" ;
                     bim:Definição           "A lei ou norma foi vetada por alguma autoridade."@pt ;
                     bim:Definición          "La ley o norma fue vetada por alguna autoridad."@es  .
@@ -2495,8 +2533,8 @@ bim:d.pagar   rdf:type  owl:DatatypeProperty ;
 
 bim:despesa   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.pagar ;
-                    rdfs:range              xsd:boolean ;
-                    rdfs:label              "Dado para pagar:  despesa  Deve ser formatado como (xsd:boolean)" ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para pagar:  despesa  Deve ser formatado como (xsd:double)" ;
                     bim:Chave               "pagar.100" ;
                     bim:Ação                "Ação pagar" ;
                     bim:Definição           "Qualifica o pagamento como despesa."@pt ;
@@ -2525,8 +2563,8 @@ bim:d.pagar   rdf:type  owl:DatatypeProperty ;
 
 bim:receita   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.pagar ;
-                    rdfs:range              xsd:boolean ;
-                    rdfs:label              "Dado para pagar:  receita  Deve ser formatado como (xsd:boolean)" ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para pagar:  receita  Deve ser formatado como (xsd:double)" ;
                     bim:Chave               "pagar.108" ;
                     bim:Ação                "Ação pagar" ;
                     bim:Definição           "Qualifica o pagamento como receita."@pt ;
@@ -4114,7 +4152,521 @@ bim:voo.realizado   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara o arquivo com um voo realizado com os valores de waypoints."@pt ;
                     bim:Definición          "Declara el archivo con un vuelo realizado con los valores de waypoint."@es  .
 
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.capex.alinhado   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.capex.alinhado" ;
+                    bim:Chave               "taxon.111" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total do CAPEX ou Despesas de Capital de atividade alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara el importe total de CAPEX o Gastos de Capital de la actividad alineado con la TSB."@es ;
+                    owl:inverseOf           bim:é.receita.alinhada  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:capex.alinhado   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  capex.alinhado  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.111" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total do CAPEX ou Despesas de Capital de atividade alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara el importe total de CAPEX o Gastos de Capital de la actividad alineado con la TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.capex.percentual   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.capex.percentual" ;
+                    bim:Chave               "taxon.112" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor percentual do CAPEX ou Despesas de Capital."@pt ;
+                    bim:Definición          "Declara el valor porcentual de CAPEX o Gastos de Capital."@es ;
+                    owl:inverseOf           bim:é.receita.percentual  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:capex.percentual   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  capex.percentual  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.112" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor percentual do CAPEX ou Despesas de Capital."@pt ;
+                    bim:Definición          "Declara el valor porcentual de CAPEX o Gastos de Capital."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.capex.semi.alinhado   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.capex.semi.alinhado" ;
+                    bim:Chave               "taxon.113" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total do CAPEX ou Despesas de Capital de atividade parcialmente alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara que el importe total de CAPEX o Gasto de Capital de la actividad está parcialmente alineado con el TSB."@es ;
+                    owl:inverseOf           bim:é.receita.semi.alinhada  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:capex.semi.alinhado   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  capex.semi.alinhado  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.113" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total do CAPEX ou Despesas de Capital de atividade parcialmente alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara que el importe total de CAPEX o Gasto de Capital de la actividad está parcialmente alineado con el TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.capex.total   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.capex.total" ;
+                    bim:Chave               "taxon.114" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total do CAPEX ou Despesas de Capital."@pt ;
+                    bim:Definición          "Declara el importe total de CAPEX o Gastos de Capital."@es ;
+                    owl:inverseOf           bim:é.receita.total  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:capex.total   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  capex.total  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.114" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total do CAPEX ou Despesas de Capital."@pt ;
+                    bim:Definición          "Declara el importe total de CAPEX o Gastos de Capital."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.certificação   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.certificação" ;
+                    bim:Chave               "taxon.116" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara uma certificação permitida pela Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara una certificación autorizada por la Taxonomía Sostenible Brasileña TSB."@es ;
+                    owl:inverseOf           bim:é.certificado.por  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:certificação   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  certificação  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.116" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara uma certificação permitida pela Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara una certificación autorizada por la Taxonomía Sostenible Brasileña TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.certificado.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.certificado.por" ;
+                    bim:Chave               "taxon.117" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara qual certificação está sendo solicitapa pela atividade."@pt ;
+                    bim:Definición          "Declara qué certificación está solicitando la actividad."@es ;
+                    owl:inverseOf           bim:é.certificação  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:certificado.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  certificado.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.117" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara qual certificação está sendo solicitapa pela atividade."@pt ;
+                    bim:Definición          "Declara qué certificación está solicitando la actividad."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.explicado.em   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.explicado.em" ;
+                    bim:Chave               "taxon.135" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um elemento (uma nota, por exemplo) que explica outro da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Establece un elemento (una nota, por ejemplo) que explica otro de los TSB de la Taxonomía Sostenible Brasileña."@es ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty ;
+                    owl:inverseOf           bim:é.explicativa.de  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:explicado.em   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  explicado.em  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.135" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um elemento (uma nota, por exemplo) que explica outro da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Establece un elemento (una nota, por ejemplo) que explica otro de los TSB de la Taxonomía Sostenible Brasileña."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.explicativa.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.explicativa.de" ;
+                    bim:Chave               "taxon.136" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um elemento (uma nota, por exemplo) que é explicado por outro da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Establece un elemento (una nota, por ejemplo) que se explica con otro de la Taxonomía Sostenible Brasileña TSB."@es ;
+                    rdf:type                owl:AsymmetricProperty ;
+                    rdf:type                owl:IrreflexiveProperty ;
+                    owl:inverseOf           bim:é.explicado.em  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:explicativa.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  explicativa.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.136" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um elemento (uma nota, por exemplo) que é explicado por outro da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Establece un elemento (una nota, por ejemplo) que se explica con otro de la Taxonomía Sostenible Brasileña TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.missão.principal   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.missão.principal" ;
+                    bim:Chave               "taxon.143" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara a missão principal dos planos NIB e PET da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara la misión principal de los planes NIB y PET de la Taxonomía Sostenible Brasileña TSB."@es ;
+                    owl:equivalentProperty  bim:é.princípio  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:missão.principal   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  missão.principal  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.143" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara a missão principal dos planos NIB e PET da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara la misión principal de los planes NIB y PET de la Taxonomía Sostenible Brasileña TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.para.qualificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.para.qualificar" ;
+                    bim:Chave               "taxon.150" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara exigências para qualificar como alinhamento da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara requisitos para calificar como alineación de la Taxonomía Sostenible Brasileña TSB."@es ;
+                    owl:inverseOf           bim:é.qualificada.com  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:para.qualificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  para.qualificar  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.150" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara exigências para qualificar como alinhamento da Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara requisitos para calificar como alineación de la Taxonomía Sostenible Brasileña TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.princípio   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.princípio" ;
+                    bim:Chave               "taxon.153" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um princípio defendido pela Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Establece un principio defendido por la TSB de la Taxonomía Sostenible de Brasil."@es ;
+                    owl:equivalentProperty  bim:é.missão.principal  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:princípio   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  princípio  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.153" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um princípio defendido pela Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Establece un principio defendido por la TSB de la Taxonomía Sostenible de Brasil."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.qualificada.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.qualificada.com" ;
+                    bim:Chave               "taxon.154" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara qual é o critério que qualifica à atividade para a Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara el criterio que califica la actividad para la TSB de la Taxonomía Sostenible Brasileña."@es ;
+                    owl:inverseOf           bim:é.qualificadora.de  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:qualificada.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  qualificada.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.154" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara qual é o critério que qualifica à atividade para a Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara el criterio que califica la actividad para la TSB de la Taxonomía Sostenible Brasileña."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.qualificadora.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.qualificadora.de" ;
+                    bim:Chave               "taxon.155" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um critério necesário para qualificar uma atividade para a Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara un criterio necesario para calificar una actividad para la Taxonomía Brasileña de Sostenibilidad de la TSB."@es ;
+                    owl:inverseOf           bim:é.qualificada.com  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:qualificadora.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para taxonomizar:  qualificadora.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "taxon.155" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara um critério necesário para qualificar uma atividade para a Taxonomia Sustentável Brasileira TSB."@pt ;
+                    bim:Definición          "Declara un criterio necesario para calificar una actividad para la Taxonomía Brasileña de Sostenibilidad de la TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.receita.alinhada   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.receita.alinhada" ;
+                    bim:Chave               "taxon.156" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total de receita de atividade alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara el importe total de ingresos de la actividad alineado con TSB."@es ;
+                    owl:inverseOf           bim:é.capex.alinhado  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:receita.alinhada   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  receita.alinhada  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.156" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total de receita de atividade alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara el importe total de ingresos de la actividad alineado con TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.receita.percentual   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.receita.percentual" ;
+                    bim:Chave               "taxon.158" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor percentual da receita ou volume de negócios."@pt ;
+                    bim:Definición          "Declara el valor porcentual de ingresos o facturación."@es ;
+                    owl:inverseOf           bim:é.capex.percentual  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:receita.percentual   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  receita.percentual  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.158" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor percentual da receita ou volume de negócios."@pt ;
+                    bim:Definición          "Declara el valor porcentual de ingresos o facturación."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.receita.semi.alinhada   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.receita.semi.alinhada" ;
+                    bim:Chave               "taxon.159" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total de receita de atividade parcialmente alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara que el importe total de ingresos por actividad está parcialmente alineado con TSB."@es ;
+                    owl:inverseOf           bim:é.capex.semi.alinhado  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:receita.semi.alinhada   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  receita.semi.alinhada  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.159" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total de receita de atividade parcialmente alinhada com a TSB."@pt ;
+                    bim:Definición          "Declara que el importe total de ingresos por actividad está parcialmente alineado con TSB."@es  .
+
+
+bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.receita.total   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.taxonomizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a taxonomizar: é.receita.total" ;
+                    bim:Chave               "taxon.160" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total de receita total ou volume de negócios."@pt ;
+                    bim:Definición          "Declara la cantidad total de ingresos o facturación."@es ;
+                    owl:inverseOf           bim:é.capex.total  .
+
+
+bim:d.taxonomizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:receita.total   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.taxonomizar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para taxonomizar:  receita.total  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "taxon.160" ;
+                    bim:Ação                "Ação taxonomizar" ;
+                    bim:Definição           "Declara o valor total de receita total ou volume de negócios."@pt ;
+                    bim:Definición          "Declara la cantidad total de ingresos o facturación."@es  .
+
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 07/11/2025 17:35:08
+##  Criada em 28/11/2025 16:26:50
 #################################################################
