@@ -16,5 +16,4 @@
   **Ambiente and é.dentro.de value UFRJ.Macromoléculas**  
   **Andar and é.abaixo.de value Ambie.0006**   
 
-  ![Ambi_01](https://github.com/user-attachments/assets/562d28dc-5b06-417b-8bc3-9366efc99402)
 
