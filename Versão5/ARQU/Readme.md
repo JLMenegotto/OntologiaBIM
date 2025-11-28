@@ -8,12 +8,12 @@
 ### Pasta ARQU: Ontologia com conceitos de elementos arquitetônicos - Prefixo bim:
 
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
-<img width="999" height="31916" alt="Arqui" src="https://github.com/user-attachments/assets/57c5983e-40a0-4e9c-b801-3e0e17a9465f" />
+<img width="1047" height="33008" alt="Arqui" src="https://github.com/user-attachments/assets/d5485010-129e-4839-988f-edd6baa4ec6d" />
 
 #### Árvore de Classes  Definidas por declarações axiomáticas e Inferidas com participação do Reasoner ELK  (Clique na imagem para ampliar)
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="3323" height="27238" alt="Arqui_I" src="https://github.com/user-attachments/assets/7d345db2-2493-4633-837d-f149a64eb69e" />
+<img width="1047" height="33008" alt="Arqui_I" src="https://github.com/user-attachments/assets/2140fc74-1b0f-496b-ae70-1485d6245535" />
 
 
 
