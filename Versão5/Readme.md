@@ -33,7 +33,7 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
   * Pasta **VANT** aloca ontologia com conceitos de **Veículos Aereos não Tripulados** e com alguns fatos conhecidos referentes a processos de
     manutenção predial que utilizam drones para inspeção e aquisição de imagens.
   * Pasta **ARQU** aloca ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos.
-  * ![**Pasta TASB**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TASB) aloca ontologia com conceitos da **Taxonomia Sustentável Brasileira** com fatos conhecidos. 
+  * [**Pasta TASB**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TASB) aloca ontologia com conceitos da **Taxonomia Sustentável Brasileira** com fatos conhecidos. 
   * Pasta **VEGE** aloca ontologia com conceitos de **Vegetação** com conhecimento utilizado em projetos paisagísticos.
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
