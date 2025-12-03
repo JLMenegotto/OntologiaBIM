@@ -8,4 +8,4 @@
 ### Pasta CROM: Ontologia com conceitos cromáticos - Prefixo bim:
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-![Croma_01](https://github.com/user-attachments/assets/6d7487d3-2f57-4b19-bffe-f2113b2521cc)
+<img width="835" height="710" alt="croma" src="https://github.com/user-attachments/assets/ccebca36-5878-40fc-8623-538940554fe4" />
