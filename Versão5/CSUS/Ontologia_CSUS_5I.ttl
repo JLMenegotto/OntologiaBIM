@@ -26,10 +26,12 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde"@pt ;
-	  rdfs:label "DataHora: 06/12/2025 10:46:47"@pt ;
-	  rdfs:label "Advertência1: -"@pt ;
+	  rdfs:label "DataHora: 07/12/2025 8:47:33"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
+	  rdfs:label "Advertência1: Caderno SomaSUS elaborado pelo Sistema Único de Saúde do Brasil"@pt ;
+	  rdfs:label "Aviso: Cuaderno SomaSUS preparado por el Sistema Unificado de Salud de Brasil"@es ;
+	  rdfs:label "Warning: Cuaderno SomaSUS prepared by the Unified Health System of Brazil"@en ;
 	  rdfs:label "Explicação: Formalizar Caderno SomaSUS elaborado pelo Sistema Único de Saúde do Brasil."@pt ;
 	  rdfs:label "Explicación: Formalizar el Cuaderno SomaSUS elaborado por el Sistema Único de Salud de Brasil."@es ;
 	  rdfs:label "Explanation: Formalize the SomaSUS Notebook prepared by the Unified Health System of Brazil."@en .
@@ -854,19 +856,27 @@ bim:SUS.Alimentação rdf:type  owl:Class  ;
 
 bim:VOL.01  rdf:type  owl:NamedIndividual , bim:SUS.Volume ;
      bim:tema    "Volume do caderno do SomaSUS" ;
-     bim:descrição    "Atendimento Ambulatorial e Atendimento Imediato"  .
+     bim:descrição    "Atendimento Ambulatorial e Atendimento Imediato" ;
+     bim:categoria.revit    "-" ;
+     bim:classe.ifc    "-"  .
 
 bim:VOL.02  rdf:type  owl:NamedIndividual , bim:SUS.Volume ;
      bim:tema    "Volume do caderno do SomaSUS" ;
-     bim:descrição    "Internação e Apoio ao Diagnóstico e à Terapia (Reabilitação)"  .
+     bim:descrição    "Internação e Apoio ao Diagnóstico e à Terapia (Reabilitação)" ;
+     bim:categoria.revit    "-" ;
+     bim:classe.ifc    "-"  .
 
 bim:VOL.03  rdf:type  owl:NamedIndividual , bim:SUS.Volume ;
      bim:tema    "Volume do caderno do SomaSUS" ;
-     bim:descrição    "Apoio ao Diagnóstico e à Terapia (Imagenologia)"  .
+     bim:descrição    "Apoio ao Diagnóstico e à Terapia (Imagenologia)" ;
+     bim:categoria.revit    "-" ;
+     bim:classe.ifc    "-"  .
 
 bim:VOL.04  rdf:type  owl:NamedIndividual , bim:SUS.Volume ;
      bim:tema    "Volume do caderno do SomaSUS" ;
-     bim:descrição    "Apoio ao Diagnóstico e à Terapia (Anatomia Patológica, Patologia Clínica, Hemoterapia e Hematologia, Medicina Nuclear)"  .
+     bim:descrição    "Apoio ao Diagnóstico e à Terapia (Anatomia Patológica, Patologia Clínica, Hemoterapia e Hematologia, Medicina Nuclear)" ;
+     bim:categoria.revit    "-" ;
+     bim:classe.ifc    "-"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -2109,6 +2119,64 @@ bim:ocultado   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação instalar" ;
                     bim:Definição           "Declara que deve ser instalado ocultado."@pt ;
                     bim:Definición          "Establece que debe instalarse oculto."@es ;bim:Definition          "It states that it must be installed hidden."@en  .
+
+
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.categoria.revit   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.categoria.revit" ;
+                    bim:Chave               "inter.100" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma categoria OST Revit."@pt ;
+                    bim:Definición          "Identifica la asociación con una categoría OST de Revit."@es ;bim:Definition          "Identifies the association with a Revit OST category."@en  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:categoria.revit   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  categoria.revit  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "inter.100" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma categoria OST Revit."@pt ;
+                    bim:Definición          "Identifica la asociación con una categoría OST de Revit."@es ;bim:Definition          "Identifies the association with a Revit OST category."@en  .
+
+
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.classe.ifc   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.classe.ifc" ;
+                    bim:Chave               "inter.101" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma classe IFC."@pt ;
+                    bim:Definición          "Identifica la asociación con una clase IFC."@es ;bim:Definition          "Identifies the association with an IFC class."@en  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:classe.ifc   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  classe.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "inter.101" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a associação com uma classe IFC."@pt ;
+                    bim:Definición          "Identifica la asociación con una clase IFC."@es ;bim:Definition          "Identifies the association with an IFC class."@en  .
 
 
 bim:p.legislar   rdf:type  owl:ObjectProperty ;
@@ -5027,5 +5095,5 @@ bim:receita.total   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia CSUS_5I
-##  Criada em 06/12/2025 10:46:48
+##  Criada em 07/12/2025 8:47:34
 #################################################################
