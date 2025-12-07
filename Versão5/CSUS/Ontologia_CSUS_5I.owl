@@ -24,10 +24,12 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#SomaSUS_Volumes>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde"@pt
-  Annotations: rdfs:label "DataHora: 06/12/2025 10:46:47"@pt
-  Annotations: rdfs:label "Advertência1: -"@pt
+  Annotations: rdfs:label "DataHora: 07/12/2025 8:47:33"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
+  Annotations: rdfs:label "Advertência1: Caderno SomaSUS elaborado pelo Sistema Único de Saúde do Brasil"@pt
+  Annotations: rdfs:label "Aviso: Cuaderno SomaSUS preparado por el Sistema Unificado de Salud de Brasil"@es
+  Annotations: rdfs:label "Warning: Cuaderno SomaSUS prepared by the Unified Health System of Brazil"@en
   Annotations: rdfs:label "Explicação: Formalizar Caderno SomaSUS elaborado pelo Sistema Único de Saúde do Brasil."@pt
   Annotations: rdfs:label "Explicación: Formalizar el Cuaderno SomaSUS elaborado por el Sistema Único de Salud de Brasil."@es
   Annotations: rdfs:label "Explanation: Formalize the SomaSUS Notebook prepared by the Unified Health System of Brazil."@en
@@ -498,21 +500,29 @@ Individual: bim:VOL.01
 	Types: bim:SUS.Volume
 	Facts: bim:tema  "Volume do caderno do SomaSUS"
 	Facts: bim:descrição  "Atendimento Ambulatorial e Atendimento Imediato"
+	Facts: bim:categoria.revit  "-"
+	Facts: bim:classe.ifc  "-"
 
 Individual: bim:VOL.02
 	Types: bim:SUS.Volume
 	Facts: bim:tema  "Volume do caderno do SomaSUS"
 	Facts: bim:descrição  "Internação e Apoio ao Diagnóstico e à Terapia (Reabilitação)"
+	Facts: bim:categoria.revit  "-"
+	Facts: bim:classe.ifc  "-"
 
 Individual: bim:VOL.03
 	Types: bim:SUS.Volume
 	Facts: bim:tema  "Volume do caderno do SomaSUS"
 	Facts: bim:descrição  "Apoio ao Diagnóstico e à Terapia (Imagenologia)"
+	Facts: bim:categoria.revit  "-"
+	Facts: bim:classe.ifc  "-"
 
 Individual: bim:VOL.04
 	Types: bim:SUS.Volume
 	Facts: bim:tema  "Volume do caderno do SomaSUS"
 	Facts: bim:descrição  "Apoio ao Diagnóstico e à Terapia (Anatomia Patológica, Patologia Clínica, Hemoterapia e Hematologia, Medicina Nuclear)"
+	Facts: bim:categoria.revit  "-"
+	Facts: bim:classe.ifc  "-"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -1837,6 +1847,68 @@ DataProperty: bim:ocultado
 	Annotations: bim:Definição "Declara que deve ser instalado ocultado."@pt
 	Annotations: bim:Definición "Establece que debe instalarse oculto."@es
 	Annotations: bim:Definition "It states that it must be installed hidden."@en
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.categoria.revit
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.categoria.revit"@pt
+	Annotations: bim:Chave "inter.100"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma categoria OST Revit."@pt
+	Annotations: bim:Definición "Identifica la asociación con una categoría OST de Revit."@es
+	Annotations: bim:Definition "Identifies the association with a Revit OST category."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:categoria.revit
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  categoria.revit  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "inter.100"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma categoria OST Revit."@pt
+	Annotations: bim:Definición "Identifica la asociación con una categoría OST de Revit."@es
+	Annotations: bim:Definition "Identifies the association with a Revit OST category."@en
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.classe.ifc
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.classe.ifc"@pt
+	Annotations: bim:Chave "inter.101"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma classe IFC."@pt
+	Annotations: bim:Definición "Identifica la asociación con una clase IFC."@es
+	Annotations: bim:Definition "Identifies the association with an IFC class."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:classe.ifc
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  classe.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "inter.101"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a associação com uma classe IFC."@pt
+	Annotations: bim:Definición "Identifica la asociación con una clase IFC."@es
+	Annotations: bim:Definition "Identifies the association with an IFC class."@en
 
 ObjectProperty: bim:p.legislar
 	SubPropertyOf: bim:BIMProp
@@ -4947,5 +5019,5 @@ DataProperty: bim:receita.total
 
 #################################################################
 ##  Fim da Ontologia CSUS_5I
-##  Criada em 06/12/2025 10:46:48
+##  Criada em 07/12/2025 8:47:34
 #################################################################
