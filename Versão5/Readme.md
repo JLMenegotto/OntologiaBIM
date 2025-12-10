@@ -62,30 +62,36 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
 #### Interface:
 <img width="354" height="103" alt="Interface" src="https://github.com/user-attachments/assets/15aa963f-afe1-41ee-8951-f224f47a50ac" />
 
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não liberada para uso que extrai os fatos ontológicos do modelo BIM utilizando os esquemas criados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função para filtrar indivíduos cadastrados nas ontologias gerando um arquivo txt com o dataset ordenado com os dados desejados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
-    * 0  Processa os Objetos_BIM de Revit e Ifc 
-    * 1  Processa ABNT 15965_0M
-    * 2  Processa ABNT 15965_0P
-    * 3  Processa ABNT 15965_1D 
-    * 4  Processa ABNT 15965_1F
-    * 5  Processa ABNT 15965_1S
-    * 6  Processa ABNT 15965_2C
-    * 7  Processa ABNT 15965_2N
-    * 8  Processa ABNT 15965_2Q
-    * 9  Processa ABNT 15965_3E
-    * 10 Processa ABNT 15965_3R
-    * 11 Processa ABNT 15965_4A
-    * 12 Processa ABNT 15965_4U                                                      
-    * 13 Processa ABNT 15965_5I                                                     
-    * 14 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
-    * 15 Processa CSUS_4A Caderno SomaSUS (Ambientes)                                                            
-    * 16 Processa CSUS_4U Caderno SomaSUS (Unidades Funcionais)                                                    
-    * 17 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
-    * 18 Processa Conceitos urbanos URBA_Rio                                                 
-    * 19 Processa Conceitos temporais CRONO                                             
-    * 20 Processa Conceitos cromáticos CROMA 
-    * 21 Processa Conceitos documentação DOCUM 
+    * 0  Processa ABNT 15965_0M
+    * 1  Processa ABNT 15965_0P
+    * 2  Processa ABNT 15965_1D 
+    * 3  Processa ABNT 15965_1F
+    * 4  Processa ABNT 15965_1S
+    * 5  Processa ABNT 15965_2C
+    * 6  Processa ABNT 15965_2N
+    * 7  Processa ABNT 15965_2Q
+    * 8  Processa ABNT 15965_3E
+    * 9 Processa ABNT 15965_3R
+    * 10 Processa ABNT 15965_4A
+    * 11 Processa ABNT 15965_4U                                                      
+    * 12 Processa ABNT 15965_5I                                                     
+    * 13 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
+    * 14 Processa CSUS_4AU Caderno SomaSUS (Ambientes e Unidades Funcionais)                                                                                                                
+    * 15 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
+    * 16 Processa Conceitos CODIF_CT                                                 
+    * 17 Processa Conceitos temporais CRONO                                             
+    * 18 Processa Conceitos cromáticos CROMA 
+    * 19 Processa Conceitos cromáticos DOCUM 
+    * 20 Processa Conceitos cromáticos TUBOS 
+    * 21 Processa Conceitos cromáticos DRONE 
+	* 22 Processa Conceitos cromáticos METAL 
+	* 23 Processa Conceitos cromáticos ARQUI 
+	* 24 Processa Conceitos cromáticos INFRA 
+	* 25 Processa Conceitos cromáticos VEGET 
+	* 26 Processa Conceitos cromáticos TSB
+	* 27 Processa Conceitos cromáticos Ambientes
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
