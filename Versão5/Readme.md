@@ -50,6 +50,47 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
  3. Os arquivos **Png** da pasta Ico devem ser colocadados em **C:\APIBIM\Onto2025\Ico**.  
  4. Criar a pasta **C:\Construtor_Onto**
  5. Na pasta **C:\Construtor_Onto** colocar os arquivos **Mapa_Classes.txt, Mapa_Ontologia.txt e Mapa_Propriedades.txt**. Eles são utilizados para criar os filtros SPARQL personalizados para extrair diversos conteúdos e propriedades requeridas das ontologias.
+ 6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset**. Nelas pode colocar os arquivos Excel de cada tema e os arquivos owl e ttl com os conteúdos das ontologias.
+
+![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
+
+#### Arquivo Addin para Revit
+Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema. A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**. Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
+
+![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
+
+#### Interface:
+<img width="354" height="103" alt="Interface" src="https://github.com/user-attachments/assets/15aa963f-afe1-41ee-8951-f224f47a50ac" />
+
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não liberada para uso que extrai os fatos ontológicos do modelo BIM utilizando os esquemas criados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
+
+    * 0  Processa os Objetos_BIM de Revit e Ifc 
+    * 1  Processa ABNT 15965_0M
+    * 2  Processa ABNT 15965_0P
+    * 3  Processa ABNT 15965_1D 
+    * 4  Processa ABNT 15965_1F
+    * 5  Processa ABNT 15965_1S
+    * 6  Processa ABNT 15965_2C
+    * 7  Processa ABNT 15965_2N
+    * 8  Processa ABNT 15965_2Q
+    * 9  Processa ABNT 15965_3E
+    * 10 Processa ABNT 15965_3R
+    * 11 Processa ABNT 15965_4A
+    * 12 Processa ABNT 15965_4U                                                      
+    * 13 Processa ABNT 15965_5I                                                     
+    * 14 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
+    * 15 Processa CSUS_4A Caderno SomaSUS (Ambientes)                                                            
+    * 16 Processa CSUS_4U Caderno SomaSUS (Unidades Funcionais)                                                    
+    * 17 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
+    * 18 Processa Conceitos urbanos URBA_Rio                                                 
+    * 19 Processa Conceitos temporais CRONO                                             
+    * 20 Processa Conceitos cromáticos CROMA 
+    * 21 Processa Conceitos documentação DOCUM 
+
+#### Prompt de execução
+Durante a execução é informado o andamento la linha de Prompt de Revit.
+
+![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
 ##### Exemplo de filtro SPARQL gerado a partir do acionamento do comando Extrair.
 As propriedades extraídas podem ser adicionadas ou retiradas do arquivo Mapa_Propriedades.txt. Cada linha desse arquivo representa a propriedade e o nome arbitrário da variável Sparql. 
@@ -127,53 +168,7 @@ Por exemplo descrição,des. A aplicação do construtor criará o filtro automa
     * Pau.de.tucum;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fibra usada em cordas, fruto oleoso;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Amazônia
     * Paxiúba;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Palmeira de raizes aereas adventícias convergentes formando um cone destacado, de hasta 2 m, de cujo vértice inicia a estirpe solitária. Conhecida também como 'Palmeira andante', pela característica morfológica de suas raizes;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Amazônia
     * Tamareira;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto doce e energético, muito cultivado em regiões áridas;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Cultivada
-
-
-
-
- 6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset**. Nelas pode colocar os arquivos Excel de cada tema e os arquivos owl e ttl com os conteúdos das ontologias.
-
-![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
-
-#### Arquivo Addin para Revit
-Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema. A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**. Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
-
-![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
-
-#### Interface:
-
-<img width="354" height="103" alt="Interface" src="https://github.com/user-attachments/assets/15aa963f-afe1-41ee-8951-f224f47a50ac" />
-
-
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função ainda não liberada para uso que extrai os fatos ontológicos do modelo BIM utilizando os esquemas criados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
-
-    * 0  Processa os Objetos_BIM de Revit e Ifc 
-    * 1  Processa ABNT 15965_0M
-    * 2  Processa ABNT 15965_0P
-    * 3  Processa ABNT 15965_1D 
-    * 4  Processa ABNT 15965_1F
-    * 5  Processa ABNT 15965_1S
-    * 6  Processa ABNT 15965_2C
-    * 7  Processa ABNT 15965_2N
-    * 8  Processa ABNT 15965_2Q
-    * 9  Processa ABNT 15965_3E
-    * 10 Processa ABNT 15965_3R
-    * 11 Processa ABNT 15965_4A
-    * 12 Processa ABNT 15965_4U                                                      
-    * 13 Processa ABNT 15965_5I                                                     
-    * 14 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
-    * 15 Processa CSUS_4A Caderno SomaSUS (Ambientes)                                                            
-    * 16 Processa CSUS_4U Caderno SomaSUS (Unidades Funcionais)                                                    
-    * 17 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
-    * 18 Processa Conceitos urbanos URBA_Rio                                                 
-    * 19 Processa Conceitos temporais CRONO                                             
-    * 20 Processa Conceitos cromáticos CROMA 
-    * 21 Processa Conceitos documentação DOCUM 
-
-#### Prompt de execução
-Durante a execução é informado o andamento la linha de Prompt de Revit.
-
-![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
+	
 
 ### Preenchimento do arquivo de Propriedades (atualmente 1536 propriedades)
 #### Adicionar ou mudar uma propriedade de Dado.
