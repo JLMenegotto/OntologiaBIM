@@ -52,8 +52,8 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
  5. Na pasta **C:\Construtor_Onto** colocar os arquivos **Mapa_Classes.txt, Mapa_Ontologia.txt e Mapa_Propriedades.txt**. Eles são utilizados para criar os filtros SPARQL personalizados para extrair diversos conteúdos e propriedades requeridas das ontologias.
 
 ##### Exemplo de filtro SPARQL gerado a partir do acionamento do comando Extrair.
-As propriedades extraídas podem ser listadas no arquivo Mapa_Propriedades.txt. Cada linha desse arquivo representa a propriedade e o nome arbitrário da variável Sparql. 
-Por exemplo descrição,des
+As propriedades extraídas podem ser adicionadas ou retiradas do arquivo Mapa_Propriedades.txt. Cada linha desse arquivo representa a propriedade e o nome arbitrário da variável Sparql. 
+Por exemplo descrição,des. A aplicação do construtor criará o filtro automaticamente de acordo à solicitação ingressada no campo Classe da interface. Os campos Individuo 1, 2 e 3 foram preparados para futuro uso. 
 
     * PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  
     * PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>      
