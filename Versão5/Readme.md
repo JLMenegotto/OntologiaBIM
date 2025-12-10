@@ -55,43 +55,44 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
 ![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
 
 #### Arquivo Addin para Revit
-Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema. A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**. Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho presente no conteúdo do arquivo ONTO2025.addin  
+Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do seu sistema. A pasta que contém do arquivo de addins é **C:\ProgramData\Autodesk\Revit\Addins\2024**. Caso decida instalar a API numa outra pasta da sua preferência, deverá alterar o caminho  
+presente no conteúdo do arquivo ONTO2025.addin  
 
 ![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
 
 #### Interface:
 <img width="354" height="103" alt="Interface" src="https://github.com/user-attachments/assets/15aa963f-afe1-41ee-8951-f224f47a50ac" />
 
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função para filtrar indivíduos cadastrados nas ontologias gerando um arquivo txt com o dataset ordenado com os dados desejados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função para filtrar indivíduos cadastrados nas ontologias gerando um arquivo txt com um dataset ordenado com dados desejados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
-    *  0 Processa ABNT 15965_0M
-    *  1 Processa ABNT 15965_0P
-    *  2 Processa ABNT 15965_1D 
-    *  3 Processa ABNT 15965_1F
-    *  4 Processa ABNT 15965_1S
-    *  5 Processa ABNT 15965_2C
-    *  6 Processa ABNT 15965_2N
-    *  7 Processa ABNT 15965_2Q
-    *  8 Processa ABNT 15965_3E
-    *  9 Processa ABNT 15965_3R
-    * 10 Processa ABNT 15965_4A
-    * 11 Processa ABNT 15965_4U                                                      
-    * 12 Processa ABNT 15965_5I                                                     
+    *  0 Processa ABNT 15965_0M Sistema de Classificação da Construção
+    *  1 Processa ABNT 15965_0P Sistema de Classificação da Construção
+    *  2 Processa ABNT 15965_1D Sistema de Classificação da Construção
+    *  3 Processa ABNT 15965_1F Sistema de Classificação da Construção
+    *  4 Processa ABNT 15965_1S Sistema de Classificação da Construção
+    *  5 Processa ABNT 15965_2C Sistema de Classificação da Construção
+    *  6 Processa ABNT 15965_2N Sistema de Classificação da Construção
+    *  7 Processa ABNT 15965_2Q Sistema de Classificação da Construção
+    *  8 Processa ABNT 15965_3E Sistema de Classificação da Construção
+    *  9 Processa ABNT 15965_3R Sistema de Classificação da Construção
+    * 10 Processa ABNT 15965_4A Sistema de Classificação da Construção
+    * 11 Processa ABNT 15965_4U Sistema de Classificação da Construção                                                     
+    * 12 Processa ABNT 15965_5I Sistema de Classificação da Construção                                                    
     * 13 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
-    * 14 Processa CSUS_4AU Caderno SomaSUS (Ambientes e Unidades Funcionais)                                                                                                                
+    * 14 Processa CSUS_4AU Caderno SomaSUS (Ambientes e Unidades Funcionais)
     * 15 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
     * 16 Processa Conceitos CODIF_CT                                                 
-    * 17 Processa Conceitos temporais CRONO                                             
-    * 18 Processa Conceitos cromáticos CROMA 
-    * 19 Processa Conceitos documentação DOCUM 
-    * 20 Processa Conceitos tubulações TUBOS 
-    * 21 Processa Conceitos manutenção com drones DRONE 
-	* 22 Processa Conceitos estrutura metálica METAL 
-	* 23 Processa Conceitos arquitetura ARQUI 
-	* 24 Processa Conceitos infraestrutura urbana INFRA 
-	* 25 Processa Conceitos vegetação VEGET 
-	* 26 Processa Conceitos taxonomia sustentável brasileira TSB
-	* 27 Processa Conceitos de Ambientes
+    * 17 Processa CRONO Conceitos temporais                                             
+    * 18 Processa CROMA Conceitos cromáticos 
+    * 19 Processa DOCUM Conceitos documentação 
+    * 20 Processa TUBOS Conceitos de componentes de tubulações 
+    * 21 Processa DRONE Conceitos de manutenção predial com drones 
+	* 22 Processa METAL Conceitos de componentes de estrutura metálica 
+	* 23 Processa ARQUI Conceitos de elementos de arquitetura 
+	* 24 Processa INFRA Conceitos de elementos de infraestrutura urbana e fatos da cidade de Rio de Janeiro 
+	* 25 Processa VEGET Conceitos elementos paisagísticos e vegetação  
+	* 26 Processa TSB Conceitos da Taxonomia Sustentável Brasileira
+	* 27 Processa AMBI Conceitos de Ambientes (do CT da UFRJ)
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
