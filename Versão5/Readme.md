@@ -170,7 +170,7 @@ Por exemplo descrição,des. A aplicação do construtor criará o filtro automa
     * Tamareira;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto doce e energético, muito cultivado em regiões áridas;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Cultivada
 	
 
-### Preenchimento do arquivo de Propriedades (atualmente 1536 propriedades)
+### Preenchimento do arquivo de Propriedades
 #### Adicionar ou mudar uma propriedade de Dado.
 
 Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. Ele é atualizado com regularidade pela incorporação de novas propriedades, pela modificação das características de propriedades existentes ou pelo reagrupamento de uma propriedade dentro de outra SubProp1 e SubData1 (colunas C e F). A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
