@@ -108,7 +108,7 @@ Por exemplo descrição,des
     * ORDER BY ASC( ?ind )
     * LIMIT 2000
 
-    **Dataset extraído com o filtro SPARQL e armazenado na pasta X_Dataset**
+    * DATASET EXTRAÍDO COM O FILTRO SPARQL E ARQMAZEADO NA PASTA X_Dataset
 
     * Buriti;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto oleoso, folhas usadas em cestaria;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Amazônia, Cerrado
     * Butiá;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto ácido, usado em doces e licores;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Sim;Pampa
