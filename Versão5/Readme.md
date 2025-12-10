@@ -55,59 +55,59 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
 As propriedades extraídas podem ser listadas no arquivo Mapa_Propriedades.txt. Cada linha desse arquivo representa a propriedade e o nome arbitrário da variável Sparql. 
 Por exemplo descrição,des
 
-PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>      
-PREFIX owl:  <http://www.w3.org/2002/07/owl#>             
-PREFIX bim:  <https://github.com/JLMenegotto/RepoOnto#>   
+* PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+* PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>      
+* PREFIX owl:  <http://www.w3.org/2002/07/owl#>             
+* PREFIX bim:  <https://github.com/JLMenegotto/RepoOnto#>   
 
-SELECT ?ind ?cla 
-(IF(BOUND(?CatRevit), ?CatRevit , "-----") AS ?rev)
-(IF(BOUND(?ClasseIfc), ?ClasseIfc , "-----") AS ?cif)
-(IF(BOUND(?ABNT), ?ABNT , "-----") AS ?nbr)
-(IF(BOUND(?descrição), ?descrição , "-----") AS ?des)
-(IF(BOUND(?categoriarevit), ?categoriarevit , "-----") AS ?cat)
-(IF(BOUND(?classeifc), ?classeifc , "-----") AS ?ifc)
-(IF(BOUND(?ide), ?ide , "-----") AS ?id)
-(IF(BOUND(?nome), ?nome , "-----") AS ?nom)
-(IF(BOUND(?método), ?método , "-----") AS ?met)
-(IF(BOUND(?modelo), ?modelo , "-----") AS ?mod)
-(IF(BOUND(?resistênciaaofogo), ?resistênciaaofogo , "-----") AS ?rfogon)
-(IF(BOUND(?abertaem), ?abertaem , "-----") AS ?aber)
-(IF(BOUND(?latitude), ?latitude , "-----") AS ?glat)
-(IF(BOUND(?longitude), ?longitude , "-----") AS ?glon)
-(IF(BOUND(?altitude), ?altitude , "-----") AS ?galt)
-(IF(BOUND(?tema), ?tema , "-----") AS ?tem)
-(IF(BOUND(?unidadefuncional), ?unidadefuncional , "-----") AS ?ufu)
-(IF(BOUND(?atividade), ?atividade , "-----") AS ?ati)
-(IF(BOUND(?aptaparacalçada), ?aptaparacalçada , "-----") AS ?apta)
-(IF(BOUND(?bioma), ?bioma , "-----") AS ?bio)
-WHERE 
-{
-	?ind rdf:type ?cla .
-	FILTER(REGEX(STR(?cla) , "Perfil" )) 
-	OPTIONAL { ?cla bim:CatRevit ?CatRevit . }
-	OPTIONAL { ?cla bim:ClasseIfc ?ClasseIfc . }
-	OPTIONAL { ?cla bim:ABNT ?ABNT . }
-	OPTIONAL { ?ind bim:descrição ?descrição . }
-	OPTIONAL { ?ind bim:categoria.revit ?categoriarevit . }
-	OPTIONAL { ?ind bim:classe.ifc ?classeifc . }
-	OPTIONAL { ?ind bim:ide ?ide . }
-	OPTIONAL { ?ind bim:nome ?nome . }
-	OPTIONAL { ?ind bim:método ?método . }
-	OPTIONAL { ?ind bim:modelo ?modelo . }
-	OPTIONAL { ?ind bim:resistência.ao.fogo ?resistênciaaofogo . }
-	OPTIONAL { ?ind bim:aberta.em ?abertaem . }
-	OPTIONAL { ?ind bim:latitude ?latitude . }
-	OPTIONAL { ?ind bim:longitude ?longitude . }
-	OPTIONAL { ?ind bim:altitude ?altitude . }
-	OPTIONAL { ?ind bim:tema ?tema . }
-	OPTIONAL { ?ind bim:unidade.funcional ?unidadefuncional . }
-	OPTIONAL { ?ind bim:atividade ?atividade . }
-	OPTIONAL { ?ind bim:apta.para.calçada ?aptaparacalçada . }
-	OPTIONAL { ?ind bim:bioma ?bioma . }
-}
-ORDER BY ASC( ?ind )
-LIMIT 2000
+* SELECT ?ind ?cla 
+* (IF(BOUND(?CatRevit), ?CatRevit , "-----") AS ?rev)
+* (IF(BOUND(?ClasseIfc), ?ClasseIfc , "-----") AS ?cif)
+* (IF(BOUND(?ABNT), ?ABNT , "-----") AS ?nbr)
+* (IF(BOUND(?descrição), ?descrição , "-----") AS ?des)
+* (IF(BOUND(?categoriarevit), ?categoriarevit , "-----") AS ?cat)
+* (IF(BOUND(?classeifc), ?classeifc , "-----") AS ?ifc)
+* (IF(BOUND(?ide), ?ide , "-----") AS ?id)
+* (IF(BOUND(?nome), ?nome , "-----") AS ?nom)
+* (IF(BOUND(?método), ?método , "-----") AS ?met)
+* (IF(BOUND(?modelo), ?modelo , "-----") AS ?mod)
+* (IF(BOUND(?resistênciaaofogo), ?resistênciaaofogo , "-----") AS ?rfogon)
+* (IF(BOUND(?abertaem), ?abertaem , "-----") AS ?aber)
+* (IF(BOUND(?latitude), ?latitude , "-----") AS ?glat)
+* (IF(BOUND(?longitude), ?longitude , "-----") AS ?glon)
+* (IF(BOUND(?altitude), ?altitude , "-----") AS ?galt)
+* (IF(BOUND(?tema), ?tema , "-----") AS ?tem)
+* (IF(BOUND(?unidadefuncional), ?unidadefuncional , "-----") AS ?ufu)
+* (IF(BOUND(?atividade), ?atividade , "-----") AS ?ati)
+* (IF(BOUND(?aptaparacalçada), ?aptaparacalçada , "-----") AS ?apta)
+* (IF(BOUND(?bioma), ?bioma , "-----") AS ?bio)
+* WHERE 
+* {
+* 	?ind rdf:type ?cla .
+* 	FILTER(REGEX(STR(?cla) , "Perfil" )) 
+* 	OPTIONAL { ?cla bim:CatRevit ?CatRevit . }
+* 	OPTIONAL { ?cla bim:ClasseIfc ?ClasseIfc . }
+* 	OPTIONAL { ?cla bim:ABNT ?ABNT . }
+* 	OPTIONAL { ?ind bim:descrição ?descrição . }
+* 	OPTIONAL { ?ind bim:categoria.revit ?categoriarevit . }
+* 	OPTIONAL { ?ind bim:classe.ifc ?classeifc . }
+* 	OPTIONAL { ?ind bim:ide ?ide . }
+* 	OPTIONAL { ?ind bim:nome ?nome . }
+* 	OPTIONAL { ?ind bim:método ?método . }
+* 	OPTIONAL { ?ind bim:modelo ?modelo . }
+* 	OPTIONAL { ?ind bim:resistência.ao.fogo ?resistênciaaofogo . }
+* 	OPTIONAL { ?ind bim:aberta.em ?abertaem . }
+* 	OPTIONAL { ?ind bim:latitude ?latitude . }
+* 	OPTIONAL { ?ind bim:longitude ?longitude . }
+* 	OPTIONAL { ?ind bim:altitude ?altitude . }
+* 	OPTIONAL { ?ind bim:tema ?tema . }
+* 	OPTIONAL { ?ind bim:unidade.funcional ?unidadefuncional . }
+* 	OPTIONAL { ?ind bim:atividade ?atividade . }
+* 	OPTIONAL { ?ind bim:apta.para.calçada ?aptaparacalçada . }
+* 	OPTIONAL { ?ind bim:bioma ?bioma . }
+* }
+* ORDER BY ASC( ?ind )
+* LIMIT 2000
 
  6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset**. Nelas pode colocar os arquivos Excel de cada tema e os arquivos owl e ttl com os conteúdos das ontologias.
 
