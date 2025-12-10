@@ -92,7 +92,7 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 
 ![Iface2](https://github.com/user-attachments/assets/78d6d549-5189-4757-89c7-174a65a926e9)
 
-#### Exemplo de filtro SPARQL gerado a partir do acionamento do comando Extrair.
+### Exemplo de filtro SPARQL gerado a partir do acionamento do comando Extrair.
 As propriedades extraídas podem ser adicionadas ou retiradas do arquivo Mapa_Propriedades.txt. Cada linha desse arquivo representa a propriedade e o nome arbitrário da variável Sparql. 
 Por exemplo descrição,des. A aplicação do construtor criará o filtro automaticamente de acordo à solicitação ingressada no campo Classe da interface. Os campos Individuo 1, 2 e 3 foram preparados para futuro uso. 
 
