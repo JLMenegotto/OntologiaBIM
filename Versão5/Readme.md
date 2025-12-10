@@ -81,7 +81,7 @@ presente no conteúdo do arquivo ONTO2025.addin
     * 13 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
     * 14 Processa CSUS_4AU Caderno SomaSUS (Ambientes e Unidades Funcionais)
     * 15 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
-    * 16 Processa Conceitos CODIF_CT                                                 
+    * 16 Processa CODI Conceitos de codificação do sistema BIM do CT                                                 
     * 17 Processa CRONO Conceitos temporais                                             
     * 18 Processa CROMA Conceitos cromáticos 
     * 19 Processa DOCUM Conceitos documentação 
