@@ -7,7 +7,8 @@
 
 ### Pasta TUBO: Ontologia com conceitos de elementos de tubulações - Prefixo bim:
 
-<img width="955" height="5078" alt="TUBO" src="https://github.com/user-attachments/assets/3d4d22c4-4676-42bf-b70d-eea5258e72d9" />
+<img width="955" height="5078" alt="TUBO" src="https://github.com/user-attachments/assets/dd565cfe-c104-4ba3-912f-08a767df03b3" />
+
 
 
 
