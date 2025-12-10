@@ -64,16 +64,16 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
 
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função para filtrar indivíduos cadastrados nas ontologias gerando um arquivo txt com o dataset ordenado com os dados desejados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
-    * 0  Processa ABNT 15965_0M
-    * 1  Processa ABNT 15965_0P
-    * 2  Processa ABNT 15965_1D 
-    * 3  Processa ABNT 15965_1F
-    * 4  Processa ABNT 15965_1S
-    * 5  Processa ABNT 15965_2C
-    * 6  Processa ABNT 15965_2N
-    * 7  Processa ABNT 15965_2Q
-    * 8  Processa ABNT 15965_3E
-    * 9 Processa ABNT 15965_3R
+    *  0 Processa ABNT 15965_0M
+    *  1 Processa ABNT 15965_0P
+    *  2 Processa ABNT 15965_1D 
+    *  3 Processa ABNT 15965_1F
+    *  4 Processa ABNT 15965_1S
+    *  5 Processa ABNT 15965_2C
+    *  6 Processa ABNT 15965_2N
+    *  7 Processa ABNT 15965_2Q
+    *  8 Processa ABNT 15965_3E
+    *  9 Processa ABNT 15965_3R
     * 10 Processa ABNT 15965_4A
     * 11 Processa ABNT 15965_4U                                                      
     * 12 Processa ABNT 15965_5I                                                     
@@ -83,15 +83,15 @@ Incorporar o conteúdo do arquivo **ONTO2025.addin** na lista de aplicações do
     * 16 Processa Conceitos CODIF_CT                                                 
     * 17 Processa Conceitos temporais CRONO                                             
     * 18 Processa Conceitos cromáticos CROMA 
-    * 19 Processa Conceitos cromáticos DOCUM 
-    * 20 Processa Conceitos cromáticos TUBOS 
-    * 21 Processa Conceitos cromáticos DRONE 
-	* 22 Processa Conceitos cromáticos METAL 
-	* 23 Processa Conceitos cromáticos ARQUI 
-	* 24 Processa Conceitos cromáticos INFRA 
-	* 25 Processa Conceitos cromáticos VEGET 
-	* 26 Processa Conceitos cromáticos TSB
-	* 27 Processa Conceitos cromáticos Ambientes
+    * 19 Processa Conceitos documentação DOCUM 
+    * 20 Processa Conceitos tubulações TUBOS 
+    * 21 Processa Conceitos manutenção com drones DRONE 
+	* 22 Processa Conceitos estrutura metálica METAL 
+	* 23 Processa Conceitos arquitetura ARQUI 
+	* 24 Processa Conceitos infraestrutura urbana INFRA 
+	* 25 Processa Conceitos vegetação VEGET 
+	* 26 Processa Conceitos taxonomia sustentável brasileira TSB
+	* 27 Processa Conceitos de Ambientes
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
