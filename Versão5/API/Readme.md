@@ -5,6 +5,5 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-##### Instalação para executar em Revit como API 
-### [Versão5.00 do Construtor](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
+### [Instalação para executar em Revit como AP](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
 
