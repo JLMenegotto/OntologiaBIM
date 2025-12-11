@@ -66,7 +66,8 @@ presente no conteúdo do arquivo ONTO2025.addin
 ![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
 
 #### Interface:
-<img width="354" height="103" alt="Interface" src="https://github.com/user-attachments/assets/15aa963f-afe1-41ee-8951-f224f47a50ac" />
+<img width="399" height="102" alt="Interface_2025" src="https://github.com/user-attachments/assets/b38eb98c-399d-4bd4-9293-d653d5b1af61" />
+
 
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função para filtrar indivíduos cadastrados nas ontologias gerando um arquivo txt com um dataset ordenado com dados desejados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
