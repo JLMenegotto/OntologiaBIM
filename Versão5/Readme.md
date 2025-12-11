@@ -69,7 +69,8 @@ presente no conteúdo do arquivo ONTO2025.addin
 <img width="399" height="102" alt="Interface_2025" src="https://github.com/user-attachments/assets/b38eb98c-399d-4bd4-9293-d653d5b1af61" />
 
 
-<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Extrair</b> executa uma função para filtrar indivíduos cadastrados nas ontologias gerando um arquivo txt com um dataset ordenado com dados desejados. Nos campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
+<p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
+O botao  <b>Modelo</b> está reservado para a função que extrairá a imagem ontológiga do modelo BIM, a partira da leitura dos objetos projetados. Os campos de temas 1 e 2 são especificados os domínios das ontologias que serão criadas. Segue a lista de valores numéricos permitidos.<br></b></p>
 
     *  0 Processa ABNT 15965_0M Sistema de Classificação da Construção
     *  1 Processa ABNT 15965_0P Sistema de Classificação da Construção
