@@ -39,18 +39,11 @@ Neste exemplo, a instância de **Sistemas.Climatização**  está vinculada decl
 		  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F03.B
 		  Facts: bim:é.qualificada.com  bim:Critério.de.Qualificação.F03.D
   
-
-
-
-
-  
-  
-
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
 <img width="856" height="1928" alt="TSB" src="https://github.com/user-attachments/assets/5c221cf4-53c3-49e8-84d3-374ba4c23574" />
 
-[**Aplicação**][([https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5])]
+### [Versão5.00 do Construtor](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
 
 
