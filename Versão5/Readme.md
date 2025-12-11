@@ -190,7 +190,8 @@ Os campos Individuo 1, 2 e 3 foram preparados, mas ainda estão desabilitados. N
 Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. Ele é atualizado com regularidade pela incorporação de novas propriedades, pela modificação das características de propriedades existentes ou pelo reagrupamento de uma propriedade dentro de outra SubProp1 e SubData1 (colunas C e F). A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
 
 #### Propriedades de Objeto.
-As propriedades de objetos (colunas C e D) são construídas automaticamente a partir de fórmulas aplicadas nas colunas F e G. Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
+As propriedades de objetos (colunas C e D) são construídas automaticamente a partir de fórmulas que utilizam os conteúdos das colunas F e G.  
+Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
 A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. 
 
 #### Características das propriedades de Objeto.
