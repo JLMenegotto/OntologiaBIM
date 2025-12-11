@@ -15,3 +15,6 @@
   * **Ontologia_ABNT_4A.owl**
 
 ![Parte_3E](https://github.com/user-attachments/assets/e3556f13-2ab2-49c9-9296-13dc8b2b0afb)
+
+
+### [Versão5.00 do Construtor](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
