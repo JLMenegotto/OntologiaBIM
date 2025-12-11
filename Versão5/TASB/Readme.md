@@ -51,5 +51,6 @@ As ligações _"is-a"_ não devem ser entendidas literalmente como "é uma", mas
 
 <img width="856" height="1928" alt="TSB" src="https://github.com/user-attachments/assets/5c221cf4-53c3-49e8-84d3-374ba4c23574" />
 
-[**Aplicação**]([https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5]) Ver a explicação da interface da aplicação.
+[**Aplicação**][([https://github.com/JLMenegotto/OntologiaBIM/blob/main/Vers%C3%A3o5])]
+
 
