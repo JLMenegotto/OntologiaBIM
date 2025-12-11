@@ -7,6 +7,8 @@
 
 ### Pasta ARQU: Ontologia com conceitos de elementos arquitetônicos - Prefixo bim:
 
+### [Versão5.00 do Construtor](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
+
 #### Árvore de Classes Definidas por declarações axiomáticas (Clique na imagem para ampliar)
 <img width="1047" height="33008" alt="Arqui" src="https://github.com/user-attachments/assets/d5485010-129e-4839-988f-edd6baa4ec6d" />
 
