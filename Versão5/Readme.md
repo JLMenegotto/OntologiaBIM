@@ -18,7 +18,7 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
 
 ## Domínios ontológicos 
 
-<p align="justify">Foram separados os seguintes domínios ontológicos<br></b></p>
+<p align="justify">Foram separados os seguintes domínios ontológicos que estão continuamente sendo revisados.<br></b></p>
 
  * [**Pasta ABNT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ABNT) ontologias com o sistema de classificação da construção **NBR 15.965** ordenado seus códigos como Fatos conhecidos.
  * [**Pasta AMBI**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/AMBI) ontologia com conceitos espaciais e Fatos conhecidos do **Instituto de Macromoléculas da UFRJ**.
