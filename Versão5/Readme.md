@@ -30,7 +30,7 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
  * [**Pasta META**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/META) ontologia com conceitos de **Estrutura Metálica** e com alguns fatos conhecidos referentes a catálogo de perfis laminados.
  * [**Pasta TUBO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TUBO) ontologia com conceitos de **Tubulações** e com alguns fatos conhecidos referentes a catálogo de fabricantes do setor.
  * [**Pasta VANT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VANT) ontologia com conceitos de **Veículos Aereos não Tripulados** e processos de manutenção predial usando drone de inspeção e aquisição de imagens.  
- * [**Pasta ARQU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ARQU) ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos para exemplificar a declaração das especificidade conhecidas de um projeto.
+ * [**Pasta ARQU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ARQU) ontologia com conceitos de **Arquitetura** e com alguns fatos conhecidos para exemplificar a declaração de especificidade conhecidas de um projeto, conhecimento cuja origem muitas vezes está em catálogos de fabricantes e que poderiam ser ontologizados pelos próprios fabricantes.
  * [**Pasta TASB**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TASB) ontologia com conceitos da **Taxonomia Sustentável Brasileira** com fatos conhecidos. 
  * [**Pasta VEGE**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VEGE) ontologia com conceitos de **Vegetação** com conhecimento utilizado em projetos paisagísticos.
 
