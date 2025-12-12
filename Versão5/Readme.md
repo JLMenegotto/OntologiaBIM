@@ -66,7 +66,8 @@ presente no conteúdo do arquivo ONTO2025.addin
 ![Onto2025Addin](https://github.com/user-attachments/assets/902bcc39-1c02-4f54-a717-3bc361a255c1)
 
 #### Interface:
-<img width="399" height="102" alt="Interface_2025" src="https://github.com/user-attachments/assets/b38eb98c-399d-4bd4-9293-d653d5b1af61" />
+
+<img width="680" height="99" alt="Interface_2025" src="https://github.com/user-attachments/assets/a6684a75-4fba-41d2-890f-62f5aa4d1a29" />
 
 
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
