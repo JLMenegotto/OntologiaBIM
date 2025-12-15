@@ -186,7 +186,7 @@ Os campos Individuo 1, 2 e 3 foram preparados, mas ainda estão desabilitados. N
     * Paxiúba;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Palmeira de raizes aereas adventícias convergentes formando um cone destacado, de hasta 2 m, de cujo vértice inicia a estirpe solitária. Conhecida também como 'Palmeira andante', pela característica morfológica de suas raizes;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Amazônia
     * Tamareira;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto doce e energético, muito cultivado em regiões áridas;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Cultivada
 	
-
+## Arquivos Excel com a estruturação ontológica
 ### Preenchimento do arquivo de Propriedades
 #### Adicionar ou mudar uma propriedade de Dado.
 
