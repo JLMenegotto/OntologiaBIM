@@ -55,7 +55,7 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
  
  5. Na pasta **C:\Construtor_Onto** colocar os arquivos **Mapa_Classes.txt, Mapa_Ontologia.txt e Mapa_Propriedades.txt**. Eles são utilizados para criar os filtros SPARQL personalizados para extrair diversos conteúdos e propriedades requeridas das ontologias.
  
- 6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset**. Nelas pode colocar os arquivos Excel de cada tema e os arquivos owl e ttl com os conteúdos das ontologias.
+ 6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset e X_Filtros**. Nelas pode colocar os arquivos Excel de cada domínio e os arquivos owl e ttl com os conteúdos das ontologias.
 
 ![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
 
