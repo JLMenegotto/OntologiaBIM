@@ -6,4 +6,5 @@
 >PPE Programa de Pós-graduação em Estruturas<br>
 
 #### Pasta MATE: Ontologia com conceitos de materialidade - Prefixo bim:
-<img width="1089" height="13643" alt="mate" src="https://github.com/user-attachments/assets/051606be-09a8-46fa-8e4a-fb72e2230a04" />
+<img width="993" height="13646" alt="mate" src="https://github.com/user-attachments/assets/54182b3a-b9f0-4627-982d-79db224b2eee" />
+
