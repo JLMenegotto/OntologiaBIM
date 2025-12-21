@@ -25,8 +25,10 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
  * [**Pasta CROM**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CROM) ontologia con conceitos **cromáticos** e alguns Fatos conhecidos de paletas cromáticas. 
  * [**Pasta CRON**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CRON) ontologia com conceitos de elementos **temporais**. 
  * [**Pasta CSUS**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/CSUS) ontologias com conceitos normativos e Fatos conhecidos do **Sistema Único de Saúde**, especificamente o caderno do SomaSUS.
+* [**Pasta FABR**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/FABRI) ontologia com conceitos de **Fornecedores e fornecidos** e com alguns fatos conhecidos sobre fabricantes da construção.
  * [**Pasta INFR**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/INFR) ontologia com conceitos **Infraestrutura** e Fatos conhecidos da cidade de **Rio de janeiro** ou de instituições como o INMET.
  * [**Pasta DOCU**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/DOCU) ontologia com conceitos de **Documentação** e com alguns fatos conhecidos referentes a Leis e Decretos como exemplo.
+ * [**Pasta MATE**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/MATE) ontologia com conceitos de **Materiais da Construção** e com alguns fatos conhecidos.
  * [**Pasta META**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/META) ontologia com conceitos de **Estrutura Metálica** e com alguns fatos conhecidos referentes a catálogo de perfis laminados.
  * [**Pasta TUBO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/TUBO) ontologia com conceitos de **Tubulações** e com alguns fatos conhecidos referentes a catálogo de fabricantes do setor.
  * [**Pasta VANT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/VANT) ontologia com conceitos de **Veículos Aereos não Tripulados** e processos de manutenção predial usando drone de inspeção e aquisição de imagens.  
