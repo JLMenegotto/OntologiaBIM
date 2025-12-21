@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Dados de fabricantes e fornecedores de produtos para a construção ciivil"@pt ;
-	  rdfs:label "DataHora: 21/12/2025 11:33:39"@pt ;
+	  rdfs:label "DataHora: 21/12/2025 20:15:38"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt ;
@@ -3390,22 +3390,37 @@ bim:Produto.de.Segurança.Patrimonial rdf:type  owl:Class  ;
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:Fabricantes  rdf:type  owl:NamedIndividual , bim:Contêiner  .
+bim:Fabricantes.Construção  rdf:type  owl:NamedIndividual , bim:Contêiner  .
 
 bim:SG.Canalização  rdf:type  owl:NamedIndividual , bim:I.Fabricante ;
-     bim:é.pertencente.a    bim:Fabricantes ;
-     bim:descrição    "É um fabricante de produtos de saneamento básico." ;
-     bim:website    "pagina : https://www.sgpam.com.br"  .
+     bim:é.pertencente.a    bim:Fabricantes.Construção ;
+     bim:descrição    "Fabrica produtos de saneamento básico." ;
+     bim:website    "página : https://www.sgpam.com.br" ;
+     bim:fabricante.de    "Tubos, conexões e acessórios para saneamento básico em Ferro Fundido Dúctil."  .
 
 bim:Tigre  rdf:type  owl:NamedIndividual , bim:I.Fabricante ;
-     bim:é.pertencente.a    bim:Fabricantes ;
-     bim:descrição    "É um fabricante de produtos de instalações sanitárias." ;
-     bim:website    "pagina : https://www.tigre.com.br"  .
+     bim:é.pertencente.a    bim:Fabricantes.Construção ;
+     bim:descrição    "Fabrica produtos de instalações sanitárias." ;
+     bim:website    "página : https://www.tigre.com.br" ;
+     bim:fabricante.de    "Tubos, conexões e acessórios para tubulações predias em PVC."  .
 
 bim:Fischer  rdf:type  owl:NamedIndividual , bim:X.Fabricante ;
-     bim:é.pertencente.a    bim:Fabricantes ;
-     bim:descrição    "É um fabricante de produtos de fixação." ;
-     bim:website    "pagina : https://www.fischerbrasil.com.br"  .
+     bim:é.pertencente.a    bim:Fabricantes.Construção ;
+     bim:descrição    "Fabrica produtos de fixação." ;
+     bim:website    "página : https://www.fischerbrasil.com.br" ;
+     bim:fabricante.de    "Parafusos, chumbadores e elementos de fixação para diversos itens da construção."  .
+
+bim:Gerdau  rdf:type  owl:NamedIndividual , bim:E.Fabricante ;
+     bim:é.pertencente.a    bim:Fabricantes.Construção ;
+     bim:descrição    "Fabrica perfis laminados estruturais." ;
+     bim:website    "página : https://www.gerdau2.com.br" ;
+     bim:fabricante.de    "Perfis laminado de aço estrutural, como perfis W, HP, I, etc."  .
+
+bim:Cassol  rdf:type  owl:NamedIndividual , bim:E.Fabricante ;
+     bim:é.pertencente.a    bim:Fabricantes.Construção ;
+     bim:descrição    "Fabrica soluções para a construção pré-fabricada." ;
+     bim:website    "página : https://www.cassol.ind.br" ;
+     bim:fabricante.de    "Colunas, vigas, lajes estruturais em concreto pre-fabricado."  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -3743,6 +3758,35 @@ bim:descrição   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt ;
                     bim:Definición          "Declara la descripción del objeto que puede ser una explicación sucinta."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
+
+
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.fabricante.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.fabricante.de" ;
+                    bim:Chave               "catal.122" ;
+                    bim:Ação                "Ação catalogar" ;
+                    bim:Definição           "Identifica o tipo de produto que o fabricante de componente construtivo produz para o projeto."@pt ;
+                    bim:Definición          "Identifica el tipo de producto que el fabricante de componentes del edificio produce para el proyecto."@es ;bim:Definition          "Identifies the type of product that the building component manufacturer produces for the project."@en  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:fabricante.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  fabricante.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "catal.122" ;
+                    bim:Ação                "Ação catalogar" ;
+                    bim:Definição           "Identifica o tipo de produto que o fabricante de componente construtivo produz para o projeto."@pt ;
+                    bim:Definición          "Identifica el tipo de producto que el fabricante de componentes del edificio produce para el proyecto."@es ;bim:Definition          "Identifies the type of product that the building component manufacturer produces for the project."@en  .
 
 
 bim:p.comunicar   rdf:type  owl:ObjectProperty ;
@@ -7546,7 +7590,7 @@ bim:é.receita.semi.alinhada   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "taxon.160" ;
                     bim:Ação                "Ação taxonomizar" ;
                     bim:Definição           "Declara o valor total de receita de atividade parcialmente alinhada com a TSB."@pt ;
-                    bim:Definición          "-2146826242"@es ;bim:Definition          "Declares the total amount of revenue from activity partially aligned with TSB."@en ;
+                    bim:Definición          "Declara que el importe total de ingresos por actividad está parcialmente alineado con TSB."@es ;bim:Definition          "Declares the total amount of revenue from activity partially aligned with TSB."@en ;
                     owl:inverseOf           bim:é.capex.semi.alinhado  .
 
 
@@ -7561,7 +7605,7 @@ bim:receita.semi.alinhada   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "taxon.160" ;
                     bim:Ação                "Ação taxonomizar" ;
                     bim:Definição           "Declara o valor total de receita de atividade parcialmente alinhada com a TSB."@pt ;
-                    bim:Definición          "-2146826242"@es ;bim:Definition          "Declares the total amount of revenue from activity partially aligned with TSB."@en  .
+                    bim:Definición          "Declara que el importe total de ingresos por actividad está parcialmente alineado con TSB."@es ;bim:Definition          "Declares the total amount of revenue from activity partially aligned with TSB."@en  .
 
 
 bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
@@ -7595,5 +7639,5 @@ bim:receita.total   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia FABRI
-##  Criada em 21/12/2025 11:33:40
+##  Criada em 21/12/2025 20:15:39
 #################################################################
