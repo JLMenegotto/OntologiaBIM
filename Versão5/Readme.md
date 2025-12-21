@@ -190,17 +190,17 @@ Os campos Individuo 1, 2 e 3 foram preparados, mas ainda estão desabilitados. N
 	
 ## Arquivos Excel com a estruturação ontológica
 ### Preenchimento do arquivo de Propriedades
-#### Adicionar ou mudar uma propriedade de Dado.
+O arquivo **Ontologia_Propriedades.xlsx** organiza e centraliza todas as propriedades criadas para o conjunto de ontologias apresentado. Isso não significa que todas as ontologias terão que ter todas as propriedades. As propriedades podem ir sendo adicionadas conforme a necessidade de declarar conhecimento factual sobre cada tema.
 
-Um dos arquivos Excel contem a estrutura de propriedades de objetos e dados. Ele é atualizado com regularidade pela incorporação de novas propriedades, pela modificação das características de propriedades existentes ou pelo reagrupamento de uma propriedade dentro de outra SubProp1 e SubData1 (colunas C e F). A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
+#### Adicionar ou mudar uma propriedade de Dado.
+O arquivo tem a estrutura de propriedades de objetos e dados. Ele é atualizado com regularidade pela incorporação de novas propriedades, pela modificação das características de propriedades existentes ou pelo reagrupamento de uma propriedade dentro de outra SubProp1 e SubData1 (colunas C e F). A planilha deve ser preenchida utilizando a coluna G (SubData2) usanto o texto em minúscula e separando cada palavra da propriedade por um ponto separador. Quando a propriedade tiver mais de uma palavra elas não podem ser separadas por espaços vazios. A coluna F (SubData1) define a natureza da propriedade definida por um verbo e deve ser iniciada com o prefixo "d.".
 
 #### Propriedades de Objeto.
-As propriedades de objetos (colunas C e D) são construídas automaticamente a partir de fórmulas que utilizam os conteúdos das colunas F e G.  
-Elas trocam o prefixo d. por p. e agregam o prefixo "é."  
-A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam. 
+As propriedades de objetos (colunas C e D) são congruentes com as propriedades de objetos. Elas são construídas automaticamente a partir de fórmulas que utilizam os conteúdos das colunas F e G. A fórmula troca o prefixo d. por p. e agregam o prefixo "é." mantendo o núcleo semântico da propriedade. A coluna G tem uma regra de verificação de valores duplicados para ajudar a criar propriedades que não se repitam.
 
 #### Características das propriedades de Objeto.
-A possibilidade de inferência que tem uma ontologia, depende da exploração das características das propriedades de objeto, que podem ou não ser definidas a critério do usuário. A sua presença ou ausência definirá a capacidade que a ontologia terá para inferir fatos verdadeiros. Cada propriedade de objeto pode ser associada às características listadas nas colunas J a R da planilha. As características aplicadas às propriedades de objetos definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características. Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. A seguir o significado de cada tipo de característica.
+A possibilidade de inferência que tem uma ontologia, depende da exploração das características das propriedades de objeto, que podem ou não ser definidas a critério do usuário. A sua presença ou ausência definirá a capacidade que a ontologia terá para inferir fatos verdadeiros. Cada propriedade de objeto pode ser associada às características listadas nas colunas J a R da planilha.  
+Essas características, se aplicadas às propriedades de objetos, definem as possibilidades de inferência lógica que os Reasoners terão, esclarecendo que não todos os Reasoners podem processar todas as características. Não pode ter células vazias. Colocar o valor null caso não queira definir a característica. A seguir o significado de cada tipo de característica.
 
   * **Functional**         Indica que a propriedade deve ter, no máximo, um valor único para cada sujeito. (exemplo: data de nascimento).
   * **Inverse Functional** Indica que o valor da propriedade é unívoco entre sujeito e predicado. (exemplo: um número de CPF identifica como máximo uma pessoa).
@@ -213,7 +213,7 @@ A possibilidade de inferência que tem uma ontologia, depende da exploração da
     
 ![Properties_01](https://github.com/user-attachments/assets/ce6afebd-3a07-4fc3-97db-aeb2ca1bb944)
 
-#### Colunas de explicações das propriedades de Objetos e Dados.  
+#### Colunas de explicações das propriedades de Objetos e Dados. 
 As colunas U, V e W contem explicações relativas às propriedades definidas. As colunas U e V são preenchidas automaticamente. A coluna W deve ser preenchida manualmente, com comentários que expliquem de maneira objetiva e sucinta o significado da propriedades. Colocar referências às Normas que utilizam a propriedade ou explicações acerca de como ela adquire o seu valor pode ser útil.  
 A coluna X identifica cada grupo de propriedades com um valor formado pelos 4 primeiros caracteres do grupo (lido da coluna F) e sequencialmente numerado desde 100. É utilizada para manter uma indexação para cada grupo.  
 A coluna Y é reservada para futuro desenvolvimento.  
