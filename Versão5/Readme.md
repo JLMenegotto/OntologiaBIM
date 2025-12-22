@@ -96,14 +96,15 @@ O botao  <b>Modelo</b> está reservado para a função que extrairá a imagem on
     * 17 Processa CRONO Conceitos temporais                                             
     * 18 Processa CROMA Conceitos cromáticos 
     * 19 Processa DOCUM Conceitos documentação 
-    * 20 Processa TUBOS Conceitos de componentes de tubulações 
-    * 21 Processa DRONE Conceitos de manutenção predial com drones 
-	* 22 Processa METAL Conceitos de componentes de estrutura metálica 
-	* 23 Processa ARQUI Conceitos de elementos de arquitetura 
-	* 24 Processa INFRA Conceitos de elementos de infraestrutura urbana e fatos da cidade de Rio de Janeiro 
-	* 25 Processa VEGET Conceitos elementos paisagísticos e vegetação  
-	* 26 Processa TSB Conceitos da Taxonomia Sustentável Brasileira
-	* 27 Processa AMBI Conceitos de Ambientes (do CT da UFRJ)
+	* 20 Processa FABRI Conceitos de fabricantes (fornecedores e fornecidos)
+    * 21 Processa TUBOS Conceitos de componentes de tubulações 
+    * 22 Processa DRONE Conceitos de manutenção predial com drones 
+	* 23 Processa METAL Conceitos de componentes de estrutura metálica 
+	* 24 Processa ARQUI Conceitos de elementos de arquitetura 
+	* 25 Processa INFRA Conceitos de elementos de infraestrutura urbana e fatos da cidade de Rio de Janeiro 
+	* 26 Processa VEGET Conceitos elementos paisagísticos e vegetação  
+	* 27 Processa TSB Conceitos da Taxonomia Sustentável Brasileira
+	* 28 Processa AMBI Conceitos de Ambientes (do CT da UFRJ)
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
