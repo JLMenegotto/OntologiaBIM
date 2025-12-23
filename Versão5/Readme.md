@@ -320,12 +320,3 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
 - [**_El modelo digital. Técnica y arte algorítmica en BIM._**](https://bibliotecadigital.cp67.com/reader/el-modelo-digital-tecnica-y-arte-algoritmica-en-bim)
 
 
-
-## Tabela de Tecnologias
-
-| Tecnologia | Linguagem | Status |
-|-----------|-----------|--------|
-| React     | JavaScript| Ativo  |
-| Django    | Python    | Ativo  |
-| Laravel   | PHP       | Ativo  |
-| jQuery    | JavaScript| Legado |
