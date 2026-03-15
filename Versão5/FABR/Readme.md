@@ -5,7 +5,7 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-#### Pasta FABR: Ontologia com conceitos de fornecedores da industria da contrução e produtos fornecidos - Prefixo bim:
+#### Pasta FABR: Ontologia com conceitos de fornecedores da indústria da construção e produtos fornecidos - Prefixo bim:
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
 As classes de Segmentos_de_Profissionais (fornecedores) tem os códigos da ABNT 15965 Parte_3_1S (Serviços). 
