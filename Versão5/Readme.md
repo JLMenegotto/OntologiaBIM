@@ -72,8 +72,6 @@ presente no conteúdo do arquivo ONTO2025.addin
 
 <img width="1091" height="175" alt="Interfaceonto" src="https://github.com/user-attachments/assets/a6157ff9-bbe4-489c-a007-947f583e78bf" />
 
-
-
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
 O botao  <b>Modelo</b> está reservado para a função que extrairá a imagem ontológiga do modelo BIM, a partir da leitura dos objetos projetados. Os campos textuais setados em 0 e 0 são destinados a ingressar o número dos domínios ontológicos que serão criados. Se se deseja criar apenas um domínio, ingressar o valor no campo superior e manter o do campo inferior. Se quiser processar mais de um domínio, ingressar o valor numérico da faixa de dominios, p.ex. 0 e 12 processará as 13 ontologias correspondentes à norma NBR 15965. Segue a lista de valores numéricos permitidos.<br></b></p>
 
@@ -115,7 +113,7 @@ Durante a execução é informado o andamento la linha de Prompt de Revit.
 ### Exemplo de filtro SPARQL gerado a partir do acionamento do comando Extrair.
 As propriedades extraídas podem ser adicionadas ou retiradas do arquivo Mapa_Propriedades.txt. Cada linha desse arquivo representa uma propriedade que está definida no arquivo **Ontologia_Propriedades.xlsx**, e o nome arbitrário atribuido para uma variável SPARQL que a representa. Os dois valores devem ser separados por uma vírgula, por exemplo, **descrição,des** (não pode haver nomes de variáveis SPARQL repetidas).   
 A aplicação do construtor criará o filtro SPARQL automaticamente de acordo à solicitação ingressada no campo Classe da interface.   
-Os campos Individuo 1, 2 e 3 foram preparados, mas ainda estão desabilitados. Na próxima versão será incororada a definição de Indivíduos ou propriedades para serem pesquisadas em filtros SPARQL (Simple Protocol And Rdf Query Language).   
+Os campos Individuo 1, 2 e 3 foram preparados, mas ainda estão desabilitados. Na próxima versão será incorporada a definição de Indivíduos ou propriedades para serem pesquisadas em filtros com a linguagem SPARQL (Simple Protocol And Rdf Query Language).   
 
 ##### Exemplo de filtro SPARQL
 
@@ -173,7 +171,6 @@ Os campos Individuo 1, 2 e 3 foram preparados, mas ainda estão desabilitados. N
     * LIMIT 2000
 
    #### Dataset extraído com o filtro SPARQL e armazenado na pasta X_Dataset. Indivíduos da classe Palmeira cadastrados como fatos em Ontologia_Veget.ttl.  
-   
     * Buriti;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto oleoso, folhas usadas em cestaria;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Amazônia, Cerrado
     * Butiá;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fruto ácido, usado em doces e licores;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Sim;Pampa
     * Carnaúba;Palmeira;OST_Planting;IfcGeographicElement;3E.02.12;Fonte da cera de carnaúba, muito usada na indústria;OST_Planting;IfcGeographicElement;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;-----;Não;Caatinga
@@ -262,7 +259,6 @@ Ainda que tenha utilizado a fórmula sugerida para traduzir o texto, não esque�
 ![PreenchimentoClasses_02](https://github.com/user-attachments/assets/53a13c2d-0785-42f0-a99a-2ff6cb988db8)
 
 ### Preenchimento dos Fatos de cada Domínio.
-
 Se as Classes e as Propriedades de Objetos e Dados definem o esquema abstrato dos conceitos, os Fatos descrevem realidades concretas conhecidas utilizando as definições de classes e propriedades. A coluna B da planilha de Fatos é utilizada para declarar um indivíduo (que pode ter qualquer nome sem espaços). A coluna C define o tipo de indivíduo que deve ser associado a alguma classe existente. As colunas seguintes, nas cores azul ou verde, são utilizadas para descrever as propriedades de cada indivíduo. No momento, o construtor limita em 10 propriedades atribuidas a cada indivíduo. Cada propriedade usa duas colunas, a primeira para colocar o nome da propriedade definido pelo esquema e a segunda para definir o seu valor. As propriedades de objetos relacionam as Classes com os Indivíduos ou Indivíduos entre si. As propriedades de dados qualificam os indivíduos. 
 Os indivíduos são conhecimentos factuais, representam a descrição de fatos válidos. Por exemplo, todos os códigos da NBR 15.965 são fatos válidos.  
 
