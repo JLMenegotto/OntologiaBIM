@@ -303,13 +303,13 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
           Se ele permanecer inativo por 8 hs, o servidor pausa até ser reinicializado.  
           Caso a plataforma esteja fora do ar, retorne mais tarde para fazer a consulta.   
 
-- [Exemplo 01: Filtros Sparql] (https://ag10zjyjrx04ahxu.allegrograph.cloud/webview/repositories/OntoBIM/exec-query/query/SPARQL/Salas~Repo/results)
+- [Exemplo 01: AllegroGraph](https://ag10zjyjrx04ahxu.allegrograph.cloud/webview/repositories/OntoBIM/exec-query/query/SPARQL/Salas~Repo/results)
  
 #### **Exemplos com filtros SPARQL em plataforma Stardog usando recursos RDF**
 
   ![Tela_Stardog_01](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/97afb135-f525-4887-a92f-cd68f006c1db)
 
-- [Exemplo 01: Filtra Elementos IFC](https://cloud.stardog.com/share/fe71d0581acbde7b)
+- [Exemplo 02: Filtra Elementos IFC](https://cloud.stardog.com/share/fe71d0581acbde7b)
 
 ##### Mais informaçoes sobre o tema no Livro (Portugûes e español):
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
