@@ -302,6 +302,8 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
           Nota: o servidor do AllegroGraph foi configurado com uma licença acadêmica gratuita.  
           Se ele permanecer inativo por 8 hs, o servidor pausa até ser reinicializado.  
           Caso a plataforma esteja fora do ar, retorne mais tarde para fazer a consulta.   
+
+https://ag10zjyjrx04ahxu.allegrograph.cloud/webview/repositories/OntoBIM/exec-query/query/SPARQL/Salas~Repo/results
  
 - [Exemplo 01: Filtra Ambientes IMA](https://ag12pnceqjh5hmxu.allegrograph.cloud/webview/repositories/Centro_de_Tecnologia/exec-query/anonymous/Sd_CNI8TtRDgvESIDjg_H/results?text=select+%3Fs+%3Fp+%3Fd+%3Fa%0Awhere+%0A%7B%0A+++%3Fs+a+bim%3AAmbiente+%3B%0A++++++++bim%3A%C3%A9.dentro.de+%3Fp+%3B%0A++++++++bim%3Anome+%3Fd+%3B%0A++++++++bim%3A%C3%A1rea+%3Fa+.%0A++++++++filter+%28contains+%28str+%28%3Fp%29%2C+%22Macro%22%29%29+%0A%7D%0Aorder+by+%3Fa&language=SPARQL)
 
