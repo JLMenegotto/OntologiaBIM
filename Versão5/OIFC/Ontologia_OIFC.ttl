@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "Link do Esquema: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt ;
 	  rdfs:label "Observações: Modelo de informação IFC 4x3"@pt ;
-	  rdfs:label "DataHora: 21/04/2026 11:16:47"@pt ;
+	  rdfs:label "DataHora: 22/04/2026 9:27:24"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -49793,8 +49793,8 @@ bim:d.administrar   rdf:type  owl:DatatypeProperty ;
 
 bim:privado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.administrar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para administrar:  privado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:range              xsd:boolean ;
+                    rdfs:label              "Dado para administrar:  privado  Deve ser formatado como (xsd:boolean)" ;
                     bim:Chave               "admin.115" ;
                     bim:Ação                "Ação administrar" ;
                     bim:Definição           "É um bem ou espaço privado."@pt ;
@@ -49823,8 +49823,8 @@ bim:d.administrar   rdf:type  owl:DatatypeProperty ;
 
 bim:público   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.administrar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para administrar:  público  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:range              xsd:boolean ;
+                    rdfs:label              "Dado para administrar:  público  Deve ser formatado como (xsd:boolean)" ;
                     bim:Chave               "admin.117" ;
                     bim:Ação                "Ação administrar" ;
                     bim:Definição           "É um bem ou espaço público."@pt ;
@@ -51001,29 +51001,58 @@ bim:p.interoperar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.propriedade.ifc   rdf:type  owl:ObjectProperty ;
+bim:é.dado.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.interoperar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.propriedade.ifc" ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.dado.ifc" ;
                     bim:Chave               "inter.103" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma propriedade IFC."@pt ;
-                    bim:Definición          "Identifica una propiedad IFC."@es ;bim:Definition          "Identifies an IFC property."@en  .
+                    bim:Definição           "Identifica um tipo de dado IFC."@pt ;
+                    bim:Definición          "Identifica un tipo de dato IFC."@es ;bim:Definition          "Identifies an IFC data type."@en  .
 
 
 bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:propriedade.ifc   rdf:type  owl:DatatypeProperty ;
+bim:dado.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  propriedade.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  dado.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
                     bim:Chave               "inter.103" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma propriedade IFC."@pt ;
-                    bim:Definición          "Identifica una propiedad IFC."@es ;bim:Definition          "Identifies an IFC property."@en  .
+                    bim:Definição           "Identifica um tipo de dado IFC."@pt ;
+                    bim:Definición          "Identifica un tipo de dato IFC."@es ;bim:Definition          "Identifies an IFC data type."@en  .
+
+
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.domínio   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.domínio" ;
+                    bim:Chave               "inter.104" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica o domínio ao qual pertence o elemento."@pt ;
+                    bim:Definición          "Identifica cual es el dominio de pertenencia del elemento."@es ;bim:Definition          "Identifies the domain to which the element belongs."@en  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:domínio   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  domínio  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "inter.104" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica o domínio ao qual pertence o elemento."@pt ;
+                    bim:Definición          "Identifica cual es el dominio de pertenencia del elemento."@es ;bim:Definition          "Identifies the domain to which the element belongs."@en  .
 
 
 bim:p.interoperar   rdf:type  owl:ObjectProperty ;
@@ -51035,7 +51064,7 @@ bim:é.entidade.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a interoperar: é.entidade.ifc" ;
-                    bim:Chave               "inter.104" ;
+                    bim:Chave               "inter.106" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica a uma entidade IFC."@pt ;
                     bim:Definición          "Identifica una entidad IFC."@es ;bim:Definition          "Identifies an IFC entity."@en  .
@@ -51049,7 +51078,7 @@ bim:entidade.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  entidade.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.104" ;
+                    bim:Chave               "inter.106" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica a uma entidade IFC."@pt ;
                     bim:Definición          "Identifica una entidad IFC."@es ;bim:Definition          "Identifies an IFC entity."@en  .
@@ -51064,7 +51093,7 @@ bim:é.enumeração.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a interoperar: é.enumeração.ifc" ;
-                    bim:Chave               "inter.105" ;
+                    bim:Chave               "inter.107" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica a uma enumeração de tipo IFC."@pt ;
                     bim:Definición          "Identifica una enumeración tipo IFC."@es ;bim:Definition          "Identifies an IFC type enumeration."@en  .
@@ -51078,68 +51107,10 @@ bim:enumeração.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  enumeração.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.105" ;
+                    bim:Chave               "inter.107" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica a uma enumeração de tipo IFC."@pt ;
                     bim:Definición          "Identifica una enumeración tipo IFC."@es ;bim:Definition          "Identifies an IFC type enumeration."@en  .
-
-
-bim:p.interoperar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.regra.ifc   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.interoperar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.regra.ifc" ;
-                    bim:Chave               "inter.106" ;
-                    bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma regra IFC."@pt ;
-                    bim:Definición          "Identifica una regla IFC."@es ;bim:Definition          "Identifies an IFC rule."@en  .
-
-
-bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:regra.ifc   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.interoperar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  regra.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.106" ;
-                    bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma regra IFC."@pt ;
-                    bim:Definición          "Identifica una regla IFC."@es ;bim:Definition          "Identifies an IFC rule."@en  .
-
-
-bim:p.interoperar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.tipo.ifc   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.interoperar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.tipo.ifc" ;
-                    bim:Chave               "inter.107" ;
-                    bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma tipo selecionado IFC."@pt ;
-                    bim:Definición          "Identifica el tipo IFC seleccionado."@es ;bim:Definition          "Identifies the selected type IFC."@en  .
-
-
-bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:tipo.ifc   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.interoperar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  tipo.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.107" ;
-                    bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma tipo selecionado IFC."@pt ;
-                    bim:Definición          "Identifica el tipo IFC seleccionado."@es ;bim:Definition          "Identifies the selected type IFC."@en  .
 
 
 bim:p.interoperar   rdf:type  owl:ObjectProperty ;
@@ -51175,58 +51146,58 @@ bim:p.interoperar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.seleção.ifc   rdf:type  owl:ObjectProperty ;
+bim:é.link.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.interoperar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.seleção.ifc" ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.link.ifc" ;
                     bim:Chave               "inter.109" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma seleção de tipo IFC."@pt ;
-                    bim:Definición          "Identifica una selección de tipo IFC."@es ;bim:Definition          "Identifies an IFC type selection."@en  .
+                    bim:Definição           "Identifica link para o dicionário do IFC."@pt ;
+                    bim:Definición          "Identifica el enlace al diccionario IFC."@es ;bim:Definition          "Identifies link to the IFC dictionary."@en  .
 
 
 bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:seleção.ifc   rdf:type  owl:DatatypeProperty ;
+bim:link.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  seleção.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  link.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
                     bim:Chave               "inter.109" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma seleção de tipo IFC."@pt ;
-                    bim:Definición          "Identifica una selección de tipo IFC."@es ;bim:Definition          "Identifies an IFC type selection."@en  .
+                    bim:Definição           "Identifica link para o dicionário do IFC."@pt ;
+                    bim:Definición          "Identifica el enlace al diccionario IFC."@es ;bim:Definition          "Identifies link to the IFC dictionary."@en  .
 
 
 bim:p.interoperar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.qto.ifc   rdf:type  owl:ObjectProperty ;
+bim:é.propriedade.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.interoperar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.qto.ifc" ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.propriedade.ifc" ;
                     bim:Chave               "inter.110" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma quantidade qto de IFC."@pt ;
-                    bim:Definición          "Identifica la cantidad qto de IFC."@es ;bim:Definition          "Identifies the qto quantity of IFC."@en  .
+                    bim:Definição           "Identifica a uma propriedade IFC."@pt ;
+                    bim:Definición          "Identifica una propiedad IFC."@es ;bim:Definition          "Identifies an IFC property."@en  .
 
 
 bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:qto.ifc   rdf:type  owl:DatatypeProperty ;
+bim:propriedade.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  qto.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  propriedade.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
                     bim:Chave               "inter.110" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica a uma quantidade qto de IFC."@pt ;
-                    bim:Definición          "Identifica la cantidad qto de IFC."@es ;bim:Definition          "Identifies the qto quantity of IFC."@en  .
+                    bim:Definição           "Identifica a uma propriedade IFC."@pt ;
+                    bim:Definición          "Identifica una propiedad IFC."@es ;bim:Definition          "Identifies an IFC property."@en  .
 
 
 bim:p.interoperar   rdf:type  owl:ObjectProperty ;
@@ -51262,58 +51233,116 @@ bim:p.interoperar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.link.ifc   rdf:type  owl:ObjectProperty ;
+bim:é.qto.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.interoperar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.link.ifc" ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.qto.ifc" ;
                     bim:Chave               "inter.112" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica link para o dicionário do IFC."@pt ;
-                    bim:Definición          "Identifica el enlace al diccionario IFC."@es ;bim:Definition          "Identifies link to the IFC dictionary."@en  .
+                    bim:Definição           "Identifica a uma quantidade qto de IFC."@pt ;
+                    bim:Definición          "Identifica la cantidad qto de IFC."@es ;bim:Definition          "Identifies the qto quantity of IFC."@en  .
 
 
 bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:link.ifc   rdf:type  owl:DatatypeProperty ;
+bim:qto.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  link.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  qto.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
                     bim:Chave               "inter.112" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica link para o dicionário do IFC."@pt ;
-                    bim:Definición          "Identifica el enlace al diccionario IFC."@es ;bim:Definition          "Identifies link to the IFC dictionary."@en  .
+                    bim:Definição           "Identifica a uma quantidade qto de IFC."@pt ;
+                    bim:Definición          "Identifica la cantidad qto de IFC."@es ;bim:Definition          "Identifies the qto quantity of IFC."@en  .
 
 
 bim:p.interoperar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.dado.ifc   rdf:type  owl:ObjectProperty ;
+bim:é.regra.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.interoperar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.dado.ifc" ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.regra.ifc" ;
                     bim:Chave               "inter.113" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica um tipo de dado IFC."@pt ;
-                    bim:Definición          "Identifica un tipo de dato IFC."@es ;bim:Definition          "Identifies an IFC data type."@en  .
+                    bim:Definição           "Identifica a uma regra IFC."@pt ;
+                    bim:Definición          "Identifica una regla IFC."@es ;bim:Definition          "Identifies an IFC rule."@en  .
 
 
 bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:dado.ifc   rdf:type  owl:DatatypeProperty ;
+bim:regra.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  dado.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  regra.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
                     bim:Chave               "inter.113" ;
                     bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica um tipo de dado IFC."@pt ;
-                    bim:Definición          "Identifica un tipo de dato IFC."@es ;bim:Definition          "Identifies an IFC data type."@en  .
+                    bim:Definição           "Identifica a uma regra IFC."@pt ;
+                    bim:Definición          "Identifica una regla IFC."@es ;bim:Definition          "Identifies an IFC rule."@en  .
+
+
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.seleção.ifc   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.seleção.ifc" ;
+                    bim:Chave               "inter.114" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a uma seleção de tipo IFC."@pt ;
+                    bim:Definición          "Identifica una selección de tipo IFC."@es ;bim:Definition          "Identifies an IFC type selection."@en  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:seleção.ifc   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  seleção.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "inter.114" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a uma seleção de tipo IFC."@pt ;
+                    bim:Definición          "Identifica una selección de tipo IFC."@es ;bim:Definition          "Identifies an IFC type selection."@en  .
+
+
+bim:p.interoperar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.tipo.ifc   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.interoperar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a interoperar: é.tipo.ifc" ;
+                    bim:Chave               "inter.115" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a uma tipo selecionado IFC."@pt ;
+                    bim:Definición          "Identifica el tipo IFC seleccionado."@es ;bim:Definition          "Identifies the selected type IFC."@en  .
+
+
+bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:tipo.ifc   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.interoperar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  tipo.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "inter.115" ;
+                    bim:Ação                "Ação interoperar" ;
+                    bim:Definição           "Identifica a uma tipo selecionado IFC."@pt ;
+                    bim:Definición          "Identifica el tipo IFC seleccionado."@es ;bim:Definition          "Identifies the selected type IFC."@en  .
 
 
 bim:p.interoperar   rdf:type  owl:ObjectProperty ;
@@ -51325,7 +51354,7 @@ bim:é.usada.por   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a interoperar: é.usada.por" ;
-                    bim:Chave               "inter.115" ;
+                    bim:Chave               "inter.116" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica qual é o objeto que utiliza o objeto."@pt ;
                     bim:Definición          "Identifica cual es el objeto que utiliza el elemento declarado."@es ;bim:Definition          "Identifies the object used by the element declared."@en  .
@@ -51339,39 +51368,10 @@ bim:usada.por   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  usada.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.115" ;
+                    bim:Chave               "inter.116" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica qual é o objeto que utiliza o objeto."@pt ;
                     bim:Definición          "Identifica cual es el objeto que utiliza el elemento declarado."@es ;bim:Definition          "Identifies the object used by the element declared."@en  .
-
-
-bim:p.interoperar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.domínio   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.interoperar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a interoperar: é.domínio" ;
-                    bim:Chave               "inter.116" ;
-                    bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica o domínio ao qual pertence o elemento."@pt ;
-                    bim:Definición          "Identifica cual es el dominio de pertenencia del elemento."@es ;bim:Definition          "Identifies the domain to which the element belongs."@en  .
-
-
-bim:d.interoperar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:domínio   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.interoperar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  domínio  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.116" ;
-                    bim:Ação                "Ação interoperar" ;
-                    bim:Definição           "Identifica o domínio ao qual pertence o elemento."@pt ;
-                    bim:Definición          "Identifica cual es el dominio de pertenencia del elemento."@es ;bim:Definition          "Identifies the domain to which the element belongs."@en  .
 
 
 bim:p.legislar   rdf:type  owl:ObjectProperty ;
@@ -53808,96 +53808,6 @@ bim:câmera.termográfica   rdf:type  owl:DatatypeProperty ;
                     bim:ClasseIfc           "IfcSensor"  .
 
 
-bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.uas   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.vistoriar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a vistoriar: é.uas" ;
-                    bim:Chave               "visto.105" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt ;
-                    bim:Definición          "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es ;bim:Definition          "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en ;
-                    owl:equivalentProperty  bim:é.drone  .
-
-
-bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:uas   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.vistoriar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  uas  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "visto.105" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt ;
-                    bim:Definición          "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es ;bim:Definition          "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en  .
-
-
-bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.drone   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.vistoriar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a vistoriar: é.drone" ;
-                    bim:Chave               "visto.106" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara a identificação do drone."@pt ;
-                    bim:Definición          "Declara la identificación del dron."@es ;bim:Definition          "Declares the identification of the drone."@en ;
-                    owl:equivalentProperty  bim:é.vant  .
-
-
-bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:drone   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.vistoriar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  drone  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "visto.106" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara a identificação do drone."@pt ;
-                    bim:Definición          "Declara la identificación del dron."@es ;bim:Definition          "Declares the identification of the drone."@en  .
-
-
-bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.vant   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.vistoriar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a vistoriar: é.vant" ;
-                    bim:Chave               "visto.107" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara a identificação do veículo aereo não tripulado."@pt ;
-                    bim:Definición          "Declara la identificación del vehículo aéreo no tripulado."@es ;bim:Definition          "Declares the identification of the unmanned aerial vehicle."@en ;
-                    owl:equivalentProperty  bim:é.uas  .
-
-
-bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:vant   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.vistoriar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  vant  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "visto.107" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara a identificação do veículo aereo não tripulado."@pt ;
-                    bim:Definición          "Declara la identificación del vehículo aéreo no tripulado."@es ;bim:Definition          "Declares the identification of the unmanned aerial vehicle."@en  .
-
-
 bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -54411,7 +54321,97 @@ bim:receita.total   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara o valor total de receita total ou volume de negócios."@pt ;
                     bim:Definición          "Declara la cantidad total de ingresos o facturación."@es ;bim:Definition          "Declares the total amount of total revenue or turnover."@en  .
 
+
+bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.uas   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.vistoriar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a vistoriar: é.uas" ;
+                    bim:Chave               "visto.105" ;
+                    bim:Ação                "Ação vistoriar" ;
+                    bim:Definição           "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt ;
+                    bim:Definición          "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es ;bim:Definition          "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en ;
+                    owl:equivalentProperty  bim:é.drone  .
+
+
+bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:uas   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.vistoriar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  uas  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "visto.105" ;
+                    bim:Ação                "Ação vistoriar" ;
+                    bim:Definição           "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt ;
+                    bim:Definición          "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es ;bim:Definition          "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en  .
+
+
+bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.drone   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.vistoriar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a vistoriar: é.drone" ;
+                    bim:Chave               "visto.106" ;
+                    bim:Ação                "Ação vistoriar" ;
+                    bim:Definição           "Declara a identificação do drone."@pt ;
+                    bim:Definición          "Declara la identificación del dron."@es ;bim:Definition          "Declares the identification of the drone."@en ;
+                    owl:equivalentProperty  bim:é.vant  .
+
+
+bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:drone   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.vistoriar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  drone  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "visto.106" ;
+                    bim:Ação                "Ação vistoriar" ;
+                    bim:Definição           "Declara a identificação do drone."@pt ;
+                    bim:Definición          "Declara la identificación del dron."@es ;bim:Definition          "Declares the identification of the drone."@en  .
+
+
+bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.vant   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.vistoriar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a vistoriar: é.vant" ;
+                    bim:Chave               "visto.107" ;
+                    bim:Ação                "Ação vistoriar" ;
+                    bim:Definição           "Declara a identificação do veículo aereo não tripulado."@pt ;
+                    bim:Definición          "Declara la identificación del vehículo aéreo no tripulado."@es ;bim:Definition          "Declares the identification of the unmanned aerial vehicle."@en ;
+                    owl:equivalentProperty  bim:é.uas  .
+
+
+bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:vant   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.vistoriar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  vant  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "visto.107" ;
+                    bim:Ação                "Ação vistoriar" ;
+                    bim:Definição           "Declara a identificação do veículo aereo não tripulado."@pt ;
+                    bim:Definición          "Declara la identificación del vehículo aéreo no tripulado."@es ;bim:Definition          "Declares the identification of the unmanned aerial vehicle."@en  .
+
 #################################################################
 ##  Fim da Ontologia OIFC
-##  Criada em 21/04/2026 11:17:01
+##  Criada em 22/04/2026 9:27:38
 #################################################################
