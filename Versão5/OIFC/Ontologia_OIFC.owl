@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IFC>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "Link do Esquema: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
   Annotations: rdfs:label "Observações: Modelo de informação IFC 4x3"@pt
-  Annotations: rdfs:label "DataHora: 21/04/2026 11:16:47"@pt
+  Annotations: rdfs:label "DataHora: 22/04/2026 9:21:43"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -53434,11 +53434,11 @@ ObjectProperty: bim:p.administrar
 
 
 
-ObjectProperty: bim:é.privado
+ObjectProperty: bim:é.privado?
 	SubPropertyOf: bim:p.administrar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a administrar: é.privado"@pt
+	Annotations: rdfs:label "Propriedade destinada a administrar: é.privado?"@pt
 	Annotations: bim:Chave "admin.115"
 	Annotations: bim:Ação "Ação administrar"@pt
 	Annotations: bim:Definição "É um bem ou espaço privado."@pt
@@ -53451,10 +53451,10 @@ DataProperty: bim:d.administrar
 
 
 
-DataProperty: bim:privado
+DataProperty: bim:privado?
 	SubPropertyOf: bim:d.administrar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para administrar:  privado  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar:  privado?  Deve ser formatado como (xsd:boolean)"@pt
 	Annotations: bim:Chave "admin.115"
 	Annotations: bim:Ação "Ação administrar"@pt
 	Annotations: bim:Definição "É um bem ou espaço privado."@pt
@@ -53466,11 +53466,11 @@ ObjectProperty: bim:p.administrar
 
 
 
-ObjectProperty: bim:é.público
+ObjectProperty: bim:é.público?
 	SubPropertyOf: bim:p.administrar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a administrar: é.público"@pt
+	Annotations: rdfs:label "Propriedade destinada a administrar: é.público?"@pt
 	Annotations: bim:Chave "admin.117"
 	Annotations: bim:Ação "Ação administrar"@pt
 	Annotations: bim:Definição "É um bem ou espaço público."@pt
@@ -53483,10 +53483,10 @@ DataProperty: bim:d.administrar
 
 
 
-DataProperty: bim:público
+DataProperty: bim:público?
 	SubPropertyOf: bim:d.administrar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para administrar:  público  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	range: xsd:boolean
+	Annotations: rdfs:label "Dado para administrar:  público?  Deve ser formatado como (xsd:boolean)"@pt
 	Annotations: bim:Chave "admin.117"
 	Annotations: bim:Ação "Ação administrar"@pt
 	Annotations: bim:Definição "É um bem ou espaço público."@pt
@@ -54754,33 +54754,62 @@ ObjectProperty: bim:p.interoperar
 
 
 
-ObjectProperty: bim:é.propriedade.ifc
+ObjectProperty: bim:é.dado.ifc
 	SubPropertyOf: bim:p.interoperar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.propriedade.ifc"@pt
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.dado.ifc"@pt
 	Annotations: bim:Chave "inter.103"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma propriedade IFC."@pt
-	Annotations: bim:Definición "Identifica una propiedad IFC."@es
-	Annotations: bim:Definition "Identifies an IFC property."@en
-	Annotations: bim:ABNT "[ 0P.10.40.09 ]"
+	Annotations: bim:Definição "Identifica um tipo de dado IFC."@pt
+	Annotations: bim:Definición "Identifica un tipo de dato IFC."@es
+	Annotations: bim:Definition "Identifies an IFC data type."@en
 
 DataProperty: bim:d.interoperar
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:propriedade.ifc
+DataProperty: bim:dado.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  propriedade.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para interoperar:  dado.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "inter.103"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma propriedade IFC."@pt
-	Annotations: bim:Definición "Identifica una propiedad IFC."@es
-	Annotations: bim:Definition "Identifies an IFC property."@en
-	Annotations: bim:ABNT "[ 0P.10.40.09 ]"
+	Annotations: bim:Definição "Identifica um tipo de dado IFC."@pt
+	Annotations: bim:Definición "Identifica un tipo de dato IFC."@es
+	Annotations: bim:Definition "Identifies an IFC data type."@en
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.domínio
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.domínio"@pt
+	Annotations: bim:Chave "inter.104"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica o domínio ao qual pertence o elemento."@pt
+	Annotations: bim:Definición "Identifica cual es el dominio de pertenencia del elemento."@es
+	Annotations: bim:Definition "Identifies the domain to which the element belongs."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:domínio
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  domínio  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "inter.104"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica o domínio ao qual pertence o elemento."@pt
+	Annotations: bim:Definición "Identifica cual es el dominio de pertenencia del elemento."@es
+	Annotations: bim:Definition "Identifies the domain to which the element belongs."@en
 
 ObjectProperty: bim:p.interoperar
 	SubPropertyOf: bim:BIMProp
@@ -54792,7 +54821,7 @@ ObjectProperty: bim:é.entidade.ifc
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a interoperar: é.entidade.ifc"@pt
-	Annotations: bim:Chave "inter.104"
+	Annotations: bim:Chave "inter.106"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Identifica a uma entidade IFC."@pt
 	Annotations: bim:Definición "Identifica una entidad IFC."@es
@@ -54807,7 +54836,7 @@ DataProperty: bim:entidade.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para interoperar:  entidade.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.104"
+	Annotations: bim:Chave "inter.106"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Identifica a uma entidade IFC."@pt
 	Annotations: bim:Definición "Identifica una entidad IFC."@es
@@ -54823,7 +54852,7 @@ ObjectProperty: bim:é.enumeração.ifc
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a interoperar: é.enumeração.ifc"@pt
-	Annotations: bim:Chave "inter.105"
+	Annotations: bim:Chave "inter.107"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Identifica a uma enumeração de tipo IFC."@pt
 	Annotations: bim:Definición "Identifica una enumeración tipo IFC."@es
@@ -54838,73 +54867,11 @@ DataProperty: bim:enumeração.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para interoperar:  enumeração.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.105"
+	Annotations: bim:Chave "inter.107"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Identifica a uma enumeração de tipo IFC."@pt
 	Annotations: bim:Definición "Identifica una enumeración tipo IFC."@es
 	Annotations: bim:Definition "Identifies an IFC type enumeration."@en
-
-ObjectProperty: bim:p.interoperar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.regra.ifc
-	SubPropertyOf: bim:p.interoperar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.regra.ifc"@pt
-	Annotations: bim:Chave "inter.106"
-	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma regra IFC."@pt
-	Annotations: bim:Definición "Identifica una regla IFC."@es
-	Annotations: bim:Definition "Identifies an IFC rule."@en
-
-DataProperty: bim:d.interoperar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:regra.ifc
-	SubPropertyOf: bim:d.interoperar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  regra.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.106"
-	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma regra IFC."@pt
-	Annotations: bim:Definición "Identifica una regla IFC."@es
-	Annotations: bim:Definition "Identifies an IFC rule."@en
-
-ObjectProperty: bim:p.interoperar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.tipo.ifc
-	SubPropertyOf: bim:p.interoperar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.tipo.ifc"@pt
-	Annotations: bim:Chave "inter.107"
-	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma tipo selecionado IFC."@pt
-	Annotations: bim:Definición "Identifica el tipo IFC seleccionado."@es
-	Annotations: bim:Definition "Identifies the selected type IFC."@en
-
-DataProperty: bim:d.interoperar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:tipo.ifc
-	SubPropertyOf: bim:d.interoperar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  tipo.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.107"
-	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma tipo selecionado IFC."@pt
-	Annotations: bim:Definición "Identifica el tipo IFC seleccionado."@es
-	Annotations: bim:Definition "Identifies the selected type IFC."@en
 
 ObjectProperty: bim:p.interoperar
 	SubPropertyOf: bim:BIMProp
@@ -54942,62 +54909,64 @@ ObjectProperty: bim:p.interoperar
 
 
 
-ObjectProperty: bim:é.seleção.ifc
+ObjectProperty: bim:é.link.ifc
 	SubPropertyOf: bim:p.interoperar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.seleção.ifc"@pt
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.link.ifc"@pt
 	Annotations: bim:Chave "inter.109"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma seleção de tipo IFC."@pt
-	Annotations: bim:Definición "Identifica una selección de tipo IFC."@es
-	Annotations: bim:Definition "Identifies an IFC type selection."@en
+	Annotations: bim:Definição "Identifica link para o dicionário do IFC."@pt
+	Annotations: bim:Definición "Identifica el enlace al diccionario IFC."@es
+	Annotations: bim:Definition "Identifies link to the IFC dictionary."@en
 
 DataProperty: bim:d.interoperar
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:seleção.ifc
+DataProperty: bim:link.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  seleção.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para interoperar:  link.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "inter.109"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma seleção de tipo IFC."@pt
-	Annotations: bim:Definición "Identifica una selección de tipo IFC."@es
-	Annotations: bim:Definition "Identifies an IFC type selection."@en
+	Annotations: bim:Definição "Identifica link para o dicionário do IFC."@pt
+	Annotations: bim:Definición "Identifica el enlace al diccionario IFC."@es
+	Annotations: bim:Definition "Identifies link to the IFC dictionary."@en
 
 ObjectProperty: bim:p.interoperar
 	SubPropertyOf: bim:BIMProp
 
 
 
-ObjectProperty: bim:é.qto.ifc
+ObjectProperty: bim:é.propriedade.ifc
 	SubPropertyOf: bim:p.interoperar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.qto.ifc"@pt
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.propriedade.ifc"@pt
 	Annotations: bim:Chave "inter.110"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma quantidade qto de IFC."@pt
-	Annotations: bim:Definición "Identifica la cantidad qto de IFC."@es
-	Annotations: bim:Definition "Identifies the qto quantity of IFC."@en
+	Annotations: bim:Definição "Identifica a uma propriedade IFC."@pt
+	Annotations: bim:Definición "Identifica una propiedad IFC."@es
+	Annotations: bim:Definition "Identifies an IFC property."@en
+	Annotations: bim:ABNT "[ 0P.10.40.09 ]"
 
 DataProperty: bim:d.interoperar
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:qto.ifc
+DataProperty: bim:propriedade.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  qto.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para interoperar:  propriedade.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "inter.110"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica a uma quantidade qto de IFC."@pt
-	Annotations: bim:Definición "Identifica la cantidad qto de IFC."@es
-	Annotations: bim:Definition "Identifies the qto quantity of IFC."@en
+	Annotations: bim:Definição "Identifica a uma propriedade IFC."@pt
+	Annotations: bim:Definición "Identifica una propiedad IFC."@es
+	Annotations: bim:Definition "Identifies an IFC property."@en
+	Annotations: bim:ABNT "[ 0P.10.40.09 ]"
 
 ObjectProperty: bim:p.interoperar
 	SubPropertyOf: bim:BIMProp
@@ -55035,62 +55004,124 @@ ObjectProperty: bim:p.interoperar
 
 
 
-ObjectProperty: bim:é.link.ifc
+ObjectProperty: bim:é.qto.ifc
 	SubPropertyOf: bim:p.interoperar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.link.ifc"@pt
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.qto.ifc"@pt
 	Annotations: bim:Chave "inter.112"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica link para o dicionário do IFC."@pt
-	Annotations: bim:Definición "Identifica el enlace al diccionario IFC."@es
-	Annotations: bim:Definition "Identifies link to the IFC dictionary."@en
+	Annotations: bim:Definição "Identifica a uma quantidade qto de IFC."@pt
+	Annotations: bim:Definición "Identifica la cantidad qto de IFC."@es
+	Annotations: bim:Definition "Identifies the qto quantity of IFC."@en
 
 DataProperty: bim:d.interoperar
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:link.ifc
+DataProperty: bim:qto.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  link.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para interoperar:  qto.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "inter.112"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica link para o dicionário do IFC."@pt
-	Annotations: bim:Definición "Identifica el enlace al diccionario IFC."@es
-	Annotations: bim:Definition "Identifies link to the IFC dictionary."@en
+	Annotations: bim:Definição "Identifica a uma quantidade qto de IFC."@pt
+	Annotations: bim:Definición "Identifica la cantidad qto de IFC."@es
+	Annotations: bim:Definition "Identifies the qto quantity of IFC."@en
 
 ObjectProperty: bim:p.interoperar
 	SubPropertyOf: bim:BIMProp
 
 
 
-ObjectProperty: bim:é.dado.ifc
+ObjectProperty: bim:é.regra.ifc
 	SubPropertyOf: bim:p.interoperar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.dado.ifc"@pt
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.regra.ifc"@pt
 	Annotations: bim:Chave "inter.113"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica um tipo de dado IFC."@pt
-	Annotations: bim:Definición "Identifica un tipo de dato IFC."@es
-	Annotations: bim:Definition "Identifies an IFC data type."@en
+	Annotations: bim:Definição "Identifica a uma regra IFC."@pt
+	Annotations: bim:Definición "Identifica una regla IFC."@es
+	Annotations: bim:Definition "Identifies an IFC rule."@en
 
 DataProperty: bim:d.interoperar
 	SubPropertyOf: bim:BIMData
 
 
 
-DataProperty: bim:dado.ifc
+DataProperty: bim:regra.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  dado.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para interoperar:  regra.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "inter.113"
 	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica um tipo de dado IFC."@pt
-	Annotations: bim:Definición "Identifica un tipo de dato IFC."@es
-	Annotations: bim:Definition "Identifies an IFC data type."@en
+	Annotations: bim:Definição "Identifica a uma regra IFC."@pt
+	Annotations: bim:Definición "Identifica una regla IFC."@es
+	Annotations: bim:Definition "Identifies an IFC rule."@en
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.seleção.ifc
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.seleção.ifc"@pt
+	Annotations: bim:Chave "inter.114"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a uma seleção de tipo IFC."@pt
+	Annotations: bim:Definición "Identifica una selección de tipo IFC."@es
+	Annotations: bim:Definition "Identifies an IFC type selection."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:seleção.ifc
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  seleção.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "inter.114"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a uma seleção de tipo IFC."@pt
+	Annotations: bim:Definición "Identifica una selección de tipo IFC."@es
+	Annotations: bim:Definition "Identifies an IFC type selection."@en
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.tipo.ifc
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.tipo.ifc"@pt
+	Annotations: bim:Chave "inter.115"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a uma tipo selecionado IFC."@pt
+	Annotations: bim:Definición "Identifica el tipo IFC seleccionado."@es
+	Annotations: bim:Definition "Identifies the selected type IFC."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:tipo.ifc
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  tipo.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "inter.115"
+	Annotations: bim:Ação "Ação interoperar"@pt
+	Annotations: bim:Definição "Identifica a uma tipo selecionado IFC."@pt
+	Annotations: bim:Definición "Identifica el tipo IFC seleccionado."@es
+	Annotations: bim:Definition "Identifies the selected type IFC."@en
 
 ObjectProperty: bim:p.interoperar
 	SubPropertyOf: bim:BIMProp
@@ -55102,7 +55133,7 @@ ObjectProperty: bim:é.usada.por
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a interoperar: é.usada.por"@pt
-	Annotations: bim:Chave "inter.115"
+	Annotations: bim:Chave "inter.116"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Identifica qual é o objeto que utiliza o objeto."@pt
 	Annotations: bim:Definición "Identifica cual es el objeto que utiliza el elemento declarado."@es
@@ -55117,42 +55148,11 @@ DataProperty: bim:usada.por
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para interoperar:  usada.por  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.115"
+	Annotations: bim:Chave "inter.116"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Identifica qual é o objeto que utiliza o objeto."@pt
 	Annotations: bim:Definición "Identifica cual es el objeto que utiliza el elemento declarado."@es
 	Annotations: bim:Definition "Identifies the object used by the element declared."@en
-
-ObjectProperty: bim:p.interoperar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.domínio
-	SubPropertyOf: bim:p.interoperar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a interoperar: é.domínio"@pt
-	Annotations: bim:Chave "inter.116"
-	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica o domínio ao qual pertence o elemento."@pt
-	Annotations: bim:Definición "Identifica cual es el dominio de pertenencia del elemento."@es
-	Annotations: bim:Definition "Identifies the domain to which the element belongs."@en
-
-DataProperty: bim:d.interoperar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:domínio
-	SubPropertyOf: bim:d.interoperar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para interoperar:  domínio  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.116"
-	Annotations: bim:Ação "Ação interoperar"@pt
-	Annotations: bim:Definição "Identifica o domínio ao qual pertence o elemento."@pt
-	Annotations: bim:Definición "Identifica cual es el dominio de pertenencia del elemento."@es
-	Annotations: bim:Definition "Identifies the domain to which the element belongs."@en
 
 ObjectProperty: bim:p.legislar
 	SubPropertyOf: bim:BIMProp
@@ -57756,102 +57756,6 @@ DataProperty: bim:câmera.termográfica
 	Annotations: bim:CatRevit "OST_SecurityDevices"
 	Annotations: bim:ClasseIfc "IfcSensor"
 
-ObjectProperty: bim:p.vistoriar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.uas
-	SubPropertyOf: bim:p.vistoriar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.uas"@pt
-	Annotations: bim:Chave "visto.105"
-	Annotations: bim:Ação "Ação vistoriar"@pt
-	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
-	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
-	Annotations: bim:Definition "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en
-	EquivalentTo: bim:é.drone
-
-DataProperty: bim:d.vistoriar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:uas
-	SubPropertyOf: bim:d.vistoriar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para vistoriar:  uas  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "visto.105"
-	Annotations: bim:Ação "Ação vistoriar"@pt
-	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
-	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
-	Annotations: bim:Definition "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en
-
-ObjectProperty: bim:p.vistoriar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.drone
-	SubPropertyOf: bim:p.vistoriar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.drone"@pt
-	Annotations: bim:Chave "visto.106"
-	Annotations: bim:Ação "Ação vistoriar"@pt
-	Annotations: bim:Definição "Declara a identificação do drone."@pt
-	Annotations: bim:Definición "Declara la identificación del dron."@es
-	Annotations: bim:Definition "Declares the identification of the drone."@en
-	EquivalentTo: bim:é.vant
-
-DataProperty: bim:d.vistoriar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:drone
-	SubPropertyOf: bim:d.vistoriar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para vistoriar:  drone  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "visto.106"
-	Annotations: bim:Ação "Ação vistoriar"@pt
-	Annotations: bim:Definição "Declara a identificação do drone."@pt
-	Annotations: bim:Definición "Declara la identificación del dron."@es
-	Annotations: bim:Definition "Declares the identification of the drone."@en
-
-ObjectProperty: bim:p.vistoriar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.vant
-	SubPropertyOf: bim:p.vistoriar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.vant"@pt
-	Annotations: bim:Chave "visto.107"
-	Annotations: bim:Ação "Ação vistoriar"@pt
-	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
-	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
-	Annotations: bim:Definition "Declares the identification of the unmanned aerial vehicle."@en
-	EquivalentTo: bim:é.uas
-
-DataProperty: bim:d.vistoriar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:vant
-	SubPropertyOf: bim:d.vistoriar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para vistoriar:  vant  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "visto.107"
-	Annotations: bim:Ação "Ação vistoriar"@pt
-	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
-	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
-	Annotations: bim:Definition "Declares the identification of the unmanned aerial vehicle."@en
-
 ObjectProperty: bim:p.taxonomizar
 	SubPropertyOf: bim:BIMProp
 
@@ -58400,7 +58304,103 @@ DataProperty: bim:receita.total
 	Annotations: bim:Definición "Declara la cantidad total de ingresos o facturación."@es
 	Annotations: bim:Definition "Declares the total amount of total revenue or turnover."@en
 
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.uas
+	SubPropertyOf: bim:p.vistoriar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.uas"@pt
+	Annotations: bim:Chave "visto.105"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
+	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
+	Annotations: bim:Definition "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en
+	EquivalentTo: bim:é.drone
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:uas
+	SubPropertyOf: bim:d.vistoriar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  uas  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "visto.105"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara aeronave não tripulada. Denominação da ANAC e DECEA."@pt
+	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
+	Annotations: bim:Definition "Declares unmanned aircraft. Denomination of ANAC and DECEA."@en
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.drone
+	SubPropertyOf: bim:p.vistoriar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.drone"@pt
+	Annotations: bim:Chave "visto.106"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do drone."@pt
+	Annotations: bim:Definición "Declara la identificación del dron."@es
+	Annotations: bim:Definition "Declares the identification of the drone."@en
+	EquivalentTo: bim:é.vant
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:drone
+	SubPropertyOf: bim:d.vistoriar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  drone  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "visto.106"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do drone."@pt
+	Annotations: bim:Definición "Declara la identificación del dron."@es
+	Annotations: bim:Definition "Declares the identification of the drone."@en
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.vant
+	SubPropertyOf: bim:p.vistoriar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.vant"@pt
+	Annotations: bim:Chave "visto.107"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
+	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
+	Annotations: bim:Definition "Declares the identification of the unmanned aerial vehicle."@en
+	EquivalentTo: bim:é.uas
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vant
+	SubPropertyOf: bim:d.vistoriar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  vant  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "visto.107"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara a identificação do veículo aereo não tripulado."@pt
+	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
+	Annotations: bim:Definition "Declares the identification of the unmanned aerial vehicle."@en
+
 #################################################################
 ##  Fim da Ontologia OIFC
-##  Criada em 21/04/2026 11:17:01
+##  Criada em 22/04/2026 9:21:57
 #################################################################
