@@ -9,3 +9,6 @@
 ## Pasta MOTO 
 
 <p align="justify">Alocada ontologia para projeto de Força Motriz<br></b></p>
+
+<img width="960" height="626" alt="Motriz" src="https://github.com/user-attachments/assets/3429ca2b-2738-4085-b2db-8ed2f906af9c" />
+
