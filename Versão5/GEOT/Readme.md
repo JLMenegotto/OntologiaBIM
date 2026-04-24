@@ -5,10 +5,9 @@
 >PEU Programa de Pós-graduação em Engenharia Urbana<br>
 >PPE Programa de Pós-graduação em Estruturas<br>
 
-### Pasta CIRC: Ontologia com conceitos de Elementos de Circulação como Elevadores, Escadas e Rampas - Prefixo bim:
-A ontologia inclui elementos de Elevadores, Escadas e Rampas.  
-Os indivíduos de exemplo mostram como atribuir parâmetros normativos aos Indivíduos através da classe **Acessibilidade** pensada com o objetivo de relacionar propriedades específicas aos elementos.
+### Pasta GEOT: Ontologia com conceitos de Geotécnica e Topografia.  Prefixo: bim:
 
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="957" height="4490" alt="circulação" src="https://github.com/user-attachments/assets/2e4a0f97-6580-4469-abcd-9cc16ddf2e31" />
+<img width="933" height="2096" alt="Geotec" src="https://github.com/user-attachments/assets/d590fb56-3d07-4964-bbd5-1071344ed487" />
+
