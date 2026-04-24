@@ -9,3 +9,6 @@
 ## Pasta GASE 
 
 <p align="justify">Alocada ontologia para projeto de Gases<br></b></p>
+
+<img width="917" height="1046" alt="Gases" src="https://github.com/user-attachments/assets/59a24597-b727-43c1-8977-8e5325b8c455" />
+
