@@ -9,3 +9,6 @@
 ## Pasta ILUM 
 
 <p align="justify">Alocada ontologia para projeto LuminoTécnico<br></b></p>
+
+<img width="924" height="1256" alt="Luminotécnica" src="https://github.com/user-attachments/assets/fc888f54-9bbb-4410-9518-eac34c82abd8" />
+
