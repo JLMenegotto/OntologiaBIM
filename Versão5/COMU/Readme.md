@@ -9,4 +9,4 @@
 A ontologia inclui elementos de Telecom, AudioVideo e Comunicação Visual em edificações.
 As ligações "is-a" não devem ser entendidas literalmente como "é uma", mas entendidas como relações que existem entre as classes conectadas.
 
-<img width="971" height="3020" alt="Comunicação" src="https://github.com/user-attachments/assets/f41498ee-6252-4465-a16b-a764917c7ab5" />
+<img width="971" height="3146" alt="Comunicação" src="https://github.com/user-attachments/assets/d9ac3726-0fd1-45f5-81f3-d57681c3242f" />
