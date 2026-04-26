@@ -9,4 +9,5 @@
 
 <p align="justify">Alocada ontologia para projeto EletroTécnico.<br></b></p>
 
-<img width="971" height="3146" alt="Comunicação" src="https://github.com/user-attachments/assets/c64f06d5-5893-46ae-b422-841888023c56" />
+<img width="969" height="5750" alt="Elétrica" src="https://github.com/user-attachments/assets/71cd4fdf-3931-48cd-8034-19157a73c3ec" />
+
