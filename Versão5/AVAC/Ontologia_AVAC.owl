@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#AVAC>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Modelo de informação IFC 4x3 e Categorias Revit 2026"@pt
-  Annotations: rdfs:label "DataHora: 27/04/2026 16:48:55"@pt
+  Annotations: rdfs:label "DataHora: 27/04/2026 17:01:59"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Translations in Spanish and English incorporated. Translations must be constantly reviewed"@en
@@ -95,26 +95,19 @@ Individual: bim:Projeto1
 	Facts: bim:ide  "PRJ_001"
 	Facts: bim:nome  "Prédio A"
 
-Individual: bim:Conteiner_01
+Individual: bim:Dutos.Ar
 	Types: bim:No.Projeto
 	Facts: bim:é.pertencente.a  bim:Projeto1
-	Facts: bim:descrição  "Conteiner de Informação do projeto 1"
-	Facts: bim:categoria.revit  "-"
-	Facts: bim:classe.ifc  "-"
-	Facts: bim:tema  "Escola"
-	Facts: bim:ide  "CNT_PRJ001"
-	Facts: bim:nome  "CTN_PRJ_1"
-	Facts: bim:contêiner.em.andamento  "sim"
-
-Individual: bim:Dutos
-	Types: bim:No.Projeto
-	Facts: bim:é.pertencente.a  bim:Conteiner_01
-	Facts: bim:descrição  "Conteiner de Dutos do projeto 1"
+	Facts: bim:descrição  "Conteiner de Dutos de Ar condicionado do projeto 1"
 	Facts: bim:categoria.revit  "[ OST_DuctSystem , OST_DuctCurves , OST_DuctFitting , OST_DuctAccessory , OST_DuctTerminal ]"
 	Facts: bim:classe.ifc  "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]"
-	Facts: bim:tema  "Escola"
-	Facts: bim:ide  "DUT_PRJ001"
-	Facts: bim:nome  "Dutos AVAC"
+
+Individual: bim:Dutos.Ex
+	Types: bim:No.Projeto
+	Facts: bim:é.pertencente.a  bim:Projeto1
+	Facts: bim:descrição  "Conteiner de Dutos de Exaustão do projeto 1"
+	Facts: bim:categoria.revit  "[ OST_DuctSystem , OST_DuctCurves , OST_DuctFitting , OST_DuctAccessory , OST_DuctTerminal ]"
+	Facts: bim:classe.ifc  "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -831,37 +824,6 @@ DataProperty: bim:comitente
 	Annotations: bim:Definição "É a pessoa ou organização que encarrega o projeto ou empreendimento, comissionando um representante."@pt
 	Annotations: bim:Definición "Es la persona u organización que se encarga del proyecto o empresa, encargando a un representante."@es
 	Annotations: bim:Definition "It is the person or organization that puts in charge of the project or enterprise, commissioning a representative."@en
-
-ObjectProperty: bim:p.gestionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.contêiner.em.andamento
-	SubPropertyOf: bim:p.gestionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a gestionar: é.contêiner.em.andamento"@pt
-	Annotations: bim:Chave "gesti.115"
-	Annotations: bim:Ação "Ação gestionar"@pt
-	Annotations: bim:Definição "NBR 19650-1: Refere-se ao estado de um contêiner de informação. O processo do contêiner está em andamento. Não precisa necessariamente estar vissível a outros agentes, pois está em produção, mas para passar de estado precisa de processo de autorização."@pt
-	Annotations: bim:Definición "NBR 19650-1: Se refiere al estado de un contenedor de información. El proceso de contenedor está en curso. No necesariamente necesita ser visible para otros agentes, como lo es en producción, pero para pasar de un estado a otro necesita un proceso de autorización."@es
-	Annotations: bim:Definition "NBR 19650-1: Refers to the state of an information container. The container process is ongoing. It does not necessarily need to be visible to other agents, as it is in production, but to move from state to state it needs an authorization process."@en
-
-DataProperty: bim:d.gestionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:contêiner.em.andamento
-	SubPropertyOf: bim:d.gestionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para gestionar:  contêiner.em.andamento  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "gesti.115"
-	Annotations: bim:Ação "Ação gestionar"@pt
-	Annotations: bim:Definição "NBR 19650-1: Refere-se ao estado de um contêiner de informação. O processo do contêiner está em andamento. Não precisa necessariamente estar vissível a outros agentes, pois está em produção, mas para passar de estado precisa de processo de autorização."@pt
-	Annotations: bim:Definición "NBR 19650-1: Se refiere al estado de un contenedor de información. El proceso de contenedor está en curso. No necesariamente necesita ser visible para otros agentes, como lo es en producción, pero para pasar de un estado a otro necesita un proceso de autorización."@es
-	Annotations: bim:Definition "NBR 19650-1: Refers to the state of an information container. The container process is ongoing. It does not necessarily need to be visible to other agents, as it is in production, but to move from state to state it needs an authorization process."@en
 
 ObjectProperty: bim:p.gestionar
 	SubPropertyOf: bim:BIMProp
@@ -4877,5 +4839,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia AVAC
-##  Criada em 27/04/2026 16:48:56
+##  Criada em 27/04/2026 17:02:00
 #################################################################
