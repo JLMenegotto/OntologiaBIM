@@ -1,5 +1,5 @@
 
-@prefix : <https://github.com/JLMenegotto/RepoOnto#Arquitetura> .
+@prefix : <https://github.com/JLMenegotto/RepoOnto#Arquitetônico> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
@@ -7,11 +7,11 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix bsdd: <https://bsdd.buildingsmart.org/def#> .
 @prefix bim:  <https://github.com/JLMenegotto/RepoOnto#> .
-@base  <https://github.com/JLMenegotto/RepoOnto#Arquitetura> .
+@base  <https://github.com/JLMenegotto/RepoOnto#Arquitetônico> .
 
-<https://github.com/JLMenegotto/RepoOnto#Arquitetura> rdf:type owl:Ontology ; 
+<https://github.com/JLMenegotto/RepoOnto#Arquitetônico> rdf:type owl:Ontology ; 
 	  rdfs:label "OntologiaPrefixo: bim:"@pt ;
-	  rdfs:label "OntologiaTema: Arquitetura"@pt ;
+	  rdfs:label "OntologiaTema: Arquitetônico"@pt ;
 	  rdfs:label "RaizClass: BIM"@pt ;
 	  rdfs:label "RaizProp: BIMProp"@pt ;
 	  rdfs:label "RaizData: BIMData"@pt ;
@@ -25,8 +25,8 @@
 	  rdfs:label "NormaReferência1: -"@pt ;
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
-	  rdfs:label "Observações: Ontologia para descrever elementos de arquitetura - Pisos - Paredes - Divisórias e Tetos."@pt ;
-	  rdfs:label "DataHora: 27/04/2026 18:39:14"@pt ;
+	  rdfs:label "Observações: Ontologia para descrever elementos Arquitetônicos - Pisos - Paredes - Divisórias e Tetos, Esquadrias, Bancadas..."@pt ;
+	  rdfs:label "DataHora: 27/04/2026 18:41:18"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -13086,22 +13086,6 @@ bim:Parede.13  rdf:type  owl:NamedIndividual , bim:Parede.Interna.Alta ;
      bim:classe.ifc    "IfcWall" ;
      bim:fabricante    "Em obra"  .
 
-bim:PISO.SAN.01  rdf:type  owl:NamedIndividual , bim:Camadas.Paginadas ;
-     bim:é.coberto.com    bim:CE.70x70 ;
-     bim:descrição    "Piso paginado de cerâmica." ;
-     bim:categoria.revit    "OST_FloorsFinish1" ;
-     bim:classe.ifc    "IfcCoveringFLOORING" ;
-     bim:fabricante    "Eliane"  .
-
-bim:PISO.SALA.01  rdf:type  owl:NamedIndividual , bim:Camadas.Paginadas ;
-     bim:é.coberto.com    bim:TACO.7x21 ;
-     bim:é.colado.com    bim:COLA.01 ;
-     bim:descrição    "Piso paginado de taco." ;
-     bim:categoria.revit    "OST_FloorsFinish1" ;
-     bim:classe.ifc    "IfcCoveringFLOORING" ;
-     bim:paginado.como    "escamas" ;
-     bim:fabricante    "Em obra"  .
-
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
 #################################################################
@@ -13554,35 +13538,6 @@ bim:colada.com   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação assentar" ;
                     bim:Definição           "Declara que um elemento é colada com alguma argamassa ou cola."@pt ;
                     bim:Definición          "Declara que un elemento es pegado con algún material."@es ;bim:Definition          "Declares that an element is glued together with some mortar or glue."@en  .
-
-
-bim:p.assentar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.colado.com   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.assentar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a assentar: é.colado.com" ;
-                    bim:Chave               "assen.107" ;
-                    bim:Ação                "Ação assentar" ;
-                    bim:Definição           "Declara que um elemento é colado com alguma argamassa ou cola."@pt ;
-                    bim:Definición          "Declara que un elemento es pegada con algún material."@es ;bim:Definition          "It states that an element is glued together with some mortar or glue."@en  .
-
-
-bim:d.assentar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:colado.com   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.assentar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para assentar:  colado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "assen.107" ;
-                    bim:Ação                "Ação assentar" ;
-                    bim:Definição           "Declara que um elemento é colado com alguma argamassa ou cola."@pt ;
-                    bim:Definición          "Declara que un elemento es pegada con algún material."@es ;bim:Definition          "It states that an element is glued together with some mortar or glue."@en  .
 
 
 bim:p.aurealizar   rdf:type  owl:ObjectProperty ;
@@ -18127,5 +18082,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 27/04/2026 18:39:15
+##  Criada em 27/04/2026 18:41:19
 #################################################################
