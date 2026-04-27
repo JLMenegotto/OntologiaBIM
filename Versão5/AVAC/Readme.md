@@ -9,4 +9,5 @@
 
 <p align="justify">Foram alocadas as ontologias com conceitos de sistemas de climatização.</b></p>
 
-<img width="1038" height="3356" alt="Avac" src="https://github.com/user-attachments/assets/31f565e7-7038-4e81-8411-63ddc0ec7014" />
+<img width="1038" height="3566" alt="Avac" src="https://github.com/user-attachments/assets/4463044f-886e-46a3-8ff4-a63902d23309" />
+
