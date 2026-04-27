@@ -8,3 +8,5 @@
 ## Pasta AVAC 
 
 <p align="justify">Foram alocadas as ontologias com conceitos de sistemas de climatização.</b></p>
+
+<img width="1038" height="3356" alt="Avac" src="https://github.com/user-attachments/assets/31f565e7-7038-4e81-8411-63ddc0ec7014" />
