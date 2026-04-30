@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos das Estruturas Genéticamente Construídas"@pt ;
-	  rdfs:label "DataHora: 30/04/2026 12:21:21"@pt ;
+	  rdfs:label "DataHora: 30/04/2026 12:32:26"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -1363,35 +1363,6 @@ bim:p.formar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.valor.transladar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.formar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a formar: é.valor.transladar" ;
-                    bim:Chave               "forma.111" ;
-                    bim:Ação                "Ação formar" ;
-                    bim:Definição           "Declara o valor numérico do deslocamento."@pt ;
-                    bim:Definición          "Declara el valor numérico del desplazamiento."@es ;bim:Definition          "Declares the numerical value of the offset."@en  .
-
-
-bim:d.formar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:valor.transladar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.formar ;
-                    rdfs:range              xsd:double ;
-                    rdfs:label              "Dado para formar:  valor.transladar  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "forma.111" ;
-                    bim:Ação                "Ação formar" ;
-                    bim:Definição           "Declara o valor numérico do deslocamento."@pt ;
-                    bim:Definición          "Declara el valor numérico del desplazamiento."@es ;bim:Definition          "Declares the numerical value of the offset."@en  .
-
-
-bim:p.formar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
 bim:é.valor.angular   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.formar ;
                     rdfs:domain             bim:BIM ;
@@ -1421,12 +1392,41 @@ bim:p.formar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.ponto.base   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.ponto.base" ;
+                    bim:Chave               "forma.114" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara o ponto base de uma tranformação. Configurar como uma lista de três elementos [ coordenada.x   coordenada.y  coordenada.z ]"@pt ;
+                    bim:Definición          "Declara el punto base de una tranformación. Configurar como una lista de tres elementos [ coordenada.x   coordenada.y  coordenada.z ]"@es ;bim:Definition          "Declares the base point of a geometric tranformation. Setup as a list [ x  y  z ]"@en  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:ponto.base   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.base  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.114" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara o ponto base de uma tranformação. Configurar como uma lista de três elementos [ coordenada.x   coordenada.y  coordenada.z ]"@pt ;
+                    bim:Definición          "Declara el punto base de una tranformación. Configurar como una lista de tres elementos [ coordenada.x   coordenada.y  coordenada.z ]"@es ;bim:Definition          "Declares the base point of a geometric tranformation. Setup as a list [ x  y  z ]"@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.transformação.geométrica   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.formar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a formar: é.transformação.geométrica" ;
-                    bim:Chave               "forma.116" ;
+                    bim:Chave               "forma.117" ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara a transformação geométrica aplicada. Pode ser T G E R ou uma transformação aplicada como estruturação geométrica do projeto."@pt ;
                     bim:Definición          "Declara a transformação geométrica aplicada. Pode ser T G E R o una transformación aplicada como estructuración geométrica del proyecto."@es ;bim:Definition          "Declares the basic geometric transformation type (T, G, AND R) or a geometric transformation applied to the project."@en  .
@@ -1440,7 +1440,7 @@ bim:transformação.geométrica   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.formar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  transformação.geométrica  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "forma.116" ;
+                    bim:Chave               "forma.117" ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara a transformação geométrica aplicada. Pode ser T G E R ou uma transformação aplicada como estruturação geométrica do projeto."@pt ;
                     bim:Definición          "Declara a transformação geométrica aplicada. Pode ser T G E R o una transformación aplicada como estructuración geométrica del proyecto."@es ;bim:Definition          "Declares the basic geometric transformation type (T, G, AND R) or a geometric transformation applied to the project."@en  .
@@ -5075,5 +5075,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Genetica
-##  Criada em 30/04/2026 12:21:24
+##  Criada em 30/04/2026 12:32:29
 #################################################################
