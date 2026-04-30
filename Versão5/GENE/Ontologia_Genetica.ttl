@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos das Estruturas Genéticamente Construídas"@pt ;
-	  rdfs:label "DataHora: 30/04/2026 12:42:54"@pt ;
+	  rdfs:label "DataHora: 30/04/2026 12:46:13"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -564,7 +564,6 @@ bim:T1  rdf:type  owl:NamedIndividual , bim:Translação ;
      bim:coordenada.x   1.05 ;
      bim:coordenada.y   1.05 ;
      bim:coordenada.z   1.05 ;
-     bim:plano.da.transfornação    "XY" ;
      bim:código.ontogenético    "T" ;
      bim:é.ponto.base    bim:PB1  .
 
@@ -573,7 +572,6 @@ bim:G1  rdf:type  owl:NamedIndividual , bim:Giro ;
      bim:coordenada.x   2.05 ;
      bim:coordenada.y   2.05 ;
      bim:coordenada.z   2.05 ;
-     bim:plano.da.transfornação    "XY" ;
      bim:código.ontogenético    "G" ;
      bim:é.ponto.base    bim:PB1  .
 
@@ -582,7 +580,6 @@ bim:E1  rdf:type  owl:NamedIndividual , bim:Escalar ;
      bim:coordenada.x   3.05 ;
      bim:coordenada.y   3.05 ;
      bim:coordenada.z   3.05 ;
-     bim:plano.da.transfornação    "XY" ;
      bim:código.ontogenético    "E" ;
      bim:é.ponto.base    bim:PB1  .
 
@@ -591,40 +588,29 @@ bim:R1  rdf:type  owl:NamedIndividual , bim:Reflexão ;
      bim:código.ontogenético    "R"  .
 
 bim:PB1  rdf:type  owl:NamedIndividual , bim:Ponto.Base ;
-     bim:descrição    "O ponto base da transformação" ;
-     bim:coordenada.x   1.05 ;
-     bim:coordenada.y   1.05 ;
-     bim:coordenada.z   1.05  .
+     bim:descrição    "O ponto base da transformação"  .
 
 bim:PBP  rdf:type  owl:NamedIndividual , bim:Ponto.Base ;
-     bim:descrição    "O Ponto Base do Projeto" ;
-     bim:coordenada.x   15.05 ;
-     bim:coordenada.y   23.05 ;
-     bim:coordenada.z   0.05  .
-
-bim:Vd1  rdf:type  owl:NamedIndividual , bim:Valor.Deslocar ;
-     bim:descrição    "Um valor do deslocamento" ;
-     bim:vetor.translação   10.5  .
-
-bim:Va1  rdf:type  owl:NamedIndividual , bim:Valor.Angular ;
-     bim:descrição    "O valor de um ângulo absoluto" ;
-     bim:valor.angular   35  .
-
-bim:Va2  rdf:type  owl:NamedIndividual , bim:Valor.Angular ;
-     bim:descrição    "O valor de um ângulo absoluto" ;
-     bim:valor.angular   20.2  .
+     bim:descrição    "O Ponto Base do Projeto"  .
 
 bim:TRA_Hor  rdf:type  owl:NamedIndividual , bim:Translação ;
      bim:descrição    "A Translação principal dos módulos estruturais horizontais" ;
-     bim:valor.angular   0 ;
      bim:é.ponto.base    bim:PBP ;
      bim:é.transformação.geométrica    bim:T1  .
 
 bim:TRA_Ver  rdf:type  owl:NamedIndividual , bim:Translação ;
      bim:descrição    "A Translação principal dos módulos estruturais verticais" ;
-     bim:valor.angular   90 ;
      bim:é.ponto.base    bim:PBP ;
      bim:é.transformação.geométrica    bim:T1  .
+
+bim:Vd1  rdf:type  owl:NamedIndividual , bim:Valor.Deslocar ;
+     bim:descrição    "Um valor do deslocamento"  .
+
+bim:Va1  rdf:type  owl:NamedIndividual , bim:Valor.Angular ;
+     bim:descrição    "O valor de um ângulo absoluto"  .
+
+bim:Va2  rdf:type  owl:NamedIndividual , bim:Valor.Angular ;
+     bim:descrição    "O valor de um ângulo absoluto"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -1353,64 +1339,6 @@ bim:coordenada.z   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara que a operação é na coordenada Z."@pt ;
                     bim:Definición          "Declara que la operación está en la coordenada Z."@es ;bim:Definition          "Declares that the operation is at coordinate Z."@en  .
-
-
-bim:p.formar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.vetor.translação   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.formar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a formar: é.vetor.translação" ;
-                    bim:Chave               "forma.111" ;
-                    bim:Ação                "Ação formar" ;
-                    bim:Definição           "Declara o valor numérico do deslocamento."@pt ;
-                    bim:Definición          "Declara el valor numérico del desplazamiento."@es ;bim:Definition          "Declares the numerical value of the offset."@en  .
-
-
-bim:d.formar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:vetor.translação   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.formar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  vetor.translação  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "forma.111" ;
-                    bim:Ação                "Ação formar" ;
-                    bim:Definição           "Declara o valor numérico do deslocamento."@pt ;
-                    bim:Definición          "Declara el valor numérico del desplazamiento."@es ;bim:Definition          "Declares the numerical value of the offset."@en  .
-
-
-bim:p.formar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.valor.angular   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.formar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a formar: é.valor.angular" ;
-                    bim:Chave               "forma.112" ;
-                    bim:Ação                "Ação formar" ;
-                    bim:Definição           "Declara o valor numérico de um ângulo de rotação ou giro."@pt ;
-                    bim:Definición          "Declara el valor numérico de un ángulo de rotación o giro."@es ;bim:Definition          "Declares the numerical value of a rotation or turn angle."@en  .
-
-
-bim:d.formar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:valor.angular   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.formar ;
-                    rdfs:range              xsd:double ;
-                    rdfs:label              "Dado para formar:  valor.angular  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "forma.112" ;
-                    bim:Ação                "Ação formar" ;
-                    bim:Definição           "Declara o valor numérico de um ângulo de rotação ou giro."@pt ;
-                    bim:Definición          "Declara el valor numérico de un ángulo de rotación o giro."@es ;bim:Definition          "Declares the numerical value of a rotation or turn angle."@en  .
 
 
 bim:p.formar   rdf:type  owl:ObjectProperty ;
@@ -5100,5 +5028,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Genetica
-##  Criada em 30/04/2026 12:42:59
+##  Criada em 30/04/2026 12:46:15
 #################################################################
