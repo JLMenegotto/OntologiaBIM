@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos das Estruturas Genéticamente Construídas"@pt ;
-	  rdfs:label "DataHora: 30/04/2026 17:10:43"@pt ;
+	  rdfs:label "DataHora: 30/04/2026 17:18:52"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -365,9 +365,9 @@ bim:Parâmetro.Geométrico rdf:type  owl:Class  ;
       rdfs:label  "Parâmetro.Geométrico"@pt  .
 
 
-bim:Valor.Deslocar rdf:type  owl:Class  ;
+bim:Valor.Distância rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Parâmetro.Geométrico ;
-      rdfs:label  "Valor.Deslocar"@pt ;
+      rdfs:label  "Valor.Distância"@pt ;
       bim:Definição   "Valor Deslocar. Valor de distância de uma translação"@pt ;
       bim:Definición  "Valor desplazado. Valor de distancia de una traslación"@es ;
        bim:Definition  "Displace Value. Distance Value of a Translation"@en ;
@@ -589,18 +589,51 @@ bim:Movimento.Geométrico rdf:type  owl:Class  ;
       rdfs:label  "Movimento.Geométrico"@pt  .
 
 
-bim:Translação rdf:type  owl:Class  ;
+bim:Translação.XYZ rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Movimento.Geométrico ;
-      owl:equivalentClass       bim:Valor.Deslocar         bim:Valor.Angular                 bim:Valor.X         bim:Valor.Y               
-      rdfs:label  "Translação"@pt ;
-      bim:Definição   "Translação. A transformação que transforma o ponto por um deslocamento linear. Precisa Ponto Base e Ponto Destino."@pt ;
-      bim:Definición  "La transformación que modifica la posición de un punto mediante un desplazamiento lineal. Necesita punto base y punto objetivo."@es ;
-       bim:Definition  "The transformation that modifies the position of a point by means of a linear displacement. You need base point and target point."@en ;
+      owl:equivalentClass   [ owl:unionOf ( bim:Valor.X         bim:Valor.Y         bim:Valor.Z ) ; rdf:type  owl:Class ];   
+      rdfs:label  "Translação.XYZ"@pt ;
+      bim:Definição   "Translação XYZ. A transformação que transforma o ponto por um deslocamento linear. Precisa dos componentes XYZ do vetor de translação."@pt ;
+      bim:Definición  "Translación XYZ. La transformación que modifica la posición de un punto mediante un desplazamiento lineal. Necesita los componentes XYZ del vector de translación."@es ;
+       bim:Definition  "XYZ translation. The transformation that modifies the position of a point by means of a linear displacement. You need the XYZ components of the translation vector."@en ;
       bim:Natureza    "Formal"@pt ;
       bim:Espécie     "Elementos.TGB"@pt ;
       bim:Tema        "Movimento.Geométrico"@pt ;
       bim:Disciplina  "Interdisciplinar"@pt ;
       bim:Chave       "Key.EGC.17"@pt  .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Formal rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "Formal"@pt  .
+
+
+bim:Elementos.TGB rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Formal ;
+      rdfs:label  "Elementos.TGB"@pt  .
+
+
+bim:Movimento.Geométrico rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Elementos.TGB ;
+      rdfs:label  "Movimento.Geométrico"@pt  .
+
+
+bim:Translação.Polar rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Movimento.Geométrico ;
+      owl:equivalentClass   [ owl:unionOf ( bim:Valor.Distância         bim:Valor.Angular ) ; rdf:type  owl:Class ];   
+      rdfs:label  "Translação.Polar"@pt ;
+      bim:Definição   "Translação Polar. A transformação que transforma o ponto por um deslocamento linear. Precisa Ponto Base e Ponto Destino."@pt ;
+      bim:Definición  "Translación Polar. La transformación que modifica la posición de un punto mediante un desplazamiento lineal. Necesita punto base y punto objetivo."@es ;
+       bim:Definition  "Polar translation. The transformation that modifies the position of a point by means of a linear displacement. You need base point and target point."@en ;
+      bim:Natureza    "Formal"@pt ;
+      bim:Espécie     "Elementos.TGB"@pt ;
+      bim:Tema        "Movimento.Geométrico"@pt ;
+      bim:Disciplina  "Interdisciplinar"@pt ;
+      bim:Chave       "Key.EGC.18"@pt  .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -633,7 +666,7 @@ bim:Giro rdf:type  owl:Class  ;
       bim:Espécie     "Elementos.TGB"@pt ;
       bim:Tema        "Movimento.Geométrico"@pt ;
       bim:Disciplina  "Interdisciplinar"@pt ;
-      bim:Chave       "Key.EGC.18"@pt  .
+      bim:Chave       "Key.EGC.19"@pt  .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -666,7 +699,7 @@ bim:Escalar rdf:type  owl:Class  ;
       bim:Espécie     "Elementos.TGB"@pt ;
       bim:Tema        "Movimento.Geométrico"@pt ;
       bim:Disciplina  "Interdisciplinar"@pt ;
-      bim:Chave       "Key.EGC.19"@pt  .
+      bim:Chave       "Key.EGC.20"@pt  .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -699,13 +732,13 @@ bim:Reflexão rdf:type  owl:Class  ;
       bim:Espécie     "Elementos.TGB"@pt ;
       bim:Tema        "Movimento.Geométrico"@pt ;
       bim:Disciplina  "Interdisciplinar"@pt ;
-      bim:Chave       "Key.EGC.20"@pt  .
+      bim:Chave       "Key.EGC.21"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:T1  rdf:type  owl:NamedIndividual , bim:Translação ;
+bim:T1  rdf:type  owl:NamedIndividual , bim:Translação.XYZ ;
      bim:é.ponto.base    bim:PB1 ;
      bim:descrição    "Uma translação" ;
      bim:coordenada.x   1.05 ;
@@ -739,18 +772,18 @@ bim:PB1  rdf:type  owl:NamedIndividual , bim:Ponto.Base ;
 bim:PBP  rdf:type  owl:NamedIndividual , bim:Ponto.Base ;
      bim:descrição    "O Ponto Base do Projeto"  .
 
-bim:TRA_Hor  rdf:type  owl:NamedIndividual , bim:Translação ;
+bim:TRA_Hor  rdf:type  owl:NamedIndividual , bim:Translação.XYZ ;
      bim:é.ponto.base    bim:PBP ;
      bim:é.transformação.geométrica    bim:T1 ;
      bim:descrição    "A Translação principal dos módulos estruturais horizontais"  .
 
-bim:TRA_Ver  rdf:type  owl:NamedIndividual , bim:Translação ;
+bim:TRA_Ver  rdf:type  owl:NamedIndividual , bim:Translação.XYZ ;
      bim:é.ponto.base    bim:PBP ;
      bim:é.transformação.geométrica    bim:T1 ;
      bim:descrição    "A Translação principal dos módulos estruturais verticais"  .
 
-bim:Vd1  rdf:type  owl:NamedIndividual , bim:Valor.Deslocar ;
-     bim:descrição    "Um valor do deslocamento"  .
+bim:Vd1  rdf:type  owl:NamedIndividual , bim:Valor.Distância ;
+     bim:descrição    "Um valor de distância de deslocamento"  .
 
 bim:Va1  rdf:type  owl:NamedIndividual , bim:Valor.Angular ;
      bim:descrição    "O valor de um ângulo absoluto"  .
@@ -5174,5 +5207,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Genetica
-##  Criada em 30/04/2026 17:10:45
+##  Criada em 30/04/2026 17:18:54
 #################################################################
