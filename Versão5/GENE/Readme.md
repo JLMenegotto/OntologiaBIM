@@ -7,7 +7,7 @@
 
 ## Pasta GENE 
 
-<p align="justify">Foram alocadas as ontologias com conceitos de das Estruturas Geneticamente COnstruídas.</b></p>
+<p align="justify">Foram alocadas as ontologias com conceitos de das Estruturas Geneticamente Construídas.</b></p>
 <p align="justify">Formaliza movimentos geométricos geradores da morfologia do projeto.</b></p>
 
 
