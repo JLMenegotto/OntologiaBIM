@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EGC>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos das Estruturas Genéticamente Construídas"@pt
-  Annotations: rdfs:label "DataHora: 30/04/2026 17:10:43"@pt
+  Annotations: rdfs:label "DataHora: 30/04/2026 17:18:52"@pt
   Annotations: rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en
@@ -232,8 +232,8 @@ Class: bim:Valor.Z
 	SubClassOf: bim:Parâmetro.Geométrico
 
 
-Class: bim:Valor.Deslocar
-	Annotations: rdfs:label "Valor.Deslocar"@pt
+Class: bim:Valor.Distância
+	Annotations: rdfs:label "Valor.Distância"@pt
 	Annotations: bim:Definição "Valor Deslocar. Valor de distância de uma translação"@pt
 	Annotations: bim:Definición "Valor desplazado. Valor de distancia de una traslación"@es
 	Annotations: bim:Definition "Displace Value. Distance Value of a Translation"@en
@@ -333,18 +333,32 @@ Class: bim:Movimento.Geométrico
 	SubClassOf: bim:Elementos.TGB
 
 
-Class: bim:Translação
-	Annotations: rdfs:label "Translação"@pt
-	Annotations: bim:Definição "Translação. A transformação que transforma o ponto por um deslocamento linear. Precisa Ponto Base e Ponto Destino."@pt
-	Annotations: bim:Definición "La transformación que modifica la posición de un punto mediante un desplazamiento lineal. Necesita punto base y punto objetivo."@es
-	Annotations: bim:Definition "The transformation that modifies the position of a point by means of a linear displacement. You need base point and target point."@en
+Class: bim:Translação.XYZ
+	Annotations: rdfs:label "Translação.XYZ"@pt
+	Annotations: bim:Definição "Translação XYZ. A transformação que transforma o ponto por um deslocamento linear. Precisa dos componentes XYZ do vetor de translação."@pt
+	Annotations: bim:Definición "Translación XYZ. La transformación que modifica la posición de un punto mediante un desplazamiento lineal. Necesita los componentes XYZ del vector de translación."@es
+	Annotations: bim:Definition "XYZ translation. The transformation that modifies the position of a point by means of a linear displacement. You need the XYZ components of the translation vector."@en
 	Annotations: bim:Natureza "Formal"@pt
 	Annotations: bim:Espécie "Elementos.TGB"@pt
 	Annotations: bim:Tema "Movimento.Geométrico"@pt
 	Annotations: bim:Disciplina "Interdisciplinar"@pt
 	Annotations: bim:Chave "Key.EGC.17"
 	SubClassOf: bim:Movimento.Geométrico
-	EquivalentTo:  [ bim:Valor.Deslocar and bim:Valor.Angular ] or [ bim:Valor.X and bim:Valor.Y and bim:Valor.Z ]
+	EquivalentTo:  bim:Valor.X and bim:Valor.Y and bim:Valor.Z
+
+
+Class: bim:Translação.Polar
+	Annotations: rdfs:label "Translação.Polar"@pt
+	Annotations: bim:Definição "Translação Polar. A transformação que transforma o ponto por um deslocamento linear. Precisa Ponto Base e Ponto Destino."@pt
+	Annotations: bim:Definición "Translación Polar. La transformación que modifica la posición de un punto mediante un desplazamiento lineal. Necesita punto base y punto objetivo."@es
+	Annotations: bim:Definition "Polar translation. The transformation that modifies the position of a point by means of a linear displacement. You need base point and target point."@en
+	Annotations: bim:Natureza "Formal"@pt
+	Annotations: bim:Espécie "Elementos.TGB"@pt
+	Annotations: bim:Tema "Movimento.Geométrico"@pt
+	Annotations: bim:Disciplina "Interdisciplinar"@pt
+	Annotations: bim:Chave "Key.EGC.18"
+	SubClassOf: bim:Movimento.Geométrico
+	EquivalentTo:  bim:Valor.Distância and bim:Valor.Angular
 
 
 Class: bim:Giro
@@ -356,7 +370,7 @@ Class: bim:Giro
 	Annotations: bim:Espécie "Elementos.TGB"@pt
 	Annotations: bim:Tema "Movimento.Geométrico"@pt
 	Annotations: bim:Disciplina "Interdisciplinar"@pt
-	Annotations: bim:Chave "Key.EGC.18"
+	Annotations: bim:Chave "Key.EGC.19"
 	SubClassOf: bim:Movimento.Geométrico
 	EquivalentTo:  bim:Ponto.Base and bim:Valor.Angular
 
@@ -370,7 +384,7 @@ Class: bim:Escalar
 	Annotations: bim:Espécie "Elementos.TGB"@pt
 	Annotations: bim:Tema "Movimento.Geométrico"@pt
 	Annotations: bim:Disciplina "Interdisciplinar"@pt
-	Annotations: bim:Chave "Key.EGC.19"
+	Annotations: bim:Chave "Key.EGC.20"
 	SubClassOf: bim:Movimento.Geométrico
 	EquivalentTo:  bim:Ponto.Base and bim:Valor.Escalar
 
@@ -384,7 +398,7 @@ Class: bim:Reflexão
 	Annotations: bim:Espécie "Elementos.TGB"@pt
 	Annotations: bim:Tema "Movimento.Geométrico"@pt
 	Annotations: bim:Disciplina "Interdisciplinar"@pt
-	Annotations: bim:Chave "Key.EGC.20"
+	Annotations: bim:Chave "Key.EGC.21"
 	SubClassOf: bim:Movimento.Geométrico
 	EquivalentTo:  bim:Ponto.Eixo1 and bim:Ponto.Eixo2
 
@@ -393,7 +407,7 @@ Class: bim:Reflexão
 #################################################################
 
 Individual: bim:T1
-	Types: bim:Translação
+	Types: bim:Translação.XYZ
 	Facts: bim:é.ponto.base  bim:PB1
 	Facts: bim:descrição  "Uma translação"
 	Facts: bim:coordenada.x  1.05
@@ -433,20 +447,20 @@ Individual: bim:PBP
 	Facts: bim:descrição  "O Ponto Base do Projeto"
 
 Individual: bim:TRA_Hor
-	Types: bim:Translação
+	Types: bim:Translação.XYZ
 	Facts: bim:é.ponto.base  bim:PBP
 	Facts: bim:é.transformação.geométrica  bim:T1
 	Facts: bim:descrição  "A Translação principal dos módulos estruturais horizontais"
 
 Individual: bim:TRA_Ver
-	Types: bim:Translação
+	Types: bim:Translação.XYZ
 	Facts: bim:é.ponto.base  bim:PBP
 	Facts: bim:é.transformação.geométrica  bim:T1
 	Facts: bim:descrição  "A Translação principal dos módulos estruturais verticais"
 
 Individual: bim:Vd1
-	Types: bim:Valor.Deslocar
-	Facts: bim:descrição  "Um valor do deslocamento"
+	Types: bim:Valor.Distância
+	Facts: bim:descrição  "Um valor de distância de deslocamento"
 
 Individual: bim:Va1
 	Types: bim:Valor.Angular
@@ -5182,5 +5196,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Genetica
-##  Criada em 30/04/2026 17:10:45
+##  Criada em 30/04/2026 17:18:54
 #################################################################
