@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EGC>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos das Estruturas Genéticamente Construídas"@pt
-  Annotations: rdfs:label "DataHora: 30/04/2026 12:42:54"@pt
+  Annotations: rdfs:label "DataHora: 30/04/2026 12:46:13"@pt
   Annotations: rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en
@@ -324,7 +324,6 @@ Individual: bim:T1
 	Facts: bim:coordenada.x  1.05
 	Facts: bim:coordenada.y  1.05
 	Facts: bim:coordenada.z  1.05
-	Facts: bim:plano.da.transfornação  "XY"
 	Facts: bim:código.ontogenético  "T"
 	Facts: bim:é.ponto.base  bim:PB1
 
@@ -334,7 +333,6 @@ Individual: bim:G1
 	Facts: bim:coordenada.x  2.05
 	Facts: bim:coordenada.y  2.05
 	Facts: bim:coordenada.z  2.05
-	Facts: bim:plano.da.transfornação  "XY"
 	Facts: bim:código.ontogenético  "G"
 	Facts: bim:é.ponto.base  bim:PB1
 
@@ -344,7 +342,6 @@ Individual: bim:E1
 	Facts: bim:coordenada.x  3.05
 	Facts: bim:coordenada.y  3.05
 	Facts: bim:coordenada.z  3.05
-	Facts: bim:plano.da.transfornação  "XY"
 	Facts: bim:código.ontogenético  "E"
 	Facts: bim:é.ponto.base  bim:PB1
 
@@ -356,45 +353,34 @@ Individual: bim:R1
 Individual: bim:PB1
 	Types: bim:Ponto.Base
 	Facts: bim:descrição  "O ponto base da transformação"
-	Facts: bim:coordenada.x  1.05
-	Facts: bim:coordenada.y  1.05
-	Facts: bim:coordenada.z  1.05
 
 Individual: bim:PBP
 	Types: bim:Ponto.Base
 	Facts: bim:descrição  "O Ponto Base do Projeto"
-	Facts: bim:coordenada.x  15.05
-	Facts: bim:coordenada.y  23.05
-	Facts: bim:coordenada.z  0.05
-
-Individual: bim:Vd1
-	Types: bim:Valor.Deslocar
-	Facts: bim:descrição  "Um valor do deslocamento"
-	Facts: bim:vetor.translação  10.5
-
-Individual: bim:Va1
-	Types: bim:Valor.Angular
-	Facts: bim:descrição  "O valor de um ângulo absoluto"
-	Facts: bim:valor.angular  35
-
-Individual: bim:Va2
-	Types: bim:Valor.Angular
-	Facts: bim:descrição  "O valor de um ângulo absoluto"
-	Facts: bim:valor.angular  20.2
 
 Individual: bim:TRA_Hor
 	Types: bim:Translação
 	Facts: bim:descrição  "A Translação principal dos módulos estruturais horizontais"
-	Facts: bim:valor.angular  0
 	Facts: bim:é.ponto.base  bim:PBP
 	Facts: bim:é.transformação.geométrica  bim:T1
 
 Individual: bim:TRA_Ver
 	Types: bim:Translação
 	Facts: bim:descrição  "A Translação principal dos módulos estruturais verticais"
-	Facts: bim:valor.angular  90
 	Facts: bim:é.ponto.base  bim:PBP
 	Facts: bim:é.transformação.geométrica  bim:T1
+
+Individual: bim:Vd1
+	Types: bim:Valor.Deslocar
+	Facts: bim:descrição  "Um valor do deslocamento"
+
+Individual: bim:Va1
+	Types: bim:Valor.Angular
+	Facts: bim:descrição  "O valor de um ângulo absoluto"
+
+Individual: bim:Va2
+	Types: bim:Valor.Angular
+	Facts: bim:descrição  "O valor de um ângulo absoluto"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -1173,68 +1159,6 @@ DataProperty: bim:coordenada.z
 	Annotations: bim:Definição "Declara que a operação é na coordenada Z."@pt
 	Annotations: bim:Definición "Declara que la operación está en la coordenada Z."@es
 	Annotations: bim:Definition "Declares that the operation is at coordinate Z."@en
-
-ObjectProperty: bim:p.formar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.vetor.translação
-	SubPropertyOf: bim:p.formar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a formar: é.vetor.translação"@pt
-	Annotations: bim:Chave "forma.111"
-	Annotations: bim:Ação "Ação formar"@pt
-	Annotations: bim:Definição "Declara o valor numérico do deslocamento."@pt
-	Annotations: bim:Definición "Declara el valor numérico del desplazamiento."@es
-	Annotations: bim:Definition "Declares the numerical value of the offset."@en
-
-DataProperty: bim:d.formar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:vetor.translação
-	SubPropertyOf: bim:d.formar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para formar:  vetor.translação  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "forma.111"
-	Annotations: bim:Ação "Ação formar"@pt
-	Annotations: bim:Definição "Declara o valor numérico do deslocamento."@pt
-	Annotations: bim:Definición "Declara el valor numérico del desplazamiento."@es
-	Annotations: bim:Definition "Declares the numerical value of the offset."@en
-
-ObjectProperty: bim:p.formar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.valor.angular
-	SubPropertyOf: bim:p.formar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a formar: é.valor.angular"@pt
-	Annotations: bim:Chave "forma.112"
-	Annotations: bim:Ação "Ação formar"@pt
-	Annotations: bim:Definição "Declara o valor numérico de um ângulo de rotação ou giro."@pt
-	Annotations: bim:Definición "Declara el valor numérico de un ángulo de rotación o giro."@es
-	Annotations: bim:Definition "Declares the numerical value of a rotation or turn angle."@en
-
-DataProperty: bim:d.formar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:valor.angular
-	SubPropertyOf: bim:d.formar
-	range: xsd:double
-	Annotations: rdfs:label "Dado para formar:  valor.angular  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "forma.112"
-	Annotations: bim:Ação "Ação formar"@pt
-	Annotations: bim:Definição "Declara o valor numérico de um ângulo de rotação ou giro."@pt
-	Annotations: bim:Definición "Declara el valor numérico de un ángulo de rotación o giro."@es
-	Annotations: bim:Definition "Declares the numerical value of a rotation or turn angle."@en
 
 ObjectProperty: bim:p.formar
 	SubPropertyOf: bim:BIMProp
@@ -5184,5 +5108,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Genetica
-##  Criada em 30/04/2026 12:42:59
+##  Criada em 30/04/2026 12:46:15
 #################################################################
