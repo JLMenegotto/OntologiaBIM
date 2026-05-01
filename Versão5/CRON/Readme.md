@@ -7,5 +7,5 @@
 
 ### Pasta CRON: Ontologia com conceitos temporais - Prefixo bim:
 
-![Crono_01](https://github.com/user-attachments/assets/f06260ba-7a58-4f48-8519-44006eb5e04b)
+<img width="920" height="2003" alt="crono" src="https://github.com/user-attachments/assets/fe80a080-9016-40b7-84b1-ef885a7b6516" />
 
