@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Unidades_Funcionais_Zonas_Am
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ambiente do Centro de Tecnologia da UFRJ"@pt
-  Annotations: rdfs:label "DataHora: 03/05/2026 15:24:35"@pt
+  Annotations: rdfs:label "DataHora: 03/05/2026 17:32:05"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en
@@ -3583,6 +3583,21 @@ Individual: bim:Sala.D115
 	Facts: bim:identificador  "ID da Instância ou GlobalID"
 	Facts: bim:uso  "Instituição de Ensino Superior"
 
+Individual: bim:Elemento.01
+	Types: bim:Ambiente.Ensino.Informática
+	Facts: bim:é.dentro.de  bim:Bloco.D
+	Facts: bim:nome.do.ambiente  "Sala de aula D115 - Revoluti."
+	Facts: bim:código.do.ambiente  "D115"
+	Facts: bim:unidade.académica  "POLI"
+	Facts: bim:descrição  "Laboratório de Informática LIG - Revoluti."
+	Facts: bim:categoria.revit  "[ OST_Rooms , OST_MEPSpaces ]"
+	Facts: bim:tipo.revit  "Nome da familia Room Tag usada em Revit"
+	Facts: bim:classe.ifc  "[ IfcSpace ]"
+	Facts: bim:identificador  "ID da Instância ou GlobalID"
+	Facts: bim:uso  "Instituição de Ensino Superior"
+	Facts: bim:ponto.xyz  "[ 10.0 29.0 0.0 ]"
+	Facts: bim:código.do.ambiente  10
+
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
 #################################################################
@@ -4744,6 +4759,37 @@ DataProperty: bim:ponto.uv
 	Annotations: bim:Definição "Declara um ponto de posição UV para descrever a parametrização de uma espaço 2D como uma textura, área de piso ou parece. U  eixo horizontal, V  eixo vertical. Os valores são paramétricos, geralmente entre 0 e 1: ‘[  0 , 0]’  canto inferior esquerdo da textura e ‘[  1 , 1 ]’ é o canto superior direito e ‘[ 0.5 , 0.5 ]’ o centro. É usado para mapeamento."@pt
 	Annotations: bim:Definición "Declara un punto UV que describe la parametrización de un espacio 2D como una textura o un área de piso o pared. U  eje horizontal, V  eje vertical. Los valores son paramétricos, generalmente entre 0 y 1: ‘[  0 , 0]’  esquina inferior izquierda de la textura, ‘[  1 , 1 ]’  la esquina superior derecha y ‘[ 0.5 , 0.5 ]’ el centro. Se utiliza para el mapeo."@es
 	Annotations: bim:Definition "Declares a UV point that describes the parametrization of a 2D space such as a texture or a floor or wall area. U  horizontal axis, V  vertical axis. The values are parametric, generally between 0 and 1: ‘[  0 , 0 ]’  bottom left corner of the texture, ‘[  1 , 1 ]’  top right corner and ‘[  0.5 , 0.5 ]’  the center. It is used for mapping."@en
+
+ObjectProperty: bim:p.formar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ponto.xyz
+	SubPropertyOf: bim:p.formar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a formar: é.ponto.xyz"@pt
+	Annotations: bim:Chave "forma.124"
+	Annotations: bim:Ação "Ação formar"@pt
+	Annotations: bim:Definição "Declara uma posição espacial em 3D. Representar usando uma string de três coordenadas: '[ coordenada.x   coordenada.y  coordenada.z ]'"@pt
+	Annotations: bim:Definición "Declara una posición espacial en 3D.  Configurar como una lista de string de tres elementos '[ coordenada.x   coordenada.y  coordenada.z ]'."@es
+	Annotations: bim:Definition "Declares a 3D spatial position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y  coordenada.z ]'."@en
+
+DataProperty: bim:d.formar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ponto.xyz
+	SubPropertyOf: bim:d.formar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para formar:  ponto.xyz  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "forma.124"
+	Annotations: bim:Ação "Ação formar"@pt
+	Annotations: bim:Definição "Declara uma posição espacial em 3D. Representar usando uma string de três coordenadas: '[ coordenada.x   coordenada.y  coordenada.z ]'"@pt
+	Annotations: bim:Definición "Declara una posición espacial en 3D.  Configurar como una lista de string de tres elementos '[ coordenada.x   coordenada.y  coordenada.z ]'."@es
+	Annotations: bim:Definition "Declares a 3D spatial position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y  coordenada.z ]'."@en
 
 ObjectProperty: bim:p.formar
 	SubPropertyOf: bim:BIMProp
@@ -9451,5 +9497,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Ambientes
-##  Criada em 03/05/2026 15:24:36
+##  Criada em 03/05/2026 17:32:06
 #################################################################
