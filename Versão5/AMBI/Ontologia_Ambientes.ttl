@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ambiente do Centro de Tecnologia da UFRJ"@pt ;
-	  rdfs:label "DataHora: 03/05/2026 15:24:35"@pt ;
+	  rdfs:label "DataHora: 03/05/2026 17:32:05"@pt ;
 	  rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en ;
@@ -6609,6 +6609,20 @@ bim:Sala.D115  rdf:type  owl:NamedIndividual , bim:Ambiente.Ensino.Informática 
      bim:identificador    "ID da Instância ou GlobalID" ;
      bim:uso    "Instituição de Ensino Superior"  .
 
+bim:Elemento.01  rdf:type  owl:NamedIndividual , bim:Ambiente.Ensino.Informática ;
+     bim:é.dentro.de    bim:Bloco.D ;
+     bim:nome.do.ambiente    "Sala de aula D115 - Revoluti." ;
+     bim:código.do.ambiente    "D115" ;
+     bim:unidade.académica    "POLI" ;
+     bim:descrição    "Laboratório de Informática LIG - Revoluti." ;
+     bim:categoria.revit    "[ OST_Rooms , OST_MEPSpaces ]" ;
+     bim:tipo.revit    "Nome da familia Room Tag usada em Revit" ;
+     bim:classe.ifc    "[ IfcSpace ]" ;
+     bim:identificador    "ID da Instância ou GlobalID" ;
+     bim:uso    "Instituição de Ensino Superior" ;
+     bim:ponto.xyz    "[ 10.0 29.0 0.0 ]" ;
+     bim:código.do.ambiente   10  .
+
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
 #################################################################
@@ -7696,6 +7710,35 @@ bim:ponto.uv   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara um ponto de posição UV para descrever a parametrização de uma espaço 2D como uma textura, área de piso ou parece. U  eixo horizontal, V  eixo vertical. Os valores são paramétricos, geralmente entre 0 e 1: ‘[  0 , 0]’  canto inferior esquerdo da textura e ‘[  1 , 1 ]’ é o canto superior direito e ‘[ 0.5 , 0.5 ]’ o centro. É usado para mapeamento."@pt ;
                     bim:Definición          "Declara un punto UV que describe la parametrización de un espacio 2D como una textura o un área de piso o pared. U  eje horizontal, V  eje vertical. Los valores son paramétricos, generalmente entre 0 y 1: ‘[  0 , 0]’  esquina inferior izquierda de la textura, ‘[  1 , 1 ]’  la esquina superior derecha y ‘[ 0.5 , 0.5 ]’ el centro. Se utiliza para el mapeo."@es ;bim:Definition          "Declares a UV point that describes the parametrization of a 2D space such as a texture or a floor or wall area. U  horizontal axis, V  vertical axis. The values are parametric, generally between 0 and 1: ‘[  0 , 0 ]’  bottom left corner of the texture, ‘[  1 , 1 ]’  top right corner and ‘[  0.5 , 0.5 ]’  the center. It is used for mapping."@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.ponto.xyz   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.ponto.xyz" ;
+                    bim:Chave               "forma.124" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara uma posição espacial em 3D. Representar usando uma string de três coordenadas: '[ coordenada.x   coordenada.y  coordenada.z ]'"@pt ;
+                    bim:Definición          "Declara una posición espacial en 3D.  Configurar como una lista de string de tres elementos '[ coordenada.x   coordenada.y  coordenada.z ]'."@es ;bim:Definition          "Declares a 3D spatial position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y  coordenada.z ]'."@en  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:ponto.xyz   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.xyz  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.124" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara uma posição espacial em 3D. Representar usando uma string de três coordenadas: '[ coordenada.x   coordenada.y  coordenada.z ]'"@pt ;
+                    bim:Definición          "Declara una posición espacial en 3D.  Configurar como una lista de string de tres elementos '[ coordenada.x   coordenada.y  coordenada.z ]'."@es ;bim:Definition          "Declares a 3D spatial position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y  coordenada.z ]'."@en  .
 
 
 bim:p.formar   rdf:type  owl:ObjectProperty ;
@@ -12093,5 +12136,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Ambientes
-##  Criada em 03/05/2026 15:24:36
+##  Criada em 03/05/2026 17:32:06
 #################################################################
