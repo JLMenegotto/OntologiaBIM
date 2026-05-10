@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt ;
-	  rdfs:label "DataHora: 03/05/2026 15:24:15"@pt ;
+	  rdfs:label "DataHora: 10/05/2026 10:57:25"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -36,21 +36,22 @@
 	  rdfs:label "Explicación: Formalizar conceptos de elementos de infraestrutura."@es ;
 	  rdfs:label "Explanation: Formalize concepts of infrastructure elements."@en .
 
-rdf:PlainLiteral       rdf:type  rdfs:Datatype .
-rdfs:Literal           rdf:type  rdfs:Datatype .
-xsd:boolean            rdf:type  rdfs:Datatype .
-xsd:date               rdf:type  rdfs:Datatype .
-xsd:dateTime           rdf:type  rdfs:Datatype .
-xsd:dayTimeDuration    rdf:type  rdfs:Datatype .
-xsd:decimal            rdf:type  rdfs:Datatype .
-xsd:double             rdf:type  rdfs:Datatype .
-xsd:duration           rdf:type  rdfs:Datatype .
-xsd:gDay               rdf:type  rdfs:Datatype .
-xsd:gMonth             rdf:type  rdfs:Datatype .
-xsd:gYear              rdf:type  rdfs:Datatype .
-xsd:integer            rdf:type  rdfs:Datatype .
-xsd:string             rdf:type  rdfs:Datatype .
-xsd:time               rdf:type  rdfs:Datatype .
+rdf:PlainLiteral        rdf:type  rdfs:Datatype .
+rdfs:Literal            rdf:type  rdfs:Datatype .
+xsd:boolean             rdf:type  rdfs:Datatype .
+xsd:date                rdf:type  rdfs:Datatype .
+xsd:dateTime            rdf:type  rdfs:Datatype .
+xsd:dayTimeDuration     rdf:type  rdfs:Datatype .
+xsd:decimal             rdf:type  rdfs:Datatype .
+xsd:double              rdf:type  rdfs:Datatype .
+xsd:duration            rdf:type  rdfs:Datatype .
+xsd:gDay                rdf:type  rdfs:Datatype .
+xsd:gMonth              rdf:type  rdfs:Datatype .
+xsd:gYear               rdf:type  rdfs:Datatype .
+xsd:integer             rdf:type  rdfs:Datatype .
+xsd:string              rdf:type  rdfs:Datatype .
+xsd:nonNegativeInteger  rdf:type  rdfs:Datatype .
+xsd:time                rdf:type  rdfs:Datatype .
 
 bim:BIM	 rdf:type  owl:Class ;            
 	 rdfs:label "Raiz de Classes."@pt .
@@ -489,15 +490,11 @@ bim:Tubos.de.Aço rdf:type  owl:Class  ;
 
 
 bim:Projeto rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:BIM ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeado ;      owl:someValuesFrom    bim:Projeto ];    .
+      rdfs:subClassOf  bim:BIM  .
 
 
 bim:Fronteiras rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeada ;      owl:someValuesFrom    bim:Fronteiras ];    
       rdfs:label  "Fronteiras"@pt  .
 
 
@@ -609,8 +606,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:País rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Continente ];    
       rdfs:label  "País"@pt ;
       bim:Definição   "País."@pt ;
       bim:Definición  "País"@es ;
@@ -677,8 +672,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Região rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:País ];    
       rdfs:label  "Região"@pt ;
       bim:Definição   "Región."@pt ;
       bim:Definición  "Región"@es ;
@@ -712,8 +705,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Estado rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:País ];    
       rdfs:label  "Estado"@pt ;
       bim:Definição   "Estado."@pt ;
       bim:Definición  "Estado"@es ;
@@ -780,8 +771,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Província rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Nação ];    
       rdfs:label  "Província"@pt ;
       bim:Definição   "Província."@pt ;
       bim:Definición  "Provincia"@es ;
@@ -815,8 +804,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Capital rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Estado ];    
       rdfs:label  "Capital"@pt ;
       bim:Definição   "Capital."@pt ;
       bim:Definición  "Capital"@es ;
@@ -850,8 +837,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Cidade rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Estado ];    
       rdfs:label  "Cidade"@pt ;
       bim:Definição   "Cidade."@pt ;
       bim:Definición  "Ciudad"@es ;
@@ -885,8 +870,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Metrópoli rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Estado ];    
       rdfs:label  "Metrópoli"@pt ;
       bim:Definição   "Metrópoli."@pt ;
       bim:Definición  "Metrópoli"@es ;
@@ -920,8 +903,6 @@ bim:Políticas rdf:type  owl:Class  ;
 
 bim:Município rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Políticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:UF ];    
       rdfs:label  "Município"@pt ;
       bim:Definição   "Município."@pt ;
       bim:Definición  "Municipio"@es ;
@@ -955,8 +936,6 @@ bim:Bioclimáticas rdf:type  owl:Class  ;
 
 bim:Região.Climática rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Bioclimáticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Bioclimáticas ];    
       rdfs:label  "Região Climática"@pt ;
       bim:Definição   "Região climática."@pt ;
       bim:Definición  "Region climática"@es ;
@@ -991,8 +970,6 @@ bim:Bioclimáticas rdf:type  owl:Class  ;
 
 bim:Zona.Climática rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Bioclimáticas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Bioclimáticas ];    
       rdfs:label  "Zona Climática"@pt ;
       bim:Definição   "Zona climática."@pt ;
       bim:Definición  "Zona climática"@es ;
@@ -1027,8 +1004,6 @@ bim:Ilhas.de.Calor rdf:type  owl:Class  ;
 
 bim:Zona.Climática.Local rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Ilhas.de.Calor ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Ilhas.de.Calor ];    
       rdfs:label  "Zona Climática Local"@pt ;
       bim:Definição   "Zona climática local (ZCL) de acordo à metodologia de Stewart e Oke para qualificar ilhas de calor em áreas urbanas."@pt ;
       bim:Definición  "Zona climática local (ZCL) de acuerdo a la metodologia de Stewart y Oke para calificar islas de calor em areas urbanas"@es ;
@@ -1887,8 +1862,6 @@ bim:Projeto rdf:type  owl:Class  ;
 
 bim:Planejamentos rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeado ;      owl:someValuesFrom    bim:Planejamentos ];    
       rdfs:label  "Planejamentos"@pt  .
 
 
@@ -1899,15 +1872,11 @@ bim:Urbanísticos rdf:type  owl:Class  ;
 
 bim:Zonificações rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Urbanísticos ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.area.de.planejamento ;      owl:someValuesFrom    bim:Zonificações ];    
       rdfs:label  "Zonificações"@pt  .
 
 
 bim:Area.de.Planejamento rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonificações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Cidade ];    
       rdfs:label  "Area de Planejamento"@pt ;
       bim:Definição   "AP significa Area de Planejamento."@pt ;
       bim:Definición  "Area de Planeamiento"@es ;
@@ -1937,15 +1906,11 @@ bim:Urbanísticos rdf:type  owl:Class  ;
 
 bim:Zonificações rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Urbanísticos ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.região.administrativa ;      owl:someValuesFrom    bim:Zonificações ];    
       rdfs:label  "Zonificações"@pt  .
 
 
 bim:Região.Administrativa rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonificações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Area.de.Planejamento ];    
       rdfs:label  "Região Administrativa"@pt ;
       bim:Definição   "RA significa Região Administrativa."@pt ;
       bim:Definición  "Región Administrativa"@es ;
@@ -2048,8 +2013,6 @@ bim:Zonificações rdf:type  owl:Class  ;
 
 bim:Zona rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonificações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Cidade ];    
       rdfs:label  "Zona"@pt ;
       bim:Definição   "Zonas da cidade de Rio de Janeiro."@pt ;
       bim:Definición  "Zonas de la ciudad de Rio de Janeiro"@es ;
@@ -2084,8 +2047,6 @@ bim:Zonificações rdf:type  owl:Class  ;
 
 bim:Bairro rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonificações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Cidade ];    
       rdfs:label  "Bairro"@pt ;
       bim:Definição   "Bairro da cidade"@pt ;
       bim:Definición  "Barrio de la ciudad"@es ;
@@ -2120,8 +2081,6 @@ bim:Zonificações rdf:type  owl:Class  ;
 
 bim:Zona.de.Uso rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonificações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Cidade ];    
       rdfs:label  "Zona de Uso"@pt ;
       bim:Definição   "Zona de uso do zoneamento municipal da cidade de Rio de Janeiro."@pt ;
       bim:Definición  "Zona de uso de acurdo al zoneamiento municipal de la ciudad de Rio de Janeiro"@es ;
@@ -2156,8 +2115,6 @@ bim:Zonificações rdf:type  owl:Class  ;
 
 bim:Macrozona rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Zonificações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Cidade ];    
       rdfs:label  "Macrozona"@pt ;
       bim:Definição   "Bairro da cidade"@pt ;
       bim:Definición  "Barrio de la ciudad"@es ;
@@ -2192,8 +2149,6 @@ bim:Frações rdf:type  owl:Class  ;
 
 bim:Quadra rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Frações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Bairro ];    
       rdfs:label  "Quadra"@pt ;
       bim:Definição   "Quadra de um bairro."@pt ;
       bim:Definición  "Cuadra barrial"@es ;
@@ -2364,8 +2319,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:Prédio rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Lote ];    
       rdfs:label  "Prédio"@pt ;
       bim:Definição   "Prédio."@pt ;
       bim:Definición  "Edificio."@es ;
@@ -2400,8 +2353,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:Bloco rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Lote ];    
       rdfs:label  "Bloco"@pt ;
       bim:Definição   "Bloco edificado."@pt ;
       bim:Definición  "Block edificado"@es ;
@@ -2436,8 +2387,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:Edifício rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Lote ];    
       rdfs:label  "Edifício"@pt ;
       bim:Definição   "Edifício."@pt ;
       bim:Definición  "Edificio"@es ;
@@ -2472,8 +2421,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:Casa rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Parcela ];    
       rdfs:label  "Casa"@pt ;
       bim:Definição   "Casa."@pt ;
       bim:Definición  "Casa"@es ;
@@ -2508,8 +2455,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:HIS rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Lote ];    
       rdfs:label  "HIS"@pt ;
       bim:Definição   "Habitação de Interesse Social."@pt ;
       bim:Definición  "Habitación de Interes Social"@es ;
@@ -2544,8 +2489,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:Galpão rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Lote ];    
       rdfs:label  "Galpão"@pt ;
       bim:Definição   "Galpão."@pt ;
       bim:Definición  "Galpón"@es ;
@@ -2580,8 +2523,6 @@ bim:Construídas rdf:type  owl:Class  ;
 
 bim:Edícula rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Construídas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Lote ];    
       rdfs:label  "Edícula"@pt ;
       bim:Definição   "Edícula."@pt ;
       bim:Definición  "Edícula"@es ;
@@ -2606,8 +2547,6 @@ bim:Ocupações rdf:type  owl:Class  ;
 
 bim:Funcionais rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Ocupações ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.nomeado ;      owl:someValuesFrom    bim:Funcionais ];    
       rdfs:label  "Funcionais"@pt  .
 
 
@@ -2618,8 +2557,6 @@ bim:Organizativas rdf:type  owl:Class  ;
 
 bim:Unidade rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Organizativas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Unidade"@pt ;
       bim:Definição   "Unidade."@pt ;
       bim:Definición  "Unidad"@es ;
@@ -2654,8 +2591,6 @@ bim:Organizativas rdf:type  owl:Class  ;
 
 bim:Setor.Urbano rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Organizativas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Setor Urbano"@pt ;
       bim:Definição   "Setor."@pt ;
       bim:Definición  "Sector"@es ;
@@ -2690,8 +2625,6 @@ bim:Organizativas rdf:type  owl:Class  ;
 
 bim:Divisão rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Organizativas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Divisão"@pt ;
       bim:Definição   "Divisão."@pt ;
       bim:Definición  "División"@es ;
@@ -2726,8 +2659,6 @@ bim:Organizativas rdf:type  owl:Class  ;
 
 bim:Departamento rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Organizativas ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Departamento"@pt ;
       bim:Definição   "Departamento"@pt ;
       bim:Definición  "Departamento"@es ;
@@ -2762,8 +2693,6 @@ bim:Distribuição rdf:type  owl:Class  ;
 
 bim:Ambiente rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Distribuição ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Ambiente"@pt ;
       bim:Definição   "Ambiente."@pt ;
       bim:Definición  "Ambiente"@es ;
@@ -2798,8 +2727,6 @@ bim:Distribuição rdf:type  owl:Class  ;
 
 bim:Apartamento rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Distribuição ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Apartamento"@pt ;
       bim:Definição   "Apartamento"@pt ;
       bim:Definición  "Apartamento"@es ;
@@ -2834,8 +2761,6 @@ bim:Distribuição rdf:type  owl:Class  ;
 
 bim:Núcleo.de.Circulação rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Distribuição ;
-      owl:equivalentClass   
-                             [ rdf:type owl:Restriction; owl:onProperty bim:é.dentro.de ;      owl:someValuesFrom    bim:Prédio ];    
       rdfs:label  "Núcleo de Circulação"@pt ;
       bim:Definição   "Núcleo de Circulação."@pt ;
       bim:Definición  "Nucleo de circulación"@es ;
@@ -30154,33 +30079,64 @@ bim:fraudulento   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara que un objeto es fraudulento."@es ;bim:Definition          "Declares that an object is fraudulent."@en  .
 
 
-bim:p.carregar   rdf:type  owl:ObjectProperty ;
+bim:p.assentar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.passageiros   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.carregar ;
+bim:é.colada.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.assentar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a carregar: é.passageiros" ;
-                    bim:Chave               "carre.111" ;
-                    bim:Ação                "Ação carregar" ;
-                    bim:Definição           "Declara a quantidade de passageiros de um transporte como navio, trem, metro, etc."@pt ;
-                    bim:Definición          "Declara la cantidad de pasajeros de un transporte como navio, tren, subterrâneo, etc."@es ;bim:Definition          "It declares the number of passengers of a transport such as ship, train, subway, etc."@en  .
+                    rdfs:label              "Propriedade destinada a assentar: é.colada.com" ;
+                    bim:Chave               "assen.106" ;
+                    bim:Ação                "Ação assentar" ;
+                    bim:Definição           "Declara que um elemento é colada com alguma argamassa ou cola."@pt ;
+                    bim:Definición          "Declara que un elemento es pegado con algún material."@es ;bim:Definition          "Declares that an element is glued together with some mortar or glue."@en ;
+                    owl:equivalentProperty  bim:é.colado.com  .
 
 
-bim:d.carregar   rdf:type  owl:DatatypeProperty ;
+bim:d.assentar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:passageiros   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.carregar ;
-                    rdfs:range              xsd:integer ;
-                    rdfs:label              "Dado para carregar:  passageiros  Deve ser formatado como (xsd:integer)" ;
-                    bim:Chave               "carre.111" ;
-                    bim:Ação                "Ação carregar" ;
-                    bim:Definição           "Declara a quantidade de passageiros de um transporte como navio, trem, metro, etc."@pt ;
-                    bim:Definición          "Declara la cantidad de pasajeros de un transporte como navio, tren, subterrâneo, etc."@es ;bim:Definition          "It declares the number of passengers of a transport such as ship, train, subway, etc."@en  .
+bim:colada.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.assentar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para assentar:  colada.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "assen.106" ;
+                    bim:Ação                "Ação assentar" ;
+                    bim:Definição           "Declara que um elemento é colada com alguma argamassa ou cola."@pt ;
+                    bim:Definición          "Declara que un elemento es pegado con algún material."@es ;bim:Definition          "Declares that an element is glued together with some mortar or glue."@en  .
+
+
+bim:p.assentar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.colado.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.assentar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a assentar: é.colado.com" ;
+                    bim:Chave               "assen.107" ;
+                    bim:Ação                "Ação assentar" ;
+                    bim:Definição           "Declara que um elemento é colado com alguma argamassa ou cola."@pt ;
+                    bim:Definición          "Declara que un elemento es pegada con algún material."@es ;bim:Definition          "It states that an element is glued together with some mortar or glue."@en ;
+                    owl:equivalentProperty  bim:é.colada.com  .
+
+
+bim:d.assentar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:colado.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.assentar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para assentar:  colado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "assen.107" ;
+                    bim:Ação                "Ação assentar" ;
+                    bim:Definição           "Declara que um elemento é colado com alguma argamassa ou cola."@pt ;
+                    bim:Definición          "Declara que un elemento es pegada con algún material."@es ;bim:Definition          "It states that an element is glued together with some mortar or glue."@en  .
 
 
 bim:p.carregar   rdf:type  owl:ObjectProperty ;
@@ -30859,6 +30815,96 @@ bim:profundidade   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Valor de profundidad de un objeto."@es ;bim:Definition          "Depth value of an object."@en  .
 
 
+bim:p.direcionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.para.cima   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.direcionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a direcionar: é.para.cima" ;
+                    bim:Chave               "direc.102" ;
+                    bim:Ação                "Ação direcionar" ;
+                    bim:Definição           "Direciona o elemento para cima (verticalmente)."@pt ;
+                    bim:Definición          "Dirige el elemento hacia arriba (verticalmente)."@es ;bim:Definition          "Directs the element upwards (vertically)."@en ;
+                    owl:inverseOf           bim:é.para.baixo  .
+
+
+bim:d.direcionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:para.cima   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.direcionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para direcionar:  para.cima  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "direc.102" ;
+                    bim:Ação                "Ação direcionar" ;
+                    bim:Definição           "Direciona o elemento para cima (verticalmente)."@pt ;
+                    bim:Definición          "Dirige el elemento hacia arriba (verticalmente)."@es ;bim:Definition          "Directs the element upwards (vertically)."@en  .
+
+
+bim:p.direcionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.para.baixo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.direcionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a direcionar: é.para.baixo" ;
+                    bim:Chave               "direc.102" ;
+                    bim:Ação                "Ação direcionar" ;
+                    bim:Definição           "Direciona o elemento para baixo (verticalmente)."@pt ;
+                    bim:Definición          "Dirige el elemento hacia abajo (verticalmente)."@es ;bim:Definition          "Directs the element downward (vertically)."@en ;
+                    owl:inverseOf           bim:é.para.cima  .
+
+
+bim:d.direcionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:para.baixo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.direcionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para direcionar:  para.baixo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "direc.102" ;
+                    bim:Ação                "Ação direcionar" ;
+                    bim:Definição           "Direciona o elemento para baixo (verticalmente)."@pt ;
+                    bim:Definición          "Dirige el elemento hacia abajo (verticalmente)."@es ;bim:Definition          "Directs the element downward (vertically)."@en  .
+
+
+bim:p.direcionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.direção.vetorial   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.direcionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a direcionar: é.direção.vetorial" ;
+                    bim:Chave               "direc.103" ;
+                    bim:Ação                "Ação direcionar" ;
+                    bim:Definição           "Direciona o elemento a partir de um vetor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt ;
+                    bim:Definición          "Dirige el elemento desde un vector de traslación que se origina en [ 0 0 0 ] y punta [ coordenada.x coordenada.y coordenada.z ]."@es ;bim:Definition          "Directs the element from a translation vector originating in [ 0 0 0 ] and tip [ coordinate.x coordinate.y coordinate.z ]."@en ;
+                    owl:equivalentProperty  bim:é.vetor.translação  .
+
+
+bim:d.direcionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:direção.vetorial   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.direcionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para direcionar:  direção.vetorial  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "direc.103" ;
+                    bim:Ação                "Ação direcionar" ;
+                    bim:Definição           "Direciona o elemento a partir de um vetor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt ;
+                    bim:Definición          "Dirige el elemento desde un vector de traslación que se origina en [ 0 0 0 ] y punta [ coordenada.x coordenada.y coordenada.z ]."@es ;bim:Definition          "Directs the element from a translation vector originating in [ 0 0 0 ] and tip [ coordinate.x coordinate.y coordinate.z ]."@en  .
+
+
 bim:p.endereçar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -31469,16 +31515,106 @@ bim:p.formar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.coordenadas.xy   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.coordenadas.xy" ;
+                    bim:Chave               "forma.117" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Lista de coordenadas em 2D com valor de X e Y. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0:10,0:10,10:0,10'."@pt ;
+                    bim:Definición          "Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es ;bim:Definition          "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en ;
+                    owl:equivalentProperty  bim:é.ponto.xy  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:coordenadas.xy   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  coordenadas.xy  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.117" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Lista de coordenadas em 2D com valor de X e Y. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0:10,0:10,10:0,10'."@pt ;
+                    bim:Definición          "Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es ;bim:Definition          "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.coordenadas.xyz   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.coordenadas.xyz" ;
+                    bim:Chave               "forma.118" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Lista de coordenadas em 3D com valor de X , Y e Z. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@pt ;
+                    bim:Definición          "Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es ;bim:Definition          "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en ;
+                    owl:equivalentProperty  bim:é.ponto.xyz  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:coordenadas.xyz   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  coordenadas.xyz  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.118" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Lista de coordenadas em 3D com valor de X , Y e Z. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@pt ;
+                    bim:Definición          "Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es ;bim:Definition          "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.vetor.translação   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.vetor.translação" ;
+                    bim:Chave               "forma.119" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara o vertor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt ;
+                    bim:Definición          "Declara que el vértice de traslación se origina en [ 0 0 0 ] y apunta a [ coordenada.x coordenada.y coordenada.z ]."@es ;bim:Definition          "Declares the translation vertor originating from [ 0 0 0 ] to [ coordinate.x coordinate.y coordinate.z ]."@en ;
+                    owl:equivalentProperty  bim:é.direção.vetorial  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:vetor.translação   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  vetor.translação  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.119" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara o vertor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt ;
+                    bim:Definición          "Declara que el vértice de traslación se origina en [ 0 0 0 ] y apunta a [ coordenada.x coordenada.y coordenada.z ]."@es ;bim:Definition          "Declares the translation vertor originating from [ 0 0 0 ] to [ coordinate.x coordinate.y coordinate.z ]."@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.ponto.uv   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.formar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a formar: é.ponto.uv" ;
-                    bim:Chave               "forma.122" ;
+                    bim:Chave               "forma.124" ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara um ponto de posição UV para descrever a parametrização de uma espaço 2D como uma textura, área de piso ou parece. U  eixo horizontal, V  eixo vertical. Os valores são paramétricos, geralmente entre 0 e 1: ‘[  0 , 0]’  canto inferior esquerdo da textura e ‘[  1 , 1 ]’ é o canto superior direito e ‘[ 0.5 , 0.5 ]’ o centro. É usado para mapeamento."@pt ;
                     bim:Definición          "Declara un punto UV que describe la parametrización de un espacio 2D como una textura o un área de piso o pared. U  eje horizontal, V  eje vertical. Los valores son paramétricos, generalmente entre 0 y 1: ‘[  0 , 0]’  esquina inferior izquierda de la textura, ‘[  1 , 1 ]’  la esquina superior derecha y ‘[ 0.5 , 0.5 ]’ el centro. Se utiliza para el mapeo."@es ;bim:Definition          "Declares a UV point that describes the parametrization of a 2D space such as a texture or a floor or wall area. U  horizontal axis, V  vertical axis. The values are parametric, generally between 0 and 1: ‘[  0 , 0 ]’  bottom left corner of the texture, ‘[  1 , 1 ]’  top right corner and ‘[  0.5 , 0.5 ]’  the center. It is used for mapping."@en ;
-                    owl:equivalentProperty  bim:é.ponto.de.análise  .
+                    owl:equivalentProperty  bim:é.ponto.analítico  .
 
 
 bim:d.formar   rdf:type  owl:DatatypeProperty ;
@@ -31489,7 +31625,7 @@ bim:ponto.uv   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.formar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.uv  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "forma.122" ;
+                    bim:Chave               "forma.124" ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara um ponto de posição UV para descrever a parametrização de uma espaço 2D como uma textura, área de piso ou parece. U  eixo horizontal, V  eixo vertical. Os valores são paramétricos, geralmente entre 0 e 1: ‘[  0 , 0]’  canto inferior esquerdo da textura e ‘[  1 , 1 ]’ é o canto superior direito e ‘[ 0.5 , 0.5 ]’ o centro. É usado para mapeamento."@pt ;
                     bim:Definición          "Declara un punto UV que describe la parametrización de un espacio 2D como una textura o un área de piso o pared. U  eje horizontal, V  eje vertical. Los valores son paramétricos, generalmente entre 0 y 1: ‘[  0 , 0]’  esquina inferior izquierda de la textura, ‘[  1 , 1 ]’  la esquina superior derecha y ‘[ 0.5 , 0.5 ]’ el centro. Se utiliza para el mapeo."@es ;bim:Definition          "Declares a UV point that describes the parametrization of a 2D space such as a texture or a floor or wall area. U  horizontal axis, V  vertical axis. The values are parametric, generally between 0 and 1: ‘[  0 , 0 ]’  bottom left corner of the texture, ‘[  1 , 1 ]’  top right corner and ‘[  0.5 , 0.5 ]’  the center. It is used for mapping."@en  .
@@ -31499,12 +31635,72 @@ bim:p.formar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.ponto.de.análise   rdf:type  owl:ObjectProperty ;
+bim:é.ponto.xy   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.formar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a formar: é.ponto.de.análise" ;
-                    bim:Chave               "forma.128" ;
+                    rdfs:label              "Propriedade destinada a formar: é.ponto.xy" ;
+                    bim:Chave               "forma.125" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara uma posição no plano 2D. Representar usando uma string de duas coordenadas: '[ coordenada.x   coordenada.y ]'"@pt ;
+                    bim:Definición          "Declara a posición en un plano 2D.  Configurar como una lista de string de dos elementos '[ coordenada.x   coordenada.y ]'."@es ;bim:Definition          "Declares a 2D plane position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y ]'."@en ;
+                    owl:equivalentProperty  bim:é.coordenadas.xy  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:ponto.xy   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.xy  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.125" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara uma posição no plano 2D. Representar usando uma string de duas coordenadas: '[ coordenada.x   coordenada.y ]'"@pt ;
+                    bim:Definición          "Declara a posición en un plano 2D.  Configurar como una lista de string de dos elementos '[ coordenada.x   coordenada.y ]'."@es ;bim:Definition          "Declares a 2D plane position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y ]'."@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.ponto.xyz   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.ponto.xyz" ;
+                    bim:Chave               "forma.126" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara uma posição espacial em 3D. Representar usando uma string de três coordenadas: '[ coordenada.x   coordenada.y  coordenada.z ]'"@pt ;
+                    bim:Definición          "Declara una posición espacial en 3D.  Configurar como una lista de string de tres elementos '[ coordenada.x   coordenada.y  coordenada.z ]'."@es ;bim:Definition          "Declares a 3D spatial position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y  coordenada.z ]'."@en ;
+                    owl:equivalentProperty  bim:é.coordenadas.xyz  .
+
+
+bim:d.formar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:ponto.xyz   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.formar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.xyz  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.126" ;
+                    bim:Ação                "Ação formar" ;
+                    bim:Definição           "Declara uma posição espacial em 3D. Representar usando uma string de três coordenadas: '[ coordenada.x   coordenada.y  coordenada.z ]'"@pt ;
+                    bim:Definición          "Declara una posición espacial en 3D.  Configurar como una lista de string de tres elementos '[ coordenada.x   coordenada.y  coordenada.z ]'."@es ;bim:Definition          "Declares a 3D spatial position. Setup as a string list of coordinates '[ coordenada.x  coordenada.y  coordenada.z ]'."@en  .
+
+
+bim:p.formar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.ponto.analítico   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.formar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a formar: é.ponto.analítico" ;
+                    bim:Chave               "forma.130" ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara a posiçao de um ponto analítico UV que pode ser usado em análise estrutural, acústico, luminotécnico, etc."@pt ;
                     bim:Definición          "Declara la posición de un punto analítico UV que puede utilizarse en análisis estructural, acústico, luminotécnico, etc."@es ;bim:Definition          "Declares the position of na UV  analytical point that can be used in structural, acoustic, lighting analysis, etc."@en ;
@@ -31515,11 +31711,11 @@ bim:d.formar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:ponto.de.análise   rdf:type  owl:DatatypeProperty ;
+bim:ponto.analítico   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.formar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.de.análise  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "forma.128" ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para formar:  ponto.analítico  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "forma.130" ;
                     bim:Ação                "Ação formar" ;
                     bim:Definição           "Declara a posiçao de um ponto analítico UV que pode ser usado em análise estrutural, acústico, luminotécnico, etc."@pt ;
                     bim:Definición          "Declara la posición de un punto analítico UV que puede utilizarse en análisis estructural, acústico, luminotécnico, etc."@es ;bim:Definition          "Declares the position of na UV  analytical point that can be used in structural, acoustic, lighting analysis, etc."@en  .
@@ -31534,7 +31730,7 @@ bim:é.uso   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.uso" ;
-                    bim:Chave               "funci.100" ;
+                    bim:Chave               "funci.104" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o tipo de uso dado ao elemento."@pt ;
                     bim:Definición          "Declara el tipo de uso dado al elemento."@es ;bim:Definition          "It declares the type of use given to the element."@en ;
@@ -31549,7 +31745,7 @@ bim:uso   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  uso  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.100" ;
+                    bim:Chave               "funci.104" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o tipo de uso dado ao elemento."@pt ;
                     bim:Definición          "Declara el tipo de uso dado al elemento."@es ;bim:Definition          "It declares the type of use given to the element."@en  .
@@ -31564,7 +31760,7 @@ bim:é.funcionamento   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.funcionamento" ;
-                    bim:Chave               "funci.101" ;
+                    bim:Chave               "funci.105" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o tipo de funcionamento dado ao elemento."@pt ;
                     bim:Definición          "Declara el tipo de operación asignada al elemento."@es ;bim:Definition          "It declares the type of operation given to the element."@en ;
@@ -31579,7 +31775,7 @@ bim:funcionamento   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  funcionamento  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.101" ;
+                    bim:Chave               "funci.105" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o tipo de funcionamento dado ao elemento."@pt ;
                     bim:Definición          "Declara el tipo de operación asignada al elemento."@es ;bim:Definition          "It declares the type of operation given to the element."@en  .
@@ -31594,7 +31790,7 @@ bim:é.locatário   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.locatário" ;
-                    bim:Chave               "funci.102" ;
+                    bim:Chave               "funci.106" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante que está alugando uma entidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante que alquila una entidad espacial."@es ;bim:Definition          "It declares the name of the occupant who is renting a space entity."@en ;
@@ -31609,7 +31805,7 @@ bim:locatário   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  locatário  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.102" ;
+                    bim:Chave               "funci.106" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante que está alugando uma entidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante que alquila una entidad espacial."@es ;bim:Definition          "It declares the name of the occupant who is renting a space entity."@en  .
@@ -31624,7 +31820,7 @@ bim:é.morador   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.morador" ;
-                    bim:Chave               "funci.103" ;
+                    bim:Chave               "funci.107" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante que está morando na unidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante que vive en la unidad espacial."@es ;bim:Definition          "It declares the name of the occupant who is living in the space unit."@en ;
@@ -31639,7 +31835,7 @@ bim:morador   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  morador  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.103" ;
+                    bim:Chave               "funci.107" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante que está morando na unidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante que vive en la unidad espacial."@es ;bim:Definition          "It declares the name of the occupant who is living in the space unit."@en  .
@@ -31654,7 +31850,7 @@ bim:é.ocupante   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.ocupante" ;
-                    bim:Chave               "funci.104" ;
+                    bim:Chave               "funci.108" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante de um ambiente, setor ou entidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante de un espacio, sector o entidad espacial."@es ;bim:Definition          "It declares the name of the occupant of a space, sector, or spatial entity."@en ;
@@ -31669,7 +31865,7 @@ bim:ocupante   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  ocupante  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.104" ;
+                    bim:Chave               "funci.108" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante de um ambiente, setor ou entidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante de un espacio, sector o entidad espacial."@es ;bim:Definition          "It declares the name of the occupant of a space, sector, or spatial entity."@en  .
@@ -31684,7 +31880,7 @@ bim:é.permisionário   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.permisionário" ;
-                    bim:Chave               "funci.105" ;
+                    bim:Chave               "funci.109" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante que recebeu permissão de uso para ocupar e explorar um bem público que é uma entidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante al que se le ha concedido permiso para usar y explotar una propiedad pública que es una entidad espacial."@es ;bim:Definition          "It declares the name of the occupant who has been granted permission to use to occupy and exploit a public property that is a spatial entity."@en ;
@@ -31699,7 +31895,7 @@ bim:permisionário   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  permisionário  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.105" ;
+                    bim:Chave               "funci.109" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do ocupante que recebeu permissão de uso para ocupar e explorar um bem público que é uma entidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del ocupante al que se le ha concedido permiso para usar y explotar una propiedad pública que es una entidad espacial."@es ;bim:Definition          "It declares the name of the occupant who has been granted permission to use to occupy and exploit a public property that is a spatial entity."@en  .
@@ -31714,7 +31910,7 @@ bim:é.usuário   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a funcionar: é.usuário" ;
-                    bim:Chave               "funci.106" ;
+                    bim:Chave               "funci.110" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do usuário de um elemento, ambiente, setor ou unidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del usuario de un ambiente, elemento o unidad espacial."@es ;bim:Definition          "It declares the name of the user of a element, space, sector or spatial entity."@en ;
@@ -31729,7 +31925,7 @@ bim:usuário   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.funcionar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para funcionar:  usuário  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "funci.106" ;
+                    bim:Chave               "funci.110" ;
                     bim:Ação                "Ação funcionar" ;
                     bim:Definição           "Declara o nome do usuário de um elemento, ambiente, setor ou unidade espacial."@pt ;
                     bim:Definición          "Declara el nombre del usuario de un ambiente, elemento o unidad espacial."@es ;bim:Definition          "It declares the name of the user of a element, space, sector or spatial entity."@en  .
@@ -32817,7 +33013,7 @@ bim:é.classe.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a interoperar: é.classe.ifc" ;
-                    bim:Chave               "inter.105" ;
+                    bim:Chave               "inter.111" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica a uma classe IFC."@pt ;
                     bim:Definición          "Identifica una clase IFC."@es ;bim:Definition          "Identifies an IFC class."@en  .
@@ -32831,7 +33027,7 @@ bim:classe.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  classe.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.105" ;
+                    bim:Chave               "inter.111" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Identifica a uma classe IFC."@pt ;
                     bim:Definición          "Identifica una clase IFC."@es ;bim:Definition          "Identifies an IFC class."@en  .
@@ -33299,6 +33495,36 @@ bim:lista   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Lista asignada al parámetro o atributo creado por el usuario. La lista debe ser una cadena que comience con el nombre del parámetro seguido de los elementos, no necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Nums:2:1:3:7:5' o 'Let,A,B,C,D,E'."@es ;bim:Definition          "List assigned to the parameter or attribute created by the user. The list must be a string that starts with the name of the parameter followed by the elements, not necessarily ordered, separated by a separator character. For example 'Nums:2:1:3:7:5' or 'Let,A,B,C,D,E'."@en  .
 
 
+bim:p.materializar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.mapeamento.uv   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.materializar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a materializar: é.mapeamento.uv" ;
+                    bim:Chave               "mater.101" ;
+                    bim:Ação                "Ação materializar" ;
+                    bim:Definição           "Identificação da entidade de mapeamento [ u v ] de texturas sobre a geometria."@pt ;
+                    bim:Definición          "Identificación de la entidad de mapeo de texturas [ u v ] sobre la geometría."@es ;bim:Definition          "Identification of the [ u v ] texture mapping entity over the geometry."@en ;
+                    owl:equivalentProperty  bim:é.ponto.uv  .
+
+
+bim:d.materializar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:mapeamento.uv   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.materializar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para materializar:  mapeamento.uv  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "mater.101" ;
+                    bim:Ação                "Ação materializar" ;
+                    bim:Definição           "Identificação da entidade de mapeamento [ u v ] de texturas sobre a geometria."@pt ;
+                    bim:Definición          "Identificación de la entidad de mapeo de texturas [ u v ] sobre la geometría."@es ;bim:Definition          "Identification of the [ u v ] texture mapping entity over the geometry."@en  .
+
+
 bim:p.montar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -33359,6 +33585,66 @@ bim:apoiado.em   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara que el elemento está apoyado en otro elemento."@es ;bim:Definition          "Declares that the element is backed by another element."@en  .
 
 
+bim:p.montar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.suporte.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.montar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a montar: é.suporte.de" ;
+                    bim:Chave               "monta.115" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que o elemento que é suporte de um outro elemento. (Uma coluna para uma viga)"@pt ;
+                    bim:Definición          "Declara que el elemento que sirve de soporte a otro elemento (columna para una viga por ejemplo)."@es ;bim:Definition          "Declares that the element that is supported by another element. (One column for one beam)"@en ;
+                    owl:inverseOf           bim:é.suportado.por  .
+
+
+bim:d.montar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:suporte.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.montar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  suporte.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "monta.115" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que o elemento que é suporte de um outro elemento. (Uma coluna para uma viga)"@pt ;
+                    bim:Definición          "Declara que el elemento que sirve de soporte a otro elemento (columna para una viga por ejemplo)."@es ;bim:Definition          "Declares that the element that is supported by another element. (One column for one beam)"@en  .
+
+
+bim:p.montar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.suportado.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.montar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a montar: é.suportado.por" ;
+                    bim:Chave               "monta.116" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que o elemento que é suporte por outro elemento."@pt ;
+                    bim:Definición          "Declara que el elemento que sirve de soporte de otro elemento."@es ;bim:Definition          "Declares that the element that is supported by another element."@en ;
+                    owl:inverseOf           bim:é.suporte.de  .
+
+
+bim:d.montar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:suportado.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.montar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  suportado.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "monta.116" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que o elemento que é suporte por outro elemento."@pt ;
+                    bim:Definición          "Declara que el elemento que sirve de soporte de otro elemento."@es ;bim:Definition          "Declares that the element that is supported by another element."@en  .
+
+
 bim:p.navegar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -33400,7 +33686,8 @@ bim:é.manga   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "naveg.101" ;
                     bim:Ação                "Ação navegar" ;
                     bim:Definição           "Largura máxima do navio, geralmente medida na parte mais larga do casco. Sinónimo de boca."@pt ;
-                    bim:Definición          "Ancho máximo del navio, generalmente medida en la parte más ancha del casco. Sinónimo de boca."@es ;bim:Definition          "Maximum width of the ship, usually measured at the widest part of the hull. Synonym for mouth."@en  .
+                    bim:Definición          "Ancho máximo del navio, generalmente medida en la parte más ancha del casco. Sinónimo de boca."@es ;bim:Definition          "Maximum width of the ship, usually measured at the widest part of the hull. Synonym for mouth."@en ;
+                    owl:equivalentProperty  bim:é.boca  .
 
 
 bim:d.navegar   rdf:type  owl:DatatypeProperty ;
@@ -33415,6 +33702,36 @@ bim:manga   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação navegar" ;
                     bim:Definição           "Largura máxima do navio, geralmente medida na parte mais larga do casco. Sinónimo de boca."@pt ;
                     bim:Definición          "Ancho máximo del navio, generalmente medida en la parte más ancha del casco. Sinónimo de boca."@es ;bim:Definition          "Maximum width of the ship, usually measured at the widest part of the hull. Synonym for mouth."@en  .
+
+
+bim:p.navegar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.boca   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.navegar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a navegar: é.boca" ;
+                    bim:Chave               "naveg.102" ;
+                    bim:Ação                "Ação navegar" ;
+                    bim:Definição           "Largura máxima do navio, geralmente medida na parte mais larga do casco. Sinónimo de manga."@pt ;
+                    bim:Definición          "Ancho máximo del navio, generalmente medida en la parte más ancha del casco. Sinónimo de manga."@es ;bim:Definition          "Maximum width of the ship, usually measured at the widest part of the hull. Synonymous with mango."@en ;
+                    owl:equivalentProperty  bim:é.manga  .
+
+
+bim:d.navegar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:boca   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.navegar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para navegar:  boca  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "naveg.102" ;
+                    bim:Ação                "Ação navegar" ;
+                    bim:Definição           "Largura máxima do navio, geralmente medida na parte mais larga do casco. Sinónimo de manga."@pt ;
+                    bim:Definición          "Ancho máximo del navio, generalmente medida en la parte más ancha del casco. Sinónimo de manga."@es ;bim:Definition          "Maximum width of the ship, usually measured at the widest part of the hull. Synonymous with mango."@en  .
 
 
 bim:p.navegar   rdf:type  owl:ObjectProperty ;
@@ -33683,12 +34000,72 @@ bim:p.orçamentar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.despesa.obrigatória   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.orçamentar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a orçamentar: é.despesa.obrigatória" ;
+                    bim:Chave               "orçam.109" ;
+                    bim:Ação                "Ação orçamentar" ;
+                    bim:Definição           "Declara que a despesa é obrigatória."@pt ;
+                    bim:Definición          "Declara que el gasto es obligatorio."@es ;bim:Definition          "It declares that the expenditure is mandatory."@en ;
+                    owl:equivalentProperty  bim:é.empenho  .
+
+
+bim:d.orçamentar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:despesa.obrigatória   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.orçamentar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para orçamentar:  despesa.obrigatória  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "orçam.109" ;
+                    bim:Ação                "Ação orçamentar" ;
+                    bim:Definição           "Declara que a despesa é obrigatória."@pt ;
+                    bim:Definición          "Declara que el gasto es obligatorio."@es ;bim:Definition          "It declares that the expenditure is mandatory."@en  .
+
+
+bim:p.orçamentar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.empenho   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.orçamentar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a orçamentar: é.empenho" ;
+                    bim:Chave               "orçam.110" ;
+                    bim:Ação                "Ação orçamentar" ;
+                    bim:Definição           "Declara o ato de reservar verbas para uma despesa específica. No servício público brasileiro o recurso empenhado garante que será destinado ao pagamento de um contrato, serviço ou compra."@pt ;
+                    bim:Definición          "Declara el acto de reservar fondos para un gasto específico. En el servicio público brasileño, el recurso comprometido garantiza que se utilizará para pagar un contrato, servicio o compra."@es ;bim:Definition          "It declares the act of setting aside funds for a specific expense. In the Brazilian public service, the committed resource guarantees that it will be used to pay for a contract, service or purchase."@en ;
+                    owl:equivalentProperty  bim:é.despesa.obrigatória  .
+
+
+bim:d.orçamentar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:empenho   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.orçamentar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para orçamentar:  empenho  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "orçam.110" ;
+                    bim:Ação                "Ação orçamentar" ;
+                    bim:Definição           "Declara o ato de reservar verbas para uma despesa específica. No servício público brasileiro o recurso empenhado garante que será destinado ao pagamento de um contrato, serviço ou compra."@pt ;
+                    bim:Definición          "Declara el acto de reservar fondos para un gasto específico. En el servicio público brasileño, el recurso comprometido garantiza que se utilizará para pagar un contrato, servicio o compra."@es ;bim:Definition          "It declares the act of setting aside funds for a specific expense. In the Brazilian public service, the committed resource guarantees that it will be used to pay for a contract, service or purchase."@en  .
+
+
+bim:p.orçamentar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.encargo.social   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.orçamentar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a orçamentar: é.encargo.social" ;
-                    bim:Chave               "orçam.110" ;
+                    bim:Chave               "orçam.111" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara encargo social."@pt ;
                     bim:Definición          "Declara una carga social."@es ;bim:Definition          "Declares a social charge."@en ;
@@ -33703,7 +34080,7 @@ bim:encargo.social   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.orçamentar ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para orçamentar:  encargo.social  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "orçam.110" ;
+                    bim:Chave               "orçam.111" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara encargo social."@pt ;
                     bim:Definición          "Declara una carga social."@es ;bim:Definition          "Declares a social charge."@en  .
@@ -33718,7 +34095,7 @@ bim:é.preço.ofertado   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a orçamentar: é.preço.ofertado" ;
-                    bim:Chave               "orçam.132" ;
+                    bim:Chave               "orçam.133" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es ;bim:Definition          "Declares the price offered."@en ;
@@ -33733,7 +34110,7 @@ bim:preço.ofertado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.orçamentar ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para orçamentar:  preço.ofertado  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "orçam.132" ;
+                    bim:Chave               "orçam.133" ;
                     bim:Ação                "Ação orçamentar" ;
                     bim:Definição           "Declara preço ofertado."@pt ;
                     bim:Definición          "Declara el precio ofrecido."@es ;bim:Definition          "Declares the price offered."@en  .
@@ -35468,15 +35845,75 @@ bim:p.resistir   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.módulo.de.elasticidade   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.resistir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a resistir: é.módulo.de.elasticidade" ;
+                    bim:Chave               "resis.111" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt ;
+                    bim:Definición          "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es ;bim:Definition          "It states the relationship between the applied stress and the elastic deformation of a material."@en ;
+                    owl:equivalentProperty  bim:é.módulo.de.young  .
+
+
+bim:d.resistir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:módulo.de.elasticidade   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.resistir ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para resistir:  módulo.de.elasticidade  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "resis.111" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt ;
+                    bim:Definición          "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es ;bim:Definition          "It states the relationship between the applied stress and the elastic deformation of a material."@en  .
+
+
+bim:p.resistir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.módulo.de.young   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.resistir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a resistir: é.módulo.de.young" ;
+                    bim:Chave               "resis.112" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt ;
+                    bim:Definición          "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es ;bim:Definition          "It states the relationship between the applied stress and the elastic deformation of a material."@en ;
+                    owl:equivalentProperty  bim:é.módulo.de.elasticidade  .
+
+
+bim:d.resistir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:módulo.de.young   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.resistir ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para resistir:  módulo.de.young  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "resis.112" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt ;
+                    bim:Definición          "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es ;bim:Definition          "It states the relationship between the applied stress and the elastic deformation of a material."@en  .
+
+
+bim:p.resistir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.aparafusada   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.resistir ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a resistir: é.aparafusada" ;
-                    bim:Chave               "resis.112" ;
+                    bim:Chave               "resis.114" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara que deve ser instalado aparafusado."@pt ;
-                    bim:Definición          "Establece que debe instalarse atornillado."@es ;bim:Definition          "It states that it must be installed bolted on."@en ;
+                    bim:Definición          "Indica que debe instalarse atornillado."@es ;bim:Definition          "It states that it must be installed bolted on."@en ;
                     owl:equivalentProperty  bim:é.aparafusado  .
 
 
@@ -35488,10 +35925,10 @@ bim:aparafusada   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.resistir ;
                     rdfs:range              xsd:boolean ;
                     rdfs:label              "Dado para resistir:  aparafusada  Deve ser formatado como (xsd:boolean)" ;
-                    bim:Chave               "resis.112" ;
+                    bim:Chave               "resis.114" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara que deve ser instalado aparafusado."@pt ;
-                    bim:Definición          "Establece que debe instalarse atornillado."@es ;bim:Definition          "It states that it must be installed bolted on."@en  .
+                    bim:Definición          "Indica que debe instalarse atornillado."@es ;bim:Definition          "It states that it must be installed bolted on."@en  .
 
 
 bim:p.resistir   rdf:type  owl:ObjectProperty ;
@@ -35503,10 +35940,10 @@ bim:é.aparafusado   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a resistir: é.aparafusado" ;
-                    bim:Chave               "resis.113" ;
+                    bim:Chave               "resis.115" ;
                     bim:Ação                "Ação resistir" ;
-                    bim:Definição           "Qualifica a união de peças como aparafusadas."@pt ;
-                    bim:Definición          "Califica las piezas de unión como atornilladas."@es ;bim:Definition          "Qualifies joining parts as bolted."@en ;
+                    bim:Definição           "Declara a união de peças como aparafusadas."@pt ;
+                    bim:Definición          "Declara la unión de piezas como atornillada."@es ;bim:Definition          "Qualifies joining parts as bolted."@en ;
                     owl:equivalentProperty  bim:é.aparafusada  .
 
 
@@ -35518,10 +35955,10 @@ bim:aparafusado   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.resistir ;
                     rdfs:range              xsd:boolean ;
                     rdfs:label              "Dado para resistir:  aparafusado  Deve ser formatado como (xsd:boolean)" ;
-                    bim:Chave               "resis.113" ;
+                    bim:Chave               "resis.115" ;
                     bim:Ação                "Ação resistir" ;
-                    bim:Definição           "Qualifica a união de peças como aparafusadas."@pt ;
-                    bim:Definición          "Califica las piezas de unión como atornilladas."@es ;bim:Definition          "Qualifies joining parts as bolted."@en  .
+                    bim:Definição           "Declara a união de peças como aparafusadas."@pt ;
+                    bim:Definición          "Declara la unión de piezas como atornillada."@es ;bim:Definition          "Qualifies joining parts as bolted."@en  .
 
 
 bim:p.resistir   rdf:type  owl:ObjectProperty ;
@@ -35533,7 +35970,7 @@ bim:é.limite.de.escoamento   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a resistir: é.limite.de.escoamento" ;
-                    bim:Chave               "resis.119" ;
+                    bim:Chave               "resis.121" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt ;
                     bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es ;bim:Definition          "Declares the yield strength in MPA. It is the critical value at which steel changes behavior from elastic to plastic, i.e. that it does not recover from deformation."@en ;
@@ -35548,7 +35985,7 @@ bim:limite.de.escoamento   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.resistir ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para resistir:  limite.de.escoamento  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "resis.119" ;
+                    bim:Chave               "resis.121" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt ;
                     bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es ;bim:Definition          "Declares the yield strength in MPA. It is the critical value at which steel changes behavior from elastic to plastic, i.e. that it does not recover from deformation."@en  .
@@ -35563,7 +36000,7 @@ bim:é.limite.elástico   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a resistir: é.limite.elástico" ;
-                    bim:Chave               "resis.120" ;
+                    bim:Chave               "resis.122" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt ;
                     bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es ;bim:Definition          "Declares the yield strength in MPA. It is the critical value at which steel changes behavior from elastic to plastic, i.e. that it does not recover from deformation."@en ;
@@ -35578,7 +36015,7 @@ bim:limite.elástico   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.resistir ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para resistir:  limite.elástico  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "resis.120" ;
+                    bim:Chave               "resis.122" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt ;
                     bim:Definición          "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es ;bim:Definition          "Declares the yield strength in MPA. It is the critical value at which steel changes behavior from elastic to plastic, i.e. that it does not recover from deformation."@en  .
@@ -35593,7 +36030,7 @@ bim:é.limite.de.resistência   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a resistir: é.limite.de.resistência" ;
-                    bim:Chave               "resis.121" ;
+                    bim:Chave               "resis.123" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de resistência em MPA."@pt ;
                     bim:Definición          "Declara el límite de resistencia en MPA."@es ;bim:Definition          "Declares the resistance limit in MPA."@en ;
@@ -35608,7 +36045,7 @@ bim:limite.de.resistência   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.resistir ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para resistir:  limite.de.resistência  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "resis.121" ;
+                    bim:Chave               "resis.123" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de resistência em MPA."@pt ;
                     bim:Definición          "Declara el límite de resistencia en MPA."@es ;bim:Definition          "Declares the resistance limit in MPA."@en  .
@@ -35623,7 +36060,7 @@ bim:é.tensão.de.rotura   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a resistir: é.tensão.de.rotura" ;
-                    bim:Chave               "resis.122" ;
+                    bim:Chave               "resis.124" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de resistência em MPA."@pt ;
                     bim:Definición          "Declara el límite de resistencia en MPA."@es ;bim:Definition          "Declares the resistance limit in MPA."@en ;
@@ -35638,10 +36075,70 @@ bim:tensão.de.rotura   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.resistir ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para resistir:  tensão.de.rotura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "resis.122" ;
+                    bim:Chave               "resis.124" ;
                     bim:Ação                "Ação resistir" ;
                     bim:Definição           "Declara o limite de resistência em MPA."@pt ;
                     bim:Definición          "Declara el límite de resistencia en MPA."@es ;bim:Definition          "Declares the resistance limit in MPA."@en  .
+
+
+bim:p.resistir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.trrf   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.resistir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a resistir: é.trrf" ;
+                    bim:Chave               "resis.126" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara o Tempo Requerido de Resistência ao Fogo (TRRF) em minutos. Requisito associado aos compartimentos exigida pelo Corpo de Bombeiros de cada localidade."@pt ;
+                    bim:Definición          "Declara el Tiempo Requerido de Resistencia al Fuego (TRRF) en minutos. Requisito asociado a los compartimentos, exigido por el Cuerpo Bomberos de cada localidad."@es ;bim:Definition          "Required Fire Resistance Time (TRRF) in minutes. Requirement associated with the compartments required by the Fire Department of each location."@en ;
+                    owl:equivalentProperty  bim:é.resistência.ao.fogo  .
+
+
+bim:d.resistir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:trrf   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.resistir ;
+                    rdfs:range              xsd:integer ;
+                    rdfs:label              "Dado para resistir:  trrf  Deve ser formatado como (xsd:integer)" ;
+                    bim:Chave               "resis.126" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara o Tempo Requerido de Resistência ao Fogo (TRRF) em minutos. Requisito associado aos compartimentos exigida pelo Corpo de Bombeiros de cada localidade."@pt ;
+                    bim:Definición          "Declara el Tiempo Requerido de Resistencia al Fuego (TRRF) en minutos. Requisito asociado a los compartimentos, exigido por el Cuerpo Bomberos de cada localidad."@es ;bim:Definition          "Required Fire Resistance Time (TRRF) in minutes. Requirement associated with the compartments required by the Fire Department of each location."@en  .
+
+
+bim:p.resistir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.resistência.ao.fogo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.resistir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a resistir: é.resistência.ao.fogo" ;
+                    bim:Chave               "resis.127" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara a Resistência ao Fogo (RF) expressada em minutos. A propriedade define deve ser associada aos elementos de vedação como paredes e divisórias ou esquadrias."@pt ;
+                    bim:Definición          "Declara la Resistencia al Fuego (RF) expresada en minutos. La propriedad debe ser asociada a los elementos de cerramientos como paredes, divisorias o carpinterías."@es ;bim:Definition          "Fire Resistance (RF) expressed in minutes. The property defines must be associated with the sealing elements such as walls and partitions or frames."@en ;
+                    owl:equivalentProperty  bim:é.trrf  .
+
+
+bim:d.resistir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:resistência.ao.fogo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.resistir ;
+                    rdfs:range              xsd:integer ;
+                    rdfs:label              "Dado para resistir:  resistência.ao.fogo  Deve ser formatado como (xsd:integer)" ;
+                    bim:Chave               "resis.127" ;
+                    bim:Ação                "Ação resistir" ;
+                    bim:Definição           "Declara a Resistência ao Fogo (RF) expressada em minutos. A propriedade define deve ser associada aos elementos de vedação como paredes e divisórias ou esquadrias."@pt ;
+                    bim:Definición          "Declara la Resistencia al Fuego (RF) expresada en minutos. La propriedad debe ser asociada a los elementos de cerramientos como paredes, divisorias o carpinterías."@es ;bim:Definition          "Fire Resistance (RF) expressed in minutes. The property defines must be associated with the sealing elements such as walls and partitions or frames."@en  .
 
 
 bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
@@ -35710,6 +36207,66 @@ bim:câmera.termográfica   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Identifica una cámara de imagen térmica. Sensor para la medición de temperatura que muestra un termograma o imagen térmica del objeto que emite energía infrarroja. Se usa para detectar problemas como sobrecalentamiento del equipo, presencia de humedad en las paredes, etc."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Identifies a thermal imaging camera. Sensor for temperature measurement that displays thermogram or thermal image of the object emitting infrared energy. Used to detect problems of equipment overheating, presence of moisture in walls, etc."@en ;
                     bim:CatRevit            "[ OST_SecurityDevices ]" ;
                     bim:ClasseIfc           "[ IfcSensor ]"  .
+
+
+bim:p.servir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.servidor.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.servir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a servir: é.servidor.de" ;
+                    bim:Chave               "servi.100" ;
+                    bim:Ação                "Ação servir" ;
+                    bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Identifica um elemento servidor de outro."@pt ;
+                    bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Identifica un elemento del servidor de otro."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Identifies one server element of another."@en ;
+                    owl:inverseOf           bim:é.servido.por  .
+
+
+bim:d.servir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:servidor.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.servir ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para servir:  servidor.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "servi.100" ;
+                    bim:Ação                "Ação servir" ;
+                    bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Identifica um elemento servidor de outro."@pt ;
+                    bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Identifica un elemento del servidor de otro."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Identifies one server element of another."@en  .
+
+
+bim:p.servir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.servido.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.servir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a servir: é.servido.por" ;
+                    bim:Chave               "servi.101" ;
+                    bim:Ação                "Ação servir" ;
+                    bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Identifica um elemento servido por outro."@pt ;
+                    bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Identifica un elemento servido por otro."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Identifies one element served by another."@en ;
+                    owl:inverseOf           bim:é.servidor.de  .
+
+
+bim:d.servir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:servido.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.servir ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para servir:  servido.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "servi.101" ;
+                    bim:Ação                "Ação servir" ;
+                    bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Identifica um elemento servido por outro."@pt ;
+                    bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Identifica un elemento servido por otro."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Identifies one element served by another."@en  .
 
 
 bim:p.taxonomizar   rdf:type  owl:ObjectProperty ;
@@ -36379,5 +36936,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 03/05/2026 15:24:17
+##  Criada em 10/05/2026 10:57:27
 #################################################################
