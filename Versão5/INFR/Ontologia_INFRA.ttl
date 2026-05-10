@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos de infraestrutura. Inclui Portos, Ferrovias e Elementos Urbanos"@pt ;
-	  rdfs:label "DataHora: 10/05/2026 10:57:25"@pt ;
+	  rdfs:label "DataHora: 10/05/2026 11:14:37"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -29271,7 +29271,7 @@ bim:NAVIO.CruzeiroGeral  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   10 ;
      bim:manga   55 ;
      bim:tripulação   2000 ;
-     bim:passageiros   6000 ;
+     bim:carga.de.passageiros   6000 ;
      bim:companhia    "Imaginária" ;
      bim:para.propulsão    "Gás Natural Liquefeito (GNL) e células de combustível" ;
      bim:categoria.revit    "[ OST_Entourage ]" ;
@@ -29287,7 +29287,7 @@ bim:NAVIO.ISeas  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   9.3 ;
      bim:manga   50 ;
      bim:tripulação   2350 ;
-     bim:passageiros   7600 ;
+     bim:carga.de.passageiros   7600 ;
      bim:companhia    "Royal Caribean" ;
      bim:para.propulsão    "Gás Natural Liquefeito (GNL) e células de combustível" ;
      bim:tonelagem.bruta   250800 ;
@@ -29305,7 +29305,7 @@ bim:NAVIO.WSeas  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   9.1 ;
      bim:manga   64 ;
      bim:tripulação   2204 ;
-     bim:passageiros   7000 ;
+     bim:carga.de.passageiros   7000 ;
      bim:companhia    "Royal Caribean" ;
      bim:para.propulsão    "Diesel Marítimo de Baixo Teor de Enxofre (LSMGO Low Sulfur Marine Gas Oil)" ;
      bim:tonelagem.bruta   236857 ;
@@ -29322,7 +29322,7 @@ bim:NAVIO.MSCWE  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   9 ;
      bim:manga   47 ;
      bim:tripulação   2100 ;
-     bim:passageiros   6762 ;
+     bim:carga.de.passageiros   6762 ;
      bim:companhia    "MSC Cruzeiros" ;
      bim:para.propulsão    "Gás Natural Liquefeito (GNL)" ;
      bim:tonelagem.bruta   215863 ;
@@ -29340,7 +29340,7 @@ bim:NAVIO.OSeas  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   9.3 ;
      bim:manga   65 ;
      bim:tripulação   2138 ;
-     bim:passageiros   6800 ;
+     bim:carga.de.passageiros   6800 ;
      bim:companhia    "Royal Caribean" ;
      bim:para.propulsão    "Diesel Marítimo (LSMGO Low Sulfur Marine Gas Oil) e óleo combustível pesado (HFO – Heavy Fuel Oil)" ;
      bim:tonelagem.bruta   226838 ;
@@ -29358,7 +29358,7 @@ bim:NAVIO.QMary2  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   10.3 ;
      bim:manga   41 ;
      bim:tripulação   1173 ;
-     bim:passageiros   2691 ;
+     bim:carga.de.passageiros   2691 ;
      bim:companhia    "Cunard Line" ;
      bim:para.propulsão    "Diesel Marítimo e Turbinas a Gás" ;
      bim:tonelagem.bruta   149215 ;
@@ -29376,7 +29376,7 @@ bim:NAVIO.NEpic  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:calado   8.7 ;
      bim:manga   41 ;
      bim:tripulação   1724 ;
-     bim:passageiros   4100 ;
+     bim:carga.de.passageiros   4100 ;
      bim:companhia    "Norwegian Cruise Line" ;
      bim:para.propulsão    "Diesel Marítimo (LSMGO Low Sulfur Marine Gas Oil) e óleo combustível pesado (HFO – Heavy Fuel Oil)" ;
      bim:tonelagem.bruta   155873 ;
@@ -29393,7 +29393,7 @@ bim:NAVIO.VikStar  rdf:type  owl:NamedIndividual , bim:Cruzeiro ;
      bim:eslora   227 ;
      bim:manga   28 ;
      bim:tripulação   465 ;
-     bim:passageiros   925 ;
+     bim:carga.de.passageiros   925 ;
      bim:companhia    "Viking Ocean Cruises" ;
      bim:para.propulsão    "Diesel-elétrico" ;
      bim:tonelagem.bruta   47800 ;
@@ -30137,6 +30137,35 @@ bim:colado.com   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação assentar" ;
                     bim:Definição           "Declara que um elemento é colado com alguma argamassa ou cola."@pt ;
                     bim:Definición          "Declara que un elemento es pegada con algún material."@es ;bim:Definition          "It states that an element is glued together with some mortar or glue."@en  .
+
+
+bim:p.carregar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.carga.de.passageiros   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.carregar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a carregar: é.carga.de.passageiros" ;
+                    bim:Chave               "carre.111" ;
+                    bim:Ação                "Ação carregar" ;
+                    bim:Definição           "Declara a quantidade de passageiros de um transporte como navio, trem, metro, etc."@pt ;
+                    bim:Definición          "Declara la cantidad de pasajeros de un transporte como navio, tren, subterrâneo, etc."@es ;bim:Definition          "It declares the number of passengers of a transport such as ship, train, subway, etc."@en  .
+
+
+bim:d.carregar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:carga.de.passageiros   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.carregar ;
+                    rdfs:range              xsd:integer ;
+                    rdfs:label              "Dado para carregar:  carga.de.passageiros  Deve ser formatado como (xsd:integer)" ;
+                    bim:Chave               "carre.111" ;
+                    bim:Ação                "Ação carregar" ;
+                    bim:Definição           "Declara a quantidade de passageiros de um transporte como navio, trem, metro, etc."@pt ;
+                    bim:Definición          "Declara la cantidad de pasajeros de un transporte como navio, tren, subterrâneo, etc."@es ;bim:Definition          "It declares the number of passengers of a transport such as ship, train, subway, etc."@en  .
 
 
 bim:p.carregar   rdf:type  owl:ObjectProperty ;
@@ -36936,5 +36965,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia INFRA
-##  Criada em 10/05/2026 10:57:27
+##  Criada em 10/05/2026 11:14:38
 #################################################################
