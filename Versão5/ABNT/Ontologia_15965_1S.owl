@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_3_1S>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 06/05/2026 15:26:36"@pt
+  Annotations: rdfs:label "DataHora: 10/05/2026 10:56:40"@pt
   Annotations: rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt
   Annotations: rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es
   Annotations: rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en
@@ -48,6 +48,7 @@ Datatype:  xsd:date
 Datatype:  xsd:time
 Datatype:  xsd:boolean
 Datatype:  rdfs:Literal
+Datatype:  xsd:nonNegativeInteger
 Datatype:  rdf:PlainLiteral
 
 Class: bim:BIM
@@ -4433,6 +4434,102 @@ DataProperty: bim:inclinação.mínima
 	Annotations: bim:Definición "Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
 	Annotations: bim:Definition "Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en
 
+ObjectProperty: bim:p.direcionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.para.cima
+	SubPropertyOf: bim:p.direcionar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a direcionar: é.para.cima"@pt
+	Annotations: bim:Chave "direc.102"
+	Annotations: bim:Ação "Ação direcionar"@pt
+	Annotations: bim:Definição "Direciona o elemento para cima (verticalmente)."@pt
+	Annotations: bim:Definición "Dirige el elemento hacia arriba (verticalmente)."@es
+	Annotations: bim:Definition "Directs the element upwards (vertically)."@en
+	InverseOf: bim:é.para.baixo
+
+DataProperty: bim:d.direcionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:para.cima
+	SubPropertyOf: bim:d.direcionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para direcionar:  para.cima  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "direc.102"
+	Annotations: bim:Ação "Ação direcionar"@pt
+	Annotations: bim:Definição "Direciona o elemento para cima (verticalmente)."@pt
+	Annotations: bim:Definición "Dirige el elemento hacia arriba (verticalmente)."@es
+	Annotations: bim:Definition "Directs the element upwards (vertically)."@en
+
+ObjectProperty: bim:p.direcionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.para.baixo
+	SubPropertyOf: bim:p.direcionar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a direcionar: é.para.baixo"@pt
+	Annotations: bim:Chave "direc.102"
+	Annotations: bim:Ação "Ação direcionar"@pt
+	Annotations: bim:Definição "Direciona o elemento para baixo (verticalmente)."@pt
+	Annotations: bim:Definición "Dirige el elemento hacia abajo (verticalmente)."@es
+	Annotations: bim:Definition "Directs the element downward (vertically)."@en
+	InverseOf: bim:é.para.cima
+
+DataProperty: bim:d.direcionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:para.baixo
+	SubPropertyOf: bim:d.direcionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para direcionar:  para.baixo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "direc.102"
+	Annotations: bim:Ação "Ação direcionar"@pt
+	Annotations: bim:Definição "Direciona o elemento para baixo (verticalmente)."@pt
+	Annotations: bim:Definición "Dirige el elemento hacia abajo (verticalmente)."@es
+	Annotations: bim:Definition "Directs the element downward (vertically)."@en
+
+ObjectProperty: bim:p.direcionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.direção.vetorial
+	SubPropertyOf: bim:p.direcionar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a direcionar: é.direção.vetorial"@pt
+	Annotations: bim:Chave "direc.103"
+	Annotations: bim:Ação "Ação direcionar"@pt
+	Annotations: bim:Definição "Direciona o elemento a partir de um vetor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt
+	Annotations: bim:Definición "Dirige el elemento desde un vector de traslación que se origina en [ 0 0 0 ] y punta [ coordenada.x coordenada.y coordenada.z ]."@es
+	Annotations: bim:Definition "Directs the element from a translation vector originating in [ 0 0 0 ] and tip [ coordinate.x coordinate.y coordinate.z ]."@en
+	EquivalentTo: bim:é.vetor.translação
+
+DataProperty: bim:d.direcionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:direção.vetorial
+	SubPropertyOf: bim:d.direcionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para direcionar:  direção.vetorial  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "direc.103"
+	Annotations: bim:Ação "Ação direcionar"@pt
+	Annotations: bim:Definição "Direciona o elemento a partir de um vetor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt
+	Annotations: bim:Definición "Dirige el elemento desde un vector de traslación que se origina en [ 0 0 0 ] y punta [ coordenada.x coordenada.y coordenada.z ]."@es
+	Annotations: bim:Definition "Directs the element from a translation vector originating in [ 0 0 0 ] and tip [ coordinate.x coordinate.y coordinate.z ]."@en
+
 ObjectProperty: bim:p.energizar
 	SubPropertyOf: bim:BIMProp
 
@@ -4983,6 +5080,38 @@ ObjectProperty: bim:p.formar
 
 
 
+ObjectProperty: bim:é.vetor.translação
+	SubPropertyOf: bim:p.formar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a formar: é.vetor.translação"@pt
+	Annotations: bim:Chave "forma.119"
+	Annotations: bim:Ação "Ação formar"@pt
+	Annotations: bim:Definição "Declara o vertor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt
+	Annotations: bim:Definición "Declara que el vértice de traslación se origina en [ 0 0 0 ] y apunta a [ coordenada.x coordenada.y coordenada.z ]."@es
+	Annotations: bim:Definition "Declares the translation vertor originating from [ 0 0 0 ] to [ coordinate.x coordinate.y coordinate.z ]."@en
+	EquivalentTo: bim:é.direção.vetorial
+
+DataProperty: bim:d.formar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:vetor.translação
+	SubPropertyOf: bim:d.formar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para formar:  vetor.translação  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "forma.119"
+	Annotations: bim:Ação "Ação formar"@pt
+	Annotations: bim:Definição "Declara o vertor de translação com origem em [ 0  0  0 ] e ponta [ coordenada.x   coordenada.y   coordenada.z ]."@pt
+	Annotations: bim:Definición "Declara que el vértice de traslación se origina en [ 0 0 0 ] y apunta a [ coordenada.x coordenada.y coordenada.z ]."@es
+	Annotations: bim:Definition "Declares the translation vertor originating from [ 0 0 0 ] to [ coordinate.x coordinate.y coordinate.z ]."@en
+
+ObjectProperty: bim:p.formar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.ponto.uv
 	SubPropertyOf: bim:p.formar
 	domain: bim:BIM
@@ -4993,7 +5122,7 @@ ObjectProperty: bim:é.ponto.uv
 	Annotations: bim:Definição "Declara um ponto de posição UV para descrever a parametrização de uma espaço 2D como uma textura, área de piso ou parece. U  eixo horizontal, V  eixo vertical. Os valores são paramétricos, geralmente entre 0 e 1: ‘[  0 , 0]’  canto inferior esquerdo da textura e ‘[  1 , 1 ]’ é o canto superior direito e ‘[ 0.5 , 0.5 ]’ o centro. É usado para mapeamento."@pt
 	Annotations: bim:Definición "Declara un punto UV que describe la parametrización de un espacio 2D como una textura o un área de piso o pared. U  eje horizontal, V  eje vertical. Los valores son paramétricos, generalmente entre 0 y 1: ‘[  0 , 0]’  esquina inferior izquierda de la textura, ‘[  1 , 1 ]’  la esquina superior derecha y ‘[ 0.5 , 0.5 ]’ el centro. Se utiliza para el mapeo."@es
 	Annotations: bim:Definition "Declares a UV point that describes the parametrization of a 2D space such as a texture or a floor or wall area. U  horizontal axis, V  vertical axis. The values are parametric, generally between 0 and 1: ‘[  0 , 0 ]’  bottom left corner of the texture, ‘[  1 , 1 ]’  top right corner and ‘[  0.5 , 0.5 ]’  the center. It is used for mapping."@en
-	EquivalentTo: bim:é.ponto.de.análise
+	EquivalentTo: bim:é.ponto.analítico
 
 DataProperty: bim:d.formar
 	SubPropertyOf: bim:BIMData
@@ -5079,11 +5208,11 @@ ObjectProperty: bim:p.formar
 
 
 
-ObjectProperty: bim:é.ponto.de.análise
+ObjectProperty: bim:é.ponto.analítico
 	SubPropertyOf: bim:p.formar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a formar: é.ponto.de.análise"@pt
+	Annotations: rdfs:label "Propriedade destinada a formar: é.ponto.analítico"@pt
 	Annotations: bim:Chave "forma.130"
 	Annotations: bim:Ação "Ação formar"@pt
 	Annotations: bim:Definição "Declara a posiçao de um ponto analítico UV que pode ser usado em análise estrutural, acústico, luminotécnico, etc."@pt
@@ -5096,10 +5225,10 @@ DataProperty: bim:d.formar
 
 
 
-DataProperty: bim:ponto.de.análise
+DataProperty: bim:ponto.analítico
 	SubPropertyOf: bim:d.formar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para formar:  ponto.de.análise  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para formar:  ponto.analítico  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "forma.130"
 	Annotations: bim:Ação "Ação formar"@pt
 	Annotations: bim:Definição "Declara a posiçao de um ponto analítico UV que pode ser usado em análise estrutural, acústico, luminotécnico, etc."@pt
@@ -8960,7 +9089,7 @@ ObjectProperty: bim:é.módulo.de.elasticidade
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.módulo.de.elasticidade"@pt
-	Annotations: bim:Chave "resis.109"
+	Annotations: bim:Chave "resis.111"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt
 	Annotations: bim:Definición "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es
@@ -8976,7 +9105,7 @@ DataProperty: bim:módulo.de.elasticidade
 	SubPropertyOf: bim:d.resistir
 	range: xsd:double
 	Annotations: rdfs:label "Dado para resistir:  módulo.de.elasticidade  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "resis.109"
+	Annotations: bim:Chave "resis.111"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt
 	Annotations: bim:Definición "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es
@@ -8992,7 +9121,7 @@ ObjectProperty: bim:é.módulo.de.young
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.módulo.de.young"@pt
-	Annotations: bim:Chave "resis.110"
+	Annotations: bim:Chave "resis.112"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt
 	Annotations: bim:Definición "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es
@@ -9008,7 +9137,7 @@ DataProperty: bim:módulo.de.young
 	SubPropertyOf: bim:d.resistir
 	range: xsd:double
 	Annotations: rdfs:label "Dado para resistir:  módulo.de.young  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "resis.110"
+	Annotations: bim:Chave "resis.112"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a relação entre a tensão aplicada e a deformação elástica de um material."@pt
 	Annotations: bim:Definición "Establece la relación entre la tensión aplicada y la deformación elástica de un material."@es
@@ -9024,7 +9153,7 @@ ObjectProperty: bim:é.aparafusada
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.aparafusada"@pt
-	Annotations: bim:Chave "resis.112"
+	Annotations: bim:Chave "resis.114"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara que deve ser instalado aparafusado."@pt
 	Annotations: bim:Definición "Indica que debe instalarse atornillado."@es
@@ -9040,7 +9169,7 @@ DataProperty: bim:aparafusada
 	SubPropertyOf: bim:d.resistir
 	range: xsd:boolean
 	Annotations: rdfs:label "Dado para resistir:  aparafusada  Deve ser formatado como (xsd:boolean)"@pt
-	Annotations: bim:Chave "resis.112"
+	Annotations: bim:Chave "resis.114"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara que deve ser instalado aparafusado."@pt
 	Annotations: bim:Definición "Indica que debe instalarse atornillado."@es
@@ -9056,7 +9185,7 @@ ObjectProperty: bim:é.aparafusado
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.aparafusado"@pt
-	Annotations: bim:Chave "resis.113"
+	Annotations: bim:Chave "resis.115"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a união de peças como aparafusadas."@pt
 	Annotations: bim:Definición "Declara la unión de piezas como atornillada."@es
@@ -9072,7 +9201,7 @@ DataProperty: bim:aparafusado
 	SubPropertyOf: bim:d.resistir
 	range: xsd:boolean
 	Annotations: rdfs:label "Dado para resistir:  aparafusado  Deve ser formatado como (xsd:boolean)"@pt
-	Annotations: bim:Chave "resis.113"
+	Annotations: bim:Chave "resis.115"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a união de peças como aparafusadas."@pt
 	Annotations: bim:Definición "Declara la unión de piezas como atornillada."@es
@@ -9088,7 +9217,7 @@ ObjectProperty: bim:é.limite.de.escoamento
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.limite.de.escoamento"@pt
-	Annotations: bim:Chave "resis.119"
+	Annotations: bim:Chave "resis.121"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt
 	Annotations: bim:Definición "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es
@@ -9104,7 +9233,7 @@ DataProperty: bim:limite.de.escoamento
 	SubPropertyOf: bim:d.resistir
 	range: xsd:double
 	Annotations: rdfs:label "Dado para resistir:  limite.de.escoamento  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "resis.119"
+	Annotations: bim:Chave "resis.121"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt
 	Annotations: bim:Definición "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es
@@ -9120,7 +9249,7 @@ ObjectProperty: bim:é.limite.elástico
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.limite.elástico"@pt
-	Annotations: bim:Chave "resis.120"
+	Annotations: bim:Chave "resis.122"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt
 	Annotations: bim:Definición "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es
@@ -9136,7 +9265,7 @@ DataProperty: bim:limite.elástico
 	SubPropertyOf: bim:d.resistir
 	range: xsd:double
 	Annotations: rdfs:label "Dado para resistir:  limite.elástico  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "resis.120"
+	Annotations: bim:Chave "resis.122"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de escoamento em MPA. É o valor crítico em que o aço muda o comportamento de elástico para plástico, ou seja que não se recupera da deformação."@pt
 	Annotations: bim:Definición "Declara el límite elástico en MPA. Es el valor crítico en el que el acero cambia el comportamiento de elástico a plástico, es decir, que no se recupera de la deformación."@es
@@ -9152,7 +9281,7 @@ ObjectProperty: bim:é.limite.de.resistência
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.limite.de.resistência"@pt
-	Annotations: bim:Chave "resis.121"
+	Annotations: bim:Chave "resis.123"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de resistência em MPA."@pt
 	Annotations: bim:Definición "Declara el límite de resistencia en MPA."@es
@@ -9168,7 +9297,7 @@ DataProperty: bim:limite.de.resistência
 	SubPropertyOf: bim:d.resistir
 	range: xsd:double
 	Annotations: rdfs:label "Dado para resistir:  limite.de.resistência  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "resis.121"
+	Annotations: bim:Chave "resis.123"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de resistência em MPA."@pt
 	Annotations: bim:Definición "Declara el límite de resistencia en MPA."@es
@@ -9184,7 +9313,7 @@ ObjectProperty: bim:é.tensão.de.rotura
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.tensão.de.rotura"@pt
-	Annotations: bim:Chave "resis.122"
+	Annotations: bim:Chave "resis.124"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de resistência em MPA."@pt
 	Annotations: bim:Definición "Declara el límite de resistencia en MPA."@es
@@ -9200,7 +9329,7 @@ DataProperty: bim:tensão.de.rotura
 	SubPropertyOf: bim:d.resistir
 	range: xsd:double
 	Annotations: rdfs:label "Dado para resistir:  tensão.de.rotura  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "resis.122"
+	Annotations: bim:Chave "resis.124"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o limite de resistência em MPA."@pt
 	Annotations: bim:Definición "Declara el límite de resistencia en MPA."@es
@@ -9216,7 +9345,7 @@ ObjectProperty: bim:é.trrf
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.trrf"@pt
-	Annotations: bim:Chave "resis.124"
+	Annotations: bim:Chave "resis.126"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o Tempo Requerido de Resistência ao Fogo (TRRF) em minutos. Requisito associado aos compartimentos exigida pelo Corpo de Bombeiros de cada localidade."@pt
 	Annotations: bim:Definición "Declara el Tiempo Requerido de Resistencia al Fuego (TRRF) en minutos. Requisito asociado a los compartimentos, exigido por el Cuerpo Bomberos de cada localidad."@es
@@ -9232,7 +9361,7 @@ DataProperty: bim:trrf
 	SubPropertyOf: bim:d.resistir
 	range: xsd:integer
 	Annotations: rdfs:label "Dado para resistir:  trrf  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "resis.124"
+	Annotations: bim:Chave "resis.126"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara o Tempo Requerido de Resistência ao Fogo (TRRF) em minutos. Requisito associado aos compartimentos exigida pelo Corpo de Bombeiros de cada localidade."@pt
 	Annotations: bim:Definición "Declara el Tiempo Requerido de Resistencia al Fuego (TRRF) en minutos. Requisito asociado a los compartimentos, exigido por el Cuerpo Bomberos de cada localidad."@es
@@ -9248,7 +9377,7 @@ ObjectProperty: bim:é.resistência.ao.fogo
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a resistir: é.resistência.ao.fogo"@pt
-	Annotations: bim:Chave "resis.125"
+	Annotations: bim:Chave "resis.127"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a Resistência ao Fogo (RF) expressada em minutos. A propriedade define deve ser associada aos elementos de vedação como paredes e divisórias ou esquadrias."@pt
 	Annotations: bim:Definición "Declara la Resistencia al Fuego (RF) expresada en minutos. La propriedad debe ser asociada a los elementos de cerramientos como paredes, divisorias o carpinterías."@es
@@ -9264,7 +9393,7 @@ DataProperty: bim:resistência.ao.fogo
 	SubPropertyOf: bim:d.resistir
 	range: xsd:integer
 	Annotations: rdfs:label "Dado para resistir:  resistência.ao.fogo  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "resis.125"
+	Annotations: bim:Chave "resis.127"
 	Annotations: bim:Ação "Ação resistir"@pt
 	Annotations: bim:Definição "Declara a Resistência ao Fogo (RF) expressada em minutos. A propriedade define deve ser associada aos elementos de vedação como paredes e divisórias ou esquadrias."@pt
 	Annotations: bim:Definición "Declara la Resistencia al Fuego (RF) expresada en minutos. La propriedad debe ser asociada a los elementos de cerramientos como paredes, divisorias o carpinterías."@es
@@ -10052,5 +10181,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia 15965_1S
-##  Criada em 06/05/2026 15:26:39
+##  Criada em 10/05/2026 10:56:41
 #################################################################
