@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 18/05/2026 13:51:04"@pt
+  Annotations: rdfs:label "DataHora: 18/05/2026 14:14:24"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -104,8 +104,8 @@ Class: bim:Definida
 	SubClassOf: bim:Informação
 
 
-Class: bim:In.Project
-	Annotations: rdfs:label "In Project"@pt
+Class: bim:No.Projeto
+	Annotations: rdfs:label "No Projeto"@pt
 	Annotations: bim:Definição "Define um contêiner de informação de acordo à norma NBR 19650-1. Definição do Projeto."@pt
 	Annotations: bim:Definición "Define un contenedor de información conforme al estándar NBR 19650-1. Definición del proyecto."@es
 	Annotations: bim:Definition "Defines an information container in accordance with the NBR 19650-1 standard. Project Definition."@en
@@ -205,8 +205,8 @@ Class: bim:Drone
 	SubClassOf: bim:Vistoria
 
 
-Class: bim:Plan
-	Annotations: rdfs:label "Plan"@pt
+Class: bim:Voo.Plano
+	Annotations: rdfs:label "Voo Plano"@pt
 	Annotations: bim:Definição "Plano de voo autônomo."@pt
 	Annotations: bim:Definición "Plan de vuelo autónomo."@es
 	Annotations: bim:Definition "Autonomous flight plan."@en
@@ -218,8 +218,8 @@ Class: bim:Plan
 	SubClassOf: bim:Vistoria
 
 
-Class: bim:Flight.Auto
-	Annotations: rdfs:label "Flight Auto"@pt
+Class: bim:Voo.Autônomo
+	Annotations: rdfs:label "Voo Autônomo"@pt
 	Annotations: bim:Definição "Voo autônomo realizado com drone."@pt
 	Annotations: bim:Definición "Vuelo autónomo realizado con un dron."@es
 	Annotations: bim:Definition "Autonomous flight carried out with a drone."@en
@@ -257,8 +257,8 @@ Class: bim:De.Campo
 	SubClassOf: bim:Vistoria
 
 
-Class: bim:Bank
-	Annotations: rdfs:label "Bank"@pt
+Class: bim:Banco.Imagens
+	Annotations: rdfs:label "Banco Imagens"@pt
 	Annotations: bim:Definição "Banco de imagens e vídeos dos voos."@pt
 	Annotations: bim:Definición "Imágenes y vídeos de archivo de los vuelos."@es
 	Annotations: bim:Definition "Stock images and videos of the flights."@en
@@ -301,77 +301,77 @@ Class: bim:Data
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
-Individual: bim:Building_Ope_01
-	Types: bim:In.Project
-	Facts: bim:url  "http://ufrj//ct//images//building//"
-	Facts: bim:description  "Building 01 Maintenance Data Container"
+Individual: bim:Ope_Predio_01
+	Types: bim:No.Projeto
+	Facts: bim:url  "http://ufrj//ct//vistorias//predio//"
+	Facts: bim:descrição  "Contêiner dos dados da Manutenção do Predio 01"
 
-Individual: bim:Image_Bank01
-	Types: bim:Bank
-	Facts: bim:url  "bank01"
-	Facts: bim:description  "It's the building maintenance flight image bank"
+Individual: bim:BancoIma01
+	Types: bim:Banco.Imagens
+	Facts: bim:url  "banco01"
+	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
 
-Individual: bim:Image_Bank02
-	Types: bim:Bank
-	Facts: bim:url  "bank02"
-	Facts: bim:description  "It's the building maintenance flight image bank"
+Individual: bim:BancoIma02
+	Types: bim:Banco.Imagens
+	Facts: bim:url  "banco02"
+	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
 
 Individual: bim:DJI001
 	Types: bim:Drone
-	Facts: bim:model  "Mavic 2 Pro"
-	Facts: bim:description  "It's a Mavic 2 model drone device"
+	Facts: bim:modelo  "Mavic 2 Pro"
+	Facts: bim:descrição  "É aparelho de drone modelo Mavic 2"
 
-Individual: bim:Plan_A
-	Types: bim:Plan
+Individual: bim:Plano_A
+	Types: bim:Voo.Plano
 	Facts: bim:é.drone  bim:DJI001
-	Facts: bim:description  "It's an autonomous drone flight plan over the UFRJ CT"
+	Facts: bim:descrição  "É um plano de voo de drone autônomo sobre o CT da UFRJ"
 
-Individual: bim:Plan_B
-	Types: bim:Plan
+Individual: bim:Plano_B
+	Types: bim:Voo.Plano
 	Facts: bim:é.drone  bim:DJI001
-	Facts: bim:description  "It's an autonomous drone flight plan over the UFRJ CT"
+	Facts: bim:descrição  "É um plano de voo de drone autônomo sobre o CT da UFRJ"
 
-Individual: bim:Oper_01
-	Types: bim:In.Project
-	Facts: bim:é.date  bim:Data01
-	Facts: bim:é.belonging.to  bim:Building_Ope_01
-	Facts: bim:description  "Operation_01 data container"
+Individual: bim:Manutençao_01
+	Types: bim:No.Projeto
+	Facts: bim:é.data  bim:Data01
+	Facts: bim:é.pertencente.a  bim:Ope_Predio_01
+	Facts: bim:descrição  "Contêiner dos dados da Manutenção_01"
 
-Individual: bim:Oper_02
-	Types: bim:In.Project
-	Facts: bim:é.date  bim:Data02
-	Facts: bim:é.belonging.to  bim:Building_Ope_01
-	Facts: bim:description  "Operation_02 data container"
+Individual: bim:Manutençao_02
+	Types: bim:No.Projeto
+	Facts: bim:é.data  bim:Data02
+	Facts: bim:é.pertencente.a  bim:Ope_Predio_01
+	Facts: bim:descrição  "Contêiner dos dados da Manutenção_01"
 
 Individual: bim:Data01
 	Types: bim:Data
-	Facts: bim:é.belonging.to  bim:Oper_01
-	Facts: bim:description  "It's the date of an inspection flight"
-	Facts: bim:date  "09/08/2024"
+	Facts: bim:é.pertencente.a  bim:Manutençao_01
+	Facts: bim:descrição  "É data de um voo de vistoria"
+	Facts: bim:data  "09/08/2024"
 
 Individual: bim:Data02
 	Types: bim:Data
-	Facts: bim:é.belonging.to  bim:Oper_02
-	Facts: bim:description  "It's the date of an inspection flight"
-	Facts: bim:date  "30/03/2026"
+	Facts: bim:é.pertencente.a  bim:Manutençao_02
+	Facts: bim:descrição  "É data de um voo de vistoria"
+	Facts: bim:data  "30/03/2026"
 
-Individual: bim:Flight01
-	Types: bim:Flight.Auto
-	Facts: bim:é.made.by  bim:DJI001
-	Facts: bim:é.plan.of.flight  bim:Plan_A
-	Facts: bim:é.belonging.to  bim:Image_Bank01
-	Facts: bim:é.date  bim:Data01
-	Facts: bim:description  "It is an autonomous drone flight carried out over the UFRJ CT"
-	Facts: bim:file.kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
+Individual: bim:Voo1
+	Types: bim:Voo.Autônomo
+	Facts: bim:é.realizado.com  bim:DJI001
+	Facts: bim:é.plano.de.voo  bim:Plano_A
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:é.data  bim:Data01
+	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
+	Facts: bim:arquivo.kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
 
-Individual: bim:Flight02
-	Types: bim:Flight.Auto
-	Facts: bim:é.made.by  bim:DJI001
-	Facts: bim:é.plan.of.flight  bim:Plan_B
-	Facts: bim:é.belonging.to  bim:Image_Bank02
-	Facts: bim:é.date  bim:Data02
-	Facts: bim:description  "It is an autonomous drone flight carried out over the UFRJ CT"
-	Facts: bim:file.kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
+Individual: bim:Voo2
+	Types: bim:Voo.Autônomo
+	Facts: bim:é.realizado.com  bim:DJI001
+	Facts: bim:é.plano.de.voo  bim:Plano_B
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:é.data  bim:Data02
+	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
+	Facts: bim:arquivo.kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -1350,6 +1350,70 @@ ObjectProperty: bim:p.catalogar
 
 
 
+ObjectProperty: bim:é.descrição
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.descrição"@pt
+	Annotations: bim:Chave "catal.110"
+	Annotations: bim:Ação "Ação catalogar"@pt
+	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
+	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
+	Annotations: bim:Definition "Declares the description of the object which can be a succinct explanation."@en
+	Annotations: bim:ABNT "[ 0P.10 ]"
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:descrição
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  descrição  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "catal.110"
+	Annotations: bim:Ação "Ação catalogar"@pt
+	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
+	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
+	Annotations: bim:Definition "Declares the description of the object which can be a succinct explanation."@en
+	Annotations: bim:ABNT "[ 0P.10 ]"
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.modelo
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.modelo"@pt
+	Annotations: bim:Chave "catal.125"
+	Annotations: bim:Ação "Ação catalogar"@pt
+	Annotations: bim:Definição "Declara o Modelo comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara el modelo de negocio de un componente o producto."@es
+	Annotations: bim:Definition "Declares the Business Model of a component or product."@en
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:modelo
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  modelo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "catal.125"
+	Annotations: bim:Ação "Ação catalogar"@pt
+	Annotations: bim:Definição "Declara o Modelo comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara el modelo de negocio de un componente o producto."@es
+	Annotations: bim:Definition "Declares the Business Model of a component or product."@en
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.realizada.com
 	SubPropertyOf: bim:p.catalogar
 	domain: bim:BIM
@@ -1504,6 +1568,37 @@ DataProperty: bim:recurso
 	Annotations: bim:Definição "Declara que é um recurso aberto no contexto do concurso, licitação ou certame."@pt
 	Annotations: bim:Definición "Declara que se trata de un recurso abierto en el contexto de la licitación, licitación o concurso."@es
 	Annotations: bim:Definition "Declares that it is an open appeal in the context of the tender, bidding or contest."@en
+
+ObjectProperty: bim:p.digitalizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.arquivo.kml
+	SubPropertyOf: bim:p.digitalizar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a digitalizar: é.arquivo.kml"@pt
+	Annotations: bim:Chave "digit.112"
+	Annotations: bim:Ação "Ação digitalizar"@pt
+	Annotations: bim:Definição "Declara que se trata de um arquivo digital em formato KML Keyhole Markup Language."@pt
+	Annotations: bim:Definición "Declara que es un archivo digital en formato KML Keyhole Markup Language."@es
+	Annotations: bim:Definition "Declares that it is a digital KML Keyhole Markup Language file."@en
+
+DataProperty: bim:d.digitalizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:arquivo.kml
+	SubPropertyOf: bim:d.digitalizar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para digitalizar:  arquivo.kml  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "digit.112"
+	Annotations: bim:Ação "Ação digitalizar"@pt
+	Annotations: bim:Definição "Declara que se trata de um arquivo digital em formato KML Keyhole Markup Language."@pt
+	Annotations: bim:Definición "Declara que es un archivo digital en formato KML Keyhole Markup Language."@es
+	Annotations: bim:Definition "Declares that it is a digital KML Keyhole Markup Language file."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -6845,166 +6940,11 @@ ObjectProperty: bim:p.relacionar
 
 
 
-ObjectProperty: bim:é.belonging.to
+ObjectProperty: bim:é.pertencente.a
 	SubPropertyOf: bim:p.relacionar
 	domain: bim:BIM
 	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.belonging.to"@pt
-	Annotations: bim:Chave "relac.108"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:belonging.to
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  belonging.to  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.108"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.description
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.description"@pt
-	Annotations: bim:Chave "relac.107"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:description
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  description  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.107"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.model
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.model"@pt
-	Annotations: bim:Chave "relac.107"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:model
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  model  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.107"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.made.by
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.made.by"@pt
-	Annotations: bim:Chave "relac.108"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:made.by
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  made.by  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.108"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.date
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.date"@pt
-	Annotations: bim:Chave "relac.108"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-DataProperty: bim:d.relacionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:date
-	SubPropertyOf: bim:d.relacionar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  date  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "relac.108"
-	Annotations: bim:Ação "Ação relacionar"@pt
-	Annotations: bim:Definição "O elemento pertence a um outro."@pt
-	Annotations: bim:Definición "El elemento pertenece a otro."@es
-	Annotations: bim:Definition "The element belongs to another."@en
-
-ObjectProperty: bim:p.relacionar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.plan.of.flight
-	SubPropertyOf: bim:p.relacionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a relacionar: é.plan.of.flight"@pt
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.pertencente.a"@pt
 	Annotations: bim:Chave "relac.109"
 	Annotations: bim:Ação "Ação relacionar"@pt
 	Annotations: bim:Definição "O elemento pertence a um outro."@pt
@@ -7016,10 +6956,10 @@ DataProperty: bim:d.relacionar
 
 
 
-DataProperty: bim:plan.of.flight
+DataProperty: bim:pertencente.a
 	SubPropertyOf: bim:d.relacionar
 	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para relacionar:  plan.of.flight  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: rdfs:label "Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
 	Annotations: bim:Chave "relac.109"
 	Annotations: bim:Ação "Ação relacionar"@pt
 	Annotations: bim:Definição "O elemento pertence a um outro."@pt
@@ -8254,6 +8194,37 @@ DataProperty: bim:receita.total
 	Annotations: bim:Definición "Declara la cantidad total de ingresos o facturación."@es
 	Annotations: bim:Definition "Declares the total amount of total revenue or turnover."@en
 
+ObjectProperty: bim:p.temporalizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.data
+	SubPropertyOf: bim:p.temporalizar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a temporalizar: é.data"@pt
+	Annotations: bim:Chave "tempo.102"
+	Annotations: bim:Ação "Ação temporalizar"@pt
+	Annotations: bim:Definição "Declara uma data inespecífica para algum evento."@pt
+	Annotations: bim:Definición "Declara una fecha no específica para algún evento."@es
+	Annotations: bim:Definition "Declares a non-specific date for some event."@en
+
+DataProperty: bim:d.temporalizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:data
+	SubPropertyOf: bim:d.temporalizar
+	range: xsd:date
+	Annotations: rdfs:label "Dado para temporalizar:  data  Deve ser formatado como (xsd:date)"@pt
+	Annotations: bim:Chave "tempo.102"
+	Annotations: bim:Ação "Ação temporalizar"@pt
+	Annotations: bim:Definição "Declara uma data inespecífica para algum evento."@pt
+	Annotations: bim:Definición "Declara una fecha no específica para algún evento."@es
+	Annotations: bim:Definition "Declares a non-specific date for some event."@en
+
 ObjectProperty: bim:p.vistoriar
 	SubPropertyOf: bim:BIMProp
 
@@ -8350,7 +8321,38 @@ DataProperty: bim:vant
 	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
 	Annotations: bim:Definition "Declares the identification of the unmanned aerial vehicle."@en
 
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.plano.de.voo
+	SubPropertyOf: bim:p.vistoriar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.plano.de.voo"@pt
+	Annotations: bim:Chave "visto.108"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara o arquivo com um plano de voo com os valores de waypoints."@pt
+	Annotations: bim:Definición "Declara el archivo con un plan de vuelo con los valores de los puntos de referencia."@es
+	Annotations: bim:Definition "Declares the file with a flight plan with the waypoint values."@en
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:plano.de.voo
+	SubPropertyOf: bim:d.vistoriar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  plano.de.voo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "visto.108"
+	Annotations: bim:Ação "Ação vistoriar"@pt
+	Annotations: bim:Definição "Declara o arquivo com um plano de voo com os valores de waypoints."@pt
+	Annotations: bim:Definición "Declara el archivo con un plan de vuelo con los valores de los puntos de referencia."@es
+	Annotations: bim:Definition "Declares the file with a flight plan with the waypoint values."@en
+
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/05/2026 13:51:05
+##  Criada em 18/05/2026 14:14:25
 #################################################################
