@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 18/05/2026 13:35:06"@pt ;
+	  rdfs:label "DataHora: 18/05/2026 13:35:56"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -108,9 +108,9 @@ bim:Definida rdf:type  owl:Class  ;
       rdfs:label  "Definida"@pt  .
 
 
-bim:No.Projeto rdf:type  owl:Class  ;
+bim:In.Project rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Definida ;
-      rdfs:label  "No Projeto"@pt ;
+      rdfs:label  "In Project"@pt ;
       bim:Definição   "Define um contêiner de informação de acordo à norma NBR 19650-1. Definição do Projeto."@pt ;
       bim:Definición  "Define un contenedor de información conforme al estándar NBR 19650-1. Definición del proyecto."@es ;
        bim:Definition  "Defines an information container in accordance with the NBR 19650-1 standard. Project Definition."@en ;
@@ -300,9 +300,9 @@ bim:Vistoria rdf:type  owl:Class  ;
       rdfs:label  "Vistoria"@pt  .
 
 
-bim:Voo.Plano rdf:type  owl:Class  ;
+bim:Plan rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Vistoria ;
-      rdfs:label  "Voo Plano"@pt ;
+      rdfs:label  "Plan"@pt ;
       bim:Definição   "Plano de voo autônomo."@pt ;
       bim:Definición  "Plan de vuelo autónomo."@es ;
        bim:Definition  "Autonomous flight plan."@en ;
@@ -332,9 +332,9 @@ bim:Vistoria rdf:type  owl:Class  ;
       rdfs:label  "Vistoria"@pt  .
 
 
-bim:Voo.Autônomo rdf:type  owl:Class  ;
+bim:Flight.Auto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Vistoria ;
-      rdfs:label  "Voo Autônomo"@pt ;
+      rdfs:label  "Flight Auto"@pt ;
       bim:Definição   "Voo autônomo realizado com drone."@pt ;
       bim:Definición  "Vuelo autónomo realizado con un dron."@es ;
        bim:Definition  "Autonomous flight carried out with a drone."@en ;
@@ -428,9 +428,9 @@ bim:Vistoria rdf:type  owl:Class  ;
       rdfs:label  "Vistoria"@pt  .
 
 
-bim:Banco.Imagens rdf:type  owl:Class  ;
+bim:Bank rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Vistoria ;
-      rdfs:label  "Banco Imagens"@pt ;
+      rdfs:label  "Bank"@pt ;
       bim:Definição   "Banco de imagens e vídeos dos voos."@pt ;
       bim:Definición  "Imágenes y vídeos de archivo de los vuelos."@es ;
        bim:Definition  "Stock images and videos of the flights."@en ;
@@ -471,70 +471,6 @@ bim:Data rdf:type  owl:Class  ;
       bim:Tema        "Calendário"@pt ;
       bim:Disciplina  "Manutenção predial"@pt ;
       bim:Chave       "Key-UAS-13"@pt  .
-
-#################################################################
-#     Indivíduos em Turtle                                       
-#################################################################
-
-bim:Ope_Predio_01  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
-     bim:url    "http://ufrj//ct//vistorias//predio//" ;
-     bim:descrição    "Contêiner dos dados da Manutenção do Predio 01"  .
-
-bim:BancoIma01  rdf:type  owl:NamedIndividual , bim:Banco.Imagens ;
-     bim:url    "banco01" ;
-     bim:descrição    "É o banco de imagens de voo de manutenção predial"  .
-
-bim:BancoIma02  rdf:type  owl:NamedIndividual , bim:Banco.Imagens ;
-     bim:url    "banco02" ;
-     bim:descrição    "É o banco de imagens de voo de manutenção predial"  .
-
-bim:DJI001  rdf:type  owl:NamedIndividual , bim:Drone ;
-     bim:modelo    "Mavic 2 Pro" ;
-     bim:descrição    "É aparelho de drone modelo Mavic 2"  .
-
-bim:Plano_A  rdf:type  owl:NamedIndividual , bim:Voo.Plano ;
-     bim:é.drone    bim:DJI001 ;
-     bim:descrição    "É um plano de voo de drone autônomo sobre o CT da UFRJ"  .
-
-bim:Plano_B  rdf:type  owl:NamedIndividual , bim:Voo.Plano ;
-     bim:é.drone    bim:DJI001 ;
-     bim:descrição    "É um plano de voo de drone autônomo sobre o CT da UFRJ"  .
-
-bim:Manutençao_01  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
-     bim:é.data    bim:Data01 ;
-     bim:é.pertencente.a    bim:Ope_Predio_01 ;
-     bim:descrição    "Contêiner dos dados da Manutenção_01"  .
-
-bim:Manutençao_02  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
-     bim:é.data    bim:Data02 ;
-     bim:é.pertencente.a    bim:Ope_Predio_01 ;
-     bim:descrição    "Contêiner dos dados da Manutenção_01"  .
-
-bim:Data01  rdf:type  owl:NamedIndividual , bim:Data ;
-     bim:é.pertencente.a    bim:Manutençao_01 ;
-     bim:descrição    "É data de um voo de vistoria" ;
-     bim:data    "09/08/2024"  .
-
-bim:Data02  rdf:type  owl:NamedIndividual , bim:Data ;
-     bim:é.pertencente.a    bim:Manutençao_02 ;
-     bim:descrição    "É data de um voo de vistoria" ;
-     bim:data    "30/03/2026"  .
-
-bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
-     bim:é.realizado.com    bim:DJI001 ;
-     bim:é.plano.de.voo    bim:Plano_A ;
-     bim:é.pertencente.a    bim:BancoIma01 ;
-     bim:é.data    bim:Data01 ;
-     bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
-     bim:arquivo.kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"  .
-
-bim:Voo2  rdf:type  owl:NamedIndividual , bim:Voo.Autônomo ;
-     bim:é.realizado.com    bim:DJI001 ;
-     bim:é.plano.de.voo    bim:Plano_B ;
-     bim:é.pertencente.a    bim:BancoIma02 ;
-     bim:é.data    bim:Data02 ;
-     bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
-     bim:arquivo.kml    "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -1478,35 +1414,6 @@ bim:p.catalogar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.modelo   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.catalogar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a catalogar: é.modelo" ;
-                    bim:Chave               "catal.125" ;
-                    bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Declara o Modelo comercial de um componente ou produto.   "@pt ;
-                    bim:Definición          "Declara el modelo de negocio de un componente o producto."@es ;bim:Definition          "Declares the Business Model of a component or product."@en  .
-
-
-bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:modelo   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.catalogar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  modelo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.125" ;
-                    bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Declara o Modelo comercial de um componente ou produto.   "@pt ;
-                    bim:Definición          "Declara el modelo de negocio de un componente o producto."@es ;bim:Definition          "Declares the Business Model of a component or product."@en  .
-
-
-bim:p.catalogar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
 bim:é.realizada.com   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.catalogar ;
                     rdfs:domain             bim:BIM ;
@@ -1651,35 +1558,6 @@ bim:recurso   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação concursar" ;
                     bim:Definição           "Declara que é um recurso aberto no contexto do concurso, licitação ou certame.   "@pt ;
                     bim:Definición          "Declara que se trata de un recurso abierto en el contexto de la licitación, licitación o concurso."@es ;bim:Definition          "Declares that it is an open appeal in the context of the tender, bidding or contest."@en  .
-
-
-bim:p.digitalizar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.arquivo.kml   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.digitalizar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a digitalizar: é.arquivo.kml" ;
-                    bim:Chave               "digit.112" ;
-                    bim:Ação                "Ação digitalizar" ;
-                    bim:Definição           "Declara que se trata de um arquivo digital em formato KML Keyhole Markup Language.   "@pt ;
-                    bim:Definición          "Declara que es un archivo digital en formato KML Keyhole Markup Language."@es ;bim:Definition          "Declares that it is a digital KML Keyhole Markup Language file."@en  .
-
-
-bim:d.digitalizar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:arquivo.kml   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.digitalizar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para digitalizar:  arquivo.kml  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "digit.112" ;
-                    bim:Ação                "Ação digitalizar" ;
-                    bim:Definição           "Declara que se trata de um arquivo digital em formato KML Keyhole Markup Language.   "@pt ;
-                    bim:Definición          "Declara que es un archivo digital en formato KML Keyhole Markup Language."@es ;bim:Definition          "Declares that it is a digital KML Keyhole Markup Language file."@en  .
 
 
 bim:p.dimensionar   rdf:type  owl:ObjectProperty ;
@@ -6673,35 +6551,6 @@ bim:p.relacionar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.pertencente.a   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.relacionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a relacionar: é.pertencente.a" ;
-                    bim:Chave               "relac.109" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "O elemento pertence a um outro.   "@pt ;
-                    bim:Definición          "El elemento pertenece a otro."@es ;bim:Definition          "The element belongs to another."@en  .
-
-
-bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.relacionar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "relac.109" ;
-                    bim:Ação                "Ação relacionar" ;
-                    bim:Definição           "O elemento pertence a um outro.   "@pt ;
-                    bim:Definición          "El elemento pertenece a otro."@es ;bim:Definition          "The element belongs to another."@en  .
-
-
-bim:p.relacionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
 bim:é.usada.em   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.relacionar ;
                     rdfs:domain             bim:BIM ;
@@ -7850,35 +7699,6 @@ bim:receita.total   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara la cantidad total de ingresos o facturación."@es ;bim:Definition          "Declares the total amount of total revenue or turnover."@en  .
 
 
-bim:p.temporalizar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.data   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.temporalizar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a temporalizar: é.data" ;
-                    bim:Chave               "tempo.102" ;
-                    bim:Ação                "Ação temporalizar" ;
-                    bim:Definição           "Declara uma data inespecífica para algum evento.   "@pt ;
-                    bim:Definición          "Declara una fecha no específica para algún evento."@es ;bim:Definition          "Declares a non-specific date for some event."@en  .
-
-
-bim:d.temporalizar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:data   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.temporalizar ;
-                    rdfs:range              xsd:date ;
-                    rdfs:label              "Dado para temporalizar:  data  Deve ser formatado como (xsd:date)" ;
-                    bim:Chave               "tempo.102" ;
-                    bim:Ação                "Ação temporalizar" ;
-                    bim:Definição           "Declara uma data inespecífica para algum evento.   "@pt ;
-                    bim:Definición          "Declara una fecha no específica para algún evento."@es ;bim:Definition          "Declares a non-specific date for some event."@en  .
-
-
 bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -7968,36 +7788,7 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara a identificação do veículo aereo não tripulado.   "@pt ;
                     bim:Definición          "Declara la identificación del vehículo aéreo no tripulado."@es ;bim:Definition          "Declares the identification of the unmanned aerial vehicle."@en  .
 
-
-bim:p.vistoriar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.plano.de.voo   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.vistoriar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a vistoriar: é.plano.de.voo" ;
-                    bim:Chave               "visto.108" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara o arquivo com um plano de voo com os valores de waypoints.   "@pt ;
-                    bim:Definición          "Declara el archivo con un plan de vuelo con los valores de los puntos de referencia."@es ;bim:Definition          "Declares the file with a flight plan with the waypoint values."@en  .
-
-
-bim:d.vistoriar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:plano.de.voo   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.vistoriar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para vistoriar:  plano.de.voo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "visto.108" ;
-                    bim:Ação                "Ação vistoriar" ;
-                    bim:Definição           "Declara o arquivo com um plano de voo com os valores de waypoints.   "@pt ;
-                    bim:Definición          "Declara el archivo con un plan de vuelo con los valores de los puntos de referencia."@es ;bim:Definition          "Declares the file with a flight plan with the waypoint values."@en  .
-
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 18/05/2026 13:35:07
+##  Criada em 18/05/2026 13:35:57
 #################################################################
