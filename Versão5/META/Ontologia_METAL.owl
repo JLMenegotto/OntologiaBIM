@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#EstruturaMetálica>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Dados de perfis metálicos"@pt
-  Annotations: rdfs:label "DataHora: 18/05/2026 7:59:56"@pt
+  Annotations: rdfs:label "DataHora: 19/05/2026 11:27:25"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: Brasil - Rio de Janeiro"@pt
@@ -46,7 +46,6 @@ Datatype:  xsd:date
 Datatype:  xsd:time
 Datatype:  xsd:boolean
 Datatype:  rdfs:Literal
-Datatype:  xsd:nonNegativeInteger
 Datatype:  rdf:PlainLiteral
 
 Class: bim:BIM
@@ -2363,6 +2362,88 @@ Class: bim:Pórtico.Galpão.Vãos.Múltiplos
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
+Individual: bim:Anteprojeto
+	Types: bim:No.Projeto
+	Facts: bim:projeto.etapa  "Anteprojeto"
+	Facts: bim:projeto.nome  "Nome do Projeto"
+	Facts: bim:projeto.código  "PRJ_01"
+	Facts: bim:descrição  "Aço utilizado na estrutura principal do projeto"
+
+Individual: bim:Prj.Estrutural
+	Types: bim:No.Projeto
+	Facts: bim:é.projeto.etapa  bim:Anteprojeto
+	Facts: bim:projeto.nome  bim:null
+	Facts: bim:descrição  "Aço utilizado na estrutura principal do projeto"
+
+Individual: bim:Estrutura.Principal
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Prj.Estrutural
+	Facts: bim:descrição  "Aço utilizado na estrutura principal do projeto"
+
+Individual: bim:VP.01
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x13
+	Facts: bim:descrição  "Viga perimetral da fachada"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VP.02
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x13
+	Facts: bim:descrição  "Viga perimetral da fachada"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VP.03
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x18
+	Facts: bim:descrição  "Viga perimetral da fachada"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VP.04
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x18
+	Facts: bim:descrição  "Viga perimetral da fachada"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VI.01
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x18
+	Facts: bim:descrição  "Viga interior"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VI.02
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x18
+	Facts: bim:descrição  "Viga interior"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VI.03
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x22
+	Facts: bim:descrição  "Viga interior"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
+Individual: bim:VI.04
+	Types: bim:Estrutura.Principal
+	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
+	Facts: bim:é.bitola  bim:W150x22
+	Facts: bim:descrição  "Viga interior"
+	Facts: bim:categoria.revit  "OST_StructuralFraming"
+	Facts: bim:classe.ifc  "IfcBeam"
+
 Individual: bim:Corten-A
 	Types: bim:Aço.Estrutural
 	SameAs:    bim:A588-A
@@ -2421,6 +2502,7 @@ Individual: bim:Alumínio_7075
 Individual: bim:HP150x22
 	Types: bim:Perfil.Laminado.HP
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "HP150x22"
 	Facts: bim:altura  152
 	Facts: bim:largura  139
@@ -2451,6 +2533,7 @@ Individual: bim:HP150x29
 Individual: bim:HP150x37
 	Types: bim:Perfil.Laminado.HP
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "HP150x37"
 	Facts: bim:altura  162
 	Facts: bim:largura  139
@@ -2541,6 +2624,7 @@ Individual: bim:HP200x53
 Individual: bim:HP200x59
 	Types: bim:Perfil.Laminado.HP
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "HP200x59"
 	Facts: bim:altura  210
 	Facts: bim:largura  182
@@ -2871,6 +2955,7 @@ Individual: bim:W150x13
 Individual: bim:W150x18
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W150x18"
 	Facts: bim:altura  153
 	Facts: bim:largura  102
@@ -2886,6 +2971,7 @@ Individual: bim:W150x18
 Individual: bim:W150x22
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W150x22"
 	Facts: bim:altura  152
 	Facts: bim:largura  152
@@ -2901,6 +2987,7 @@ Individual: bim:W150x22
 Individual: bim:W150x24
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W150x24"
 	Facts: bim:altura  160
 	Facts: bim:largura  102
@@ -2916,6 +3003,7 @@ Individual: bim:W150x24
 Individual: bim:W150x29
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W150x29"
 	Facts: bim:altura  157
 	Facts: bim:largura  153
@@ -3066,6 +3154,7 @@ Individual: bim:W200x41
 Individual: bim:W200x46
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W200x46"
 	Facts: bim:altura  203
 	Facts: bim:largura  203
@@ -3081,6 +3170,7 @@ Individual: bim:W200x46
 Individual: bim:W200x52
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W200x52"
 	Facts: bim:altura  206
 	Facts: bim:largura  204
@@ -3171,6 +3261,7 @@ Individual: bim:W250x115
 Individual: bim:W250x131
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W250x131"
 	Facts: bim:altura  275
 	Facts: bim:largura  261
@@ -3201,6 +3292,7 @@ Individual: bim:W250x149
 Individual: bim:W250x167
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W250x167"
 	Facts: bim:altura  289
 	Facts: bim:largura  265
@@ -3951,6 +4043,7 @@ Individual: bim:W460x52
 Individual: bim:W460x60
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W460x60"
 	Facts: bim:altura  455
 	Facts: bim:largura  153
@@ -3966,6 +4059,7 @@ Individual: bim:W460x60
 Individual: bim:W460x68
 	Types: bim:Perfil.Laminado.W
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:bitola  "W460x68"
 	Facts: bim:altura  459
 	Facts: bim:largura  154
@@ -4384,88 +4478,14 @@ Individual: bim:Parafuso_04
 Individual: bim:Aço.da.Estrutura
 	Types: bim:Materialidade
 	Facts: bim:é.classe.de.aço  bim:A572-50
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:descrição  "Aço utilizado na estrutura do projeto"
 
 Individual: bim:Aço.da.Fachada
 	Types: bim:Materialidade
 	Facts: bim:é.classe.de.aço  bim:A242
+	Facts: bim:é.usado.em  bim:Prj.Estrutural
 	Facts: bim:descrição  "Aço utilizado na fachada do projeto"
-
-Individual: bim:Estrutura.Principal
-	Types: bim:Sustentação
-	Facts: bim:descrição  "Aço utilizado na estrutura principal do projeto"
-
-Individual: bim:Estrutura.Secundária
-	Types: bim:Sustentação
-	Facts: bim:descrição  "Aço utilizado na estrutura secundária do projeto"
-
-Individual: bim:Estrutura.de.Apoio
-	Types: bim:Sustentação
-	Facts: bim:descrição  "Aço utilizado nas estruturas de apoio do projeto"
-
-Individual: bim:VP.01
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x13
-	Facts: bim:descrição  "Viga perimetral da fachada"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VP.02
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x13
-	Facts: bim:descrição  "Viga perimetral da fachada"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VP.03
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:descrição  "Viga perimetral da fachada"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VP.04
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:descrição  "Viga perimetral da fachada"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VI.01
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:descrição  "Viga interior"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VI.02
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x18
-	Facts: bim:descrição  "Viga interior"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VI.03
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x22
-	Facts: bim:descrição  "Viga interior"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
-
-Individual: bim:VI.04
-	Types: bim:Sustentação
-	Facts: bim:é.pertencente.a  bim:Estrutura.Principal
-	Facts: bim:é.bitola  bim:W150x22
-	Facts: bim:descrição  "Viga interior"
-	Facts: bim:categoria.revit  "OST_StructuralFraming"
-	Facts: bim:classe.ifc  "IfcBeam"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -5387,9 +5407,9 @@ ObjectProperty: bim:é.aberta.em
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.aberta.em"@pt
 	Annotations: bim:Chave "catal.101"
 	Annotations: bim:Ação "Ação catalogar"@pt
-	Annotations: bim:Definição "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
-	Annotations: bim:Definición "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es
-	Annotations: bim:Definition "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
+	Annotations: bim:Definição "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
+	Annotations: bim:Definición "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es
+	Annotations: bim:Definition "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
 	EquivalentTo: bim:é.aberto.em
 
 DataProperty: bim:d.catalogar
@@ -5403,9 +5423,9 @@ DataProperty: bim:aberta.em
 	Annotations: rdfs:label "Dado para catalogar:  aberta.em  Deve ser formatado como (xsd:date)"@pt
 	Annotations: bim:Chave "catal.101"
 	Annotations: bim:Ação "Ação catalogar"@pt
-	Annotations: bim:Definição "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
-	Annotations: bim:Definición "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es
-	Annotations: bim:Definition "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
+	Annotations: bim:Definição "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
+	Annotations: bim:Definición "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es
+	Annotations: bim:Definition "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
 
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
@@ -5419,9 +5439,9 @@ ObjectProperty: bim:é.aberto.em
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.aberto.em"@pt
 	Annotations: bim:Chave "catal.102"
 	Annotations: bim:Ação "Ação catalogar"@pt
-	Annotations: bim:Definição "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
-	Annotations: bim:Definición "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es
-	Annotations: bim:Definition "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
+	Annotations: bim:Definição "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
+	Annotations: bim:Definición "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es
+	Annotations: bim:Definition "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
 	EquivalentTo: bim:é.aberta.em
 
 DataProperty: bim:d.catalogar
@@ -5435,9 +5455,9 @@ DataProperty: bim:aberto.em
 	Annotations: rdfs:label "Dado para catalogar:  aberto.em  Deve ser formatado como (xsd:date)"@pt
 	Annotations: bim:Chave "catal.102"
 	Annotations: bim:Ação "Ação catalogar"@pt
-	Annotations: bim:Definição "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
-	Annotations: bim:Definición "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es
-	Annotations: bim:Definition "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
+	Annotations: bim:Definição "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc."@pt
+	Annotations: bim:Definición "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es
+	Annotations: bim:Definition "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en
 
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
@@ -5449,10 +5469,10 @@ ObjectProperty: bim:é.descrição
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.descrição"@pt
-	Annotations: bim:Chave "catal.109"
+	Annotations: bim:Chave "catal.110"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
-	Annotations: bim:Definición "Declara la descripción del objeto que puede ser una explicación sucinta."@es
+	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
 	Annotations: bim:Definition "Declares the description of the object which can be a succinct explanation."@en
 	Annotations: bim:ABNT "[ 0P.10 ]"
 
@@ -5465,10 +5485,10 @@ DataProperty: bim:descrição
 	SubPropertyOf: bim:d.catalogar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para catalogar:  descrição  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "catal.109"
+	Annotations: bim:Chave "catal.110"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
-	Annotations: bim:Definición "Declara la descripción del objeto que puede ser una explicación sucinta."@es
+	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
 	Annotations: bim:Definition "Declares the description of the object which can be a succinct explanation."@en
 	Annotations: bim:ABNT "[ 0P.10 ]"
 
@@ -5482,11 +5502,11 @@ ObjectProperty: bim:é.fabricante
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.fabricante"@pt
-	Annotations: bim:Chave "catal.114"
+	Annotations: bim:Chave "catal.115"
 	Annotations: bim:Ação "Ação catalogar"@pt
-	Annotations: bim:Definição "Identificação de fabricante de componente construtivo para o projeto."@pt
-	Annotations: bim:Definición "Identificación del fabricante del componente constructivo del proyecto."@es
-	Annotations: bim:Definition "Identification of the manufacturer of the construction component for the project."@en
+	Annotations: bim:Definição "Declara o nome do fabricante de componente construtivo para o projeto."@pt
+	Annotations: bim:Definición "Declara el nombre del fabricante de componentes de construcción del proyecto."@es
+	Annotations: bim:Definition "Declares the name of the construction component manufacturer for the project."@en
 	Annotations: bim:ABNT "[ 0P.10.50.03 ]"
 
 DataProperty: bim:d.catalogar
@@ -5498,11 +5518,11 @@ DataProperty: bim:fabricante
 	SubPropertyOf: bim:d.catalogar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para catalogar:  fabricante  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "catal.114"
+	Annotations: bim:Chave "catal.115"
 	Annotations: bim:Ação "Ação catalogar"@pt
-	Annotations: bim:Definição "Identificação de fabricante de componente construtivo para o projeto."@pt
-	Annotations: bim:Definición "Identificación del fabricante del componente constructivo del proyecto."@es
-	Annotations: bim:Definition "Identification of the manufacturer of the construction component for the project."@en
+	Annotations: bim:Definição "Declara o nome do fabricante de componente construtivo para o projeto."@pt
+	Annotations: bim:Definición "Declara el nombre del fabricante de componentes de construcción del proyecto."@es
+	Annotations: bim:Definition "Declares the name of the construction component manufacturer for the project."@en
 	Annotations: bim:ABNT "[ 0P.10.50.03 ]"
 
 ObjectProperty: bim:p.catalogar
@@ -5515,7 +5535,7 @@ ObjectProperty: bim:é.realizada.com
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.realizada.com"@pt
-	Annotations: bim:Chave "catal.128"
+	Annotations: bim:Chave "catal.131"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico."@pt
 	Annotations: bim:Definición "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es
@@ -5531,7 +5551,7 @@ DataProperty: bim:realizada.com
 	SubPropertyOf: bim:d.catalogar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para catalogar:  realizada.com  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "catal.128"
+	Annotations: bim:Chave "catal.131"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico."@pt
 	Annotations: bim:Definición "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es
@@ -5547,7 +5567,7 @@ ObjectProperty: bim:é.realizado.com
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.realizado.com"@pt
-	Annotations: bim:Chave "catal.129"
+	Annotations: bim:Chave "catal.132"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico."@pt
 	Annotations: bim:Definición "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es
@@ -5563,7 +5583,7 @@ DataProperty: bim:realizado.com
 	SubPropertyOf: bim:d.catalogar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para catalogar:  realizado.com  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "catal.129"
+	Annotations: bim:Chave "catal.132"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico."@pt
 	Annotations: bim:Definición "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es
@@ -5579,11 +5599,11 @@ ObjectProperty: bim:é.substituida.por
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.substituida.por"@pt
-	Annotations: bim:Chave "catal.136"
+	Annotations: bim:Chave "catal.139"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo."@pt
 	Annotations: bim:Definición "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
-	Annotations: bim:Definition "Identification of an element that has replaced another element. The declaration identifies the new element."@en
+	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en
 	EquivalentTo: bim:é.substituido.por
 
 DataProperty: bim:d.catalogar
@@ -5595,11 +5615,11 @@ DataProperty: bim:substituida.por
 	SubPropertyOf: bim:d.catalogar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para catalogar:  substituida.por  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "catal.136"
+	Annotations: bim:Chave "catal.139"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo."@pt
 	Annotations: bim:Definición "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
-	Annotations: bim:Definition "Identification of an element that has replaced another element. The declaration identifies the new element."@en
+	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en
 
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
@@ -5611,11 +5631,11 @@ ObjectProperty: bim:é.substituido.por
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a catalogar: é.substituido.por"@pt
-	Annotations: bim:Chave "catal.137"
+	Annotations: bim:Chave "catal.140"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo."@pt
 	Annotations: bim:Definición "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
-	Annotations: bim:Definition "Identification of an element that has replaced another element. The declaration identifies the new element."@en
+	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en
 	EquivalentTo: bim:é.substituida.por
 
 DataProperty: bim:d.catalogar
@@ -5627,11 +5647,11 @@ DataProperty: bim:substituido.por
 	SubPropertyOf: bim:d.catalogar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para catalogar:  substituido.por  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "catal.137"
+	Annotations: bim:Chave "catal.140"
 	Annotations: bim:Ação "Ação catalogar"@pt
 	Annotations: bim:Definição "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo."@pt
 	Annotations: bim:Definición "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
-	Annotations: bim:Definition "Identification of an element that has replaced another element. The declaration identifies the new element."@en
+	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en
 
 ObjectProperty: bim:p.concursar
 	SubPropertyOf: bim:BIMProp
@@ -5899,44 +5919,12 @@ ObjectProperty: bim:p.dimensionar
 
 
 
-ObjectProperty: bim:é.inclinação.máxima
-	SubPropertyOf: bim:p.dimensionar
-	domain: bim:BIM
-	range: bim:Projeto
-	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.inclinação.máxima"@pt
-	Annotations: bim:Chave "dimen.146"
-	Annotations: bim:Ação "Ação dimensionar"@pt
-	Annotations: bim:Definição "Inclinação máxima permitida por norma ou projetualmente recomendável para projetar elementos inclinados."@pt
-	Annotations: bim:Definición "Máxima inclinación permitida por ley o recomendada proyectualmente para diseñar elementos inclinados."@es
-	Annotations: bim:Definition "Maximum inclination allowed by law or projectually recommended for designing inclined elements."@en
-	EquivalentTo: bim:é.caimento.máximo
-
-DataProperty: bim:d.dimensionar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:inclinação.máxima
-	SubPropertyOf: bim:d.dimensionar
-	range: xsd:double
-	Annotations: rdfs:label "Dado para dimensionar:  inclinação.máxima  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "dimen.146"
-	Annotations: bim:Ação "Ação dimensionar"@pt
-	Annotations: bim:Definição "Inclinação máxima permitida por norma ou projetualmente recomendável para projetar elementos inclinados."@pt
-	Annotations: bim:Definición "Máxima inclinación permitida por ley o recomendada proyectualmente para diseñar elementos inclinados."@es
-	Annotations: bim:Definition "Maximum inclination allowed by law or projectually recommended for designing inclined elements."@en
-
-ObjectProperty: bim:p.dimensionar
-	SubPropertyOf: bim:BIMProp
-
-
-
 ObjectProperty: bim:é.inclinação.mínima
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.inclinação.mínima"@pt
-	Annotations: bim:Chave "dimen.147"
+	Annotations: bim:Chave "dimen.146"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
 	Annotations: bim:Definición "Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
@@ -5952,7 +5940,7 @@ DataProperty: bim:inclinação.mínima
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  inclinação.mínima  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "dimen.147"
+	Annotations: bim:Chave "dimen.146"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
 	Annotations: bim:Definición "Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
@@ -5968,7 +5956,7 @@ ObjectProperty: bim:é.largura
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.largura"@pt
-	Annotations: bim:Chave "dimen.148"
+	Annotations: bim:Chave "dimen.147"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de largura de um objeto."@pt
 	Annotations: bim:Definición "El valor de ancho de un objeto."@es
@@ -5983,7 +5971,7 @@ DataProperty: bim:largura
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  largura  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "dimen.148"
+	Annotations: bim:Chave "dimen.147"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de largura de um objeto."@pt
 	Annotations: bim:Definición "El valor de ancho de un objeto."@es
@@ -5999,7 +5987,7 @@ ObjectProperty: bim:é.pressão.nominal
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.pressão.nominal"@pt
-	Annotations: bim:Chave "dimen.154"
+	Annotations: bim:Chave "dimen.153"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
 	Annotations: bim:Definición "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
@@ -6017,7 +6005,7 @@ DataProperty: bim:pressão.nominal
 	range: xsd:integer
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  pressão.nominal  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "dimen.154"
+	Annotations: bim:Chave "dimen.153"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
 	Annotations: bim:Definición "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
@@ -6033,7 +6021,7 @@ ObjectProperty: bim:é.pn
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.pn"@pt
-	Annotations: bim:Chave "dimen.155"
+	Annotations: bim:Chave "dimen.154"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
 	Annotations: bim:Definición "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
@@ -6051,7 +6039,7 @@ DataProperty: bim:pn
 	range: xsd:integer
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  pn  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "dimen.155"
+	Annotations: bim:Chave "dimen.154"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
 	Annotations: bim:Definición "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
@@ -6067,7 +6055,7 @@ ObjectProperty: bim:é.raio
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.raio"@pt
-	Annotations: bim:Chave "dimen.159"
+	Annotations: bim:Chave "dimen.158"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de raio de um objeto."@pt
 	Annotations: bim:Definición "Valor de radio de un objeto."@es
@@ -6082,7 +6070,7 @@ DataProperty: bim:raio
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  raio  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "dimen.159"
+	Annotations: bim:Chave "dimen.158"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de raio de um objeto."@pt
 	Annotations: bim:Definición "Valor de radio de un objeto."@es
@@ -6098,7 +6086,7 @@ ObjectProperty: bim:é.t.f
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.t.f"@pt
-	Annotations: bim:Chave "dimen.161"
+	Annotations: bim:Chave "dimen.160"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de espessura da mesa (Flange) de um perfil de estrutura metálica."@pt
 	Annotations: bim:Definición "Valor de espesor de tabla (brida) de un perfil de estructura metálica."@es
@@ -6113,7 +6101,7 @@ DataProperty: bim:t.f
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  t.f  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "dimen.161"
+	Annotations: bim:Chave "dimen.160"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de espessura da mesa (Flange) de um perfil de estrutura metálica."@pt
 	Annotations: bim:Definición "Valor de espesor de tabla (brida) de un perfil de estructura metálica."@es
@@ -6129,7 +6117,7 @@ ObjectProperty: bim:é.t.w
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.t.w"@pt
-	Annotations: bim:Chave "dimen.162"
+	Annotations: bim:Chave "dimen.161"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de espessura da alma (Web) de um perfil de estrutura metálica."@pt
 	Annotations: bim:Definición "Valor de espesor de alma (Web) de un perfil de estructura metálica."@es
@@ -6144,7 +6132,7 @@ DataProperty: bim:t.w
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  t.w  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "dimen.162"
+	Annotations: bim:Chave "dimen.161"
 	Annotations: bim:Ação "Ação dimensionar"@pt
 	Annotations: bim:Definição "Valor de espessura da alma (Web) de um perfil de estrutura metálica."@pt
 	Annotations: bim:Definición "Valor de espesor de alma (Web) de un perfil de estructura metálica."@es
@@ -8433,7 +8421,7 @@ ObjectProperty: bim:é.classe.ifc
 	domain: bim:BIM
 	range: bim:Projeto
 	Annotations: rdfs:label "Propriedade destinada a interoperar: é.classe.ifc"@pt
-	Annotations: bim:Chave "inter.111"
+	Annotations: bim:Chave "inter.110"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Declara a uma classe IFC."@pt
 	Annotations: bim:Definición "Identifica una clase IFC."@es
@@ -8448,7 +8436,7 @@ DataProperty: bim:classe.ifc
 	SubPropertyOf: bim:d.interoperar
 	range: rdfs:Literal  or  xsd:string
 	Annotations: rdfs:label "Dado para interoperar:  classe.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "inter.111"
+	Annotations: bim:Chave "inter.110"
 	Annotations: bim:Ação "Ação interoperar"@pt
 	Annotations: bim:Definição "Declara a uma classe IFC."@pt
 	Annotations: bim:Definición "Identifica una clase IFC."@es
@@ -10757,6 +10745,99 @@ DataProperty: bim:acima.de
 	Annotations: bim:Definición "Un elemento colocado espacialmente sobre otro objeto."@es
 	Annotations: bim:Definition "An element spatially positioned above another object."@en
 
+ObjectProperty: bim:p.projetar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.projeto.código
+	SubPropertyOf: bim:p.projetar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a projetar: é.projeto.código"@pt
+	Annotations: bim:Chave "proje.114"
+	Annotations: bim:Ação "Ação projetar"@pt
+	Annotations: bim:Definição "Declara o código do projeto."@pt
+	Annotations: bim:Definición "Identificación del código del proyecto."@es
+	Annotations: bim:Definition "Identification of the project code."@en
+
+DataProperty: bim:d.projetar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:projeto.código
+	SubPropertyOf: bim:d.projetar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para projetar:  projeto.código  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "proje.114"
+	Annotations: bim:Ação "Ação projetar"@pt
+	Annotations: bim:Definição "Declara o código do projeto."@pt
+	Annotations: bim:Definición "Identificación del código del proyecto."@es
+	Annotations: bim:Definition "Identification of the project code."@en
+
+ObjectProperty: bim:p.projetar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.projeto.etapa
+	SubPropertyOf: bim:p.projetar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a projetar: é.projeto.etapa"@pt
+	Annotations: bim:Chave "proje.115"
+	Annotations: bim:Ação "Ação projetar"@pt
+	Annotations: bim:Definição "Declara a etapa do projeto."@pt
+	Annotations: bim:Definición "Identificación de la etapa del proyecto."@es
+	Annotations: bim:Definition "Identification of the global project phase."@en
+
+DataProperty: bim:d.projetar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:projeto.etapa
+	SubPropertyOf: bim:d.projetar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para projetar:  projeto.etapa  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "proje.115"
+	Annotations: bim:Ação "Ação projetar"@pt
+	Annotations: bim:Definição "Declara a etapa do projeto."@pt
+	Annotations: bim:Definición "Identificación de la etapa del proyecto."@es
+	Annotations: bim:Definition "Identification of the global project phase."@en
+
+ObjectProperty: bim:p.projetar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.projeto.nome
+	SubPropertyOf: bim:p.projetar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a projetar: é.projeto.nome"@pt
+	Annotations: bim:Chave "proje.116"
+	Annotations: bim:Ação "Ação projetar"@pt
+	Annotations: bim:Definição "Declara o nome do projeto por extenso."@pt
+	Annotations: bim:Definición "Identificación completa del nombre del proyecto."@es
+	Annotations: bim:Definition "Identification of the name of the project in full."@en
+
+DataProperty: bim:d.projetar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:projeto.nome
+	SubPropertyOf: bim:d.projetar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para projetar:  projeto.nome  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "proje.116"
+	Annotations: bim:Ação "Ação projetar"@pt
+	Annotations: bim:Definição "Declara o nome do projeto por extenso."@pt
+	Annotations: bim:Definición "Identificación completa del nombre del proyecto."@es
+	Annotations: bim:Definition "Identification of the name of the project in full."@en
+
 ObjectProperty: bim:p.qualificar
 	SubPropertyOf: bim:BIMProp
 
@@ -12849,5 +12930,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia METAL
-##  Criada em 18/05/2026 7:59:57
+##  Criada em 19/05/2026 11:27:29
 #################################################################
