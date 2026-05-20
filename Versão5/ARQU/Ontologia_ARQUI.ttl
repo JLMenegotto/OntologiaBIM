@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos Arquitetônicos - Pisos - Paredes - Divisórias e Tetos, Esquadrias, Bancadas..."@pt ;
-	  rdfs:label "DataHora: 18/05/2026 7:59:46"@pt ;
+	  rdfs:label "DataHora: 20/05/2026 13:09:44"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -36,22 +36,21 @@
 	  rdfs:label "Explicación: Formalizar elementos arquitectónicos - Suelos - Paredes - Tabiques y Techos en proyecto BIM. Ontología guía de la relación de correspondencia entre las clases IFC y las categorías de Revit."@es ;
 	  rdfs:label "Explanation: Formalize architectural elements - Floors - Walls - Partitions and Ceilings in BIM project. Guiding ontology of the correspondence relationship between IFC Classes and Revit categories."@en .
 
-rdf:PlainLiteral        rdf:type  rdfs:Datatype .
-rdfs:Literal            rdf:type  rdfs:Datatype .
-xsd:boolean             rdf:type  rdfs:Datatype .
-xsd:date                rdf:type  rdfs:Datatype .
-xsd:dateTime            rdf:type  rdfs:Datatype .
-xsd:dayTimeDuration     rdf:type  rdfs:Datatype .
-xsd:decimal             rdf:type  rdfs:Datatype .
-xsd:double              rdf:type  rdfs:Datatype .
-xsd:duration            rdf:type  rdfs:Datatype .
-xsd:gDay                rdf:type  rdfs:Datatype .
-xsd:gMonth              rdf:type  rdfs:Datatype .
-xsd:gYear               rdf:type  rdfs:Datatype .
-xsd:integer             rdf:type  rdfs:Datatype .
-xsd:string              rdf:type  rdfs:Datatype .
-xsd:nonNegativeInteger  rdf:type  rdfs:Datatype .
-xsd:time                rdf:type  rdfs:Datatype .
+rdf:PlainLiteral       rdf:type  rdfs:Datatype .
+rdfs:Literal           rdf:type  rdfs:Datatype .
+xsd:boolean            rdf:type  rdfs:Datatype .
+xsd:date               rdf:type  rdfs:Datatype .
+xsd:dateTime           rdf:type  rdfs:Datatype .
+xsd:dayTimeDuration    rdf:type  rdfs:Datatype .
+xsd:decimal            rdf:type  rdfs:Datatype .
+xsd:double             rdf:type  rdfs:Datatype .
+xsd:duration           rdf:type  rdfs:Datatype .
+xsd:gDay               rdf:type  rdfs:Datatype .
+xsd:gMonth             rdf:type  rdfs:Datatype .
+xsd:gYear              rdf:type  rdfs:Datatype .
+xsd:integer            rdf:type  rdfs:Datatype .
+xsd:string             rdf:type  rdfs:Datatype .
+xsd:time               rdf:type  rdfs:Datatype .
 
 bim:BIM	 rdf:type  owl:Class ;            
 	 rdfs:label "Raiz de Classes."@pt .
@@ -11932,29 +11931,34 @@ bim:Prateleira.Medicinas rdf:type  owl:Class  ;
 #     Indivíduos em Turtle                                       
 #################################################################
 
+bim:Projeto_01  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
+     bim:descrição    "Projeto de teste para formalização ontológica" ;
+     bim:projeto.nome    "Nome do projeto" ;
+     bim:projeto.código    "PRJ001" ;
+     bim:projeto.etapa    "Estudo preliminar"  .
+
 bim:Pisos  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
+     bim:é.usado.em    bim:Projeto_01 ;
      bim:descrição    "Contêiner de elementos de pisos." ;
      bim:categoria.revit    "OST_Floors" ;
-     bim:classe.ifc    "-" ;
-     bim:fabricante    "-"  .
+     bim:classe.ifc    "-"  .
 
 bim:Forros  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
+     bim:é.usado.em    bim:Projeto_01 ;
      bim:descrição    "Contêiner de elementos de forros." ;
      bim:categoria.revit    "-" ;
-     bim:classe.ifc    "-" ;
-     bim:fabricante    "-"  .
+     bim:classe.ifc    "-"  .
 
 bim:Paredes  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
+     bim:é.usado.em    bim:Projeto_01 ;
      bim:descrição    "Contêiner de elementos de paredes e divisórias." ;
      bim:categoria.revit    "-" ;
-     bim:classe.ifc    "-" ;
-     bim:fabricante    "-"  .
+     bim:classe.ifc    "-"  .
 
 bim:COLA.01  rdf:type  owl:NamedIndividual , bim:Cola.Madeira ;
      bim:descrição    "Cola para assentar tacos de madeira." ;
      bim:categoria.revit    "-" ;
-     bim:classe.ifc    "-" ;
-     bim:fabricante    "-"  .
+     bim:classe.ifc    "-"  .
 
 bim:ARGAM.1.2.8  rdf:type  owl:NamedIndividual , bim:Argamassa.da.Parede ;
      bim:descrição    "Argamassa assentamento com traço '1-2-8'." ;
@@ -12855,6 +12859,7 @@ bim:FOR.01  rdf:type  owl:NamedIndividual , bim:Camadas.Moduladas ;
      bim:nrc   0.85  .
 
 bim:DWA.01  rdf:type  owl:NamedIndividual , bim:Placa.Cimentícia ;
+     bim:é.chapa.de    bim:Divisória.01 ;
      bim:descrição    "Chapa cimentícia Kauf Aquapanel." ;
      bim:categoria.revit    "-" ;
      bim:classe.ifc    "-" ;
@@ -12865,6 +12870,7 @@ bim:DWA.01  rdf:type  owl:NamedIndividual , bim:Placa.Cimentícia ;
      bim:fabricante    "Kauf"  .
 
 bim:DWA.02  rdf:type  owl:NamedIndividual , bim:Placa.Gesso.Acartonado ;
+     bim:é.chapa.de    bim:Divisória.02 ;
      bim:descrição    "Chapa cimentícia Kauf Drywall Diamant." ;
      bim:categoria.revit    "-" ;
      bim:classe.ifc    "-" ;
@@ -12875,6 +12881,7 @@ bim:DWA.02  rdf:type  owl:NamedIndividual , bim:Placa.Gesso.Acartonado ;
      bim:fabricante    "Kauf"  .
 
 bim:EUC.01  rdf:type  owl:NamedIndividual , bim:Placa.Eucatex ;
+     bim:é.chapa.de    bim:Divisória.03 ;
      bim:descrição    "Chapa tipo Eucatex para uma divisória eucatex." ;
      bim:categoria.revit    "-" ;
      bim:classe.ifc    "-" ;
@@ -12945,21 +12952,21 @@ bim:PLACA.40  rdf:type  owl:NamedIndividual , bim:Placa.Mineral ;
      bim:nrc   0.75  .
 
 bim:Divisória.01  rdf:type  owl:NamedIndividual , bim:Drywall ;
-     bim:é.chapa.de    bim:DWA.02 ;
+     bim:é.emplacada.com    bim:DWA.02 ;
      bim:descrição    "Divisória Drywall." ;
      bim:categoria.revit    "OST_Walls" ;
      bim:classe.ifc    "IfcWall" ;
      bim:fabricante    "Em obra"  .
 
 bim:Divisória.02  rdf:type  owl:NamedIndividual , bim:Drywall.Acústico ;
-     bim:é.chapa.de    bim:DWA.02 ;
+     bim:é.emplacada.com    bim:DWA.02 ;
      bim:descrição    "Divisória Drywall com tratamento acústico." ;
      bim:categoria.revit    "OST_Walls" ;
      bim:classe.ifc    "IfcWall" ;
      bim:fabricante    "Em obra"  .
 
 bim:Divisória.03  rdf:type  owl:NamedIndividual , bim:Divisória.Naval ;
-     bim:é.chapa.de    bim:EUC.01 ;
+     bim:é.emplacada.com    bim:EUC.01 ;
      bim:descrição    "Divisória naval." ;
      bim:categoria.revit    "OST_Walls" ;
      bim:classe.ifc    "IfcWall" ;
@@ -13656,6 +13663,36 @@ bim:revestido.com   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação acabar" ;
                     bim:Definição           "Declara que um elemento é revestida com algum material.   "@pt ;
                     bim:Definición          "Declara que un elemento es revestida con algún material."@es ;bim:Definition          "Declares that an element is coated with some material."@en  .
+
+
+bim:p.aceder   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.inclinação.máxima   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.aceder ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a aceder: é.inclinação.máxima" ;
+                    bim:Chave               "acede.104" ;
+                    bim:Ação                "Ação aceder" ;
+                    bim:Definição           "Declara a inclinação máxima permitida para que o elemento seja acessível universalmente. Para rampas acessíveis por exemplo.   "@pt ;
+                    bim:Definición          "Declara la pendiente máxima permitida para que el elemento sea universalmente accesible. Para rampas accesibles, por ejemplo."@es ;bim:Definition          "Declares the maximum allowable slope to ensure the element is universally accessible, such as for accessible ramps."@en ;
+                    owl:equivalentProperty  bim:é.caimento.máximo  .
+
+
+bim:d.aceder   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:inclinação.máxima   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.aceder ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para aceder:  inclinação.máxima  Deve ser formatado como (xsd:double)" ;
+                    bim:Chave               "acede.104" ;
+                    bim:Ação                "Ação aceder" ;
+                    bim:Definição           "Declara a inclinação máxima permitida para que o elemento seja acessível universalmente. Para rampas acessíveis por exemplo.   "@pt ;
+                    bim:Definición          "Declara la pendiente máxima permitida para que el elemento sea universalmente accesible. Para rampas accesibles, por ejemplo."@es ;bim:Definition          "Declares the maximum allowable slope to ensure the element is universally accessible, such as for accessible ramps."@en  .
 
 
 bim:p.administrar   rdf:type  owl:ObjectProperty ;
@@ -14410,8 +14447,8 @@ bim:é.aberta.em   rdf:type  owl:ObjectProperty ;
                     rdfs:label              "Propriedade destinada a catalogar: é.aberta.em" ;
                     bim:Chave               "catal.101" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
-                    bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en ;
+                    bim:Definição           "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
+                    bim:Definición          "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en ;
                     owl:equivalentProperty  bim:é.aberto.em  .
 
 
@@ -14425,8 +14462,8 @@ bim:aberta.em   rdf:type  owl:DatatypeProperty ;
                     rdfs:label              "Dado para catalogar:  aberta.em  Deve ser formatado como (xsd:date)" ;
                     bim:Chave               "catal.101" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
-                    bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en  .
+                    bim:Definição           "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
+                    bim:Definición          "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -14440,8 +14477,8 @@ bim:é.aberto.em   rdf:type  owl:ObjectProperty ;
                     rdfs:label              "Propriedade destinada a catalogar: é.aberto.em" ;
                     bim:Chave               "catal.102" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
-                    bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en ;
+                    bim:Definição           "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
+                    bim:Definición          "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en ;
                     owl:equivalentProperty  bim:é.aberta.em  .
 
 
@@ -14455,8 +14492,8 @@ bim:aberto.em   rdf:type  owl:DatatypeProperty ;
                     rdfs:label              "Dado para catalogar:  aberto.em  Deve ser formatado como (xsd:date)" ;
                     bim:Chave               "catal.102" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Identificação da data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
-                    bim:Definición          "Identificación de la fecha de apertura de un recurso, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "Identification of the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en  .
+                    bim:Definição           "Declara a data de abertura de um recurso, pode ser um prédio, uma licitação, um instituto, etc.   "@pt ;
+                    bim:Definición          "Establece la fecha de apertura de una apelación, puede ser un edificio, una licitación, un instituto, etc."@es ;bim:Definition          "It declares the date of opening of an appeal, it can be a building, a bid, an institute, etc."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -14468,10 +14505,10 @@ bim:é.classe   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.classe" ;
-                    bim:Chave               "catal.105" ;
+                    bim:Chave               "catal.106" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Denominação da classe de objeto. Pode ser a classe de um tubo ou de qualquer produto catalogado.   "@pt ;
-                    bim:Definición          "Designación de clase de objeto. Puede ser la clase de un tubo o cualquier producto catalogado."@es ;bim:Definition          "Object class designation. It can be the class of a tube or any cataloged product."@en  .
+                    bim:Definição           "Declara a Denominação da classe de objeto. Pode ser a classe de um tubo ou de qualquer produto catalogado.   "@pt ;
+                    bim:Definición          "Declara la denominación de la clase objeto. Puede ser de la clase de un tubo o de cualquier producto catalogado."@es ;bim:Definition          "Declares the Object Class Denomination. It can be the class of a tube or any cataloged product."@en  .
 
 
 bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
@@ -14482,10 +14519,10 @@ bim:classe   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  classe  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.105" ;
+                    bim:Chave               "catal.106" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Denominação da classe de objeto. Pode ser a classe de um tubo ou de qualquer produto catalogado.   "@pt ;
-                    bim:Definición          "Designación de clase de objeto. Puede ser la clase de un tubo o cualquier producto catalogado."@es ;bim:Definition          "Object class designation. It can be the class of a tube or any cataloged product."@en  .
+                    bim:Definição           "Declara a Denominação da classe de objeto. Pode ser a classe de um tubo ou de qualquer produto catalogado.   "@pt ;
+                    bim:Definición          "Declara la denominación de la clase objeto. Puede ser de la clase de un tubo o de cualquier producto catalogado."@es ;bim:Definition          "Declares the Object Class Denomination. It can be the class of a tube or any cataloged product."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -14497,10 +14534,10 @@ bim:é.descrição   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.descrição" ;
-                    bim:Chave               "catal.109" ;
+                    bim:Chave               "catal.110" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta.   "@pt ;
-                    bim:Definición          "Declara la descripción del objeto que puede ser una explicación sucinta."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
+                    bim:Definición          "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
 
 
 bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
@@ -14511,10 +14548,10 @@ bim:descrição   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  descrição  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.109" ;
+                    bim:Chave               "catal.110" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta.   "@pt ;
-                    bim:Definición          "Declara la descripción del objeto que puede ser una explicación sucinta."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
+                    bim:Definición          "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -14526,10 +14563,10 @@ bim:é.fabricante   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.fabricante" ;
-                    bim:Chave               "catal.114" ;
+                    bim:Chave               "catal.115" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Identificação de fabricante de componente construtivo para o projeto.   "@pt ;
-                    bim:Definición          "Identificación del fabricante del componente constructivo del proyecto."@es ;bim:Definition          "Identification of the manufacturer of the construction component for the project."@en  .
+                    bim:Definição           "Declara o nome do fabricante de componente construtivo para o projeto.   "@pt ;
+                    bim:Definición          "Declara el nombre del fabricante de componentes de construcción del proyecto."@es ;bim:Definition          "Declares the name of the construction component manufacturer for the project."@en  .
 
 
 bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
@@ -14540,10 +14577,10 @@ bim:fabricante   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  fabricante  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.114" ;
+                    bim:Chave               "catal.115" ;
                     bim:Ação                "Ação catalogar" ;
-                    bim:Definição           "Identificação de fabricante de componente construtivo para o projeto.   "@pt ;
-                    bim:Definición          "Identificación del fabricante del componente constructivo del proyecto."@es ;bim:Definition          "Identification of the manufacturer of the construction component for the project."@en  .
+                    bim:Definição           "Declara o nome do fabricante de componente construtivo para o projeto.   "@pt ;
+                    bim:Definición          "Declara el nombre del fabricante de componentes de construcción del proyecto."@es ;bim:Definition          "Declares the name of the construction component manufacturer for the project."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -14555,7 +14592,7 @@ bim:é.realizada.com   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.realizada.com" ;
-                    bim:Chave               "catal.128" ;
+                    bim:Chave               "catal.131" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico.   "@pt ;
                     bim:Definición          "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es ;bim:Definition          "Declares that it is an action carried out with some element, for example, a drone flight carried out with a specific drone."@en ;
@@ -14570,7 +14607,7 @@ bim:realizada.com   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  realizada.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.128" ;
+                    bim:Chave               "catal.131" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico.   "@pt ;
                     bim:Definición          "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es ;bim:Definition          "Declares that it is an action carried out with some element, for example, a drone flight carried out with a specific drone."@en  .
@@ -14585,7 +14622,7 @@ bim:é.realizado.com   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.realizado.com" ;
-                    bim:Chave               "catal.129" ;
+                    bim:Chave               "catal.132" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico.   "@pt ;
                     bim:Definición          "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es ;bim:Definition          "Declares that it is an action carried out with some element, for example, a drone flight carried out with a specific drone."@en ;
@@ -14600,7 +14637,7 @@ bim:realizado.com   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  realizado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.129" ;
+                    bim:Chave               "catal.132" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico.   "@pt ;
                     bim:Definición          "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es ;bim:Definition          "Declares that it is an action carried out with some element, for example, a drone flight carried out with a specific drone."@en  .
@@ -14615,10 +14652,10 @@ bim:é.substituida.por   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.substituida.por" ;
-                    bim:Chave               "catal.136" ;
+                    bim:Chave               "catal.139" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo.   "@pt ;
-                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Identification of an element that has replaced another element. The declaration identifies the new element."@en ;
+                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en ;
                     owl:equivalentProperty  bim:é.substituido.por  .
 
 
@@ -14630,10 +14667,10 @@ bim:substituida.por   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  substituida.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.136" ;
+                    bim:Chave               "catal.139" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo.   "@pt ;
-                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Identification of an element that has replaced another element. The declaration identifies the new element."@en  .
+                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -14645,10 +14682,10 @@ bim:é.substituido.por   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a catalogar: é.substituido.por" ;
-                    bim:Chave               "catal.137" ;
+                    bim:Chave               "catal.140" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo.   "@pt ;
-                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Identification of an element that has replaced another element. The declaration identifies the new element."@en ;
+                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en ;
                     owl:equivalentProperty  bim:é.substituida.por  .
 
 
@@ -14660,10 +14697,10 @@ bim:substituido.por   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.catalogar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  substituido.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "catal.137" ;
+                    bim:Chave               "catal.140" ;
                     bim:Ação                "Ação catalogar" ;
                     bim:Definição           "Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo.   "@pt ;
-                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Identification of an element that has replaced another element. The declaration identifies the new element."@en  .
+                    bim:Definición          "Identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en  .
 
 
 bim:p.concursar   rdf:type  owl:ObjectProperty ;
@@ -15060,42 +15097,12 @@ bim:p.dimensionar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.inclinação.máxima   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.dimensionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a dimensionar: é.inclinação.máxima" ;
-                    bim:Chave               "dimen.146" ;
-                    bim:Ação                "Ação dimensionar" ;
-                    bim:Definição           "Inclinação máxima permitida por norma ou projetualmente recomendável para projetar elementos inclinados.   "@pt ;
-                    bim:Definición          "Máxima inclinación permitida por ley o recomendada proyectualmente para diseñar elementos inclinados."@es ;bim:Definition          "Maximum inclination allowed by law or projectually recommended for designing inclined elements."@en ;
-                    owl:equivalentProperty  bim:é.caimento.máximo  .
-
-
-bim:d.dimensionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:inclinação.máxima   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.dimensionar ;
-                    rdfs:range              xsd:double ;
-                    rdfs:label              "Dado para dimensionar:  inclinação.máxima  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "dimen.146" ;
-                    bim:Ação                "Ação dimensionar" ;
-                    bim:Definição           "Inclinação máxima permitida por norma ou projetualmente recomendável para projetar elementos inclinados.   "@pt ;
-                    bim:Definición          "Máxima inclinación permitida por ley o recomendada proyectualmente para diseñar elementos inclinados."@es ;bim:Definition          "Maximum inclination allowed by law or projectually recommended for designing inclined elements."@en  .
-
-
-bim:p.dimensionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
 bim:é.inclinação.mínima   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.dimensionar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a dimensionar: é.inclinação.mínima" ;
-                    bim:Chave               "dimen.147" ;
+                    bim:Chave               "dimen.146" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações.   "@pt ;
                     bim:Definición          "Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es ;bim:Definition          "Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en ;
@@ -15110,7 +15117,7 @@ bim:inclinação.mínima   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.dimensionar ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para dimensionar:  inclinação.mínima  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "dimen.147" ;
+                    bim:Chave               "dimen.146" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações.   "@pt ;
                     bim:Definición          "Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es ;bim:Definition          "Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en  .
@@ -15125,7 +15132,7 @@ bim:é.largura   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a dimensionar: é.largura" ;
-                    bim:Chave               "dimen.148" ;
+                    bim:Chave               "dimen.147" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Valor de largura de um objeto.   "@pt ;
                     bim:Definición          "El valor de ancho de un objeto."@es ;bim:Definition          "The width value of an object."@en  .
@@ -15139,7 +15146,7 @@ bim:largura   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.dimensionar ;
                     rdfs:range              xsd:double ;
                     rdfs:label              "Dado para dimensionar:  largura  Deve ser formatado como (xsd:double)" ;
-                    bim:Chave               "dimen.148" ;
+                    bim:Chave               "dimen.147" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Valor de largura de um objeto.   "@pt ;
                     bim:Definición          "El valor de ancho de un objeto."@es ;bim:Definition          "The width value of an object."@en  .
@@ -15154,7 +15161,7 @@ bim:é.pressão.nominal   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a dimensionar: é.pressão.nominal" ;
-                    bim:Chave               "dimen.154" ;
+                    bim:Chave               "dimen.153" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25.   "@pt ;
                     bim:Definición          "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es ;bim:Definition          "Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en ;
@@ -15171,7 +15178,7 @@ bim:pressão.nominal   rdf:type  owl:DatatypeProperty ;
                     rdfs:range              xsd:integer ;
                     rdf:type                owl:FunctionalProperty ;
                     rdfs:label              "Dado para dimensionar:  pressão.nominal  Deve ser formatado como (xsd:integer)" ;
-                    bim:Chave               "dimen.154" ;
+                    bim:Chave               "dimen.153" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25.   "@pt ;
                     bim:Definición          "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es ;bim:Definition          "Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en  .
@@ -15186,7 +15193,7 @@ bim:é.pn   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a dimensionar: é.pn" ;
-                    bim:Chave               "dimen.155" ;
+                    bim:Chave               "dimen.154" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25.   "@pt ;
                     bim:Definición          "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es ;bim:Definition          "Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en ;
@@ -15203,7 +15210,7 @@ bim:pn   rdf:type  owl:DatatypeProperty ;
                     rdfs:range              xsd:integer ;
                     rdf:type                owl:FunctionalProperty ;
                     rdfs:label              "Dado para dimensionar:  pn  Deve ser formatado como (xsd:integer)" ;
-                    bim:Chave               "dimen.155" ;
+                    bim:Chave               "dimen.154" ;
                     bim:Ação                "Ação dimensionar" ;
                     bim:Definição           "Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25.   "@pt ;
                     bim:Definición          "Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es ;bim:Definition          "Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en  .
@@ -17341,7 +17348,7 @@ bim:é.classe.ifc   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a interoperar: é.classe.ifc" ;
-                    bim:Chave               "inter.111" ;
+                    bim:Chave               "inter.110" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Declara a uma classe IFC.   "@pt ;
                     bim:Definición          "Identifica una clase IFC."@es ;bim:Definition          "Identifies an IFC class."@en  .
@@ -17355,7 +17362,7 @@ bim:classe.ifc   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.interoperar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para interoperar:  classe.ifc  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "inter.111" ;
+                    bim:Chave               "inter.110" ;
                     bim:Ação                "Ação interoperar" ;
                     bim:Definição           "Declara a uma classe IFC.   "@pt ;
                     bim:Definición          "Identifica una clase IFC."@es ;bim:Definition          "Identifies an IFC class."@en  .
@@ -17946,30 +17953,60 @@ bim:p.montar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.suporte.de   rdf:type  owl:ObjectProperty ;
+bim:é.emplacada.com   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.montar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
-                    rdfs:label              "Propriedade destinada a montar: é.suporte.de" ;
-                    bim:Chave               "monta.115" ;
+                    rdfs:label              "Propriedade destinada a montar: é.emplacada.com" ;
+                    bim:Chave               "monta.110" ;
                     bim:Ação                "Ação montar" ;
-                    bim:Definição           "Declara que o elemento que é suporte de um outro elemento. (Uma coluna para uma viga)   "@pt ;
-                    bim:Definición          "Declara que el elemento que sirve de soporte a otro elemento (columna para una viga por ejemplo)."@es ;bim:Definition          "Declares that the element that is supported by another element. (One column for one beam)"@en ;
-                    owl:inverseOf           bim:é.suportado.por  .
+                    bim:Definição           "Declara que um elemento como divisória ou parede é emplacado com alguma chapa ou elemento montado a seco."@pt ;
+                    bim:Definición          "Declara que un elemento como una mampara o pared está revestido con una lámina o elemento montado en seco."@es ;bim:Definition          "Declares that an element such as a partition or wall is plated with some sheet or dry-mounted element."@en ;
+                    owl:equivalentProperty  bim:é.emplacado.com  .
 
 
 bim:d.montar   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:BIMData  .
 
 
-bim:suporte.de   rdf:type  owl:DatatypeProperty ;
+bim:emplacada.com   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.montar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  suporte.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "monta.115" ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  emplacada.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "monta.110" ;
                     bim:Ação                "Ação montar" ;
-                    bim:Definição           "Declara que o elemento que é suporte de um outro elemento. (Uma coluna para uma viga)   "@pt ;
-                    bim:Definición          "Declara que el elemento que sirve de soporte a otro elemento (columna para una viga por ejemplo)."@es ;bim:Definition          "Declares that the element that is supported by another element. (One column for one beam)"@en  .
+                    bim:Definição           "Declara que um elemento como divisória ou parede é emplacado com alguma chapa ou elemento montado a seco."@pt ;
+                    bim:Definición          "Declara que un elemento como una mampara o pared está revestido con una lámina o elemento montado en seco."@es ;bim:Definition          "Declares that an element such as a partition or wall is plated with some sheet or dry-mounted element."@en  .
+
+
+bim:p.montar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.emplacado.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.montar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a montar: é.emplacado.com" ;
+                    bim:Chave               "monta.111" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que um elemento como divisória ou parede é emplacado com alguma chapa ou elemento montado a seco."@pt ;
+                    bim:Definición          "Declara que un elemento como una mampara o pared está revestido con una lámina o elemento montado en seco."@es ;bim:Definition          "Declares that an element such as a partition or wall is plated with some sheet or dry-mounted element."@en ;
+                    owl:equivalentProperty  bim:é.emplacada.com  .
+
+
+bim:d.montar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:emplacado.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.montar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  emplacado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "monta.111" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que um elemento como divisória ou parede é emplacado com alguma chapa ou elemento montado a seco."@pt ;
+                    bim:Definición          "Declara que un elemento como una mampara o pared está revestido con una lámina o elemento montado en seco."@es ;bim:Definition          "Declares that an element such as a partition or wall is plated with some sheet or dry-mounted element."@en  .
 
 
 bim:p.montar   rdf:type  owl:ObjectProperty ;
@@ -17981,7 +18018,7 @@ bim:é.suportado.por   rdf:type  owl:ObjectProperty ;
                     rdfs:domain             bim:BIM ;
                     rdfs:range              bim:Projeto ;
                     rdfs:label              "Propriedade destinada a montar: é.suportado.por" ;
-                    bim:Chave               "monta.116" ;
+                    bim:Chave               "monta.117" ;
                     bim:Ação                "Ação montar" ;
                     bim:Definição           "Declara que o elemento que é suporte por outro elemento.   "@pt ;
                     bim:Definición          "Declara que el elemento que sirve de soporte de otro elemento."@es ;bim:Definition          "Declares that the element that is supported by another element."@en ;
@@ -17996,10 +18033,40 @@ bim:suportado.por   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.montar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  suportado.por  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "monta.116" ;
+                    bim:Chave               "monta.117" ;
                     bim:Ação                "Ação montar" ;
                     bim:Definição           "Declara que o elemento que é suporte por outro elemento.   "@pt ;
                     bim:Definición          "Declara que el elemento que sirve de soporte de otro elemento."@es ;bim:Definition          "Declares that the element that is supported by another element."@en  .
+
+
+bim:p.montar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.suporte.de   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.montar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a montar: é.suporte.de" ;
+                    bim:Chave               "monta.118" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que o elemento que é suporte de um outro elemento. (Uma coluna para uma viga)   "@pt ;
+                    bim:Definición          "Declara que el elemento que sirve de soporte a otro elemento (columna para una viga por ejemplo)."@es ;bim:Definition          "Declares that the element that is supported by another element. (One column for one beam)"@en ;
+                    owl:inverseOf           bim:é.suportado.por  .
+
+
+bim:d.montar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:suporte.de   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.montar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para montar:  suporte.de  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "monta.118" ;
+                    bim:Ação                "Ação montar" ;
+                    bim:Definição           "Declara que o elemento que é suporte de um outro elemento. (Uma coluna para uma viga)   "@pt ;
+                    bim:Definición          "Declara que el elemento que sirve de soporte a otro elemento (columna para una viga por ejemplo)."@es ;bim:Definition          "Declares that the element that is supported by another element. (One column for one beam)"@en  .
 
 
 bim:p.navegar   rdf:type  owl:ObjectProperty ;
@@ -19396,6 +19463,93 @@ bim:acima.de   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação posicionar " ;
                     bim:Definição           "Elemento espacialmente posicionado acima de outro objeto.   "@pt ;
                     bim:Definición          "Un elemento colocado espacialmente sobre otro objeto."@es ;bim:Definition          "An element spatially positioned above another object."@en  .
+
+
+bim:p.projetar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.projeto.código   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.projetar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a projetar: é.projeto.código" ;
+                    bim:Chave               "proje.114" ;
+                    bim:Ação                "Ação projetar" ;
+                    bim:Definição           "Declara o código do projeto.   "@pt ;
+                    bim:Definición          "Identificación del código del proyecto."@es ;bim:Definition          "Identification of the project code."@en  .
+
+
+bim:d.projetar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:projeto.código   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.projetar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para projetar:  projeto.código  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "proje.114" ;
+                    bim:Ação                "Ação projetar" ;
+                    bim:Definição           "Declara o código do projeto.   "@pt ;
+                    bim:Definición          "Identificación del código del proyecto."@es ;bim:Definition          "Identification of the project code."@en  .
+
+
+bim:p.projetar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.projeto.etapa   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.projetar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a projetar: é.projeto.etapa" ;
+                    bim:Chave               "proje.115" ;
+                    bim:Ação                "Ação projetar" ;
+                    bim:Definição           "Declara a etapa do projeto.   "@pt ;
+                    bim:Definición          "Identificación de la etapa del proyecto."@es ;bim:Definition          "Identification of the global project phase."@en  .
+
+
+bim:d.projetar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:projeto.etapa   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.projetar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para projetar:  projeto.etapa  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "proje.115" ;
+                    bim:Ação                "Ação projetar" ;
+                    bim:Definição           "Declara a etapa do projeto.   "@pt ;
+                    bim:Definición          "Identificación de la etapa del proyecto."@es ;bim:Definition          "Identification of the global project phase."@en  .
+
+
+bim:p.projetar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.projeto.nome   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.projetar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a projetar: é.projeto.nome" ;
+                    bim:Chave               "proje.116" ;
+                    bim:Ação                "Ação projetar" ;
+                    bim:Definição           "Declara o nome do projeto por extenso.   "@pt ;
+                    bim:Definición          "Identificación completa del nombre del proyecto."@es ;bim:Definition          "Identification of the name of the project in full."@en  .
+
+
+bim:d.projetar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:projeto.nome   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.projetar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para projetar:  projeto.nome  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "proje.116" ;
+                    bim:Ação                "Ação projetar" ;
+                    bim:Definição           "Declara o nome do projeto por extenso.   "@pt ;
+                    bim:Definición          "Identificación completa del nombre del proyecto."@es ;bim:Definition          "Identification of the name of the project in full."@en  .
 
 
 bim:p.qualificar   rdf:type  owl:ObjectProperty ;
@@ -21301,5 +21455,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia ARQUI
-##  Criada em 18/05/2026 7:59:47
+##  Criada em 20/05/2026 13:09:47
 #################################################################
