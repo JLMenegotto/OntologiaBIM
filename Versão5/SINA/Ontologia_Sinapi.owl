@@ -16,23 +16,24 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#SINAPI>
   Annotations: rdfs:label "URI: https://github.com/JLMenegotto/RepoOnto#"@pt
   Annotations: rdfs:label "Autor: Prof. José Luis Menegotto - DEG/POLI/UFRJ"@pt
   Annotations: rdfs:label "Organização: Escola Politécnica da UFRJ"@pt
-  Annotations: rdfs:label "NormaNúmero: Sinapi"@pt
-  Annotations: rdfs:label "Edição: -"@pt
+  Annotations: rdfs:label "NormaNúmero: SINAPI - Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil"@pt
+  Annotations: rdfs:label "Edição: Dados de tabelas de Abril de 2026"@pt
   Annotations: rdfs:label "ISBN: -"@pt
   Annotations: rdfs:label "NormaEscopo: -"@pt
   Annotations: rdfs:label "NormaReferência1: -"@pt
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Códigos para orçamentação com SINAPI"@pt
-  Annotations: rdfs:label "DataHora: 25/05/2026 18:07:30"@pt
-  Annotations: rdfs:label "Advertência: -"@pt
-  Annotations: rdfs:label "Aviso: -"@es
-  Annotations: rdfs:label "Alert: -"@en
+  Annotations: rdfs:label "DataHora: 25/05/2026 18:21:45"@pt
+  Annotations: rdfs:label "Advertência: Os dados são fornecidos pela SINAPI - Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil"@pt
+  Annotations: rdfs:label "Aviso: Los datos son proporcionados por SINAPI - Sistema Nacional de Investigación sobre Costes e Índices de Construcción Civil"@es
+  Annotations: rdfs:label "Alert: The data are provided by SINAPI - Sistema Nacional de Investigación sobre Costes e Indices de Construcción Civil"@en
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
   Annotations: rdfs:label "Explicação: -"@pt
   Annotations: rdfs:label "Explicación: -"@es
   Annotations: rdfs:label "Explanation: -"@en
+  Annotations: rdfs:label "FonteConsultada: https://www.caixa.gov.br/site/Paginas/downloads.aspx#categoria_888"@es
 
 Datatype:  xsd:string
 Datatype:  xsd:decimal
@@ -225,8 +226,9 @@ Class: bim:Sinapi.Composição
 
 Individual: bim:GruposSinapi
 	Types: bim:Sinapi
+	Facts: bim:descrição  "Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil"
 	Facts: bim:descrição  "Grupos e códigos do SINAPI"
-	Facts: bim:descrição  "Grupos e códigos do SINAPI"
+	Facts: bim:órgão  "Caixa Econômica Federal"
 
 Individual: bim:Sinapi.Grp.001
 	Types: bim:Sinapi.Grupo
@@ -84763,6 +84765,37 @@ ObjectProperty: bim:p.administrar
 
 
 
+ObjectProperty: bim:é.órgão
+	SubPropertyOf: bim:p.administrar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a administrar: é.órgão"@pt
+	Annotations: bim:Chave "admin.114"
+	Annotations: bim:Ação "Ação administrar"@pt
+	Annotations: bim:Definição "Declara a identificação de órgão de instituição pública brasileira."@pt
+	Annotations: bim:Definición "Declara la identificación de un órgano de una institución pública brasileña."@es
+	Annotations: bim:Definition "Declares the identification of an organ of a Brazilian public institution."@en
+
+DataProperty: bim:d.administrar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:órgão
+	SubPropertyOf: bim:d.administrar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para administrar:  órgão  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "admin.114"
+	Annotations: bim:Ação "Ação administrar"@pt
+	Annotations: bim:Definição "Declara a identificação de órgão de instituição pública brasileira."@pt
+	Annotations: bim:Definición "Declara la identificación de un órgano de una institución pública brasileña."@es
+	Annotations: bim:Definition "Declares the identification of an organ of a Brazilian public institution."@en
+
+ObjectProperty: bim:p.administrar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.privado
 	SubPropertyOf: bim:p.administrar
 	domain: bim:BIM
@@ -92284,5 +92317,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Sinapi
-##  Criada em 25/05/2026 18:07:49
+##  Criada em 25/05/2026 18:22:28
 #################################################################
