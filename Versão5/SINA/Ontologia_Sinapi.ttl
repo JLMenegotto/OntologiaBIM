@@ -18,23 +18,24 @@
 	  rdfs:label "URI: https://github.com/JLMenegotto/RepoOnto#"@pt ;
 	  rdfs:label "Autor: Prof. José Luis Menegotto - DEG/POLI/UFRJ"@pt ;
 	  rdfs:label "Organização: Escola Politécnica da UFRJ"@pt ;
-	  rdfs:label "NormaNúmero: Sinapi"@pt ;
-	  rdfs:label "Edição: -"@pt ;
+	  rdfs:label "NormaNúmero: SINAPI - Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil"@pt ;
+	  rdfs:label "Edição: Dados de tabelas de Abril de 2026"@pt ;
 	  rdfs:label "ISBN: -"@pt ;
 	  rdfs:label "NormaEscopo: -"@pt ;
 	  rdfs:label "NormaReferência1: -"@pt ;
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Códigos para orçamentação com SINAPI"@pt ;
-	  rdfs:label "DataHora: 25/05/2026 18:07:30"@pt ;
-	  rdfs:label "Advertência: -"@pt ;
-	  rdfs:label "Aviso: -"@es ;
-	  rdfs:label "Alert: -"@en ;
+	  rdfs:label "DataHora: 25/05/2026 18:21:45"@pt ;
+	  rdfs:label "Advertência: Os dados são fornecidos pela SINAPI - Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil"@pt ;
+	  rdfs:label "Aviso: Los datos son proporcionados por SINAPI - Sistema Nacional de Investigación sobre Costes e Índices de Construcción Civil"@es ;
+	  rdfs:label "Alert: The data are provided by SINAPI - Sistema Nacional de Investigación sobre Costes e Indices de Construcción Civil"@en ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
 	  rdfs:label "Explicação: -"@pt ;
 	  rdfs:label "Explicación: -"@es ;
-	  rdfs:label "Explanation: -"@en .
+	  rdfs:label "Explanation: -"@en ;
+	  rdfs:label "FonteConsultada: https://www.caixa.gov.br/site/Paginas/downloads.aspx#categoria_888"@es .
 
 rdf:PlainLiteral        rdf:type  rdfs:Datatype .
 rdfs:Literal            rdf:type  rdfs:Datatype .
@@ -319,8 +320,9 @@ bim:Sinapi.Composição rdf:type  owl:Class  ;
 #################################################################
 
 bim:GruposSinapi  rdf:type  owl:NamedIndividual , bim:Sinapi ;
+     bim:descrição    "Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil" ;
      bim:descrição    "Grupos e códigos do SINAPI" ;
-     bim:descrição    "Grupos e códigos do SINAPI"  .
+     bim:órgão    "Caixa Econômica Federal"  .
 
 bim:Sinapi.Grp.001  rdf:type  owl:NamedIndividual , bim:Sinapi.Grupo ;
      bim:é.pertencente.a    bim:GruposSinapi ;
@@ -74279,6 +74281,35 @@ bim:p.administrar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.órgão   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.administrar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a administrar: é.órgão" ;
+                    bim:Chave               "admin.114" ;
+                    bim:Ação                "Ação administrar" ;
+                    bim:Definição           "Declara a identificação de órgão de instituição pública brasileira.   "@pt ;
+                    bim:Definición          "Declara la identificación de un órgano de una institución pública brasileña."@es ;bim:Definition          "Declares the identification of an organ of a Brazilian public institution."@en  .
+
+
+bim:d.administrar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:órgão   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.administrar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para administrar:  órgão  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "admin.114" ;
+                    bim:Ação                "Ação administrar" ;
+                    bim:Definição           "Declara a identificação de órgão de instituição pública brasileira.   "@pt ;
+                    bim:Definición          "Declara la identificación de un órgano de una institución pública brasileña."@es ;bim:Definition          "Declares the identification of an organ of a Brazilian public institution."@en  .
+
+
+bim:p.administrar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.privado   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.administrar ;
                     rdfs:domain             bim:BIM ;
@@ -81312,5 +81343,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Sinapi
-##  Criada em 25/05/2026 18:07:49
+##  Criada em 25/05/2026 18:22:28
 #################################################################
