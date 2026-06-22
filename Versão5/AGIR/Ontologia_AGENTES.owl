@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Agentes>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Definições de agentes"@pt
-  Annotations: rdfs:label "DataHora: 22/06/2026 10:11:09"@pt
+  Annotations: rdfs:label "DataHora: 22/06/2026 10:11:54"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en
@@ -253,7 +253,7 @@ Individual: bim:AG-01
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
-	Facts: bim:modelo.atual  "Haiku"
+	Facts: bim:modelo.usado  "Haiku"
 	Facts: bim:tipo  "Textual"
 	Facts: bim:descrição  "Agente de IA de baixo custo e capacidade limitada"
 
@@ -262,7 +262,7 @@ Individual: bim:AG-01
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
-	Facts: bim:modelo.atual  "Sonnet"
+	Facts: bim:modelo.usado  "Sonnet"
 	Facts: bim:tipo  "Textual"
 	Facts: bim:descrição  "Agente de IA de custo médio e capacidade de produção"
 
@@ -271,7 +271,7 @@ Individual: bim:AG-01
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
-	Facts: bim:modelo.atual  "Opus 4.7"
+	Facts: bim:modelo.usado  "Opus 4.7"
 	Facts: bim:tipo  "Textual"
 	Facts: bim:descrição  "Agente de IA de alto custo e capacidade máxima"
 
@@ -280,7 +280,7 @@ Individual: bim:AG-02
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Gemini"
 	Facts: bim:criador  "Google DeepMind"
-	Facts: bim:modelo.atual  "Gemini 3.5"
+	Facts: bim:modelo.usado  "Gemini 3.5"
 	Facts: bim:tipo  "Multimodal nativo"
 	Facts: bim:descrição  "Agente de IA da Google"
 
@@ -289,7 +289,7 @@ Individual: bim:AG-03
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "ChatGPT"
 	Facts: bim:criador  "Open AI"
-	Facts: bim:modelo.atual  "GPT 5.5 Instant"
+	Facts: bim:modelo.usado  "GPT 5.5 Instant"
 	Facts: bim:tipo  "Multimodal"
 	Facts: bim:descrição  "Agente de IA da Open"
 
@@ -1042,6 +1042,37 @@ DataProperty: bim:agente.de
 	Annotations: bim:Definição "Declara o propósito ou a aplicação do agente."@pt
 	Annotations: bim:Definición "Declara el propósito o la aplicación del agente."@es
 	Annotations: bim:Definition "Declares the agent's purpose or application."@en
+
+ObjectProperty: bim:p.agir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.modelo.usado
+	SubPropertyOf: bim:p.agir
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a agir: é.modelo.usado"@pt
+	Annotations: bim:Chave ".agir.116"
+	Annotations: bim:Ação "Ação de agir"@pt
+	Annotations: bim:Definição "Declara o modelo do agente de IA utilizado."@pt
+	Annotations: bim:Definición "Declara el modelo del agente de IA utilizado."@es
+	Annotations: bim:Definition "Declares the model of the AI agent used."@en
+
+DataProperty: bim:d.agir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:modelo.usado
+	SubPropertyOf: bim:d.agir
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para agir:  modelo.usado  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave ".agir.116"
+	Annotations: bim:Ação "Ação de agir"@pt
+	Annotations: bim:Definição "Declara o modelo do agente de IA utilizado."@pt
+	Annotations: bim:Definición "Declara el modelo del agente de IA utilizado."@es
+	Annotations: bim:Definition "Declares the model of the AI agent used."@en
 
 ObjectProperty: bim:p.aplicar
 	SubPropertyOf: bim:BIMProp
@@ -9276,5 +9307,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia AGENTES
-##  Criada em 22/06/2026 10:11:11
+##  Criada em 22/06/2026 10:11:57
 #################################################################
