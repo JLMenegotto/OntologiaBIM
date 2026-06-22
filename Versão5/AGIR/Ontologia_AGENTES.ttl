@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Definições de agentes"@pt ;
-	  rdfs:label "DataHora: 22/06/2026 8:44:22"@pt ;
+	  rdfs:label "DataHora: 22/06/2026 9:24:26"@pt ;
 	  rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en ;
@@ -353,29 +353,48 @@ bim:Gherkin rdf:type  owl:Class  ;
 bim:Projeto.01  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
      bim:nome    "UFRJ - Cidade Universitária - RJ" ;
      bim:órgão    "UFRJ" ;
-     bim:uso    "Instituição de Ensino Superior" ;
+     bim:tipo    "Instituição de Ensino Superior" ;
      bim:descrição    "Contêiner do Inventário de todas as informações espaciais do Projeto"  .
 
 bim:AG-01  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Claude" ;
      bim:criador    "Anthropic" ;
-     bim:tipo    "Multimodal" ;
-     bim:descrição    "Agente de IA"  .
+     bim:modelo.atual    "Haiku" ;
+     bim:tipo    "Textual" ;
+     bim:descrição    "Agente de IA de baixo custo e capacidade limitada"  .
+
+bim:AG-01  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
+     bim:é.agente.de    bim:Projeto.01 ;
+     bim:nome    "Claude" ;
+     bim:criador    "Anthropic" ;
+     bim:modelo.atual    "Sonnet" ;
+     bim:tipo    "Textual" ;
+     bim:descrição    "Agente de IA de custo médio e capacidade de produção"  .
+
+bim:AG-01  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
+     bim:é.agente.de    bim:Projeto.01 ;
+     bim:nome    "Claude" ;
+     bim:criador    "Anthropic" ;
+     bim:modelo.atual    "Opus 4.7" ;
+     bim:tipo    "Textual" ;
+     bim:descrição    "Agente de IA de alto custo e capacidade máxima"  .
 
 bim:AG-02  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Gemini" ;
      bim:criador    "Google DeepMind" ;
-     bim:tipo    "Multimodal" ;
-     bim:descrição    "Agente de IA"  .
+     bim:modelo.atual    "Gemini 3.5" ;
+     bim:tipo    "Multimodal nativo" ;
+     bim:descrição    "Agente de IA da Google"  .
 
 bim:AG-03  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "ChatGPT" ;
      bim:criador    "Open AI" ;
+     bim:modelo.atual    "GPT 5.5 Instant" ;
      bim:tipo    "Multimodal" ;
-     bim:descrição    "Agente de IA"  .
+     bim:descrição    "Agente de IA da Open"  .
 
 bim:AG-04  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
@@ -1081,6 +1100,35 @@ bim:agente.de   rdf:type  owl:DatatypeProperty ;
                     bim:Definición          "Declara el propósito o la aplicación del agente."@es ;bim:Definition          "Declares the agent's purpose or application."@en  .
 
 
+bim:p.agir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.modelo.atual   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.agir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a agir: é.modelo.atual" ;
+                    bim:Chave               ".agir.116" ;
+                    bim:Ação                "Ação de agir" ;
+                    bim:Definição           "Declara o modelo atual do agente de IA utilizado."@pt ;
+                    bim:Definición          "Declara el modelo actual del agente de IA utilizado."@es ;bim:Definition          "Declares the current model of the AI agent used."@en  .
+
+
+bim:d.agir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:modelo.atual   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.agir ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para agir:  modelo.atual  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               ".agir.116" ;
+                    bim:Ação                "Ação de agir" ;
+                    bim:Definição           "Declara o modelo atual do agente de IA utilizado."@pt ;
+                    bim:Definición          "Declara el modelo actual del agente de IA utilizado."@es ;bim:Definition          "Declares the current model of the AI agent used."@en  .
+
+
 bim:p.aplicar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -1512,7 +1560,7 @@ bim:é.substituída.por   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "catal.139" ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara um elemento que substituiu outro elemento. A declaração identifica o elemento novo.   "@pt ;
-                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en ;
+                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en ;
                     owl:equivalentProperty  bim:é.substituído.por  .
 
 
@@ -1527,7 +1575,7 @@ bim:substituída.por   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "catal.139" ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara um elemento que substituiu outro elemento. A declaração identifica o elemento novo.   "@pt ;
-                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en  .
+                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -1542,7 +1590,7 @@ bim:é.substituído.por   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "catal.140" ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara a Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo.   "@pt ;
-                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en ;
+                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en ;
                     owl:equivalentProperty  bim:é.substituída.por  .
 
 
@@ -1557,7 +1605,7 @@ bim:substituído.por   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "catal.140" ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara a Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo.   "@pt ;
-                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en  .
+                    bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -2271,7 +2319,7 @@ bim:é.a.jusante.de   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "esgot.113" ;
                     bim:Ação                "Ação de esgotar" ;
                     bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações.   "@pt ;
-                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;bim:Definition          "Declares that the object is positioned downstream of another object (in the direction of the flow). Property designed to order elements of flows and pipes."@en ;
+                    bim:Definición          "Declara que el objeto está situado aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es ;bim:Definition          "Declares that the object is positioned downstream of another object (in the direction of the flow). Property designed to order elements of flows and pipes."@en ;
                     rdf:type                owl:TransitiveProperty ;
                     rdf:type                owl:AsymmetricProperty ;
                     owl:inverseOf           bim:é.a.montante.de  .
@@ -2288,7 +2336,7 @@ bim:a.jusante.de   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "esgot.113" ;
                     bim:Ação                "Ação de esgotar" ;
                     bim:Definição           "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações.   "@pt ;
-                    bim:Definición          "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;bim:Definition          "Declares that the object is positioned downstream of another object (in the direction of the flow). Property designed to order elements of flows and pipes."@en  .
+                    bim:Definición          "Declara que el objeto está situado aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es ;bim:Definition          "Declares that the object is positioned downstream of another object (in the direction of the flow). Property designed to order elements of flows and pipes."@en  .
 
 
 bim:p.esgotar   rdf:type  owl:ObjectProperty ;
@@ -2303,7 +2351,7 @@ bim:é.a.montante.de   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "esgot.114" ;
                     bim:Ação                "Ação de esgotar" ;
                     bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações.   "@pt ;
-                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;bim:Definition          "Declares that the object is positioned upstream of another object (counterflow direction). Property designed to order elements of flows and pipes."@en ;
+                    bim:Definición          "Declara que el objeto está situado aguas arriba de otro objeto (dirección de flujo contrario). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es ;bim:Definition          "Declares that the object is positioned upstream of another object (counterflow direction). Property designed to order elements of flows and pipes."@en ;
                     rdf:type                owl:TransitiveProperty ;
                     rdf:type                owl:AsymmetricProperty ;
                     owl:inverseOf           bim:é.a.jusante.de  .
@@ -2320,7 +2368,7 @@ bim:a.montante.de   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "esgot.114" ;
                     bim:Ação                "Ação de esgotar" ;
                     bim:Definição           "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações.   "@pt ;
-                    bim:Definición          "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es ;bim:Definition          "Declares that the object is positioned upstream of another object (counterflow direction). Property designed to order elements of flows and pipes."@en  .
+                    bim:Definición          "Declara que el objeto está situado aguas arriba de otro objeto (dirección de flujo contrario). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es ;bim:Definition          "Declares that the object is positioned upstream of another object (counterflow direction). Property designed to order elements of flows and pipes."@en  .
 
 
 bim:p.formar   rdf:type  owl:ObjectProperty ;
@@ -2602,7 +2650,7 @@ bim:é.coordenadas.xy   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "forma.117" ;
                     bim:Ação                "Ação de formar" ;
                     bim:Definição           "Lista de coordenadas em 2D com valor de X e Y. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0:10,0:10,10:0,10'.   "@pt ;
-                    bim:Definición          "Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es ;bim:Definition          "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en ;
+                    bim:Definición          "Declara la Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es ;bim:Definition          "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en ;
                     owl:equivalentProperty  bim:é.ponto.xy  .
 
 
@@ -2617,7 +2665,7 @@ bim:coordenadas.xy   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "forma.117" ;
                     bim:Ação                "Ação de formar" ;
                     bim:Definição           "Lista de coordenadas em 2D com valor de X e Y. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0:10,0:10,10:0,10'.   "@pt ;
-                    bim:Definición          "Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es ;bim:Definition          "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en  .
+                    bim:Definición          "Declara la Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es ;bim:Definition          "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en  .
 
 
 bim:p.formar   rdf:type  owl:ObjectProperty ;
@@ -2632,7 +2680,7 @@ bim:é.coordenadas.xyz   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "forma.118" ;
                     bim:Ação                "Ação de formar" ;
                     bim:Definição           "Lista de coordenadas em 3D com valor de X , Y e Z. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0,0:10,0,0:10,10,0:0,10,0'.   "@pt ;
-                    bim:Definición          "Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es ;bim:Definition          "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en ;
+                    bim:Definición          "Declara Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es ;bim:Definition          "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en ;
                     owl:equivalentProperty  bim:é.ponto.xyz  .
 
 
@@ -2647,7 +2695,7 @@ bim:coordenadas.xyz   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "forma.118" ;
                     bim:Ação                "Ação de formar" ;
                     bim:Definição           "Lista de coordenadas em 3D com valor de X , Y e Z. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0,0:10,0,0:10,10,0:0,10,0'.   "@pt ;
-                    bim:Definición          "Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es ;bim:Definition          "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en  .
+                    bim:Definición          "Declara Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es ;bim:Definition          "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en  .
 
 
 bim:p.formar   rdf:type  owl:ObjectProperty ;
@@ -3088,7 +3136,7 @@ bim:é.cliente   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "gesti.107" ;
                     bim:Ação                "Ação de gestionar" ;
                     bim:Definição           "Declaração da NBR 19650-1: Ator responsável por iniciar um empreendimento ou aprovar o seu escopo.   "@pt ;
-                    bim:Definición          "Declaración NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es ;bim:Definition          "NBR 19650-1 Declaration: Actor responsible for starting an enterprise or approving its scope."@en ;
+                    bim:Definición          "Declara NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es ;bim:Definition          "NBR 19650-1 Declaration: Actor responsible for starting an enterprise or approving its scope."@en ;
                     owl:equivalentProperty  bim:é.comitente  .
 
 
@@ -3103,7 +3151,7 @@ bim:cliente   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "gesti.107" ;
                     bim:Ação                "Ação de gestionar" ;
                     bim:Definição           "Declaração da NBR 19650-1: Ator responsável por iniciar um empreendimento ou aprovar o seu escopo.   "@pt ;
-                    bim:Definición          "Declaración NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es ;bim:Definition          "NBR 19650-1 Declaration: Actor responsible for starting an enterprise or approving its scope."@en  .
+                    bim:Definición          "Declara NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es ;bim:Definition          "NBR 19650-1 Declaration: Actor responsible for starting an enterprise or approving its scope."@en  .
 
 
 bim:p.gestionar   rdf:type  owl:ObjectProperty ;
@@ -3178,7 +3226,7 @@ bim:é.evento.gatilho   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "gesti.129" ;
                     bim:Ação                "Ação de gestionar" ;
                     bim:Definição           "Declaração da NBR 19650-1: Evento planejado ou não que muda um ativo ou seu estado durante o seu ciclo de vida e que resulta na troca de informações.   "@pt ;
-                    bim:Definición          "Declaración NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es ;bim:Definition          "NBR 19650-1 Declaration: Planned or unplanned event that changes an asset or its state during its life cycle and that results in the exchange of information."@en ;
+                    bim:Definición          "Declara NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es ;bim:Definition          "NBR 19650-1 Declaration: Planned or unplanned event that changes an asset or its state during its life cycle and that results in the exchange of information."@en ;
                     owl:equivalentProperty  bim:é.evento  .
 
 
@@ -3193,7 +3241,7 @@ bim:evento.gatilho   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "gesti.129" ;
                     bim:Ação                "Ação de gestionar" ;
                     bim:Definição           "Declaração da NBR 19650-1: Evento planejado ou não que muda um ativo ou seu estado durante o seu ciclo de vida e que resulta na troca de informações.   "@pt ;
-                    bim:Definición          "Declaración NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es ;bim:Definition          "NBR 19650-1 Declaration: Planned or unplanned event that changes an asset or its state during its life cycle and that results in the exchange of information."@en  .
+                    bim:Definición          "Declara NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es ;bim:Definition          "NBR 19650-1 Declaration: Planned or unplanned event that changes an asset or its state during its life cycle and that results in the exchange of information."@en  .
 
 
 bim:p.gestionar   rdf:type  owl:ObjectProperty ;
@@ -3482,7 +3530,7 @@ bim:é.alias   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.100" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias.   "@pt ;
-                    bim:Definición          "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en ;
+                    bim:Definición          "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en ;
                     owl:equivalentProperty  bim:é.apelido  .
 
 
@@ -3497,7 +3545,7 @@ bim:alias   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.100" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias.   "@pt ;
-                    bim:Definición          "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en  .
+                    bim:Definición          "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3512,7 +3560,7 @@ bim:é.apelido   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.101" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o apelido de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias.   "@pt ;
-                    bim:Definición          "Identifica el apodo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en ;
+                    bim:Definición          "Declara el apodo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en ;
                     owl:equivalentProperty  bim:é.alias  .
 
 
@@ -3527,7 +3575,7 @@ bim:apelido   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.101" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o apelido de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias.   "@pt ;
-                    bim:Definición          "Identifica el apodo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en  .
+                    bim:Definición          "Declara el apodo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3542,7 +3590,7 @@ bim:é.bitola   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.103" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de um perfil estrutural de aço. Exemplo: W150x13.   "@pt ;
-                    bim:Definición          "Identifica el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es ;bim:Definition          "Identifies the name of a steel structural profile. Example: W150x13."@en ;
+                    bim:Definición          "Declara el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es ;bim:Definition          "Identifies the name of a steel structural profile. Example: W150x13."@en ;
                     owl:equivalentProperty  bim:é.perfil.de.aço  .
 
 
@@ -3557,7 +3605,7 @@ bim:bitola   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.103" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de um perfil estrutural de aço. Exemplo: W150x13.   "@pt ;
-                    bim:Definición          "Identifica el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es ;bim:Definition          "Identifies the name of a steel structural profile. Example: W150x13."@en  .
+                    bim:Definición          "Declara el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es ;bim:Definition          "Identifies the name of a steel structural profile. Example: W150x13."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3572,7 +3620,7 @@ bim:é.codificada   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.109" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara a sigla formadora de um código.   "@pt ;
-                    bim:Definición          "Identifica el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en ;
+                    bim:Definición          "Declara el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en ;
                     owl:equivalentProperty  bim:é.codificado  .
 
 
@@ -3587,7 +3635,7 @@ bim:codificada   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.109" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara a sigla formadora de um código.   "@pt ;
-                    bim:Definición          "Identifica el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en  .
+                    bim:Definición          "Declara el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3602,7 +3650,7 @@ bim:é.codificado   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.110" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara a sigla formadora de um código.   "@pt ;
-                    bim:Definición          "Identifica el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en ;
+                    bim:Definición          "Declara el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en ;
                     owl:equivalentProperty  bim:é.codificada  .
 
 
@@ -3617,7 +3665,7 @@ bim:codificado   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.110" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara a sigla formadora de um código.   "@pt ;
-                    bim:Definición          "Identifica el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en  .
+                    bim:Definición          "Declara el acrónimo que forma un código."@es ;bim:Definition          "Identifies the acronym that forms a code."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3632,7 +3680,7 @@ bim:é.nome   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.121" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de alguma pessoa ou objeto definido.   "@pt ;
-                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
+                    bim:Definición          "Declara el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
 
 
 bim:d.identificar   rdf:type  owl:DatatypeProperty ;
@@ -3646,7 +3694,7 @@ bim:nome   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.121" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de alguma pessoa ou objeto definido.   "@pt ;
-                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
+                    bim:Definición          "Declara el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3661,7 +3709,7 @@ bim:é.nomeada   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.124" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de algum objeto definido.   "@pt ;
-                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en ;
+                    bim:Definición          "Declara el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en ;
                     owl:equivalentProperty  bim:é.nomeado  .
 
 
@@ -3676,7 +3724,7 @@ bim:nomeada   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.124" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de algum objeto definido.   "@pt ;
-                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
+                    bim:Definición          "Declara el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3691,7 +3739,7 @@ bim:é.nomeado   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.125" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de algum objeto definido.   "@pt ;
-                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en ;
+                    bim:Definición          "Declara el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en ;
                     owl:equivalentProperty  bim:é.nomeada  .
 
 
@@ -3706,7 +3754,7 @@ bim:nomeado   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.125" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o nome de algum objeto definido.   "@pt ;
-                    bim:Definición          "Identifica el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
+                    bim:Definición          "Declara el nombre de algún objeto definido."@es ;bim:Definition          "Identifies the name of some defined object."@en  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -3721,7 +3769,7 @@ bim:é.pseudônimo   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "ident.136" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias.   "@pt ;
-                    bim:Definición          "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en ;
+                    bim:Definición          "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en ;
                     owl:equivalentProperty  bim:é.apelido  .
 
 
@@ -3736,7 +3784,7 @@ bim:pseudônimo   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "ident.136" ;
                     bim:Ação                "Ação de identificar" ;
                     bim:Definição           "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias.   "@pt ;
-                    bim:Definición          "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en  .
+                    bim:Definición          "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es ;bim:Definition          "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en  .
 
 
 bim:p.iluminar   rdf:type  owl:ObjectProperty ;
@@ -5964,7 +6012,7 @@ bim:é.ciclo.de.vida   rdf:type  owl:ObjectProperty ;
                     bim:Chave               "plane.102" ;
                     bim:Ação                "Ação de planejar" ;
                     bim:Definição           "Declaração da NBR 19650-1: Vida útil de um ativo desde o estabelecimento de seus requisitos até o seu término. Inclui o projeto, construção, desenvolvimento, operação, manutenção e decomissionamento.   "@pt ;
-                    bim:Definición          "Declaración NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es ;bim:Definition          "NBR 19650-1 Declaration: Useful life of an asset from the establishment of its requirements to its termination. It includes design, construction, development, operation, maintenance and decommissioning."@en ;
+                    bim:Definición          "Declara NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es ;bim:Definition          "NBR 19650-1 Declaration: Useful life of an asset from the establishment of its requirements to its termination. It includes design, construction, development, operation, maintenance and decommissioning."@en ;
                     owl:equivalentProperty  bim:é.vida.útil  .
 
 
@@ -5979,7 +6027,7 @@ bim:ciclo.de.vida   rdf:type  owl:DatatypeProperty ;
                     bim:Chave               "plane.102" ;
                     bim:Ação                "Ação de planejar" ;
                     bim:Definição           "Declaração da NBR 19650-1: Vida útil de um ativo desde o estabelecimento de seus requisitos até o seu término. Inclui o projeto, construção, desenvolvimento, operação, manutenção e decomissionamento.   "@pt ;
-                    bim:Definición          "Declaración NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es ;bim:Definition          "NBR 19650-1 Declaration: Useful life of an asset from the establishment of its requirements to its termination. It includes design, construction, development, operation, maintenance and decommissioning."@en  .
+                    bim:Definición          "Declara NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es ;bim:Definition          "NBR 19650-1 Declaration: Useful life of an asset from the establishment of its requirements to its termination. It includes design, construction, development, operation, maintenance and decommissioning."@en  .
 
 
 bim:p.planejar   rdf:type  owl:ObjectProperty ;
@@ -8779,5 +8827,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia AGENTES
-##  Criada em 22/06/2026 8:44:27
+##  Criada em 22/06/2026 9:24:30
 #################################################################
