@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Agentes>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Definições de agentes"@pt
-  Annotations: rdfs:label "DataHora: 22/06/2026 8:44:22"@pt
+  Annotations: rdfs:label "DataHora: 22/06/2026 9:24:26"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en
@@ -245,7 +245,7 @@ Individual: bim:Projeto.01
 	Types: bim:No.Projeto
 	Facts: bim:nome  "UFRJ - Cidade Universitária - RJ"
 	Facts: bim:órgão  "UFRJ"
-	Facts: bim:uso  "Instituição de Ensino Superior"
+	Facts: bim:tipo  "Instituição de Ensino Superior"
 	Facts: bim:descrição  "Contêiner do Inventário de todas as informações espaciais do Projeto"
 
 Individual: bim:AG-01
@@ -253,24 +253,45 @@ Individual: bim:AG-01
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
-	Facts: bim:tipo  "Multimodal"
-	Facts: bim:descrição  "Agente de IA"
+	Facts: bim:modelo.atual  "Haiku"
+	Facts: bim:tipo  "Textual"
+	Facts: bim:descrição  "Agente de IA de baixo custo e capacidade limitada"
+
+Individual: bim:AG-01
+	Types: bim:Agente.Artificial
+	Facts: bim:é.agente.de  bim:Projeto.01
+	Facts: bim:nome  "Claude"
+	Facts: bim:criador  "Anthropic"
+	Facts: bim:modelo.atual  "Sonnet"
+	Facts: bim:tipo  "Textual"
+	Facts: bim:descrição  "Agente de IA de custo médio e capacidade de produção"
+
+Individual: bim:AG-01
+	Types: bim:Agente.Artificial
+	Facts: bim:é.agente.de  bim:Projeto.01
+	Facts: bim:nome  "Claude"
+	Facts: bim:criador  "Anthropic"
+	Facts: bim:modelo.atual  "Opus 4.7"
+	Facts: bim:tipo  "Textual"
+	Facts: bim:descrição  "Agente de IA de alto custo e capacidade máxima"
 
 Individual: bim:AG-02
 	Types: bim:Agente.Artificial
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Gemini"
 	Facts: bim:criador  "Google DeepMind"
-	Facts: bim:tipo  "Multimodal"
-	Facts: bim:descrição  "Agente de IA"
+	Facts: bim:modelo.atual  "Gemini 3.5"
+	Facts: bim:tipo  "Multimodal nativo"
+	Facts: bim:descrição  "Agente de IA da Google"
 
 Individual: bim:AG-03
 	Types: bim:Agente.Artificial
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "ChatGPT"
 	Facts: bim:criador  "Open AI"
+	Facts: bim:modelo.atual  "GPT 5.5 Instant"
 	Facts: bim:tipo  "Multimodal"
-	Facts: bim:descrição  "Agente de IA"
+	Facts: bim:descrição  "Agente de IA da Open"
 
 Individual: bim:AG-04
 	Types: bim:Agente.Artificial
@@ -1022,6 +1043,37 @@ DataProperty: bim:agente.de
 	Annotations: bim:Definición "Declara el propósito o la aplicación del agente."@es
 	Annotations: bim:Definition "Declares the agent's purpose or application."@en
 
+ObjectProperty: bim:p.agir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.modelo.atual
+	SubPropertyOf: bim:p.agir
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a agir: é.modelo.atual"@pt
+	Annotations: bim:Chave ".agir.116"
+	Annotations: bim:Ação "Ação de agir"@pt
+	Annotations: bim:Definição "Declara o modelo atual do agente de IA utilizado."@pt
+	Annotations: bim:Definición "Declara el modelo actual del agente de IA utilizado."@es
+	Annotations: bim:Definition "Declares the current model of the AI agent used."@en
+
+DataProperty: bim:d.agir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:modelo.atual
+	SubPropertyOf: bim:d.agir
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para agir:  modelo.atual  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave ".agir.116"
+	Annotations: bim:Ação "Ação de agir"@pt
+	Annotations: bim:Definição "Declara o modelo atual do agente de IA utilizado."@pt
+	Annotations: bim:Definición "Declara el modelo actual del agente de IA utilizado."@es
+	Annotations: bim:Definition "Declares the current model of the AI agent used."@en
+
 ObjectProperty: bim:p.aplicar
 	SubPropertyOf: bim:BIMProp
 
@@ -1488,7 +1540,7 @@ ObjectProperty: bim:é.substituída.por
 	Annotations: bim:Chave "catal.139"
 	Annotations: bim:Ação "Ação de catalogar"@pt
 	Annotations: bim:Definição "Declara um elemento que substituiu outro elemento. A declaração identifica o elemento novo."@pt
-	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
+	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es
 	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en
 	EquivalentTo: bim:é.substituído.por
 
@@ -1504,7 +1556,7 @@ DataProperty: bim:substituída.por
 	Annotations: bim:Chave "catal.139"
 	Annotations: bim:Ação "Ação de catalogar"@pt
 	Annotations: bim:Definição "Declara um elemento que substituiu outro elemento. A declaração identifica o elemento novo."@pt
-	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
+	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es
 	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration declares the element new."@en
 
 ObjectProperty: bim:p.catalogar
@@ -1520,7 +1572,7 @@ ObjectProperty: bim:é.substituído.por
 	Annotations: bim:Chave "catal.140"
 	Annotations: bim:Ação "Ação de catalogar"@pt
 	Annotations: bim:Definição "Declara a Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo."@pt
-	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
+	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es
 	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en
 	EquivalentTo: bim:é.substituída.por
 
@@ -1536,7 +1588,7 @@ DataProperty: bim:substituído.por
 	Annotations: bim:Chave "catal.140"
 	Annotations: bim:Ação "Ação de catalogar"@pt
 	Annotations: bim:Definição "Declara a Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo."@pt
-	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La declaración identifica el nuevo elemento."@es
+	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es
 	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en
 
 ObjectProperty: bim:p.catalogar
@@ -2297,7 +2349,7 @@ ObjectProperty: bim:é.a.jusante.de
 	Annotations: bim:Chave "esgot.113"
 	Annotations: bim:Ação "Ação de esgotar"@pt
 	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
-	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Annotations: bim:Definición "Declara que el objeto está situado aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es
 	Annotations: bim:Definition "Declares that the object is positioned downstream of another object (in the direction of the flow). Property designed to order elements of flows and pipes."@en
 	Characteristics: Transitive
 	Characteristics: Asymmetric
@@ -2315,7 +2367,7 @@ DataProperty: bim:a.jusante.de
 	Annotations: bim:Chave "esgot.113"
 	Annotations: bim:Ação "Ação de esgotar"@pt
 	Annotations: bim:Definição "Declara que o objeto é posicionado a jusante de outro objeto (no sentido do fluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
-	Annotations: bim:Definición "Declara que el objeto se coloca aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Annotations: bim:Definición "Declara que el objeto está situado aguas abajo de otro objeto (en la dirección del flujo). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es
 	Annotations: bim:Definition "Declares that the object is positioned downstream of another object (in the direction of the flow). Property designed to order elements of flows and pipes."@en
 
 ObjectProperty: bim:p.esgotar
@@ -2331,7 +2383,7 @@ ObjectProperty: bim:é.a.montante.de
 	Annotations: bim:Chave "esgot.114"
 	Annotations: bim:Ação "Ação de esgotar"@pt
 	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
-	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Annotations: bim:Definición "Declara que el objeto está situado aguas arriba de otro objeto (dirección de flujo contrario). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es
 	Annotations: bim:Definition "Declares that the object is positioned upstream of another object (counterflow direction). Property designed to order elements of flows and pipes."@en
 	Characteristics: Transitive
 	Characteristics: Asymmetric
@@ -2349,7 +2401,7 @@ DataProperty: bim:a.montante.de
 	Annotations: bim:Chave "esgot.114"
 	Annotations: bim:Ação "Ação de esgotar"@pt
 	Annotations: bim:Definição "Declara que o objeto é posicionado a montante de outro objeto (sentido de contrafluxo). Propriedade pensada para ordenar elementos de desagues e tubulações."@pt
-	Annotations: bim:Definición "Declara que el objeto se coloca aguas arriba de otro objeto (dirección de contraflujo). Propiedad diseñada para ordenar elementos de flujos y tuberías."@es
+	Annotations: bim:Definición "Declara que el objeto está situado aguas arriba de otro objeto (dirección de flujo contrario). Propiedad diseñada para ordenar elementos de caudales y tuberías."@es
 	Annotations: bim:Definition "Declares that the object is positioned upstream of another object (counterflow direction). Property designed to order elements of flows and pipes."@en
 
 ObjectProperty: bim:p.formar
@@ -2650,7 +2702,7 @@ ObjectProperty: bim:é.coordenadas.xy
 	Annotations: bim:Chave "forma.117"
 	Annotations: bim:Ação "Ação de formar"@pt
 	Annotations: bim:Definição "Lista de coordenadas em 2D com valor de X e Y. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0:10,0:10,10:0,10'."@pt
-	Annotations: bim:Definición "Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es
+	Annotations: bim:Definición "Declara la Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es
 	Annotations: bim:Definition "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en
 	EquivalentTo: bim:é.ponto.xy
 
@@ -2666,7 +2718,7 @@ DataProperty: bim:coordenadas.xy
 	Annotations: bim:Chave "forma.117"
 	Annotations: bim:Ação "Ação de formar"@pt
 	Annotations: bim:Definição "Lista de coordenadas em 2D com valor de X e Y. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0:10,0:10,10:0,10'."@pt
-	Annotations: bim:Definición "Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es
+	Annotations: bim:Definición "Declara la Lista de coordenadas en 2D con valores de X e Y. Es una lista que debe ser una cadena que comience con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0:10,0:10,10:0,10'."@es
 	Annotations: bim:Definition "List of coordinates in 2D with values of X and Y. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0:10,0:10,10:0,10'."@en
 
 ObjectProperty: bim:p.formar
@@ -2682,7 +2734,7 @@ ObjectProperty: bim:é.coordenadas.xyz
 	Annotations: bim:Chave "forma.118"
 	Annotations: bim:Ação "Ação de formar"@pt
 	Annotations: bim:Definição "Lista de coordenadas em 3D com valor de X , Y e Z. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@pt
-	Annotations: bim:Definición "Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es
+	Annotations: bim:Definición "Declara Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es
 	Annotations: bim:Definition "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en
 	EquivalentTo: bim:é.ponto.xyz
 
@@ -2698,7 +2750,7 @@ DataProperty: bim:coordenadas.xyz
 	Annotations: bim:Chave "forma.118"
 	Annotations: bim:Ação "Ação de formar"@pt
 	Annotations: bim:Definição "Lista de coordenadas em 3D com valor de X , Y e Z. É uma lista que deve ser uma string iniciada com um nome significativo seguido pelos elementos, necessáriamente ordenados, separados por um carater separador. Por exemplo 'Quadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@pt
-	Annotations: bim:Definición "Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es
+	Annotations: bim:Definición "Declara Lista de coordenadas 3D con valores de X, Y y Z. Es una lista que debe ser una cadena que comienza con un nombre significativo seguido de los elementos, necesariamente ordenados, separados por un carácter separador. Por ejemplo, 'Cuadrado:0,0,0:10,0,0:10,10,0:0,10,0'."@es
 	Annotations: bim:Definition "List of 3D coordinates with values of X, Y, and Z. It is a list that must be a string starting with a meaningful name followed by the elements, necessarily ordered, separated by a separator character. For example 'Square:0,0,0:10,0,0:10,10,0:0,10,0'."@en
 
 ObjectProperty: bim:p.formar
@@ -3168,7 +3220,7 @@ ObjectProperty: bim:é.cliente
 	Annotations: bim:Chave "gesti.107"
 	Annotations: bim:Ação "Ação de gestionar"@pt
 	Annotations: bim:Definição "Declaração da NBR 19650-1: Ator responsável por iniciar um empreendimento ou aprovar o seu escopo."@pt
-	Annotations: bim:Definición "Declaración NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es
+	Annotations: bim:Definición "Declara NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es
 	Annotations: bim:Definition "NBR 19650-1 Declaration: Actor responsible for starting an enterprise or approving its scope."@en
 	EquivalentTo: bim:é.comitente
 
@@ -3184,7 +3236,7 @@ DataProperty: bim:cliente
 	Annotations: bim:Chave "gesti.107"
 	Annotations: bim:Ação "Ação de gestionar"@pt
 	Annotations: bim:Definição "Declaração da NBR 19650-1: Ator responsável por iniciar um empreendimento ou aprovar o seu escopo."@pt
-	Annotations: bim:Definición "Declaración NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es
+	Annotations: bim:Definición "Declara NBR 19650-1: Actor responsable de iniciar una empresa o aprobar su alcance."@es
 	Annotations: bim:Definition "NBR 19650-1 Declaration: Actor responsible for starting an enterprise or approving its scope."@en
 
 ObjectProperty: bim:p.gestionar
@@ -3264,7 +3316,7 @@ ObjectProperty: bim:é.evento.gatilho
 	Annotations: bim:Chave "gesti.129"
 	Annotations: bim:Ação "Ação de gestionar"@pt
 	Annotations: bim:Definição "Declaração da NBR 19650-1: Evento planejado ou não que muda um ativo ou seu estado durante o seu ciclo de vida e que resulta na troca de informações."@pt
-	Annotations: bim:Definición "Declaración NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es
+	Annotations: bim:Definición "Declara NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es
 	Annotations: bim:Definition "NBR 19650-1 Declaration: Planned or unplanned event that changes an asset or its state during its life cycle and that results in the exchange of information."@en
 	EquivalentTo: bim:é.evento
 
@@ -3280,7 +3332,7 @@ DataProperty: bim:evento.gatilho
 	Annotations: bim:Chave "gesti.129"
 	Annotations: bim:Ação "Ação de gestionar"@pt
 	Annotations: bim:Definição "Declaração da NBR 19650-1: Evento planejado ou não que muda um ativo ou seu estado durante o seu ciclo de vida e que resulta na troca de informações."@pt
-	Annotations: bim:Definición "Declaración NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es
+	Annotations: bim:Definición "Declara NBR 19650-1: Evento planificado o no planificado que cambia un activo o su estado durante su ciclo de vida y que da lugar al intercambio de información."@es
 	Annotations: bim:Definition "NBR 19650-1 Declaration: Planned or unplanned event that changes an asset or its state during its life cycle and that results in the exchange of information."@en
 
 ObjectProperty: bim:p.gestionar
@@ -3588,7 +3640,7 @@ ObjectProperty: bim:é.alias
 	Annotations: bim:Chave "ident.100"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
-	Annotations: bim:Definición "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
+	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
 	EquivalentTo: bim:é.apelido
 
@@ -3604,7 +3656,7 @@ DataProperty: bim:alias
 	Annotations: bim:Chave "ident.100"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
-	Annotations: bim:Definición "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
+	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
 
 ObjectProperty: bim:p.identificar
@@ -3620,7 +3672,7 @@ ObjectProperty: bim:é.apelido
 	Annotations: bim:Chave "ident.101"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o apelido de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
-	Annotations: bim:Definición "Identifica el apodo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
+	Annotations: bim:Definición "Declara el apodo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Identifies the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
 	EquivalentTo: bim:é.alias
 
@@ -3636,7 +3688,7 @@ DataProperty: bim:apelido
 	Annotations: bim:Chave "ident.101"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o apelido de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
-	Annotations: bim:Definición "Identifica el apodo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
+	Annotations: bim:Definición "Declara el apodo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Identifies the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
 
 ObjectProperty: bim:p.identificar
@@ -3652,7 +3704,7 @@ ObjectProperty: bim:é.bitola
 	Annotations: bim:Chave "ident.103"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de um perfil estrutural de aço. Exemplo: W150x13."@pt
-	Annotations: bim:Definición "Identifica el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es
+	Annotations: bim:Definición "Declara el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es
 	Annotations: bim:Definition "Identifies the name of a steel structural profile. Example: W150x13."@en
 	EquivalentTo: bim:é.perfil.de.aço
 
@@ -3668,7 +3720,7 @@ DataProperty: bim:bitola
 	Annotations: bim:Chave "ident.103"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de um perfil estrutural de aço. Exemplo: W150x13."@pt
-	Annotations: bim:Definición "Identifica el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es
+	Annotations: bim:Definición "Declara el nombre de un perfil estructural de acero. Ejemplo: W150x13."@es
 	Annotations: bim:Definition "Identifies the name of a steel structural profile. Example: W150x13."@en
 
 ObjectProperty: bim:p.identificar
@@ -3684,7 +3736,7 @@ ObjectProperty: bim:é.codificada
 	Annotations: bim:Chave "ident.109"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara a sigla formadora de um código."@pt
-	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+	Annotations: bim:Definición "Declara el acrónimo que forma un código."@es
 	Annotations: bim:Definition "Identifies the acronym that forms a code."@en
 	EquivalentTo: bim:é.codificado
 
@@ -3700,7 +3752,7 @@ DataProperty: bim:codificada
 	Annotations: bim:Chave "ident.109"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara a sigla formadora de um código."@pt
-	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+	Annotations: bim:Definición "Declara el acrónimo que forma un código."@es
 	Annotations: bim:Definition "Identifies the acronym that forms a code."@en
 
 ObjectProperty: bim:p.identificar
@@ -3716,7 +3768,7 @@ ObjectProperty: bim:é.codificado
 	Annotations: bim:Chave "ident.110"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara a sigla formadora de um código."@pt
-	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+	Annotations: bim:Definición "Declara el acrónimo que forma un código."@es
 	Annotations: bim:Definition "Identifies the acronym that forms a code."@en
 	EquivalentTo: bim:é.codificada
 
@@ -3732,7 +3784,7 @@ DataProperty: bim:codificado
 	Annotations: bim:Chave "ident.110"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara a sigla formadora de um código."@pt
-	Annotations: bim:Definición "Identifica el acrónimo que forma un código."@es
+	Annotations: bim:Definición "Declara el acrónimo que forma un código."@es
 	Annotations: bim:Definition "Identifies the acronym that forms a code."@en
 
 ObjectProperty: bim:p.identificar
@@ -3748,7 +3800,7 @@ ObjectProperty: bim:é.nome
 	Annotations: bim:Chave "ident.121"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de alguma pessoa ou objeto definido."@pt
-	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Identifies the name of some defined object."@en
 
 DataProperty: bim:d.identificar
@@ -3763,7 +3815,7 @@ DataProperty: bim:nome
 	Annotations: bim:Chave "ident.121"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de alguma pessoa ou objeto definido."@pt
-	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Identifies the name of some defined object."@en
 
 ObjectProperty: bim:p.identificar
@@ -3779,7 +3831,7 @@ ObjectProperty: bim:é.nomeada
 	Annotations: bim:Chave "ident.124"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
-	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Identifies the name of some defined object."@en
 	EquivalentTo: bim:é.nomeado
 
@@ -3795,7 +3847,7 @@ DataProperty: bim:nomeada
 	Annotations: bim:Chave "ident.124"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
-	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Identifies the name of some defined object."@en
 
 ObjectProperty: bim:p.identificar
@@ -3811,7 +3863,7 @@ ObjectProperty: bim:é.nomeado
 	Annotations: bim:Chave "ident.125"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
-	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Identifies the name of some defined object."@en
 	EquivalentTo: bim:é.nomeada
 
@@ -3827,7 +3879,7 @@ DataProperty: bim:nomeado
 	Annotations: bim:Chave "ident.125"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
-	Annotations: bim:Definición "Identifica el nombre de algún objeto definido."@es
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Identifies the name of some defined object."@en
 
 ObjectProperty: bim:p.identificar
@@ -3843,7 +3895,7 @@ ObjectProperty: bim:é.pseudônimo
 	Annotations: bim:Chave "ident.136"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
-	Annotations: bim:Definición "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
+	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
 	EquivalentTo: bim:é.apelido
 
@@ -3859,7 +3911,7 @@ DataProperty: bim:pseudônimo
 	Annotations: bim:Chave "ident.136"
 	Annotations: bim:Ação "Ação de identificar"@pt
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
-	Annotations: bim:Definición "Identifica el nombre alternativo de un objeto o agente. Puede usarse para identificar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
+	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Identifies the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
 
 ObjectProperty: bim:p.iluminar
@@ -6254,7 +6306,7 @@ ObjectProperty: bim:é.ciclo.de.vida
 	Annotations: bim:Chave "plane.102"
 	Annotations: bim:Ação "Ação de planejar"@pt
 	Annotations: bim:Definição "Declaração da NBR 19650-1: Vida útil de um ativo desde o estabelecimento de seus requisitos até o seu término. Inclui o projeto, construção, desenvolvimento, operação, manutenção e decomissionamento."@pt
-	Annotations: bim:Definición "Declaración NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es
+	Annotations: bim:Definición "Declara NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es
 	Annotations: bim:Definition "NBR 19650-1 Declaration: Useful life of an asset from the establishment of its requirements to its termination. It includes design, construction, development, operation, maintenance and decommissioning."@en
 	EquivalentTo: bim:é.vida.útil
 
@@ -6270,7 +6322,7 @@ DataProperty: bim:ciclo.de.vida
 	Annotations: bim:Chave "plane.102"
 	Annotations: bim:Ação "Ação de planejar"@pt
 	Annotations: bim:Definição "Declaração da NBR 19650-1: Vida útil de um ativo desde o estabelecimento de seus requisitos até o seu término. Inclui o projeto, construção, desenvolvimento, operação, manutenção e decomissionamento."@pt
-	Annotations: bim:Definición "Declaración NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es
+	Annotations: bim:Definición "Declara NBR 19650-1: Vida útil de un activo desde el establecimiento de sus requisitos hasta su finalización. Incluye diseño, construcción, desarrollo, operación, mantenimiento y desmantelamiento."@es
 	Annotations: bim:Definition "NBR 19650-1 Declaration: Useful life of an asset from the establishment of its requirements to its termination. It includes design, construction, development, operation, maintenance and decommissioning."@en
 
 ObjectProperty: bim:p.planejar
@@ -9255,5 +9307,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia AGENTES
-##  Criada em 22/06/2026 8:44:27
+##  Criada em 22/06/2026 9:24:30
 #################################################################
