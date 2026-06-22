@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Agentes>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Definições de agentes"@pt
-  Annotations: rdfs:label "DataHora: 22/06/2026 10:15:08"@pt
+  Annotations: rdfs:label "DataHora: 22/06/2026 10:30:21"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en
@@ -254,6 +254,7 @@ Individual: bim:AG-01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
 	Facts: bim:modelo.usado  "Haiku"
+	Facts: bim:usado.para  "Distribuir luminárias"
 	Facts: bim:tipo  "Textual"
 	Facts: bim:descrição  "Agente de IA de baixo custo e capacidade limitada"
 
@@ -263,6 +264,7 @@ Individual: bim:AG-01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
 	Facts: bim:modelo.usado  "Sonnet"
+	Facts: bim:usado.para  "Verificar áreas"
 	Facts: bim:tipo  "Textual"
 	Facts: bim:descrição  "Agente de IA de custo médio e capacidade de produção"
 
@@ -272,6 +274,7 @@ Individual: bim:AG-01
 	Facts: bim:nome  "Claude"
 	Facts: bim:criador  "Anthropic"
 	Facts: bim:modelo.usado  "Opus 4.7"
+	Facts: bim:usado.para  "Colocar mobiliário"
 	Facts: bim:tipo  "Textual"
 	Facts: bim:descrição  "Agente de IA de alto custo e capacidade máxima"
 
@@ -281,6 +284,7 @@ Individual: bim:AG-02
 	Facts: bim:nome  "Gemini"
 	Facts: bim:criador  "Google DeepMind"
 	Facts: bim:modelo.usado  "Gemini 3.5"
+	Facts: bim:usado.para  "-"
 	Facts: bim:tipo  "Multimodal nativo"
 	Facts: bim:descrição  "Agente de IA da Google"
 
@@ -290,6 +294,7 @@ Individual: bim:AG-03
 	Facts: bim:nome  "ChatGPT"
 	Facts: bim:criador  "Open AI"
 	Facts: bim:modelo.usado  "GPT 5.5 Instant"
+	Facts: bim:usado.para  "-"
 	Facts: bim:tipo  "Multimodal"
 	Facts: bim:descrição  "Agente de IA da Open"
 
@@ -298,6 +303,7 @@ Individual: bim:AG-04
 	Facts: bim:é.agente.de  bim:Projeto.01
 	Facts: bim:nome  "Gherkin"
 	Facts: bim:criador  "Aslak Hellesøy"
+	Facts: bim:usado.para  "Verificar requisitos"
 	Facts: bim:tipo  "NLP"
 	Facts: bim:descrição  "Linguagem de BDD (Behaviour-Driven Development) ou Desenvolvimento Dirigido por Comportamento. Auxilia equipes a identificar erros de requisitos."
 
@@ -1073,6 +1079,37 @@ DataProperty: bim:modelo.usado
 	Annotations: bim:Definição "Declara o modelo do agente de IA utilizado."@pt
 	Annotations: bim:Definición "Declara el modelo del agente de IA utilizado."@es
 	Annotations: bim:Definition "Declares the model of the AI agent used."@en
+
+ObjectProperty: bim:p.agir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.usado.para
+	SubPropertyOf: bim:p.agir
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a agir: é.usado.para"@pt
+	Annotations: bim:Chave ".agir.121"
+	Annotations: bim:Ação "Ação de agir"@pt
+	Annotations: bim:Definição "Declara para que tarefa foi usado o agente."@pt
+	Annotations: bim:Definición "Declara para que tarea fue usado el agente."@es
+	Annotations: bim:Definition "Declares what task the agent was used for."@en
+
+DataProperty: bim:d.agir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:usado.para
+	SubPropertyOf: bim:d.agir
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para agir:  usado.para  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave ".agir.121"
+	Annotations: bim:Ação "Ação de agir"@pt
+	Annotations: bim:Definição "Declara para que tarefa foi usado o agente."@pt
+	Annotations: bim:Definición "Declara para que tarea fue usado el agente."@es
+	Annotations: bim:Definition "Declares what task the agent was used for."@en
 
 ObjectProperty: bim:p.aplicar
 	SubPropertyOf: bim:BIMProp
@@ -9307,5 +9344,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia AGENTES
-##  Criada em 22/06/2026 10:15:11
+##  Criada em 22/06/2026 10:30:23
 #################################################################
