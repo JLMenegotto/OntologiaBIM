@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Definições de agentes"@pt ;
-	  rdfs:label "DataHora: 01/07/2026 9:57:22"@pt ;
+	  rdfs:label "DataHora: 01/07/2026 10:28:03"@pt ;
 	  rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en ;
@@ -360,8 +360,8 @@ bim:AG-01  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Claude" ;
      bim:criador    "Anthropic" ;
-     bim:modelo.usado    "Haiku" ;
-     bim:usado.para    "Distribuir luminárias" ;
+     bim:agente.modelo.usado    "Haiku" ;
+     bim:agente.finalidade    "Distribuir luminárias" ;
      bim:tipo    "Textual" ;
      bim:descrição    "Agente de IA de baixo custo e capacidade limitada"  .
 
@@ -369,8 +369,8 @@ bim:AG-02  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Claude" ;
      bim:criador    "Anthropic" ;
-     bim:modelo.usado    "Sonnet" ;
-     bim:usado.para    "Verificar áreas" ;
+     bim:agente.modelo.usado    "Sonnet" ;
+     bim:agente.finalidade    "Verificar áreas" ;
      bim:tipo    "Textual" ;
      bim:descrição    "Agente de IA de custo médio e capacidade de produção"  .
 
@@ -378,8 +378,8 @@ bim:AG-03  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Claude" ;
      bim:criador    "Anthropic" ;
-     bim:modelo.usado    "Opus 4.7" ;
-     bim:usado.para    "Colocar mobiliário" ;
+     bim:agente.modelo.usado    "Opus 4.7" ;
+     bim:agente.finalidade    "Colocar mobiliário" ;
      bim:tipo    "Textual" ;
      bim:descrição    "Agente de IA de alto custo e capacidade máxima"  .
 
@@ -387,8 +387,8 @@ bim:AG-04  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Gemini" ;
      bim:criador    "Google DeepMind" ;
-     bim:modelo.usado    "Gemini 3.5" ;
-     bim:usado.para    "-" ;
+     bim:agente.modelo.usado    "Gemini 3.5" ;
+     bim:agente.finalidade    "-" ;
      bim:tipo    "Multimodal nativo" ;
      bim:descrição    "Agente de IA da Google"  .
 
@@ -396,8 +396,8 @@ bim:AG-05  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "ChatGPT" ;
      bim:criador    "Open AI" ;
-     bim:modelo.usado    "GPT 5.5 Instant" ;
-     bim:usado.para    "-" ;
+     bim:agente.modelo.usado    "GPT 5.5 Instant" ;
+     bim:agente.finalidade    "-" ;
      bim:tipo    "Multimodal" ;
      bim:descrição    "Agente de IA da Open"  .
 
@@ -405,7 +405,7 @@ bim:AG-06  rdf:type  owl:NamedIndividual , bim:Agente.Artificial ;
      bim:é.agente.de    bim:Projeto.01 ;
      bim:nome    "Gherkin" ;
      bim:criador    "Aslak Hellesøy" ;
-     bim:usado.para    "Verificar requisitos" ;
+     bim:agente.finalidade    "Verificar requisitos" ;
      bim:tipo    "NLP" ;
      bim:descrição    "Linguagem de BDD Desenvolvimento Dirigido por Comportamento. Auxilia equipes a identificar erros de requisitos."  .
 
@@ -865,6 +865,35 @@ bim:agente.finalidade   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de agir" ;
                     bim:Definição           "Declara a finalidade de uma tarefa ou de um agente artificial."@pt ;
                     bim:Definición          "Declara el propósito de una tarea o un agente artificial."@es ;bim:Definition          "It declares the purpose of a task or an artificial agent."@en  .
+
+
+bim:p.agir   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.agente.modelo.usado   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.agir ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a agir: é.agente.modelo.usado" ;
+                    bim:Chave               "d.agir.109" ;
+                    bim:Ação                "Ação de agir" ;
+                    bim:Definição           "Declara o modelo do agente de IA utilizado."@pt ;
+                    bim:Definición          "Declara el modelo del agente de IA utilizado."@es ;bim:Definition          "It declares the model of the AI agent used."@en  .
+
+
+bim:d.agir   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:agente.modelo.usado   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.agir ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para agir:  agente.modelo.usado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.agir.109" ;
+                    bim:Ação                "Ação de agir" ;
+                    bim:Definição           "Declara o modelo do agente de IA utilizado."@pt ;
+                    bim:Definición          "Declara el modelo del agente de IA utilizado."@es ;bim:Definition          "It declares the model of the AI agent used."@en  .
 
 
 bim:p.agir   rdf:type  owl:ObjectProperty ;
@@ -9353,5 +9382,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia AGENTES
-##  Criada em 01/07/2026 9:57:24
+##  Criada em 01/07/2026 10:28:08
 #################################################################
