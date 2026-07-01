@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Estações_Meteorológicas>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: A Portaria DECEA Nº283/SNOT, de13 de Junho de 2023. Protocolo COMAER nº 67600.012216/2022-43 define os procedimentos técnicos para a Instalação de Estações Meteorológicas de Superfície e de Altitude."@pt
-  Annotations: rdfs:label "DataHora: 01/07/2026 16:01:35"@pt
+  Annotations: rdfs:label "DataHora: 01/07/2026 16:04:36"@pt
   Annotations: rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en
@@ -6450,6 +6450,23 @@ Class: bim:Rede.Telefonia.Subterrânea
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
+
+Individual: bim:América
+	Types: bim:No.Projeto
+	Facts: bim:descrição  "O continente americano"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:tema  "Gestão"
+
+Individual: bim:América.do.Sul
+	Types: bim:SubContinente
+	Facts: bim:é.dentro.de  bim:América
+	Facts: bim:é.continente  bim:América
+	Facts: bim:descrição  "Um subcontinente de América"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:tema  "Brasil"
+	Facts: bim:subtema  "SubContinente"
 
 Individual: bim:Brasil
 	Types: bim:País
@@ -21554,6 +21571,39 @@ ObjectProperty: bim:p.endereçar
 
 
 
+ObjectProperty: bim:é.continente
+	SubPropertyOf: bim:p.endereçar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a endereçar: é.continente"@pt
+	Annotations: bim:Chave "d.ender.100"
+	Annotations: bim:Ação "Ação de endereçar"@pt
+	Annotations: bim:Definição "Declara que o elemento é um continente. O dataproperty é usado para o Nome do continente."@pt
+	Annotations: bim:Definición "Declara Nombre del continente."@es
+	Annotations: bim:Definition "It declares the Name of the continent."@en
+	Characteristics: Functional
+
+DataProperty: bim:d.endereçar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:continente
+	SubPropertyOf: bim:d.endereçar
+	range: rdfs:Literal  or  xsd:string
+	Characteristics: Functional
+	Annotations: rdfs:label "Dado para endereçar:  continente  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.ender.100"
+	Annotations: bim:Ação "Ação de endereçar"@pt
+	Annotations: bim:Definição "Declara que o elemento é um continente. O dataproperty é usado para o Nome do continente."@pt
+	Annotations: bim:Definición "Declara Nombre del continente."@es
+	Annotations: bim:Definition "It declares the Name of the continent."@en
+
+ObjectProperty: bim:p.endereçar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.estado
 	SubPropertyOf: bim:p.endereçar
 	domain: bim:BIM
@@ -29744,5 +29794,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Brasil_Meteorologia
-##  Criada em 01/07/2026 16:01:39
+##  Criada em 01/07/2026 16:04:41
 #################################################################
