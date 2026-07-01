@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: A Portaria DECEA Nº283/SNOT, de13 de Junho de 2023. Protocolo COMAER nº 67600.012216/2022-43 define os procedimentos técnicos para a Instalação de Estações Meteorológicas de Superfície e de Altitude."@pt ;
-	  rdfs:label "DataHora: 01/07/2026 16:01:35"@pt ;
+	  rdfs:label "DataHora: 01/07/2026 16:04:36"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -13382,6 +13382,21 @@ bim:Rede.Telefonia.Subterrânea rdf:type  owl:Class  ;
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
+
+bim:América  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
+     bim:descrição    "O continente americano" ;
+     bim:categoria.revit    "[ - ]" ;
+     bim:classe.ifc    "[ - ]" ;
+     bim:tema    "Gestão"  .
+
+bim:América.do.Sul  rdf:type  owl:NamedIndividual , bim:SubContinente ;
+     bim:é.dentro.de    bim:América ;
+     bim:é.continente    bim:América ;
+     bim:descrição    "Um subcontinente de América" ;
+     bim:categoria.revit    "[ - ]" ;
+     bim:classe.ifc    "[ - ]" ;
+     bim:tema    "Brasil" ;
+     bim:subtema    "SubContinente"  .
 
 bim:Brasil  rdf:type  owl:NamedIndividual , bim:País ;
      bim:é.dentro.de    bim:América.do.Sul ;
@@ -27546,6 +27561,37 @@ bim:p.endereçar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.continente   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.endereçar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a endereçar: é.continente" ;
+                    bim:Chave               "d.ender.100" ;
+                    bim:Ação                "Ação de endereçar" ;
+                    bim:Definição           "Declara que o elemento é um continente. O dataproperty é usado para o Nome do continente. "@pt ;
+                    bim:Definición          "Declara Nombre del continente."@es ;bim:Definition          "It declares the Name of the continent."@en ;
+                    rdf:type                owl:FunctionalProperty  .
+
+
+bim:d.endereçar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:continente   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.endereçar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdf:type                owl:FunctionalProperty ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para endereçar:  continente  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.ender.100" ;
+                    bim:Ação                "Ação de endereçar" ;
+                    bim:Definição           "Declara que o elemento é um continente. O dataproperty é usado para o Nome do continente. "@pt ;
+                    bim:Definición          "Declara Nombre del continente."@es ;bim:Definition          "It declares the Name of the continent."@en  .
+
+
+bim:p.endereçar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.estado   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.endereçar ;
                     rdfs:domain             bim:BIM ;
@@ -35202,5 +35248,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Brasil_Meteorologia
-##  Criada em 01/07/2026 16:01:39
+##  Criada em 01/07/2026 16:04:41
 #################################################################
