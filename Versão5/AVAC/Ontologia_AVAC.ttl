@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Modelo de informação IFC 4x3 e Categorias Revit 2026"@pt ;
-	  rdfs:label "DataHora: 11/07/2026 10:37:04"@pt ;
+	  rdfs:label "DataHora: 11/07/2026 10:52:05"@pt ;
 	  rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Translations in Spanish and English incorporated. Translations must be constantly reviewed"@en ;
@@ -3161,23 +3161,25 @@ bim:Avac.Acessório.Tubo.Avac rdf:type  owl:Class  ;
 
 bim:Projeto01  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
      bim:descrição    "Projeto de AVAC 01" ;
-     bim:categoria.revit    "-" ;
-     bim:classe.ifc    "-" ;
      bim:tema    "Escola" ;
-     bim:id    "PRJ_001" ;
-     bim:nome    "Prédio A"  .
+     bim:projeto.código    "PRJ_001" ;
+     bim:nome    "Prédio A" ;
+     bim:categoria.revit    "-" ;
+     bim:classe.ifc    "-"  .
 
 bim:Dutos.Ar  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
      bim:é.pertencente.a    bim:Projeto01 ;
-     bim:descrição    "Conteiner de Dutos de Ar condicionado do projeto 1" ;
+     bim:descrição    "Conteiner de Dutos de Ar condicionado" ;
      bim:categoria.revit    "[ OST_DuctSystem , OST_DuctCurves , OST_DuctFitting , OST_DuctAccessory , OST_DuctTerminal ]" ;
-     bim:classe.ifc    "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]"  .
+     bim:classe.ifc    "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]" ;
+     bim:código.abnt    "[ 3E.50.02.06 ]"  .
 
 bim:Dutos.Ex  rdf:type  owl:NamedIndividual , bim:No.Projeto ;
      bim:é.pertencente.a    bim:Projeto01 ;
-     bim:descrição    "Conteiner de Dutos de Exaustão do projeto 1" ;
+     bim:descrição    "Conteiner de Dutos de Exaustão" ;
      bim:categoria.revit    "[ OST_DuctSystem , OST_DuctCurves , OST_DuctFitting , OST_DuctAccessory , OST_DuctTerminal ]" ;
-     bim:classe.ifc    "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]"  .
+     bim:classe.ifc    "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]" ;
+     bim:código.abnt    "[ 3E.30.04.04 ]"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -6704,6 +6706,35 @@ bim:p.identificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.código.abnt   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.identificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a identificar: é.código.abnt" ;
+                    bim:Chave               "d.ident.111" ;
+                    bim:Ação                "Ação de identificar" ;
+                    bim:Definição           "Declara um código específico da ABNT do Sistema de Classificação da Construção NBR 15965. "@pt ;
+                    bim:Definición          "Declara un código ABNT específico del Sistema de Clasificación de Construcción NBR 15965."@es ;bim:Definition          "Declare a specific ABNT code of the NBR 15965 Construction Classification System."@en  .
+
+
+bim:d.identificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:código.abnt   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.identificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para identificar:  código.abnt  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.ident.111" ;
+                    bim:Ação                "Ação de identificar" ;
+                    bim:Definição           "Declara um código específico da ABNT do Sistema de Classificação da Construção NBR 15965. "@pt ;
+                    bim:Definición          "Declara un código ABNT específico del Sistema de Clasificación de Construcción NBR 15965."@es ;bim:Definition          "Declare a specific ABNT code of the NBR 15965 Construction Classification System."@en  .
+
+
+bim:p.identificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.identificador.guid   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.identificar ;
                     rdfs:domain             bim:BIM ;
@@ -9549,6 +9580,35 @@ bim:dono   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de projetar" ;
                     bim:Definição           "Declara o nome do dono do projeto. "@pt ;
                     bim:Definición          "Declara el nombre del propietario del proyecto."@es ;bim:Definition          "Declare the name of the project owner."@en  .
+
+
+bim:p.projetar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.projeto.código   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.projetar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:range              bim:Projeto ;
+                    rdfs:label              "Propriedade destinada a projetar: é.projeto.código" ;
+                    bim:Chave               "d.proje.106" ;
+                    bim:Ação                "Ação de projetar" ;
+                    bim:Definição           "Declara o código do projeto. "@pt ;
+                    bim:Definición          "Declara el código del proyecto."@es ;bim:Definition          "Declare the project code."@en  .
+
+
+bim:d.projetar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:projeto.código   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.projetar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para projetar:  projeto.código  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.proje.106" ;
+                    bim:Ação                "Ação de projetar" ;
+                    bim:Definição           "Declara o código do projeto. "@pt ;
+                    bim:Definición          "Declara el código del proyecto."@es ;bim:Definition          "Declare the project code."@en  .
 
 
 bim:p.projetar   rdf:type  owl:ObjectProperty ;
@@ -12712,5 +12772,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia AVAC
-##  Criada em 11/07/2026 10:37:05
+##  Criada em 11/07/2026 10:52:06
 #################################################################
