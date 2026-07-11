@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#AVAC>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Modelo de informação IFC 4x3 e Categorias Revit 2026"@pt
-  Annotations: rdfs:label "DataHora: 11/07/2026 10:37:04"@pt
+  Annotations: rdfs:label "DataHora: 11/07/2026 10:52:05"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Translations in Spanish and English incorporated. Translations must be constantly reviewed"@en
@@ -1603,25 +1603,27 @@ Class: bim:Avac.Acessório.Tubo.Avac
 Individual: bim:Projeto01
 	Types: bim:No.Projeto
 	Facts: bim:descrição  "Projeto de AVAC 01"
+	Facts: bim:tema  "Escola"
+	Facts: bim:projeto.código  "PRJ_001"
+	Facts: bim:nome  "Prédio A"
 	Facts: bim:categoria.revit  "-"
 	Facts: bim:classe.ifc  "-"
-	Facts: bim:tema  "Escola"
-	Facts: bim:id  "PRJ_001"
-	Facts: bim:nome  "Prédio A"
 
 Individual: bim:Dutos.Ar
 	Types: bim:No.Projeto
 	Facts: bim:é.pertencente.a  bim:Projeto01
-	Facts: bim:descrição  "Conteiner de Dutos de Ar condicionado do projeto 1"
+	Facts: bim:descrição  "Conteiner de Dutos de Ar condicionado"
 	Facts: bim:categoria.revit  "[ OST_DuctSystem , OST_DuctCurves , OST_DuctFitting , OST_DuctAccessory , OST_DuctTerminal ]"
 	Facts: bim:classe.ifc  "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]"
+	Facts: bim:código.abnt  "[ 3E.50.02.06 ]"
 
 Individual: bim:Dutos.Ex
 	Types: bim:No.Projeto
 	Facts: bim:é.pertencente.a  bim:Projeto01
-	Facts: bim:descrição  "Conteiner de Dutos de Exaustão do projeto 1"
+	Facts: bim:descrição  "Conteiner de Dutos de Exaustão"
 	Facts: bim:categoria.revit  "[ OST_DuctSystem , OST_DuctCurves , OST_DuctFitting , OST_DuctAccessory , OST_DuctTerminal ]"
 	Facts: bim:classe.ifc  "[ IfcDistributionSystem , IfcDuctSegment , IfcDuctFitting , IfcDiscreteAccessory , IfcDuctSilencer , IfcJunctionBox , IfcAirTerminalBox , IfcAirTerminal ]"
+	Facts: bim:código.abnt  "[ 3E.30.04.04 ]"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -5386,6 +5388,37 @@ ObjectProperty: bim:p.identificar
 
 
 
+ObjectProperty: bim:é.código.abnt
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.código.abnt"@pt
+	Annotations: bim:Chave "d.ident.111"
+	Annotations: bim:Ação "Ação de identificar"@pt
+	Annotations: bim:Definição "Declara um código específico da ABNT do Sistema de Classificação da Construção NBR 15965."@pt
+	Annotations: bim:Definición "Declara un código ABNT específico del Sistema de Clasificación de Construcción NBR 15965."@es
+	Annotations: bim:Definition "Declare a specific ABNT code of the NBR 15965 Construction Classification System."@en
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:código.abnt
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  código.abnt  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.ident.111"
+	Annotations: bim:Ação "Ação de identificar"@pt
+	Annotations: bim:Definição "Declara um código específico da ABNT do Sistema de Classificação da Construção NBR 15965."@pt
+	Annotations: bim:Definición "Declara un código ABNT específico del Sistema de Clasificación de Construcción NBR 15965."@es
+	Annotations: bim:Definition "Declare a specific ABNT code of the NBR 15965 Construction Classification System."@en
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.identificador.guid
 	SubPropertyOf: bim:p.identificar
 	domain: bim:BIM
@@ -8431,6 +8464,37 @@ DataProperty: bim:dono
 	Annotations: bim:Definição "Declara o nome do dono do projeto."@pt
 	Annotations: bim:Definición "Declara el nombre del propietario del proyecto."@es
 	Annotations: bim:Definition "Declare the name of the project owner."@en
+
+ObjectProperty: bim:p.projetar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.projeto.código
+	SubPropertyOf: bim:p.projetar
+	domain: bim:BIM
+	range: bim:Projeto
+	Annotations: rdfs:label "Propriedade destinada a projetar: é.projeto.código"@pt
+	Annotations: bim:Chave "d.proje.106"
+	Annotations: bim:Ação "Ação de projetar"@pt
+	Annotations: bim:Definição "Declara o código do projeto."@pt
+	Annotations: bim:Definición "Declara el código del proyecto."@es
+	Annotations: bim:Definition "Declare the project code."@en
+
+DataProperty: bim:d.projetar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:projeto.código
+	SubPropertyOf: bim:d.projetar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para projetar:  projeto.código  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.proje.106"
+	Annotations: bim:Ação "Ação de projetar"@pt
+	Annotations: bim:Definição "Declara o código do projeto."@pt
+	Annotations: bim:Definición "Declara el código del proyecto."@es
+	Annotations: bim:Definition "Declare the project code."@en
 
 ObjectProperty: bim:p.projetar
 	SubPropertyOf: bim:BIMProp
@@ -11818,5 +11882,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia AVAC
-##  Criada em 11/07/2026 10:37:05
+##  Criada em 11/07/2026 10:52:06
 #################################################################
