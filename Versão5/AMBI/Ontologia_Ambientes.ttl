@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ambiente do Centro de Tecnologia da UFRJ"@pt ;
-	  rdfs:label "DataHora: 14/07/2026 10:22:28"@pt ;
+	  rdfs:label "DataHora: 14/07/2026 10:57:57"@pt ;
 	  rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en ;
@@ -6753,6 +6753,37 @@ bim:San.Fem  rdf:type  owl:NamedIndividual , bim:Sanitário.Feminino ;
 bim:San.Mas  rdf:type  owl:NamedIndividual , bim:Sanitário.Masculino ;
      bim:descrição    "Sanitário Masculino do primeiro andar do Bloco D."  .
 
+bim:Eq.Bancada.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
+     bim:marca    "Deca" ;
+     bim:modelo    "Bancada X" ;
+     bim:categoria.revit    bim:[ OST_PlumbingFixtures , OST_PlumbingEquipment ] ;
+     bim:tipo.revit    "Símbolo de Revit usado" ;
+     bim:classe.ifc    bim:[ IfcSanitaryTerminal ]  .
+
+bim:Eq.Vaso.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
+     bim:marca    "Deca" ;
+     bim:modelo    "Vaso X" ;
+     bim:categoria.revit    bim:[ OST_PlumbingFixtures , OST_PlumbingEquipment ] ;
+     bim:tipo.revit    "Símbolo de Revit usado" ;
+     bim:classe.ifc    bim:[ IfcSanitaryTerminal ]  .
+
+bim:Eq.Pia.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
+     bim:marca    "Deca" ;
+     bim:modelo    "Pia X" ;
+     bim:categoria.revit    bim:[ OST_PlumbingFixtures , OST_PlumbingEquipment ] ;
+     bim:tipo.revit    "Símbolo de Revit usado" ;
+     bim:classe.ifc    bim:[ IfcSanitaryTerminal ]  .
+
+bim:Requisito.Eq.San.Fem  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
+     bim:é.requisito.hidrossanitário    bim:Eq.Bancada.1 ;
+     bim:é.requisito.hidrossanitário    bim:Eq.Vaso.1 ;
+     bim:é.requisito.hidrossanitário    bim:Eq.Pia.1  .
+
+bim:Requisito.Eq.San.Mas  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
+     bim:é.requisito.hidrossanitário    bim:Eq.Bancada.1 ;
+     bim:é.requisito.hidrossanitário    bim:Eq.Vaso.1 ;
+     bim:é.requisito.hidrossanitário    bim:Eq.Pia.1  .
+
 bim:CT.Pavto1  rdf:type  owl:NamedIndividual , bim:Existente.Andar ;
      bim:é.dentro.de    bim:CT.Projeto ;
      bim:nome    "Pavimento 1" ;
@@ -7310,6 +7341,7 @@ bim:Sala.D115  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
 bim:Sanit.Fem.1D  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
      bim:é.dentro.de    bim:Bloco.D ;
      bim:é.indivíduo.de    bim:San.Fem ;
+     bim:é.requisito.hidrossanitário    bim:Requisito.Eq.San.Fem ;
      bim:nome    "S. Fem." ;
      bim:órgão    "UFRJ" ;
      bim:ambiente.código    "DSan1" ;
@@ -7324,6 +7356,7 @@ bim:Sanit.Fem.1D  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
 bim:Sanit.Mas.1D  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
      bim:é.dentro.de    bim:Bloco.D ;
      bim:é.indivíduo.de    bim:San.Mas ;
+     bim:é.requisito.hidrossanitário    bim:Requisito.Eq.San.Mas ;
      bim:nome    "S. Masc." ;
      bim:órgão    "UFRJ" ;
      bim:ambiente.código    "DSan2" ;
@@ -8357,6 +8390,62 @@ bim:descrição   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta. "@pt ;
                     bim:Definición          "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es ;bim:Definition          "Declare the description of the object which can be a succinct explanation."@en  .
+
+
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.marca   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.marca" ;
+                    bim:Chave               "d.catal.125" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara a Marca comercial de um componente ou produto. "@pt ;
+                    bim:Definición          "Declara la marca registrada de un componente o producto."@es ;bim:Definition          "Declare the Trademark of a component or product."@en  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:marca   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  marca  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.catal.125" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara a Marca comercial de um componente ou produto. "@pt ;
+                    bim:Definición          "Declara la marca registrada de un componente o producto."@es ;bim:Definition          "Declare the Trademark of a component or product."@en  .
+
+
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.modelo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.modelo" ;
+                    bim:Chave               "d.catal.126" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara o Modelo comercial de um componente ou produto. "@pt ;
+                    bim:Definición          "Declara el modelo de negocio de un componente o producto."@es ;bim:Definition          "Declare the Business Model of a component or product."@en  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:modelo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  modelo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.catal.126" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara o Modelo comercial de um componente ou produto. "@pt ;
+                    bim:Definición          "Declara el modelo de negocio de un componente o producto."@es ;bim:Definition          "Declare the Business Model of a component or product."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -16880,5 +16969,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Ambientes
-##  Criada em 14/07/2026 10:22:31
+##  Criada em 14/07/2026 10:57:59
 #################################################################
