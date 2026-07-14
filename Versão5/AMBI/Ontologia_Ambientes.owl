@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Unidades_Funcionais_Zonas_Am
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ambiente do Centro de Tecnologia da UFRJ"@pt
-  Annotations: rdfs:label "DataHora: 14/07/2026 13:16:02"@pt
+  Annotations: rdfs:label "DataHora: 14/07/2026 13:27:16"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en
@@ -3372,7 +3372,7 @@ Individual: bim:CT.Pavimentos
 	Facts: bim:classe.ifc  "[ IfcBuildingStorey ]"
 	Facts: bim:código.abnt  "[ 4A.07.10.07 ]"
 
-Individual: bim:Departamento.Acadêmico
+Individual: bim:Depto.Acadêmico
 	Types: bim:Departamento
 	Facts: bim:descrição  "Ambiente utilizado por professores de uma instituição de ensino."
 
@@ -3396,7 +3396,7 @@ Individual: bim:Eq.Bancada.1
 	Types: bim:Requisito.Equipamento
 	Facts: bim:marca  "Deca"
 	Facts: bim:modelo  "Bancada X"
-	Facts: bim:descrição  "Bancada para sanitários."
+	Facts: bim:descrição  "Bancada para os sanitários do projeto."
 	Facts: bim:categoria.revit  "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]"
 	Facts: bim:tipo.revit  "Símbolo de Revit usado"
 	Facts: bim:classe.ifc  "[ IfcSanitaryTerminal ]"
@@ -3406,7 +3406,7 @@ Individual: bim:Eq.Vaso.1
 	Types: bim:Requisito.Equipamento
 	Facts: bim:marca  "Deca"
 	Facts: bim:modelo  "Vaso X"
-	Facts: bim:descrição  "Vaso sanitário."
+	Facts: bim:descrição  "Vaso sanitário para os sanitários do projeto."
 	Facts: bim:categoria.revit  "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]"
 	Facts: bim:tipo.revit  "Símbolo de Revit usado"
 	Facts: bim:classe.ifc  "[ IfcSanitaryTerminal ]"
@@ -3416,7 +3416,17 @@ Individual: bim:Eq.Pia.1
 	Types: bim:Requisito.Equipamento
 	Facts: bim:marca  "Deca"
 	Facts: bim:modelo  "Pia X"
-	Facts: bim:descrição  "Pia para bancada sanitária."
+	Facts: bim:descrição  "Pia para as bancadas sanitárias do projeto."
+	Facts: bim:categoria.revit  "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]"
+	Facts: bim:tipo.revit  "Símbolo de Revit usado"
+	Facts: bim:classe.ifc  "[ IfcSanitaryTerminal ]"
+	Facts: bim:código.abnt  "[ 3E.42 ]"
+
+Individual: bim:Eq.Mic.1
+	Types: bim:Requisito.Equipamento
+	Facts: bim:marca  "Deca"
+	Facts: bim:modelo  "Mictório X"
+	Facts: bim:descrição  "Mictório para sanitários masculinos do projeto."
 	Facts: bim:categoria.revit  "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]"
 	Facts: bim:tipo.revit  "Símbolo de Revit usado"
 	Facts: bim:classe.ifc  "[ IfcSanitaryTerminal ]"
@@ -3427,14 +3437,17 @@ Individual: bim:Requisito.Eq.San.Fem
 	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Bancada.1
 	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Vaso.1
 	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Pia.1
-	Facts: bim:descrição  "Requisitos para sanitários femininos."
+	Facts: bim:nome  "SAN-01"
+	Facts: bim:descrição  "Requisitos para os sanitários femininos."
 
 Individual: bim:Requisito.Eq.San.Mas
 	Types: bim:Requisito.Equipamento
 	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Bancada.1
 	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Vaso.1
 	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Pia.1
-	Facts: bim:descrição  "Requisitos para sanitários masculinos."
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Mic.1
+	Facts: bim:nome  "SAN-02"
+	Facts: bim:descrição  "Requisitos para os sanitários masculinos."
 
 Individual: bim:CT.Pavto1
 	Types: bim:Existente.Andar
@@ -3939,7 +3952,7 @@ Individual: bim:Bloco.I
 Individual: bim:Sala.D101
 	Types: bim:Existente.Compartimento
 	Facts: bim:é.dentro.de  bim:Bloco.D
-	Facts: bim:é.indivíduo.de  bim:Departamento.Acadêmico
+	Facts: bim:é.indivíduo.de  bim:Depto.Acadêmico
 	Facts: bim:nome  "Departamento de Expressão Gráfica"
 	Facts: bim:órgão  "UFRJ"
 	Facts: bim:ambiente.código  "D101"
@@ -3955,7 +3968,7 @@ Individual: bim:Sala.D101
 Individual: bim:Sala.D203
 	Types: bim:Existente.Compartimento
 	Facts: bim:é.dentro.de  bim:Bloco.D
-	Facts: bim:é.indivíduo.de  bim:Departamento.Acadêmico
+	Facts: bim:é.indivíduo.de  bim:Depto.Acadêmico
 	Facts: bim:nome  "Departamento de Estruturas"
 	Facts: bim:órgão  "UFRJ"
 	Facts: bim:ambiente.código  "D203"
@@ -14378,5 +14391,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Ambientes
-##  Criada em 14/07/2026 13:16:05
+##  Criada em 14/07/2026 13:27:19
 #################################################################
