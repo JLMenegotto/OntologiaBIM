@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Unidades_Funcionais_Zonas_Am
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Ambiente do Centro de Tecnologia da UFRJ"@pt
-  Annotations: rdfs:label "DataHora: 14/07/2026 10:22:28"@pt
+  Annotations: rdfs:label "DataHora: 14/07/2026 10:57:57"@pt
   Annotations: rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt
   Annotations: rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es
   Annotations: rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en
@@ -3392,6 +3392,42 @@ Individual: bim:San.Mas
 	Types: bim:Sanitário.Masculino
 	Facts: bim:descrição  "Sanitário Masculino do primeiro andar do Bloco D."
 
+Individual: bim:Eq.Bancada.1
+	Types: bim:Requisito.Equipamento
+	Facts: bim:marca  "Deca"
+	Facts: bim:modelo  "Bancada X"
+	Facts: bim:categoria.revit  bim:[ OST_PlumbingFixtures , OST_PlumbingEquipment ]
+	Facts: bim:tipo.revit  "Símbolo de Revit usado"
+	Facts: bim:classe.ifc  bim:[ IfcSanitaryTerminal ]
+
+Individual: bim:Eq.Vaso.1
+	Types: bim:Requisito.Equipamento
+	Facts: bim:marca  "Deca"
+	Facts: bim:modelo  "Vaso X"
+	Facts: bim:categoria.revit  bim:[ OST_PlumbingFixtures , OST_PlumbingEquipment ]
+	Facts: bim:tipo.revit  "Símbolo de Revit usado"
+	Facts: bim:classe.ifc  bim:[ IfcSanitaryTerminal ]
+
+Individual: bim:Eq.Pia.1
+	Types: bim:Requisito.Equipamento
+	Facts: bim:marca  "Deca"
+	Facts: bim:modelo  "Pia X"
+	Facts: bim:categoria.revit  bim:[ OST_PlumbingFixtures , OST_PlumbingEquipment ]
+	Facts: bim:tipo.revit  "Símbolo de Revit usado"
+	Facts: bim:classe.ifc  bim:[ IfcSanitaryTerminal ]
+
+Individual: bim:Requisito.Eq.San.Fem
+	Types: bim:Requisito.Equipamento
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Bancada.1
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Vaso.1
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Pia.1
+
+Individual: bim:Requisito.Eq.San.Mas
+	Types: bim:Requisito.Equipamento
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Bancada.1
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Vaso.1
+	Facts: bim:é.requisito.hidrossanitário  bim:Eq.Pia.1
+
 Individual: bim:CT.Pavto1
 	Types: bim:Existente.Andar
 	Facts: bim:é.dentro.de  bim:CT.Projeto
@@ -3992,6 +4028,7 @@ Individual: bim:Sanit.Fem.1D
 	Types: bim:Existente.Compartimento
 	Facts: bim:é.dentro.de  bim:Bloco.D
 	Facts: bim:é.indivíduo.de  bim:San.Fem
+	Facts: bim:é.requisito.hidrossanitário  bim:Requisito.Eq.San.Fem
 	Facts: bim:nome  "S. Fem."
 	Facts: bim:órgão  "UFRJ"
 	Facts: bim:ambiente.código  "DSan1"
@@ -4007,6 +4044,7 @@ Individual: bim:Sanit.Mas.1D
 	Types: bim:Existente.Compartimento
 	Facts: bim:é.dentro.de  bim:Bloco.D
 	Facts: bim:é.indivíduo.de  bim:San.Mas
+	Facts: bim:é.requisito.hidrossanitário  bim:Requisito.Eq.San.Mas
 	Facts: bim:nome  "S. Masc."
 	Facts: bim:órgão  "UFRJ"
 	Facts: bim:ambiente.código  "DSan2"
@@ -5121,6 +5159,68 @@ DataProperty: bim:descrição
 	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
 	Annotations: bim:Definition "Declare the description of the object which can be a succinct explanation."@en
 	Annotations: bim:ABNT "[ 0P.10 ]"
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.marca
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.marca"@pt
+	Annotations: bim:Chave "d.catal.125"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara a Marca comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara la marca registrada de un componente o producto."@es
+	Annotations: bim:Definition "Declare the Trademark of a component or product."@en
+	Annotations: bim:ABNT "[ 0P.10.50.01 ]"
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:marca
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  marca  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.catal.125"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara a Marca comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara la marca registrada de un componente o producto."@es
+	Annotations: bim:Definition "Declare the Trademark of a component or product."@en
+	Annotations: bim:ABNT "[ 0P.10.50.01 ]"
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.modelo
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.modelo"@pt
+	Annotations: bim:Chave "d.catal.126"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Modelo comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara el modelo de negocio de un componente o producto."@es
+	Annotations: bim:Definition "Declare the Business Model of a component or product."@en
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:modelo
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  modelo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.catal.126"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Modelo comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara el modelo de negocio de un componente o producto."@es
+	Annotations: bim:Definition "Declare the Business Model of a component or product."@en
 
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
@@ -14254,5 +14354,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia Ambientes
-##  Criada em 14/07/2026 10:22:31
+##  Criada em 14/07/2026 10:57:59
 #################################################################
