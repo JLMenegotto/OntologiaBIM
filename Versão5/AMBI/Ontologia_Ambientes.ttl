@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ambiente do Centro de Tecnologia da UFRJ"@pt ;
-	  rdfs:label "DataHora: 14/07/2026 13:16:02"@pt ;
+	  rdfs:label "DataHora: 14/07/2026 13:27:16"@pt ;
 	  rdfs:label "Advertência: Traduções al español e inglês incorporadas. As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Traducciones al español e inglés incorporadas. Las traducciones deben revisarse constantemente"@en ;
@@ -6738,7 +6738,7 @@ bim:CT.Pavimentos  rdf:type  owl:NamedIndividual , bim:Contêiner ;
      bim:classe.ifc    "[ IfcBuildingStorey ]" ;
      bim:código.abnt    "[ 4A.07.10.07 ]"  .
 
-bim:Departamento.Acadêmico  rdf:type  owl:NamedIndividual , bim:Departamento ;
+bim:Depto.Acadêmico  rdf:type  owl:NamedIndividual , bim:Departamento ;
      bim:descrição    "Ambiente utilizado por professores de uma instituição de ensino."  .
 
 bim:Sala.de.Aula  rdf:type  owl:NamedIndividual , bim:Ambiente.Ensino ;
@@ -6756,7 +6756,7 @@ bim:San.Mas  rdf:type  owl:NamedIndividual , bim:Sanitário.Masculino ;
 bim:Eq.Bancada.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
      bim:marca    "Deca" ;
      bim:modelo    "Bancada X" ;
-     bim:descrição    "Bancada para sanitários." ;
+     bim:descrição    "Bancada para os sanitários do projeto." ;
      bim:categoria.revit    "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]" ;
      bim:tipo.revit    "Símbolo de Revit usado" ;
      bim:classe.ifc    "[ IfcSanitaryTerminal ]" ;
@@ -6765,7 +6765,7 @@ bim:Eq.Bancada.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
 bim:Eq.Vaso.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
      bim:marca    "Deca" ;
      bim:modelo    "Vaso X" ;
-     bim:descrição    "Vaso sanitário." ;
+     bim:descrição    "Vaso sanitário para os sanitários do projeto." ;
      bim:categoria.revit    "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]" ;
      bim:tipo.revit    "Símbolo de Revit usado" ;
      bim:classe.ifc    "[ IfcSanitaryTerminal ]" ;
@@ -6774,7 +6774,16 @@ bim:Eq.Vaso.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
 bim:Eq.Pia.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
      bim:marca    "Deca" ;
      bim:modelo    "Pia X" ;
-     bim:descrição    "Pia para bancada sanitária." ;
+     bim:descrição    "Pia para as bancadas sanitárias do projeto." ;
+     bim:categoria.revit    "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]" ;
+     bim:tipo.revit    "Símbolo de Revit usado" ;
+     bim:classe.ifc    "[ IfcSanitaryTerminal ]" ;
+     bim:código.abnt    "[ 3E.42 ]"  .
+
+bim:Eq.Mic.1  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
+     bim:marca    "Deca" ;
+     bim:modelo    "Mictório X" ;
+     bim:descrição    "Mictório para sanitários masculinos do projeto." ;
      bim:categoria.revit    "[ OST_PlumbingFixtures , OST_PlumbingEquipment ]" ;
      bim:tipo.revit    "Símbolo de Revit usado" ;
      bim:classe.ifc    "[ IfcSanitaryTerminal ]" ;
@@ -6784,13 +6793,16 @@ bim:Requisito.Eq.San.Fem  rdf:type  owl:NamedIndividual , bim:Requisito.Equipame
      bim:é.requisito.hidrossanitário    bim:Eq.Bancada.1 ;
      bim:é.requisito.hidrossanitário    bim:Eq.Vaso.1 ;
      bim:é.requisito.hidrossanitário    bim:Eq.Pia.1 ;
-     bim:descrição    "Requisitos para sanitários femininos."  .
+     bim:nome    "SAN-01" ;
+     bim:descrição    "Requisitos para os sanitários femininos."  .
 
 bim:Requisito.Eq.San.Mas  rdf:type  owl:NamedIndividual , bim:Requisito.Equipamento ;
      bim:é.requisito.hidrossanitário    bim:Eq.Bancada.1 ;
      bim:é.requisito.hidrossanitário    bim:Eq.Vaso.1 ;
      bim:é.requisito.hidrossanitário    bim:Eq.Pia.1 ;
-     bim:descrição    "Requisitos para sanitários masculinos."  .
+     bim:é.requisito.hidrossanitário    bim:Eq.Mic.1 ;
+     bim:nome    "SAN-02" ;
+     bim:descrição    "Requisitos para os sanitários masculinos."  .
 
 bim:CT.Pavto1  rdf:type  owl:NamedIndividual , bim:Existente.Andar ;
      bim:é.dentro.de    bim:CT.Projeto ;
@@ -7258,7 +7270,7 @@ bim:Bloco.I  rdf:type  owl:NamedIndividual , bim:Existente.Bloco ;
 
 bim:Sala.D101  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
      bim:é.dentro.de    bim:Bloco.D ;
-     bim:é.indivíduo.de    bim:Departamento.Acadêmico ;
+     bim:é.indivíduo.de    bim:Depto.Acadêmico ;
      bim:nome    "Departamento de Expressão Gráfica" ;
      bim:órgão    "UFRJ" ;
      bim:ambiente.código    "D101" ;
@@ -7273,7 +7285,7 @@ bim:Sala.D101  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
 
 bim:Sala.D203  rdf:type  owl:NamedIndividual , bim:Existente.Compartimento ;
      bim:é.dentro.de    bim:Bloco.D ;
-     bim:é.indivíduo.de    bim:Departamento.Acadêmico ;
+     bim:é.indivíduo.de    bim:Depto.Acadêmico ;
      bim:nome    "Departamento de Estruturas" ;
      bim:órgão    "UFRJ" ;
      bim:ambiente.código    "D203" ;
@@ -16992,5 +17004,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Ambientes
-##  Criada em 14/07/2026 13:16:05
+##  Criada em 14/07/2026 13:27:19
 #################################################################
