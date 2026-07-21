@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 21/07/2026 8:43:09"@pt ;
+	  rdfs:label "DataHora: 21/07/2026 10:01:32"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -339,9 +339,9 @@ bim:Vistorias rdf:type  owl:Class  ;
 bim:Drone.LIDAR rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Vistorias ;
       rdfs:label  "Drone LIDAR"@pt ;
-      bim:Definição   "É uma aeronave tipo drone ou UAS com dispositivo LIDAR incorporado."@pt ;
-      bim:Definición  "Es una aeronave tipo dron o UAS con dispositivo LIDAR incorporado."@es ;
-       bim:Definition  "It is a drone-type aircraft or UAS with built-in LIDAR device."@en ;
+      bim:Definição   "É uma aeronave tipo drone ou UAS com dispositivo LIDAR (Light Detection and Ranging) incorporado."@pt ;
+      bim:Definición  "Es una aeronave tipo dron o UAS con un dispositivo LIDAR (Detección y Alcance de Luz) incorporado."@es ;
+       bim:Definition  "It is a drone-type aircraft or UAS with a built-in LIDAR (Light Detection and Ranging) device."@en ;
       bim:Natureza    "Operação"@pt ;
       bim:Espécie     "Manutenção"@pt ;
       bim:Tema        "Vistorias"@pt ;
@@ -546,36 +546,37 @@ bim:Imagem.WayPoint rdf:type  owl:Class  ;
       bim:ABNT        "[ 5I.80.90.10.16 ]"    .
 
 
-bim:Projeto rdf:type  owl:Class  ;
+bim:Conceito rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:De.Manutenção rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "De.Manutenção"@pt  .
+bim:Operação rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conceito ;
+      rdfs:label  "Operação"@pt  .
 
 
-bim:Diagnósticos rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:De.Manutenção ;
-      rdfs:label  "Diagnósticos"@pt  .
+bim:Manutenção rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Operação ;
+      rdfs:label  "Manutenção"@pt  .
 
 
-bim:Patologias rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Diagnósticos ;
-      rdfs:label  "Patologias"@pt  .
+bim:Videos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Manutenção ;
+      rdfs:label  "Videos"@pt  .
 
 
-bim:Voo.Diagnóstico rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Patologias ;
-      rdfs:label  "Voo Diagnóstico"@pt ;
-      bim:Definição   "Voo de drone planejado dentro das ações de diagnóstico preventivo de patologias."@pt ;
-      bim:Definición  "El vuelo con dron está planificado dentro del diagnóstico preventivo de patologías."@es ;
-       bim:Definition  "Drone flight planned within the preventive diagnosis of pathologies."@en ;
-      bim:Natureza    "De Manutenção"@pt ;
-      bim:Espécie     "Diagnósticos"@pt ;
-      bim:Tema        "Patologias"@pt ;
+bim:Vídeo.Voo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Videos ;
+      rdfs:label  "Vídeo Voo"@pt ;
+      bim:Definição   "Video gravado durante um voo."@pt ;
+      bim:Definición  "Vídeo grabado durante un vuelo."@es ;
+       bim:Definition  "Video recorded during a flight."@en ;
+      bim:Natureza    "Operação"@pt ;
+      bim:Espécie     "Manutenção"@pt ;
+      bim:Tema        "Videos"@pt ;
       bim:Disciplina  "Manutenção predial"@pt ;
-      bim:Chave       "Key-UAS-16"@pt  .
+      bim:Chave       "Key-UAS-16"@pt ;
+      bim:ABNT        "[ 5I.80.90.26.16 ]"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -587,27 +588,91 @@ bim:De.Manutenção rdf:type  owl:Class  ;
       rdfs:label  "De.Manutenção"@pt  .
 
 
-bim:Diagnósticos rdf:type  owl:Class  ;
+bim:Diagnóstica rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:De.Manutenção ;
-      rdfs:label  "Diagnósticos"@pt  .
+      rdfs:label  "Diagnóstica"@pt  .
 
 
-bim:Patologias rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Diagnósticos ;
-      rdfs:label  "Patologias"@pt  .
+bim:Preventiva rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Diagnóstica ;
+      rdfs:label  "Preventiva"@pt  .
 
 
-bim:Voo.Levantamento rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Patologias ;
-      rdfs:label  "Voo Levantamento"@pt ;
-      bim:Definição   "Voo de drone planejado dentro das ações de diagnóstico preventivo de patologias para levantamento de dados."@pt ;
-      bim:Definición  "El vuelo con dron está planificado dentro del diagnóstico preventivo de patologías para la recogida de datos."@es ;
-       bim:Definition  "Drone flight planned within the preventive diagnosis of pathologies for data collection."@en ;
+bim:Voo.Preventivo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Preventiva ;
+      rdfs:label  "Voo Preventivo"@pt ;
+      bim:Definição   "Voo de drone planejado para tomar ações de conservação dos sistemas prediais."@pt ;
+      bim:Definición  "El vuelo con drones planeó realizar acciones de conservación de los sistemas del edificio."@es ;
+       bim:Definition  "Drone flight planned to take conservation actions of building systems."@en ;
       bim:Natureza    "De Manutenção"@pt ;
-      bim:Espécie     "Diagnósticos"@pt ;
-      bim:Tema        "Patologias"@pt ;
+      bim:Espécie     "Diagnóstica"@pt ;
+      bim:Tema        "Preventiva"@pt ;
       bim:Disciplina  "Manutenção predial"@pt ;
       bim:Chave       "Key-UAS-17"@pt  .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Manutenção rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De.Manutenção"@pt  .
+
+
+bim:Diagnóstica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Manutenção ;
+      rdfs:label  "Diagnóstica"@pt  .
+
+
+bim:Corretiva rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Diagnóstica ;
+      rdfs:label  "Corretiva"@pt  .
+
+
+bim:Voo.Corretivo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Corretiva ;
+      rdfs:label  "Voo Corretivo"@pt ;
+      bim:Definição   "Voo de drone planejado para tomar ações corretivas de patologias."@pt ;
+      bim:Definición  "El vuelo de drones planeó tomar medidas correctivas para patologías."@es ;
+       bim:Definition  "Drone flight planned to take corrective actions for pathologies."@en ;
+      bim:Natureza    "De Manutenção"@pt ;
+      bim:Espécie     "Diagnóstica"@pt ;
+      bim:Tema        "Corretiva"@pt ;
+      bim:Disciplina  "Manutenção predial"@pt ;
+      bim:Chave       "Key-UAS-18"@pt  .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Manutenção rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De.Manutenção"@pt  .
+
+
+bim:Diagnóstica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Manutenção ;
+      rdfs:label  "Diagnóstica"@pt  .
+
+
+bim:Preditiva rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Diagnóstica ;
+      rdfs:label  "Preditiva"@pt  .
+
+
+bim:Voo.Preditivo rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Preditiva ;
+      rdfs:label  "Voo Preditivo"@pt ;
+      bim:Definição   "Voo de drone planejado para diagnosticar possíveis patologias."@pt ;
+      bim:Definición  "El vuelo con drones planeó diagnosticar posibles patologías."@es ;
+       bim:Definition  "Drone flight planned to diagnose possible pathologies."@en ;
+      bim:Natureza    "De Manutenção"@pt ;
+      bim:Espécie     "Diagnóstica"@pt ;
+      bim:Tema        "Preditiva"@pt ;
+      bim:Disciplina  "Manutenção predial"@pt ;
+      bim:Chave       "Key-UAS-19"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
@@ -731,11 +796,13 @@ bim:Foto.02.08  rdf:type  owl:NamedIndividual , bim:Imagem.WayPoint ;
 
 bim:Plano_A  rdf:type  owl:NamedIndividual , bim:Voo.Plano ;
      bim:é.drone    bim:DJI001 ;
-     bim:descrição    "É um plano de voo de drone autônomo sobre o CT da UFRJ"  .
+     bim:descrição    "É um plano de voo de drone autônomo sobre o CT da UFRJ" ;
+     bim:código.abnt    "[ 5I.80.90.26.12 ]"  .
 
 bim:Plano_B  rdf:type  owl:NamedIndividual , bim:Voo.Plano ;
      bim:é.drone    bim:DJI001 ;
-     bim:descrição    "É um plano de voo de drone autônomo sobre o CT da UFRJ"  .
+     bim:descrição    "É um plano de voo de drone autônomo sobre o CT da UFRJ" ;
+     bim:código.abnt    "[ 5I.80.90.26.12 ]"  .
 
 bim:Data01  rdf:type  owl:NamedIndividual , bim:Data ;
      bim:é.pertencente.a    bim:Manutenção_01 ;
@@ -749,7 +816,7 @@ bim:Data02  rdf:type  owl:NamedIndividual , bim:Data ;
      bim:data    "30/03/2026" ;
      bim:código.abnt    "[ 0P.30.10.27 ]"  .
 
-bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Diagnóstico ;
+bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Preventivo ;
      bim:é.realizado.com    bim:DJI001 ;
      bim:é.plano.de.voo    bim:Plano_A ;
      bim:é.pertencente.a    bim:BancoIma01 ;
@@ -757,7 +824,7 @@ bim:Voo1  rdf:type  owl:NamedIndividual , bim:Voo.Diagnóstico ;
      bim:descrição    "É um voo de drone autônomo realizado sobre o CT da UFRJ" ;
      bim:arquivo.kml    "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"  .
 
-bim:Voo2  rdf:type  owl:NamedIndividual , bim:Voo.Diagnóstico ;
+bim:Voo2  rdf:type  owl:NamedIndividual , bim:Voo.Preventivo ;
      bim:é.realizado.com    bim:DJI001 ;
      bim:é.plano.de.voo    bim:Plano_B ;
      bim:é.pertencente.a    bim:BancoIma02 ;
@@ -12158,5 +12225,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 21/07/2026 8:43:11
+##  Criada em 21/07/2026 10:01:35
 #################################################################
