@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 21/07/2026 8:14:17"@pt
+  Annotations: rdfs:label "DataHora: 21/07/2026 8:33:03"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -297,16 +297,17 @@ Class: bim:De.Campo
 	SubClassOf: bim:Vistorias
 
 
-Class: bim:Banco.Imagens
-	Annotations: rdfs:label "Banco Imagens"@pt
-	Annotations: bim:Definição "Banco de imagens e vídeos dos voos."@pt
-	Annotations: bim:Definición "Imágenes y vídeos de archivo de los vuelos."@es
-	Annotations: bim:Definition "Stock images and videos of the flights."@en
+Class: bim:Imagem.WayPoint
+	Annotations: rdfs:label "Imagem WayPoint"@pt
+	Annotations: bim:Definição "Imagem fotográfica correspondente a um WayPoint."@pt
+	Annotations: bim:Definición "Imagen fotográfica correspondiente a un WayPoint."@es
+	Annotations: bim:Definition "Photographic image corresponding to a WayPoint."@en
 	Annotations: bim:Natureza "Operação"@pt
 	Annotations: bim:Espécie "Manutenção"@pt
 	Annotations: bim:Tema "Vistorias"@pt
 	Annotations: bim:Disciplina "Manutenção predial"@pt
 	Annotations: bim:Chave "Key-UAS-14"
+	Annotations: bim:ABNT "[ 5I.80.90.10.16 ]"
 	SubClassOf: bim:Vistorias
 
 Class: bim:Projeto
@@ -357,22 +358,33 @@ Class: bim:Voo.Levantamento
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
+Individual: bim:DJI001
+	Types: bim:Drone
+	Facts: bim:modelo  "Mavic 2 Pro"
+	Facts: bim:descrição  "É aparelho de drone modelo Mavic 2"
+	Facts: bim:categoria.revit  "[ OST_Entourage ]"
+	Facts: bim:classe.ifc  "[ IfcVehicle ]"
+	Facts: bim:código.abnt  "[ 2Q.18.18 ]"
+
 Individual: bim:Ope_CT_01
 	Types: bim:Contêiner
 	Facts: bim:url  "http://ufrj//ct//vistorias//predio//"
 	Facts: bim:descrição  "Contêiner dos dados da Manutenção do Predio 01"
+	Facts: bim:código.abnt  "[ 5I.80.90.26.16 ]"
 
 Individual: bim:Manutenção_01
 	Types: bim:Contêiner
 	Facts: bim:é.data  bim:Data01
 	Facts: bim:é.pertencente.a  bim:Ope_CT_01
 	Facts: bim:descrição  "Contêiner dos dados da Manutenção_01"
+	Facts: bim:código.abnt  "[ 5I.80.90.26.16 ]"
 
 Individual: bim:Manutenção_02
 	Types: bim:Contêiner
 	Facts: bim:é.data  bim:Data02
 	Facts: bim:é.pertencente.a  bim:Ope_CT_01
 	Facts: bim:descrição  "Contêiner dos dados da Manutenção_01"
+	Facts: bim:código.abnt  "[ 5I.80.90.26.16 ]"
 
 Individual: bim:BancoIma01
 	Types: bim:Banco.Imagens
@@ -386,13 +398,101 @@ Individual: bim:BancoIma02
 	Facts: bim:url  "banco02"
 	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
 
-Individual: bim:DJI001
-	Types: bim:Drone
-	Facts: bim:modelo  "Mavic 2 Pro"
-	Facts: bim:descrição  "É aparelho de drone modelo Mavic 2"
-	Facts: bim:categoria.revit  "[ OST_Entourage ]"
-	Facts: bim:classe.ifc  "[ IfcVehicle ]"
-	Facts: bim:código.abnt  "[ 2Q.18.18 ]"
+Individual: bim:Foto.01.01
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.02
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.03
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.04
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.05
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.06
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.07
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.01.08
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 1"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.01
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.02
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.03
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.04
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.05
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.06
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.07
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
+
+Individual: bim:Foto.02.08
+	Types: bim:Imagem.WayPoint
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:descrição  "É uma fotografia tomada na manutenção 2"
+	Facts: bim:código.abnt  bim:[ 5I.80.90.10.16 ]
 
 Individual: bim:Plano_A
 	Types: bim:Voo.Plano
@@ -12647,5 +12747,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 21/07/2026 8:14:21
+##  Criada em 21/07/2026 8:33:06
 #################################################################
