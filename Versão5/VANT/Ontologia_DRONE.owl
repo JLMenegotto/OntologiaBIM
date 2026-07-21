@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Drones>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt
-  Annotations: rdfs:label "DataHora: 21/07/2026 7:46:01"@pt
+  Annotations: rdfs:label "DataHora: 21/07/2026 8:04:17"@pt
   Annotations: rdfs:label "Advertência1: -"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -352,6 +352,111 @@ Class: bim:Voo.Levantamento
 	Annotations: bim:Disciplina "Manutenção predial"@pt
 	Annotations: bim:Chave "Key-UAS-16"
 	SubClassOf: bim:Patologias
+
+#################################################################
+#     Indivíduos em Sintaxe Manchester                           
+#################################################################
+
+Individual: bim:Ope_CT_01
+	Types: bim:Contêiner
+	Facts: bim:url  "http://ufrj//ct//vistorias//predio//"
+	Facts: bim:descrição  "Contêiner dos dados da Manutenção do Predio 01"
+
+Individual: bim:Manutenção_01
+	Types: bim:Contêiner
+	Facts: bim:é.data  bim:Data01
+	Facts: bim:é.pertencente.a  bim:Ope_CT_01
+	Facts: bim:descrição  "Contêiner dos dados da Manutenção_01"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:Manutenção_02
+	Types: bim:Contêiner
+	Facts: bim:é.data  bim:Data02
+	Facts: bim:é.pertencente.a  bim:Ope_CT_02
+	Facts: bim:descrição  "Contêiner dos dados da Manutenção_01"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:BancoIma01
+	Types: bim:Banco.Imagens
+	Facts: bim:é.pertencente.a  bim:Ope_CT_03
+	Facts: bim:url  "banco01"
+	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
+
+Individual: bim:BancoIma02
+	Types: bim:Banco.Imagens
+	Facts: bim:é.pertencente.a  bim:Ope_CT_04
+	Facts: bim:url  "banco02"
+	Facts: bim:descrição  "É o banco de imagens de voo de manutenção predial"
+
+Individual: bim:DJI001
+	Types: bim:Drone
+	Facts: bim:modelo  "Mavic 2 Pro"
+	Facts: bim:descrição  "É aparelho de drone modelo Mavic 2"
+	Facts: bim:categoria.revit  "[ OST_Entourage ]"
+	Facts: bim:classe.ifc  "[ IfcVehicle ]"
+	Facts: bim:código.abnt  "[ 2Q.18.18 ]"
+
+Individual: bim:Plano_A
+	Types: bim:Voo.Plano
+	Facts: bim:é.drone  bim:DJI001
+	Facts: bim:descrição  "É um plano de voo de drone autônomo sobre o CT da UFRJ"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:Plano_B
+	Types: bim:Voo.Plano
+	Facts: bim:é.drone  bim:DJI001
+	Facts: bim:descrição  "É um plano de voo de drone autônomo sobre o CT da UFRJ"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:Data01
+	Types: bim:Data
+	Facts: bim:é.pertencente.a  bim:Manutenção_01
+	Facts: bim:descrição  "É data de um voo de vistoria"
+	Facts: bim:data  "09/08/2024"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:Data02
+	Types: bim:Data
+	Facts: bim:é.pertencente.a  bim:Manutenção_02
+	Facts: bim:descrição  "É data de um voo de vistoria"
+	Facts: bim:data  "30/03/2026"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:Voo1
+	Types: bim:Voo.Diagnóstico
+	Facts: bim:é.realizado.com  bim:DJI001
+	Facts: bim:é.plano.de.voo  bim:Plano_A
+	Facts: bim:é.pertencente.a  bim:BancoIma01
+	Facts: bim:é.data  bim:Data01
+	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
+	Facts: bim:arquivo.kml  "VG_CT_Principal_2024_CT_Eixos_E1_E1_2024_08_08_08_14.kml"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
+
+Individual: bim:Voo2
+	Types: bim:Voo.Diagnóstico
+	Facts: bim:é.realizado.com  bim:DJI001
+	Facts: bim:é.plano.de.voo  bim:Plano_B
+	Facts: bim:é.pertencente.a  bim:BancoIma02
+	Facts: bim:é.data  bim:Data02
+	Facts: bim:descrição  "É um voo de drone autônomo realizado sobre o CT da UFRJ"
+	Facts: bim:arquivo.kml  "VG_CT_Principal_2024_CT_Telhado_A_A_2024_08_08_08_18.kml"
+	Facts: bim:categoria.revit  "[ - ]"
+	Facts: bim:classe.ifc  "[ - ]"
+	Facts: bim:código.abnt  "[ - ]"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -1340,6 +1445,68 @@ ObjectProperty: bim:p.catalogar
 
 
 
+ObjectProperty: bim:é.descrição
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.descrição"@pt
+	Annotations: bim:Chave "d.catal.110"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
+	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
+	Annotations: bim:Definition "Declare the description of the object which can be a succinct explanation."@en
+	Annotations: bim:ABNT "[ 0P.10 ]"
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:descrição
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  descrição  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.catal.110"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara a descrição do objeto que pode ser uma explicação sucinta."@pt
+	Annotations: bim:Definición "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es
+	Annotations: bim:Definition "Declare the description of the object which can be a succinct explanation."@en
+	Annotations: bim:ABNT "[ 0P.10 ]"
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.modelo
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.modelo"@pt
+	Annotations: bim:Chave "d.catal.126"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Modelo comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara el modelo de negocio de un componente o producto."@es
+	Annotations: bim:Definition "Declare the Business Model of a component or product."@en
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:modelo
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  modelo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.catal.126"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Modelo comercial de um componente ou produto."@pt
+	Annotations: bim:Definición "Declara el modelo de negocio de un componente o producto."@es
+	Annotations: bim:Definition "Declare the Business Model of a component or product."@en
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.realizada.com
 	SubPropertyOf: bim:p.catalogar
 	domain: bim:BIM
@@ -2171,6 +2338,36 @@ DataProperty: bim:okf.md.título
 	Annotations: bim:Definição "Declara um título para uma seção do arquivo Markdown, definido pelo usuário."@pt
 	Annotations: bim:Definición "Declara un título para una sección del archivo Markdown, definida por el usuario."@es
 	Annotations: bim:Definition "Declare a title for a section of the Markdown file, defined by the user."@en
+
+ObjectProperty: bim:p.digitalizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.arquivo.kml
+	SubPropertyOf: bim:p.digitalizar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a digitalizar: é.arquivo.kml"@pt
+	Annotations: bim:Chave "d.digit.117"
+	Annotations: bim:Ação "Ação de digitalizar"@pt
+	Annotations: bim:Definição "Declara que se trata de um arquivo digital em formato KML Keyhole Markup Language."@pt
+	Annotations: bim:Definición "Declara que es un archivo digital en formato KML Keyhole Markup Language."@es
+	Annotations: bim:Definition "Declare that it is a digital KML Keyhole Markup Language file."@en
+
+DataProperty: bim:d.digitalizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:arquivo.kml
+	SubPropertyOf: bim:d.digitalizar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para digitalizar:  arquivo.kml  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.digit.117"
+	Annotations: bim:Ação "Ação de digitalizar"@pt
+	Annotations: bim:Definição "Declara que se trata de um arquivo digital em formato KML Keyhole Markup Language."@pt
+	Annotations: bim:Definición "Declara que es un archivo digital en formato KML Keyhole Markup Language."@es
+	Annotations: bim:Definition "Declare that it is a digital KML Keyhole Markup Language file."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -4591,6 +4788,36 @@ ObjectProperty: bim:p.identificar
 
 
 
+ObjectProperty: bim:é.código.abnt
+	SubPropertyOf: bim:p.identificar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a identificar: é.código.abnt"@pt
+	Annotations: bim:Chave "d.ident.111"
+	Annotations: bim:Ação "Ação de identificar"@pt
+	Annotations: bim:Definição "Declara um código específico da ABNT do Sistema de Classificação da Construção NBR 15965."@pt
+	Annotations: bim:Definición "Declara un código ABNT específico del Sistema de Clasificación de Construcción NBR 15965."@es
+	Annotations: bim:Definition "Declare a specific ABNT code of the NBR 15965 Construction Classification System."@en
+
+DataProperty: bim:d.identificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:código.abnt
+	SubPropertyOf: bim:d.identificar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para identificar:  código.abnt  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.ident.111"
+	Annotations: bim:Ação "Ação de identificar"@pt
+	Annotations: bim:Definição "Declara um código específico da ABNT do Sistema de Classificação da Construção NBR 15965."@pt
+	Annotations: bim:Definición "Declara un código ABNT específico del Sistema de Clasificación de Construcción NBR 15965."@es
+	Annotations: bim:Definition "Declare a specific ABNT code of the NBR 15965 Construction Classification System."@en
+
+ObjectProperty: bim:p.identificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.identificador.guid
 	SubPropertyOf: bim:p.identificar
 	domain: bim:BIM
@@ -5438,6 +5665,66 @@ DataProperty: bim:instalação.rápida
 	Annotations: bim:Definición "Declara que el elemento es rápido y fácil de instalar."@es
 	Annotations: bim:Definition "Declare that the element is quick and easy to install."@en
 
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.categoria.revit
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.categoria.revit"@pt
+	Annotations: bim:Chave "d.inter.101"
+	Annotations: bim:Ação "Ação de interoperar"@pt
+	Annotations: bim:Definição "Declara a associação com uma categoria OST Revit."@pt
+	Annotations: bim:Definición "Declara la Identificación de la asociación con una categoría OST de Revit."@es
+	Annotations: bim:Definition "Declare the association with a Revit OST category."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:categoria.revit
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  categoria.revit  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.inter.101"
+	Annotations: bim:Ação "Ação de interoperar"@pt
+	Annotations: bim:Definição "Declara a associação com uma categoria OST Revit."@pt
+	Annotations: bim:Definición "Declara la Identificación de la asociación con una categoría OST de Revit."@es
+	Annotations: bim:Definition "Declare the association with a Revit OST category."@en
+
+ObjectProperty: bim:p.interoperar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.classe.ifc
+	SubPropertyOf: bim:p.interoperar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a interoperar: é.classe.ifc"@pt
+	Annotations: bim:Chave "d.inter.102"
+	Annotations: bim:Ação "Ação de interoperar"@pt
+	Annotations: bim:Definição "Declara a uma classe IFC."@pt
+	Annotations: bim:Definición "Declara la Identificaión de una clase IFC."@es
+	Annotations: bim:Definition "Declare an IFC class."@en
+
+DataProperty: bim:d.interoperar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:classe.ifc
+	SubPropertyOf: bim:d.interoperar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para interoperar:  classe.ifc  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.inter.102"
+	Annotations: bim:Ação "Ação de interoperar"@pt
+	Annotations: bim:Definição "Declara a uma classe IFC."@pt
+	Annotations: bim:Definición "Declara la Identificaión de una clase IFC."@es
+	Annotations: bim:Definition "Declare an IFC class."@en
+
 ObjectProperty: bim:p.inventariar
 	SubPropertyOf: bim:BIMProp
 
@@ -5731,6 +6018,40 @@ DataProperty: bim:fase.recursal
 	Annotations: bim:Definição "Declara Fase em que os licitantes tem a oportunidade de contestar as decisões tomadas durante o processo apresentando um recurso."@pt
 	Annotations: bim:Definición "Declara la Fase en la que los licitadores tienen la oportunidad de impugnar las decisiones tomadas durante el proceso mediante la presentación de un recurso."@es
 	Annotations: bim:Definition "Declare Phase in which bidders have the opportunity to challenge the decisions made during the process by filing an appeal."@en
+
+ObjectProperty: bim:p.linkar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.url
+	SubPropertyOf: bim:p.linkar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a linkar: é.url"@pt
+	Annotations: bim:Chave "d.linka.102"
+	Annotations: bim:Ação "Ação de linkar"@pt
+	Annotations: bim:Definição "Declara Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso."@pt
+	Annotations: bim:Definición "Declara el Localizador Uniforme de Recursos. Señala la ubicación del recurso en Internet. http://example.com/recurso."@es
+	Annotations: bim:Definition "Declare Uniform Resource Locator. Points out the location of the resource on the Internet. http://example.com/recurso."@en
+	Annotations: bim:ABNT "[ 0P.10.60.01 ]"
+	Characteristics: Functional
+
+DataProperty: bim:d.linkar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:url
+	SubPropertyOf: bim:d.linkar
+	range: rdfs:Literal  or  xsd:string
+	Characteristics: Functional
+	Annotations: rdfs:label "Dado para linkar:  url  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.linka.102"
+	Annotations: bim:Ação "Ação de linkar"@pt
+	Annotations: bim:Definição "Declara Uniform Resource Locator. Aponta a localização do recurso na Internet. http://example.com/recurso."@pt
+	Annotations: bim:Definición "Declara el Localizador Uniforme de Recursos. Señala la ubicación del recurso en Internet. http://example.com/recurso."@es
+	Annotations: bim:Definition "Declare Uniform Resource Locator. Points out the location of the resource on the Internet. http://example.com/recurso."@en
+	Annotations: bim:ABNT "[ 0P.10.60.01 ]"
 
 ObjectProperty: bim:p.memorizar
 	SubPropertyOf: bim:BIMProp
@@ -10169,6 +10490,36 @@ ObjectProperty: bim:p.relacionar
 
 
 
+ObjectProperty: bim:é.pertencente.a
+	SubPropertyOf: bim:p.relacionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.pertencente.a"@pt
+	Annotations: bim:Chave "d.relac.110"
+	Annotations: bim:Ação "Ação de relacionar"@pt
+	Annotations: bim:Definição "Declara que é um elemento que pertence a um outro."@pt
+	Annotations: bim:Definición "Declara que el elemento pertenece a otro."@es
+	Annotations: bim:Definition "Declare the element belongs to another."@en
+
+DataProperty: bim:d.relacionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:pertencente.a
+	SubPropertyOf: bim:d.relacionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.relac.110"
+	Annotations: bim:Ação "Ação de relacionar"@pt
+	Annotations: bim:Definição "Declara que é um elemento que pertence a um outro."@pt
+	Annotations: bim:Definición "Declara que el elemento pertenece a otro."@es
+	Annotations: bim:Definition "Declare the element belongs to another."@en
+
+ObjectProperty: bim:p.relacionar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.usada.em
 	SubPropertyOf: bim:p.relacionar
 	domain: bim:BIM
@@ -12163,6 +12514,36 @@ DataProperty: bim:receita.total
 	Annotations: bim:Definición "Declara la cantidad total de ingresos o facturación."@es
 	Annotations: bim:Definition "Declare the total amount of total revenue or turnover."@en
 
+ObjectProperty: bim:p.temporalizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.data
+	SubPropertyOf: bim:p.temporalizar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a temporalizar: é.data"@pt
+	Annotations: bim:Chave "d.tempo.102"
+	Annotations: bim:Ação "Ação de temporalizar"@pt
+	Annotations: bim:Definição "Declara uma data inespecífica para algum evento."@pt
+	Annotations: bim:Definición "Declara una fecha no específica para algún evento."@es
+	Annotations: bim:Definition "Declare a non-specific date for some event."@en
+
+DataProperty: bim:d.temporalizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:data
+	SubPropertyOf: bim:d.temporalizar
+	range: xsd:date
+	Annotations: rdfs:label "Dado para temporalizar:  data  Deve ser formatado como (xsd:date)"@pt
+	Annotations: bim:Chave "d.tempo.102"
+	Annotations: bim:Ação "Ação de temporalizar"@pt
+	Annotations: bim:Definição "Declara uma data inespecífica para algum evento."@pt
+	Annotations: bim:Definición "Declara una fecha no específica para algún evento."@es
+	Annotations: bim:Definition "Declare a non-specific date for some event."@en
+
 ObjectProperty: bim:p.vistoriar
 	SubPropertyOf: bim:BIMProp
 
@@ -12193,6 +12574,36 @@ DataProperty: bim:drone
 	Annotations: bim:Definição "Declara a identificação do drone."@pt
 	Annotations: bim:Definición "Declara la identificación del dron."@es
 	Annotations: bim:Definition "Declare the identification of the drone."@en
+
+ObjectProperty: bim:p.vistoriar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.plano.de.voo
+	SubPropertyOf: bim:p.vistoriar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.plano.de.voo"@pt
+	Annotations: bim:Chave "d.visto.108"
+	Annotations: bim:Ação "Ação de vistoriar"@pt
+	Annotations: bim:Definição "Declara o arquivo com um plano de voo com os valores de waypoints."@pt
+	Annotations: bim:Definición "Declara el archivo con un plan de vuelo con los valores de los puntos de referencia."@es
+	Annotations: bim:Definition "Declare the file with a flight plan with the waypoint values."@en
+
+DataProperty: bim:d.vistoriar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:plano.de.voo
+	SubPropertyOf: bim:d.vistoriar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para vistoriar:  plano.de.voo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.visto.108"
+	Annotations: bim:Ação "Ação de vistoriar"@pt
+	Annotations: bim:Definição "Declara o arquivo com um plano de voo com os valores de waypoints."@pt
+	Annotations: bim:Definición "Declara el archivo con un plan de vuelo con los valores de los puntos de referencia."@es
+	Annotations: bim:Definition "Declare the file with a flight plan with the waypoint values."@en
 
 ObjectProperty: bim:p.vistoriar
 	SubPropertyOf: bim:BIMProp
@@ -12258,5 +12669,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 21/07/2026 7:46:03
+##  Criada em 21/07/2026 8:04:19
 #################################################################
