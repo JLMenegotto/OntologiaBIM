@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Classes e indivíduos de voos de manutenção com drones."@pt ;
-	  rdfs:label "DataHora: 21/07/2026 8:33:03"@pt ;
+	  rdfs:label "DataHora: 21/07/2026 8:39:46"@pt ;
 	  rdfs:label "Advertência1: -"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -494,22 +494,55 @@ bim:Manutenção rdf:type  owl:Class  ;
       rdfs:label  "Manutenção"@pt  .
 
 
-bim:Vistorias rdf:type  owl:Class  ;
+bim:Imagens rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Manutenção ;
-      rdfs:label  "Vistorias"@pt  .
+      rdfs:label  "Imagens"@pt  .
+
+
+bim:Imagem.Banco rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Imagens ;
+      rdfs:label  "Imagem Banco"@pt ;
+      bim:Definição   "Banco de Imagens fotográficas correspondente a um Voo de Manutenção realizado."@pt ;
+      bim:Definición  "Banco de Imágenes Fotográficas correspondiente a un vuelo de mantenimiento realizado."@es ;
+       bim:Definition  "Photographic Image Bank corresponding to a Maintenance Flight performed."@en ;
+      bim:Natureza    "Operação"@pt ;
+      bim:Espécie     "Manutenção"@pt ;
+      bim:Tema        "Imagens"@pt ;
+      bim:Disciplina  "Manutenção predial"@pt ;
+      bim:Chave       "Key-UAS-14"@pt ;
+      bim:ABNT        "[ 5I.80.90.26.16 ]"    .
+
+
+bim:Conceito rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:Operação rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Conceito ;
+      rdfs:label  "Operação"@pt  .
+
+
+bim:Manutenção rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Operação ;
+      rdfs:label  "Manutenção"@pt  .
+
+
+bim:Imagens rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Manutenção ;
+      rdfs:label  "Imagens"@pt  .
 
 
 bim:Imagem.WayPoint rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Vistorias ;
+      rdfs:subClassOf  bim:Imagens ;
       rdfs:label  "Imagem WayPoint"@pt ;
       bim:Definição   "Imagem fotográfica correspondente a um WayPoint."@pt ;
       bim:Definición  "Imagen fotográfica correspondiente a un WayPoint."@es ;
        bim:Definition  "Photographic image corresponding to a WayPoint."@en ;
       bim:Natureza    "Operação"@pt ;
       bim:Espécie     "Manutenção"@pt ;
-      bim:Tema        "Vistorias"@pt ;
+      bim:Tema        "Imagens"@pt ;
       bim:Disciplina  "Manutenção predial"@pt ;
-      bim:Chave       "Key-UAS-14"@pt ;
+      bim:Chave       "Key-UAS-15"@pt ;
       bim:ABNT        "[ 5I.80.90.10.16 ]"    .
 
 
@@ -542,7 +575,7 @@ bim:Voo.Diagnóstico rdf:type  owl:Class  ;
       bim:Espécie     "Diagnósticos"@pt ;
       bim:Tema        "Patologias"@pt ;
       bim:Disciplina  "Manutenção predial"@pt ;
-      bim:Chave       "Key-UAS-15"@pt  .
+      bim:Chave       "Key-UAS-16"@pt  .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -574,7 +607,7 @@ bim:Voo.Levantamento rdf:type  owl:Class  ;
       bim:Espécie     "Diagnósticos"@pt ;
       bim:Tema        "Patologias"@pt ;
       bim:Disciplina  "Manutenção predial"@pt ;
-      bim:Chave       "Key-UAS-16"@pt  .
+      bim:Chave       "Key-UAS-17"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
@@ -604,15 +637,17 @@ bim:Manutenção_02  rdf:type  owl:NamedIndividual , bim:Contêiner ;
      bim:descrição    "Contêiner dos dados da Manutenção_01" ;
      bim:código.abnt    "[ 5I.80.90.26.16 ]"  .
 
-bim:BancoIma01  rdf:type  owl:NamedIndividual , bim:Banco.Imagens ;
+bim:BancoIma01  rdf:type  owl:NamedIndividual , bim:Imagem.Banco ;
      bim:é.pertencente.a    bim:Ope_CT_01 ;
      bim:url    "banco01" ;
-     bim:descrição    "É o banco de imagens de voo de manutenção predial"  .
+     bim:descrição    "É o banco de imagens de voo de manutenção predial" ;
+     bim:código.abnt    "[ 5I.80.90.26.16 ]"  .
 
-bim:BancoIma02  rdf:type  owl:NamedIndividual , bim:Banco.Imagens ;
+bim:BancoIma02  rdf:type  owl:NamedIndividual , bim:Imagem.Banco ;
      bim:é.pertencente.a    bim:Ope_CT_01 ;
      bim:url    "banco02" ;
-     bim:descrição    "É o banco de imagens de voo de manutenção predial"  .
+     bim:descrição    "É o banco de imagens de voo de manutenção predial" ;
+     bim:código.abnt    "[ 5I.80.90.26.16 ]"  .
 
 bim:Foto.01.01  rdf:type  owl:NamedIndividual , bim:Imagem.WayPoint ;
      bim:é.pertencente.a    bim:BancoIma01 ;
@@ -12123,5 +12158,5 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia DRONE
-##  Criada em 21/07/2026 8:33:06
+##  Criada em 21/07/2026 8:39:49
 #################################################################
