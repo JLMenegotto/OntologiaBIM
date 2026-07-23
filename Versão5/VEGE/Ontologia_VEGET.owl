@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Vegetação>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de vegetação."@pt
-  Annotations: rdfs:label "DataHora: 23/07/2026 12:58:44"@pt
+  Annotations: rdfs:label "DataHora: 23/07/2026 13:00:45"@pt
   Annotations: rdfs:label "Fonte.Consultada.1: https://museunacional.ufrj.br/hortobotanico"@pt
   Annotations: rdfs:label "Fonte.Consultada.2: https://www.embrapa.br/florestas/publicacoes"@pt
   Annotations: rdfs:label "Fonte.Consultada.3: https://www.arvoresgigantes.org"@pt
@@ -1337,7 +1337,7 @@ Individual: bim:Não.Avaliado
 Individual: bim:CC.005
 	Types: bim:Crédito.de.Carbono
 	Facts: bim:descrição  "Definição de um Indivíduo de Classe Conceitual. Não tem existência no projeto se não estiver representado por um Indivíduo da classe Projeto."
-	Facts: bim:co2.creditado  0.5
+	Facts: bim:co2.acreditado  0.5
 	Facts: bim:descrição  "Crédito de cabono por 5 toneladas"
 	Facts: bim:categoria.revit  "[ OST_Planting ]"
 	Facts: bim:classe.ifc  "[ IfcGeographicElement ]"
@@ -1346,7 +1346,7 @@ Individual: bim:CC.005
 Individual: bim:CC.010
 	Types: bim:Crédito.de.Carbono
 	Facts: bim:descrição  "Definição de um Indivíduo de Classe Conceitual. Não tem existência no projeto se não estiver representado por um Indivíduo da classe Projeto."
-	Facts: bim:co2.creditado  10.0
+	Facts: bim:co2.acreditado  10.0
 	Facts: bim:descrição  "Crédito de cabono por 10 toneladas"
 	Facts: bim:categoria.revit  "[ OST_Planting ]"
 	Facts: bim:classe.ifc  "[ IfcGeographicElement ]"
@@ -1355,7 +1355,7 @@ Individual: bim:CC.010
 Individual: bim:CC.100
 	Types: bim:Crédito.de.Carbono
 	Facts: bim:descrição  "Definição de um Indivíduo de Classe Conceitual. Não tem existência no projeto se não estiver representado por um Indivíduo da classe Projeto."
-	Facts: bim:co2.creditado  100.0
+	Facts: bim:co2.acreditado  100.0
 	Facts: bim:descrição  "Crédito de cabono por 100 toneladas"
 	Facts: bim:categoria.revit  "[ OST_Planting ]"
 	Facts: bim:classe.ifc  "[ IfcGeographicElement ]"
@@ -1363,7 +1363,7 @@ Individual: bim:CC.100
 
 Individual: bim:TCC.FL.2025.00001
 	Types: bim:Certificado.de.Carbono
-	Facts: bim:é.co2.creditado  bim:CC.005
+	Facts: bim:é.co2.acreditado  bim:CC.005
 	Facts: bim:descrição  "Definição de um Indivíduo de Classe Conceitual. Não tem existência no projeto se não estiver representado por um Indivíduo da classe Projeto."
 	Facts: bim:co2.título  "TCC.FL.2025.0001"
 	Facts: bim:descrição  "Título de crédito de Carbono emitido pelo INCC, de projeto florestal n° 1 do ano 2025."
@@ -1373,7 +1373,7 @@ Individual: bim:TCC.FL.2025.00001
 
 Individual: bim:TCC.FL.2025.00002
 	Types: bim:Certificado.de.Carbono
-	Facts: bim:é.co2.creditado  bim:CC.010
+	Facts: bim:é.co2.acreditado  bim:CC.010
 	Facts: bim:descrição  "Definição de um Indivíduo de Classe Conceitual. Não tem existência no projeto se não estiver representado por um Indivíduo da classe Projeto."
 	Facts: bim:co2.título  "TCC.FL.2025.0002"
 	Facts: bim:descrição  "Título de crédito de Carbono emitido pelo INCC, de projeto florestal n° 2 do ano 2025."
@@ -1383,7 +1383,7 @@ Individual: bim:TCC.FL.2025.00002
 
 Individual: bim:TCC.FL.2025.00003
 	Types: bim:Certificado.de.Carbono
-	Facts: bim:é.co2.creditado  bim:CC.100
+	Facts: bim:é.co2.acreditado  bim:CC.100
 	Facts: bim:descrição  "Definição de um Indivíduo de Classe Conceitual. Não tem existência no projeto se não estiver representado por um Indivíduo da classe Projeto."
 	Facts: bim:co2.título  "TCC.FL.2025.0003"
 	Facts: bim:descrição  "Título de crédito de Carbono emitido pelo INCC, de projeto florestal n° 3 do ano 2025."
@@ -10451,6 +10451,36 @@ DataProperty: bim:bacia.hidrográfica.runoff
 	Annotations: bim:Definição "Declara a razão entre o volume de água escoado superficialmente e o volume de água de chuva. Roff  = Vescoado / Vprecipitado, ou seja, valores próximos de 0 indicam alta infiltração."@pt
 	Annotations: bim:Definición "Declara la proporción entre el volumen de escorrentía superficial y el volumen de agua de lluvia. Roff = Vescoado / Vprecipitate, es decir, valores cercanos a 0 indican alta infiltración."@es
 	Annotations: bim:Definition "Declares the ratio of the volume of surface water runoff to the volume of rainwater. Roff = Vescoado / Vprecipitate, i.e., values close to 0 indicate high infiltration."@en
+
+ObjectProperty: bim:p.emitir
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.co2.acreditado
+	SubPropertyOf: bim:p.emitir
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a emitir: é.co2.acreditado"@pt
+	Annotations: bim:Chave "d.emitir.100"
+	Annotations: bim:Ação "Ação de emitir"@pt
+	Annotations: bim:Definição "Declara a quantidade de carbono convertida em créditos verificados e auditados por programas como o Programa Brasileiro GHG Protocol. Cada crédito corresponde a 1 tonelada de dióxido de carbono equivalente (CO₂e). É carbono removido ou adicionado ao estoque, mensurável e permanente."@pt
+	Annotations: bim:Definición "Declara la cantidad de carbono convertida en créditos verificada y auditada por programas como el Programa Brasileño del Protocolo de GEI. Cada crédito corresponde a 1 tonelada de dióxido de carbono equivalente (CO₂e). Se elimina o se añade carbono al almacén, es medible y permanente."@es
+	Annotations: bim:Definition "Declares the amount of carbon converted into credits verified and audited by programs such as the Brazilian GHG Protocol Program. Each credit corresponds to 1 ton of carbon dioxide equivalent (CO₂e). It is carbon removed or added to stockpile, measurable and permanent."@en
+
+DataProperty: bim:d.emitir
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:co2.acreditado
+	SubPropertyOf: bim:d.emitir
+	range: xsd:double
+	Annotations: rdfs:label "Dado para emitir:  co2.acreditado  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "d.emitir.100"
+	Annotations: bim:Ação "Ação de emitir"@pt
+	Annotations: bim:Definição "Declara a quantidade de carbono convertida em créditos verificados e auditados por programas como o Programa Brasileiro GHG Protocol. Cada crédito corresponde a 1 tonelada de dióxido de carbono equivalente (CO₂e). É carbono removido ou adicionado ao estoque, mensurável e permanente."@pt
+	Annotations: bim:Definición "Declara la cantidad de carbono convertida en créditos verificada y auditada por programas como el Programa Brasileño del Protocolo de GEI. Cada crédito corresponde a 1 tonelada de dióxido de carbono equivalente (CO₂e). Se elimina o se añade carbono al almacén, es medible y permanente."@es
+	Annotations: bim:Definition "Declares the amount of carbon converted into credits verified and audited by programs such as the Brazilian GHG Protocol Program. Each credit corresponds to 1 ton of carbon dioxide equivalent (CO₂e). It is carbon removed or added to stockpile, measurable and permanent."@en
 
 ObjectProperty: bim:p.emitir
 	SubPropertyOf: bim:BIMProp
@@ -20241,5 +20271,5 @@ DataProperty: bim:vant
 
 #################################################################
 ##  Fim da Ontologia VEGET
-##  Criada em 23/07/2026 12:58:46
+##  Criada em 23/07/2026 13:00:46
 #################################################################
