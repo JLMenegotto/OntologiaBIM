@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 27/07/2026 8:48:07"@pt ;
+	  rdfs:label "DataHora: 27/07/2026 14:51:04"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -19522,7 +19522,7 @@ bim:é.altura.do.forro   rdf:type  owl:ObjectProperty ;
                     bim:Ação                "Ação de rebaixar" ;
                     bim:Definição           "Declara a distância entre o piso e o forro."@pt ;
                     bim:Definición          "Declara la distancia entre el suelo y el techo."@es ;bim:Definition          "Declares the distance between the floor and the ceiling."@en ;
-                    bim:CatRevit            "[ OST_CeilingsFinish1 : OST_CeilingsFinish2 : OST_Parts  ]" ;
+                    bim:CatRevit            "[ OST_CeilingsFinish1 : OST_CeilingsFinish2 : OST_Parts ]" ;
                     bim:ClasseIfc           "[ IfcCoveringCEILING ]" ;
                     owl:equivalentProperty  bim:é.pédireito  .
 
@@ -19539,7 +19539,7 @@ bim:altura.do.forro   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de rebaixar" ;
                     bim:Definição           "Declara a distância entre o piso e o forro."@pt ;
                     bim:Definición          "Declara la distancia entre el suelo y el techo."@es ;bim:Definition          "Declares the distance between the floor and the ceiling."@en ;
-                    bim:CatRevit            "[ OST_CeilingsFinish1 : OST_CeilingsFinish2 : OST_Parts  ]" ;
+                    bim:CatRevit            "[ OST_CeilingsFinish1 : OST_CeilingsFinish2 : OST_Parts ]" ;
                     bim:ClasseIfc           "[ IfcCoveringCEILING ]"  .
 
 
@@ -22011,7 +22011,73 @@ bim:vant   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara a identificação do veículo aéreo não tripulado. "@pt ;
                     bim:Definición          "Declara la identificación del vehículo aéreo no tripulado."@es ;bim:Definition          "Declares the identification of the unmanned aerial vehicle."@en  .
 
+
+bim:p.zonificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.zona.avac   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.zonificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a zonificar: é.zona.avac" ;
+                    bim:Chave               "d.zonificar.101" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de zona do projeto AVAC do prédio. "@pt ;
+                    bim:Definición          "Declara la Identificación de la zona del proyecto HVAC del edificio."@es ;bim:Definition          "Declares the identification of the building's HVAC project zone."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]" ;
+                    owl:equivalentProperty  bim:é.zona.hvac  .
+
+
+bim:d.zonificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:zona.avac   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.zonificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar:  zona.avac  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.zonificar.101" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de zona do projeto AVAC do prédio. "@pt ;
+                    bim:Definición          "Declara la Identificación de la zona del proyecto HVAC del edificio."@es ;bim:Definition          "Declares the identification of the building's HVAC project zone."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]"  .
+
+
+bim:p.zonificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.zona.hvac   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.zonificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a zonificar: é.zona.hvac" ;
+                    bim:Chave               "d.zonificar.102" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de zona do projeto HVAC do prédio. "@pt ;
+                    bim:Definición          "Declara la Identificación de la zona del proyecto HVAC del edificio."@es ;bim:Definition          "Declares the identification of the building's HVAC project zone."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]" ;
+                    owl:equivalentProperty  bim:é.zona.avac  .
+
+
+bim:d.zonificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:zona.hvac   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.zonificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar:  zona.hvac  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.zonificar.102" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de zona do projeto HVAC do prédio. "@pt ;
+                    bim:Definición          "Declara la Identificación de la zona del proyecto HVAC del edificio."@es ;bim:Definition          "Declares the identification of the building's HVAC project zone."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]"  .
+
 #################################################################
 ##  Fim da Ontologia 15965_1S
-##  Criada em 27/07/2026 8:48:13
+##  Criada em 27/07/2026 14:51:08
 #################################################################
