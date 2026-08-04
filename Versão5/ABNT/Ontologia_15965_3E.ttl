@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 03/08/2026 16:33:04"@pt ;
+	  rdfs:label "DataHora: 04/08/2026 16:34:56"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -16606,12 +16606,12 @@ bim:é.cti   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.hospitalizar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a hospitalizar: é.cti" ;
-                    bim:Chave               "d.hospitalizar.105" ;
+                    bim:Chave               "d.hospitalizar.108" ;
                     bim:Ação                "Ação de hospitalizar" ;
                     bim:Definição           "Declara que é Centro de Terapia Intensiva (CTI). Multiprofissional e Monitorização multiparamétrica."@pt ;
                     bim:Definición          "Declara que es un Centro de Cuidados Intensivos (UCI). Monitorización multiprofesional y multiparamétrica."@es ;bim:Definition          "Declares that it is an Intensive Care Center (ICU). Multiprofessional and Multiparametric Monitoring."@en ;
                     bim:CatRevit            "[ OST_Areas : OST_Rooms : OST_MEPSpaces : OST_MEPZone : OST_MedicalEquipment :  OST_NurseCallDevices ]" ;
-                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant ]" ;
+                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant : IfcMedicalDevice ]" ;
                     owl:equivalentProperty  bim:é.uti  .
 
 
@@ -16623,12 +16623,144 @@ bim:cti   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.hospitalizar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para hospitalizar:  cti  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "d.hospitalizar.105" ;
+                    bim:Chave               "d.hospitalizar.108" ;
                     bim:Ação                "Ação de hospitalizar" ;
                     bim:Definição           "Declara que é Centro de Terapia Intensiva (CTI). Multiprofissional e Monitorização multiparamétrica."@pt ;
                     bim:Definición          "Declara que es un Centro de Cuidados Intensivos (UCI). Monitorización multiprofesional y multiparamétrica."@es ;bim:Definition          "Declares that it is an Intensive Care Center (ICU). Multiprofessional and Multiparametric Monitoring."@en ;
                     bim:CatRevit            "[ OST_Areas : OST_Rooms : OST_MEPSpaces : OST_MEPZone : OST_MedicalEquipment :  OST_NurseCallDevices ]" ;
-                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant ]"  .
+                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant : IfcMedicalDevice ]"  .
+
+
+bim:p.hospitalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.leito.bloqueado   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.hospitalizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a hospitalizar: é.leito.bloqueado" ;
+                    bim:Chave               "d.hospitalizar.114" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar instalado que não pode ser utilizado no momento do censo (manutenção, falta de equipe etc.). Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama hospitalaria instalada que no puede utilizarse en el momento del censo (mantenimiento, falta de personal, etc.). Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is an installed hospital bed that cannot be used at the time of the census (maintenance, lack of staff, etc.). Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]" ;
+                    owl:equivalentProperty  bim:é.uti  .
+
+
+bim:d.hospitalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:leito.bloqueado   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.hospitalizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para hospitalizar:  leito.bloqueado  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.hospitalizar.114" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar instalado que não pode ser utilizado no momento do censo (manutenção, falta de equipe etc.). Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama hospitalaria instalada que no puede utilizarse en el momento del censo (mantenimiento, falta de personal, etc.). Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is an installed hospital bed that cannot be used at the time of the census (maintenance, lack of staff, etc.). Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]"  .
+
+
+bim:p.hospitalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.leito.de.tratamento.intensivo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.hospitalizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a hospitalizar: é.leito.de.tratamento.intensivo" ;
+                    bim:Chave               "d.hospitalizar.121" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar para pacientes graves que exigem cuidado contínuo e equipe especializada. Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama de hospital para pacientes en estado crítico que requieren atención continua y personal especializado. Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is a hospital bed for critically ill patients who require continuous care and specialized staff. Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]" ;
+                    owl:equivalentProperty  bim:é.leito.hospitalar.de.internação  .
+
+
+bim:d.hospitalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:leito.de.tratamento.intensivo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.hospitalizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para hospitalizar:  leito.de.tratamento.intensivo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.hospitalizar.121" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar para pacientes graves que exigem cuidado contínuo e equipe especializada. Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama de hospital para pacientes en estado crítico que requieren atención continua y personal especializado. Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is a hospital bed for critically ill patients who require continuous care and specialized staff. Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]"  .
+
+
+bim:p.hospitalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.leito.de.tratamento.semi‑intensivo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.hospitalizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a hospitalizar: é.leito.de.tratamento.semi‑intensivo" ;
+                    bim:Chave               "d.hospitalizar.122" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar para pacientes que não precisam de UTI, mas requerem atenção especial. Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama de hospital para pacientes que no necesitan UCI, pero sí que requieren atención especial. Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is a hospital bed for patients who do not need an ICU, but require special attention. Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]" ;
+                    owl:equivalentProperty  bim:é.leito.de.tratamento.intensivo  .
+
+
+bim:d.hospitalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:leito.de.tratamento.semi‑intensivo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.hospitalizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para hospitalizar:  leito.de.tratamento.semi‑intensivo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.hospitalizar.122" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar para pacientes que não precisam de UTI, mas requerem atenção especial. Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama de hospital para pacientes que no necesitan UCI, pero sí que requieren atención especial. Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is a hospital bed for patients who do not need an ICU, but require special attention. Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]"  .
+
+
+bim:p.hospitalizar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.leito.hospitalar.de.internação   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.hospitalizar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a hospitalizar: é.leito.hospitalar.de.internação" ;
+                    bim:Chave               "d.hospitalizar.125" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar numerado destinada à internação ≥ 24h. É o endereço do paciente. Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama de hospital numerada destinada a hospitalización ≥ 24 horas. Es la dirección del paciente. Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is a numbered hospital bed intended for hospitalization ≥ 24 hours. It is the patient's address. Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]" ;
+                    owl:equivalentProperty  bim:é.leito.de.tratamento.semi‑intensivo  .
+
+
+bim:d.hospitalizar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:leito.hospitalar.de.internação   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.hospitalizar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para hospitalizar:  leito.hospitalar.de.internação  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.hospitalizar.125" ;
+                    bim:Ação                "Ação de hospitalizar" ;
+                    bim:Definição           "Declara que é um leito hospitalar numerado destinada à internação ≥ 24h. É o endereço do paciente. Parâmetro da Secretaria Municipal de Saúde do Rio de Janeiro."@pt ;
+                    bim:Definición          "Declara que es una cama de hospital numerada destinada a hospitalización ≥ 24 horas. Es la dirección del paciente. Parámetro del Departamento de Sanidad Municipal de Río de Janeiro."@es ;bim:Definition          "Declares that it is a numbered hospital bed intended for hospitalization ≥ 24 hours. It is the patient's address. Parameter of the Municipal Health Secretariat of Rio de Janeiro."@en ;
+                    bim:CatRevit            "[ OST_MedicalEquipment :  OST_NurseCallDevices : OST_Furnutures ]" ;
+                    bim:ClasseIfc           "[ IfcFurniture : IfcMedicalDevice ]"  .
 
 
 bim:p.hospitalizar   rdf:type  owl:ObjectProperty ;
@@ -16639,12 +16771,12 @@ bim:é.uti   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.hospitalizar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a hospitalizar: é.uti" ;
-                    bim:Chave               "d.hospitalizar.117" ;
+                    bim:Chave               "d.hospitalizar.140" ;
                     bim:Ação                "Ação de hospitalizar" ;
                     bim:Definição           "Declara que é Unidade de Terapia Intensiva (UTI). Pode ser Neonatal, Pediátrica, Cardiológica, Neurológica, etc. Multiprofissional e Monitorização multiparamétrica. Prevista em RDCs da Anvisa"@pt ;
                     bim:Definición          "Declara que es una Unidad de Cuidados Intensivos (UCI). Puede ser neonatal, pediátrico, cardiólogo, neurológico, etc. Monitorización multiprofesional y multiparamétrica. Previsto en los RDC de Anvisa."@es ;bim:Definition          "Declares that it is an Intensive Care Unit (ICU). It can be Neonatal, Pediatric, Cardiology, Neurological, etc. Multiprofessional and Multiparametric Monitoring. Provided for in Anvisa's RDCs"@en ;
                     bim:CatRevit            "[ OST_Areas : OST_Rooms : OST_MEPSpaces : OST_MEPZone : OST_MedicalEquipment :  OST_NurseCallDevices ]" ;
-                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant ]" ;
+                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant : IfcMedicalDevice ]" ;
                     owl:equivalentProperty  bim:é.cti  .
 
 
@@ -16656,12 +16788,12 @@ bim:uti   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.hospitalizar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para hospitalizar:  uti  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "d.hospitalizar.117" ;
+                    bim:Chave               "d.hospitalizar.140" ;
                     bim:Ação                "Ação de hospitalizar" ;
                     bim:Definição           "Declara que é Unidade de Terapia Intensiva (UTI). Pode ser Neonatal, Pediátrica, Cardiológica, Neurológica, etc. Multiprofissional e Monitorização multiparamétrica. Prevista em RDCs da Anvisa"@pt ;
                     bim:Definición          "Declara que es una Unidad de Cuidados Intensivos (UCI). Puede ser neonatal, pediátrico, cardiólogo, neurológico, etc. Monitorización multiprofesional y multiparamétrica. Previsto en los RDC de Anvisa."@es ;bim:Definition          "Declares that it is an Intensive Care Unit (ICU). It can be Neonatal, Pediatric, Cardiology, Neurological, etc. Multiprofessional and Multiparametric Monitoring. Provided for in Anvisa's RDCs"@en ;
                     bim:CatRevit            "[ OST_Areas : OST_Rooms : OST_MEPSpaces : OST_MEPZone : OST_MedicalEquipment :  OST_NurseCallDevices ]" ;
-                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant ]"  .
+                    bim:ClasseIfc           "[ IfcZone : IfcSpace : IfcOccupant : IfcMedicalDevice ]"  .
 
 
 bim:p.identificar   rdf:type  owl:ObjectProperty ;
@@ -33558,5 +33690,5 @@ bim:zona.hvac   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia 15965_3E
-##  Criada em 03/08/2026 16:33:08
+##  Criada em 04/08/2026 16:34:59
 #################################################################
