@@ -21,13 +21,13 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
 
 <p align="justify">Foram separados os seguintes domínios ontológicos que estão continuamente sendo revisados.<br></b></p>
 
- * [**Pasta ABNT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ABNT) ontologias com o sistema de classificação da construção **NBR 15.965** ordenado seus códigos como Fatos conhecidos.
- * [**Pasta BIM**] 		ontologias com fatos das Classes IFC.
- * [**Pasta BRASIL**] 	ontologias com fatos da organização espacial do Brasil, com os estados de Rio de Janeiro, com alguns exemplos para Minas Gerias e São Paulo.  
+ * [**Pasta ABNT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ABNT) Ontologias em OWL e TTL com Conceitos e Fatos do sistema de classificação da construção **NBR 15.965**.
+ * [**Pasta BIM**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/BIM)	Ontologias em OWL e TTL com Conceitos e Fatos das Classes IFC.
+ * [**Pasta BRASIL**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/BRASIL) Ontologias em OWL e TTL com Conceitos e Fatos da organização espacial do Brasil, com os estados de Rio de Janeiro, com alguns exemplos para Minas Gerias e São Paulo.  
    						categorias do Sinapi e da Taxonomia Sustentável Brasileira.
- * [**Pasta PRO**] 		ontologias com fatos de diversos domínios projetuais (Arquitetura, Avac, Elétrica, Hidrossanitária, Incêndios, etc.
- * [**Pasta SUS**] 		ontologias com fatos do Caderno SomaSUS e da RDC 50 do Sistema Único de Saúde do Brasil. 
- * [**Pasta UFRJ**] 	ontologias com fatos de Ambientes e Codificação do Modelo BIM do Centro de Tecnologia.
+ * [**Pasta PRO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/PRO) 		Ontologias em OWL e TTL com Conceitos e Fatos de diversos domínios projetuais (Arquitetura, Avac, Elétrica, Hidrossanitária, Incêndios, etc.
+ * [**Pasta SUS**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/SUS)	Ontologias em OWL e TTL com Conceitos e Fatos do Caderno SomaSUS e da RDC 50 do Sistema Único de Saúde do Brasil. 
+ * [**Pasta UFRJ**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/UFRJ) 	Ontologias em OWL e TTL com Conceitos e Fatos de Ambientes e Codificação do Modelo BIM do Centro de Tecnologia.
 
 <p align="justify">As Classes IFC e Categorias de Revit (OST_) foram ordenadas de modo a ter os conceitos comuns (colunas B C D E). Pode acontecer que algum conceito esteja presente num dos modelos de informação apenas. Na planilha de axiomas foram incorporadas colunas que definem Anotações sobre a Classe. Foi completada a tradução ao español de cada classe e categoria. O trabalho está em processo de desenvolvimento portanto, os arquivos no repositório são continuamente atualizados e as mudanças podem ser de diversos graus. <br></b></p>
 
