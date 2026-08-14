@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_BIM_Circulação>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Modelo de informação IFC 4x3 e Categorias Revit 2026"@pt
-  Annotations: rdfs:label "DataHora: 14/08/2026 7:34:01"@pt
+  Annotations: rdfs:label "DataHora: 14/08/2026 9:50:58"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -2086,59 +2086,71 @@ Class: bim:Rampa
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
-Individual: bim:Projeto_Circulação
-	Types: bim:De.Circulação
-	Facts: bim:descrição  "Conjunto de Informação de circulação do projeto 1"
-	Facts: bim:nome  "CTN_PRJ_A"
-	Facts: bim:categoria.revit  "[ - ]"
-	Facts: bim:classe.ifc  "[ - ]"
-	Facts: bim:código.abnt  "[ - ]"
+Individual: bim:Rampa.Padrão
+	Types: bim:Rampa.Reta
+	Facts: bim:descrição  "Um tipo de escada conceitual"
 
-Individual: bim:Rampa_Veicular_01
+Individual: bim:Rampa.Veicular
 	Types: bim:Rampa.Espiral
-	Facts: bim:é.dentro.de  bim:Projeto_Circulação
-	Facts: bim:descrição  "Rampa veicular de acesso ao subsolo"
-	Facts: bim:código  "RMP_01"
-	Facts: bim:categoria.revit  "[ OST_Ramps ]"
-	Facts: bim:classe.ifc  "[ IfcRamp ]"
-	Facts: bim:código.abnt  "[ 3E.08.06.02 ]"
+	Facts: bim:descrição  "Um tipo de escada conceitual"
 
-Individual: bim:Rampa_Acessível_01
-	Types: bim:Rampa
-	Facts: bim:é.dentro.de  bim:Projeto_Circulação
-	Facts: bim:descrição  "Rampa acessível de acesso ao prédio"
-	Facts: bim:código  "RMP_02"
-	Facts: bim:categoria.revit  "[ OST_Ramps ]"
-	Facts: bim:classe.ifc  "[ IfcRamp ]"
-	Facts: bim:código.abnt  "[ 3E.08.06.02 ]"
+Individual: bim:EscadaPpal
+	Types: bim:Escada.Curva
+	Facts: bim:descrição  "Um tipo de escada conceitual"
 
-Individual: bim:Escada_Hall
+Individual: bim:EscadasInc
+	Types: bim:Escada.U
+	Facts: bim:descrição  "Um tipo de escada conceitual"
+
+Individual: bim:Proj_A
+	Types: bim:Projeto
+	Facts: bim:descrição  "O projeto concreto"
+	Facts: bim:nome  "Projeto A"
+	Facts: bim:código  "PRJ01"
+
+Individual: bim:Prj_Circ
+	Types: bim:De.Circulação
+	Facts: bim:é.pertencente.a  bim:Proj_A
+	Facts: bim:descrição  "O projeto de circulação concreto"
+	Facts: bim:nome  bim:null
+	Facts: bim:código  "PRJCIRC"
+
+Individual: bim:Escada.Hall_01
 	Types: bim:Escada
-	Facts: bim:é.dentro.de  bim:Projeto_Circulação
-	Facts: bim:descrição  "Escada do Hall de Acesso"
+	Facts: bim:é.dentro.de  bim:Proj_A
+	Facts: bim:é.tipo  bim:EscadaPpal
+	Facts: bim:descrição  "A escada do Hall"
+	Facts: bim:nome  "Escada do Hall"
 	Facts: bim:código  "ESC_01"
 	Facts: bim:categoria.revit  "[ OST_Stairs ]"
 	Facts: bim:classe.ifc  "[ IfcStair ]"
 	Facts: bim:código.abnt  "[ 3E.08.06.04 ]"
 
-Individual: bim:Escada_Escape_01
+Individual: bim:Escada.Inc_01
 	Types: bim:Escada
-	Facts: bim:é.dentro.de  bim:Projeto_Circulação
-	Facts: bim:descrição  "Escada de Escape"
+	Facts: bim:é.dentro.de  bim:Proj_A
+	Facts: bim:é.tipo  bim:EscadasInc
+	Facts: bim:descrição  "A escada de escape de incêndio"
+	Facts: bim:nome  "Escada de escape"
 	Facts: bim:código  "ESC_02"
 	Facts: bim:categoria.revit  "[ OST_Stairs ]"
 	Facts: bim:classe.ifc  "[ IfcStair ]"
 	Facts: bim:código.abnt  "[ 3E.08.06.04 ]"
 
-Individual: bim:NormaAcessibilidade
-	Types: bim:Acessibilidade
-	Facts: bim:é.aplicada.em  bim:Rampa_Acessível_01
-	Facts: bim:descrição  "Valores de acessibilidade aplicados a elementos do projeto"
-	Facts: bim:inclinação  5
-	Facts: bim:largura.mínima  1.20
-	Facts: bim:categoria.revit  "[ - ]"
-	Facts: bim:classe.ifc  "[ - ]"
-	Facts: bim:código.abnt  "[ - ]"
+Individual: bim:Rampa.Ace_02
+	Types: bim:Rampa
+	Facts: bim:é.dentro.de  bim:Proj_A
+	Facts: bim:é.tipo  bim:Rampa.Padrão
+	Facts: bim:descrição  "A rampa acessível do térreo"
+	Facts: bim:nome  "Rampa de acesso"
+	Facts: bim:código  "RAM_01"
+	Facts: bim:categoria.revit  "[ OST_Ramps ]"
+	Facts: bim:classe.ifc  "[ IfcRamp ]"
+	Facts: bim:código.abnt  "[ 3E.08.06.02 ]"
+	Facts: bim:inclinação.máxima  5
+	Facts: bim:inclinação.real  5
+	Facts: bim:largura.mínima  1.2
+	Facts: bim:largura.real  1.2
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -2269,36 +2281,6 @@ DataProperty: bim:revestido.com
 	Annotations: bim:Definição "Declara que um elemento é revestida com algum material."@pt
 	Annotations: bim:Definición "Declara que un elemento es revestida con algún material."@es
 	Annotations: bim:Definition "Declares that an element is coated with some material."@en
-
-ObjectProperty: bim:p.aceder
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.inclinação
-	SubPropertyOf: bim:p.aceder
-	domain: bim:BIM
-	Annotations: rdfs:label "Propriedade destinada a aceder: é.inclinação"@pt
-	Annotations: bim:Chave "d.aceder.110"
-	Annotations: bim:Ação "Ação de aceder"@pt
-	Annotations: bim:Definição "Declara a inclinação projetada para que o elemento seja acessível universalmente. Para rampas acessíveis por exemplo."@pt
-	Annotations: bim:Definición "Declara la pendiente proyectada de modo que el elemento es universalmente accesible. Por ejemplo, para rampas accesibles."@es
-	Annotations: bim:Definition "Declares the projected slope so that the element is universally accessible. For accessible ramps for example."@en
-
-DataProperty: bim:d.aceder
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:inclinação
-	SubPropertyOf: bim:d.aceder
-	range: xsd:double
-	Annotations: rdfs:label "Dado para aceder:  inclinação  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.aceder.110"
-	Annotations: bim:Ação "Ação de aceder"@pt
-	Annotations: bim:Definição "Declara a inclinação projetada para que o elemento seja acessível universalmente. Para rampas acessíveis por exemplo."@pt
-	Annotations: bim:Definición "Declara la pendiente proyectada de modo que el elemento es universalmente accesible. Por ejemplo, para rampas accesibles."@es
-	Annotations: bim:Definition "Declares the projected slope so that the element is universally accessible. For accessible ramps for example."@en
 
 ObjectProperty: bim:p.aceder
 	SubPropertyOf: bim:BIMProp
@@ -4406,6 +4388,36 @@ DataProperty: bim:substituído.por
 	Annotations: bim:Definición "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es
 	Annotations: bim:Definition "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en
 
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.tipo
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.tipo"@pt
+	Annotations: bim:Chave "d.catalogar.142"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Tipo definido pelo fabricante de um determinado produto."@pt
+	Annotations: bim:Definición "Declara el Tipo definido por el fabricante de un producto en particular."@es
+	Annotations: bim:Definition "Declares Type defined by the manufacturer of a particular product."@en
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:tipo
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para catalogar:  tipo  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.catalogar.142"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Tipo definido pelo fabricante de um determinado produto."@pt
+	Annotations: bim:Definición "Declara el Tipo definido por el fabricante de un producto en particular."@es
+	Annotations: bim:Definition "Declares Type defined by the manufacturer of a particular product."@en
+
 ObjectProperty: bim:p.colaborar
 	SubPropertyOf: bim:BIMProp
 
@@ -5852,11 +5864,11 @@ ObjectProperty: bim:é.área.bruta
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.área.bruta"@pt
-	Annotations: bim:Chave "d.dimensionar.105"
+	Annotations: bim:Chave "d.dimensionar.106"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de superfície ou área bruta."@pt
-	Annotations: bim:Definición "Declara el Valor de superficie o área bruta."@es
-	Annotations: bim:Definition "Declares the Surface value or gross area."@en
+	Annotations: bim:Definição "Declara o valor de superfície ou área bruta."@pt
+	Annotations: bim:Definición "Declara el valor de la superficie o área bruta."@es
+	Annotations: bim:Definition "Declares the value of surface or gross area."@en
 	Characteristics: Functional
 	EquivalentTo: bim:é.área.real
 
@@ -5870,11 +5882,11 @@ DataProperty: bim:área.bruta
 	range: xsd:double
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  área.bruta  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.dimensionar.105"
+	Annotations: bim:Chave "d.dimensionar.106"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de superfície ou área bruta."@pt
-	Annotations: bim:Definición "Declara el Valor de superficie o área bruta."@es
-	Annotations: bim:Definition "Declares the Surface value or gross area."@en
+	Annotations: bim:Definição "Declara o valor de superfície ou área bruta."@pt
+	Annotations: bim:Definición "Declara el valor de la superficie o área bruta."@es
+	Annotations: bim:Definition "Declares the value of surface or gross area."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -5885,11 +5897,11 @@ ObjectProperty: bim:é.área.real
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.área.real"@pt
-	Annotations: bim:Chave "d.dimensionar.117"
+	Annotations: bim:Chave "d.dimensionar.118"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara as Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt
-	Annotations: bim:Definición "Declara Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es
-	Annotations: bim:Definition "Declares the Measurement of the surface of any dependencies, or set of dependencies, covered or uncovered, including the surfaces of the projections of walls, pillars and other constructive elements. NBR 12721:2006 Standard."@en
+	Annotations: bim:Definição "Declara as medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt
+	Annotations: bim:Definición "Declara las mediciones superficiales de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluyendo las superficies de las proyecciones de muros, pilares y otros elementos constructivos. NBR 12721:2006 Estándar."@es
+	Annotations: bim:Definition "Declares the surface measurements of any dependencies, or set of dependencies, covered or uncovered, including the surfaces of the projections of walls, pillars and other constructive elements. NBR 12721:2006 Standard."@en
 	EquivalentTo: bim:é.área.bruta
 
 DataProperty: bim:d.dimensionar
@@ -5901,11 +5913,11 @@ DataProperty: bim:área.real
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  área.real  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.dimensionar.117"
+	Annotations: bim:Chave "d.dimensionar.118"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara as Medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt
-	Annotations: bim:Definición "Declara Medición de la superficie de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluidas las superficies de los salientes de muros, pilares y otros elementos constructivos. Norma NBR 12721:2006."@es
-	Annotations: bim:Definition "Declares the Measurement of the surface of any dependencies, or set of dependencies, covered or uncovered, including the surfaces of the projections of walls, pillars and other constructive elements. NBR 12721:2006 Standard."@en
+	Annotations: bim:Definição "Declara as medida da superfície de quaisquer dependências, ou conjunto de dependências, cobertas ou descobertas, nela incluídas as superfícies das projeções de paredes, de pilares e demais elementos construtivos. Norma NBR 12721:2006."@pt
+	Annotations: bim:Definición "Declara las mediciones superficiales de cualquier dependencia, o conjunto de dependencias, cubiertas o descubiertas, incluyendo las superficies de las proyecciones de muros, pilares y otros elementos constructivos. NBR 12721:2006 Estándar."@es
+	Annotations: bim:Definition "Declares the surface measurements of any dependencies, or set of dependencies, covered or uncovered, including the surfaces of the projections of walls, pillars and other constructive elements. NBR 12721:2006 Standard."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -5916,11 +5928,11 @@ ObjectProperty: bim:é.caimento.máximo
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.caimento.máximo"@pt
-	Annotations: bim:Chave "d.dimensionar.125"
+	Annotations: bim:Chave "d.dimensionar.126"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara a Inclinação máxima permitida por norma ou projeto recomendável para elementos inclinados."@pt
-	Annotations: bim:Definición "Declara la Máxima inclinación permitida por ley o recomendada proyectualmente para diseñar elementos inclinados."@es
-	Annotations: bim:Definition "Declares the Maximum inclination allowed by law or projectually recommended for designing inclined elements."@en
+	Annotations: bim:Definição "Declara a inclinação máxima permitida por norma ou projeto recomendável para elementos inclinados."@pt
+	Annotations: bim:Definición "Declara la pendiente máxima permitida por el diseño normativo o recomendado para elementos inclinados."@es
+	Annotations: bim:Definition "Declares the maximum slope allowed by norm or recommended design for inclined elements."@en
 	EquivalentTo: bim:é.inclinação.máxima
 
 DataProperty: bim:d.dimensionar
@@ -5932,11 +5944,11 @@ DataProperty: bim:caimento.máximo
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  caimento.máximo  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.dimensionar.125"
+	Annotations: bim:Chave "d.dimensionar.126"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara a Inclinação máxima permitida por norma ou projeto recomendável para elementos inclinados."@pt
-	Annotations: bim:Definición "Declara la Máxima inclinación permitida por ley o recomendada proyectualmente para diseñar elementos inclinados."@es
-	Annotations: bim:Definition "Declares the Maximum inclination allowed by law or projectually recommended for designing inclined elements."@en
+	Annotations: bim:Definição "Declara a inclinação máxima permitida por norma ou projeto recomendável para elementos inclinados."@pt
+	Annotations: bim:Definición "Declara la pendiente máxima permitida por el diseño normativo o recomendado para elementos inclinados."@es
+	Annotations: bim:Definition "Declares the maximum slope allowed by norm or recommended design for inclined elements."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -5947,11 +5959,11 @@ ObjectProperty: bim:é.caimento.mínimo
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.caimento.mínimo"@pt
-	Annotations: bim:Chave "d.dimensionar.126"
+	Annotations: bim:Chave "d.dimensionar.127"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara a Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
-	Annotations: bim:Definición "Declara la Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
-	Annotations: bim:Definition "Declares the Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en
+	Annotations: bim:Definição "Declara a inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
+	Annotations: bim:Definición "Declara la pendiente mínima para tejados de fibrocemento, chapas metálicas, tuberías o elementos que deben colocarse con las pendientes."@es
+	Annotations: bim:Definition "Declares the minimum slope for fiber cement roofs, roofing metal sheets, pipes or elements that need to be positioned with slopes."@en
 	EquivalentTo: bim:é.inclinação.mínima
 
 DataProperty: bim:d.dimensionar
@@ -5963,11 +5975,11 @@ DataProperty: bim:caimento.mínimo
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  caimento.mínimo  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.dimensionar.126"
+	Annotations: bim:Chave "d.dimensionar.127"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara a Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
-	Annotations: bim:Definición "Declara la Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
-	Annotations: bim:Definition "Declares the Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en
+	Annotations: bim:Definição "Declara a inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
+	Annotations: bim:Definición "Declara la pendiente mínima para tejados de fibrocemento, chapas metálicas, tuberías o elementos que deben colocarse con las pendientes."@es
+	Annotations: bim:Definition "Declares the minimum slope for fiber cement roofs, roofing metal sheets, pipes or elements that need to be positioned with slopes."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -5978,11 +5990,11 @@ ObjectProperty: bim:é.diâmetro.nominal
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.diâmetro.nominal"@pt
-	Annotations: bim:Chave "d.dimensionar.141"
+	Annotations: bim:Chave "d.dimensionar.142"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Diâmetro Nominal (DN) para elementos de tubulação. É um Declara o Valor inteiro."@pt
-	Annotations: bim:Definición "Declara el Valor de diámetro nominal (DN) para elementos de tubería. Es un valor entero."@es
-	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is an integer value."@en
+	Annotations: bim:Definição "Declara o valor de diâmetro Nominal (DN) para elementos de tubulação. É um Declara o valor inteiro."@pt
+	Annotations: bim:Definición "Declara el valor de Diámetro Nominal (DN) para los elementos de tubería. Es una declaración del valor total."@es
+	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is a declares the whole value."@en
 	Characteristics: Functional
 	EquivalentTo: bim:é.dn
 
@@ -5996,11 +6008,11 @@ DataProperty: bim:diâmetro.nominal
 	range: xsd:integer
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  diâmetro.nominal  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "d.dimensionar.141"
+	Annotations: bim:Chave "d.dimensionar.142"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Diâmetro Nominal (DN) para elementos de tubulação. É um Declara o Valor inteiro."@pt
-	Annotations: bim:Definición "Declara el Valor de diámetro nominal (DN) para elementos de tubería. Es un valor entero."@es
-	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is an integer value."@en
+	Annotations: bim:Definição "Declara o valor de diâmetro Nominal (DN) para elementos de tubulação. É um Declara o valor inteiro."@pt
+	Annotations: bim:Definición "Declara el valor de Diámetro Nominal (DN) para los elementos de tubería. Es una declaración del valor total."@es
+	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is a declares the whole value."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -6011,11 +6023,11 @@ ObjectProperty: bim:é.dn
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.dn"@pt
-	Annotations: bim:Chave "d.dimensionar.144"
+	Annotations: bim:Chave "d.dimensionar.145"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Diâmetro Nominal (DN) para elementos de tubulação. É um Declara o Valor inteiro."@pt
-	Annotations: bim:Definición "Declara el Valor de diámetro nominal (DN) para elementos de tubería. Es un valor entero."@es
-	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is an integer value."@en
+	Annotations: bim:Definição "Declara o valor de diâmetro Nominal (DN) para elementos de tubulação. É um Declara o valor inteiro."@pt
+	Annotations: bim:Definición "Declara el valor de Diámetro Nominal (DN) para los elementos de tubería. Es una declaración del valor total."@es
+	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is a declares the whole value."@en
 	Characteristics: Functional
 	EquivalentTo: bim:é.diâmetro.nominal
 
@@ -6029,11 +6041,11 @@ DataProperty: bim:dn
 	range: xsd:integer
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  dn  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "d.dimensionar.144"
+	Annotations: bim:Chave "d.dimensionar.145"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Diâmetro Nominal (DN) para elementos de tubulação. É um Declara o Valor inteiro."@pt
-	Annotations: bim:Definición "Declara el Valor de diámetro nominal (DN) para elementos de tubería. Es un valor entero."@es
-	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is an integer value."@en
+	Annotations: bim:Definição "Declara o valor de diâmetro Nominal (DN) para elementos de tubulação. É um Declara o valor inteiro."@pt
+	Annotations: bim:Definición "Declara el valor de Diámetro Nominal (DN) para los elementos de tubería. Es una declaración del valor total."@es
+	Annotations: bim:Definition "Declares the Nominal Diameter (DN) value for piping elements. It is a declares the whole value."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -6044,11 +6056,11 @@ ObjectProperty: bim:é.inclinação.mínima
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.inclinação.mínima"@pt
-	Annotations: bim:Chave "d.dimensionar.148"
+	Annotations: bim:Chave "d.dimensionar.149"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara a Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
-	Annotations: bim:Definición "Declara la Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
-	Annotations: bim:Definition "Declares the Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en
+	Annotations: bim:Definição "Declara a inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
+	Annotations: bim:Definición "Declara la pendiente mínima para tejados de fibrocemento, chapas metálicas, tuberías o elementos que deben colocarse con las pendientes."@es
+	Annotations: bim:Definition "Declares the minimum slope for fiber cement roofs, roofing metal sheets, pipes or elements that need to be positioned with slopes."@en
 	EquivalentTo: bim:é.caimento.mínimo
 
 DataProperty: bim:d.dimensionar
@@ -6060,11 +6072,72 @@ DataProperty: bim:inclinação.mínima
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  inclinação.mínima  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.dimensionar.148"
+	Annotations: bim:Chave "d.dimensionar.149"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara a Inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
-	Annotations: bim:Definición "Declara la Pendiente mínima para tejados de fibrocemento, láminas de tejado, tuberías o elementos que deben colocarse con pendientes."@es
-	Annotations: bim:Definition "Declares the Minimum slope for fiber cement roofs, roofing sheets, pipes, or elements that need to be positioned with slopes."@en
+	Annotations: bim:Definição "Declara a inclinação mínima para telhados de fibrocimento, chapas metálicas de telhados, tubulações ou elementos que precisem ser posicionados com inclinações."@pt
+	Annotations: bim:Definición "Declara la pendiente mínima para tejados de fibrocemento, chapas metálicas, tuberías o elementos que deben colocarse con las pendientes."@es
+	Annotations: bim:Definition "Declares the minimum slope for fiber cement roofs, roofing metal sheets, pipes or elements that need to be positioned with slopes."@en
+
+ObjectProperty: bim:p.dimensionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.inclinação.real
+	SubPropertyOf: bim:p.dimensionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.inclinação.real"@pt
+	Annotations: bim:Chave "d.dimensionar.150"
+	Annotations: bim:Ação "Ação de dimensionar"@pt
+	Annotations: bim:Definição "Declara a inclinação real do elemento utilizada no projeto."@pt
+	Annotations: bim:Definición "Declara la pendiente real del elemento utilizado en el proyecto."@es
+	Annotations: bim:Definition "Declares the actual slope of the element used in the project."@en
+	EquivalentTo: bim:é.caimento.mínimo
+
+DataProperty: bim:d.dimensionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:inclinação.real
+	SubPropertyOf: bim:d.dimensionar
+	range: xsd:double
+	Annotations: rdfs:label "Dado para dimensionar:  inclinação.real  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "d.dimensionar.150"
+	Annotations: bim:Ação "Ação de dimensionar"@pt
+	Annotations: bim:Definição "Declara a inclinação real do elemento utilizada no projeto."@pt
+	Annotations: bim:Definición "Declara la pendiente real del elemento utilizado en el proyecto."@es
+	Annotations: bim:Definition "Declares the actual slope of the element used in the project."@en
+
+ObjectProperty: bim:p.dimensionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.largura.real
+	SubPropertyOf: bim:p.dimensionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.largura.real"@pt
+	Annotations: bim:Chave "d.dimensionar.152"
+	Annotations: bim:Ação "Ação de dimensionar"@pt
+	Annotations: bim:Definição "Declara o valor da largura real (utilizada no projeto) de um objeto."@pt
+	Annotations: bim:Definición "Declara el valor del ancho real (utilizado en el proyecto) de un objeto."@es
+	Annotations: bim:Definition "Declares the value of the actual width (used in the project) of an object."@en
+
+DataProperty: bim:d.dimensionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:largura.real
+	SubPropertyOf: bim:d.dimensionar
+	range: xsd:double
+	Annotations: rdfs:label "Dado para dimensionar:  largura.real  Deve ser formatado como (xsd:double)"@pt
+	Annotations: bim:Chave "d.dimensionar.152"
+	Annotations: bim:Ação "Ação de dimensionar"@pt
+	Annotations: bim:Definição "Declara o valor da largura real (utilizada no projeto) de um objeto."@pt
+	Annotations: bim:Definición "Declara el valor del ancho real (utilizado en el proyecto) de un objeto."@es
+	Annotations: bim:Definition "Declares the value of the actual width (used in the project) of an object."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -6075,11 +6148,11 @@ ObjectProperty: bim:é.pédireito
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.pédireito"@pt
-	Annotations: bim:Chave "d.dimensionar.155"
+	Annotations: bim:Chave "d.dimensionar.158"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de pé direto de um ambiente. Distância entre as superfícies acabadas do piso e do forro."@pt
-	Annotations: bim:Definición "Declara el Valor permanente directo de un entorno. Distancia entre las superficies acabadas del suelo y el techo."@es
-	Annotations: bim:Definition "Declares the Direct standing value of an environment. Distance between the finished surfaces of the floor and the ceiling."@en
+	Annotations: bim:Definição "Declara o valor de pé direto de um ambiente. Distância entre as superfícies acabadas do piso e do forro."@pt
+	Annotations: bim:Definición "Declara el valor directo de legitimidad de un entorno. Distancia entre las superficies terminadas del suelo y el techo."@es
+	Annotations: bim:Definition "Declares the direct standing value of an environment. Distance between the finished surfaces of the floor and the ceiling."@en
 	EquivalentTo: bim:é.altura.do.forro
 
 DataProperty: bim:d.dimensionar
@@ -6091,11 +6164,11 @@ DataProperty: bim:pédireito
 	SubPropertyOf: bim:d.dimensionar
 	range: xsd:double
 	Annotations: rdfs:label "Dado para dimensionar:  pédireito  Deve ser formatado como (xsd:double)"@pt
-	Annotations: bim:Chave "d.dimensionar.155"
+	Annotations: bim:Chave "d.dimensionar.158"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de pé direto de um ambiente. Distância entre as superfícies acabadas do piso e do forro."@pt
-	Annotations: bim:Definición "Declara el Valor permanente directo de un entorno. Distancia entre las superficies acabadas del suelo y el techo."@es
-	Annotations: bim:Definition "Declares the Direct standing value of an environment. Distance between the finished surfaces of the floor and the ceiling."@en
+	Annotations: bim:Definição "Declara o valor de pé direto de um ambiente. Distância entre as superfícies acabadas do piso e do forro."@pt
+	Annotations: bim:Definición "Declara el valor directo de legitimidad de un entorno. Distancia entre las superficies terminadas del suelo y el techo."@es
+	Annotations: bim:Definition "Declares the direct standing value of an environment. Distance between the finished surfaces of the floor and the ceiling."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -6106,11 +6179,11 @@ ObjectProperty: bim:é.pn
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.pn"@pt
-	Annotations: bim:Chave "d.dimensionar.156"
+	Annotations: bim:Chave "d.dimensionar.159"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
-	Annotations: bim:Definición "Declara el Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
-	Annotations: bim:Definition "Declares the Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en
+	Annotations: bim:Definição "Declara o valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
+	Annotations: bim:Definición "Declara el valor de Presión Nominal (PN) para los elementos de tuberías. Es un valor entero, normalmente 10, 16 o 25."@es
+	Annotations: bim:Definition "Declares the Nominal Pressure (PN) value for piping elements. It's an integer value, usually 10, 16, or 25."@en
 	Characteristics: Functional
 	EquivalentTo: bim:é.pressão.nominal
 
@@ -6124,11 +6197,11 @@ DataProperty: bim:pn
 	range: xsd:integer
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  pn  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "d.dimensionar.156"
+	Annotations: bim:Chave "d.dimensionar.159"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
-	Annotations: bim:Definición "Declara el Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
-	Annotations: bim:Definition "Declares the Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en
+	Annotations: bim:Definição "Declara o valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
+	Annotations: bim:Definición "Declara el valor de Presión Nominal (PN) para los elementos de tuberías. Es un valor entero, normalmente 10, 16 o 25."@es
+	Annotations: bim:Definition "Declares the Nominal Pressure (PN) value for piping elements. It's an integer value, usually 10, 16, or 25."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -6139,11 +6212,11 @@ ObjectProperty: bim:é.pressão.nominal
 	SubPropertyOf: bim:p.dimensionar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a dimensionar: é.pressão.nominal"@pt
-	Annotations: bim:Chave "d.dimensionar.157"
+	Annotations: bim:Chave "d.dimensionar.160"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
-	Annotations: bim:Definición "Declara el Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
-	Annotations: bim:Definition "Declares the Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en
+	Annotations: bim:Definição "Declara o valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
+	Annotations: bim:Definición "Declara el valor de Presión Nominal (PN) para los elementos de tuberías. Es un valor entero, normalmente 10, 16 o 25."@es
+	Annotations: bim:Definition "Declares the Nominal Pressure (PN) value for piping elements. It's an integer value, usually 10, 16, or 25."@en
 	Characteristics: Functional
 	EquivalentTo: bim:é.pn
 
@@ -6157,11 +6230,11 @@ DataProperty: bim:pressão.nominal
 	range: xsd:integer
 	Characteristics: Functional
 	Annotations: rdfs:label "Dado para dimensionar:  pressão.nominal  Deve ser formatado como (xsd:integer)"@pt
-	Annotations: bim:Chave "d.dimensionar.157"
+	Annotations: bim:Chave "d.dimensionar.160"
 	Annotations: bim:Ação "Ação de dimensionar"@pt
-	Annotations: bim:Definição "Declara o Valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
-	Annotations: bim:Definición "Declara el Valor de Presión Nominal (PN) para elementos de tubería. Es un valor entero, normalmente 10, 16 o 25."@es
-	Annotations: bim:Definition "Declares the Nominal Pressure Value (PN) for piping elements. It's an integer value, usually 10, 16, or 25."@en
+	Annotations: bim:Definição "Declara o valor de Pressão Nominal (PN) para elementos de tubulação. É um valor inteiro, normalmente 10, 16 ou 25."@pt
+	Annotations: bim:Definición "Declara el valor de Presión Nominal (PN) para los elementos de tuberías. Es un valor entero, normalmente 10, 16 o 25."@es
+	Annotations: bim:Definition "Declares the Nominal Pressure (PN) value for piping elements. It's an integer value, usually 10, 16, or 25."@en
 
 ObjectProperty: bim:p.direcionar
 	SubPropertyOf: bim:BIMProp
@@ -27725,6 +27798,36 @@ ObjectProperty: bim:p.relacionar
 
 
 
+ObjectProperty: bim:é.pertencente.a
+	SubPropertyOf: bim:p.relacionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.pertencente.a"@pt
+	Annotations: bim:Chave "d.relacionar.111"
+	Annotations: bim:Ação "Ação de relacionar"@pt
+	Annotations: bim:Definição "Declara que é um elemento que pertence a um outro."@pt
+	Annotations: bim:Definición "Declara que el elemento pertenece a otro."@es
+	Annotations: bim:Definition "Declares the element belongs to another."@en
+
+DataProperty: bim:d.relacionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:pertencente.a
+	SubPropertyOf: bim:d.relacionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.relacionar.111"
+	Annotations: bim:Ação "Ação de relacionar"@pt
+	Annotations: bim:Definição "Declara que é um elemento que pertence a um outro."@pt
+	Annotations: bim:Definición "Declara que el elemento pertenece a otro."@es
+	Annotations: bim:Definition "Declares the element belongs to another."@en
+
+ObjectProperty: bim:p.relacionar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.usada.em
 	SubPropertyOf: bim:p.relacionar
 	domain: bim:BIM
@@ -29259,36 +29362,6 @@ ObjectProperty: bim:p.taxonomizar
 
 
 
-ObjectProperty: bim:é.aplicada.em
-	SubPropertyOf: bim:p.taxonomizar
-	domain: bim:BIM
-	Annotations: rdfs:label "Propriedade destinada a taxonomizar: é.aplicada.em"@pt
-	Annotations: bim:Chave "d.taxonomizar.106"
-	Annotations: bim:Ação "Ação de taxonomizar"@pt
-	Annotations: bim:Definição "Declara o local de aplicação."@pt
-	Annotations: bim:Definición "Declara el lugar de solicitud."@es
-	Annotations: bim:Definition "Declares the place of application."@en
-
-DataProperty: bim:d.taxonomizar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:aplicada.em
-	SubPropertyOf: bim:d.taxonomizar
-	range: rdfs:Literal  or  xsd:string
-	Annotations: rdfs:label "Dado para taxonomizar:  aplicada.em  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
-	Annotations: bim:Chave "d.taxonomizar.106"
-	Annotations: bim:Ação "Ação de taxonomizar"@pt
-	Annotations: bim:Definição "Declara o local de aplicação."@pt
-	Annotations: bim:Definición "Declara el lugar de solicitud."@es
-	Annotations: bim:Definition "Declares the place of application."@en
-
-ObjectProperty: bim:p.taxonomizar
-	SubPropertyOf: bim:BIMProp
-
-
-
 ObjectProperty: bim:é.capex.alinhado
 	SubPropertyOf: bim:p.taxonomizar
 	domain: bim:BIM
@@ -30261,5 +30334,5 @@ DataProperty: bim:zona.hvac
 
 #################################################################
 ##  Fim da Ontologia Circulacao
-##  Criada em 14/08/2026 7:34:07
+##  Criada em 14/08/2026 9:51:06
 #################################################################
