@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "Link do Esquema: http://www.opengeospatial.org/standards/kml"@pt ;
 	  rdfs:label "Observações: Modelo de informação KML"@pt ;
-	  rdfs:label "DataHora: 21/08/2026 9:58:34"@pt ;
+	  rdfs:label "DataHora: 21/08/2026 11:00:09"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -93,118 +93,84 @@ bim:Fonte3		 rdf:type   owl:AnnotationProperty .
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:Abre.Kml.Arquivo  rdf:type  owl:NamedIndividual , bim:Kml.Arquivo ;
-     bim:marcador    "<Kml>"  .
+bim:I.Kml.Arq  rdf:type  owl:NamedIndividual , bim:Kml.A0.Arquivo ;
+     bim:marcador    "<Kml> </Kml>"  .
 
-bim:Abre.Kml.Documento  rdf:type  owl:NamedIndividual , bim:Kml.Documento ;
-     bim:marcador    "<Document>"  .
+bim:I.Kml.Docu  rdf:type  owl:NamedIndividual , bim:Kml.A1.Documento ;
+     bim:marcador    "<Document> </Document>"  .
 
-bim:Abre.Kml.Pasta  rdf:type  owl:NamedIndividual , bim:Kml.Pasta ;
-     bim:marcador    "<Folder>"  .
+bim:I.Kml.Pasta  rdf:type  owl:NamedIndividual , bim:Kml.A2.Pasta ;
+     bim:marcador    "<Folder> </Folder>"  .
 
-bim:Abre.Kml.Lugar  rdf:type  owl:NamedIndividual , bim:Kml.Lugar ;
-     bim:marcador    "<Placemark>"  .
-
-bim:Fecha.Kml.Arquivo  rdf:type  owl:NamedIndividual , bim:Kml.Arquivo ;
-     bim:marcador    "</Kml>"  .
-
-bim:Fecha.Kml.Documento  rdf:type  owl:NamedIndividual , bim:Kml.Documento ;
-     bim:marcador    "</Document>"  .
-
-bim:Fecha.Kml.Pasta  rdf:type  owl:NamedIndividual , bim:Kml.Pasta ;
-     bim:marcador    "</Folder>"  .
-
-bim:Fecha.Kml.Lugar  rdf:type  owl:NamedIndividual , bim:Kml.Lugar ;
-     bim:marcador    "</Placemark>"  .
+bim:I.Kml.Lugar  rdf:type  owl:NamedIndividual , bim:Kml.Lugar ;
+     bim:marcador    "<Placemark> </Placemark>"  .
 
 bim:ArquivoKML  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N0 ;
-     bim:é.marcador    bim:Abre.Kml.Documento ;
-     bim:marcador    "Documento de teste KLM" ;
-     bim:é.marcador    bim:Fecha.Kml.Documento  .
+     bim:é.marcador    bim:I.Kml.Arq ;
+     bim:marcador    "Arquivo KML de teste de locais"  .
 
-bim:Locais01  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N1 ;
+bim:DocuKML  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N1 ;
+     bim:é.marcador    bim:I.Kml.Docu ;
      bim:é.pertencente.a    bim:ArquivoKML ;
-     bim:é.marcador    bim:Abre.Kml.Pasta ;
-     bim:marcador    "Pasta de locais 1 KML" ;
-     bim:é.marcador    bim:Fecha.Kml.Pasta  .
+     bim:marcador    "Documento KML Lugares.kml"  .
 
-bim:Locais02  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N1 ;
-     bim:é.pertencente.a    bim:ArquivoKML ;
-     bim:é.marcador    bim:Abre.Kml.Pasta ;
-     bim:marcador    "Pasta de locais 2 KML" ;
-     bim:é.marcador    bim:Fecha.Kml.Pasta  .
+bim:Locais.10  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
+     bim:é.marcador    bim:I.Kml.Pasta ;
+     bim:é.pertencente.a    bim:I.Kml.Docu ;
+     bim:marcador    "Pasta de locais definidos 1"  .
 
-bim:Lugar01  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais01 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 01" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Locais.20  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
+     bim:é.marcador    bim:I.Kml.Pasta ;
+     bim:é.pertencente.a    bim:I.Kml.Docu ;
+     bim:marcador    "Pasta de locais definidos 2"  .
 
-bim:Lugar02  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais01 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 02" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.10  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.10 ;
+     bim:marcador    "Lugar 10"  .
 
-bim:Lugar03  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais01 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 03" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.11  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.10 ;
+     bim:marcador    "Lugar 11"  .
 
-bim:Lugar04  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais01 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 04" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.12  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.10 ;
+     bim:marcador    "Lugar 12"  .
 
-bim:Lugar05  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais01 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 05" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.13  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.10 ;
+     bim:marcador    "Lugar 13"  .
 
-bim:Lugar06  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais01 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 06" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.14  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.10 ;
+     bim:marcador    "Lugar 14"  .
 
-bim:Lugar11  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais02 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 11" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.15  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.10 ;
+     bim:marcador    "Lugar 15"  .
 
-bim:Lugar12  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais02 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 12" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.20  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.20 ;
+     bim:marcador    "Lugar 20"  .
 
-bim:Lugar13  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais02 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 13" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.21  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.20 ;
+     bim:marcador    "Lugar 21"  .
 
-bim:Lugar14  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais02 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 14" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.22  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.20 ;
+     bim:marcador    "Lugar 22"  .
 
-bim:Lugar15  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais02 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 15" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.23  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.20 ;
+     bim:marcador    "Lugar 23"  .
 
-bim:Lugar16  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.pertencente.a    bim:Locais02 ;
-     bim:é.marcador    bim:Abre.Kml.Lugar ;
-     bim:marcador    "Lugar 16" ;
-     bim:é.marcador    bim:Fecha.Kml.Lugar  .
+bim:Lugar.24  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.20 ;
+     bim:marcador    "Lugar 24"  .
+
+bim:Lugar.25  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.pertencente.a    bim:Locais.20 ;
+     bim:marcador    "Lugar 25"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -26548,5 +26514,5 @@ bim:zona.hvac   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia kml_2x2
-##  Criada em 21/08/2026 9:58:40
+##  Criada em 21/08/2026 11:00:21
 #################################################################
