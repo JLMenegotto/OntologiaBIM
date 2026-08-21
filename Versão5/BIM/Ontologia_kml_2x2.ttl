@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "Link do Esquema: http://www.opengeospatial.org/standards/kml"@pt ;
 	  rdfs:label "Observações: Modelo de informação KML"@pt ;
-	  rdfs:label "DataHora: 21/08/2026 11:34:58"@pt ;
+	  rdfs:label "DataHora: 21/08/2026 13:17:50"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -1521,15 +1521,15 @@ bim:KML rdf:type  owl:Class  ;
       rdfs:label  "KML"@pt  .
 
 
-bim:Kml.Lugar.Ponto.Coordenadas rdf:type  owl:Class  ;
+bim:Kml.Lugar.Ponto.XYZ rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:KML ;
-      rdfs:label  "Kml.Lugar.Ponto.Coordenadas"@pt ;
+      rdfs:label  "Kml.Lugar.Ponto.XYZ"@pt ;
       bim:Definição   "Elemento de coordenadas em KML. Coordenadas. X, Y, Z separadas por vírgula e coordenadas por espaços <coordinates>x1 , y1 , z1     x2 , y2 , z2     x3 , y3 , z3     x4 , y4 , z4</coordinates>."@pt ;
       bim:Definición  "Elemento de coordenadas en KML. Coordenadas. X, Y, Z separados por comas y coordinados por espacios <coordinates>x1 , y1 , z1 x2 , y2 , z2 x3 , y3 , z3 x4 , y4 , z4</coordinates>."@es ;
       bim:Definition  "Coordinate element in KML. Coordinates. X, Y, Z separated by commas and coordinated by spaces <coordinates>x1 , y1 , z1 x2 , y2 , z2 x3 , y3 , z3 x4 , y4 , z4</coordinates>."@en ;
       bim:Natureza    "Interoperabilidade"@pt ;
       bim:Espécie     "Esquemas"@pt ;
-      bim:Tema        "Kml.Lugar.Ponto.Coordenadas"@pt ;
+      bim:Tema        "Kml.Lugar.Ponto.XYZ"@pt ;
       bim:Disciplina  "Interoperabilidade"@pt ;
       bim:Chave       "Key-Kml-46"@pt  .
 
@@ -2061,84 +2061,126 @@ bim:Marca.Pasta  rdf:type  owl:NamedIndividual , bim:Kml.A2.Pasta ;
 bim:Marca.Lugar  rdf:type  owl:NamedIndividual , bim:Kml.Lugar ;
      bim:marcador    "<Placemark> </Placemark>"  .
 
-bim:Arquivo.KML  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N0 ;
-     bim:é.marcador    bim:Marca.Arq ;
-     bim:marcador    "Arquivo KML de teste de locais"  .
+bim:Marca.Ponto  rdf:type  owl:NamedIndividual , bim:Kml.Lugar.Ponto ;
+     bim:marcador    "<Point> </Point>"  .
 
-bim:Docum.KML  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N1 ;
-     bim:é.marcador    bim:Marca.Docu ;
-     bim:é.dentro.de    bim:Arquivo.KML ;
-     bim:marcador    "Documento KML Lugares.kml"  .
+bim:Marca.Coord  rdf:type  owl:NamedIndividual , bim:Kml.Lugar.Ponto.XYZ ;
+     bim:marcador    "<coordinates> </coordinates>"  .
 
-bim:Pasta_Lugares.10  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.marcador    bim:Marca.Pasta ;
-     bim:é.dentro.de    bim:Docum.KML ;
-     bim:marcador    "Pasta de locais definidos 1"  .
+bim:KML_Arquivo  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N0 ;
+     bim:é.marcado.com    bim:Marca.Arq ;
+     bim:descrição    "Arquivo KML de teste de locais"  .
 
-bim:Pasta_Lugares.20  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
-     bim:é.marcador    bim:Marca.Pasta ;
-     bim:é.dentro.de    bim:Docum.KML ;
-     bim:marcador    "Pasta de locais definidos 2"  .
+bim:KML_Docu  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N1 ;
+     bim:é.dentro.de    bim:KML_Arquivo ;
+     bim:é.marcado.com    bim:Marca.Docu ;
+     bim:descrição    "Documento KML Lugares.kml"  .
 
-bim:Lugar.10  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.10 ;
-     bim:marcador    "Lugar 10"  .
+bim:Locais_10  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
+     bim:é.dentro.de    bim:KML_Docu ;
+     bim:é.marcado.com    bim:Marca.Pasta ;
+     bim:descrição    "Pasta de locais definidos 1"  .
 
-bim:Lugar.11  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.10 ;
-     bim:marcador    "Lugar 11"  .
+bim:Locais_20  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N2 ;
+     bim:é.dentro.de    bim:KML_Docu ;
+     bim:é.marcado.com    bim:Marca.Pasta ;
+     bim:descrição    "Pasta de locais definidos 2"  .
 
-bim:Lugar.12  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.10 ;
-     bim:marcador    "Lugar 12"  .
+bim:Lugar_10  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_10 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 10" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.13  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.10 ;
-     bim:marcador    "Lugar 13"  .
+bim:Lugar_11  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_10 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 11" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.14  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.10 ;
-     bim:marcador    "Lugar 14"  .
+bim:Lugar_12  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_10 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 12" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.15  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.10 ;
-     bim:marcador    "Lugar 15"  .
+bim:Lugar_13  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_10 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 13" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.20  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.20 ;
-     bim:marcador    "Lugar 20"  .
+bim:Lugar_14  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_10 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 14" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.21  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.20 ;
-     bim:marcador    "Lugar 21"  .
+bim:Lugar_15  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_10 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 15" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.22  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.20 ;
-     bim:marcador    "Lugar 22"  .
+bim:Lugar_20  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_20 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 20" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.23  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.20 ;
-     bim:marcador    "Lugar 23"  .
+bim:Lugar_21  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_20 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 21" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.24  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.20 ;
-     bim:marcador    "Lugar 24"  .
+bim:Lugar_22  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_20 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 22" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
-bim:Lugar.25  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
-     bim:é.marcador    bim:Marca.Lugar ;
-     bim:é.dentro.de    bim:Pasta_Lugares.20 ;
-     bim:marcador    "Lugar 25"  .
+bim:Lugar_23  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_20 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 23" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
+
+bim:Lugar_24  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_20 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 24" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
+
+bim:Lugar_25  rdf:type  owl:NamedIndividual , bim:Kml.Elemento.N3 ;
+     bim:é.dentro.de    bim:Locais_20 ;
+     bim:é.marcado.com    bim:Marca.Lugar ;
+     bim:é.marcado.com    bim:Marca.Ponto ;
+     bim:é.marcado.com    bim:Marca.Coord ;
+     bim:descrição    "Local de teste 25" ;
+     bim:marcador    "<coordinates>10,10,0</coordinates>"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -3742,6 +3784,122 @@ bim:uma.vez   rdf:type  owl:DatatypeProperty ;
                     bim:ClasseIfc           "[ IfcWall ]"  .
 
 
+bim:p.atributar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.atributo.valor   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.atributar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a atributar: é.atributo.valor" ;
+                    bim:Chave               "d.atributar.101" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o valor do atributo que qualifica um elemento XML ou KML. Exemplo, atrib = 10."@pt ;
+                    bim:Definición          "Declara el valor del atributo que califica un elemento XML o KML. Por ejemplo, atrib = 10."@es ;bim:Definition          "Declares the value of the attribute that qualifies an XML or KML element. Example, atrib = 10."@en ;
+                    owl:equivalentProperty  bim:é.valor  .
+
+
+bim:d.atributar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:atributo.valor   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.atributar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para atributar:  atributo.valor  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.atributar.101" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o valor do atributo que qualifica um elemento XML ou KML. Exemplo, atrib = 10."@pt ;
+                    bim:Definición          "Declara el valor del atributo que califica un elemento XML o KML. Por ejemplo, atrib = 10."@es ;bim:Definition          "Declares the value of the attribute that qualifies an XML or KML element. Example, atrib = 10."@en  .
+
+
+bim:p.atributar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.parâmetro.tipo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.atributar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a atributar: é.parâmetro.tipo" ;
+                    bim:Chave               "d.atributar.104" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o tipo de um parâmetro ou atributo criado pelo usuário. "@pt ;
+                    bim:Definición          "Declara el tipo de parámetro o atributo creado por el usuario."@es ;bim:Definition          "Declares the type of a user-created parameter or attribute."@en ;
+                    owl:equivalentProperty  bim:é.tipo.de.parâmetro  .
+
+
+bim:d.atributar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:parâmetro.tipo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.atributar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para atributar:  parâmetro.tipo  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.atributar.104" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o tipo de um parâmetro ou atributo criado pelo usuário. "@pt ;
+                    bim:Definición          "Declara el tipo de parámetro o atributo creado por el usuario."@es ;bim:Definition          "Declares the type of a user-created parameter or attribute."@en  .
+
+
+bim:p.atributar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.tipo.de.parâmetro   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.atributar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a atributar: é.tipo.de.parâmetro" ;
+                    bim:Chave               "d.atributar.105" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o Tipo de um parâmetro ou atributo criado pelo usuário. "@pt ;
+                    bim:Definición          "Declara el Tipo de parámetro o atributo creado por el usuario."@es ;bim:Definition          "Declares the Type of a user-created parameter or attribute."@en ;
+                    owl:equivalentProperty  bim:é.parâmetro.tipo  .
+
+
+bim:d.atributar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:tipo.de.parâmetro   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.atributar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para atributar:  tipo.de.parâmetro  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.atributar.105" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o Tipo de um parâmetro ou atributo criado pelo usuário. "@pt ;
+                    bim:Definición          "Declara el Tipo de parámetro o atributo creado por el usuario."@es ;bim:Definition          "Declares the Type of a user-created parameter or attribute."@en  .
+
+
+bim:p.atributar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.valor   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.atributar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a atributar: é.valor" ;
+                    bim:Chave               "d.atributar.106" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o valor atribuído ao parâmetro ou atributo criado pelo usuário. Propriedade Valor inespecífica, pode ser utilizada quando não há uma propriedade de valor específica. "@pt ;
+                    bim:Definición          "Declara el valor asignado al parámetro o atributo creado por el usuario. La propiedad de valor no específico puede usarse cuando no existe una propiedad de valor específico."@es ;bim:Definition          "Declares the value assigned to the parameter or attribute created by the user. Non-specific Value property can be used when there is no specific value property."@en ;
+                    owl:equivalentProperty  bim:é.atributo.valor  .
+
+
+bim:d.atributar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:valor   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.atributar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para atributar:  valor  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.atributar.106" ;
+                    bim:Ação                "Ação de atributar" ;
+                    bim:Definição           "Declara o valor atribuído ao parâmetro ou atributo criado pelo usuário. Propriedade Valor inespecífica, pode ser utilizada quando não há uma propriedade de valor específica. "@pt ;
+                    bim:Definición          "Declara el valor asignado al parámetro o atributo creado por el usuario. La propiedad de valor no específico puede usarse cuando no existe una propiedad de valor específico."@es ;bim:Definition          "Declares the value assigned to the parameter or attribute created by the user. Non-specific Value property can be used when there is no specific value property."@en  .
+
+
 bim:p.audibilizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -4067,6 +4225,34 @@ bim:companhia   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara o nome da Companhia que administra uma determinada empresa. "@pt ;
                     bim:Definición          "Declara el nombre de la empresa que gestiona una empresa concreta."@es ;bim:Definition          "Declares the name of the Company that manages a particular company."@en  .
+
+
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.descrição   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.descrição" ;
+                    bim:Chave               "d.catalogar.110" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta. "@pt ;
+                    bim:Definición          "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:descrição   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar:  descrição  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.catalogar.110" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara a descrição do objeto que pode ser uma explicação sucinta. "@pt ;
+                    bim:Definición          "Declara la descripción del objeto, lo que puede ser una explicación concisa."@es ;bim:Definition          "Declares the description of the object which can be a succinct explanation."@en  .
 
 
 bim:p.catalogar   rdf:type  owl:ObjectProperty ;
@@ -5524,34 +5710,6 @@ bim:data.marco   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de datar" ;
                     bim:Definição           "Declara a data de um evento agendado para uma troca de informações predefinidas. Conceito de NBR 19650-2. "@pt ;
                     bim:Definición          "Declara la fecha de un evento programado para un intercambio de informaciones predefinidas. Concepto de la NBR 19650-2."@es ;bim:Definition          "Declares the date of an event scheduled for a predefined information exchange. Concept from NBR 19650-2."@en  .
-
-
-bim:p.digitalizar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
-bim:é.marcador   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.digitalizar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:label              "Propriedade destinada a digitalizar: é.marcador" ;
-                    bim:Chave               "d.digitalizar.138" ;
-                    bim:Ação                "Ação de digitalizar" ;
-                    bim:Definição           "Declara um marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@pt ;
-                    bim:Definición          "Declara un marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@es ;bim:Definition          "Declares an xml tag element marker <is.marker>marker</is.marker>."@en  .
-
-
-bim:d.digitalizar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:marcador   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.digitalizar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para digitalizar:  marcador  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
-                    bim:Chave               "d.digitalizar.138" ;
-                    bim:Ação                "Ação de digitalizar" ;
-                    bim:Definição           "Declara um marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@pt ;
-                    bim:Definición          "Declara un marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@es ;bim:Definition          "Declares an xml tag element marker <is.marker>marker</is.marker>."@en  .
 
 
 bim:p.dimensionar   rdf:type  owl:ObjectProperty ;
@@ -12346,6 +12504,92 @@ bim:matriz.de.riscos   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de mapear" ;
                     bim:Definição           "Declara que se trata de uma matriz de riscos. "@pt ;
                     bim:Definición          "Declara que es un matriz de riesgos."@es ;bim:Definition          "Declares that it is a risk matrix."@en  .
+
+
+bim:p.marcar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.marcada.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.marcar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a marcar: é.marcada.com" ;
+                    bim:Chave               "d.marcar.100" ;
+                    bim:Ação                "Ação de marcar" ;
+                    bim:Definição           "Declara que a peça está marcada com algum elemento XML ou KML. "@pt ;
+                    bim:Definición          "Declara que la parte está etiquetada con algún elemento XML o KML."@es ;bim:Definition          "Declares that the part is tagged with some XML or KML element."@en ;
+                    owl:equivalentProperty  bim:é.marcado.com  .
+
+
+bim:d.marcar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:marcada.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.marcar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para marcar:  marcada.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.marcar.100" ;
+                    bim:Ação                "Ação de marcar" ;
+                    bim:Definição           "Declara que a peça está marcada com algum elemento XML ou KML. "@pt ;
+                    bim:Definición          "Declara que la parte está etiquetada con algún elemento XML o KML."@es ;bim:Definition          "Declares that the part is tagged with some XML or KML element."@en  .
+
+
+bim:p.marcar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.marcado.com   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.marcar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a marcar: é.marcado.com" ;
+                    bim:Chave               "d.marcar.101" ;
+                    bim:Ação                "Ação de marcar" ;
+                    bim:Definição           "Declara que o objeto está marcado com algum elemento XML ou KML. "@pt ;
+                    bim:Definición          "Declara que el objeto está marcado con algún elemento XML o KML."@es ;bim:Definition          "Declares that the object is marked with some XML or KML element."@en ;
+                    owl:equivalentProperty  bim:é.marcada.com  .
+
+
+bim:d.marcar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:marcado.com   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.marcar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para marcar:  marcado.com  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.marcar.101" ;
+                    bim:Ação                "Ação de marcar" ;
+                    bim:Definição           "Declara que o objeto está marcado com algum elemento XML ou KML. "@pt ;
+                    bim:Definición          "Declara que el objeto está marcado con algún elemento XML o KML."@es ;bim:Definition          "Declares that the object is marked with some XML or KML element."@en  .
+
+
+bim:p.marcar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.marcador   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.marcar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a marcar: é.marcador" ;
+                    bim:Chave               "d.marcar.102" ;
+                    bim:Ação                "Ação de marcar" ;
+                    bim:Definição           "Declara um marcador de elemento Tag de xml <é.marcador>elemento</é.marcador>."@pt ;
+                    bim:Definición          "Declara una etiqueta element marker xml <is.marker>element</is.marker>."@es ;bim:Definition          "Declares an element marker xml tag <is.marker>element</is.marker>."@en  .
+
+
+bim:d.marcar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:marcador   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.marcar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literal  xsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para marcar:  marcador  Deve ser formatado como (rdfs:Literal  xsd:string)) ] " ;
+                    bim:Chave               "d.marcar.102" ;
+                    bim:Ação                "Ação de marcar" ;
+                    bim:Definição           "Declara um marcador de elemento Tag de xml <é.marcador>elemento</é.marcador>."@pt ;
+                    bim:Definición          "Declara una etiqueta element marker xml <is.marker>element</is.marker>."@es ;bim:Definition          "Declares an element marker xml tag <is.marker>element</is.marker>."@en  .
 
 
 bim:p.medir   rdf:type  owl:ObjectProperty ;
@@ -28484,5 +28728,5 @@ bim:zona.hvac   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia kml_2x2
-##  Criada em 21/08/2026 11:35:09
+##  Criada em 21/08/2026 13:18:01
 #################################################################
