@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Elementos_KML>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "Link do Esquema: http://www.opengeospatial.org/standards/kml"@pt
   Annotations: rdfs:label "Observações: Modelo de informação KML"@pt
-  Annotations: rdfs:label "DataHora: 21/08/2026 11:12:06"@pt
+  Annotations: rdfs:label "DataHora: 21/08/2026 11:14:51"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -905,8 +905,104 @@ Class: bim:Kml.Tempo.Registra
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
-Individual: bim:null
-	Types: bim:null
+Individual: bim:I.Kml.Arq
+	Types: bim:Kml.A0.Arquivo
+	Facts: bim:marcador  "<Kml> </Kml>"
+
+Individual: bim:I.Kml.Docu
+	Types: bim:Kml.A1.Documento
+	Facts: bim:marcador  "<Document> </Document>"
+
+Individual: bim:I.Kml.Pasta
+	Types: bim:Kml.A2.Pasta
+	Facts: bim:marcador  "<Folder> </Folder>"
+
+Individual: bim:I.Kml.Lugar
+	Types: bim:Kml.Lugar
+	Facts: bim:marcador  "<Placemark> </Placemark>"
+
+Individual: bim:ArquivoKML
+	Types: bim:Kml.Elemento.N0
+	Facts: bim:é.marcador  bim:I.Kml.Arq
+	Facts: bim:marcador  "Arquivo KML de teste de locais"
+
+Individual: bim:DocuKML
+	Types: bim:Kml.Elemento.N1
+	Facts: bim:é.marcador  bim:I.Kml.Docu
+	Facts: bim:é.pertencente.a  bim:ArquivoKML
+	Facts: bim:marcador  "Documento KML Lugares.kml"
+
+Individual: bim:Locais.10
+	Types: bim:Kml.Elemento.N2
+	Facts: bim:é.marcador  bim:I.Kml.Pasta
+	Facts: bim:é.pertencente.a  bim:I.Kml.Docu
+	Facts: bim:marcador  "Pasta de locais definidos 1"
+
+Individual: bim:Locais.20
+	Types: bim:Kml.Elemento.N2
+	Facts: bim:é.marcador  bim:I.Kml.Pasta
+	Facts: bim:é.pertencente.a  bim:I.Kml.Docu
+	Facts: bim:marcador  "Pasta de locais definidos 2"
+
+Individual: bim:Lugar.10
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.10
+	Facts: bim:marcador  "Lugar 10"
+
+Individual: bim:Lugar.11
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.10
+	Facts: bim:marcador  "Lugar 11"
+
+Individual: bim:Lugar.12
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.10
+	Facts: bim:marcador  "Lugar 12"
+
+Individual: bim:Lugar.13
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.10
+	Facts: bim:marcador  "Lugar 13"
+
+Individual: bim:Lugar.14
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.10
+	Facts: bim:marcador  "Lugar 14"
+
+Individual: bim:Lugar.15
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.10
+	Facts: bim:marcador  "Lugar 15"
+
+Individual: bim:Lugar.20
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.20
+	Facts: bim:marcador  "Lugar 20"
+
+Individual: bim:Lugar.21
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.20
+	Facts: bim:marcador  "Lugar 21"
+
+Individual: bim:Lugar.22
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.20
+	Facts: bim:marcador  "Lugar 22"
+
+Individual: bim:Lugar.23
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.20
+	Facts: bim:marcador  "Lugar 23"
+
+Individual: bim:Lugar.24
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.20
+	Facts: bim:marcador  "Lugar 24"
+
+Individual: bim:Lugar.25
+	Types: bim:Kml.Elemento.N3
+	Facts: bim:é.pertencente.a  bim:Locais.20
+	Facts: bim:marcador  "Lugar 25"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -4554,6 +4650,36 @@ DataProperty: bim:data.marco
 	Annotations: bim:Definição "Declara a data de um evento agendado para uma troca de informações predefinidas. Conceito de NBR 19650-2."@pt
 	Annotations: bim:Definición "Declara la fecha de un evento programado para un intercambio de informaciones predefinidas. Concepto de la NBR 19650-2."@es
 	Annotations: bim:Definition "Declares the date of an event scheduled for a predefined information exchange. Concept from NBR 19650-2."@en
+
+ObjectProperty: bim:p.digitalizar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.marcador
+	SubPropertyOf: bim:p.digitalizar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a digitalizar: é.marcador"@pt
+	Annotations: bim:Chave "d.digitalizar.138"
+	Annotations: bim:Ação "Ação de digitalizar"@pt
+	Annotations: bim:Definição "Declara um marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@pt
+	Annotations: bim:Definición "Declara un marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@es
+	Annotations: bim:Definition "Declares an xml tag element marker <is.marker>marker</is.marker>."@en
+
+DataProperty: bim:d.digitalizar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:marcador
+	SubPropertyOf: bim:d.digitalizar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para digitalizar:  marcador  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.digitalizar.138"
+	Annotations: bim:Ação "Ação de digitalizar"@pt
+	Annotations: bim:Definição "Declara um marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@pt
+	Annotations: bim:Definición "Declara un marcador de elemento Tag de xml <é.marcador>marcador</é.marcador>."@es
+	Annotations: bim:Definition "Declares an xml tag element marker <is.marker>marker</is.marker>."@en
 
 ObjectProperty: bim:p.dimensionar
 	SubPropertyOf: bim:BIMProp
@@ -26614,6 +26740,36 @@ ObjectProperty: bim:p.relacionar
 
 
 
+ObjectProperty: bim:é.pertencente.a
+	SubPropertyOf: bim:p.relacionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a relacionar: é.pertencente.a"@pt
+	Annotations: bim:Chave "d.relacionar.111"
+	Annotations: bim:Ação "Ação de relacionar"@pt
+	Annotations: bim:Definição "Declara que é um elemento que pertence a um outro."@pt
+	Annotations: bim:Definición "Declara que el elemento pertenece a otro."@es
+	Annotations: bim:Definition "Declares the element belongs to another."@en
+
+DataProperty: bim:d.relacionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:pertencente.a
+	SubPropertyOf: bim:d.relacionar
+	range: rdfs:Literal  or  xsd:string
+	Annotations: rdfs:label "Dado para relacionar:  pertencente.a  Deve ser formatado como (rdfs:Literal  or  xsd:string)"@pt
+	Annotations: bim:Chave "d.relacionar.111"
+	Annotations: bim:Ação "Ação de relacionar"@pt
+	Annotations: bim:Definição "Declara que é um elemento que pertence a um outro."@pt
+	Annotations: bim:Definición "Declara que el elemento pertenece a otro."@es
+	Annotations: bim:Definition "Declares the element belongs to another."@en
+
+ObjectProperty: bim:p.relacionar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.usada.em
 	SubPropertyOf: bim:p.relacionar
 	domain: bim:BIM
@@ -29120,5 +29276,5 @@ DataProperty: bim:zona.hvac
 
 #################################################################
 ##  Fim da Ontologia kml_2x2
-##  Criada em 21/08/2026 11:12:17
+##  Criada em 21/08/2026 11:15:02
 #################################################################
