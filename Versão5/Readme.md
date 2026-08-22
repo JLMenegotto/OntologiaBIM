@@ -22,9 +22,10 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
 <p align="justify">Foram separados os seguintes domínios ontológicos que estão continuamente sendo revisados.<br></b></p>
 
  * [**Pasta ABNT**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ABNT)		Ontologias em OWL e TTL com Conceitos e Fatos do sistema de classificação da construção **NBR 15.965**.
+ * [**Pasta ARQ**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/ARQ)		Ontologias em OWL e TTL com Conceitos e Fatos do **projeto de arquitetura**.
  * [**Pasta BIM**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/BIM)		Ontologias em OWL e TTL com Conceitos e Fatos das Classes IFC.
  * [**Pasta BRASIL**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/BRASIL)		Ontologias em OWL e TTL com Conceitos e Fatos da organização espacial do Brasil, com os estados de Rio de Janeiro, com alguns exemplos para Minas Gerias e São Paulo. Ontologias para o Sinapi e para a Taxonomia Sustentável Brasileira.
- * [**Pasta PRO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/PRO)		Ontologias em OWL e TTL com Conceitos e Fatos de diversos domínios projetuais (Arquitetura, Circulações, Drones, Infraestrutura, Estrutura Metálica, Paisagismo, Cromática, Crono, etc).
+ * [**Pasta PRO**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/PRO)		Ontologias em OWL e TTL com Conceitos e Fatos de diversos domínios gerais de projeto (Fabricantes, Cromática, Crono, etc).
  * [**Pasta SIS**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/SIS)		Ontologias em OWL e TTL com Conceitos e Fatos do domínio de Sistemas Prediais (Avac, Gases, Hidrossanitário, Incêndio, Luminotécnica, Força motriz, Telecom, Elétrica, Tubulações).
  * [**Pasta SUS**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/SUS)		Ontologias em OWL e TTL com Conceitos e Fatos do Caderno SomaSUS e da RDC 50 do Sistema Único de Saúde do Brasil.  
  * [**Pasta UFRJ**](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5/UFRJ)		Ontologias em OWL e TTL com Conceitos e Fatos de Ambientes e Codificação do Modelo BIM do Centro de Tecnologia.   
