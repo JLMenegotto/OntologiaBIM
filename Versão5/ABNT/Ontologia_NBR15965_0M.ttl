@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 23/08/2026 12:43:06"@pt ;
+	  rdfs:label "DataHora: 23/08/2026 12:51:19"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -30970,6 +30970,7 @@ bim:é.rvt.categoria   rdf:type  owl:ObjectProperty ;
                     bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Seleciona uma categoria de Revit do modelo."@pt ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Selecciona una categoría Revit del modelo."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Selects a Revit category from the model."@en ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
+                    bim:Método              "[ CatBuscada   FilteredElementCollector(doc).OfCategory((BuiltInCategory)Enum.Parse(typeof(BuiltInCategory))) ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
                     [ GlobalId : OwnerHistory : Name ]
                     owl:equivalentProperty  bim:é.rvt.instância  .
@@ -30988,6 +30989,7 @@ bim:rvt.categoria   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Seleciona uma categoria de Revit do modelo."@pt ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Selecciona una categoría Revit del modelo."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Selects a Revit category from the model."@en ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
+                    bim:Método              "[ CatBuscada   FilteredElementCollector(doc).OfCategory((BuiltInCategory)Enum.Parse(typeof(BuiltInCategory))) ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
                     [ GlobalId : OwnerHistory : Name  .
 
@@ -31005,6 +31007,7 @@ bim:é.rvt.elemento   rdf:type  owl:ObjectProperty ;
                     bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Seleciona um elemento do modelo."@pt ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Selecciona un elemento del modelo."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Selects an element from the model."@en ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
+                    bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
                     [ GlobalId : OwnerHistory : Name ]
                     owl:equivalentProperty  bim:é.rvt.instância  .
@@ -31023,6 +31026,7 @@ bim:rvt.elemento   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Seleciona um elemento do modelo."@pt ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Selecciona un elemento del modelo."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Selects an element from the model."@en ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
+                    bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
                     [ GlobalId : OwnerHistory : Name  .
 
@@ -31040,6 +31044,7 @@ bim:é.rvt.instância   rdf:type  owl:ObjectProperty ;
                     bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Seleciona uma instância do modelo."@pt ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Selecciona una instancia del modelo."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Selects an instance of the model."@en ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
+                    bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
                     [ GlobalId : OwnerHistory : Name ]
                     owl:equivalentProperty  bim:é.rvt.elemento  .
@@ -31058,6 +31063,7 @@ bim:rvt.instância   rdf:type  owl:DatatypeProperty ;
                     bim:Definição           "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. Seleciona uma instância do modelo."@pt ;
                     bim:Definición          "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Selecciona una instancia del modelo."@es ;bim:Definition          "Declares the Revit ID or IFC GlobalId or unique object identifier. Selects an instance of the model."@en ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
+                    bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
                     [ GlobalId : OwnerHistory : Name  .
 
@@ -32290,5 +32296,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia NBR15965_0M
-##  Criada em 23/08/2026 12:43:08
+##  Criada em 23/08/2026 12:51:21
 #################################################################
