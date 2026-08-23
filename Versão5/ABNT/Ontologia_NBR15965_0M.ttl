@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 23/08/2026 14:34:05"@pt ;
+	  rdfs:label "DataHora: 23/08/2026 16:52:40"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -1447,66 +1447,36 @@ bim:Projeto rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:BIM  .
 
 
-bim:De.Materialidade rdf:type  owl:Class  ;
+bim:De.API rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Projeto ;
-      rdfs:label  "De Materialidade"@pt  .
+      rdfs:label  "De API"@pt  .
 
 
-bim:Catálogos.de.Materiais rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:De.Materialidade ;
-      rdfs:label  "Catálogos de Materiais"@pt  .
+bim:Métodos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.API ;
+      rdfs:label  "Métodos"@pt  .
 
 
-bim:Materiais.Catalogados rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Catálogos.de.Materiais ;
-      rdfs:label  "Materiais Catalogados"@pt  .
+bim:Macros rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Métodos ;
+      rdfs:label  "Macros"@pt  .
 
 
-bim:Material.Catalogado rdf:type  owl:Class  ;
-      rdfs:subClassOf  bim:Materiais.Catalogados ;
-      rdfs:label  "Material Catalogado"@pt ;
-      bim:Definição   "Material Catalogado"@pt ;
-      bim:Definición  "Material catalogado"@es ;
-      bim:Definition  "Cataloged Material"@en ;
-      bim:Natureza    "De Materialidade"@pt ;
-      bim:Espécie     "Catálogos de Materiais"@pt ;
-      bim:Tema        "Materiais Catalogados"@pt ;
+bim:API.Revit rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Macros ;
+      rdfs:label  "API Revit"@pt ;
+      bim:Definição   "Aplicação Revit"@pt ;
+      bim:Definición  "Aplicativo Revit"@es ;
+      bim:Definition  "Revit Aplication"@en ;
+      bim:Natureza    "De API"@pt ;
+      bim:Espécie     "Métodos"@pt ;
+      bim:Tema        "Macros"@pt ;
       bim:Disciplina  "Interdisciplinar"@pt ;
-      bim:Chave       "Key-ABNT-38"@pt ;
-      bim:CatRevit    "[ OST_Materials : OST_MaterialTags ]"   ;
-      bim:ParRevit    "[ - ]"   ;
-      bim:AtributoIfc "[ - ]"   ;
-      bim:ClasseIfc   "[ IfcMaterial : IfcText : IfcLabel : IfcMaterialRelationship ]"   ;
-      bim:ABNT        "[ 0M ]"    .
+      bim:Chave       "Key-ABNT-38"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
-
-bim:API_Ambiente  rdf:type  owl:NamedIndividual , bim:Projeto ;
-     bim:tema    "Materiais" ;
-     bim:subtema    "Elementos Ambientes" ;
-     bim:descrição    "Individuo indicador de método API para selecionar ambientes do projeto"  .
-
-bim:API_Andar  rdf:type  owl:NamedIndividual , bim:Projeto ;
-     bim:tema    "Materiais" ;
-     bim:subtema    "Elementos Andares" ;
-     bim:descrição    "Individuo indicador de método API para selecionar andares do projeto"  .
-
-bim:API_Instância  rdf:type  owl:NamedIndividual , bim:Projeto ;
-     bim:tema    "Materiais" ;
-     bim:subtema    "Elementos Instanciados" ;
-     bim:descrição    "Individuo indicador de método API para selecionar instâncias do projeto"  .
-
-bim:API_Simbolo  rdf:type  owl:NamedIndividual , bim:Projeto ;
-     bim:tema    "Materiais" ;
-     bim:subtema    "Elementos Tipificados" ;
-     bim:descrição    "Individuo indicador de método API para selecionar elementos tipificados do projeto"  .
-
-bim:API_Material  rdf:type  owl:NamedIndividual , bim:Projeto ;
-     bim:tema    "Materiais" ;
-     bim:subtema    "Elementos Materiais" ;
-     bim:descrição    "Individuo indicador de método API para selecionar materiais do projeto"  .
 
 bim:NBR15965  rdf:type  owl:NamedIndividual , bim:Normativos ;
      bim:norma    "NBR 15.965" ;
@@ -1528,7 +1498,12 @@ bim:0M  rdf:type  owl:NamedIndividual , bim:NBR.0M ;
      bim:parte    "Parte 2" ;
      bim:tema    "Normas" ;
      bim:subtema    "Materiais" ;
-     bim:descrição    "Materiais - Derivado de Tabela 41 da Omniclass"  .
+     bim:descrição    "Materiais - Derivado de Tabela 41 da Omniclass" ;
+     bim:é.rvt.ambiente    bim:API_Ambiente ;
+     bim:é.rvt.andar    bim:API_Andar ;
+     bim:é.rvt.elemento    bim:API_Instância ;
+     bim:é.rvt.tipo    bim:API_Simbolo ;
+     bim:é.rvt.material    bim:API_Material  .
 
 bim:0M.00  rdf:type  owl:NamedIndividual , bim:NBR.0M ;
      bim:é.pertencente.a    bim:0M.Parte2 ;
@@ -1536,7 +1511,12 @@ bim:0M.00  rdf:type  owl:NamedIndividual , bim:NBR.0M ;
      bim:parte    "Parte 2" ;
      bim:tema    "Materiais" ;
      bim:subtema    "Elementos Materiais" ;
-     bim:descrição    "Materiais"  .
+     bim:descrição    "Materiais" ;
+     bim:é.rvt.ambiente    bim:API_Ambiente ;
+     bim:é.rvt.andar    bim:API_Andar ;
+     bim:é.rvt.elemento    bim:API_Instância ;
+     bim:é.rvt.tipo    bim:API_Simbolo ;
+     bim:é.rvt.material    bim:API_Material  .
 
 bim:0M.10  rdf:type  owl:NamedIndividual , bim:NBR.M.Químico ;
      bim:é.pertencente.a    bim:0M.Parte2 ;
@@ -6535,6 +6515,31 @@ bim:0M.40.40.01.02  rdf:type  owl:NamedIndividual , bim:NBR.M.Gás ;
      bim:é.rvt.elemento    bim:API_Instância ;
      bim:é.rvt.tipo    bim:API_Simbolo ;
      bim:é.rvt.material    bim:API_Material  .
+
+bim:API_Ambiente  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Ambientes" ;
+     bim:descrição    "Individuo indicador de método API para selecionar ambientes do projeto"  .
+
+bim:API_Andar  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Andares" ;
+     bim:descrição    "Individuo indicador de método API para selecionar andares do projeto"  .
+
+bim:API_Instância  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Instanciados" ;
+     bim:descrição    "Individuo indicador de método API para selecionar instâncias do projeto"  .
+
+bim:API_Simbolo  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Tipificados" ;
+     bim:descrição    "Individuo indicador de método API para selecionar elementos tipificados do projeto"  .
+
+bim:API_Material  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Materiais" ;
+     bim:descrição    "Individuo indicador de método API para selecionar materiais do projeto"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -33978,5 +33983,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia NBR15965_0M
-##  Criada em 23/08/2026 14:34:07
+##  Criada em 23/08/2026 16:52:42
 #################################################################
