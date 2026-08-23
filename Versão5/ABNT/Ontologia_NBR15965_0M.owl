@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_2_0M>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 23/08/2026 13:08:07"@pt
+  Annotations: rdfs:label "DataHora: 23/08/2026 13:16:44"@pt
   Annotations: rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt
   Annotations: rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es
   Annotations: rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en
@@ -783,13 +783,51 @@ Class: bim:NBR.M.Gás
 	Annotations: bim:Código.ABNT "[ 0M.40 ]"
 	SubClassOf: bim:NBR.Materiais
 
+Class: bim:Projeto
+	SubClassOf: bim:BIM
+
+
+Class: bim:De.Materialidade
+	Annotations: rdfs:label "De Materialidade"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Catálogos.de.Materiais
+	Annotations: rdfs:label "Catálogos de Materiais"@pt
+	SubClassOf: bim:De.Materialidade
+
+
+Class: bim:Materiais.Catalogados
+	Annotations: rdfs:label "Materiais Catalogados"@pt
+	SubClassOf: bim:Catálogos.de.Materiais
+
+
+Class: bim:Material.Catalogado
+	Annotations: rdfs:label "Material Catalogado"@pt
+	Annotations: bim:Definição "Material Catalogado"@pt
+	Annotations: bim:Definición "Material catalogado"@es
+	Annotations: bim:Definition "Cataloged Material"@en
+	Annotations: bim:Natureza "De Materialidade"@pt
+	Annotations: bim:Espécie "Catálogos de Materiais"@pt
+	Annotations: bim:Tema "Materiais Catalogados"@pt
+	Annotations: bim:Disciplina "Interdisciplinar"@pt
+	Annotations: bim:Chave "Key-MAT-38"
+	Annotations: bim:CatRevit "[ OST_Materials : OST_MaterialTags ]"
+	Annotations: bim:ParRevit "[ - ]"
+	Annotations: bim:ClasseIfc "[ IfcMaterial : IfcText : IfcLabel : IfcMaterialRelationship ]"
+	Annotations: bim:AtributoIfc "[ - ]"
+	Annotations: bim:Código.ABNT "[ 0M ]"
+	SubClassOf: bim:Materiais.Catalogados
+
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
-Individual: bim:Material_Abnt
-	Types: bim:NBR.Materiais
-	Facts: bim:método.revit  "MatBuscado : FilteredElementCollector(doc).OfClass(typeof(Material)).Cast<Material>( ).FirstOrDefault( e => e.Name == 'MatBuscado') ]"
+Individual: bim:API_Mat
+	Types: bim:Projeto
+	Facts: bim:tema  "Materiais"
+	Facts: bim:subtema  "Elementos Materiais"
+	Facts: bim:descrição  "Individuo indicador de método API para selecionar materiais do projeto"
 
 Individual: bim:NBR15965
 	Types: bim:Normativos
@@ -837,7 +875,7 @@ Individual: bim:0M.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10
 	Types: bim:NBR.M.Químico.Sólido
@@ -851,7 +889,7 @@ Individual: bim:0M.10.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.01
 	Types: bim:NBR.M.Químico.Sólido
@@ -865,7 +903,7 @@ Individual: bim:0M.10.10.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.03
 	Types: bim:NBR.M.Químico.Sólido
@@ -879,7 +917,7 @@ Individual: bim:0M.10.10.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.05
 	Types: bim:NBR.M.Químico.Sólido
@@ -893,7 +931,7 @@ Individual: bim:0M.10.10.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.07
 	Types: bim:NBR.M.Químico.Sólido
@@ -907,7 +945,7 @@ Individual: bim:0M.10.10.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.09
 	Types: bim:NBR.M.Químico.Sólido
@@ -921,7 +959,7 @@ Individual: bim:0M.10.10.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.11
 	Types: bim:NBR.M.Químico.Sólido
@@ -935,7 +973,7 @@ Individual: bim:0M.10.10.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.13
 	Types: bim:NBR.M.Químico.Sólido
@@ -949,7 +987,7 @@ Individual: bim:0M.10.10.13
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.15
 	Types: bim:NBR.M.Químico.Sólido
@@ -963,7 +1001,7 @@ Individual: bim:0M.10.10.15
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.17
 	Types: bim:NBR.M.Químico.Sólido
@@ -977,7 +1015,7 @@ Individual: bim:0M.10.10.17
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.19
 	Types: bim:NBR.M.Químico.Sólido
@@ -991,7 +1029,7 @@ Individual: bim:0M.10.10.19
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.21
 	Types: bim:NBR.M.Químico.Sólido
@@ -1005,7 +1043,7 @@ Individual: bim:0M.10.10.21
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.23
 	Types: bim:NBR.M.Químico.Sólido
@@ -1019,7 +1057,7 @@ Individual: bim:0M.10.10.23
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.25
 	Types: bim:NBR.M.Químico.Sólido
@@ -1033,7 +1071,7 @@ Individual: bim:0M.10.10.25
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.27
 	Types: bim:NBR.M.Químico.Sólido
@@ -1047,7 +1085,7 @@ Individual: bim:0M.10.10.27
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.29
 	Types: bim:NBR.M.Químico.Sólido
@@ -1061,7 +1099,7 @@ Individual: bim:0M.10.10.29
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.31
 	Types: bim:NBR.M.Químico.Sólido
@@ -1075,7 +1113,7 @@ Individual: bim:0M.10.10.31
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.33
 	Types: bim:NBR.M.Químico.Sólido
@@ -1089,7 +1127,7 @@ Individual: bim:0M.10.10.33
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.35
 	Types: bim:NBR.M.Químico.Sólido
@@ -1103,7 +1141,7 @@ Individual: bim:0M.10.10.35
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.37
 	Types: bim:NBR.M.Químico.Sólido
@@ -1117,7 +1155,7 @@ Individual: bim:0M.10.10.37
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.39
 	Types: bim:NBR.M.Químico.Sólido
@@ -1131,7 +1169,7 @@ Individual: bim:0M.10.10.39
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.41
 	Types: bim:NBR.M.Químico.Sólido
@@ -1145,7 +1183,7 @@ Individual: bim:0M.10.10.41
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.43
 	Types: bim:NBR.M.Químico.Sólido
@@ -1159,7 +1197,7 @@ Individual: bim:0M.10.10.43
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.45
 	Types: bim:NBR.M.Químico.Sólido
@@ -1173,7 +1211,7 @@ Individual: bim:0M.10.10.45
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.47
 	Types: bim:NBR.M.Químico.Sólido
@@ -1187,7 +1225,7 @@ Individual: bim:0M.10.10.47
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.49
 	Types: bim:NBR.M.Químico.Sólido
@@ -1201,7 +1239,7 @@ Individual: bim:0M.10.10.49
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.51
 	Types: bim:NBR.M.Químico.Sólido
@@ -1215,7 +1253,7 @@ Individual: bim:0M.10.10.51
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.53
 	Types: bim:NBR.M.Químico.Sólido
@@ -1229,7 +1267,7 @@ Individual: bim:0M.10.10.53
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.55
 	Types: bim:NBR.M.Químico.Sólido
@@ -1243,7 +1281,7 @@ Individual: bim:0M.10.10.55
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.10.57
 	Types: bim:NBR.M.Químico.Sólido
@@ -1257,7 +1295,7 @@ Individual: bim:0M.10.10.57
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.30
 	Types: bim:NBR.M.Químico.Líquido
@@ -1271,7 +1309,7 @@ Individual: bim:0M.10.30
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.30.01
 	Types: bim:NBR.M.Químico.Líquido
@@ -1285,7 +1323,7 @@ Individual: bim:0M.10.30.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1299,7 +1337,7 @@ Individual: bim:0M.10.40
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.01
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1313,7 +1351,7 @@ Individual: bim:0M.10.40.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.03
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1327,7 +1365,7 @@ Individual: bim:0M.10.40.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.05
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1341,7 +1379,7 @@ Individual: bim:0M.10.40.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.07
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1355,7 +1393,7 @@ Individual: bim:0M.10.40.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.09
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1369,7 +1407,7 @@ Individual: bim:0M.10.40.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.11
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1383,7 +1421,7 @@ Individual: bim:0M.10.40.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.13
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1397,7 +1435,7 @@ Individual: bim:0M.10.40.13
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.15
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1411,7 +1449,7 @@ Individual: bim:0M.10.40.15
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.17
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1425,7 +1463,7 @@ Individual: bim:0M.10.40.17
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.19
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1439,7 +1477,7 @@ Individual: bim:0M.10.40.19
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.10.40.21
 	Types: bim:NBR.M.Químico.Gasoso
@@ -1453,7 +1491,7 @@ Individual: bim:0M.10.40.21
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20
 	Types: bim:NBR.M.Composto.Sólido
@@ -1467,7 +1505,7 @@ Individual: bim:0M.20
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10
 	Types: bim:NBR.M.Composto.Sólido
@@ -1481,7 +1519,7 @@ Individual: bim:0M.20.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01
 	Types: bim:NBR.M.Composto.Rocha
@@ -1495,7 +1533,7 @@ Individual: bim:0M.20.10.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.01
 	Types: bim:NBR.M.Composto.Rocha
@@ -1509,7 +1547,7 @@ Individual: bim:0M.20.10.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.03
 	Types: bim:NBR.M.Composto.Rocha
@@ -1523,7 +1561,7 @@ Individual: bim:0M.20.10.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.05
 	Types: bim:NBR.M.Composto.Rocha
@@ -1537,7 +1575,7 @@ Individual: bim:0M.20.10.01.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.07
 	Types: bim:NBR.M.Composto.Rocha
@@ -1551,7 +1589,7 @@ Individual: bim:0M.20.10.01.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.09
 	Types: bim:NBR.M.Composto.Rocha
@@ -1565,7 +1603,7 @@ Individual: bim:0M.20.10.01.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.11
 	Types: bim:NBR.M.Composto.Rocha
@@ -1579,7 +1617,7 @@ Individual: bim:0M.20.10.01.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.13
 	Types: bim:NBR.M.Composto.Rocha
@@ -1593,7 +1631,7 @@ Individual: bim:0M.20.10.01.13
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.15
 	Types: bim:NBR.M.Composto.Rocha
@@ -1607,7 +1645,7 @@ Individual: bim:0M.20.10.01.15
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.17
 	Types: bim:NBR.M.Composto.Rocha
@@ -1621,7 +1659,7 @@ Individual: bim:0M.20.10.01.17
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.19
 	Types: bim:NBR.M.Composto.Rocha
@@ -1635,7 +1673,7 @@ Individual: bim:0M.20.10.01.19
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.50
 	Types: bim:NBR.M.Composto.Rocha
@@ -1649,7 +1687,7 @@ Individual: bim:0M.20.10.01.50
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.50.01
 	Types: bim:NBR.M.Composto.Rocha
@@ -1663,7 +1701,7 @@ Individual: bim:0M.20.10.01.50.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.50.03
 	Types: bim:NBR.M.Composto.Rocha
@@ -1677,7 +1715,7 @@ Individual: bim:0M.20.10.01.50.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.01.50.05
 	Types: bim:NBR.M.Composto.Rocha
@@ -1691,7 +1729,7 @@ Individual: bim:0M.20.10.01.50.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03
 	Types: bim:NBR.M.Argila
@@ -1705,7 +1743,7 @@ Individual: bim:0M.20.10.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.01
 	Types: bim:NBR.M.Argila
@@ -1719,7 +1757,7 @@ Individual: bim:0M.20.10.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.03
 	Types: bim:NBR.M.Argila
@@ -1733,7 +1771,7 @@ Individual: bim:0M.20.10.03.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.05
 	Types: bim:NBR.M.Argila
@@ -1747,7 +1785,7 @@ Individual: bim:0M.20.10.03.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.07
 	Types: bim:NBR.M.Argila
@@ -1761,7 +1799,7 @@ Individual: bim:0M.20.10.03.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.09
 	Types: bim:NBR.M.Argila
@@ -1775,7 +1813,7 @@ Individual: bim:0M.20.10.03.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.09.01
 	Types: bim:NBR.M.Argila
@@ -1789,7 +1827,7 @@ Individual: bim:0M.20.10.03.09.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.09.03
 	Types: bim:NBR.M.Argila
@@ -1803,7 +1841,7 @@ Individual: bim:0M.20.10.03.09.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.09.05
 	Types: bim:NBR.M.Argila
@@ -1817,7 +1855,7 @@ Individual: bim:0M.20.10.03.09.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.09.07
 	Types: bim:NBR.M.Argila
@@ -1831,7 +1869,7 @@ Individual: bim:0M.20.10.03.09.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.03.09.09
 	Types: bim:NBR.M.Argila
@@ -1845,7 +1883,7 @@ Individual: bim:0M.20.10.03.09.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05
 	Types: bim:NBR.M.Cimentício
@@ -1859,7 +1897,7 @@ Individual: bim:0M.20.10.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.01
 	Types: bim:NBR.M.Cimentício
@@ -1873,7 +1911,7 @@ Individual: bim:0M.20.10.05.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03
 	Types: bim:NBR.M.Cimentício
@@ -1887,7 +1925,7 @@ Individual: bim:0M.20.10.05.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.01
 	Types: bim:NBR.M.Cimentício
@@ -1901,7 +1939,7 @@ Individual: bim:0M.20.10.05.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.01.01
 	Types: bim:NBR.M.Cimentício
@@ -1915,7 +1953,7 @@ Individual: bim:0M.20.10.05.03.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.01.02
 	Types: bim:NBR.M.Cimentício
@@ -1929,7 +1967,7 @@ Individual: bim:0M.20.10.05.03.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.03
 	Types: bim:NBR.M.Cimentício
@@ -1943,7 +1981,7 @@ Individual: bim:0M.20.10.05.03.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.03.01
 	Types: bim:NBR.M.Cimentício
@@ -1957,7 +1995,7 @@ Individual: bim:0M.20.10.05.03.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.03.02
 	Types: bim:NBR.M.Cimentício
@@ -1971,7 +2009,7 @@ Individual: bim:0M.20.10.05.03.03.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.03.03
 	Types: bim:NBR.M.Cimentício
@@ -1985,7 +2023,7 @@ Individual: bim:0M.20.10.05.03.03.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.05
 	Types: bim:NBR.M.Cimentício
@@ -1999,7 +2037,7 @@ Individual: bim:0M.20.10.05.03.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.07
 	Types: bim:NBR.M.Cimentício
@@ -2013,7 +2051,7 @@ Individual: bim:0M.20.10.05.03.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.09
 	Types: bim:NBR.M.Cimentício
@@ -2027,7 +2065,7 @@ Individual: bim:0M.20.10.05.03.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.03.11
 	Types: bim:NBR.M.Cimentício
@@ -2041,7 +2079,7 @@ Individual: bim:0M.20.10.05.03.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.05
 	Types: bim:NBR.M.Cimentício
@@ -2055,7 +2093,7 @@ Individual: bim:0M.20.10.05.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.05.01
 	Types: bim:NBR.M.Cimentício
@@ -2069,7 +2107,7 @@ Individual: bim:0M.20.10.05.05.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.05.02
 	Types: bim:NBR.M.Cimentício
@@ -2083,7 +2121,7 @@ Individual: bim:0M.20.10.05.05.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.05.03
 	Types: bim:NBR.M.Cimentício
@@ -2097,7 +2135,7 @@ Individual: bim:0M.20.10.05.05.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.05.04
 	Types: bim:NBR.M.Cimentício
@@ -2111,7 +2149,7 @@ Individual: bim:0M.20.10.05.05.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.05.05
 	Types: bim:NBR.M.Cimentício
@@ -2125,7 +2163,7 @@ Individual: bim:0M.20.10.05.05.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.07
 	Types: bim:NBR.M.Cimentício
@@ -2139,7 +2177,7 @@ Individual: bim:0M.20.10.05.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.09
 	Types: bim:NBR.M.Cimentício
@@ -2153,7 +2191,7 @@ Individual: bim:0M.20.10.05.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.05.11
 	Types: bim:NBR.M.Cimentício
@@ -2167,7 +2205,7 @@ Individual: bim:0M.20.10.05.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07
 	Types: bim:NBR.M.Betuminoso
@@ -2181,7 +2219,7 @@ Individual: bim:0M.20.10.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07.01
 	Types: bim:NBR.M.Betuminoso
@@ -2195,7 +2233,7 @@ Individual: bim:0M.20.10.07.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07.01.01
 	Types: bim:NBR.M.Betuminoso
@@ -2209,7 +2247,7 @@ Individual: bim:0M.20.10.07.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07.01.02
 	Types: bim:NBR.M.Betuminoso
@@ -2223,7 +2261,7 @@ Individual: bim:0M.20.10.07.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07.03
 	Types: bim:NBR.M.Betuminoso
@@ -2237,7 +2275,7 @@ Individual: bim:0M.20.10.07.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07.03.01
 	Types: bim:NBR.M.Betuminoso
@@ -2251,7 +2289,7 @@ Individual: bim:0M.20.10.07.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.07.05
 	Types: bim:NBR.M.Betuminoso
@@ -2265,7 +2303,7 @@ Individual: bim:0M.20.10.07.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.09
 	Types: bim:NBR.M.Natural.Não.Metálico
@@ -2279,7 +2317,7 @@ Individual: bim:0M.20.10.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.09.01
 	Types: bim:NBR.M.Natural.Não.Metálico
@@ -2293,7 +2331,7 @@ Individual: bim:0M.20.10.09.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.09.03
 	Types: bim:NBR.M.Natural.Não.Metálico
@@ -2307,7 +2345,7 @@ Individual: bim:0M.20.10.09.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.09.05
 	Types: bim:NBR.M.Natural.Não.Metálico
@@ -2321,7 +2359,7 @@ Individual: bim:0M.20.10.09.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.09.07
 	Types: bim:NBR.M.Natural.Não.Metálico
@@ -2335,7 +2373,7 @@ Individual: bim:0M.20.10.09.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11
 	Types: bim:NBR.M.Mineral.Artificial
@@ -2349,7 +2387,7 @@ Individual: bim:0M.20.10.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.01
 	Types: bim:NBR.M.Mineral.Artificial
@@ -2363,7 +2401,7 @@ Individual: bim:0M.20.10.11.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.01.01
 	Types: bim:NBR.M.Mineral.Artificial
@@ -2377,7 +2415,7 @@ Individual: bim:0M.20.10.11.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.01.02
 	Types: bim:NBR.M.Mineral.Artificial
@@ -2391,7 +2429,7 @@ Individual: bim:0M.20.10.11.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.03
 	Types: bim:NBR.M.Outro.Mineral
@@ -2405,7 +2443,7 @@ Individual: bim:0M.20.10.11.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.03.01
 	Types: bim:NBR.M.Outro.Mineral
@@ -2419,7 +2457,7 @@ Individual: bim:0M.20.10.11.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.03.02
 	Types: bim:NBR.M.Outro.Mineral
@@ -2433,7 +2471,7 @@ Individual: bim:0M.20.10.11.03.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.03.03
 	Types: bim:NBR.M.Outro.Mineral
@@ -2447,7 +2485,7 @@ Individual: bim:0M.20.10.11.03.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.10.11.03.04
 	Types: bim:NBR.M.Outro.Mineral
@@ -2461,7 +2499,7 @@ Individual: bim:0M.20.10.11.03.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20
 	Types: bim:NBR.M.Metálico
@@ -2475,7 +2513,7 @@ Individual: bim:0M.20.20
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01
 	Types: bim:NBR.M.Metálico
@@ -2489,7 +2527,7 @@ Individual: bim:0M.20.20.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.01
 	Types: bim:NBR.M.Metálico
@@ -2503,7 +2541,7 @@ Individual: bim:0M.20.20.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.03
 	Types: bim:NBR.M.Metálico
@@ -2517,7 +2555,7 @@ Individual: bim:0M.20.20.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.05
 	Types: bim:NBR.M.Metálico
@@ -2531,7 +2569,7 @@ Individual: bim:0M.20.20.01.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.07
 	Types: bim:NBR.M.Metálico
@@ -2545,7 +2583,7 @@ Individual: bim:0M.20.20.01.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.07.01
 	Types: bim:NBR.M.Metálico
@@ -2559,7 +2597,7 @@ Individual: bim:0M.20.20.01.07.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.07.02
 	Types: bim:NBR.M.Metálico
@@ -2573,7 +2611,7 @@ Individual: bim:0M.20.20.01.07.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.07.03
 	Types: bim:NBR.M.Metálico
@@ -2587,7 +2625,7 @@ Individual: bim:0M.20.20.01.07.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.01.07.04
 	Types: bim:NBR.M.Metálico
@@ -2601,7 +2639,7 @@ Individual: bim:0M.20.20.01.07.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.03
 	Types: bim:NBR.M.Metálico
@@ -2615,7 +2653,7 @@ Individual: bim:0M.20.20.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.03.01
 	Types: bim:NBR.M.Metálico
@@ -2629,7 +2667,7 @@ Individual: bim:0M.20.20.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.05
 	Types: bim:NBR.M.Metálico
@@ -2643,7 +2681,7 @@ Individual: bim:0M.20.20.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.05.01
 	Types: bim:NBR.M.Metálico
@@ -2657,7 +2695,7 @@ Individual: bim:0M.20.20.05.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.05.03
 	Types: bim:NBR.M.Metálico
@@ -2671,7 +2709,7 @@ Individual: bim:0M.20.20.05.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.07
 	Types: bim:NBR.M.Metálico
@@ -2685,7 +2723,7 @@ Individual: bim:0M.20.20.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.07.01
 	Types: bim:NBR.M.Metálico
@@ -2699,7 +2737,7 @@ Individual: bim:0M.20.20.07.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.07.01.01
 	Types: bim:NBR.M.Metálico
@@ -2713,7 +2751,7 @@ Individual: bim:0M.20.20.07.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.07.03
 	Types: bim:NBR.M.Metálico
@@ -2727,7 +2765,7 @@ Individual: bim:0M.20.20.07.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.07.03.01
 	Types: bim:NBR.M.Metálico
@@ -2741,7 +2779,7 @@ Individual: bim:0M.20.20.07.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.09
 	Types: bim:NBR.M.Metálico
@@ -2755,7 +2793,7 @@ Individual: bim:0M.20.20.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.09.01
 	Types: bim:NBR.M.Metálico
@@ -2769,7 +2807,7 @@ Individual: bim:0M.20.20.09.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.09.01.01
 	Types: bim:NBR.M.Metálico
@@ -2783,7 +2821,7 @@ Individual: bim:0M.20.20.09.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.20.11
 	Types: bim:NBR.M.Metálico
@@ -2797,7 +2835,7 @@ Individual: bim:0M.20.20.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30
 	Types: bim:NBR.M.Vegetal
@@ -2811,7 +2849,7 @@ Individual: bim:0M.20.30
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.01
 	Types: bim:NBR.M.Vegetal
@@ -2825,7 +2863,7 @@ Individual: bim:0M.20.30.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.01.01
 	Types: bim:NBR.M.Vegetal
@@ -2839,7 +2877,7 @@ Individual: bim:0M.20.30.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.01.03
 	Types: bim:NBR.M.Vegetal
@@ -2853,7 +2891,7 @@ Individual: bim:0M.20.30.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.01.05
 	Types: bim:NBR.M.Vegetal
@@ -2867,7 +2905,7 @@ Individual: bim:0M.20.30.01.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.01.07
 	Types: bim:NBR.M.Vegetal
@@ -2881,7 +2919,7 @@ Individual: bim:0M.20.30.01.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03
 	Types: bim:NBR.M.Vegetal
@@ -2895,7 +2933,7 @@ Individual: bim:0M.20.30.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01
 	Types: bim:NBR.M.Madeira
@@ -2909,7 +2947,7 @@ Individual: bim:0M.20.30.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01
 	Types: bim:NBR.M.Madeira
@@ -2923,7 +2961,7 @@ Individual: bim:0M.20.30.03.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.01
 	Types: bim:NBR.M.Madeira
@@ -2937,7 +2975,7 @@ Individual: bim:0M.20.30.03.01.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.02
 	Types: bim:NBR.M.Madeira
@@ -2951,7 +2989,7 @@ Individual: bim:0M.20.30.03.01.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.03
 	Types: bim:NBR.M.Madeira
@@ -2965,7 +3003,7 @@ Individual: bim:0M.20.30.03.01.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.04
 	Types: bim:NBR.M.Madeira
@@ -2979,7 +3017,7 @@ Individual: bim:0M.20.30.03.01.01.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.05
 	Types: bim:NBR.M.Madeira
@@ -2993,7 +3031,7 @@ Individual: bim:0M.20.30.03.01.01.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.06
 	Types: bim:NBR.M.Madeira
@@ -3007,7 +3045,7 @@ Individual: bim:0M.20.30.03.01.01.06
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.07
 	Types: bim:NBR.M.Madeira
@@ -3021,7 +3059,7 @@ Individual: bim:0M.20.30.03.01.01.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.08
 	Types: bim:NBR.M.Madeira
@@ -3035,7 +3073,7 @@ Individual: bim:0M.20.30.03.01.01.08
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.09
 	Types: bim:NBR.M.Madeira
@@ -3049,7 +3087,7 @@ Individual: bim:0M.20.30.03.01.01.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.01.10
 	Types: bim:NBR.M.Madeira
@@ -3063,7 +3101,7 @@ Individual: bim:0M.20.30.03.01.01.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03
 	Types: bim:NBR.M.Madeira
@@ -3077,7 +3115,7 @@ Individual: bim:0M.20.30.03.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.01
 	Types: bim:NBR.M.Madeira
@@ -3091,7 +3129,7 @@ Individual: bim:0M.20.30.03.01.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.02
 	Types: bim:NBR.M.Madeira
@@ -3105,7 +3143,7 @@ Individual: bim:0M.20.30.03.01.03.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.03
 	Types: bim:NBR.M.Madeira
@@ -3119,7 +3157,7 @@ Individual: bim:0M.20.30.03.01.03.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.04
 	Types: bim:NBR.M.Madeira
@@ -3133,7 +3171,7 @@ Individual: bim:0M.20.30.03.01.03.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.05
 	Types: bim:NBR.M.Madeira
@@ -3147,7 +3185,7 @@ Individual: bim:0M.20.30.03.01.03.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.06
 	Types: bim:NBR.M.Madeira
@@ -3161,7 +3199,7 @@ Individual: bim:0M.20.30.03.01.03.06
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.07
 	Types: bim:NBR.M.Madeira
@@ -3175,7 +3213,7 @@ Individual: bim:0M.20.30.03.01.03.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.08
 	Types: bim:NBR.M.Madeira
@@ -3189,7 +3227,7 @@ Individual: bim:0M.20.30.03.01.03.08
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.09
 	Types: bim:NBR.M.Madeira
@@ -3203,7 +3241,7 @@ Individual: bim:0M.20.30.03.01.03.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.10
 	Types: bim:NBR.M.Madeira
@@ -3217,7 +3255,7 @@ Individual: bim:0M.20.30.03.01.03.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.11
 	Types: bim:NBR.M.Madeira
@@ -3231,7 +3269,7 @@ Individual: bim:0M.20.30.03.01.03.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.12
 	Types: bim:NBR.M.Madeira
@@ -3245,7 +3283,7 @@ Individual: bim:0M.20.30.03.01.03.12
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.13
 	Types: bim:NBR.M.Madeira
@@ -3259,7 +3297,7 @@ Individual: bim:0M.20.30.03.01.03.13
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.01.03.14
 	Types: bim:NBR.M.Madeira
@@ -3273,7 +3311,7 @@ Individual: bim:0M.20.30.03.01.03.14
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.03
 	Types: bim:NBR.M.Madeira
@@ -3287,7 +3325,7 @@ Individual: bim:0M.20.30.03.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.03.03.01
 	Types: bim:NBR.M.Madeira
@@ -3301,7 +3339,7 @@ Individual: bim:0M.20.30.03.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.05
 	Types: bim:NBR.M.Grama
@@ -3315,7 +3353,7 @@ Individual: bim:0M.20.30.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.05.01
 	Types: bim:NBR.M.Grama
@@ -3329,7 +3367,7 @@ Individual: bim:0M.20.30.05.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.05.02
 	Types: bim:NBR.M.Grama
@@ -3343,7 +3381,7 @@ Individual: bim:0M.20.30.05.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.05.03
 	Types: bim:NBR.M.Grama
@@ -3357,7 +3395,7 @@ Individual: bim:0M.20.30.05.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.05.04
 	Types: bim:NBR.M.Grama
@@ -3371,7 +3409,7 @@ Individual: bim:0M.20.30.05.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.30.05.05
 	Types: bim:NBR.M.Grama
@@ -3385,7 +3423,7 @@ Individual: bim:0M.20.30.05.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.40
 	Types: bim:NBR.M.Planta
@@ -3399,7 +3437,7 @@ Individual: bim:0M.20.40
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.40.01
 	Types: bim:NBR.M.Planta
@@ -3413,7 +3451,7 @@ Individual: bim:0M.20.40.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.40.03
 	Types: bim:NBR.M.Planta
@@ -3427,7 +3465,7 @@ Individual: bim:0M.20.40.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.40.05
 	Types: bim:NBR.M.Planta
@@ -3441,7 +3479,7 @@ Individual: bim:0M.20.40.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.40.07
 	Types: bim:NBR.M.Planta
@@ -3455,7 +3493,7 @@ Individual: bim:0M.20.40.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50
 	Types: bim:NBR.M.Orgânico
@@ -3469,7 +3507,7 @@ Individual: bim:0M.20.50
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01
 	Types: bim:NBR.M.Orgânico
@@ -3483,7 +3521,7 @@ Individual: bim:0M.20.50.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01.01
 	Types: bim:NBR.M.Orgânico
@@ -3497,7 +3535,7 @@ Individual: bim:0M.20.50.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01.01.01
 	Types: bim:NBR.M.Orgânico
@@ -3511,7 +3549,7 @@ Individual: bim:0M.20.50.01.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01.01.02
 	Types: bim:NBR.M.Orgânico
@@ -3525,7 +3563,7 @@ Individual: bim:0M.20.50.01.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01.03
 	Types: bim:NBR.M.Orgânico
@@ -3539,7 +3577,7 @@ Individual: bim:0M.20.50.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01.03.01
 	Types: bim:NBR.M.Orgânico
@@ -3553,7 +3591,7 @@ Individual: bim:0M.20.50.01.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.01.03.02
 	Types: bim:NBR.M.Orgânico
@@ -3567,7 +3605,7 @@ Individual: bim:0M.20.50.01.03.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.03
 	Types: bim:NBR.M.Orgânico
@@ -3581,7 +3619,7 @@ Individual: bim:0M.20.50.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.03.01
 	Types: bim:NBR.M.Orgânico
@@ -3595,7 +3633,7 @@ Individual: bim:0M.20.50.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.50.03.02
 	Types: bim:NBR.M.Orgânico
@@ -3609,7 +3647,7 @@ Individual: bim:0M.20.50.03.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60
 	Types: bim:NBR.M.Composto.Sintético
@@ -3623,7 +3661,7 @@ Individual: bim:0M.20.60
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.01
 	Types: bim:NBR.M.Composto.Sintético
@@ -3637,7 +3675,7 @@ Individual: bim:0M.20.60.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.03
 	Types: bim:NBR.M.Composto.Sintético
@@ -3651,7 +3689,7 @@ Individual: bim:0M.20.60.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.05
 	Types: bim:NBR.M.Composto.Sintético
@@ -3665,7 +3703,7 @@ Individual: bim:0M.20.60.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07
 	Types: bim:NBR.M.Composto.Sintético
@@ -3679,7 +3717,7 @@ Individual: bim:0M.20.60.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.01
 	Types: bim:NBR.M.Composto.Sintético
@@ -3693,7 +3731,7 @@ Individual: bim:0M.20.60.07.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.02
 	Types: bim:NBR.M.Composto.Sintético
@@ -3707,7 +3745,7 @@ Individual: bim:0M.20.60.07.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.03
 	Types: bim:NBR.M.Composto.Sintético
@@ -3721,7 +3759,7 @@ Individual: bim:0M.20.60.07.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.04
 	Types: bim:NBR.M.Composto.Sintético
@@ -3735,7 +3773,7 @@ Individual: bim:0M.20.60.07.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.05
 	Types: bim:NBR.M.Composto.Sintético
@@ -3749,7 +3787,7 @@ Individual: bim:0M.20.60.07.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.06
 	Types: bim:NBR.M.Composto.Sintético
@@ -3763,7 +3801,7 @@ Individual: bim:0M.20.60.07.06
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.07
 	Types: bim:NBR.M.Composto.Sintético
@@ -3777,7 +3815,7 @@ Individual: bim:0M.20.60.07.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.08
 	Types: bim:NBR.M.Composto.Sintético
@@ -3791,7 +3829,7 @@ Individual: bim:0M.20.60.07.08
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.09
 	Types: bim:NBR.M.Composto.Sintético
@@ -3805,7 +3843,7 @@ Individual: bim:0M.20.60.07.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.10
 	Types: bim:NBR.M.Composto.Sintético
@@ -3819,7 +3857,7 @@ Individual: bim:0M.20.60.07.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.11
 	Types: bim:NBR.M.Composto.Sintético
@@ -3833,7 +3871,7 @@ Individual: bim:0M.20.60.07.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.12
 	Types: bim:NBR.M.Composto.Sintético
@@ -3847,7 +3885,7 @@ Individual: bim:0M.20.60.07.12
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.13
 	Types: bim:NBR.M.Composto.Sintético
@@ -3861,7 +3899,7 @@ Individual: bim:0M.20.60.07.13
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.14
 	Types: bim:NBR.M.Composto.Sintético
@@ -3875,7 +3913,7 @@ Individual: bim:0M.20.60.07.14
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.15
 	Types: bim:NBR.M.Composto.Sintético
@@ -3889,7 +3927,7 @@ Individual: bim:0M.20.60.07.15
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.16
 	Types: bim:NBR.M.Composto.Sintético
@@ -3903,7 +3941,7 @@ Individual: bim:0M.20.60.07.16
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.17
 	Types: bim:NBR.M.Composto.Sintético
@@ -3917,7 +3955,7 @@ Individual: bim:0M.20.60.07.17
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.18
 	Types: bim:NBR.M.Composto.Sintético
@@ -3931,7 +3969,7 @@ Individual: bim:0M.20.60.07.18
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.19
 	Types: bim:NBR.M.Composto.Sintético
@@ -3945,7 +3983,7 @@ Individual: bim:0M.20.60.07.19
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.20
 	Types: bim:NBR.M.Composto.Sintético
@@ -3959,7 +3997,7 @@ Individual: bim:0M.20.60.07.20
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.07.21
 	Types: bim:NBR.M.Composto.Sintético
@@ -3973,7 +4011,7 @@ Individual: bim:0M.20.60.07.21
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.09
 	Types: bim:NBR.M.Composto.Sintético
@@ -3987,7 +4025,7 @@ Individual: bim:0M.20.60.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.09.01
 	Types: bim:NBR.M.Composto.Sintético
@@ -4001,7 +4039,7 @@ Individual: bim:0M.20.60.09.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.09.02
 	Types: bim:NBR.M.Composto.Sintético
@@ -4015,7 +4053,7 @@ Individual: bim:0M.20.60.09.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.09.03
 	Types: bim:NBR.M.Composto.Sintético
@@ -4029,7 +4067,7 @@ Individual: bim:0M.20.60.09.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.09.04
 	Types: bim:NBR.M.Composto.Sintético
@@ -4043,7 +4081,7 @@ Individual: bim:0M.20.60.09.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.11
 	Types: bim:NBR.M.Composto.Sintético
@@ -4057,7 +4095,7 @@ Individual: bim:0M.20.60.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.11.01
 	Types: bim:NBR.M.Composto.Sintético
@@ -4071,7 +4109,7 @@ Individual: bim:0M.20.60.11.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.11.02
 	Types: bim:NBR.M.Composto.Sintético
@@ -4085,7 +4123,7 @@ Individual: bim:0M.20.60.11.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.20.60.13
 	Types: bim:NBR.M.Composto.Sintético
@@ -4099,7 +4137,7 @@ Individual: bim:0M.20.60.13
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30
 	Types: bim:NBR.M.Solução.Sintética
@@ -4113,7 +4151,7 @@ Individual: bim:0M.30
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4127,7 +4165,7 @@ Individual: bim:0M.30.10.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4141,7 +4179,7 @@ Individual: bim:0M.30.10.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01.02
 	Types: bim:NBR.M.Solução.Sintética
@@ -4155,7 +4193,7 @@ Individual: bim:0M.30.10.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01.03
 	Types: bim:NBR.M.Solução.Sintética
@@ -4169,7 +4207,7 @@ Individual: bim:0M.30.10.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01.04
 	Types: bim:NBR.M.Solução.Sintética
@@ -4183,7 +4221,7 @@ Individual: bim:0M.30.10.01.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01.05
 	Types: bim:NBR.M.Solução.Sintética
@@ -4197,7 +4235,7 @@ Individual: bim:0M.30.10.01.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.01.06
 	Types: bim:NBR.M.Solução.Sintética
@@ -4211,7 +4249,7 @@ Individual: bim:0M.30.10.01.06
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.03
 	Types: bim:NBR.M.Solução.Sintética
@@ -4225,7 +4263,7 @@ Individual: bim:0M.30.10.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10.03.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4239,7 +4277,7 @@ Individual: bim:0M.30.10.03.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.20
 	Types: bim:NBR.M.Solução.Sintética
@@ -4253,7 +4291,7 @@ Individual: bim:0M.30.20
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.20.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4267,7 +4305,7 @@ Individual: bim:0M.30.20.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.20.03
 	Types: bim:NBR.M.Solução.Sintética
@@ -4281,7 +4319,7 @@ Individual: bim:0M.30.20.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.20.05
 	Types: bim:NBR.M.Solução.Sintética
@@ -4295,7 +4333,7 @@ Individual: bim:0M.30.20.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30
 	Types: bim:NBR.M.Solução.Sintética
@@ -4309,7 +4347,7 @@ Individual: bim:0M.30.30
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4323,7 +4361,7 @@ Individual: bim:0M.30.30.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30.01.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4337,7 +4375,7 @@ Individual: bim:0M.30.30.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30.01.02
 	Types: bim:NBR.M.Solução.Sintética
@@ -4351,7 +4389,7 @@ Individual: bim:0M.30.30.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30.01.03
 	Types: bim:NBR.M.Solução.Sintética
@@ -4365,7 +4403,7 @@ Individual: bim:0M.30.30.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30.01.04
 	Types: bim:NBR.M.Solução.Sintética
@@ -4379,7 +4417,7 @@ Individual: bim:0M.30.30.01.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.30.03
 	Types: bim:NBR.M.Solução.Sintética
@@ -4393,7 +4431,7 @@ Individual: bim:0M.30.30.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.40
 	Types: bim:NBR.M.Líquido.Vegetal
@@ -4407,7 +4445,7 @@ Individual: bim:0M.30.40
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.40.01
 	Types: bim:NBR.M.Líquido.Vegetal
@@ -4421,7 +4459,7 @@ Individual: bim:0M.30.40.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.40.03
 	Types: bim:NBR.M.Líquido.Vegetal
@@ -4435,7 +4473,7 @@ Individual: bim:0M.30.40.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.50
 	Types: bim:NBR.M.Líquido.Animal
@@ -4449,7 +4487,7 @@ Individual: bim:0M.30.50
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.50.01
 	Types: bim:NBR.M.Líquido.Animal
@@ -4463,7 +4501,7 @@ Individual: bim:0M.30.50.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.50.03
 	Types: bim:NBR.M.Líquido.Animal
@@ -4477,7 +4515,7 @@ Individual: bim:0M.30.50.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.60
 	Types: bim:NBR.M.Solução.Sintética
@@ -4491,7 +4529,7 @@ Individual: bim:0M.30.60
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.60.01
 	Types: bim:NBR.M.Solução.Sintética
@@ -4505,7 +4543,7 @@ Individual: bim:0M.30.60.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.60.03
 	Types: bim:NBR.M.Solução.Sintética
@@ -4519,7 +4557,7 @@ Individual: bim:0M.30.60.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.60.05
 	Types: bim:NBR.M.Solução.Sintética
@@ -4533,7 +4571,7 @@ Individual: bim:0M.30.60.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.70
 	Types: bim:NBR.M.Solução.Sintética
@@ -4547,7 +4585,7 @@ Individual: bim:0M.30.70
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.30.10
 	Types: bim:NBR.M.Solução.Sintética
@@ -4561,7 +4599,7 @@ Individual: bim:0M.30.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40
 	Types: bim:NBR.M.Gás
@@ -4575,7 +4613,7 @@ Individual: bim:0M.40
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.10
 	Types: bim:NBR.M.Gás
@@ -4589,7 +4627,7 @@ Individual: bim:0M.40.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.10.01
 	Types: bim:NBR.M.Gás
@@ -4603,7 +4641,7 @@ Individual: bim:0M.40.10.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.10.03
 	Types: bim:NBR.M.Gás
@@ -4617,7 +4655,7 @@ Individual: bim:0M.40.10.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.10.05
 	Types: bim:NBR.M.Gás
@@ -4631,7 +4669,7 @@ Individual: bim:0M.40.10.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.10.07
 	Types: bim:NBR.M.Gás
@@ -4645,7 +4683,7 @@ Individual: bim:0M.40.10.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.20
 	Types: bim:NBR.M.Gás
@@ -4659,7 +4697,7 @@ Individual: bim:0M.40.20
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.20.01
 	Types: bim:NBR.M.Gás
@@ -4673,7 +4711,7 @@ Individual: bim:0M.40.20.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.20.03
 	Types: bim:NBR.M.Gás
@@ -4687,7 +4725,7 @@ Individual: bim:0M.40.20.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.20.05
 	Types: bim:NBR.M.Gás
@@ -4701,7 +4739,7 @@ Individual: bim:0M.40.20.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30
 	Types: bim:NBR.M.Gás
@@ -4715,7 +4753,7 @@ Individual: bim:0M.40.30
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01
 	Types: bim:NBR.M.Gás
@@ -4729,7 +4767,7 @@ Individual: bim:0M.40.30.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.01
 	Types: bim:NBR.M.Gás
@@ -4743,7 +4781,7 @@ Individual: bim:0M.40.30.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.02
 	Types: bim:NBR.M.Gás
@@ -4757,7 +4795,7 @@ Individual: bim:0M.40.30.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.03
 	Types: bim:NBR.M.Gás
@@ -4771,7 +4809,7 @@ Individual: bim:0M.40.30.01.03
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.04
 	Types: bim:NBR.M.Gás
@@ -4785,7 +4823,7 @@ Individual: bim:0M.40.30.01.04
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.05
 	Types: bim:NBR.M.Gás
@@ -4799,7 +4837,7 @@ Individual: bim:0M.40.30.01.05
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.06
 	Types: bim:NBR.M.Gás
@@ -4813,7 +4851,7 @@ Individual: bim:0M.40.30.01.06
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.07
 	Types: bim:NBR.M.Gás
@@ -4827,7 +4865,7 @@ Individual: bim:0M.40.30.01.07
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.08
 	Types: bim:NBR.M.Gás
@@ -4841,7 +4879,7 @@ Individual: bim:0M.40.30.01.08
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.09
 	Types: bim:NBR.M.Gás
@@ -4855,7 +4893,7 @@ Individual: bim:0M.40.30.01.09
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.10
 	Types: bim:NBR.M.Gás
@@ -4869,7 +4907,7 @@ Individual: bim:0M.40.30.01.10
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.30.01.11
 	Types: bim:NBR.M.Gás
@@ -4883,7 +4921,7 @@ Individual: bim:0M.40.30.01.11
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.40
 	Types: bim:NBR.M.Gás
@@ -4897,7 +4935,7 @@ Individual: bim:0M.40.40
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.40.01
 	Types: bim:NBR.M.Gás
@@ -4911,7 +4949,7 @@ Individual: bim:0M.40.40.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.40.01.01
 	Types: bim:NBR.M.Gás
@@ -4925,7 +4963,7 @@ Individual: bim:0M.40.40.01.01
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 Individual: bim:0M.40.40.01.02
 	Types: bim:NBR.M.Gás
@@ -4939,7 +4977,7 @@ Individual: bim:0M.40.40.01.02
 	Facts: bim:material.revit  "Nome do material da biblioteca de materiais revit"
 	Facts: bim:classe.ifc  "[ IfcMaterial : IfcLabel : IfcText ]"
 	Facts: bim:material.ifc  "Nome do material da biblioteca de materiais ifc"
-	Facts: bim:é.rvt.material  bim:Material_Abnt
+	Facts: bim:é.rvt.material  bim:API_Mat
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -34269,5 +34307,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia NBR15965_0M
-##  Criada em 23/08/2026 13:08:09
+##  Criada em 23/08/2026 13:16:46
 #################################################################
