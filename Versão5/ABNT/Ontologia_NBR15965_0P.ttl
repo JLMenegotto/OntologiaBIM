@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 23/08/2026 13:30:12"@pt ;
+	  rdfs:label "DataHora: 23/08/2026 14:08:04"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -2367,9 +2367,71 @@ bim:NBR.P.Volumétrica rdf:type  owl:Class  ;
       bim:ClasseIfc   "[ IfcProperty : IfcIdentifier : IfcText ]"   ;
       bim:ABNT        "[ 0P.50.50 ]"    .
 
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Propriedades rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Propriedades"@pt  .
+
+
+bim:Catálogos.de.Propriedades rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Propriedades ;
+      rdfs:label  "Catálogos de Propriedades"@pt  .
+
+
+bim:Propriedades.Catalogadas rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Catálogos.de.Propriedades ;
+      rdfs:label  "Propriedades Catalogadas"@pt  .
+
+
+bim:Propriedade rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Propriedades.Catalogadas ;
+      rdfs:label  "Propriedade"@pt ;
+      bim:Definição   "Material Catalogado"@pt ;
+      bim:Definición  "Material catalogado"@es ;
+      bim:Definition  "Cataloged Material"@en ;
+      bim:Natureza    "De Propriedades"@pt ;
+      bim:Espécie     "Catálogos de Propriedades"@pt ;
+      bim:Tema        "Propriedades Catalogadas"@pt ;
+      bim:Disciplina  "Interdisciplinar"@pt ;
+      bim:Chave       "Key-ABNT-63"@pt ;
+      bim:CatRevit    "[ BuiltInParameter ]"   ;
+      bim:ParRevit    "[ - ]"   ;
+      bim:AtributoIfc "[ - ]"   ;
+      bim:ClasseIfc   "[ IfcProperty : IfcIdentifier : IfcText ]"   ;
+      bim:ABNT        "[ 0P ]"    .
+
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
+
+bim:API_Ambiente  rdf:type  owl:NamedIndividual , bim:Projeto ;
+     bim:tema    "Propriedades" ;
+     bim:subtema    "Elementos Ambientes" ;
+     bim:descrição    "Individuo indicador de método API para selecionar ambientes do projeto"  .
+
+bim:API_Andar  rdf:type  owl:NamedIndividual , bim:Projeto ;
+     bim:tema    "Propriedades" ;
+     bim:subtema    "Elementos Andares" ;
+     bim:descrição    "Individuo indicador de método API para selecionar andares do projeto"  .
+
+bim:API_Instância  rdf:type  owl:NamedIndividual , bim:Projeto ;
+     bim:tema    "Propriedades" ;
+     bim:subtema    "Elementos Instanciados" ;
+     bim:descrição    "Individuo indicador de método API para selecionar instâncias do projeto"  .
+
+bim:API_Simbolo  rdf:type  owl:NamedIndividual , bim:Projeto ;
+     bim:tema    "Propriedades" ;
+     bim:subtema    "Elementos Tipificados" ;
+     bim:descrição    "Individuo indicador de método API para selecionar elementos tipificados do projeto"  .
+
+bim:API_Material  rdf:type  owl:NamedIndividual , bim:Projeto ;
+     bim:tema    "Propriedades" ;
+     bim:subtema    "Elementos Materiais" ;
+     bim:descrição    "Individuo indicador de método API para selecionar materiais do projeto"  .
 
 bim:NBR15965  rdf:type  owl:NamedIndividual , bim:Normativos ;
      bim:norma    "NBR 15.965" ;
@@ -39298,7 +39360,7 @@ bim:é.rvt.categoria   rdf:type  owl:ObjectProperty ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
                     bim:Método              "[ CatBuscada   FilteredElementCollector(doc).OfCategory((BuiltInCategory)Enum.Parse(typeof(BuiltInCategory))) ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
-                    [ GlobalId : OwnerHistory : Name ]
+                    bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]" ;
                     owl:equivalentProperty  bim:é.rvt.instância  .
 
 
@@ -39317,7 +39379,7 @@ bim:rvt.categoria   rdf:type  owl:DatatypeProperty ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
                     bim:Método              "[ CatBuscada   FilteredElementCollector(doc).OfCategory((BuiltInCategory)Enum.Parse(typeof(BuiltInCategory))) ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
-                    [ GlobalId : OwnerHistory : Name  .
+                    bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]"  .
 
 
 bim:p.selecionar   rdf:type  owl:ObjectProperty ;
@@ -39335,7 +39397,7 @@ bim:é.rvt.elemento   rdf:type  owl:ObjectProperty ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
                     bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
-                    [ GlobalId : OwnerHistory : Name ]
+                    bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]" ;
                     owl:equivalentProperty  bim:é.rvt.instância  .
 
 
@@ -39354,7 +39416,7 @@ bim:rvt.elemento   rdf:type  owl:DatatypeProperty ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
                     bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
-                    [ GlobalId : OwnerHistory : Name  .
+                    bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]"  .
 
 
 bim:p.selecionar   rdf:type  owl:ObjectProperty ;
@@ -39372,7 +39434,7 @@ bim:é.rvt.instância   rdf:type  owl:ObjectProperty ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
                     bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
-                    [ GlobalId : OwnerHistory : Name ]
+                    bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]" ;
                     owl:equivalentProperty  bim:é.rvt.elemento  .
 
 
@@ -39391,7 +39453,7 @@ bim:rvt.instância   rdf:type  owl:DatatypeProperty ;
                     bim:ParRevit            "[ ELEM_FAMILY_PARAM : ELEM_TYPE_PARAM : SYMBOL_FAMILY_NAME_PARAM : SYMBOL_ID_PARAM : FAMILY_LEVEL_PARAM ]" ;
                     bim:Método              "[ InsBuscada : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]" ;
                     bim:ClasseIfc           "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ] " ;
-                    [ GlobalId : OwnerHistory : Name  .
+                    bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]"  .
 
 
 bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
@@ -40622,5 +40684,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia NBR15965_0P
-##  Criada em 23/08/2026 13:30:14
+##  Criada em 23/08/2026 14:08:06
 #################################################################
