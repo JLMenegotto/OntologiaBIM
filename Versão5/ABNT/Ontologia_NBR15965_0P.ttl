@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 23/08/2026 18:11:26"@pt ;
+	  rdfs:label "DataHora: 24/08/2026 13:52:06"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -13366,31 +13366,31 @@ bim:API_Ambiente  rdf:type  owl:NamedIndividual , bim:API.Revit ;
      bim:tema    "API" ;
      bim:subtema    "Elementos Ambientes" ;
      bim:descrição    "Individuo indicador de método API para selecionar ambientes do projeto" ;
-     bim:método.revit    "[ FilteredElementCollector(doc).OfClass(typeof(SpatialElement)).Cast<SpatialElement>().OrderBy(e => e.Name).ToList() ]"  .
+     bim:método.revit    "[ Ambientes ]"  .
 
 bim:API_Andar  rdf:type  owl:NamedIndividual , bim:API.Revit ;
      bim:tema    "API" ;
      bim:subtema    "Elementos Andares" ;
      bim:descrição    "Individuo indicador de método API para selecionar andares do projeto" ;
-     bim:método.revit    "[ FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().OrderBy(e => e.Name).ToList() ]"  .
+     bim:método.revit    "[ Pavimentos ]"  .
 
 bim:API_Instância  rdf:type  owl:NamedIndividual , bim:API.Revit ;
      bim:tema    "API" ;
      bim:subtema    "Elementos Instanciados" ;
      bim:descrição    "Individuo indicador de método API para selecionar instâncias do projeto" ;
-     bim:método.revit    "[ EleBuscado : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]"  .
+     bim:método.revit    "[ Elementos ]"  .
 
 bim:API_Simbolo  rdf:type  owl:NamedIndividual , bim:API.Revit ;
      bim:tema    "API" ;
      bim:subtema    "Elementos Tipificados" ;
      bim:descrição    "Individuo indicador de método API para selecionar elementos tipificados do projeto" ;
-     bim:método.revit    "[ TipBuscado : FilteredElementCollector(doc).OfClass(typeof(FamilySymbol )).Cast<FamilySymbol>( ).FirstOrDefault( e => e.Name        == 'TipBuscado') ]"  .
+     bim:método.revit    "[ Tipos ]"  .
 
 bim:API_Material  rdf:type  owl:NamedIndividual , bim:API.Revit ;
      bim:tema    "API" ;
      bim:subtema    "Elementos Materiais" ;
      bim:descrição    "Individuo indicador de método API para selecionar materiais do projeto" ;
-     bim:método.revit    "[ MtlBuscado : FilteredElementCollector(doc).OfClass(typeof(Material)).Cast<Material>( ).FirstOrDefault( e => e.Name  == 'MtlBuscado') ]"  .
+     bim:método.revit    "[ Materiais ]"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -40679,11 +40679,44 @@ bim:p.zonificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.zona.mata.ciliar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.zonificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a zonificar: é.zona.mata.ciliar" ;
+                    bim:Chave               "d.zonificar.105" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt ;
+                    bim:Definición          "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es ;bim:Definition          "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]" ;
+                    owl:inverseOf           bim:é.zona.privada  .
+
+
+bim:d.zonificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:zona.mata.ciliar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.zonificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.mata.ciliar -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.zonificar.105" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt ;
+                    bim:Definición          "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es ;bim:Definition          "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]"  .
+
+
+bim:p.zonificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.zona.privada   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.zonificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a zonificar: é.zona.privada" ;
-                    bim:Chave               "d.zonificar.105" ;
+                    bim:Chave               "d.zonificar.106" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona privada. "@pt ;
                     bim:Definición          "Declara la Identificación de zonas privadas."@es ;bim:Definition          "Declares the identification of private zone."@en ;
@@ -40700,7 +40733,7 @@ bim:zona.privada   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.zonificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.privada -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.zonificar.105" ;
+                    bim:Chave               "d.zonificar.106" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona privada. "@pt ;
                     bim:Definición          "Declara la Identificación de zonas privadas."@es ;bim:Definition          "Declares the identification of private zone."@en ;
@@ -40716,7 +40749,7 @@ bim:é.zona.pública   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.zonificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a zonificar: é.zona.pública" ;
-                    bim:Chave               "d.zonificar.107" ;
+                    bim:Chave               "d.zonificar.108" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona pública. "@pt ;
                     bim:Definición          "Declara la Identificación de área pública."@es ;bim:Definition          "Declares the identification of public area."@en ;
@@ -40733,7 +40766,7 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.zonificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.pública -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.zonificar.107" ;
+                    bim:Chave               "d.zonificar.108" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona pública. "@pt ;
                     bim:Definición          "Declara la Identificación de área pública."@es ;bim:Definition          "Declares the identification of public area."@en ;
@@ -40742,5 +40775,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia NBR15965_0P
-##  Criada em 23/08/2026 18:11:29
+##  Criada em 24/08/2026 13:52:12
 #################################################################
