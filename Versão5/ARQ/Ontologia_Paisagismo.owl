@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Vegetação_e_Paisagismo>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de vegetação e paisagismo."@pt
-  Annotations: rdfs:label "DataHora: 23/08/2026 14:34:53"@pt
+  Annotations: rdfs:label "DataHora: 24/08/2026 14:34:35"@pt
   Annotations: rdfs:label "Advertência: Quando o valor de uma propriedade for '0' ou '-' significa que ainda não foi cadastrado, por não ter sido achado ou ainda  estar sendo verificado e transferido para a ontologia. Os valores dimensionais, como diámetros, alturas e profundidades  são aproximados, pois dependem das condições do ambiente de crescimento e do tratamento (poda, irrigação, etc) de cada indivíduo."@pt
   Annotations: rdfs:label "Aviso: Cuando el valor de una propiedad es '0' o '-' significa que aún no ha sido registrada, porque no se ha encontrado o sigue siendo verificada y transferida a la ontología. Los valores dimensionales, como diámetros, alturas y profundidades, son aproximados, ya que dependen de las condiciones del entorno de cultivo y del tratamiento (poda, riego, etc.) de cada individuo."@es
   Annotations: rdfs:label "Alert: When the value of a property is '0' or '-' it means that it has not yet been registered, because it has not been found or is still being verified and transferred to ontology. Dimensional values, such as diameters, heights and depths are approximate, as they depend on the conditions of the growing environment and the treatment (pruning, irrigation, etc.) of each individual."@en
@@ -1621,6 +1621,34 @@ Class: bim:Totem
 	Annotations: bim:AtributoIfc "[ - ]"
 	Annotations: bim:Código.ABNT "[ 3E.56.02 ]"
 	SubClassOf: bim:Amarelo.Urbano
+
+
+Class: bim:De.API
+	Annotations: rdfs:label "De API"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Métodos
+	Annotations: rdfs:label "Métodos"@pt
+	SubClassOf: bim:De.API
+
+
+Class: bim:Macros
+	Annotations: rdfs:label "Macros"@pt
+	SubClassOf: bim:Métodos
+
+
+Class: bim:API.Revit
+	Annotations: rdfs:label "API Revit"@pt
+	Annotations: bim:Definição "Aplicação Revit"@pt
+	Annotations: bim:Definición "Aplicativo Revit"@es
+	Annotations: bim:Definition "Revit Aplication"@en
+	Annotations: bim:Natureza "De API"@pt
+	Annotations: bim:Espécie "Métodos"@pt
+	Annotations: bim:Tema "Macros"@pt
+	Annotations: bim:Disciplina "Paisagística"@pt
+	Annotations: bim:Chave "Key-PAISA-80"
+	SubClassOf: bim:Macros
 
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
@@ -36301,6 +36329,68 @@ DataProperty: bim:rvt.instância
 	Annotations: bim:ClasseIfc "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ]"
 	Annotations: bim:AtributoIfc "[ GlobalId : OwnerHistory : Name ]"
 
+ObjectProperty: bim:p.selecionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.selecionada.por
+	SubPropertyOf: bim:p.selecionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a selecionar: é.selecionada.por"@pt
+	Annotations: bim:Chave "d.selecionar.108"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+	EquivalentTo: bim:é.selecionado.por
+
+DataProperty: bim:d.selecionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:selecionada.por
+	SubPropertyOf: bim:d.selecionar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para selecionar: selecionada.por -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.selecionar.108"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+
+ObjectProperty: bim:p.selecionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.selecionado.por
+	SubPropertyOf: bim:p.selecionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a selecionar: é.selecionado.por"@pt
+	Annotations: bim:Chave "d.selecionar.109"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+	EquivalentTo: bim:é.selecionada.por
+
+DataProperty: bim:d.selecionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:selecionado.por
+	SubPropertyOf: bim:d.selecionar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para selecionar: selecionado.por -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.selecionar.109"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+
 ObjectProperty: bim:p.sensorizar
 	SubPropertyOf: bim:BIMProp
 
@@ -37551,11 +37641,46 @@ ObjectProperty: bim:p.zonificar
 
 
 
+ObjectProperty: bim:é.zona.mata.ciliar
+	SubPropertyOf: bim:p.zonificar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.mata.ciliar"@pt
+	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Ação "Ação de zonificar"@pt
+	Annotations: bim:Definição "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt
+	Annotations: bim:Definición "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es
+	Annotations: bim:Definition "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en
+	Annotations: bim:CatRevit "[ OST_MEPZone ]"
+	Annotations: bim:ClasseIfc "[ IfcZone ]"
+	InverseOf: bim:é.zona.privada
+
+DataProperty: bim:d.zonificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:zona.mata.ciliar
+	SubPropertyOf: bim:d.zonificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para zonificar: zona.mata.ciliar -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Ação "Ação de zonificar"@pt
+	Annotations: bim:Definição "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt
+	Annotations: bim:Definición "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es
+	Annotations: bim:Definition "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en
+	Annotations: bim:CatRevit "[ OST_MEPZone ]"
+	Annotations: bim:ClasseIfc "[ IfcZone ]"
+
+ObjectProperty: bim:p.zonificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.zona.privada
 	SubPropertyOf: bim:p.zonificar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.privada"@pt
-	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Chave "d.zonificar.106"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona privada."@pt
 	Annotations: bim:Definición "Declara la Identificación de zonas privadas."@es
@@ -37573,7 +37698,7 @@ DataProperty: bim:zona.privada
 	SubPropertyOf: bim:d.zonificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para zonificar: zona.privada -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Chave "d.zonificar.106"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona privada."@pt
 	Annotations: bim:Definición "Declara la Identificación de zonas privadas."@es
@@ -37590,7 +37715,7 @@ ObjectProperty: bim:é.zona.pública
 	SubPropertyOf: bim:p.zonificar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.pública"@pt
-	Annotations: bim:Chave "d.zonificar.107"
+	Annotations: bim:Chave "d.zonificar.108"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona pública."@pt
 	Annotations: bim:Definición "Declara la Identificación de área pública."@es
@@ -37608,7 +37733,7 @@ DataProperty: bim:zona.pública
 	SubPropertyOf: bim:d.zonificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para zonificar: zona.pública -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.zonificar.107"
+	Annotations: bim:Chave "d.zonificar.108"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona pública."@pt
 	Annotations: bim:Definición "Declara la Identificación de área pública."@es
@@ -37618,5 +37743,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia Paisagismo
-##  Criada em 23/08/2026 14:34:56
+##  Criada em 24/08/2026 14:34:39
 #################################################################
