@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Parte_2_0M>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt
-  Annotations: rdfs:label "DataHora: 23/08/2026 18:11:23"@pt
+  Annotations: rdfs:label "DataHora: 24/08/2026 13:51:34"@pt
   Annotations: rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt
   Annotations: rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es
   Annotations: rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en
@@ -4976,35 +4976,35 @@ Individual: bim:API_Ambiente
 	Facts: bim:tema  "API"
 	Facts: bim:subtema  "Elementos Ambientes"
 	Facts: bim:descrição  "Individuo indicador de método API para selecionar ambientes do projeto"
-	Facts: bim:método.revit  "[ FilteredElementCollector(doc).OfClass(typeof(SpatialElement)).Cast<SpatialElement>().OrderBy(e => e.Name).ToList() ]"
+	Facts: bim:método.revit  "[ Ambientes ]"
 
 Individual: bim:API_Andar
 	Types: bim:API.Revit
 	Facts: bim:tema  "API"
 	Facts: bim:subtema  "Elementos Andares"
 	Facts: bim:descrição  "Individuo indicador de método API para selecionar andares do projeto"
-	Facts: bim:método.revit  "[ FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().OrderBy(e => e.Name).ToList() ]"
+	Facts: bim:método.revit  "[ Pavimentos ]"
 
 Individual: bim:API_Instância
 	Types: bim:API.Revit
 	Facts: bim:tema  "API"
 	Facts: bim:subtema  "Elementos Instanciados"
 	Facts: bim:descrição  "Individuo indicador de método API para selecionar instâncias do projeto"
-	Facts: bim:método.revit  "[ EleBuscado : FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().FirstOrDefault( e => e.Symbol.Name == 'InsBuscada') ]"
+	Facts: bim:método.revit  "[ Elementos ]"
 
 Individual: bim:API_Simbolo
 	Types: bim:API.Revit
 	Facts: bim:tema  "API"
 	Facts: bim:subtema  "Elementos Tipificados"
 	Facts: bim:descrição  "Individuo indicador de método API para selecionar elementos tipificados do projeto"
-	Facts: bim:método.revit  "[ TipBuscado : FilteredElementCollector(doc).OfClass(typeof(FamilySymbol )).Cast<FamilySymbol>( ).FirstOrDefault( e => e.Name        == 'TipBuscado') ]"
+	Facts: bim:método.revit  "[ Tipos ]"
 
 Individual: bim:API_Material
 	Types: bim:API.Revit
 	Facts: bim:tema  "API"
 	Facts: bim:subtema  "Elementos Materiais"
 	Facts: bim:descrição  "Individuo indicador de método API para selecionar materiais do projeto"
-	Facts: bim:método.revit  "[ MtlBuscado : FilteredElementCollector(doc).OfClass(typeof(Material)).Cast<Material>( ).FirstOrDefault( e => e.Name  == 'MtlBuscado') ]"
+	Facts: bim:método.revit  "[ Materiais ]"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -34325,11 +34325,46 @@ ObjectProperty: bim:p.zonificar
 
 
 
+ObjectProperty: bim:é.zona.mata.ciliar
+	SubPropertyOf: bim:p.zonificar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.mata.ciliar"@pt
+	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Ação "Ação de zonificar"@pt
+	Annotations: bim:Definição "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt
+	Annotations: bim:Definición "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es
+	Annotations: bim:Definition "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en
+	Annotations: bim:CatRevit "[ OST_MEPZone ]"
+	Annotations: bim:ClasseIfc "[ IfcZone ]"
+	InverseOf: bim:é.zona.privada
+
+DataProperty: bim:d.zonificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:zona.mata.ciliar
+	SubPropertyOf: bim:d.zonificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para zonificar: zona.mata.ciliar -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Ação "Ação de zonificar"@pt
+	Annotations: bim:Definição "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt
+	Annotations: bim:Definición "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es
+	Annotations: bim:Definition "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en
+	Annotations: bim:CatRevit "[ OST_MEPZone ]"
+	Annotations: bim:ClasseIfc "[ IfcZone ]"
+
+ObjectProperty: bim:p.zonificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.zona.privada
 	SubPropertyOf: bim:p.zonificar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.privada"@pt
-	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Chave "d.zonificar.106"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona privada."@pt
 	Annotations: bim:Definición "Declara la Identificación de zonas privadas."@es
@@ -34347,7 +34382,7 @@ DataProperty: bim:zona.privada
 	SubPropertyOf: bim:d.zonificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para zonificar: zona.privada -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Chave "d.zonificar.106"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona privada."@pt
 	Annotations: bim:Definición "Declara la Identificación de zonas privadas."@es
@@ -34364,7 +34399,7 @@ ObjectProperty: bim:é.zona.pública
 	SubPropertyOf: bim:p.zonificar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.pública"@pt
-	Annotations: bim:Chave "d.zonificar.107"
+	Annotations: bim:Chave "d.zonificar.108"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona pública."@pt
 	Annotations: bim:Definición "Declara la Identificación de área pública."@es
@@ -34382,7 +34417,7 @@ DataProperty: bim:zona.pública
 	SubPropertyOf: bim:d.zonificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para zonificar: zona.pública -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.zonificar.107"
+	Annotations: bim:Chave "d.zonificar.108"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona pública."@pt
 	Annotations: bim:Definición "Declara la Identificación de área pública."@es
@@ -34392,5 +34427,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia NBR15965_0M
-##  Criada em 23/08/2026 18:11:25
+##  Criada em 24/08/2026 13:51:39
 #################################################################
