@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Ontologia para descrever elementos Arquitetônicos - Pisos - Paredes - Divisórias e Tetos, Esquadrias, Bancadas..."@pt ;
-	  rdfs:label "DataHora: 23/08/2026 14:34:46"@pt ;
+	  rdfs:label "DataHora: 24/08/2026 14:34:16"@pt ;
 	  rdfs:label "Advertência: Traduções ao espanhol e ao inglês incorporadas - As traduções devem ser constantemente revisadas"@pt ;
 	  rdfs:label "Aviso: Traducciones integradas al español e inglés - Las traducciones deben revisarse constantemente"@es ;
 	  rdfs:label "Alert: Built-in Spanish and English Translations - Translations must be constantly reviewed"@en ;
@@ -12985,6 +12985,38 @@ bim:Acabamento rdf:type  owl:Class  ;
       bim:AtributoIfc "[ - ]"   ;
       bim:ClasseIfc   "[ IfcCovering ]"   ;
       bim:ABNT        "[ 3E.16.04 ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.API rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De API"@pt  .
+
+
+bim:Métodos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.API ;
+      rdfs:label  "Métodos"@pt  .
+
+
+bim:Macros rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Métodos ;
+      rdfs:label  "Macros"@pt  .
+
+
+bim:API.Revit rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Macros ;
+      rdfs:label  "API Revit"@pt ;
+      bim:Definição   "Aplicação Revit"@pt ;
+      bim:Definición  "Aplicativo Revit"@es ;
+      bim:Definition  "Revit Aplication"@en ;
+      bim:Natureza    "De API"@pt ;
+      bim:Espécie     "Métodos"@pt ;
+      bim:Tema        "Macros"@pt ;
+      bim:Disciplina  "Arquitetura"@pt ;
+      bim:Chave       "Key-ARQ-351"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
@@ -41002,6 +41034,64 @@ bim:rvt.instância   rdf:type  owl:DatatypeProperty ;
                     bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]"  .
 
 
+bim:p.selecionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.selecionada.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.selecionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a selecionar: é.selecionada.por" ;
+                    bim:Chave               "d.selecionar.108" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en ;
+                    owl:equivalentProperty  bim:é.selecionado.por  .
+
+
+bim:d.selecionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:selecionada.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.selecionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para selecionar: selecionada.por -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.selecionar.108" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en  .
+
+
+bim:p.selecionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.selecionado.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.selecionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a selecionar: é.selecionado.por" ;
+                    bim:Chave               "d.selecionar.109" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en ;
+                    owl:equivalentProperty  bim:é.selecionada.por  .
+
+
+bim:d.selecionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:selecionado.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.selecionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para selecionar: selecionado.por -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.selecionar.109" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en  .
+
+
 bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -42167,11 +42257,44 @@ bim:p.zonificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.zona.mata.ciliar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.zonificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a zonificar: é.zona.mata.ciliar" ;
+                    bim:Chave               "d.zonificar.105" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt ;
+                    bim:Definición          "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es ;bim:Definition          "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]" ;
+                    owl:inverseOf           bim:é.zona.privada  .
+
+
+bim:d.zonificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:zona.mata.ciliar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.zonificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.mata.ciliar -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.zonificar.105" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt ;
+                    bim:Definición          "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es ;bim:Definition          "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]"  .
+
+
+bim:p.zonificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.zona.privada   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.zonificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a zonificar: é.zona.privada" ;
-                    bim:Chave               "d.zonificar.105" ;
+                    bim:Chave               "d.zonificar.106" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona privada. "@pt ;
                     bim:Definición          "Declara la Identificación de zonas privadas."@es ;bim:Definition          "Declares the identification of private zone."@en ;
@@ -42188,7 +42311,7 @@ bim:zona.privada   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.zonificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.privada -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.zonificar.105" ;
+                    bim:Chave               "d.zonificar.106" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona privada. "@pt ;
                     bim:Definición          "Declara la Identificación de zonas privadas."@es ;bim:Definition          "Declares the identification of private zone."@en ;
@@ -42204,7 +42327,7 @@ bim:é.zona.pública   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.zonificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a zonificar: é.zona.pública" ;
-                    bim:Chave               "d.zonificar.107" ;
+                    bim:Chave               "d.zonificar.108" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona pública. "@pt ;
                     bim:Definición          "Declara la Identificación de área pública."@es ;bim:Definition          "Declares the identification of public area."@en ;
@@ -42221,7 +42344,7 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.zonificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.pública -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.zonificar.107" ;
+                    bim:Chave               "d.zonificar.108" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona pública. "@pt ;
                     bim:Definición          "Declara la Identificación de área pública."@es ;bim:Definition          "Declares the identification of public area."@en ;
@@ -42230,5 +42353,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Arquitetura
-##  Criada em 23/08/2026 14:34:48
+##  Criada em 24/08/2026 14:34:21
 #################################################################
