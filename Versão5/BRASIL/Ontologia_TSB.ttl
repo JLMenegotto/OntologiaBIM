@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Conceitos de elementos da Taxonomia Sustentável Brasileira TSB"@pt ;
-	  rdfs:label "DataHora: 23/08/2026 14:36:10"@pt ;
+	  rdfs:label "DataHora: 24/08/2026 14:38:09"@pt ;
 	  rdfs:label "Advertência: Estão sendo transcritos os conteúdos das Fichas Técnicas e os Cadernos da Taxonomia Sustentável Brasileira procurando respeitar o conteúdo textual, mas fazendo mínimos ajustes para a formalização ontológica. A ontologia á atualizada com frequência, adicionando relações entre os conceitos e propriedades."@pt ;
 	  rdfs:label "Aviso: Se transcriben los contenidos de las Hojas Técnicas y los Cuadernos de la Taxonomía Sostenible Brasileña, intentando respetar el contenido textual, pero haciendo ajustes mínimos para la formalización ontológica. La ontología se actualiza con frecuencia, añadiendo relaciones entre conceptos y propiedades."@es ;
 	  rdfs:label "Alert: The contents of the Technical Sheets and the Brazilian Sustainable Taxonomy Manuals are being transcribed, seeking to respect the textual content while making minimal adjustments for ontological formalization. The ontology is updated frequently, adding relationships between concepts and properties."@en ;
@@ -1581,6 +1581,38 @@ bim:Setor.Econômico rdf:type  owl:Class  ;
       bim:Tema        "Atividades Econômicas"@pt ;
       bim:Disciplina  "Ecologia"@pt ;
       bim:Chave       "Key-TSB-47"@pt  .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.API rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De API"@pt  .
+
+
+bim:Métodos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.API ;
+      rdfs:label  "Métodos"@pt  .
+
+
+bim:Macros rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Métodos ;
+      rdfs:label  "Macros"@pt  .
+
+
+bim:API.Revit rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Macros ;
+      rdfs:label  "API Revit"@pt ;
+      bim:Definição   "Aplicação Revit"@pt ;
+      bim:Definición  "Aplicativo Revit"@es ;
+      bim:Definition  "Revit Aplication"@en ;
+      bim:Natureza    "De API"@pt ;
+      bim:Espécie     "Métodos"@pt ;
+      bim:Tema        "Macros"@pt ;
+      bim:Disciplina  "Ecologia"@pt ;
+      bim:Chave       "Key-TSB-48"@pt  .
 
 #################################################################
 #     Indivíduos em Turtle                                       
@@ -51514,6 +51546,64 @@ bim:rvt.instância   rdf:type  owl:DatatypeProperty ;
                     bim:AtributoIfc         "[ GlobalId : OwnerHistory : Name ]"  .
 
 
+bim:p.selecionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.selecionada.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.selecionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a selecionar: é.selecionada.por" ;
+                    bim:Chave               "d.selecionar.108" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en ;
+                    owl:equivalentProperty  bim:é.selecionado.por  .
+
+
+bim:d.selecionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:selecionada.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.selecionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para selecionar: selecionada.por -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.selecionar.108" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en  .
+
+
+bim:p.selecionar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.selecionado.por   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.selecionar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a selecionar: é.selecionado.por" ;
+                    bim:Chave               "d.selecionar.109" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en ;
+                    owl:equivalentProperty  bim:é.selecionada.por  .
+
+
+bim:d.selecionar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:selecionado.por   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.selecionar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para selecionar: selecionado.por -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.selecionar.109" ;
+                    bim:Ação                "Ação de selecionar" ;
+                    bim:Definição           "Declara o método API para selecionar o objeto."@pt ;
+                    bim:Definición          "Declara el método API para seleccionar el objeto."@es ;bim:Definition          "Declares the API method used to selecting the object."@en  .
+
+
 bim:p.sensorizar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
@@ -53631,11 +53721,44 @@ bim:p.zonificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.zona.mata.ciliar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.zonificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a zonificar: é.zona.mata.ciliar" ;
+                    bim:Chave               "d.zonificar.105" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt ;
+                    bim:Definición          "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es ;bim:Definition          "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]" ;
+                    owl:inverseOf           bim:é.zona.privada  .
+
+
+bim:d.zonificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:zona.mata.ciliar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.zonificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.mata.ciliar -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.zonificar.105" ;
+                    bim:Ação                "Ação de zonificar" ;
+                    bim:Definição           "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt ;
+                    bim:Definición          "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es ;bim:Definition          "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en ;
+                    bim:CatRevit            "[ OST_MEPZone ]" ;
+                    bim:ClasseIfc           "[ IfcZone ]"  .
+
+
+bim:p.zonificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.zona.privada   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.zonificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a zonificar: é.zona.privada" ;
-                    bim:Chave               "d.zonificar.105" ;
+                    bim:Chave               "d.zonificar.106" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona privada. "@pt ;
                     bim:Definición          "Declara la Identificación de zonas privadas."@es ;bim:Definition          "Declares the identification of private zone."@en ;
@@ -53652,7 +53775,7 @@ bim:zona.privada   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.zonificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.privada -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.zonificar.105" ;
+                    bim:Chave               "d.zonificar.106" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona privada. "@pt ;
                     bim:Definición          "Declara la Identificación de zonas privadas."@es ;bim:Definition          "Declares the identification of private zone."@en ;
@@ -53668,7 +53791,7 @@ bim:é.zona.pública   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.zonificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a zonificar: é.zona.pública" ;
-                    bim:Chave               "d.zonificar.107" ;
+                    bim:Chave               "d.zonificar.108" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona pública. "@pt ;
                     bim:Definición          "Declara la Identificación de área pública."@es ;bim:Definition          "Declares the identification of public area."@en ;
@@ -53685,7 +53808,7 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.zonificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para zonificar: zona.pública -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.zonificar.107" ;
+                    bim:Chave               "d.zonificar.108" ;
                     bim:Ação                "Ação de zonificar" ;
                     bim:Definição           "Declara a Identificação de zona pública. "@pt ;
                     bim:Definición          "Declara la Identificación de área pública."@es ;bim:Definition          "Declares the identification of public area."@en ;
@@ -53694,5 +53817,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia TSB
-##  Criada em 23/08/2026 14:36:14
+##  Criada em 24/08/2026 14:38:19
 #################################################################
