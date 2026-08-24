@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#SomaSUS_Espacial>
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Caderno SomaSUS elaborado pelo Sistema Único de Saúde."@pt
-  Annotations: rdfs:label "DataHora: 23/08/2026 14:37:15"@pt
+  Annotations: rdfs:label "DataHora: 24/08/2026 14:01:49"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
   Annotations: rdfs:label "Advertência: Caderno SomaSUS elaborado pelo Sistema Único de Saúde do Brasil"@pt
@@ -533,6 +533,37 @@ Class: bim:SUS.Alimentação
 	Annotations: bim:AtributoIfc "[ - ]"
 	Annotations: bim:Código.ABNT "[ 2C.74 ]"
 	SubClassOf: bim:SUS.Hotelaria
+
+Class: bim:Projeto
+	SubClassOf: bim:BIM
+
+
+Class: bim:De.API
+	Annotations: rdfs:label "De API"@pt
+	SubClassOf: bim:Projeto
+
+
+Class: bim:Métodos
+	Annotations: rdfs:label "Métodos"@pt
+	SubClassOf: bim:De.API
+
+
+Class: bim:Macros
+	Annotations: rdfs:label "Macros"@pt
+	SubClassOf: bim:Métodos
+
+
+Class: bim:API.Revit
+	Annotations: rdfs:label "API Revit"@pt
+	Annotations: bim:Definição "Aplicação Revit"@pt
+	Annotations: bim:Definición "Aplicativo Revit"@es
+	Annotations: bim:Definition "Revit Aplication"@en
+	Annotations: bim:Natureza "De API"@pt
+	Annotations: bim:Espécie "Métodos"@pt
+	Annotations: bim:Tema "Macros"@pt
+	Annotations: bim:Disciplina "Hospitalar Público"@pt
+	Annotations: bim:Chave "Key-SUS-23"
+	SubClassOf: bim:Macros
 
 #################################################################
 #     Indivíduos em Sintaxe Manchester                           
@@ -3085,6 +3116,41 @@ Individual: bim:PAT.20
 	Facts: bim:tipo.revit  "Nome do tipo do Room Tag"
 	Facts: bim:classe.ifc  "[ IfcZone : IfcSpace : IfcOccupant ]"
 
+Individual: bim:API_Ambiente
+	Types: bim:API.Revit
+	Facts: bim:tema  "API"
+	Facts: bim:subtema  "Elementos Ambientes"
+	Facts: bim:descrição  "Individuo indicador de método API para selecionar ambientes do projeto"
+	Facts: bim:método.revit  "[ Ambientes ]"
+
+Individual: bim:API_Andar
+	Types: bim:API.Revit
+	Facts: bim:tema  "API"
+	Facts: bim:subtema  "Elementos Andares"
+	Facts: bim:descrição  "Individuo indicador de método API para selecionar andares do projeto"
+	Facts: bim:método.revit  "[ Pavimentos ]"
+
+Individual: bim:API_Instância
+	Types: bim:API.Revit
+	Facts: bim:tema  "API"
+	Facts: bim:subtema  "Elementos Instanciados"
+	Facts: bim:descrição  "Individuo indicador de método API para selecionar instâncias do projeto"
+	Facts: bim:método.revit  "[ Elementos ]"
+
+Individual: bim:API_Simbolo
+	Types: bim:API.Revit
+	Facts: bim:tema  "API"
+	Facts: bim:subtema  "Elementos Tipificados"
+	Facts: bim:descrição  "Individuo indicador de método API para selecionar elementos tipificados do projeto"
+	Facts: bim:método.revit  "[ Tipos ]"
+
+Individual: bim:API_Material
+	Types: bim:API.Revit
+	Facts: bim:tema  "API"
+	Facts: bim:subtema  "Elementos Materiais"
+	Facts: bim:descrição  "Individuo indicador de método API para selecionar materiais do projeto"
+	Facts: bim:método.revit  "[ Materiais ]"
+
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
 #################################################################
@@ -5588,6 +5654,36 @@ DataProperty: bim:realizado.com
 	Annotations: bim:Definição "Declara que se trata de uma ação realizada com algum elemento, por exemplo, um voo de drone realizado com um drone específico."@pt
 	Annotations: bim:Definición "Declara que es una acción realizada con algún elemento, por ejemplo, un vuelo de dron realizado con un dron específico."@es
 	Annotations: bim:Definition "Declares that it is an action carried out with some element, for example, a drone flight carried out with a specific drone."@en
+
+ObjectProperty: bim:p.catalogar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.subtema
+	SubPropertyOf: bim:p.catalogar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a catalogar: é.subtema"@pt
+	Annotations: bim:Chave "d.catalogar.139"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Subtema definido pelo fabricante de um determinado produto ou de um determinado tema."@pt
+	Annotations: bim:Definición "Declara el Subtema definido por el fabricante de un producto o tema concreto."@es
+	Annotations: bim:Definition "Declares the Sub-theme defined by the manufacturer of a particular product or a particular theme."@en
+
+DataProperty: bim:d.catalogar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:subtema
+	SubPropertyOf: bim:d.catalogar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para catalogar: subtema -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.catalogar.139"
+	Annotations: bim:Ação "Ação de catalogar"@pt
+	Annotations: bim:Definição "Declara o Subtema definido pelo fabricante de um determinado produto ou de um determinado tema."@pt
+	Annotations: bim:Definición "Declara el Subtema definido por el fabricante de un producto o tema concreto."@es
+	Annotations: bim:Definition "Declares the Sub-theme defined by the manufacturer of a particular product or a particular theme."@en
 
 ObjectProperty: bim:p.catalogar
 	SubPropertyOf: bim:BIMProp
@@ -31095,6 +31191,68 @@ DataProperty: bim:rvt.instância
 	Annotations: bim:ClasseIfc "[ IfcGloballyUniqueId : IfcLabel : IfcText : IfcElement.ObjectType : IfcTypeObject ]"
 	Annotations: bim:AtributoIfc "[ GlobalId : OwnerHistory : Name ]"
 
+ObjectProperty: bim:p.selecionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.selecionada.por
+	SubPropertyOf: bim:p.selecionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a selecionar: é.selecionada.por"@pt
+	Annotations: bim:Chave "d.selecionar.108"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+	EquivalentTo: bim:é.selecionado.por
+
+DataProperty: bim:d.selecionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:selecionada.por
+	SubPropertyOf: bim:d.selecionar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para selecionar: selecionada.por -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.selecionar.108"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+
+ObjectProperty: bim:p.selecionar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.selecionado.por
+	SubPropertyOf: bim:p.selecionar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a selecionar: é.selecionado.por"@pt
+	Annotations: bim:Chave "d.selecionar.109"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+	EquivalentTo: bim:é.selecionada.por
+
+DataProperty: bim:d.selecionar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:selecionado.por
+	SubPropertyOf: bim:d.selecionar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para selecionar: selecionado.por -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.selecionar.109"
+	Annotations: bim:Ação "Ação de selecionar"@pt
+	Annotations: bim:Definição "Declara o método API para selecionar o objeto."@pt
+	Annotations: bim:Definición "Declara el método API para seleccionar el objeto."@es
+	Annotations: bim:Definition "Declares the API method used to selecting the object."@en
+
 ObjectProperty: bim:p.sensorizar
 	SubPropertyOf: bim:BIMProp
 
@@ -32345,11 +32503,46 @@ ObjectProperty: bim:p.zonificar
 
 
 
+ObjectProperty: bim:é.zona.mata.ciliar
+	SubPropertyOf: bim:p.zonificar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.mata.ciliar"@pt
+	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Ação "Ação de zonificar"@pt
+	Annotations: bim:Definição "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt
+	Annotations: bim:Definición "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es
+	Annotations: bim:Definition "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en
+	Annotations: bim:CatRevit "[ OST_MEPZone ]"
+	Annotations: bim:ClasseIfc "[ IfcZone ]"
+	InverseOf: bim:é.zona.privada
+
+DataProperty: bim:d.zonificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:zona.mata.ciliar
+	SubPropertyOf: bim:d.zonificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para zonificar: zona.mata.ciliar -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Ação "Ação de zonificar"@pt
+	Annotations: bim:Definição "Declara a Identificação de margens de rios, lagoas y nascentes. Funciona como protectora do solo e fauna local."@pt
+	Annotations: bim:Definición "Declara la Identificación de márgenes de rios, lagos y nacientes. Funciona como protectora del suele y la fauna local."@es
+	Annotations: bim:Definition "Declares the identification of rivers and lagoons margins. Important to protect the soil and local fauna."@en
+	Annotations: bim:CatRevit "[ OST_MEPZone ]"
+	Annotations: bim:ClasseIfc "[ IfcZone ]"
+
+ObjectProperty: bim:p.zonificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.zona.privada
 	SubPropertyOf: bim:p.zonificar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.privada"@pt
-	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Chave "d.zonificar.106"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona privada."@pt
 	Annotations: bim:Definición "Declara la Identificación de zonas privadas."@es
@@ -32367,7 +32560,7 @@ DataProperty: bim:zona.privada
 	SubPropertyOf: bim:d.zonificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para zonificar: zona.privada -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.zonificar.105"
+	Annotations: bim:Chave "d.zonificar.106"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona privada."@pt
 	Annotations: bim:Definición "Declara la Identificación de zonas privadas."@es
@@ -32384,7 +32577,7 @@ ObjectProperty: bim:é.zona.pública
 	SubPropertyOf: bim:p.zonificar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a zonificar: é.zona.pública"@pt
-	Annotations: bim:Chave "d.zonificar.107"
+	Annotations: bim:Chave "d.zonificar.108"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona pública."@pt
 	Annotations: bim:Definición "Declara la Identificación de área pública."@es
@@ -32402,7 +32595,7 @@ DataProperty: bim:zona.pública
 	SubPropertyOf: bim:d.zonificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para zonificar: zona.pública -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.zonificar.107"
+	Annotations: bim:Chave "d.zonificar.108"
 	Annotations: bim:Ação "Ação de zonificar"@pt
 	Annotations: bim:Definição "Declara a Identificação de zona pública."@pt
 	Annotations: bim:Definición "Declara la Identificación de área pública."@es
@@ -32412,5 +32605,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia SomaSUS_4AU
-##  Criada em 23/08/2026 14:37:17
+##  Criada em 24/08/2026 14:01:54
 #################################################################
