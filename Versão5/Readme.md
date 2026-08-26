@@ -68,10 +68,63 @@ presente no conteúdo do arquivo ONTO2025.addin
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
 O botao  <b>Modelo</b> está reservado para a função que extrairá a imagem ontológiga do modelo BIM, a partir da leitura dos objetos projetados. Os campos textuais setados em 0 e 0 são destinados a ingressar o número dos domínios ontológicos que serão criados. Se se deseja criar apenas um domínio, ingressar o valor no campo superior e manter o do campo inferior. Se quiser processar mais de um domínio, ingressar o valor numérico da faixa de dominios, p.ex. 0 e 12 processará as 13 ontologias correspondentes à norma NBR 15965. Segue a lista de valores numéricos permitidos.<br></b></p>
 
-         0  \\ABNT\\Ontologia_NBR15965_0M 
-         1  \\ABNT\\Ontologia_NBR15965_0P 
-         2  \\ABNT\\Ontologia_NBR15965_1D
-         3  \\ABNT\\Ontologia_NBR15965_1F 
+0 ---  \\ABNT\\Ontologia_NBR15965_0M
+1 ---  \\ABNT\\Ontologia_NBR15965_0P
+2 ---  \\ABNT\\Ontologia_NBR15965_1D
+3 ---  \\ABNT\\Ontologia_NBR15965_1F
+4 ---  \\ABNT\\Ontologia_NBR15965_1S
+5 ---  \\ABNT\\Ontologia_NBR15965_2C
+6 ---  \\ABNT\\Ontologia_NBR15965_2N
+7 ---  \\ABNT\\Ontologia_NBR15965_2Q
+8 ---  \\ABNT\\Ontologia_NBR15965_3E
+9 ---  \\ABNT\\Ontologia_NBR15965_3R
+10 ---  \\ABNT\\Ontologia_NBR15965_4A
+11 ---  \\ABNT\\Ontologia_NBR15965_4U
+12 ---  \\ABNT\\Ontologia_NBR15965_5I
+13 ---  \\ARQ\\Ontologia_Ambientes
+14 ---  \\ARQ\\Ontologia_Arquitetura
+15 ---  \\ARQ\\Ontologia_Circulacao
+16 ---  \\ARQ\\Ontologia_Drones
+17 ---  \\ARQ\\Ontologia_Paisagismo
+18 ---  \\BIM\\Ontologia_Ifc_4x3
+19 ---  \\BIM\\Ontologia_kml_2x2
+20 ---  \\BRASIL\\Ontologia_Brasil
+21 ---  \\BRASIL\\Ontologia_Brasil_Meteorologia
+22 ---  \\BRASIL\\Ontologia_Brasil_MG
+23 ---  \\BRASIL\\Ontologia_Brasil_RJ
+24 ---  \\BRASIL\\Ontologia_Brasil_SP
+25 ---  \\BRASIL\\Ontologia_Sinapi
+26 ---  \\BRASIL\\Ontologia_TSB
+27 ---  \\EST\\Ontologia_Geotecnica
+28 ---  \\EST\\Ontologia_Metalica
+29 ---  \\EST\\Ontologia_Infraestrutura
+30 ---  \\PRO\\Ontologia_Agentes
+31 ---  \\PRO\\Ontologia_Cromatica
+32 ---  \\PRO\\Ontologia_Crono
+33 ---  \\PRO\\Ontologia_Documentos
+34 ---  \\PRO\\Ontologia_Fabricantes
+35 ---  \\PRO\\Ontologia_Genetica
+36 ---  \\PRO\\Ontologia_Materiais
+37 ---  \\PRO\\Ontologia_Requisitos
+38 ---  \\SIS\\Ontologia_Avac
+39 ---  \\SIS\\Ontologia_Eletrica
+40 ---  \\SIS\\Ontologia_Gases
+41 ---  \\SIS\\Ontologia_Hidrossanitaria
+42 ---  \\SIS\\Ontologia_Incendio
+43 ---  \\SIS\\Ontologia_Luminotecnica
+44 ---  \\SIS\\Ontologia_Motriz
+45 ---  \\SIS\\Ontologia_Telecom
+46 ---  \\SIS\\Ontologia_Tubulacao
+47 ---  \\SUS\\Ontologia_RDC_50
+48 ---  \\SUS\\Ontologia_SomaSUS_2Q
+49 ---  \\SUS\\Ontologia_SomaSUS_4AU
+50 ---  \\SUS\\Ontologia_SomaSUS_5I
+51 ---  \\UFRJ\\Ontologia_CT_Ambientes
+52 ---  \\UFRJ\\Ontologia_CT_Codigos
+
+
+<img width="213" height="849" alt="image" src="https://github.com/user-attachments/assets/43cd413d-900a-4509-8943-a1a342bb6f1e" />
+
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
