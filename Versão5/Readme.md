@@ -53,6 +53,62 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
  
  6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset e X_Filtros**. Nelas pode colocar os arquivos Excel de cada domínio e os arquivos owl e ttl com os conteúdos das ontologias.
 
+0 ---  \\ABNT\\Ontologia_NBR15965_0M
+1 ---  \\ABNT\\Ontologia_NBR15965_0P
+2 ---  \\ABNT\\Ontologia_NBR15965_1D
+3 ---  \\ABNT\\Ontologia_NBR15965_1F
+4 ---  \\ABNT\\Ontologia_NBR15965_1S
+5 ---  \\ABNT\\Ontologia_NBR15965_2C
+6 ---  \\ABNT\\Ontologia_NBR15965_2N
+7 ---  \\ABNT\\Ontologia_NBR15965_2Q
+8 ---  \\ABNT\\Ontologia_NBR15965_3E
+9 ---  \\ABNT\\Ontologia_NBR15965_3R
+10 ---  \\ABNT\\Ontologia_NBR15965_4A
+11 ---  \\ABNT\\Ontologia_NBR15965_4U
+12 ---  \\ABNT\\Ontologia_NBR15965_5I
+13 ---  \\ARQ\\Ontologia_Ambientes
+14 ---  \\ARQ\\Ontologia_Arquitetura
+15 ---  \\ARQ\\Ontologia_Circulacao
+16 ---  \\ARQ\\Ontologia_Drones
+17 ---  \\ARQ\\Ontologia_Paisagismo
+18 ---  \\BIM\\Ontologia_Ifc_4x3
+19 ---  \\BIM\\Ontologia_kml_2x2
+20 ---  \\BRASIL\\Ontologia_Brasil
+21 ---  \\BRASIL\\Ontologia_Brasil_Meteorologia
+22 ---  \\BRASIL\\Ontologia_Brasil_MG
+23 ---  \\BRASIL\\Ontologia_Brasil_RJ
+24 ---  \\BRASIL\\Ontologia_Brasil_SP
+25 ---  \\BRASIL\\Ontologia_Sinapi
+26 ---  \\BRASIL\\Ontologia_TSB
+27 ---  \\EST\\Ontologia_Geotecnica
+28 ---  \\EST\\Ontologia_Metalica
+29 ---  \\EST\\Ontologia_Infraestrutura
+30 ---  \\PRO\\Ontologia_Agentes
+31 ---  \\PRO\\Ontologia_Cromatica
+32 ---  \\PRO\\Ontologia_Crono
+33 ---  \\PRO\\Ontologia_Documentos
+34 ---  \\PRO\\Ontologia_Fabricantes
+35 ---  \\PRO\\Ontologia_Genetica
+36 ---  \\PRO\\Ontologia_Materiais
+37 ---  \\PRO\\Ontologia_Requisitos
+38 ---  \\SIS\\Ontologia_Avac
+39 ---  \\SIS\\Ontologia_Eletrica
+40 ---  \\SIS\\Ontologia_Gases
+41 ---  \\SIS\\Ontologia_Hidrossanitaria
+42 ---  \\SIS\\Ontologia_Incendio
+43 ---  \\SIS\\Ontologia_Luminotecnica
+44 ---  \\SIS\\Ontologia_Motriz
+45 ---  \\SIS\\Ontologia_Telecom
+46 ---  \\SIS\\Ontologia_Tubulacao
+47 ---  \\SUS\\Ontologia_RDC_50
+48 ---  \\SUS\\Ontologia_SomaSUS_2Q
+49 ---  \\SUS\\Ontologia_SomaSUS_4AU
+50 ---  \\SUS\\Ontologia_SomaSUS_5I
+51 ---  \\UFRJ\\Ontologia_CT_Ambientes
+52 ---  \\UFRJ\\Ontologia_CT_Codigos
+
+<img width="213" height="849" alt="image" src="https://github.com/user-attachments/assets/debcd301-ad7f-4caf-a8e2-f66f138471fd" />
+
 ![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
 
 #### Arquivo Addin para Revit
