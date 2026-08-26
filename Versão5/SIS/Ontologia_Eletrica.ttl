@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Objetos de Sistemas de Elétrica"@pt ;
-	  rdfs:label "DataHora: 26/08/2026 9:36:50"@pt ;
+	  rdfs:label "DataHora: 26/08/2026 10:35:09"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -4910,14 +4910,16 @@ bim:Circuitos rdf:type  owl:Class  ;
 bim:Elétrica.AT rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Circuitos ;
       rdfs:label  "Elétrica AT"@pt ;
-      bim:Definição   "Instalação elétrica de alta tensão"@pt ;
-      bim:Definición  "Instalación eléctrica de alta tensión"@es ;
-      bim:Definition  "High voltage electrical installation"@en ;
+      bim:Definição   "Instalação elétrica de alta tensão com tensão nominal igual ou inferior a 1 kV."@pt ;
+      bim:Definición  "Instalación eléctrica de alta tensión con una tensión nominal igual o inferior a 1 kV."@es ;
+      bim:Definition  "High-voltage electrical installation with a nominal voltage equal to or less than 1 kV."@en ;
       bim:Natureza    "De Elétrica"@pt ;
       bim:Espécie     "Alta Tensão"@pt ;
       bim:Tema        "Circuitos"@pt ;
       bim:Disciplina  "Instalações"@pt ;
-      bim:Chave       "Key-ELET-139"@pt  .
+      bim:Chave       "Key-ELET-139"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -4942,14 +4944,16 @@ bim:Circuitos rdf:type  owl:Class  ;
 bim:Elétrica.MT rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Circuitos ;
       rdfs:label  "Elétrica MT"@pt ;
-      bim:Definição   "Instalação elétrica de média tensão"@pt ;
-      bim:Definición  "Instalación eléctrica de media tensión"@es ;
-      bim:Definition  "Medium voltage electrical installation"@en ;
+      bim:Definição   "Instalação elétrica de média tensão com tensão nominal geralmente entre 13,8 kV e 34,5 kV. Presente em indústria ou em subestações."@pt ;
+      bim:Definición  "Instalación eléctrica de media tensión con una tensión nominal generalmente entre 13,8 kV y 34,5 kV. Presente en la industria o en subestaciones."@es ;
+      bim:Definition  "Medium-voltage electrical installation with a nominal voltage usually between 13.8 kV and 34.5 kV. Present in industry or in substations."@en ;
       bim:Natureza    "De Elétrica"@pt ;
       bim:Espécie     "Média Tensão"@pt ;
       bim:Tema        "Circuitos"@pt ;
       bim:Disciplina  "Instalações"@pt ;
-      bim:Chave       "Key-ELET-140"@pt  .
+      bim:Chave       "Key-ELET-140"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
 
 
 bim:Projeto rdf:type  owl:Class  ;
@@ -4974,98 +4978,326 @@ bim:Circuitos rdf:type  owl:Class  ;
 bim:Elétrica.BT rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Circuitos ;
       rdfs:label  "Elétrica BT"@pt ;
-      bim:Definição   "Instalação elétrica de baixa tensão"@pt ;
-      bim:Definición  "Instalación eléctrica de bajo voltaje"@es ;
-      bim:Definition  "Low voltage electrical installation"@en ;
+      bim:Definição   "Instalação elétrica de baixa tensão com tensão entre 50–230 kV."@pt ;
+      bim:Definición  "Instalación eléctrica de bajo voltaje con tensión entre 50 y 230 kV."@es ;
+      bim:Definition  "Low-voltage electrical installation with voltage between 50–230 kV."@en ;
       bim:Natureza    "De Elétrica"@pt ;
       bim:Espécie     "Baixa Tensão"@pt ;
       bim:Tema        "Circuitos"@pt ;
       bim:Disciplina  "Instalações"@pt ;
-      bim:Chave       "Key-ELET-141"@pt  .
+      bim:Chave       "Key-ELET-141"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Elétrica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Elétrica"@pt  .
+
+
+bim:Baixa.Tensão rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Elétrica ;
+      rdfs:label  "Baixa Tensão"@pt  .
+
+
+bim:Circuitos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Baixa.Tensão ;
+      rdfs:label  "Circuitos"@pt  .
+
+
+bim:Circuíto.de.Entrada rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Circuitos ;
+      rdfs:label  "Circuíto de Entrada"@pt ;
+      bim:Definição   "Circuíto de Entrada de ligação à rede urbana de energia."@pt ;
+      bim:Definición  "Circuito de entrada para conexión a la red energética urbana."@es ;
+      bim:Definition  "Input circuit for connection to the urban energy grid."@en ;
+      bim:Natureza    "De Elétrica"@pt ;
+      bim:Espécie     "Baixa Tensão"@pt ;
+      bim:Tema        "Circuitos"@pt ;
+      bim:Disciplina  "Instalações"@pt ;
+      bim:Chave       "Key-ELET-142"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Elétrica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Elétrica"@pt  .
+
+
+bim:Baixa.Tensão rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Elétrica ;
+      rdfs:label  "Baixa Tensão"@pt  .
+
+
+bim:Circuitos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Baixa.Tensão ;
+      rdfs:label  "Circuitos"@pt  .
+
+
+bim:Circuíto.Condomínio rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Circuitos ;
+      rdfs:label  "Circuíto Condomínio"@pt ;
+      bim:Definição   "Circuíto distribuidor do condomínio."@pt ;
+      bim:Definición  "Círculo de distribuidores del condominio."@es ;
+      bim:Definition  "Distributor circle of the condominium."@en ;
+      bim:Natureza    "De Elétrica"@pt ;
+      bim:Espécie     "Baixa Tensão"@pt ;
+      bim:Tema        "Circuitos"@pt ;
+      bim:Disciplina  "Instalações"@pt ;
+      bim:Chave       "Key-ELET-143"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Elétrica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Elétrica"@pt  .
+
+
+bim:Baixa.Tensão rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Elétrica ;
+      rdfs:label  "Baixa Tensão"@pt  .
+
+
+bim:Circuitos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Baixa.Tensão ;
+      rdfs:label  "Circuitos"@pt  .
+
+
+bim:Circuíto.ILU rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Circuitos ;
+      rdfs:label  "Circuíto ILU"@pt ;
+      bim:Definição   "Circuíto de iluminação de uma unidade residencial ou comercial."@pt ;
+      bim:Definición  "Circuito de iluminación de una unidad residencial o comercial."@es ;
+      bim:Definition  "Lighting circuit of a residential or commercial unit."@en ;
+      bim:Natureza    "De Elétrica"@pt ;
+      bim:Espécie     "Baixa Tensão"@pt ;
+      bim:Tema        "Circuitos"@pt ;
+      bim:Disciplina  "Instalações"@pt ;
+      bim:Chave       "Key-ELET-144"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemLIGHTING ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Elétrica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Elétrica"@pt  .
+
+
+bim:Baixa.Tensão rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Elétrica ;
+      rdfs:label  "Baixa Tensão"@pt  .
+
+
+bim:Circuitos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Baixa.Tensão ;
+      rdfs:label  "Circuitos"@pt  .
+
+
+bim:Circuíto.TUE rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Circuitos ;
+      rdfs:label  "Circuíto TUE"@pt ;
+      bim:Definição   "Circuíto de tomadas de uso específico (Chuveiros, Ar condicionado, etc) de uma unidade residencial ou comercial."@pt ;
+      bim:Definición  "Circuito de enchufes para usos específicos (duchas, aire acondicionado, etc.) de una unidad residencial o comercial."@es ;
+      bim:Definition  "Circuit of outlets for specific use (showers, air conditioning, etc.) of a residential or commercial unit."@en ;
+      bim:Natureza    "De Elétrica"@pt ;
+      bim:Espécie     "Baixa Tensão"@pt ;
+      bim:Tema        "Circuitos"@pt ;
+      bim:Disciplina  "Instalações"@pt ;
+      bim:Chave       "Key-ELET-145"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Elétrica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Elétrica"@pt  .
+
+
+bim:Baixa.Tensão rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Elétrica ;
+      rdfs:label  "Baixa Tensão"@pt  .
+
+
+bim:Circuitos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Baixa.Tensão ;
+      rdfs:label  "Circuitos"@pt  .
+
+
+bim:Circuíto.TUG rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Circuitos ;
+      rdfs:label  "Circuíto TUG"@pt ;
+      bim:Definição   "Circuíto de tomadas de uso geral (aparelhos domésticos) de uma unidade residencial ou comercial."@pt ;
+      bim:Definición  "Circuito de enchufes de uso general (electrodomésticos) de una unidad residencial o comercial."@es ;
+      bim:Definition  "Circuit of general purpose outlets (domestic appliances) of a residential or commercial unit."@en ;
+      bim:Natureza    "De Elétrica"@pt ;
+      bim:Espécie     "Baixa Tensão"@pt ;
+      bim:Tema        "Circuitos"@pt ;
+      bim:Disciplina  "Instalações"@pt ;
+      bim:Chave       "Key-ELET-146"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
 
 #################################################################
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:CTI_Projeto_01  rdf:type  owl:NamedIndividual , bim:EletroTécnicos ;
-     bim:descrição    "Representa Informações contidas no Projeto Eletrotécnico"  .
+bim:CTI_Projeto_01  rdf:type  owl:NamedIndividual , bim:De.Elétrica ;
+     bim:descrição    "Representa Informações contidas no Projeto Eletrotécnico" ;
+     bim:tema    "Projeto de instalação de elétrica"  .
 
-bim:Circuito_01  rdf:type  owl:NamedIndividual , bim:Circuito.Elétrico.Geral ;
+bim:Circuito_01  rdf:type  owl:NamedIndividual , bim:Circuíto.de.Entrada ;
      bim:é.dentro.de    bim:CTI_Projeto_01 ;
-     bim:descrição    "Indivíduo de Elétrica usado no Circuito 01 do Projeto" ;
-     bim:descrição    "Circuito elétrico 1"  .
+     bim:descrição    "Indivíduo de Circuito de entrada do Projeto" ;
+     bim:código    "QDG-01" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Circuitos elétricos"  .
+
+bim:Circuito_02  rdf:type  owl:NamedIndividual , bim:Circuíto.TUG ;
+     bim:é.conectado.a    bim:Circuito_01 ;
+     bim:descrição    "Indivíduo de Circuito de uso geral do Projeto" ;
+     bim:código    "QTG-01" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Circuitos elétricos"  .
 
 bim:Pnt_111233  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111234  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111235  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111236  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111237  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111238  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111239  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
 
 bim:Pnt_111240  rdf:type  owl:NamedIndividual , bim:Tomada.Elétrica ;
-     bim:é.pertencente.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 01." ;
+     bim:é.conectada.a    bim:Circuito_02 ;
+     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
      bim:classe.ifc    "[ IfcOutlet ]" ;
-     bim:código.abnt    "[ 3E.26 ]"  .
+     bim:código.abnt    "[ 3E.26 ]" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Tomadas"  .
+
+bim:API_Ambiente  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:descrição    "Individuo indicador de método API para selecionar ambientes do projeto" ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Ambientes" ;
+     bim:método.revit    "[ Ambientes ]"  .
+
+bim:API_Andar  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:descrição    "Individuo indicador de método API para selecionar andares do projeto" ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Andares" ;
+     bim:método.revit    "[ Pavimentos ]"  .
+
+bim:API_Instância  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:descrição    "Individuo indicador de método API para selecionar instâncias do projeto" ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Instanciados" ;
+     bim:método.revit    "[ Elementos ]"  .
+
+bim:API_Simbolo  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:descrição    "Individuo indicador de método API para selecionar elementos tipificados do projeto" ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Tipificados" ;
+     bim:método.revit    "[ Tipos ]"  .
+
+bim:API_Material  rdf:type  owl:NamedIndividual , bim:API.Revit ;
+     bim:descrição    "Individuo indicador de método API para selecionar materiais do projeto" ;
+     bim:tema    "API" ;
+     bim:subtema    "Elementos Materiais" ;
+     bim:método.revit    "[ Materiais ]"  .
 
 #################################################################
 #     Propriedades de Objetos e Dados em Turtle                  
@@ -7390,6 +7622,34 @@ bim:p.catalogar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.subtema   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.subtema" ;
+                    bim:Chave               "d.catalogar.139" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara o Subtema definido pelo fabricante de um determinado produto ou de um determinado tema. "@pt ;
+                    bim:Definición          "Declara el Subtema definido por el fabricante de un producto o tema concreto."@es ;bim:Definition          "Declares the Sub-theme defined by the manufacturer of a particular product or a particular theme."@en  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:subtema   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar: subtema -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.catalogar.139" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara o Subtema definido pelo fabricante de um determinado produto ou de um determinado tema. "@pt ;
+                    bim:Definición          "Declara el Subtema definido por el fabricante de un producto o tema concreto."@es ;bim:Definition          "Declares the Sub-theme defined by the manufacturer of a particular product or a particular theme."@en  .
+
+
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.substituída.por   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.catalogar ;
                     rdfs:domain             bim:BIM ;
@@ -7442,6 +7702,64 @@ bim:substituído.por   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de catalogar" ;
                     bim:Definição           "Declara a Identificação de um elemento que substituiu outro elemento. A declaração Declara o elemento novo. "@pt ;
                     bim:Definición          "Declara la identificación de un elemento que ha reemplazado a otro elemento. La Declara identifica el nuevo elemento."@es ;bim:Definition          "Declares the identification of an element that has replaced another element. The declaration identifies the new element."@en  .
+
+
+bim:p.catalogar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.tema   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.catalogar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a catalogar: é.tema" ;
+                    bim:Chave               "d.catalogar.143" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara o Tema definido pelo fabricante de um determinado produto. "@pt ;
+                    bim:Definición          "Declara el Tema definido por el fabricante de un producto en particular."@es ;bim:Definition          "Declares Theme defined by the manufacturer of a particular product."@en  .
+
+
+bim:d.catalogar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:tema   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.catalogar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para catalogar: tema -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.catalogar.143" ;
+                    bim:Ação                "Ação de catalogar" ;
+                    bim:Definição           "Declara o Tema definido pelo fabricante de um determinado produto. "@pt ;
+                    bim:Definición          "Declara el Tema definido por el fabricante de un producto en particular."@es ;bim:Definition          "Declares Theme defined by the manufacturer of a particular product."@en  .
+
+
+bim:p.codificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.código   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.codificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a codificar: é.código" ;
+                    bim:Chave               "d.codificar.100" ;
+                    bim:Ação                "Ação de codificar" ;
+                    bim:Definição           "Declara o código de algum objeto definido. "@pt ;
+                    bim:Definición          "Declara el código de algún objeto definido."@es ;bim:Definition          "Declares the code of some defined object."@en ;
+                    rdf:type                owl:FunctionalProperty  .
+
+
+bim:d.codificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:código   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.codificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdf:type                owl:FunctionalProperty ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para codificar: código -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.codificar.100" ;
+                    bim:Ação                "Ação de codificar" ;
+                    bim:Definição           "Declara o código de algum objeto definido. "@pt ;
+                    bim:Definición          "Declara el código de algún objeto definido."@es ;bim:Definition          "Declares the code of some defined object."@en  .
 
 
 bim:p.codificar   rdf:type  owl:ObjectProperty ;
@@ -29826,34 +30144,6 @@ bim:p.relacionar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
-bim:é.pertencente.a   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:p.relacionar ;
-                    rdfs:domain             bim:BIM ;
-                    rdfs:label              "Propriedade destinada a relacionar: é.pertencente.a" ;
-                    bim:Chave               "d.relacionar.111" ;
-                    bim:Ação                "Ação de relacionar" ;
-                    bim:Definição           "Declara que é um elemento que pertence a um outro. "@pt ;
-                    bim:Definición          "Declara que el elemento pertenece a otro."@es ;bim:Definition          "Declares the element belongs to another."@en  .
-
-
-bim:d.relacionar   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:BIMData  .
-
-
-bim:pertencente.a   rdf:type  owl:DatatypeProperty ;
-                    rdfs:subPropertyOf      bim:d.relacionar ;
-                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
-                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para relacionar: pertencente.a -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.relacionar.111" ;
-                    bim:Ação                "Ação de relacionar" ;
-                    bim:Definição           "Declara que é um elemento que pertence a um outro. "@pt ;
-                    bim:Definición          "Declara que el elemento pertenece a otro."@es ;bim:Definition          "Declares the element belongs to another."@en  .
-
-
-bim:p.relacionar   rdf:type  owl:ObjectProperty ;
-                    rdfs:subPropertyOf      bim:BIMProp  .
-
-
 bim:é.usada.em   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.relacionar ;
                     rdfs:domain             bim:BIM ;
@@ -32452,5 +32742,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Eletrica
-##  Criada em 26/08/2026 9:36:58
+##  Criada em 26/08/2026 10:35:15
 #################################################################
