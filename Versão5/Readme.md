@@ -53,8 +53,6 @@ Na última versão da API foi modificada a arquitetura do processamento das plan
  
  6. Dentro de **C:\Construtor_Onto** o aplicativo criará as subpastas **ABNT, ARQU, CROM, CRON, CSUS, DOCU, INFR, META, TUBO, VANT, VEGE, TASB, X_Dataset e X_Filtros**. Nelas pode colocar os arquivos Excel de cada domínio e os arquivos owl e ttl com os conteúdos das ontologias.
 
-<img width="213" height="849" alt="image" src="https://github.com/user-attachments/assets/debcd301-ad7f-4caf-a8e2-f66f138471fd" />
-
 ![Pastas](https://github.com/user-attachments/assets/bf1f353e-b34b-4bf3-b80d-db9a12ea78e5)
 
 #### Arquivo Addin para Revit
@@ -70,7 +68,7 @@ presente no conteúdo do arquivo ONTO2025.addin
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
 O botao  <b>Modelo</b> está reservado para a função que extrairá a imagem ontológiga do modelo BIM, a partir da leitura dos objetos projetados. Os campos textuais setados em 0 e 0 são destinados a ingressar o número dos domínios ontológicos que serão criados. Se se deseja criar apenas um domínio, ingressar o valor no campo superior e manter o do campo inferior. Se quiser processar mais de um domínio, ingressar o valor numérico da faixa de dominios, p.ex. 0 e 12 processará as 13 ontologias correspondentes à norma NBR 15965. Segue a lista de valores numéricos permitidos.<br></b></p>
 
-<img width="213" height="849" alt="image" src="https://github.com/user-attachments/assets/43cd413d-900a-4509-8943-a1a342bb6f1e" />
+<img width="213" height="900" alt="image" src="https://github.com/user-attachments/assets/43cd413d-900a-4509-8943-a1a342bb6f1e" />
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
