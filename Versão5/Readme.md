@@ -68,35 +68,10 @@ presente no conteúdo do arquivo ONTO2025.addin
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
 O botao  <b>Modelo</b> está reservado para a função que extrairá a imagem ontológiga do modelo BIM, a partir da leitura dos objetos projetados. Os campos textuais setados em 0 e 0 são destinados a ingressar o número dos domínios ontológicos que serão criados. Se se deseja criar apenas um domínio, ingressar o valor no campo superior e manter o do campo inferior. Se quiser processar mais de um domínio, ingressar o valor numérico da faixa de dominios, p.ex. 0 e 12 processará as 13 ontologias correspondentes à norma NBR 15965. Segue a lista de valores numéricos permitidos.<br></b></p>
 
-    *  0 Processa ABNT 15965_0M Sistema de Classificação da Construção
-    *  1 Processa ABNT 15965_0P Sistema de Classificação da Construção
-    *  2 Processa ABNT 15965_1D Sistema de Classificação da Construção
-    *  3 Processa ABNT 15965_1F Sistema de Classificação da Construção
-    *  4 Processa ABNT 15965_1S Sistema de Classificação da Construção
-    *  5 Processa ABNT 15965_2C Sistema de Classificação da Construção
-    *  6 Processa ABNT 15965_2N Sistema de Classificação da Construção
-    *  7 Processa ABNT 15965_2Q Sistema de Classificação da Construção
-    *  8 Processa ABNT 15965_3E Sistema de Classificação da Construção
-    *  9 Processa ABNT 15965_3R Sistema de Classificação da Construção
-    * 10 Processa ABNT 15965_4A Sistema de Classificação da Construção
-    * 11 Processa ABNT 15965_4U Sistema de Classificação da Construção                                                     
-    * 12 Processa ABNT 15965_5I Sistema de Classificação da Construção                                                    
-    * 13 Processa CSUS_2Q Caderno SomaSUS (Equipamentos)                                                   
-    * 14 Processa CSUS_4AU Caderno SomaSUS (Ambientes e Unidades Funcionais)
-    * 15 Processa CSUS_5I Caderno SomaSUS (Volumes)                                                     
-    * 16 Processa CODI Conceitos de codificação do sistema BIM do CT                                                 
-    * 17 Processa CRONO Conceitos temporais                                             
-    * 18 Processa CROMA Conceitos cromáticos 
-    * 19 Processa DOCUM Conceitos documentação 
-	* 20 Processa FABRI Conceitos de fabricantes (fornecedores e fornecidos)
-    * 21 Processa TUBOS Conceitos de componentes de tubulações 
-    * 22 Processa DRONE Conceitos de manutenção predial com drones 
-	* 23 Processa METAL Conceitos de componentes de estrutura metálica 
-	* 24 Processa ARQUI Conceitos de elementos de arquitetura 
-	* 25 Processa INFRA Conceitos de elementos de infraestrutura urbana e fatos da cidade de Rio de Janeiro 
-	* 26 Processa VEGET Conceitos elementos paisagísticos e vegetação  
-	* 27 Processa TSB Conceitos da Taxonomia Sustentável Brasileira
-	* 28 Processa AMBI Conceitos de Ambientes (do CT da UFRJ)
+        **  0  \\ABNT\\Ontologia_NBR15965_0M 
+        **  1  \\ABNT\\Ontologia_NBR15965_0P 
+        **  2  \\ABNT\\Ontologia_NBR15965_1D
+        **  3  \\ABNT\\Ontologia_NBR15965_1F 
 
 #### Prompt de execução
 Durante a execução é informado o andamento la linha de Prompt de Revit.
