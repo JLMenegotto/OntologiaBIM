@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_de_Sistema_Elétrica
   Annotations: rdfs:label "NormaReferência2: -"@pt
   Annotations: rdfs:label "NormaReferência3: -"@pt
   Annotations: rdfs:label "Observações: Objetos de Sistemas de Elétrica"@pt
-  Annotations: rdfs:label "DataHora: 26/08/2026 10:48:46"@pt
+  Annotations: rdfs:label "DataHora: 26/08/2026 10:57:13"@pt
   Annotations: rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
   Annotations: rdfs:label "Prédio: -"@pt
   Annotations: rdfs:label "Cidade: -"@pt
@@ -2503,6 +2503,21 @@ Class: bim:Circuito.Condomínio
 	SubClassOf: bim:Tensões
 
 
+Class: bim:Circuito.Unidade
+	Annotations: rdfs:label "Circuito Unidade"@pt
+	Annotations: bim:Definição "Circuito distribuidor do condomínio."@pt
+	Annotations: bim:Definición "Circuito distribuidor de condominios."@es
+	Annotations: bim:Definition "Condominium distributor circuit."@en
+	Annotations: bim:Natureza "De Elétrica"@pt
+	Annotations: bim:Espécie "Circuitos"@pt
+	Annotations: bim:Tema "Tensões"@pt
+	Annotations: bim:Disciplina "Instalações"@pt
+	Annotations: bim:Chave "Key-ELET-144"
+	Annotations: bim:CatRevit "[ OST_SwitchSystem ]"
+	Annotations: bim:ClasseIfc "[ IfcDistributionSystemELECTRICAL ]"
+	SubClassOf: bim:Tensões
+
+
 Class: bim:Iluminação
 	Annotations: rdfs:label "Iluminação"@pt
 	SubClassOf: bim:Circuitos
@@ -2517,7 +2532,7 @@ Class: bim:Ponto.Luz
 	Annotations: bim:Espécie "Circuitos"@pt
 	Annotations: bim:Tema "Iluminação"@pt
 	Annotations: bim:Disciplina "Instalações"@pt
-	Annotations: bim:Chave "Key-ELET-144"
+	Annotations: bim:Chave "Key-ELET-145"
 	Annotations: bim:CatRevit "[ OST_SwitchSystem ]"
 	Annotations: bim:ClasseIfc "[ IfcDistributionSystemLIGHTING ]"
 	SubClassOf: bim:Iluminação
@@ -2532,7 +2547,7 @@ Class: bim:Tomada.TUE
 	Annotations: bim:Espécie "Circuitos"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Instalações"@pt
-	Annotations: bim:Chave "Key-ELET-145"
+	Annotations: bim:Chave "Key-ELET-146"
 	Annotations: bim:CatRevit "[ OST_SwitchSystem ]"
 	Annotations: bim:ClasseIfc "[ IfcDistributionSystemELECTRICAL ]"
 	SubClassOf: bim:Tomadas
@@ -2547,7 +2562,7 @@ Class: bim:Tomada.TUG
 	Annotations: bim:Espécie "Circuitos"@pt
 	Annotations: bim:Tema "Tomadas"@pt
 	Annotations: bim:Disciplina "Instalações"@pt
-	Annotations: bim:Chave "Key-ELET-146"
+	Annotations: bim:Chave "Key-ELET-147"
 	Annotations: bim:CatRevit "[ OST_SwitchSystem ]"
 	Annotations: bim:ClasseIfc "[ IfcDistributionSystemELECTRICAL ]"
 	SubClassOf: bim:Tomadas
@@ -2561,26 +2576,34 @@ Individual: bim:CTI_Projeto_01
 	Facts: bim:descrição  "Representa Informações contidas no Projeto Eletrotécnico"
 	Facts: bim:tema  "Projeto de instalação de elétrica"
 
-Individual: bim:Circuito_01
-	Types: bim:Circuíto.de.Entrada
+Individual: bim:Circuito_Rede
+	Types: bim:Circuito.de.Entrada
 	Facts: bim:é.dentro.de  bim:CTI_Projeto_01
-	Facts: bim:descrição  "Indivíduo de Circuito de entrada do Projeto"
+	Facts: bim:descrição  "Indivíduo de circuito de entrada do Projeto"
+	Facts: bim:código  "RED-01"
+	Facts: bim:tema  "Projeto de instalação de elétrica"
+	Facts: bim:subtema  "Circuitos elétricos"
+
+Individual: bim:Circuito_CC
+	Types: bim:Circuito.Condomínio
+	Facts: bim:é.conectado.a  bim:Circuito_Rede
+	Facts: bim:descrição  "Indivíduo de circuito de condomínio"
 	Facts: bim:código  "QDG-01"
 	Facts: bim:tema  "Projeto de instalação de elétrica"
 	Facts: bim:subtema  "Circuitos elétricos"
 
-Individual: bim:Circuito_02
-	Types: bim:Circuíto.TUG
-	Facts: bim:é.conectado.a  bim:Circuito_01
-	Facts: bim:descrição  "Indivíduo de Circuito de uso geral do Projeto"
+Individual: bim:Circuito_U01
+	Types: bim:Circuito.Unidade
+	Facts: bim:é.conectado.a  bim:Circuito_CC
+	Facts: bim:descrição  "Indivíduo de circuito de unidade residencial"
 	Facts: bim:código  "QTG-01"
 	Facts: bim:tema  "Projeto de instalação de elétrica"
 	Facts: bim:subtema  "Circuitos elétricos"
 
 Individual: bim:Pnt_111233
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2591,8 +2614,8 @@ Individual: bim:Pnt_111233
 
 Individual: bim:Pnt_111234
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2603,8 +2626,8 @@ Individual: bim:Pnt_111234
 
 Individual: bim:Pnt_111235
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2615,8 +2638,8 @@ Individual: bim:Pnt_111235
 
 Individual: bim:Pnt_111236
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2627,8 +2650,8 @@ Individual: bim:Pnt_111236
 
 Individual: bim:Pnt_111237
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2639,8 +2662,8 @@ Individual: bim:Pnt_111237
 
 Individual: bim:Pnt_111238
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2651,8 +2674,8 @@ Individual: bim:Pnt_111238
 
 Individual: bim:Pnt_111239
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -2663,8 +2686,8 @@ Individual: bim:Pnt_111239
 
 Individual: bim:Pnt_111240
 	Types: bim:Tomada.TUG
-	Facts: bim:é.conectada.a  bim:Circuito_02
-	Facts: bim:descrição  "Indivíduo Tomada elétrica do Circuito 02."
+	Facts: bim:é.conectada.a  bim:Circuito_U01
+	Facts: bim:descrição  "Tomada elétrica do circuito U01"
 	Facts: bim:quem.fabricou  "Nome do fabricante"
 	Facts: bim:modelo  "Modelo de tomada"
 	Facts: bim:categoria.revit  "[ OST_ElectricalConnector : OST_ElectricalFixtures ]"
@@ -32161,5 +32184,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia Eletrica
-##  Criada em 26/08/2026 10:48:54
+##  Criada em 26/08/2026 10:57:18
 #################################################################
