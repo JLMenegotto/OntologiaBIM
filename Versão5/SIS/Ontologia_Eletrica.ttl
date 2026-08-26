@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Objetos de Sistemas de Elétrica"@pt ;
-	  rdfs:label "DataHora: 26/08/2026 10:48:46"@pt ;
+	  rdfs:label "DataHora: 26/08/2026 10:57:13"@pt ;
 	  rdfs:label "Advertência1: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Prédio: -"@pt ;
 	  rdfs:label "Cidade: -"@pt ;
@@ -5072,6 +5072,40 @@ bim:Circuitos rdf:type  owl:Class  ;
       rdfs:label  "Circuitos"@pt  .
 
 
+bim:Tensões rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Circuitos ;
+      rdfs:label  "Tensões"@pt  .
+
+
+bim:Circuito.Unidade rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Tensões ;
+      rdfs:label  "Circuito Unidade"@pt ;
+      bim:Definição   "Circuito distribuidor do condomínio."@pt ;
+      bim:Definición  "Circuito distribuidor de condominios."@es ;
+      bim:Definition  "Condominium distributor circuit."@en ;
+      bim:Natureza    "De Elétrica"@pt ;
+      bim:Espécie     "Circuitos"@pt ;
+      bim:Tema        "Tensões"@pt ;
+      bim:Disciplina  "Instalações"@pt ;
+      bim:Chave       "Key-ELET-144"@pt ;
+      bim:CatRevit    "[ OST_SwitchSystem ]"   ;
+      bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
+
+
+bim:Projeto rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:BIM  .
+
+
+bim:De.Elétrica rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:Projeto ;
+      rdfs:label  "De Elétrica"@pt  .
+
+
+bim:Circuitos rdf:type  owl:Class  ;
+      rdfs:subClassOf  bim:De.Elétrica ;
+      rdfs:label  "Circuitos"@pt  .
+
+
 bim:Iluminação rdf:type  owl:Class  ;
       rdfs:subClassOf  bim:Circuitos ;
       rdfs:label  "Iluminação"@pt  .
@@ -5087,7 +5121,7 @@ bim:Ponto.Luz rdf:type  owl:Class  ;
       bim:Espécie     "Circuitos"@pt ;
       bim:Tema        "Iluminação"@pt ;
       bim:Disciplina  "Instalações"@pt ;
-      bim:Chave       "Key-ELET-144"@pt ;
+      bim:Chave       "Key-ELET-145"@pt ;
       bim:CatRevit    "[ OST_SwitchSystem ]"   ;
       bim:ClasseIfc   "[ IfcDistributionSystemLIGHTING ]"    .
 
@@ -5121,7 +5155,7 @@ bim:Tomada.TUE rdf:type  owl:Class  ;
       bim:Espécie     "Circuitos"@pt ;
       bim:Tema        "Tomadas"@pt ;
       bim:Disciplina  "Instalações"@pt ;
-      bim:Chave       "Key-ELET-145"@pt ;
+      bim:Chave       "Key-ELET-146"@pt ;
       bim:CatRevit    "[ OST_SwitchSystem ]"   ;
       bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
 
@@ -5155,7 +5189,7 @@ bim:Tomada.TUG rdf:type  owl:Class  ;
       bim:Espécie     "Circuitos"@pt ;
       bim:Tema        "Tomadas"@pt ;
       bim:Disciplina  "Instalações"@pt ;
-      bim:Chave       "Key-ELET-146"@pt ;
+      bim:Chave       "Key-ELET-147"@pt ;
       bim:CatRevit    "[ OST_SwitchSystem ]"   ;
       bim:ClasseIfc   "[ IfcDistributionSystemELECTRICAL ]"    .
 
@@ -5167,23 +5201,30 @@ bim:CTI_Projeto_01  rdf:type  owl:NamedIndividual , bim:De.Elétrica ;
      bim:descrição    "Representa Informações contidas no Projeto Eletrotécnico" ;
      bim:tema    "Projeto de instalação de elétrica"  .
 
-bim:Circuito_01  rdf:type  owl:NamedIndividual , bim:Circuíto.de.Entrada ;
+bim:Circuito_Rede  rdf:type  owl:NamedIndividual , bim:Circuito.de.Entrada ;
      bim:é.dentro.de    bim:CTI_Projeto_01 ;
-     bim:descrição    "Indivíduo de Circuito de entrada do Projeto" ;
+     bim:descrição    "Indivíduo de circuito de entrada do Projeto" ;
+     bim:código    "RED-01" ;
+     bim:tema    "Projeto de instalação de elétrica" ;
+     bim:subtema    "Circuitos elétricos"  .
+
+bim:Circuito_CC  rdf:type  owl:NamedIndividual , bim:Circuito.Condomínio ;
+     bim:é.conectado.a    bim:Circuito_Rede ;
+     bim:descrição    "Indivíduo de circuito de condomínio" ;
      bim:código    "QDG-01" ;
      bim:tema    "Projeto de instalação de elétrica" ;
      bim:subtema    "Circuitos elétricos"  .
 
-bim:Circuito_02  rdf:type  owl:NamedIndividual , bim:Circuíto.TUG ;
-     bim:é.conectado.a    bim:Circuito_01 ;
-     bim:descrição    "Indivíduo de Circuito de uso geral do Projeto" ;
+bim:Circuito_U01  rdf:type  owl:NamedIndividual , bim:Circuito.Unidade ;
+     bim:é.conectado.a    bim:Circuito_CC ;
+     bim:descrição    "Indivíduo de circuito de unidade residencial" ;
      bim:código    "QTG-01" ;
      bim:tema    "Projeto de instalação de elétrica" ;
      bim:subtema    "Circuitos elétricos"  .
 
 bim:Pnt_111233  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5193,8 +5234,8 @@ bim:Pnt_111233  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111234  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5204,8 +5245,8 @@ bim:Pnt_111234  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111235  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5215,8 +5256,8 @@ bim:Pnt_111235  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111236  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5226,8 +5267,8 @@ bim:Pnt_111236  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111237  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5237,8 +5278,8 @@ bim:Pnt_111237  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111238  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5248,8 +5289,8 @@ bim:Pnt_111238  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111239  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -5259,8 +5300,8 @@ bim:Pnt_111239  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
      bim:subtema    "Tomadas"  .
 
 bim:Pnt_111240  rdf:type  owl:NamedIndividual , bim:Tomada.TUG ;
-     bim:é.conectada.a    bim:Circuito_02 ;
-     bim:descrição    "Indivíduo Tomada elétrica do Circuito 02." ;
+     bim:é.conectada.a    bim:Circuito_U01 ;
+     bim:descrição    "Tomada elétrica do circuito U01" ;
      bim:quem.fabricou    "Nome do fabricante" ;
      bim:modelo    "Modelo de tomada" ;
      bim:categoria.revit    "[ OST_ElectricalConnector : OST_ElectricalFixtures ]" ;
@@ -32742,5 +32783,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia Eletrica
-##  Criada em 26/08/2026 10:48:54
+##  Criada em 26/08/2026 10:57:18
 #################################################################
