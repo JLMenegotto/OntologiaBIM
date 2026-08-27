@@ -69,34 +69,34 @@ presente no conteúdo do arquivo ONTO2025.addin
 O botão <b>Modelo</b> está reservado para a função que extrairá a imagem ontológica do modelo BIM, a partir da leitura dos objetos projetados. Os campos textuais setados em 0 e 0 são destinados a ingressar o número dos domínios ontológicos que serão criados. Se se deseja criar apenas um domínio, ingressar o valor no campo superior e manter o do campo inferior. Se quiser processar mais de um domínio, ingressar o valor numérico da faixa de dominios, p.ex. 0 e 12 processará as 13 ontologias correspondentes à norma NBR 15965. Segue a lista de ontologias criadas até o momento, com a pasta e o valor numérico correspondente.</p>
 
 | Ontologias | Ontologias |
-| :--- | :--- |
-|  0 __ \\ABNT\\Ontologia_NBR15965_0M  |  27 __ \\EST\\Ontologia_Geotecnica  |
-|  1 __ \\ABNT\\Ontologia_NBR15965_0P  |  28 __ \\EST\\Ontologia_Metalica  |
-|  2 __ \\ABNT\\Ontologia_NBR15965_1D  |  29 __ \\EST\\Ontologia_Infraestrutura  |
-|  3 __ \\ABNT\\Ontologia_NBR15965_1F  |  30 __ \\PRO\\Ontologia_Agentes  |
-|  4 __ \\ABNT\\Ontologia_NBR15965_1S  |  31 __ \\PRO\\Ontologia_Cromatica  |
-|  5 __ \\ABNT\\Ontologia_NBR15965_2C  |  32 __ \\PRO\\Ontologia_Crono  |
-|  6 __ \\ABNT\\Ontologia_NBR15965_2N  |  33 __ \\PRO\\Ontologia_Documentos  |
-|  7 __ \\ABNT\\Ontologia_NBR15965_2Q  |  34 __ \\PRO\\Ontologia_Fabricantes  |
-|  8 __ \\ABNT\\Ontologia_NBR15965_3E  |  35 __ \\PRO\\Ontologia_Genetica  |
-|  9 __ \\ABNT\\Ontologia_NBR15965_3R  |  36 __ \\PRO\\Ontologia_Materiais  |
+| :---       | :---       |
+|  0 __ \\ABNT\\Ontologia_NBR15965_0M   |  27 __ \\EST\\Ontologia_Geotecnica  |
+|  1 __ \\ABNT\\Ontologia_NBR15965_0P   |  28 __ \\EST\\Ontologia_Metalica  |
+|  2 __ \\ABNT\\Ontologia_NBR15965_1D   |  29 __ \\EST\\Ontologia_Infraestrutura  |
+|  3 __ \\ABNT\\Ontologia_NBR15965_1F   |  30 __ \\PRO\\Ontologia_Agentes  |
+|  4 __ \\ABNT\\Ontologia_NBR15965_1S   |  31 __ \\PRO\\Ontologia_Cromatica  |
+|  5 __ \\ABNT\\Ontologia_NBR15965_2C   |  32 __ \\PRO\\Ontologia_Crono  |
+|  6 __ \\ABNT\\Ontologia_NBR15965_2N   |  33 __ \\PRO\\Ontologia_Documentos  |
+|  7 __ \\ABNT\\Ontologia_NBR15965_2Q   |  34 __ \\PRO\\Ontologia_Fabricantes  |
+|  8 __ \\ABNT\\Ontologia_NBR15965_3E   |  35 __ \\PRO\\Ontologia_Genetica  |
+|  9 __ \\ABNT\\Ontologia_NBR15965_3R   |  36 __ \\PRO\\Ontologia_Materiais  |
 |  10 __ \\ABNT\\Ontologia_NBR15965_4A  |  37 __ \\PRO\\Ontologia_Requisitos  |
 |  11 __ \\ABNT\\Ontologia_NBR15965_4U  |  38 __ \\SIS\\Ontologia_Avac  |
 |  12 __ \\ABNT\\Ontologia_NBR15965_5I  |  39 __ \\SIS\\Ontologia_Eletrica  |
-|  13 __ \\ARQ\\Ontologia_Ambientes  |  40 __ \\SIS\\Ontologia_Gases  |
-|  14 __ \\ARQ\\Ontologia_Arquitetura  |  41 __ \\SIS\\Ontologia_Hidrossanitaria  |
-|  15 __ \\ARQ\\Ontologia_Circulacao  |  42 __ \\SIS\\Ontologia_Incendio  |
-|  16 __ \\ARQ\\Ontologia_Drones  |  43 __ \\SIS\\Ontologia_Luminotecnica  |
-|  17 __ \\ARQ\\Ontologia_Paisagismo  |  44 __ \\SIS\\Ontologia_Motriz  |
-|  18 __ \\BIM\\Ontologia_Ifc_4x3  |  45 __ \\SIS\\Ontologia_Telecom  |
-|  19 __ \\BIM\\Ontologia_kml_2x2  |  46 __ \\SIS\\Ontologia_Tubulacao  |
-|  20 __ \\BRASIL\\Ontologia_Brasil  |  47 __ \\SUS\\Ontologia_RDC_50  |
+|  13 __ \\ARQ\\Ontologia_Ambientes     |  40 __ \\SIS\\Ontologia_Gases  |
+|  14 __ \\ARQ\\Ontologia_Arquitetura   |  41 __ \\SIS\\Ontologia_Hidrossanitaria  |
+|  15 __ \\ARQ\\Ontologia_Circulacao    |  42 __ \\SIS\\Ontologia_Incendio  |
+|  16 __ \\ARQ\\Ontologia_Drones        |  43 __ \\SIS\\Ontologia_Luminotecnica  |
+|  17 __ \\ARQ\\Ontologia_Paisagismo    |  44 __ \\SIS\\Ontologia_Motriz  |
+|  18 __ \\BIM\\Ontologia_Ifc_4x3       |  45 __ \\SIS\\Ontologia_Telecom  |
+|  19 __ \\BIM\\Ontologia_kml_2x2       |  46 __ \\SIS\\Ontologia_Tubulacao  |
+|  20 __ \\BRASIL\\Ontologia_Brasil     |  47 __ \\SUS\\Ontologia_RDC_50  |
 |  21 __ \\BRASIL\\Ontologia_Brasil_Meteorologia  |  48 __ \\SUS\\Ontologia_SomaSUS_2Q  |
 |  22 __ \\BRASIL\\Ontologia_Brasil_MG  |  49 __ \\SUS\\Ontologia_SomaSUS_4AU  |
 |  23 __ \\BRASIL\\Ontologia_Brasil_RJ  |  50 __ \\SUS\\Ontologia_SomaSUS_5I  |
 |  24 __ \\BRASIL\\Ontologia_Brasil_SP  |  51 __ \\UFRJ\\Ontologia_CT_Ambientes  |
-|  25 __ \\BRASIL\\Ontologia_Sinapi  |  52 __ \\UFRJ\\Ontologia_CT_Codigos  |
-|  26 __ \\BRASIL\\Ontologia_TSB  |    |
+|  25 __ \\BRASIL\\Ontologia_Sinapi     |  52 __ \\UFRJ\\Ontologia_CT_Codigos    |
+|  26 __ \\BRASIL\\Ontologia_TSB        |                                        |
 
 
 #### Prompt de execução
