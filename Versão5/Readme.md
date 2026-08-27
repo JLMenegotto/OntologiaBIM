@@ -63,7 +63,7 @@ presente no conteúdo do arquivo ONTO2025.addin
 
 #### Interface:
 
-<img width="800" height="155" alt="Interfaceonto" src="https://github.com/user-attachments/assets/a6157ff9-bbe4-489c-a007-947f583e78bf" />
+<img width="800" height="125" alt="Interfaceonto" src="https://github.com/user-attachments/assets/a6157ff9-bbe4-489c-a007-947f583e78bf" />
 
 <p align="justify">O botão <b>Criar</b> executa a construção da ontologia especificada no campo 1. O botão <b>Dataset</b> executa uma função que filtra indivíduos cadastrados nas ontologias criadas e gera um arquivo txt com um dataset ordenado com os dados desejados (declarados no arquivo <b>Mapa_Propriedades.txt</b>.   
 O botão <b>Modelo</b> está reservado para a função que extrairá a imagem ontológica do modelo BIM, a partir da leitura dos objetos projetados. Os campos textuais setados em 0 e 0 são destinados a ingressar o número dos domínios ontológicos que serão criados. Se se deseja criar apenas um domínio, ingressar o valor no campo superior e manter o do campo inferior. Se quiser processar mais de um domínio, ingressar o valor numérico da faixa de dominios, p.ex. 0 e 12 processará as 13 ontologias correspondentes à norma NBR 15965. Segue a lista de ontologias criadas até o momento, com a pasta e o valor numérico correspondente.</p>
