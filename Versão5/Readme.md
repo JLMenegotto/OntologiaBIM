@@ -70,66 +70,10 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 
 <img width="213" height="849" alt="image" src="https://github.com/user-attachments/assets/7e84aca0-fe28-4829-b2a6-90aff1e5ccc8" />
 
-| : \\ABNT\\Ontologia_NBR15965_0M |
-| : \\ABNT\\Ontologia_NBR15965_0P |
-| : \\ABNT\\Ontologia_NBR15965_1D |
-| : \\ABNT\\Ontologia_NBR15965_1F |
-| : \\ABNT\\Ontologia_NBR15965_1S |
-| : \\ABNT\\Ontologia_NBR15965_2C |
-| : \\ABNT\\Ontologia_NBR15965_2N |
-| : \\ABNT\\Ontologia_NBR15965_2Q |
-| : \\ABNT\\Ontologia_NBR15965_3E |
-| : \\ABNT\\Ontologia_NBR15965_3R |
-| : \\ABNT\\Ontologia_NBR15965_4A |
-| : \\ABNT\\Ontologia_NBR15965_4U |
-| : \\ABNT\\Ontologia_NBR15965_5I |
-| : \\ARQ\\Ontologia_Ambientes |
-| : \\ARQ\\Ontologia_Arquitetura |
-| : \\ARQ\\Ontologia_Circulacao |
-| : \\ARQ\\Ontologia_Drones |
-| : \\ARQ\\Ontologia_Paisagismo |
-| : \\BIM\\Ontologia_Ifc_4x3 |
-| : \\BIM\\Ontologia_kml_2x2 |
-| : \\BRASIL\\Ontologia_Brasil |
-| : \\BRASIL\\Ontologia_Brasil_Meteorologia |
-| : \\BRASIL\\Ontologia_Brasil_MG |
-| : \\BRASIL\\Ontologia_Brasil_RJ |
-| : \\BRASIL\\Ontologia_Brasil_SP |
-| : \\BRASIL\\Ontologia_Sinapi |
-| : \\BRASIL\\Ontologia_TSB |
-| : \\EST\\Ontologia_Geotecnica |
-| : \\EST\\Ontologia_Metalica |
-| : \\EST\\Ontologia_Infraestrutura |
-| : \\PRO\\Ontologia_Agentes |
-| : \\PRO\\Ontologia_Cromatica |
-| : \\PRO\\Ontologia_Crono |
-| : \\PRO\\Ontologia_Documentos |
-| : \\PRO\\Ontologia_Fabricantes |
-| : \\PRO\\Ontologia_Genetica |
-| : \\PRO\\Ontologia_Materiais |
-| : \\PRO\\Ontologia_Requisitos |
-| : \\SIS\\Ontologia_Avac |
-| : \\SIS\\Ontologia_Eletrica |
-| : \\SIS\\Ontologia_Gases |
-| : \\SIS\\Ontologia_Hidrossanitaria |
-| : \\SIS\\Ontologia_Incendio |
-| : \\SIS\\Ontologia_Luminotecnica |
-| : \\SIS\\Ontologia_Motriz |
-| : \\SIS\\Ontologia_Telecom |
-| : \\SIS\\Ontologia_Tubulacao |
-| : \\SUS\\Ontologia_RDC_50 |
-| : \\SUS\\Ontologia_SomaSUS_2Q |
-| : \\SUS\\Ontologia_SomaSUS_4AU |
-| : \\SUS\\Ontologia_SomaSUS_5I |
-| : \\UFRJ\\Ontologia_CT_Ambientes |
-| : \\UFRJ\\Ontologia_CT_Codigos |
-
-
 | Coluna 1 | Coluna 2 |
 | :--- | :--- |
-| Item A1 | Item B1 |
-| Item A2 | Item B2 |
-| Item A3 | Item B3 |
+| \\ABNT\\Ontologia_NBR15965_0M | \\ABNT\\Ontologia_NBR15965_0P
+
 
 
 
