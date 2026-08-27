@@ -96,7 +96,7 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 |  23 __ \\BRASIL\\Ontologia_Brasil_RJ  |  50 __ \\SUS\\Ontologia_SomaSUS_5I  |
 |  24 __ \\BRASIL\\Ontologia_Brasil_SP  |  51 __ \\UFRJ\\Ontologia_CT_Ambientes  |
 |  25 __ \\BRASIL\\Ontologia_Sinapi  |  52 __ \\UFRJ\\Ontologia_CT_Codigos  |
-|  26 __ \\BRASIL\\Ontologia_TSB  |  53 __ --  |
+|  26 __ \\BRASIL\\Ontologia_TSB  |    |
 
 
 #### Prompt de execução
