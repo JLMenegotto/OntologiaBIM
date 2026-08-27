@@ -70,8 +70,8 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 
 | Ontologias                                      | Ontologias                                    |
 | :---                                            | :---                                          |
-|  0) \\ABNT\\Ontologia_NBR15965_0M             |  27) \\EST\\Ontologia_Geotecnica            |
-|  1) \\ABNT\\Ontologia_NBR15965_0P             |  28) \\EST\\Ontologia_Metalica              |
+|  0 __ \\ABNT\\Ontologia_NBR15965_0M             |  27 __ \\EST\\Ontologia_Geotecnica            |
+|  1 __ \\ABNT\\Ontologia_NBR15965_0P             |  28 __ \\EST\\Ontologia_Metalica              |
 |  2 __ \\ABNT\\Ontologia_NBR15965_1D             |  29 __ \\EST\\Ontologia_Infraestrutura        |
 |  3 __ \\ABNT\\Ontologia_NBR15965_1F             |  30 __ \\PRO\\Ontologia_Agentes               |
 |  4 __ \\ABNT\\Ontologia_NBR15965_1S             |  31 __ \\PRO\\Ontologia_Cromatica             |
