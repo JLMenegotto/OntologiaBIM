@@ -70,34 +70,33 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 
 | Ontologias | Ontologias |
 | :--- | :--- |
-|  0 _____ \\ABNT\\Ontologia_NBR15965_0M  |  27 _____ \\EST\\Ontologia_Geotecnica  |
-|  1 _____ \\ABNT\\Ontologia_NBR15965_0P  |  28 _____ \\EST\\Ontologia_Metalica  |
-|  2 _____ \\ABNT\\Ontologia_NBR15965_1D  |  29 _____ \\EST\\Ontologia_Infraestrutura  |
-|  3 _____ \\ABNT\\Ontologia_NBR15965_1F  |  30 _____ \\PRO\\Ontologia_Agentes  |
-|  4 _____ \\ABNT\\Ontologia_NBR15965_1S  |  31 _____ \\PRO\\Ontologia_Cromatica  |
-|  5 _____ \\ABNT\\Ontologia_NBR15965_2C  |  32 _____ \\PRO\\Ontologia_Crono  |
-|  6 _____ \\ABNT\\Ontologia_NBR15965_2N  |  33 _____ \\PRO\\Ontologia_Documentos  |
-|  7 _____ \\ABNT\\Ontologia_NBR15965_2Q  |  34 _____ \\PRO\\Ontologia_Fabricantes  |
-|  8 _____ \\ABNT\\Ontologia_NBR15965_3E  |  35 _____ \\PRO\\Ontologia_Genetica  |
-|  9 _____ \\ABNT\\Ontologia_NBR15965_3R  |  36 _____ \\PRO\\Ontologia_Materiais  |
-|  10 _____ \\ABNT\\Ontologia_NBR15965_4A  |  37 _____ \\PRO\\Ontologia_Requisitos  |
-|  11 _____ \\ABNT\\Ontologia_NBR15965_4U  |  38 _____ \\SIS\\Ontologia_Avac  |
-|  12 _____ \\ABNT\\Ontologia_NBR15965_5I  |  39 _____ \\SIS\\Ontologia_Eletrica  |
-|  13 _____ \\ARQ\\Ontologia_Ambientes  |  40 _____ \\SIS\\Ontologia_Gases  |
-|  14 _____ \\ARQ\\Ontologia_Arquitetura  |  41 _____ \\SIS\\Ontologia_Hidrossanitaria  |
-|  15 _____ \\ARQ\\Ontologia_Circulacao  |  42 _____ \\SIS\\Ontologia_Incendio  |
-|  16 _____ \\ARQ\\Ontologia_Drones  |  43 _____ \\SIS\\Ontologia_Luminotecnica  |
-|  17 _____ \\ARQ\\Ontologia_Paisagismo  |  44 _____ \\SIS\\Ontologia_Motriz  |
-|  18 _____ \\BIM\\Ontologia_Ifc_4x3  |  45 _____ \\SIS\\Ontologia_Telecom  |
-|  19 _____ \\BIM\\Ontologia_kml_2x2  |  46 _____ \\SIS\\Ontologia_Tubulacao  |
-|  20 _____ \\BRASIL\\Ontologia_Brasil  |  47 _____ \\SUS\\Ontologia_RDC_50  |
-|  21 _____ \\BRASIL\\Ontologia_Brasil_Meteorologia  |  48 _____ \\SUS\\Ontologia_SomaSUS_2Q  |
-|  22 _____ \\BRASIL\\Ontologia_Brasil_MG  |  49 _____ \\SUS\\Ontologia_SomaSUS_4AU  |
-|  23 _____ \\BRASIL\\Ontologia_Brasil_RJ  |  50 _____ \\SUS\\Ontologia_SomaSUS_5I  |
-|  24 _____ \\BRASIL\\Ontologia_Brasil_SP  |  51 _____ \\UFRJ\\Ontologia_CT_Ambientes  |
-|  25 _____ \\BRASIL\\Ontologia_Sinapi  |  52 _____ \\UFRJ\\Ontologia_CT_Codigos  |
-|  26 _____ \\BRASIL\\Ontologia_TSB  |  - |
-<img width="428" height="433" alt="image" src="https://github.com/user-attachments/assets/9369abf7-b6c0-4f84-9819-811408289ea0" />
+|  1 _____ '\\ABNT\\Ontologia_NBR15965_0P'  |  28 _____ '\\EST\\Ontologia_Metalica'  |
+|  2 _____ '\\ABNT\\Ontologia_NBR15965_1D'  |  29 _____ '\\EST\\Ontologia_Infraestrutura'  |
+|  3 _____ '\\ABNT\\Ontologia_NBR15965_1F'  |  30 _____ '\\PRO\\Ontologia_Agentes'  |
+|  4 _____ '\\ABNT\\Ontologia_NBR15965_1S'  |  31 _____ '\\PRO\\Ontologia_Cromatica'  |
+|  5 _____ '\\ABNT\\Ontologia_NBR15965_2C'  |  32 _____ '\\PRO\\Ontologia_Crono'  |
+|  6 _____ '\\ABNT\\Ontologia_NBR15965_2N'  |  33 _____ '\\PRO\\Ontologia_Documentos'  |
+|  7 _____ '\\ABNT\\Ontologia_NBR15965_2Q'  |  34 _____ '\\PRO\\Ontologia_Fabricantes'  |
+|  8 _____ '\\ABNT\\Ontologia_NBR15965_3E'  |  35 _____ '\\PRO\\Ontologia_Genetica'  |
+|  9 _____ '\\ABNT\\Ontologia_NBR15965_3R'  |  36 _____ '\\PRO\\Ontologia_Materiais'  |
+|  10 _____ '\\ABNT\\Ontologia_NBR15965_4A'  |  37 _____ '\\PRO\\Ontologia_Requisitos'  |
+|  11 _____ '\\ABNT\\Ontologia_NBR15965_4U'  |  38 _____ '\\SIS\\Ontologia_Avac'  |
+|  12 _____ '\\ABNT\\Ontologia_NBR15965_5I'  |  39 _____ '\\SIS\\Ontologia_Eletrica'  |
+|  13 _____ '\\ARQ\\Ontologia_Ambientes'  |  40 _____ '\\SIS\\Ontologia_Gases'  |
+|  14 _____ '\\ARQ\\Ontologia_Arquitetura'  |  41 _____ '\\SIS\\Ontologia_Hidrossanitaria'  |
+|  15 _____ '\\ARQ\\Ontologia_Circulacao'  |  42 _____ '\\SIS\\Ontologia_Incendio'  |
+|  16 _____ '\\ARQ\\Ontologia_Drones'  |  43 _____ '\\SIS\\Ontologia_Luminotecnica'  |
+|  17 _____ '\\ARQ\\Ontologia_Paisagismo'  |  44 _____ '\\SIS\\Ontologia_Motriz'  |
+|  18 _____ '\\BIM\\Ontologia_Ifc_4x3'  |  45 _____ '\\SIS\\Ontologia_Telecom'  |
+|  19 _____ '\\BIM\\Ontologia_kml_2x2'  |  46 _____ '\\SIS\\Ontologia_Tubulacao'  |
+|  20 _____ '\\BRASIL\\Ontologia_Brasil'  |  47 _____ '\\SUS\\Ontologia_RDC_50'  |
+|  21 _____ '\\BRASIL\\Ontologia_Brasil_Meteorologia'  |  48 _____ '\\SUS\\Ontologia_SomaSUS_2Q'  |
+|  22 _____ '\\BRASIL\\Ontologia_Brasil_MG'  |  49 _____ '\\SUS\\Ontologia_SomaSUS_4AU'  |
+|  23 _____ '\\BRASIL\\Ontologia_Brasil_RJ'  |  50 _____ '\\SUS\\Ontologia_SomaSUS_5I'  |
+|  24 _____ '\\BRASIL\\Ontologia_Brasil_SP'  |  51 _____ '\\UFRJ\\Ontologia_CT_Ambientes'  |
+|  25 _____ '\\BRASIL\\Ontologia_Sinapi'  |  52 _____ '\\UFRJ\\Ontologia_CT_Codigos'  |
+|  26 _____ '\\BRASIL\\Ontologia_TSB'  |  53 _____ '--'  |
+
 
 
 
