@@ -70,17 +70,35 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 
 <img width="213" height="849" alt="image" src="https://github.com/user-attachments/assets/7e84aca0-fe28-4829-b2a6-90aff1e5ccc8" />
 
-| Coluna 1 | Coluna 2 |
+| Ontologias | Ontologias |
 | :--- | :--- |
-| \\ABNT\\Ontologia_NBR15965_0M | \\ABNT\\Ontologia_NBR15965_0P
-
-
-
-
-
-
-
-
+| 0 ---\\ABNT\\Ontologia_NBR15965_0M | 27 ---\\EST\\Ontologia_Geotecnica |
+| 1 ---\\ABNT\\Ontologia_NBR15965_0P | 28 ---\\EST\\Ontologia_Metalica |
+| 2 ---\\ABNT\\Ontologia_NBR15965_1D | 29 ---\\EST\\Ontologia_Infraestrutura |
+| 3 ---\\ABNT\\Ontologia_NBR15965_1F | 30 ---\\PRO\\Ontologia_Agentes |
+| 4 ---\\ABNT\\Ontologia_NBR15965_1S | 31 ---\\PRO\\Ontologia_Cromatica |
+| 5 ---\\ABNT\\Ontologia_NBR15965_2C | 32 ---\\PRO\\Ontologia_Crono |
+| 6 ---\\ABNT\\Ontologia_NBR15965_2N | 33 ---\\PRO\\Ontologia_Documentos |
+| 7 ---\\ABNT\\Ontologia_NBR15965_2Q | 34 ---\\PRO\\Ontologia_Fabricantes |
+| 8 ---\\ABNT\\Ontologia_NBR15965_3E | 35 ---\\PRO\\Ontologia_Genetica |
+| 9 ---\\ABNT\\Ontologia_NBR15965_3R | 36 ---\\PRO\\Ontologia_Materiais |
+| 10 ---\\ABNT\\Ontologia_NBR15965_4A | 37 ---\\PRO\\Ontologia_Requisitos |
+| 11 ---\\ABNT\\Ontologia_NBR15965_4U | 38 ---\\SIS\\Ontologia_Avac |
+| 12 ---\\ABNT\\Ontologia_NBR15965_5I | 39 ---\\SIS\\Ontologia_Eletrica |
+| 13 ---\\ARQ\\Ontologia_Ambientes | 40 ---\\SIS\\Ontologia_Gases |
+| 14 ---\\ARQ\\Ontologia_Arquitetura | 41 ---\\SIS\\Ontologia_Hidrossanitaria |
+| 15 ---\\ARQ\\Ontologia_Circulacao | 42 ---\\SIS\\Ontologia_Incendio |
+| 16 ---\\ARQ\\Ontologia_Drones | 43 ---\\SIS\\Ontologia_Luminotecnica |
+| 17 ---\\ARQ\\Ontologia_Paisagismo | 44 ---\\SIS\\Ontologia_Motriz |
+| 18 ---\\BIM\\Ontologia_Ifc_4x3 | 45 ---\\SIS\\Ontologia_Telecom |
+| 19 ---\\BIM\\Ontologia_kml_2x2 | 46 ---\\SIS\\Ontologia_Tubulacao |
+| 20 ---\\BRASIL\\Ontologia_Brasil | 47 ---\\SUS\\Ontologia_RDC_50 |
+| 21 ---\\BRASIL\\Ontologia_Brasil_Meteorologia | 48 ---\\SUS\\Ontologia_SomaSUS_2Q |
+| 22 ---\\BRASIL\\Ontologia_Brasil_MG | 49 ---\\SUS\\Ontologia_SomaSUS_4AU |
+| 23 ---\\BRASIL\\Ontologia_Brasil_RJ | 50 ---\\SUS\\Ontologia_SomaSUS_5I |
+| 24 ---\\BRASIL\\Ontologia_Brasil_SP | 51 ---\\UFRJ\\Ontologia_CT_Ambientes |
+| 25 ---\\BRASIL\\Ontologia_Sinapi | 52 ---\\UFRJ\\Ontologia_CT_Codigos |
+| 26 ---\\BRASIL\\Ontologia_TSB | 53 ----- |
 
 
 
