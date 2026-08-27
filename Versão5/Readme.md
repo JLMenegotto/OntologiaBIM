@@ -125,7 +125,11 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 | : \\UFRJ\\Ontologia_CT_Codigos |
 
 
-
+| Coluna 1 | Coluna 2 |
+| :--- | :--- |
+| Item A1 | Item B1 |
+| Item A2 | Item B2 |
+| Item A3 | Item B3 |
 
 
 
