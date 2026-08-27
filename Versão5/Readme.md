@@ -70,16 +70,16 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 
 | Ontologias                                      | Ontologias                                    |
 | :---                                            | :---                                          |
-|  0 __ \\ABNT\\Ontologia_NBR15965_0M             |  27 __ \\EST\\Ontologia_Geotecnica            |
-|  1 __ \\ABNT\\Ontologia_NBR15965_0P             |  28 __ \\EST\\Ontologia_Metalica              |
-|  2 __ \\ABNT\\Ontologia_NBR15965_1D             |  29 __ \\EST\\Ontologia_Infraestrutura        |
-|  3 __ \\ABNT\\Ontologia_NBR15965_1F             |  30 __ \\PRO\\Ontologia_Agentes               |
-|  4 __ \\ABNT\\Ontologia_NBR15965_1S             |  31 __ \\PRO\\Ontologia_Cromatica             |
-|  5 __ \\ABNT\\Ontologia_NBR15965_2C             |  32 __ \\PRO\\Ontologia_Crono                 |
-|  6 __ \\ABNT\\Ontologia_NBR15965_2N             |  33 __ \\PRO\\Ontologia_Documentos            |
-|  7 __ \\ABNT\\Ontologia_NBR15965_2Q             |  34 __ \\PRO\\Ontologia_Fabricantes           |
-|  8 __ \\ABNT\\Ontologia_NBR15965_3E             |  35 __ \\PRO\\Ontologia_Genetica              |
-|  9 __ \\ABNT\\Ontologia_NBR15965_3R             |  36 __ \\PRO\\Ontologia_Materiais             |
+|   0 __ \\ABNT\\Ontologia_NBR15965_0M            |  27 __ \\EST\\Ontologia_Geotecnica            |
+|   1 __ \\ABNT\\Ontologia_NBR15965_0P            |  28 __ \\EST\\Ontologia_Metalica              |
+|   2 __ \\ABNT\\Ontologia_NBR15965_1D            |  29 __ \\EST\\Ontologia_Infraestrutura        |
+|   3 __ \\ABNT\\Ontologia_NBR15965_1F            |  30 __ \\PRO\\Ontologia_Agentes               |
+|   4 __ \\ABNT\\Ontologia_NBR15965_1S            |  31 __ \\PRO\\Ontologia_Cromatica             |
+|   5 __ \\ABNT\\Ontologia_NBR15965_2C            |  32 __ \\PRO\\Ontologia_Crono                 |
+|   6 __ \\ABNT\\Ontologia_NBR15965_2N            |  33 __ \\PRO\\Ontologia_Documentos            |
+|   7 __ \\ABNT\\Ontologia_NBR15965_2Q            |  34 __ \\PRO\\Ontologia_Fabricantes           |
+|   8 __ \\ABNT\\Ontologia_NBR15965_3E            |  35 __ \\PRO\\Ontologia_Genetica              |
+|   9 __ \\ABNT\\Ontologia_NBR15965_3R            |  36 __ \\PRO\\Ontologia_Materiais             |
 |  10 __ \\ABNT\\Ontologia_NBR15965_4A            |  37 __ \\PRO\\Ontologia_Requisitos            |
 |  11 __ \\ABNT\\Ontologia_NBR15965_4U            |  38 __ \\SIS\\Ontologia_Avac                  |
 |  12 __ \\ABNT\\Ontologia_NBR15965_5I            |  39 __ \\SIS\\Ontologia_Eletrica              |
