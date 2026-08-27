@@ -17,6 +17,12 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
   * **Ontologia_ + tema + .owl**
   * **Ontologia_ + tema + .ttl**
 
+| Formação do nome do Arquivo      | Arquivo                                                          |
+| :---                             | :---                                                             |
+|  **Ontologia_ + tema + .xlsx**   |  Arquivo Excel com a estruturação do campo ontológico e ôntico   |
+|  **Ontologia_ + tema + .owl**    |  Ontologia correspondente criada em sintaxe Manchester           |
+|  **Ontologia_ + tema + .ttl**    |  Ontologia correspondente criada em sintaxe Turtle               |
+
 ## Domínios ontológicos 
 
 <p align="justify">Foram separados os seguintes domínios ontológicos que estão continuamente sendo revisados.<br></b></p>
