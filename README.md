@@ -64,6 +64,8 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 - [**_El modelo digital. Técnica y arte algorítmica en BIM._**](https://bibliotecadigital.cp67.com/reader/el-modelo-digital-tecnica-y-arte-algoritmica-en-bim)
 
+- [**Arquitectura e Inteligencia Artificial. Por una arquitectura de adherencia entre el ser humano y la máquina.**](https://prometeoeditorial.com/productos/arquitectura-e-inteligencia-artificial-jose-luis-menegotto-1cgbh/)
+
 #### **Leitura e análise dos arquivos OWL em Protegé**
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
