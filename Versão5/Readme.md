@@ -9,7 +9,7 @@
 
 Os arquivos necessários para a instalação do construtor de ontologias BIM estão na pasta **API**.    
 
- [**Consulta**](https://jlmenegotto.wixsite.com/jlmenegotto-bim/consulta-obim)
+#### [**Consulte os conteúdos das propriedades e das ontologias, em forma de tabela ou de Grafo interativo neste link**](https://jlmenegotto.wixsite.com/jlmenegotto-bim/consulta-obim)
 
 ## Observações 
 
