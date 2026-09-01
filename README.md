@@ -69,6 +69,9 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 #### **Leitura e análise dos arquivos OWL em Protegé**
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
+#### **Contruibuições**
+
+
 ## 
 [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
 #### **Consulte outros projetos**
