@@ -42,7 +42,6 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 #### **Agradecimentos aos Colaboradores do projeto**
 > Agradecimentos a todos os que colaboram com o projeto, revisando conteúdos e sugerindo ideias.  
-
 >> *Prof. Júlio César Boscher Torres, D.Sc. PEU / PEE / COPPE / UFRJ*   
 >> *Arq.ª Silvia Maria Soares de Araújo, D.Sc. COGIC / FIOCRUZ*  
 >> *Arq.ª Tereza Cristina Malveira de Araújo, D.Sc. COGIC / FIOCRUZ*   
