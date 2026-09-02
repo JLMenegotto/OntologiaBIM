@@ -34,7 +34,7 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
  ![Ontologia_V1_Projeto_IFC4x3Add2_2024-04-07_02-48-29](https://github.com/JLMenegotto/OntologiaBIM/assets/9437020/322f892a-a07f-4c29-b807-b61174368bad)
 
-#### **Versão 5.00 Programada em C# como API de Revit****
+#### **Versão 5.00 Programada em C# como API de Revit**
 <p align="justify">Na versão 5.0, foram reorganizados os conceitos nos arquivos Excel e os diversos dominios estudados foram alinhados.</p>
 
 - [Construtor Ontológico Versão 5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
