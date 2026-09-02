@@ -71,11 +71,12 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 
 ## **Colaboradores do projeto**
 
-O projeto não conta com fonte de financiamento, mas sim com o trabalho de professores e alunos. Agradecimentos a todos eles que revisam os conteúdos e sugerem ideias.
+Agradecimentos a todos os que colaboram com o projeto, revisando conteúdos e sugerindo ideias.  
 
-Arq.ª Vania Furuguem Miyamoto, M.Sc. FIOCRUZ - PEU-UFRJ
-Eng.  Jefté Corrêa da Silva, M.Sc. PPE-UFRJ
-Eng.ª  Danielle Broda de Vasconcelos, M.Sc. PPE-UFRJ
+   Arq.ª Vania Furuguem Miyamoto, M.Sc. FIOCRUZ / PEU / UFRJ  
+   Eng.  Jefté Corrêa da Silva, M.Sc. PPE-UFRJ  
+   Eng.ª  Danielle Broda de Vasconcelos, M.Sc. PPE / UFRJ  
+   Prof. Júlio César Boscher Torres, D.Sc. PEU / PEE / COPPE / UFRJ  
 
 
 
