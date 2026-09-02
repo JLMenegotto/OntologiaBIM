@@ -49,8 +49,11 @@ Agradeço a todos os colegas e alunos que colaboram com o projeto, revisando con
 > *Arq.ª Tereza Cristina Malveira de Araújo, D.Sc. COGIC / FIOCRUZ*   
 > *Arq.ª Vania Furuguem Miyamoto, M.Sc. COGIC / FIOCRUZ / PEU / UFRJ*   
 > *Eng. Jefté Corrêa da Silva, M.Sc. PPE / UFRJ*   
-> *Eng.ª Danielle Broda de Vasconcellos, M.Sc. PPE / UFRJ*   
-   
+> *Eng.ª Danielle Broda de Vasconcellos, M.Sc. PPE / UFRJ*
+> *Eng.ª Manuella Carvalho dos Santos, PPE / UFRJ*
+> *Eng.ª Matheus dos Santos Nunes, PPE / UFRJ*
+> *Eng.ª Thiago Manuel Batista Afonso, PPE / UFRJ*
+
 #### Mais informaçoes sobre o tema nos Livros (Portugûes e español):
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
 
