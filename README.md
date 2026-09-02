@@ -50,15 +50,15 @@ Agradeço a todos os colegas e alunos que colaboram com o projeto, revisando con
 > *Eng. Jefté Corrêa da Silva, M.Sc. PPE / UFRJ*   
 > *Eng.ª Danielle Broda de Vasconcellos, M.Sc. PPE / UFRJ*   
    
-#### Mais informaçoes sobre o tema no Livro (Portugûes e español):
+#### Mais informaçoes sobre o tema nos Livros (Portugûes e español):
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
 
 - [**_El modelo digital. Técnica y arte algorítmica en BIM._**](https://bibliotecadigital.cp67.com/reader/el-modelo-digital-tecnica-y-arte-algoritmica-en-bim)
 
 - [**Arquitectura e Inteligencia Artificial. Por una arquitectura de adherencia entre el ser humano y la máquina.**](https://prometeoeditorial.com/productos/arquitectura-e-inteligencia-artificial-jose-luis-menegotto-1cgbh/)
 
-## 
-[**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
+## [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
+
 #### **Consulte outros projetos**
   
    1. [**OntologiaBIM:** Construtor de ontologias OWL](https://github.com/JLMenegotto/OntologiaBIM)
