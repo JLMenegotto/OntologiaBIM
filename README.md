@@ -69,7 +69,14 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 #### **Leitura e análise dos arquivos OWL em Protegé**
 ![Tela_Inicial](https://user-images.githubusercontent.com/9437020/226172682-0c1a09aa-7069-428d-a8b8-fe8abb9ea39c.PNG)
 
-#### **Contruibuições**
+## **Colaboradores do projeto**
+
+O projeto não conta com fonte de financiamento, mas sim com o trabalho de professores e alunos. Agradecimentos a todos eles que revisam os conteúdos e sugerem ideias.
+
+Arq.ª Vania Furuguem Miyamoto, M.Sc. FIOCRUZ - PEU-UFRJ
+Eng.  Jefté Corrêa da Silva, M.Sc. PPE-UFRJ
+Eng.ª  Danielle Broda de Vasconcelos, M.Sc. PPE-UFRJ
+
 
 
 ## 
