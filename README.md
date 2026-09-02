@@ -38,16 +38,17 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 <p align="justify">Na versão 5.0, foram reorganizados os conceitos nos arquivos Excel e os diversos dominios estudados foram alinhados.</p>
 
 - [Construtor Ontológico Versão 5.00](https://github.com/JLMenegotto/OntologiaBIM/tree/main/Vers%C3%A3o5)
-
 <hr/>
 
 #### **Agradecimentos aos Colaboradores do projeto**
 Agradecimentos a todos os que colaboram com o projeto, revisando conteúdos e sugerindo ideias.  
 
-   Arq.ª Vania Furuguem Miyamoto, M.Sc. FIOCRUZ / PEU / UFRJ  
-   Eng.  Jefté Corrêa da Silva, M.Sc. PPE-UFRJ  
-   Eng.ª  Danielle Broda de Vasconcelos, M.Sc. PPE / UFRJ  
-   Prof. Júlio César Boscher Torres, D.Sc. PEU / PEE / COPPE / UFRJ  
+   *Prof. Júlio César Boscher Torres, D.Sc. PEU / PEE / COPPE / UFRJ* 
+   *Arq.ª Silvia Maria Soares de Araújo, D.Sc. COGIC / FIOCRUZ* 
+   *Arq.ª Tereza Cristina Malveira de Araújo, D.Sc. COGIC / FIOCRUZ* 
+   *Arq.ª Vania Furuguem Miyamoto, M.Sc. COGIC / FIOCRUZ / PEU / UFRJ* 
+   *Eng.  Jefté Corrêa da Silva, M.Sc. PPE / UFRJ*  
+   *Eng.ª  Danielle Broda de Vasconcelos, M.Sc. PPE / UFRJ*   
    
 ##### Mais informaçoes sobre o tema no Livro (Portugûes e español):
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
