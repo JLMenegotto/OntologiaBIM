@@ -54,14 +54,29 @@ Agradeço a todos os colegas e alunos que colaboram com o projeto, revisando con
 > *Eng. Matheus dos Santos Nunes, PPE / UFRJ*    
 > *Eng. Thiago Manuel Batista Afonso, PPE / UFRJ*    
 
-#### Mais informaçoes sobre o tema nos Livros (Portugûes e español):
+##### Mais informaçoes sobre o tema nos Livros (Portugûes e español):
 - [**_O modelo digital. Técnica e arte algorítmica em BIM._**](https://www.amazon.com.br/Modelo-Digital-T%C3%A9cnica-Arte-Algor%C3%ADtmica/dp/6589367833/ref=zg_bs_g_7841300011_sccl_40/140-7766966-1834631?psc=1)
 
 - [**_El modelo digital. Técnica y arte algorítmica en BIM._**](https://bibliotecadigital.cp67.com/reader/el-modelo-digital-tecnica-y-arte-algoritmica-en-bim)
 
 - [**Arquitectura e Inteligencia Artificial. Por una arquitectura de adherencia entre el ser humano y la máquina.**](https://prometeoeditorial.com/productos/arquitectura-e-inteligencia-artificial-jose-luis-menegotto-1cgbh/)
 
-#### [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
+##### Artigos publicados e relacionados com o tema:
+
+- [**2019 - Revista PARC - Integração de simulador acústico com ferramenta de modelagem BIM.**](https://periodicos.sbu.unicamp.br/ojs/index.php/parc/article/view/8653934/20808)
+
+- [**2024 - XXVII Sigradi - BIM Ontology. Some Aspects of Project Knowledge: the Building, IFCs and OSTs.**](https://www.proceedings.blucher.com.br/article-details/bim-ontology-some-aspects-of-project-knowledge-the-building-ifcs-and-stos-39343)
+
+- [**2026 - Revista Ambiente Construído - Ôntica de voo autônomo de drone guiado por modelo digital da construção.**](https://www.scielo.br/j/ac/a/5P9RwnsbWjNQRt54nCVFW7Q/?lang=en)
+
+- [**2026 - Revista Aracê - Projeto e cognição: algumas leituras críticas da IA**](https://periodicos.newsciencepubl.com/arace/article/view/12679)
+
+- [**2026 - Revista Aracê - Ontologia BIM da Taxonomia Sustentável Brasileira**](https://periodicos.newsciencepubl.com/arace/article/view/12722)
+
+- [**2026 - Revista Lumen et Virtus - Ontologia BIM: Por uma política de arquitetura cognitiva**](https://periodicos.newsciencepubl.com/LEV/article/view/12659)
+
+
+##### [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
 
 #### **Consulte outros projetos**
   
