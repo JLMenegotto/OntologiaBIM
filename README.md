@@ -75,8 +75,9 @@ Agradeço a todos os colegas e alunos que colaboram com o projeto, revisando con
 
 - [**2026 - Revista Lumen et Virtus - Ontologia BIM: Por uma política de arquitetura cognitiva**](https://periodicos.newsciencepubl.com/LEV/article/view/12659)
 
+##### Canal YouTube: Videos com explicação dos conteúdos de aula.
 
-##### [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
+- [**Videos com explicação dos conteúdos**](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
 
 #### **Consulte outros projetos**
   
