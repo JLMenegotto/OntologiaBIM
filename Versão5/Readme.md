@@ -318,3 +318,12 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
 
 
 
+##### Artigos publicados e relacionados com o tema:
+
+[**2019 - Revista PARC - Integração de simulador acústico com ferramenta de modelagem BIM.**](https://periodicos.sbu.unicamp.br/ojs/index.php/parc/article/view/8653934/20808)
+
+[**2024 - XXVII Sigradi - BIM Ontology. Some Aspects of Project Knowledge: the Building, IFCs and OSTs.**](https://www.proceedings.blucher.com.br/article-details/bim-ontology-some-aspects-of-project-knowledge-the-building-ifcs-and-stos-39343)
+
+[**2026 - Revista Ambiente Construído - Ôntica de voo autônomo de drone guiado por modelo digital da construção.**](https://www.scielo.br/j/ac/a/5P9RwnsbWjNQRt54nCVFW7Q/?lang=en)
+
+
