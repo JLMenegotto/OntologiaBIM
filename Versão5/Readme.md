@@ -326,4 +326,8 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
 
 [**2026 - Revista Ambiente Construído - Ôntica de voo autônomo de drone guiado por modelo digital da construção.**](https://www.scielo.br/j/ac/a/5P9RwnsbWjNQRt54nCVFW7Q/?lang=en)
 
+[**2026 - Revista Aracê - Projeto e cognição: algumas leituras críticas da IA**](https://periodicos.newsciencepubl.com/arace/article/view/12679)
+
+[**2026 - Revista Aracê - Ontologia BIM da Taxonomia Sustentável Brasileira**](https://periodicos.newsciencepubl.com/arace/article/view/12722)
+
 
