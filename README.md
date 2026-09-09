@@ -61,7 +61,7 @@ Agradeço a todos os colegas e alunos que colaboram com o projeto, revisando con
 
 - [**Arquitectura e Inteligencia Artificial. Por una arquitectura de adherencia entre el ser humano y la máquina.**](https://prometeoeditorial.com/productos/arquitectura-e-inteligencia-artificial-jose-luis-menegotto-1cgbh/)
 
-## [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
+#### [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
 
 #### **Consulte outros projetos**
   
