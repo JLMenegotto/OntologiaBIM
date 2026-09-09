@@ -316,8 +316,6 @@ Os fatos conhecidos descrevem a realidade concreta e são de dois tipos. 1) Fato
 
 - [**Arquitectura e Inteligencia Artificial. Por una arquitectura de adherencia entre el ser humano y la máquina.**](https://prometeoeditorial.com/productos/arquitectura-e-inteligencia-artificial-jose-luis-menegotto-1cgbh/)
 
-
-
 ##### Artigos publicados e relacionados com o tema:
 
 - [**2019 - Revista PARC - Integração de simulador acústico com ferramenta de modelagem BIM.**](https://periodicos.sbu.unicamp.br/ojs/index.php/parc/article/view/8653934/20808)
