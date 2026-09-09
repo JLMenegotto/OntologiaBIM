@@ -8,3 +8,4 @@
 # Arquivos de publicações e documentação teórica.
 Todas as publicações nesta pasta, embora possam tratar temas diferentes, tocam o tema das ontologias como ponto em comum para formação de bases de conhecimento projetual e como técnica poível para a resolução de problemas de interoperabilidade BIM.  
 
+https://www.scielo.br/j/ac/a/5P9RwnsbWjNQRt54nCVFW7Q/?lang=en
