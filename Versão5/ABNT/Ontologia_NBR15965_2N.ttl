@@ -26,7 +26,7 @@
 	  rdfs:label "NormaReferência2: -"@pt ;
 	  rdfs:label "NormaReferência3: -"@pt ;
 	  rdfs:label "Observações: Sistema de classificação ABNT da construção para BIM"@pt ;
-	  rdfs:label "DataHora: 08/09/2026 11:13:01"@pt ;
+	  rdfs:label "DataHora: 11/09/2026 9:10:33"@pt ;
 	  rdfs:label "Advertência: A Norma foi elaborada pela Comissão de Estudo Especial de Modelagem da Informação da Construção (BIM) ABNT/CEE-134"@pt ;
 	  rdfs:label "Aviso: El Estándar fue preparado por el Comité Especial de Estudio sobre Modelado de Información de Edificación (BIM) ABNT/CEE-134"@es ;
 	  rdfs:label "Alert: The Standard was prepared by the Special Committee of Studies on Building Information Modeling (BIM) ABNT/CEE-134"@en ;
@@ -93,18 +93,15 @@ bim:Método		 rdf:type   owl:AnnotationProperty .
 bim:ClasseIfc		 rdf:type   owl:AnnotationProperty .
 bim:AtributoIfc		 rdf:type   owl:AnnotationProperty .
 bim:ABNT		 rdf:type   owl:AnnotationProperty .
-bim:Código.ABNT		 rdf:type   owl:AnnotationProperty .
+bim:CódigoABNT		 rdf:type   owl:AnnotationProperty .
 bim:Identifica		 rdf:type   owl:AnnotationProperty .
 bim:Parâmetro		 rdf:type   owl:AnnotationProperty .
 bim:Explicação		 rdf:type   owl:AnnotationProperty .
 bim:Explicación		 rdf:type   owl:AnnotationProperty .
 bim:Explanation		 rdf:type   owl:AnnotationProperty .
-bim:Advertência.1		 rdf:type   owl:AnnotationProperty .
+bim:Advertência		 rdf:type   owl:AnnotationProperty .
 bim:Aviso		 rdf:type   owl:AnnotationProperty .
 bim:Warning		 rdf:type   owl:AnnotationProperty .
-bim:Fonte1		 rdf:type   owl:AnnotationProperty .
-bim:Fonte2		 rdf:type   owl:AnnotationProperty .
-bim:Fonte3		 rdf:type   owl:AnnotationProperty .
 
 #################################################################
 #     Classes em Turtle                                          
@@ -10280,7 +10277,7 @@ bim:é.opex   rdf:type  owl:ObjectProperty ;
                     bim:Ação                "Ação de gastar" ;
                     bim:Definição           "Declara o OPEX (Operational Expenditure). São os gastos operacionais, usados para manter o negócio funcionando no dia a dia. São as despesas correntes."@pt ;
                     bim:Definición          "Declara OPEX (Gasto Operativo). Estos son gastos operativos, utilizados para mantener el negocio funcionando día a día. Estos son gastos actuales."@es ;bim:Definition          "Declares OPEX (Operational Expenditure). These are operating expenses, used to keep the business running on a day-to-day basis. These are current expenses."@en ;
-                    owl:equivalentProperty  bim:é.assinatura.de.software  .
+                    owl:equivalentProperty  bim:é.custo.operacional  .
 
 
 bim:d.gastar   rdf:type  owl:DatatypeProperty ;
@@ -10295,6 +10292,35 @@ bim:opex   rdf:type  owl:DatatypeProperty ;
                     bim:Ação                "Ação de gastar" ;
                     bim:Definição           "Declara o OPEX (Operational Expenditure). São os gastos operacionais, usados para manter o negócio funcionando no dia a dia. São as despesas correntes."@pt ;
                     bim:Definición          "Declara OPEX (Gasto Operativo). Estos son gastos operativos, utilizados para mantener el negocio funcionando día a día. Estos son gastos actuales."@es ;bim:Definition          "Declares OPEX (Operational Expenditure). These are operating expenses, used to keep the business running on a day-to-day basis. These are current expenses."@en  .
+
+
+bim:p.gastar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.custo.operacional   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.gastar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a gastar: é.custo.operacional" ;
+                    bim:Chave               "d.gastar.114" ;
+                    bim:Ação                "Ação de gastar" ;
+                    bim:Definição           "Declara o custo operacional de uma atividade. São os gastos operacionais, usados para manter o negócio funcionando no dia a dia. São as despesas correntes."@pt ;
+                    bim:Definición          "Declara el costo operacional de una actividad. Estos son gastos operativos, utilizados para mantener el negocio funcionando día a día. Estos son gastos actuales."@es ;bim:Definition          "Declares the operating expenses, used to keep the business running on a day-to-day basis. These are current expenses."@en ;
+                    owl:equivalentProperty  bim:é.opex  .
+
+
+bim:d.gastar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:custo.operacional   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.gastar ;
+                    rdfs:range              xsd:double ;
+                    rdfs:label              "Dado para gastar: custo.operacional -- Formatado como (xsd:double)" ;
+                    bim:Chave               "d.gastar.114" ;
+                    bim:Ação                "Ação de gastar" ;
+                    bim:Definição           "Declara o custo operacional de uma atividade. São os gastos operacionais, usados para manter o negócio funcionando no dia a dia. São as despesas correntes."@pt ;
+                    bim:Definición          "Declara el costo operacional de una actividad. Estos son gastos operativos, utilizados para mantener el negocio funcionando día a día. Estos son gastos actuales."@es ;bim:Definition          "Declares the operating expenses, used to keep the business running on a day-to-day basis. These are current expenses."@en  .
 
 
 bim:p.geolocalizar   rdf:type  owl:ObjectProperty ;
@@ -32727,5 +32753,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia NBR15965_2N
-##  Criada em 08/09/2026 11:13:06
+##  Criada em 11/09/2026 9:10:39
 #################################################################
