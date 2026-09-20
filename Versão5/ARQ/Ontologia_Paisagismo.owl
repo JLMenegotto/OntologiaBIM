@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Vegetação_e_Paisagismo>
   Annotations: rdfs:label "Norma-Referência-02: -"@pt
   Annotations: rdfs:label "Norma-Referência-03: -"@pt
   Annotations: rdfs:label "Observações: Conceitos de elementos de vegetação e paisagismo."@pt
-  Annotations: rdfs:label "DataHora: 19/09/2026 11:20:22"@pt
+  Annotations: rdfs:label "DataHora: 20/09/2026 12:33:58"@pt
   Annotations: rdfs:label "Advertência: Quando o valor de uma propriedade for '0' ou '-' significa que ainda não foi cadastrado, por não ter sido achado ou ainda  estar sendo verificado e transferido para a ontologia. Os valores dimensionais, como diámetros, alturas e profundidades  são aproximados, pois dependem das condições do ambiente de crescimento e do tratamento (poda, irrigação, etc) de cada indivíduo."@pt
   Annotations: rdfs:label "Aviso: Cuando el valor de una propiedad es '0' o '-' significa que aún no ha sido registrada, porque no se ha encontrado o sigue siendo verificada y transferida a la ontología. Los valores dimensionales, como diámetros, alturas y profundidades, son aproximados, ya que dependen de las condiciones del entorno de cultivo y del tratamiento (poda, riego, etc.) de cada individuo."@es
   Annotations: rdfs:label "Alert: When the value of a property is '0' or '-' it means that it has not yet been registered, because it has not been found or is still being verified and transferred to ontology. Dimensional values, such as diameters, heights and depths are approximate, as they depend on the conditions of the growing environment and the treatment (pruning, irrigation, etc.) of each individual."@en
@@ -9286,6 +9286,7 @@ ObjectProperty: bim:é.aprovada.em
 	Annotations: bim:Definição "Declara a data de aprovação do projeto, do teste ou de qualquer alteração / modificação realizada."@pt
 	Annotations: bim:Definición "Declara la fecha de de aprobación del proyecto, de la prueba o de cualquier alteracion / modificación concretizada."@es
 	Annotations: bim:Definition "Declare the date of approval of the project, the test, or any alteration/modification carried out."@en
+	Annotations: bim:ClasseIfc "[ IfcDocumentInformation.LastRevisionTime ]"
 	EquivalentTo: bim:é.aprovado.em
 
 DataProperty: bim:d.aprovar
@@ -9302,6 +9303,7 @@ DataProperty: bim:aprovada.em
 	Annotations: bim:Definição "Declara a data de aprovação do projeto, do teste ou de qualquer alteração / modificação realizada."@pt
 	Annotations: bim:Definición "Declara la fecha de de aprobación del proyecto, de la prueba o de cualquier alteracion / modificación concretizada."@es
 	Annotations: bim:Definition "Declare the date of approval of the project, the test, or any alteration/modification carried out."@en
+	Annotations: bim:ClasseIfc "[ IfcDocumentInformation.LastRevisionTime ]"
 
 ObjectProperty: bim:p.aprovar
 	SubPropertyOf: bim:BIMProp
@@ -9317,6 +9319,7 @@ ObjectProperty: bim:é.aprovado.em
 	Annotations: bim:Definição "Declara a data de aprovação do projeto, do teste ou de qualquer alteração / modificação realizada."@pt
 	Annotations: bim:Definición "Declara la fecha de de aprobación del proyecto, de la prueba o de cualquier alteracion / modificación concretizada."@es
 	Annotations: bim:Definition "Declare the date of approval of the project, the test, or any alteration/modification carried out."@en
+	Annotations: bim:ClasseIfc "[ IfcDocumentInformation.LastRevisionTime ]"
 	EquivalentTo: bim:é.aprovada.em
 
 DataProperty: bim:d.aprovar
@@ -9333,6 +9336,7 @@ DataProperty: bim:aprovado.em
 	Annotations: bim:Definição "Declara a data de aprovação do projeto, do teste ou de qualquer alteração / modificação realizada."@pt
 	Annotations: bim:Definición "Declara la fecha de de aprobación del proyecto, de la prueba o de cualquier alteracion / modificación concretizada."@es
 	Annotations: bim:Definition "Declare the date of approval of the project, the test, or any alteration/modification carried out."@en
+	Annotations: bim:ClasseIfc "[ IfcDocumentInformation.LastRevisionTime ]"
 
 ObjectProperty: bim:p.arquivar
 	SubPropertyOf: bim:BIMProp
@@ -11079,6 +11083,37 @@ ObjectProperty: bim:p.atuar
 
 
 
+ObjectProperty: bim:é.gestionar
+	SubPropertyOf: bim:p.atuar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a atuar: é.gestionar"@pt
+	Annotations: bim:Chave "d.atuar.185"
+	Annotations: bim:Ação "Ação de atuar"@pt
+	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a gestionar."@pt
+	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a gestionar."@es
+	Annotations: bim:Definition "Declare that the group contains actions, elements or parameters intended to/for manage."@en
+	EquivalentTo: bim:é.incorporar
+
+DataProperty: bim:d.atuar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:gestionar
+	SubPropertyOf: bim:d.atuar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para atuar: gestionar -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.atuar.185"
+	Annotations: bim:Ação "Ação de atuar"@pt
+	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a gestionar."@pt
+	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a gestionar."@es
+	Annotations: bim:Definition "Declare that the group contains actions, elements or parameters intended to/for manage."@en
+
+ObjectProperty: bim:p.atuar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.identificar
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
@@ -11110,11 +11145,42 @@ ObjectProperty: bim:p.atuar
 
 
 
+ObjectProperty: bim:é.incorporar
+	SubPropertyOf: bim:p.atuar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a atuar: é.incorporar"@pt
+	Annotations: bim:Chave "d.atuar.196"
+	Annotations: bim:Ação "Ação de atuar"@pt
+	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados à incorporação imobilíaria."@pt
+	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a la incorporación o desarrollo inmobiliario."@es
+	Annotations: bim:Definition "Declare that the group contains actions, elements or parameters intended to/for real estate development."@en
+	EquivalentTo: bim:é.gestionar
+
+DataProperty: bim:d.atuar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:incorporar
+	SubPropertyOf: bim:d.atuar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para atuar: incorporar -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.atuar.196"
+	Annotations: bim:Ação "Ação de atuar"@pt
+	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados à incorporação imobilíaria."@pt
+	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a la incorporación o desarrollo inmobiliario."@es
+	Annotations: bim:Definition "Declare that the group contains actions, elements or parameters intended to/for real estate development."@en
+
+ObjectProperty: bim:p.atuar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.informar
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a atuar: é.informar"@pt
-	Annotations: bim:Chave "d.atuar.196"
+	Annotations: bim:Chave "d.atuar.197"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a informar."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a informar."@es
@@ -11132,7 +11198,7 @@ DataProperty: bim:informar
 	SubPropertyOf: bim:d.atuar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para atuar: informar -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.atuar.196"
+	Annotations: bim:Chave "d.atuar.197"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a informar."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a informar."@es
@@ -11149,7 +11215,7 @@ ObjectProperty: bim:é.nomear
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a atuar: é.nomear"@pt
-	Annotations: bim:Chave "d.atuar.226"
+	Annotations: bim:Chave "d.atuar.227"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a dar nome a objetos."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a darle nombre a los objetos"@es
@@ -11165,7 +11231,7 @@ DataProperty: bim:nomear
 	SubPropertyOf: bim:d.atuar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para atuar: nomear -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.atuar.226"
+	Annotations: bim:Chave "d.atuar.227"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a dar nome a objetos."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a darle nombre a los objetos"@es
@@ -11180,7 +11246,7 @@ ObjectProperty: bim:é.plantar
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a atuar: é.plantar"@pt
-	Annotations: bim:Chave "d.atuar.241"
+	Annotations: bim:Chave "d.atuar.242"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a plantar."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a plantar."@es
@@ -11196,7 +11262,7 @@ DataProperty: bim:plantar
 	SubPropertyOf: bim:d.atuar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para atuar: plantar -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.atuar.241"
+	Annotations: bim:Chave "d.atuar.242"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a plantar."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a plantar."@es
@@ -11211,7 +11277,7 @@ ObjectProperty: bim:é.predimensionar
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a atuar: é.predimensionar"@pt
-	Annotations: bim:Chave "d.atuar.243"
+	Annotations: bim:Chave "d.atuar.244"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a predimensionar ."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a predimensionar."@es
@@ -11227,7 +11293,7 @@ DataProperty: bim:predimensionar
 	SubPropertyOf: bim:d.atuar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para atuar: predimensionar -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.atuar.243"
+	Annotations: bim:Chave "d.atuar.244"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a predimensionar ."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a predimensionar."@es
@@ -11242,7 +11308,7 @@ ObjectProperty: bim:é.resistir
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a atuar: é.resistir"@pt
-	Annotations: bim:Chave "d.atuar.259"
+	Annotations: bim:Chave "d.atuar.260"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a resistir."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a resistir."@es
@@ -11258,7 +11324,7 @@ DataProperty: bim:resistir
 	SubPropertyOf: bim:d.atuar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para atuar: resistir -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.atuar.259"
+	Annotations: bim:Chave "d.atuar.260"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a resistir."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a resistir."@es
@@ -11273,7 +11339,7 @@ ObjectProperty: bim:é.suportar
 	SubPropertyOf: bim:p.atuar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a atuar: é.suportar"@pt
-	Annotations: bim:Chave "d.atuar.272"
+	Annotations: bim:Chave "d.atuar.273"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a suportar."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a apoyar."@es
@@ -11289,7 +11355,7 @@ DataProperty: bim:suportar
 	SubPropertyOf: bim:d.atuar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para atuar: suportar -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.atuar.272"
+	Annotations: bim:Chave "d.atuar.273"
 	Annotations: bim:Ação "Ação de atuar"@pt
 	Annotations: bim:Definição "Declara que o grupo contêm ações, elementos ou parâmetros destinadas ou destinados a suportar."@pt
 	Annotations: bim:Definición "Declara que el grupo contiene acciones, elementos o parámetros destinados a apoyar."@es
@@ -12802,7 +12868,7 @@ ObjectProperty: bim:é.circuito.av
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.circuito.av"@pt
-	Annotations: bim:Chave "d.comunicar.100"
+	Annotations: bim:Chave "d.comunicar.101"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de audio e vídeo."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos de audio y vídeo."@es
@@ -12820,7 +12886,7 @@ DataProperty: bim:circuito.av
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: circuito.av -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.100"
+	Annotations: bim:Chave "d.comunicar.101"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de audio e vídeo."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos de audio y vídeo."@es
@@ -12837,7 +12903,7 @@ ObjectProperty: bim:é.circuito.dados
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.circuito.dados"@pt
-	Annotations: bim:Chave "d.comunicar.101"
+	Annotations: bim:Chave "d.comunicar.102"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos."@es
@@ -12855,7 +12921,7 @@ DataProperty: bim:circuito.dados
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: circuito.dados -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.101"
+	Annotations: bim:Chave "d.comunicar.102"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos."@es
@@ -12872,7 +12938,7 @@ ObjectProperty: bim:é.circuito.lógico
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.circuito.lógico"@pt
-	Annotations: bim:Chave "d.comunicar.102"
+	Annotations: bim:Chave "d.comunicar.103"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos."@es
@@ -12890,7 +12956,7 @@ DataProperty: bim:circuito.lógico
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: circuito.lógico -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.102"
+	Annotations: bim:Chave "d.comunicar.103"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos."@es
@@ -12907,7 +12973,7 @@ ObjectProperty: bim:é.circuito.telecom
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.circuito.telecom"@pt
-	Annotations: bim:Chave "d.comunicar.103"
+	Annotations: bim:Chave "d.comunicar.104"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos."@es
@@ -12925,7 +12991,7 @@ DataProperty: bim:circuito.telecom
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: circuito.telecom -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.103"
+	Annotations: bim:Chave "d.comunicar.104"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um circuito de fiação para telecomunicação de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un circuito de cableado para telecomunicaciones de datos."@es
@@ -12938,15 +13004,121 @@ ObjectProperty: bim:p.comunicar
 
 
 
+ObjectProperty: bim:é.endereço.e-mail
+	SubPropertyOf: bim:p.comunicar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a comunicar: é.endereço.e-mail"@pt
+	Annotations: bim:Chave "d.comunicar.107"
+	Annotations: bim:Ação "Ação de comunicar"@pt
+	Annotations: bim:Definição "Declara o e-mail."@pt
+	Annotations: bim:Definición "Declara el correo."@es
+	Annotations: bim:Definition "Declare the email."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
+	Annotations: bim:CódigoABNT "[ 0P.10.60.09 ]"
+	EquivalentTo: bim:é.email
+
+DataProperty: bim:d.comunicar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:endereço.e-mail
+	SubPropertyOf: bim:d.comunicar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para comunicar: endereço.e-mail -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.comunicar.107"
+	Annotations: bim:Ação "Ação de comunicar"@pt
+	Annotations: bim:Definição "Declara o e-mail."@pt
+	Annotations: bim:Definición "Declara el correo."@es
+	Annotations: bim:Definition "Declare the email."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
+	Annotations: bim:CódigoABNT "[ 0P.10.60.09 ]"
+
+ObjectProperty: bim:p.comunicar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.email
+	SubPropertyOf: bim:p.comunicar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a comunicar: é.email"@pt
+	Annotations: bim:Chave "d.comunicar.108"
+	Annotations: bim:Ação "Ação de comunicar"@pt
+	Annotations: bim:Definição "Declara o e-mail."@pt
+	Annotations: bim:Definición "Declara el correo."@es
+	Annotations: bim:Definition "Declare the email."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
+	Annotations: bim:CódigoABNT "[ 0P.10.60.09 ]"
+	EquivalentTo: bim:é.e-mail
+
+DataProperty: bim:d.comunicar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:email
+	SubPropertyOf: bim:d.comunicar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para comunicar: email -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.comunicar.108"
+	Annotations: bim:Ação "Ação de comunicar"@pt
+	Annotations: bim:Definição "Declara o e-mail."@pt
+	Annotations: bim:Definición "Declara el correo."@es
+	Annotations: bim:Definition "Declare the email."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
+	Annotations: bim:CódigoABNT "[ 0P.10.60.09 ]"
+
+ObjectProperty: bim:p.comunicar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.e-mail
+	SubPropertyOf: bim:p.comunicar
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a comunicar: é.e-mail"@pt
+	Annotations: bim:Chave "d.comunicar.109"
+	Annotations: bim:Ação "Ação de comunicar"@pt
+	Annotations: bim:Definição "Declara o e-mail."@pt
+	Annotations: bim:Definición "Declara el correo."@es
+	Annotations: bim:Definition "Declare the email."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
+	Annotations: bim:CódigoABNT "[ 0P.10.60.09 ]"
+	EquivalentTo: bim:é.endereço.e-mail
+
+DataProperty: bim:d.comunicar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:e-mail
+	SubPropertyOf: bim:d.comunicar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para comunicar: e-mail -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.comunicar.109"
+	Annotations: bim:Ação "Ação de comunicar"@pt
+	Annotations: bim:Definição "Declara o e-mail."@pt
+	Annotations: bim:Definición "Declara el correo."@es
+	Annotations: bim:Definition "Declare the email."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
+	Annotations: bim:CódigoABNT "[ 0P.10.60.09 ]"
+
+ObjectProperty: bim:p.comunicar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.endereço.ria
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.endereço.ria"@pt
-	Annotations: bim:Chave "d.comunicar.107"
+	Annotations: bim:Chave "d.comunicar.110"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o endereçamento de uma Rede Integrada de Atendimento, como a Rede Nacional de Governo Digital (Rede GOV.BR)."@pt
 	Annotations: bim:Definición "Declara la dirección de una Red Integrada de Atención."@es
 	Annotations: bim:Definition "Declare the address of an Integrated Public Service Network."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
 	Annotations: bim:CódigoABNT "[ 0P.10.60 ]"
 	EquivalentTo: bim:é.endereço.riap
 
@@ -12959,11 +13131,12 @@ DataProperty: bim:endereço.ria
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: endereço.ria -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.107"
+	Annotations: bim:Chave "d.comunicar.110"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o endereçamento de uma Rede Integrada de Atendimento, como a Rede Nacional de Governo Digital (Rede GOV.BR)."@pt
 	Annotations: bim:Definición "Declara la dirección de una Red Integrada de Atención."@es
 	Annotations: bim:Definition "Declare the address of an Integrated Public Service Network."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
 	Annotations: bim:CódigoABNT "[ 0P.10.60 ]"
 
 ObjectProperty: bim:p.comunicar
@@ -12975,11 +13148,12 @@ ObjectProperty: bim:é.endereço.riap
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.endereço.riap"@pt
-	Annotations: bim:Chave "d.comunicar.108"
+	Annotations: bim:Chave "d.comunicar.111"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o endereçamento de uma Rede Integrada de Atendimento ao Público, como a Rede Nacional de Governo Digital (Rede GOV.BR)."@pt
 	Annotations: bim:Definición "Declara la dirección de una Red Integrada de Atención Pública."@es
 	Annotations: bim:Definition "Declare the address of an Integrated Public Service Network."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
 	Annotations: bim:CódigoABNT "[ 0P.10.60 ]"
 	EquivalentTo: bim:é.endereço.ria
 
@@ -12992,11 +13166,12 @@ DataProperty: bim:endereço.riap
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: endereço.riap -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.108"
+	Annotations: bim:Chave "d.comunicar.111"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o endereçamento de uma Rede Integrada de Atendimento ao Público, como a Rede Nacional de Governo Digital (Rede GOV.BR)."@pt
 	Annotations: bim:Definición "Declara la dirección de una Red Integrada de Atención Pública."@es
 	Annotations: bim:Definition "Declare the address of an Integrated Public Service Network."@en
+	Annotations: bim:ClasseIfc "[ IfcTelecomAddress.ElectronicMailAddress ]"
 	Annotations: bim:CódigoABNT "[ 0P.10.60 ]"
 
 ObjectProperty: bim:p.comunicar
@@ -13008,7 +13183,7 @@ ObjectProperty: bim:é.rede.urbana.de.dados
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.rede.urbana.de.dados"@pt
-	Annotations: bim:Chave "d.comunicar.115"
+	Annotations: bim:Chave "d.comunicar.118"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um elemento de rede urbana de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un elemento de la red de datos urbana."@es
@@ -13027,7 +13202,7 @@ DataProperty: bim:rede.urbana.de.dados
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: rede.urbana.de.dados -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.115"
+	Annotations: bim:Chave "d.comunicar.118"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um elemento de rede urbana de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un elemento de la red de datos urbana."@es
@@ -13045,7 +13220,7 @@ ObjectProperty: bim:é.rede.urbana.de.telecom
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.rede.urbana.de.telecom"@pt
-	Annotations: bim:Chave "d.comunicar.116"
+	Annotations: bim:Chave "d.comunicar.119"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um elemento de rede urbana de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un elemento de la red de datos urbana."@es
@@ -13064,7 +13239,7 @@ DataProperty: bim:rede.urbana.de.telecom
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: rede.urbana.de.telecom -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.116"
+	Annotations: bim:Chave "d.comunicar.119"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um elemento de rede urbana de dados."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un elemento de la red de datos urbana."@es
@@ -13082,7 +13257,7 @@ ObjectProperty: bim:é.rede.urbana.de.telefonia
 	SubPropertyOf: bim:p.comunicar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a comunicar: é.rede.urbana.de.telefonia"@pt
-	Annotations: bim:Chave "d.comunicar.117"
+	Annotations: bim:Chave "d.comunicar.120"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um elemento de rede urbana de telefonia."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un elemento de la red telefónica urbana."@es
@@ -13101,7 +13276,7 @@ DataProperty: bim:rede.urbana.de.telefonia
 	SubPropertyOf: bim:d.comunicar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para comunicar: rede.urbana.de.telefonia -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.comunicar.117"
+	Annotations: bim:Chave "d.comunicar.120"
 	Annotations: bim:Ação "Ação de comunicar"@pt
 	Annotations: bim:Definição "Declara o ID de Revit ou GlobalId IFC ou identificador único de objeto. É um elemento de rede urbana de telefonia."@pt
 	Annotations: bim:Definición "Declara el ID de Revit o IFC GlobalId o un identificador único de objeto. Es un elemento de la red telefónica urbana."@es
@@ -23046,6 +23221,7 @@ ObjectProperty: bim:é.alias
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
 	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Declare the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.apelido
 
 DataProperty: bim:d.nomear
@@ -23062,6 +23238,7 @@ DataProperty: bim:alias
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
 	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Declare the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23077,6 +23254,7 @@ ObjectProperty: bim:é.apelido
 	Annotations: bim:Definição "Declara o apelido de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
 	Annotations: bim:Definición "Declara el apodo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Declare the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.alias
 
 DataProperty: bim:d.nomear
@@ -23093,6 +23271,7 @@ DataProperty: bim:apelido
 	Annotations: bim:Definição "Declara o apelido de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
 	Annotations: bim:Definición "Declara el apodo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Declare the nickname of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23108,6 +23287,7 @@ ObjectProperty: bim:é.codinome
 	Annotations: bim:Definição "Declara um nome que oculta o nome real por razões de segurança, estratégia militar ou ativismo."@pt
 	Annotations: bim:Definición "Indica un nombre que oculta el nombre real por razones de seguridad, estrategia militar o activismo."@es
 	Annotations: bim:Definition "Declare a name that conceals the real name for reasons of security, military strategy, or activism."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.nome.artístico
 
 DataProperty: bim:d.nomear
@@ -23124,6 +23304,7 @@ DataProperty: bim:codinome
 	Annotations: bim:Definição "Declara um nome que oculta o nome real por razões de segurança, estratégia militar ou ativismo."@pt
 	Annotations: bim:Definición "Indica un nombre que oculta el nombre real por razones de seguridad, estrategia militar o activismo."@es
 	Annotations: bim:Definition "Declare a name that conceals the real name for reasons of security, military strategy, or activism."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23139,6 +23320,7 @@ ObjectProperty: bim:é.heterônimo
 	Annotations: bim:Definição "Declara um nome autoral fictício criado por um autor que funciona como um personagem criador independente."@pt
 	Annotations: bim:Definición "Declara un nombre autoral ficticio creado por un autor que actúa como un personaje creador independiente."@es
 	Annotations: bim:Definition "Declare a fictitious authorial name created by an author who functions as an independent creator character."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.nome.artístico
 
 DataProperty: bim:d.nomear
@@ -23155,6 +23337,7 @@ DataProperty: bim:heterônimo
 	Annotations: bim:Definição "Declara um nome autoral fictício criado por um autor que funciona como um personagem criador independente."@pt
 	Annotations: bim:Definición "Declara un nombre autoral ficticio creado por un autor que actúa como un personaje creador independiente."@es
 	Annotations: bim:Definition "Declare a fictitious authorial name created by an author who functions as an independent creator character."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23170,6 +23353,7 @@ ObjectProperty: bim:é.nickname
 	Annotations: bim:Definição "Declara um nome de usuário adotado em ambiente digital (fóruns, redes sociais e jogos online, etc.). Muitas vezes é usado para manter o anonimato na internet."@pt
 	Annotations: bim:Definición "Declara adoptado un nombre de usuario en un entorno digital (foros, redes sociales y juegos online, etc.). A menudo se utiliza para mantener el anonimato en internet."@es
 	Annotations: bim:Definition "Declare a username adopted in a digital environment (forums, social networks and online games, etc.). It is often used to maintain anonymity on the internet."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.nome.artístico
 
 DataProperty: bim:d.nomear
@@ -23186,6 +23370,40 @@ DataProperty: bim:nickname
 	Annotations: bim:Definição "Declara um nome de usuário adotado em ambiente digital (fóruns, redes sociais e jogos online, etc.). Muitas vezes é usado para manter o anonimato na internet."@pt
 	Annotations: bim:Definición "Declara adoptado un nombre de usuario en un entorno digital (foros, redes sociales y juegos online, etc.). A menudo se utiliza para mantener el anonimato en internet."@es
 	Annotations: bim:Definition "Declare a username adopted in a digital environment (forums, social networks and online games, etc.). It is often used to maintain anonymity on the internet."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+
+ObjectProperty: bim:p.nomear
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.nome
+	SubPropertyOf: bim:p.nomear
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a nomear: é.nome"@pt
+	Annotations: bim:Chave "d.nomear.105"
+	Annotations: bim:Ação "Ação de nomear"@pt
+	Annotations: bim:Definição "Declara o nome de alguma pessoa ou objeto definido."@pt
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
+	Annotations: bim:Definition "Declare the name of some defined object."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+	EquivalentTo: bim:é.nome.social
+
+DataProperty: bim:d.nomear
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:nome
+	SubPropertyOf: bim:d.nomear
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para nomear: nome -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.nomear.105"
+	Annotations: bim:Ação "Ação de nomear"@pt
+	Annotations: bim:Definição "Declara o nome de alguma pessoa ou objeto definido."@pt
+	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
+	Annotations: bim:Definition "Declare the name of some defined object."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23201,6 +23419,7 @@ ObjectProperty: bim:é.nome.artístico
 	Annotations: bim:Definição "Declara um nome diferente ao nome legal de uma pessoa, similar a um heterônimo ou alias."@pt
 	Annotations: bim:Definición "Declara un nombre diferente al nombre legal de una persona, similar a un heterónimo o alias."@es
 	Annotations: bim:Definition "Declare a name different from a person's legal name, similar to a heteronym or alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.heterônimo
 
 DataProperty: bim:d.nomear
@@ -23217,6 +23436,7 @@ DataProperty: bim:nome.artístico
 	Annotations: bim:Definição "Declara um nome diferente ao nome legal de uma pessoa, similar a um heterônimo ou alias."@pt
 	Annotations: bim:Definición "Declara un nombre diferente al nombre legal de una persona, similar a un heterónimo o alias."@es
 	Annotations: bim:Definition "Declare a name different from a person's legal name, similar to a heteronym or alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23232,6 +23452,7 @@ ObjectProperty: bim:é.nome.científico
 	Annotations: bim:Definição "Declara o nome científico. O nome científico de uma planta faz referência ao gênero e à espécie, seguindo a convenção da nomenclatura binomial criada por Carl Linnaeus. Pode incluir um terceiro nome (subespécie ou variedade)."@pt
 	Annotations: bim:Definición "Declara el nombre científico. El nombre científico de una planta se refiere al género y la especie, siguiendo la convención de nomenclatura binomial creada por Carl Linnaeus. Puede incluir un tercer nombre (de subespecie o variedad)."@es
 	Annotations: bim:Definition "Declare the scientific name. The scientific name of a plant refers to the genus and species, following the convention of binomial nomenclature created by Carl Linnaeus. It may include a third name (subspecies or variety)."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 DataProperty: bim:d.nomear
 	SubPropertyOf: bim:BIMData
@@ -23247,6 +23468,7 @@ DataProperty: bim:nome.científico
 	Annotations: bim:Definição "Declara o nome científico. O nome científico de uma planta faz referência ao gênero e à espécie, seguindo a convenção da nomenclatura binomial criada por Carl Linnaeus. Pode incluir um terceiro nome (subespécie ou variedade)."@pt
 	Annotations: bim:Definición "Declara el nombre científico. El nombre científico de una planta se refiere al género y la especie, siguiendo la convención de nomenclatura binomial creada por Carl Linnaeus. Puede incluir un tercer nombre (de subespecie o variedad)."@es
 	Annotations: bim:Definition "Declare the scientific name. The scientific name of a plant refers to the genus and species, following the convention of binomial nomenclature created by Carl Linnaeus. It may include a third name (subspecies or variety)."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23262,6 +23484,7 @@ ObjectProperty: bim:é.nome.de.guerra
 	Annotations: bim:Definição "Declara um nome que oculta o nome real por razões de segurança, estratégia militar ou ativismo. Em geral é adotado por profissionais das forças armadas e policiais."@pt
 	Annotations: bim:Definición "Declara un nombre que oculta el nombre real por razones de seguridad, estrategia militar o activismo. En general, es adoptado por profesionales de las fuerzas armadas y la policía."@es
 	Annotations: bim:Definition "Declare a name that conceals the real name for reasons of security, military strategy, or activism. In general, it is adopted by professionals in the armed forces and police."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.nome.artístico
 
 DataProperty: bim:d.nomear
@@ -23278,6 +23501,40 @@ DataProperty: bim:nome.de.guerra
 	Annotations: bim:Definição "Declara um nome que oculta o nome real por razões de segurança, estratégia militar ou ativismo. Em geral é adotado por profissionais das forças armadas e policiais."@pt
 	Annotations: bim:Definición "Declara un nombre que oculta el nombre real por razones de seguridad, estrategia militar o activismo. En general, es adoptado por profesionales de las fuerzas armadas y la policía."@es
 	Annotations: bim:Definition "Declare a name that conceals the real name for reasons of security, military strategy, or activism. In general, it is adopted by professionals in the armed forces and police."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+
+ObjectProperty: bim:p.nomear
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.nome.social
+	SubPropertyOf: bim:p.nomear
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a nomear: é.nome.social"@pt
+	Annotations: bim:Chave "d.nomear.111"
+	Annotations: bim:Ação "Ação de nomear"@pt
+	Annotations: bim:Definição "Declara o nome utilizado socialmente por uma pessoa. Pode ser utilizado como opção por pessoas não-binárias ou como nome artístico."@pt
+	Annotations: bim:Definición "Declara el nombre usado socialmente. Puede usarse como opción por personas no binarias o como nombre artístico."@es
+	Annotations: bim:Definition "Declare the name used socially. It can be used as an option by non-binary people or as a stage name for artist."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+	EquivalentTo: bim:é.nome
+
+DataProperty: bim:d.nomear
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:nome.social
+	SubPropertyOf: bim:d.nomear
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para nomear: nome.social -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.nomear.111"
+	Annotations: bim:Ação "Ação de nomear"@pt
+	Annotations: bim:Definição "Declara o nome utilizado socialmente por uma pessoa. Pode ser utilizado como opção por pessoas não-binárias ou como nome artístico."@pt
+	Annotations: bim:Definición "Declara el nombre usado socialmente. Puede usarse como opción por personas no binarias o como nombre artístico."@es
+	Annotations: bim:Definition "Declare the name used socially. It can be used as an option by non-binary people or as a stage name for artist."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23293,6 +23550,7 @@ ObjectProperty: bim:é.nomeada
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Declare the name of some defined object."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.nomeado
 
 DataProperty: bim:d.nomear
@@ -23309,6 +23567,7 @@ DataProperty: bim:nomeada
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Declare the name of some defined object."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23324,6 +23583,7 @@ ObjectProperty: bim:é.nomeado
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Declare the name of some defined object."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.nomeada
 
 DataProperty: bim:d.nomear
@@ -23340,6 +23600,7 @@ DataProperty: bim:nomeado
 	Annotations: bim:Definição "Declara o nome de algum objeto definido."@pt
 	Annotations: bim:Definición "Declara el nombre de algún objeto definido."@es
 	Annotations: bim:Definition "Declare the name of some defined object."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23355,6 +23616,7 @@ ObjectProperty: bim:é.pseudônimo
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
 	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Declare the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 	EquivalentTo: bim:é.apelido
 
 DataProperty: bim:d.nomear
@@ -23371,6 +23633,40 @@ DataProperty: bim:pseudônimo
 	Annotations: bim:Definição "Declara o pseudônimo ou nome alternativo de um objeto ou agente. Pode ser utilizado para identificar prédios, cidades, pessoas, etc. Por exemplo, Rio de Janeiro é um nome, Cidade Maravilhosa o alias."@pt
 	Annotations: bim:Definición "Declara el nombre alternativo de un objeto o agente. Puede usarse para Declarar edificios, ciudades, personas, etc. Por ejemplo, Río de Janeiro es un nombre, Ciudad Maravillosa es el alias."@es
 	Annotations: bim:Definition "Declare the alternative name of an object or agent. It can be used to identify buildings, cities, people, etc. For example, Rio de Janeiro is a name, Marvelous City the alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+
+ObjectProperty: bim:p.nomear
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.nome.de.usuário
+	SubPropertyOf: bim:p.nomear
+	domain: bim:BIM
+	Annotations: rdfs:label "Propriedade destinada a nomear: é.nome.de.usuário"@pt
+	Annotations: bim:Chave "d.nomear.117"
+	Annotations: bim:Ação "Ação de nomear"@pt
+	Annotations: bim:Definição "Declara um nome diferente ao nome legal de uma pessoa, similar a um heterônimo ou alias."@pt
+	Annotations: bim:Definición "Declara un nombre diferente al nombre legal de una persona, similar a un heterónimo o alias."@es
+	Annotations: bim:Definition "Declare a name different from a person's legal name, similar to a heteronym or alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+	EquivalentTo: bim:é.username
+
+DataProperty: bim:d.nomear
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:nome.de.usuário
+	SubPropertyOf: bim:d.nomear
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:label "Dado para nomear: nome.de.usuário -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.nomear.117"
+	Annotations: bim:Ação "Ação de nomear"@pt
+	Annotations: bim:Definição "Declara um nome diferente ao nome legal de uma pessoa, similar a um heterônimo ou alias."@pt
+	Annotations: bim:Definición "Declara un nombre diferente al nombre legal de una persona, similar a un heterónimo o alias."@es
+	Annotations: bim:Definition "Declare a name different from a person's legal name, similar to a heteronym or alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.nomear
 	SubPropertyOf: bim:BIMProp
@@ -23381,12 +23677,13 @@ ObjectProperty: bim:é.username
 	SubPropertyOf: bim:p.nomear
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a nomear: é.username"@pt
-	Annotations: bim:Chave "d.nomear.117"
+	Annotations: bim:Chave "d.nomear.118"
 	Annotations: bim:Ação "Ação de nomear"@pt
 	Annotations: bim:Definição "Declara um nome diferente ao nome legal de uma pessoa, similar a um heterônimo ou alias."@pt
 	Annotations: bim:Definición "Declara un nombre diferente al nombre legal de una persona, similar a un heterónimo o alias."@es
 	Annotations: bim:Definition "Declare a name different from a person's legal name, similar to a heteronym or alias."@en
-	EquivalentTo: bim:é.heterônimo
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
+	EquivalentTo: bim:é.nome.de.usuário
 
 DataProperty: bim:d.nomear
 	SubPropertyOf: bim:BIMData
@@ -23397,11 +23694,12 @@ DataProperty: bim:username
 	SubPropertyOf: bim:d.nomear
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para nomear: username -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.nomear.117"
+	Annotations: bim:Chave "d.nomear.118"
 	Annotations: bim:Ação "Ação de nomear"@pt
 	Annotations: bim:Definição "Declara um nome diferente ao nome legal de uma pessoa, similar a um heterônimo ou alias."@pt
 	Annotations: bim:Definición "Declara un nombre diferente al nombre legal de una persona, similar a un heterónimo o alias."@es
 	Annotations: bim:Definition "Declare a name different from a person's legal name, similar to a heteronym or alias."@en
+	Annotations: bim:ClasseIfc "[ IfcPerson.Identification ]"
 
 ObjectProperty: bim:p.objetivar
 	SubPropertyOf: bim:BIMProp
@@ -42797,7 +43095,7 @@ ObjectProperty: bim:é.interditada
 	SubPropertyOf: bim:p.vistoriar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.interditada"@pt
-	Annotations: bim:Chave "d.vistoriar.108"
+	Annotations: bim:Chave "d.vistoriar.109"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara que o objeto vistoriado está interditado."@pt
 	Annotations: bim:Definición "Declara que el objeto inspeccionado está prohibido."@es
@@ -42813,7 +43111,7 @@ DataProperty: bim:interditada
 	SubPropertyOf: bim:d.vistoriar
 	range: xsd:boolean
 	Annotations: rdfs:label "Dado para vistoriar: interditada -- Formatado como (xsd:boolean)"@pt
-	Annotations: bim:Chave "d.vistoriar.108"
+	Annotations: bim:Chave "d.vistoriar.109"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara que o objeto vistoriado está interditado."@pt
 	Annotations: bim:Definición "Declara que el objeto inspeccionado está prohibido."@es
@@ -42828,7 +43126,7 @@ ObjectProperty: bim:é.interditado
 	SubPropertyOf: bim:p.vistoriar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.interditado"@pt
-	Annotations: bim:Chave "d.vistoriar.109"
+	Annotations: bim:Chave "d.vistoriar.110"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara que o objeto vistoriado está interditado."@pt
 	Annotations: bim:Definición "Declara que el objeto inspeccionado está prohibido."@es
@@ -42844,7 +43142,7 @@ DataProperty: bim:interditado
 	SubPropertyOf: bim:d.vistoriar
 	range: xsd:boolean
 	Annotations: rdfs:label "Dado para vistoriar: interditado -- Formatado como (xsd:boolean)"@pt
-	Annotations: bim:Chave "d.vistoriar.109"
+	Annotations: bim:Chave "d.vistoriar.110"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara que o objeto vistoriado está interditado."@pt
 	Annotations: bim:Definición "Declara que el objeto inspeccionado está prohibido."@es
@@ -42859,7 +43157,7 @@ ObjectProperty: bim:é.uas
 	SubPropertyOf: bim:p.vistoriar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.uas"@pt
-	Annotations: bim:Chave "d.vistoriar.112"
+	Annotations: bim:Chave "d.vistoriar.113"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara a identificação de uma aeronave não tripulada. Denominação da ANAC e DECEA."@pt
 	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
@@ -42875,7 +43173,7 @@ DataProperty: bim:uas
 	SubPropertyOf: bim:d.vistoriar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para vistoriar: uas -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.vistoriar.112"
+	Annotations: bim:Chave "d.vistoriar.113"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara a identificação de uma aeronave não tripulada. Denominação da ANAC e DECEA."@pt
 	Annotations: bim:Definición "Declara aeronaves no tripuladas. Denominación de ANAC y DECEA."@es
@@ -42890,7 +43188,7 @@ ObjectProperty: bim:é.vant
 	SubPropertyOf: bim:p.vistoriar
 	domain: bim:BIM
 	Annotations: rdfs:label "Propriedade destinada a vistoriar: é.vant"@pt
-	Annotations: bim:Chave "d.vistoriar.113"
+	Annotations: bim:Chave "d.vistoriar.114"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara a identificação do veículo aéreo não tripulado."@pt
 	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
@@ -42906,7 +43204,7 @@ DataProperty: bim:vant
 	SubPropertyOf: bim:d.vistoriar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:label "Dado para vistoriar: vant -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.vistoriar.113"
+	Annotations: bim:Chave "d.vistoriar.114"
 	Annotations: bim:Ação "Ação de vistoriar"@pt
 	Annotations: bim:Definição "Declara a identificação do veículo aéreo não tripulado."@pt
 	Annotations: bim:Definición "Declara la identificación del vehículo aéreo no tripulado."@es
@@ -43089,5 +43387,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia Paisagismo
-##  Criada em 19/09/2026 11:20:24
+##  Criada em 20/09/2026 12:34:01
 #################################################################
