@@ -44,7 +44,8 @@ O projeto sustenta que é altamente recomendável que ontologias OWL sejam desen
 Agradeço a todos os colegas e alunos que colaboram com o projeto, revisando conteúdos e sugerindo ideias.  
 
 > *Prof. Júlio César Boscher Torres, D.Sc. PEU / PEE / COPPE / UFRJ*   
-> *Prof. Fernando Rodrigues Lima, D.Sc. PEU / UFRJ*   
+> *Prof. Fernando Rodrigues Lima, D.Sc. PEU / UFRJ*
+> *Prof. Cristiano Saad Travassos do Carmo, D.Sc. POLI / USP*   
 > *Arq.ª Silvia Maria Soares de Araújo, D.Sc. COGIC / FIOCRUZ*  
 > *Arq.ª Tereza Cristina Malveira de Araújo, D.Sc. COGIC / FIOCRUZ*   
 > *Arq.ª Vania Furuguem Miyamoto, M.Sc. COGIC / FIOCRUZ / PEU / UFRJ*   
