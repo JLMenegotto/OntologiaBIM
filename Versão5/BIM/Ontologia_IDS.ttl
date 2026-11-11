@@ -26,7 +26,7 @@
 	  rdfs:label "Norma-Referência-02: -"@pt ;
 	  rdfs:label "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt ;
 	  rdfs:label "Observações: Modelo IDS"@pt ;
-	  rdfs:label "DataHora: 11/11/2026 13:37:08"@pt ;
+	  rdfs:label "DataHora: 11/11/2026 13:53:57"@pt ;
 	  rdfs:label "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Aviso: -"@pt ;
 	  rdfs:label "Alert: -"@pt ;
@@ -1496,29 +1496,31 @@ bim:Especifica.Ambiente rdf:type  owl:Class  ;
 #     Indivíduos em Turtle                                       
 #################################################################
 
-bim:IDS_001  rdf:type  owl:NamedIndividual , bim:IDS.Raiz  .
+bim:IDS_Projeto_A  rdf:type  owl:NamedIndividual , bim:IDS.Raiz ;
+     bim:descrição    "Raiz do arquivo IDS do Predio A"  .
 
 bim:Meta001  rdf:type  owl:NamedIndividual , bim:Meta.Título ;
-     bim:é.pertencente.a    bim:IDS_001 ;
+     bim:é.pertencente.a    bim:IDS_Projeto_A ;
      bim:título    "Ontologia teste IDS"  .
 
 bim:Meta002  rdf:type  owl:NamedIndividual , bim:Meta.Versão ;
-     bim:é.pertencente.a    bim:IDS_001 ;
+     bim:é.pertencente.a    bim:IDS_Projeto_A ;
      bim:versão    "1.0"  .
 
 bim:Meta003  rdf:type  owl:NamedIndividual , bim:Meta.Autor ;
-     bim:é.pertencente.a    bim:IDS_001 ;
+     bim:é.pertencente.a    bim:IDS_Projeto_A ;
      bim:autor    "José"  .
 
 bim:Meta004  rdf:type  owl:NamedIndividual , bim:Meta.Data ;
-     bim:é.pertencente.a    bim:IDS_001 ;
+     bim:é.pertencente.a    bim:IDS_Projeto_A ;
      bim:data    "10/11/2026"  .
 
 bim:Meta005  rdf:type  owl:NamedIndividual , bim:Meta.Descrição ;
-     bim:é.pertencente.a    bim:IDS_001 ;
+     bim:é.pertencente.a    bim:IDS_Projeto_A ;
      bim:descrição    "Uma ontologia inicial para teste IDS"  .
 
 bim:Campus_UFRJ  rdf:type  owl:NamedIndividual , bim:Especifica.Sítio ;
+     bim:é.pertencente.a    bim:null ;
      bim:endereço    "Cidade Universitária" ;
      bim:ids.descrição    "Especificação do campus" ;
      bim:ids.classe    "IfcSite"  .
@@ -1535,46 +1537,55 @@ bim:Andar_01  rdf:type  owl:NamedIndividual , bim:Especifica.Andar ;
      bim:ids.descrição    "Especificação do andar" ;
      bim:ids.classe    "IfcBuildingStorey"  .
 
-bim:Amb_001  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
+bim:Ambiente_01  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
+     bim:é.pertencente.a    bim:Predio_A ;
      bim:é.pertencente.a    bim:Andar_01 ;
      bim:ambiente.nome    "Sala D101" ;
      bim:ids.descrição    "Especificação do ambiente" ;
      bim:ids.classe    "IfcSpace"  .
 
-bim:Espe_000  rdf:type  owl:NamedIndividual , bim:Especificações.Todas ;
-     bim:é.pertencente.a    bim:IDS_001  .
+bim:Especificações  rdf:type  owl:NamedIndividual , bim:Especificações.Todas ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.pertencente.a    bim:IDS_Predio_A  .
 
-bim:Espe_001  rdf:type  owl:NamedIndividual , bim:Especificador.Individual ;
-     bim:é.pertencente.a    bim:Espe_000  .
+bim:Especifica_001  rdf:type  owl:NamedIndividual , bim:Especificador.Individual ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações  .
 
-bim:EATR  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Atributo ;
-     bim:é.pertencente.a    bim:Espe_000  .
+bim:Faceta_ATR  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Atributo ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações  .
 
-bim:ECLA  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Classificação ;
-     bim:é.pertencente.a    bim:Espe_000  .
+bim:Faceta_CLA  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Classificação ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações  .
 
-bim:EENT  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
-     bim:é.pertencente.a    bim:Espe_000  .
+bim:Faceta_ENT  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações  .
 
-bim:EMA  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Material ;
-     bim:é.pertencente.a    bim:Espe_000  .
+bim:Faceta_MAT  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Material ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações  .
 
-bim:EPAR  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Parte.de ;
-     bim:é.pertencente.a    bim:Espe_000  .
+bim:Faceta_PAR  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Parte.de ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações  .
 
-bim:EPRO  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Propriedade ;
-     bim:é.pertencente.a    bim:Espe_000 ;
+bim:Faceta_PRO  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Propriedade ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.usado.em    bim:Especificações ;
      bim:ids.classe    "IfcLabel"  .
 
-bim:Em_Paredes  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
+bim:Requisitos_de_Paredes  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
      bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.usado.em    bim:Em_Paredes ;
-     bim:ids.descrição    "Requisito necessário nas Paredes" ;
+     bim:é.usado.em    bim:Requisitos_de_Paredes ;
+     bim:ids.descrição    "Requisito necessário para Paredes" ;
      bim:ids.classe    "IfcWall"  .
 
 bim:R1_AplicadoEm  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Propriedade ;
      bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.usado.em    bim:Em_Paredes ;
+     bim:é.usado.em    bim:Requisitos_de_Paredes ;
      bim:ids.descrição    "Propriedade específica" ;
      bim:ids.classe    "IfcWall" ;
      bim:ids.pset    "Pset_WallCommon" ;
@@ -1584,7 +1595,7 @@ bim:R1_AplicadoEm  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Propriedade ;
 
 bim:R1_Requerido  rdf:type  owl:NamedIndividual , bim:IDS.Necessário ;
      bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.usado.em    bim:Em_Paredes ;
+     bim:é.usado.em    bim:Requisitos_de_Paredes ;
      bim:ids.descrição    "Exigência de resistência ao fogo para divisórias internas não estruturais." ;
      bim:ids.classe    "IfcWall" ;
      bim:ids.pset    "Pset_WallCommon" ;
@@ -1594,7 +1605,7 @@ bim:R1_Requerido  rdf:type  owl:NamedIndividual , bim:IDS.Necessário ;
 
 bim:R1_Válido  rdf:type  owl:NamedIndividual , bim:IDS.Válido ;
      bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.usado.em    bim:Em_Paredes ;
+     bim:é.usado.em    bim:Requisitos_de_Paredes ;
      bim:ids.descrição    "Exigência de resistência ao fogo para divisórias internas não estruturais." ;
      bim:ids.classe    "IfcWall" ;
      bim:ids.pset    "Pset_WallCommon" ;
@@ -40602,5 +40613,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 11/11/2026 13:37:24
+##  Criada em 11/11/2026 13:54:08
 #################################################################
