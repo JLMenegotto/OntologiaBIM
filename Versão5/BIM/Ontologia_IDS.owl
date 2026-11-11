@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IDS>
 	Annotations: rdfs:comment "Norma-Referência-02: -"@pt
 	Annotations: rdfs:comment "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
 	Annotations: rdfs:comment "Observações: Modelo IDS"@pt
-	Annotations: rdfs:comment "DataHora: 11/11/2026 13:37:08"@pt
+	Annotations: rdfs:comment "DataHora: 11/11/2026 13:53:57"@pt
 	Annotations: rdfs:comment "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
 	Annotations: rdfs:comment "Aviso: -"@pt
 	Annotations: rdfs:comment "Alert: -"@pt
@@ -796,36 +796,38 @@ Class: bim:Especifica.Ambiente
 #     Indivíduos em Sintaxe Manchester                           
 #################################################################
 
-Individual: bim:IDS_001
+Individual: bim:IDS_Projeto_A
 	Types: bim:IDS.Raiz
+	Facts: bim:descrição  "Raiz do arquivo IDS do Predio A"
 
 Individual: bim:Meta001
 	Types: bim:Meta.Título
-	Facts: bim:é.pertencente.a  bim:IDS_001
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:título  "Ontologia teste IDS"
 
 Individual: bim:Meta002
 	Types: bim:Meta.Versão
-	Facts: bim:é.pertencente.a  bim:IDS_001
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:versão  "1.0"
 
 Individual: bim:Meta003
 	Types: bim:Meta.Autor
-	Facts: bim:é.pertencente.a  bim:IDS_001
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:autor  "José"
 
 Individual: bim:Meta004
 	Types: bim:Meta.Data
-	Facts: bim:é.pertencente.a  bim:IDS_001
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:data  "10/11/2026"
 
 Individual: bim:Meta005
 	Types: bim:Meta.Descrição
-	Facts: bim:é.pertencente.a  bim:IDS_001
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:descrição  "Uma ontologia inicial para teste IDS"
 
 Individual: bim:Campus_UFRJ
 	Types: bim:Especifica.Sítio
+	Facts: bim:é.pertencente.a  bim:null
 	Facts: bim:endereço  "Cidade Universitária"
 	Facts: bim:ids.descrição  "Especificação do campus"
 	Facts: bim:ids.classe  "IfcSite"
@@ -844,57 +846,66 @@ Individual: bim:Andar_01
 	Facts: bim:ids.descrição  "Especificação do andar"
 	Facts: bim:ids.classe  "IfcBuildingStorey"
 
-Individual: bim:Amb_001
+Individual: bim:Ambiente_01
 	Types: bim:Especifica.Ambiente
+	Facts: bim:é.pertencente.a  bim:Predio_A
 	Facts: bim:é.pertencente.a  bim:Andar_01
 	Facts: bim:ambiente.nome  "Sala D101"
 	Facts: bim:ids.descrição  "Especificação do ambiente"
 	Facts: bim:ids.classe  "IfcSpace"
 
-Individual: bim:Espe_000
+Individual: bim:Especificações
 	Types: bim:Especificações.Todas
-	Facts: bim:é.pertencente.a  bim:IDS_001
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.pertencente.a  bim:IDS_Predio_A
 
-Individual: bim:Espe_001
+Individual: bim:Especifica_001
 	Types: bim:Especificador.Individual
-	Facts: bim:é.pertencente.a  bim:Espe_000
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Especificações
 
-Individual: bim:EATR
+Individual: bim:Faceta_ATR
 	Types: bim:IDS.Faceta.Atributo
-	Facts: bim:é.pertencente.a  bim:Espe_000
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Especificações
 
-Individual: bim:ECLA
+Individual: bim:Faceta_CLA
 	Types: bim:IDS.Faceta.Classificação
-	Facts: bim:é.pertencente.a  bim:Espe_000
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Especificações
 
-Individual: bim:EENT
-	Types: bim:IDS.Faceta.Entidade
-	Facts: bim:é.pertencente.a  bim:Espe_000
-
-Individual: bim:EMA
-	Types: bim:IDS.Faceta.Material
-	Facts: bim:é.pertencente.a  bim:Espe_000
-
-Individual: bim:EPAR
-	Types: bim:IDS.Faceta.Parte.de
-	Facts: bim:é.pertencente.a  bim:Espe_000
-
-Individual: bim:EPRO
-	Types: bim:IDS.Faceta.Propriedade
-	Facts: bim:é.pertencente.a  bim:Espe_000
-	Facts: bim:ids.classe  "IfcLabel"
-
-Individual: bim:Em_Paredes
+Individual: bim:Faceta_ENT
 	Types: bim:IDS.Faceta.Entidade
 	Facts: bim:é.pertencente.a  bim:Predio_A
-	Facts: bim:é.usado.em  bim:Em_Paredes
-	Facts: bim:ids.descrição  "Requisito necessário nas Paredes"
+	Facts: bim:é.usado.em  bim:Especificações
+
+Individual: bim:Faceta_MAT
+	Types: bim:IDS.Faceta.Material
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Especificações
+
+Individual: bim:Faceta_PAR
+	Types: bim:IDS.Faceta.Parte.de
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Especificações
+
+Individual: bim:Faceta_PRO
+	Types: bim:IDS.Faceta.Propriedade
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Especificações
+	Facts: bim:ids.classe  "IfcLabel"
+
+Individual: bim:Requisitos_de_Paredes
+	Types: bim:IDS.Faceta.Entidade
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.usado.em  bim:Requisitos_de_Paredes
+	Facts: bim:ids.descrição  "Requisito necessário para Paredes"
 	Facts: bim:ids.classe  "IfcWall"
 
 Individual: bim:R1_AplicadoEm
 	Types: bim:IDS.Faceta.Propriedade
 	Facts: bim:é.pertencente.a  bim:Predio_A
-	Facts: bim:é.usado.em  bim:Em_Paredes
+	Facts: bim:é.usado.em  bim:Requisitos_de_Paredes
 	Facts: bim:ids.descrição  "Propriedade específica"
 	Facts: bim:ids.classe  "IfcWall"
 	Facts: bim:ids.pset  "Pset_WallCommon"
@@ -905,7 +916,7 @@ Individual: bim:R1_AplicadoEm
 Individual: bim:R1_Requerido
 	Types: bim:IDS.Necessário
 	Facts: bim:é.pertencente.a  bim:Predio_A
-	Facts: bim:é.usado.em  bim:Em_Paredes
+	Facts: bim:é.usado.em  bim:Requisitos_de_Paredes
 	Facts: bim:ids.descrição  "Exigência de resistência ao fogo para divisórias internas não estruturais."
 	Facts: bim:ids.classe  "IfcWall"
 	Facts: bim:ids.pset  "Pset_WallCommon"
@@ -916,7 +927,7 @@ Individual: bim:R1_Requerido
 Individual: bim:R1_Válido
 	Types: bim:IDS.Válido
 	Facts: bim:é.pertencente.a  bim:Predio_A
-	Facts: bim:é.usado.em  bim:Em_Paredes
+	Facts: bim:é.usado.em  bim:Requisitos_de_Paredes
 	Facts: bim:ids.descrição  "Exigência de resistência ao fogo para divisórias internas não estruturais."
 	Facts: bim:ids.classe  "IfcWall"
 	Facts: bim:ids.pset  "Pset_WallCommon"
@@ -42796,5 +42807,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 11/11/2026 13:37:24
+##  Criada em 11/11/2026 13:54:08
 #################################################################
