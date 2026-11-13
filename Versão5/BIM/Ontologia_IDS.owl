@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IDS>
 	Annotations: rdfs:comment "Norma-Referência-02: -"@pt
 	Annotations: rdfs:comment "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
 	Annotations: rdfs:comment "Observações: Modelo IDS"@pt
-	Annotations: rdfs:comment "DataHora: 13/11/2026 7:32:22"@pt
+	Annotations: rdfs:comment "DataHora: 13/11/2026 8:45:52"@pt
 	Annotations: rdfs:comment "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
 	Annotations: rdfs:comment "Aviso: -"@pt
 	Annotations: rdfs:comment "Alert: -"@pt
@@ -900,51 +900,136 @@ Individual: bim:Faceta_PRO
 	Types: bim:IDS.Faceta.Propriedade
 	Facts: bim:é.pertencente.a  bim:Predio_A
 	Facts: bim:é.usado.em  bim:Especificações
-	Facts: bim:ids.classe  "IfcLabel"
 
 Individual: bim:Requisitos_de_Paredes
 	Types: bim:IDS.Faceta.Entidade
 	Facts: bim:é.pertencente.a  bim:Predio_A
 	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
 	Facts: bim:descrição  "Conteiner para todos os requisitos das paredes"
-	Facts: bim:ids.descrição  "Requisito necessário para Paredes"
+	Facts: bim:ids.descrição  "Requisitos necessários para as Paredes"
 	Facts: bim:ids.classe  "IfcWall"
 
-Individual: bim:R1_AplicadoEm
-	Types: bim:IDS.Faceta.Propriedade
+Individual: bim:R01_AplicadoEm
+	Types: bim:IDS.Faceta.Entidade
 	Facts: bim:é.pertencente.a  bim:Predio_A
 	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
-	Facts: bim:descrição  "Requisito de paredes internas."
-	Facts: bim:ids.descrição  "Propriedade específica"
+	Facts: bim:descrição  "R01 - Requisito de combate ao incêndio para paredes internas."
+	Facts: bim:ids.descrição  "R01 - Propriedade específica de resistência ao fogo."
 	Facts: bim:ids.classe  "IfcWall"
 	Facts: bim:ids.pset  "Pset_WallCommon"
 	Facts: bim:ids.propriedade.nome  "FireRating"
-	Facts: bim:ids.dado.tipo  "IfcLabel"
+	Facts: bim:ids.dado.tipo  "IFCLABEL"
+	Facts: bim:ids.propriedade.valor  "REI 60"
 	Facts: bim:ids.cardinalidade  "required"
+	Facts: bim:ids.especificação  bim:<ids:specification name='R01 - Resistência ao fogo de Parede' ifcVersion='IFC4' description='O TRRF da parede deve ser REI 60.' instructions='Usar TRRF de parede REI 60.'>
 
-Individual: bim:R1_Requerido
+Individual: bim:R01_Requerido
 	Types: bim:IDS.Necessário
 	Facts: bim:é.pertencente.a  bim:Predio_A
 	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
-	Facts: bim:descrição  "Valores possíveis aceitáveis para TTRF."
-	Facts: bim:ids.descrição  "Exigência de resistência ao fogo para divisórias internas não estruturais."
+	Facts: bim:descrição  "R01 - Valores possíveis aceitáveis para TTRF."
+	Facts: bim:ids.descrição  "R01 - Requisito de resistência ao fogo para divisórias internas não estruturais."
 	Facts: bim:ids.classe  "IfcWall"
 	Facts: bim:ids.pset  "Pset_WallCommon"
 	Facts: bim:ids.propriedade.nome  "FireRating"
-	Facts: bim:ids.dado.tipo  "IfcLabel"
+	Facts: bim:ids.dado.tipo  "IFCLABEL"
+	Facts: bim:ids.propriedade.valor  "REI 60"
 	Facts: bim:ids.cardinalidade  "required"
 
-Individual: bim:R1_Válido
+Individual: bim:R01_Válido
 	Types: bim:IDS.Válido
 	Facts: bim:é.pertencente.a  bim:Predio_A
 	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
-	Facts: bim:descrição  "Resistência ao Fogo (Tempo Requerido de Resistência ao Fogo - TRRF) adotado"
-	Facts: bim:ids.descrição  "Exigência de resistência ao fogo para divisórias internas não estruturais."
+	Facts: bim:descrição  "R01 - Resistência ao Fogo (Tempo Requerido de Resistência ao Fogo - TRRF) adotado"
+	Facts: bim:ids.descrição  "R01 - Requisito de resistência ao fogo para divisórias internas não estruturais."
 	Facts: bim:ids.classe  "IfcWall"
 	Facts: bim:ids.pset  "Pset_WallCommon"
 	Facts: bim:ids.propriedade.nome  "FireRating"
-	Facts: bim:ids.dado.tipo  "IfcLabel"
+	Facts: bim:ids.dado.tipo  "IFCLABEL"
 	Facts: bim:ids.propriedade.valor  "REI 60"
+	Facts: bim:ids.cardinalidade  "required"
+
+Individual: bim:R02_AplicadoEm
+	Types: bim:IDS.Faceta.Entidade
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
+	Facts: bim:descrição  "R02 - Atribuição de um tipo de parede específico de Revit para IFC"
+	Facts: bim:ids.descrição  "R02 - Tipo de parede."
+	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.entidade.tipo  "IFCWALLTYPE"
+	Facts: bim:ids.pset  "Pset_WallCommon"
+	Facts: bim:ids.propriedade.nome  "Reference"
+	Facts: bim:ids.dado.tipo  "IFCIDENTIFIER"
+	Facts: bim:ids.propriedade.valor  "CT_Par_Azulejo_20cm"
+	Facts: bim:ids.cardinalidade  "required"
+	Facts: bim:ids.especificação  bim:<ids:specification name='R02 - Tipo de Parede' ifcVersion='IFC4' description='O tipo de parede deve ser CT_Par_Azulejo_20cm.' instructions='Usar parede CT_Par_Azulejo_20cm antes da exportar o IFC.'>
+
+Individual: bim:R02_Requerido
+	Types: bim:IDS.Necessário
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
+	Facts: bim:descrição  "R02 - Atribuição de um tipo de parede específico de Revit para IFC"
+	Facts: bim:ids.descrição  "R02 - Tipo de parede."
+	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.entidade.tipo  "IFCWALLTYPE"
+	Facts: bim:ids.pset  "Pset_WallCommon"
+	Facts: bim:ids.propriedade.nome  "Reference"
+	Facts: bim:ids.dado.tipo  "IFCIDENTIFIER"
+	Facts: bim:ids.propriedade.valor  "CT_Par_Azulejo_20cm"
+	Facts: bim:ids.cardinalidade  "required"
+
+Individual: bim:R02_Válido
+	Types: bim:IDS.Válido
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
+	Facts: bim:descrição  "R02 - Atribuição de um tipo de parede específico de Revit para IFC"
+	Facts: bim:ids.descrição  "R02 - Tipo de parede."
+	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.entidade.tipo  "IFCWALLTYPE"
+	Facts: bim:ids.pset  "Pset_WallCommon"
+	Facts: bim:ids.propriedade.nome  "Reference"
+	Facts: bim:ids.dado.tipo  "IFCIDENTIFIER"
+	Facts: bim:ids.propriedade.valor  "CT_Par_Azulejo_20cm"
+	Facts: bim:ids.cardinalidade  "required"
+
+Individual: bim:R03_AplicadoEm
+	Types: bim:IDS.Faceta.Entidade
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
+	Facts: bim:descrição  "R03 - Atribuição de espessura da parede de 20 cm."
+	Facts: bim:ids.descrição  "R03 - Espessura da Parede."
+	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.pset  "Qto_WallBaseQuantities"
+	Facts: bim:ids.propriedade.nome  "Width"
+	Facts: bim:ids.dado.tipo  "IFCLENGTHMEASURE"
+	Facts: bim:ids.propriedade.valor  "0.20"
+	Facts: bim:ids.cardinalidade  "required"
+	Facts: bim:ids.especificação  bim:<ids:specification name='R03 - Espessura da Parede' ifcVersion='IFC4' description='A espessura deve ser exatamente 0.20.' instructions='Definir a parede com 20cm.'>
+
+Individual: bim:R03_Requerido
+	Types: bim:IDS.Necessário
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
+	Facts: bim:descrição  "R03 - Atribuição de espessura da parede de 20 cm."
+	Facts: bim:ids.descrição  "R03 - Espessura da Parede."
+	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.pset  "Qto_WallBaseQuantities"
+	Facts: bim:ids.propriedade.nome  "Width"
+	Facts: bim:ids.dado.tipo  "IFCLENGTHMEASURE"
+	Facts: bim:ids.propriedade.valor  "0.20"
+	Facts: bim:ids.cardinalidade  "required"
+
+Individual: bim:R03_Válido
+	Types: bim:IDS.Válido
+	Facts: bim:é.pertencente.a  bim:Predio_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Paredes
+	Facts: bim:descrição  "R03 - Atribuição de espessura da parede de 20 cm."
+	Facts: bim:ids.descrição  "R03 - Espessura da Parede."
+	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.pset  "Qto_WallBaseQuantities"
+	Facts: bim:ids.propriedade.nome  "Width"
+	Facts: bim:ids.dado.tipo  "IFCLENGTHMEASURE"
+	Facts: bim:ids.propriedade.valor  "0.20"
 	Facts: bim:ids.cardinalidade  "required"
 
 #################################################################
@@ -13780,11 +13865,73 @@ ObjectProperty: bim:p.especificar
 
 
 
+ObjectProperty: bim:é.ids.entidade.tipo
+	SubPropertyOf: bim:p.especificar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.entidade.tipo"@pt
+	Annotations: bim:Chave "d.especificar.120"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara que o elemento da classe IFC especificada deve ser do tipo predefinido (ex. PARTITIONING)."@pt
+	Annotations: bim:Definición "Declara que el elemento de la clase IFC especificada debe ser del tipo por defecto (por ejemplo, PARTITIONING)."@es
+	Annotations: bim:Definition "Declare that the element of the specified IFC class must be of the default type (e.g. PARTITIONING)."@en
+
+DataProperty: bim:d.especificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ids.entidade.tipo
+	SubPropertyOf: bim:d.especificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para especificar: ids.entidade.tipo -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.especificar.120"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara que o elemento da classe IFC especificada deve ser do tipo predefinido (ex. PARTITIONING)."@pt
+	Annotations: bim:Definición "Declara que el elemento de la clase IFC especificada debe ser del tipo por defecto (por ejemplo, PARTITIONING)."@es
+	Annotations: bim:Definition "Declare that the element of the specified IFC class must be of the default type (e.g. PARTITIONING)."@en
+
+ObjectProperty: bim:p.especificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ids.especificação
+	SubPropertyOf: bim:p.especificar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.especificação"@pt
+	Annotations: bim:Chave "d.especificar.122"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara o conteúdo de uma especificação IDS."@pt
+	Annotations: bim:Definición "Declara el contenido de una especificación IDS."@es
+	Annotations: bim:Definition "Declare na IDS specification."@en
+	Annotations: bim:CódigoABNT "[ <ids:specification> : sec : </ids:specification>]"
+
+DataProperty: bim:d.especificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ids.especificação
+	SubPropertyOf: bim:d.especificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para especificar: ids.especificação -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.especificar.122"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara o conteúdo de uma especificação IDS."@pt
+	Annotations: bim:Definición "Declara el contenido de una especificación IDS."@es
+	Annotations: bim:Definition "Declare na IDS specification."@en
+	Annotations: bim:CódigoABNT "[ <ids:specification> : sec : </ids:specification>]"
+
+ObjectProperty: bim:p.especificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.ids.propriedade.nome
 	SubPropertyOf: bim:p.especificar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.propriedade.nome"@pt
-	Annotations: bim:Chave "d.especificar.136"
+	Annotations: bim:Chave "d.especificar.137"
 	Annotations: bim:Ação "Ação de especificar"@pt
 	Annotations: bim:Definição "Declara que se deve buscar a propriedade específica (ex. LoadBearing)."@pt
 	Annotations: bim:Definición "Declara que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es
@@ -13800,7 +13947,7 @@ DataProperty: bim:ids.propriedade.nome
 	SubPropertyOf: bim:d.especificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para especificar: ids.propriedade.nome -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.especificar.136"
+	Annotations: bim:Chave "d.especificar.137"
 	Annotations: bim:Ação "Ação de especificar"@pt
 	Annotations: bim:Definição "Declara que se deve buscar a propriedade específica (ex. LoadBearing)."@pt
 	Annotations: bim:Definición "Declara que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es
@@ -13816,7 +13963,7 @@ ObjectProperty: bim:é.ids.propriedade.valor
 	SubPropertyOf: bim:p.especificar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.propriedade.valor"@pt
-	Annotations: bim:Chave "d.especificar.138"
+	Annotations: bim:Chave "d.especificar.139"
 	Annotations: bim:Ação "Ação de especificar"@pt
 	Annotations: bim:Definição "Declara qual é o valor que a propriedade deve ter (ex. TRUE)."@pt
 	Annotations: bim:Definición "Declara qué valor debe tener la propiedad (por ejemplo, VERDADERO)."@es
@@ -13832,7 +13979,7 @@ DataProperty: bim:ids.propriedade.valor
 	SubPropertyOf: bim:d.especificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para especificar: ids.propriedade.valor -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.especificar.138"
+	Annotations: bim:Chave "d.especificar.139"
 	Annotations: bim:Ação "Ação de especificar"@pt
 	Annotations: bim:Definição "Declara qual é o valor que a propriedade deve ter (ex. TRUE)."@pt
 	Annotations: bim:Definición "Declara qué valor debe tener la propiedad (por ejemplo, VERDADERO)."@es
@@ -13848,7 +13995,7 @@ ObjectProperty: bim:é.ids.pset
 	SubPropertyOf: bim:p.especificar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.pset"@pt
-	Annotations: bim:Chave "d.especificar.140"
+	Annotations: bim:Chave "d.especificar.141"
 	Annotations: bim:Ação "Ação de especificar"@pt
 	Annotations: bim:Definição "Declara um conjunto de propriedades definidas em IFC (PSET)."@pt
 	Annotations: bim:Definición "Declara un conjunto de propiedades definidas en IFC (PSET)."@es
@@ -13864,7 +14011,7 @@ DataProperty: bim:ids.pset
 	SubPropertyOf: bim:d.especificar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para especificar: ids.pset -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.especificar.140"
+	Annotations: bim:Chave "d.especificar.141"
 	Annotations: bim:Ação "Ação de especificar"@pt
 	Annotations: bim:Definição "Declara um conjunto de propriedades definidas em IFC (PSET)."@pt
 	Annotations: bim:Definición "Declara un conjunto de propiedades definidas en IFC (PSET)."@es
@@ -43154,5 +43301,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 13/11/2026 7:32:35
+##  Criada em 13/11/2026 8:46:08
 #################################################################
