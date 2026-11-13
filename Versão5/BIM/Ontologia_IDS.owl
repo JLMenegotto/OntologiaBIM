@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IDS>
 	Annotations: rdfs:comment "Norma-Referência-02: -"@pt
 	Annotations: rdfs:comment "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
 	Annotations: rdfs:comment "Observações: Modelo IDS"@pt
-	Annotations: rdfs:comment "DataHora: 13/11/2026 14:28:30"@pt
+	Annotations: rdfs:comment "DataHora: 13/11/2026 15:35:12"@pt
 	Annotations: rdfs:comment "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
 	Annotations: rdfs:comment "Aviso: -"@pt
 	Annotations: rdfs:comment "Alert: -"@pt
@@ -811,6 +811,7 @@ Individual: bim:Predio_CT
 	Facts: bim:nome.da.edificação  "Predio do CT"
 	Facts: bim:ids.descrição  "Especificação do edifício"
 	Facts: bim:ids.classe  "IfcBuilding"
+	Facts: bim:ids.especificação  bim:<ids:applicability minOccurs='1' maxOccurs='unbounded'><ids:entity><ids:name><ids:simpleValue>IFCBUILDING</ids:simpleValue></ids:name></ids:entity></ids:applicability>
 
 Individual: bim:Andar_01
 	Types: bim:Especifica.Andar
@@ -923,12 +924,14 @@ Individual: bim:Padronizações
 	Types: bim:IDS.Faceta.Classificação
 	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:descrição  "Conteiner para os diversos sistemas de classificação e codificação."
+	Facts: bim:ids.descrição  "Definições dos padrões textuais que deve ser usados."
 
 Individual: bim:Padrão_Salas
 	Types: bim:Valor.Padronizado
 	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:é.pertencente.a  bim:Padronizações
 	Facts: bim:descrição  "Padrão dos códigos dos Ambientes."
+	Facts: bim:ids.descrição  "Definição de um padrão textual que deve ser verificado."
 	Facts: bim:ids.padrão.textual  "<xs:pattern value='(A|AB|ABC|B|C|D|E|F|G|H|I)\.([0-9]{3}|1000)'/>"
 
 Individual: bim:Padrão_SomaSUS
@@ -936,6 +939,7 @@ Individual: bim:Padrão_SomaSUS
 	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:é.pertencente.a  bim:Padronizações
 	Facts: bim:descrição  "Padrão dos códigos do SomaSUS."
+	Facts: bim:ids.descrição  "Definição de um padrão textual que deve ser verificado."
 	Facts: bim:ids.padrão.textual  "<xs:pattern value='EQU\.([0-9]{3}|1000)'/>"
 
 Individual: bim:Padrão_NBR15965
@@ -943,12 +947,21 @@ Individual: bim:Padrão_NBR15965
 	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:é.pertencente.a  bim:Padronizações
 	Facts: bim:descrição  "Padrão dos códigos da NBR 15.965."
+	Facts: bim:ids.descrição  "Definição de um padrão textual que deve ser verificado."
 	Facts: bim:ids.padrão.textual  "<xs:pattern value='(0P|0M|1D|1F|1S|2C|2N|2Q|3E|3R|4A|4U|5I)(\.[0-9]{2})+'/>"
+
+Individual: bim:Padrão_Material
+	Types: bim:Valor.Padronizado
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
+	Facts: bim:é.pertencente.a  bim:Padronizações
+	Facts: bim:descrição  "Padrão de materialidade."
+	Facts: bim:ids.padrão.textual  "<xs:pattern value='[A-Z][A-Z]'/>"
 
 Individual: bim:Requisitos_de_Classificação
 	Types: bim:IDS.Faceta.Classificação
 	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
 	Facts: bim:descrição  "Conteiner para os diversos sistemas de classificação e codificação."
+	Facts: bim:ids.restrição  "<xs:restriction base='xs:string'><xs:annotation><xs:documentation>O valor deve ter a forma AA - ZZ</xs:documentation></xs:annotation><xs:pattern value='[A-Z][A-Z]'/></xs:restriction>"
 
 Individual: bim:Requisitos_de_Paredes_Obrigatórios
 	Types: bim:IDS.Faceta.Entidade
@@ -956,7 +969,7 @@ Individual: bim:Requisitos_de_Paredes_Obrigatórios
 	Facts: bim:é.pertencente.a  bim:Predio_CT
 	Facts: bim:descrição  "Conteiner para todos os requisitos das paredes."
 	Facts: bim:ids.descrição  "Requisitos necessários para as paredes."
-	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.classe  "IFCWALL"
 
 Individual: bim:Paredes_Rob001
 	Types: bim:IDS.Faceta.Entidade
@@ -968,7 +981,7 @@ Individual: bim:Paredes_Rob001
 	Facts: bim:descrição  "Requisito de combate ao incêndio para paredes internas."
 	Facts: bim:ids.descrição  "Propriedade específica de resistência ao fogo."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.classe  "IFCWALL"
 	Facts: bim:ids.pset  "Pset_WallCommon"
 	Facts: bim:ids.propriedade.nome  "FireRating"
 	Facts: bim:ids.dado.tipo  "IFCLABEL"
@@ -985,7 +998,7 @@ Individual: bim:Paredes_Rob002
 	Facts: bim:descrição  "Atribuição de um tipo de parede específico de Revit para IFC."
 	Facts: bim:ids.descrição  "Tipo de parede."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.classe  "IFCWALL"
 	Facts: bim:ids.entidade.tipo  "IFCWALLTYPE"
 	Facts: bim:ids.pset  "Pset_WallCommon"
 	Facts: bim:ids.propriedade.nome  "Reference"
@@ -1003,7 +1016,7 @@ Individual: bim:Paredes_Rob003
 	Facts: bim:descrição  "Atribuição de espessura da parede de 20 cm."
 	Facts: bim:ids.descrição  "Espessura da parede."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWall"
+	Facts: bim:ids.classe  "IFCWALL"
 	Facts: bim:ids.pset  "Qto_WallBaseQuantities"
 	Facts: bim:ids.propriedade.nome  "Width"
 	Facts: bim:ids.dado.tipo  "IFCLENGTHMEASURE"
@@ -1017,7 +1030,7 @@ Individual: bim:Requisitos_de_Portas_Obrigatórios
 	Facts: bim:descrição  "Conteiner para todos os requisitos de Portas que são obrigatórios."
 	Facts: bim:ids.descrição  "Necessário."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcDoor"
+	Facts: bim:ids.classe  "IFCDOOR"
 	Facts: bim:ids.entidade.tipo  "IFCDOORTYPE"
 	Facts: bim:ids.pset  "Pset_DoorCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1029,7 +1042,7 @@ Individual: bim:Requisitos_de_Portas_Opcionais
 	Facts: bim:descrição  "Conteiner para todos os requisitos de Portas que são opcionais."
 	Facts: bim:ids.descrição  "Opcional."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcDoor"
+	Facts: bim:ids.classe  "IFCDOOR"
 	Facts: bim:ids.entidade.tipo  "IFCDOORTYPE"
 	Facts: bim:ids.pset  "Pset_DoorCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1041,7 +1054,7 @@ Individual: bim:Requisitos_de_Portas_NãoPermitidos
 	Facts: bim:descrição  "Conteiner para todos os requisitos de Portas que devem ser evitados."
 	Facts: bim:ids.descrição  "Não usar."
 	Facts: bim:ids.cardinalidade  "prohibited"
-	Facts: bim:ids.classe  "IfcDoor"
+	Facts: bim:ids.classe  "IFCDOOR"
 	Facts: bim:ids.entidade.tipo  "IFCDOORTYPE"
 	Facts: bim:ids.pset  "Pset_DoorCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1055,7 +1068,7 @@ Individual: bim:Portas_Rob001
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as portas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1069,7 +1082,7 @@ Individual: bim:Portas_Rob002
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as portas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1083,7 +1096,7 @@ Individual: bim:Portas_Rob003
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as portas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1097,7 +1110,7 @@ Individual: bim:Portas_Rob004
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as portas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1111,7 +1124,7 @@ Individual: bim:Portas_Rob005
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as portas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1125,7 +1138,7 @@ Individual: bim:Portas_Rob006
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as portas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1139,7 +1152,7 @@ Individual: bim:Portas_Rop001
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito opcional para as portas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1153,7 +1166,7 @@ Individual: bim:Portas_Rop002
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito opcional para as portas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1167,7 +1180,7 @@ Individual: bim:Portas_Rop003
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito opcional para as portas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1181,7 +1194,7 @@ Individual: bim:Portas_Rop004
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito opcional para as portas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1195,7 +1208,7 @@ Individual: bim:Portas_Rop005
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito opcional para as portas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1209,7 +1222,7 @@ Individual: bim:Portas_Rop006
 	Facts: bim:código  "3E.20.02.02"
 	Facts: bim:descrição  "Um requisito opcional para as portas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1221,7 +1234,7 @@ Individual: bim:Requisitos_de_Janelas_Obrigatórios
 	Facts: bim:descrição  "Conteiner para todos os requisitos de Janelas que são obrigatórios."
 	Facts: bim:ids.descrição  "Necessário."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1232,7 +1245,7 @@ Individual: bim:Requisitos_de_Janelas_Opcionais
 	Facts: bim:descrição  "Conteiner para todos os requisitos de Janelas que são opcionais."
 	Facts: bim:ids.descrição  "Opcional."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1243,7 +1256,7 @@ Individual: bim:Requisitos_de_Janelas_NãoPermitidos
 	Facts: bim:descrição  "Conteiner para todos os requisitos de Janelas que devem ser evitados."
 	Facts: bim:ids.descrição  "Não usar."
 	Facts: bim:ids.cardinalidade  "prohibited"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1257,7 +1270,7 @@ Individual: bim:Janelas_Rob001
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as janelas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1271,7 +1284,7 @@ Individual: bim:Janelas_Rob002
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as janelas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1285,7 +1298,7 @@ Individual: bim:Janelas_Rob003
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as janelas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1299,7 +1312,7 @@ Individual: bim:Janelas_Rob004
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as janelas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1313,7 +1326,7 @@ Individual: bim:Janelas_Rob005
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as janelas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1327,7 +1340,7 @@ Individual: bim:Janelas_Rob006
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito obrigatório para as janelas."
 	Facts: bim:ids.cardinalidade  "required"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1341,7 +1354,7 @@ Individual: bim:Janelas_Rop001
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito opcional para as janelas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1355,7 +1368,7 @@ Individual: bim:Janelas_Rop002
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito opcional para as janelas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1369,7 +1382,7 @@ Individual: bim:Janelas_Rop003
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito opcional para as janelas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1383,7 +1396,7 @@ Individual: bim:Janelas_Rop004
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito opcional para as janelas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1397,7 +1410,7 @@ Individual: bim:Janelas_Rop005
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito opcional para as janelas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
@@ -1411,10 +1424,28 @@ Individual: bim:Janelas_Rop006
 	Facts: bim:código  "3E.20.04.02"
 	Facts: bim:descrição  "Um requisito opcional para as janelas."
 	Facts: bim:ids.cardinalidade  "optional"
-	Facts: bim:ids.classe  "IfcWindow"
+	Facts: bim:ids.classe  "IFCWINDOW"
 	Facts: bim:ids.entidade.tipo  "IFCWINDOWTYPE"
 	Facts: bim:ids.pset  "Pset_WindowCommon"
 	Facts: bim:ids.especificação  "<aqui vai escrita a especificação em sintaxe IDS>"
+
+Individual: bim:Material_Par001
+	Types: bim:IDS.Faceta.Material
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Material_Obrigatórios
+	Facts: bim:descrição  "Um requisito textual para material."
+	Facts: bim:ids.cardinalidade  "required"
+	Facts: bim:ids.classe  bim:IFCMATERIAL"
+	Facts: bim:ids.especificação  "<specification ifcVersion='IFC4' name='Materiais de paredes'><applicability minOccurs='1' maxOccurs='unbounded'><entity><name><simpleValue>IFCWALL</simpleValue></name></entity></applicability><requirements><material cardinality='required' instructions='O valor deve ter a forma AA - ZZ'><value><xs:restriction base='xs:string'><xs:pattern value='[A-Z]{2}'/></xs:restriction></value></material></requirements></specification>"
+
+Individual: bim:Material_Col001
+	Types: bim:IDS.Faceta.Material
+	Facts: bim:é.pertencente.a  bim:IDS_Projeto_A
+	Facts: bim:é.requisito.de  bim:Requisitos_de_Material_Obrigatórios
+	Facts: bim:descrição  "Um requisito de material das colunas."
+	Facts: bim:ids.cardinalidade  "required"
+	Facts: bim:ids.classe  bim:IFCMATERIAL"
+	Facts: bim:ids.especificação  "<specification ifcVersion='IFC4' name='Material igual a concreto'><applicability minOccurs='0' maxOccurs='unbounded'><entity><name><xs:restriction base='xs:string'><xs:pattern value='IFCCOLUMN'/></xs:restriction></name></entity></applicability><requirements><material cardinality='required'><value><simpleValue>Concreto</simpleValue></value></material></requirements></specification>"
 
 #################################################################
 #     Propriedades de Objetos e Dados em Sintaxe Manchester      
@@ -14467,6 +14498,38 @@ DataProperty: bim:ids.pset
 	Annotations: bim:Definición "Declara un conjunto de propiedades definidas en IFC (PSET)."@es
 	Annotations: bim:Definition "Declare a set of properties defined in IFC (PSET)."@en
 	Annotations: bim:CódigoABNT "[ <ids:propertySet><ids:simpleValue> : val : </ids:simpleValue></ids:propertySet> ]"
+
+ObjectProperty: bim:p.especificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ids.restrição
+	SubPropertyOf: bim:p.especificar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.restrição"@pt
+	Annotations: bim:Chave "d.especificar.121"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara a abertura de uma seção de restrições."@pt
+	Annotations: bim:Definición "Declara la apertura de una sección de restricciones."@es
+	Annotations: bim:Definition "Declare the opening of a restrictions section."@en
+	Annotations: bim:CódigoABNT "[ <xs:restriction base= tipodedado > : sec : </xs:restriction> ]"
+
+DataProperty: bim:d.especificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ids.restrição
+	SubPropertyOf: bim:d.especificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para especificar: ids.restrição -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.especificar.121"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara a abertura de uma seção de restrições."@pt
+	Annotations: bim:Definición "Declara la apertura de una sección de restricciones."@es
+	Annotations: bim:Definition "Declare the opening of a restrictions section."@en
+	Annotations: bim:CódigoABNT "[ <xs:restriction base= tipodedado > : sec : </xs:restriction> ]"
 
 ObjectProperty: bim:p.fluir
 	SubPropertyOf: bim:BIMProp
@@ -43751,5 +43814,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 13/11/2026 14:28:49
+##  Criada em 13/11/2026 15:35:33
 #################################################################
