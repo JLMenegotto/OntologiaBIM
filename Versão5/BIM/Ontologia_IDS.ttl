@@ -26,7 +26,7 @@
 	  rdfs:label "Norma-Referência-02: -"@pt ;
 	  rdfs:label "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt ;
 	  rdfs:label "Observações: Modelo IDS"@pt ;
-	  rdfs:label "DataHora: 13/11/2026 7:32:22"@pt ;
+	  rdfs:label "DataHora: 13/11/2026 8:45:52"@pt ;
 	  rdfs:label "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Aviso: -"@pt ;
 	  rdfs:label "Alert: -"@pt ;
@@ -1581,48 +1581,127 @@ bim:Faceta_PAR  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Parte.de ;
 
 bim:Faceta_PRO  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Propriedade ;
      bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.usado.em    bim:Especificações ;
-     bim:ids.classe    "IfcLabel"  .
+     bim:é.usado.em    bim:Especificações  .
 
 bim:Requisitos_de_Paredes  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
      bim:é.pertencente.a    bim:Predio_A ;
      bim:é.requisito.de    bim:Requisitos_de_Paredes ;
      bim:descrição    "Conteiner para todos os requisitos das paredes" ;
-     bim:ids.descrição    "Requisito necessário para Paredes" ;
+     bim:ids.descrição    "Requisitos necessários para as Paredes" ;
      bim:ids.classe    "IfcWall"  .
 
-bim:R1_AplicadoEm  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Propriedade ;
+bim:R01_AplicadoEm  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
      bim:é.pertencente.a    bim:Predio_A ;
      bim:é.requisito.de    bim:Requisitos_de_Paredes ;
-     bim:descrição    "Requisito de paredes internas." ;
-     bim:ids.descrição    "Propriedade específica" ;
+     bim:descrição    "R01 - Requisito de combate ao incêndio para paredes internas." ;
+     bim:ids.descrição    "R01 - Propriedade específica de resistência ao fogo." ;
      bim:ids.classe    "IfcWall" ;
      bim:ids.pset    "Pset_WallCommon" ;
      bim:ids.propriedade.nome    "FireRating" ;
-     bim:ids.dado.tipo    "IfcLabel" ;
-     bim:ids.cardinalidade    "required"  .
-
-bim:R1_Requerido  rdf:type  owl:NamedIndividual , bim:IDS.Necessário ;
-     bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
-     bim:descrição    "Valores possíveis aceitáveis para TTRF." ;
-     bim:ids.descrição    "Exigência de resistência ao fogo para divisórias internas não estruturais." ;
-     bim:ids.classe    "IfcWall" ;
-     bim:ids.pset    "Pset_WallCommon" ;
-     bim:ids.propriedade.nome    "FireRating" ;
-     bim:ids.dado.tipo    "IfcLabel" ;
-     bim:ids.cardinalidade    "required"  .
-
-bim:R1_Válido  rdf:type  owl:NamedIndividual , bim:IDS.Válido ;
-     bim:é.pertencente.a    bim:Predio_A ;
-     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
-     bim:descrição    "Resistência ao Fogo (Tempo Requerido de Resistência ao Fogo - TRRF) adotado" ;
-     bim:ids.descrição    "Exigência de resistência ao fogo para divisórias internas não estruturais." ;
-     bim:ids.classe    "IfcWall" ;
-     bim:ids.pset    "Pset_WallCommon" ;
-     bim:ids.propriedade.nome    "FireRating" ;
-     bim:ids.dado.tipo    "IfcLabel" ;
+     bim:ids.dado.tipo    "IFCLABEL" ;
      bim:ids.propriedade.valor    "REI 60" ;
+     bim:ids.cardinalidade    "required" ;
+     bim:ids.especificação    bim:<ids:specification name='R01 - Resistência ao fogo de Parede' ifcVersion='IFC4' description='O TRRF da parede deve ser REI 60.' instructions='Usar TRRF de parede REI 60.'>  .
+
+bim:R01_Requerido  rdf:type  owl:NamedIndividual , bim:IDS.Necessário ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R01 - Valores possíveis aceitáveis para TTRF." ;
+     bim:ids.descrição    "R01 - Requisito de resistência ao fogo para divisórias internas não estruturais." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.pset    "Pset_WallCommon" ;
+     bim:ids.propriedade.nome    "FireRating" ;
+     bim:ids.dado.tipo    "IFCLABEL" ;
+     bim:ids.propriedade.valor    "REI 60" ;
+     bim:ids.cardinalidade    "required"  .
+
+bim:R01_Válido  rdf:type  owl:NamedIndividual , bim:IDS.Válido ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R01 - Resistência ao Fogo (Tempo Requerido de Resistência ao Fogo - TRRF) adotado" ;
+     bim:ids.descrição    "R01 - Requisito de resistência ao fogo para divisórias internas não estruturais." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.pset    "Pset_WallCommon" ;
+     bim:ids.propriedade.nome    "FireRating" ;
+     bim:ids.dado.tipo    "IFCLABEL" ;
+     bim:ids.propriedade.valor    "REI 60" ;
+     bim:ids.cardinalidade    "required"  .
+
+bim:R02_AplicadoEm  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R02 - Atribuição de um tipo de parede específico de Revit para IFC" ;
+     bim:ids.descrição    "R02 - Tipo de parede." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.entidade.tipo    "IFCWALLTYPE" ;
+     bim:ids.pset    "Pset_WallCommon" ;
+     bim:ids.propriedade.nome    "Reference" ;
+     bim:ids.dado.tipo    "IFCIDENTIFIER" ;
+     bim:ids.propriedade.valor    "CT_Par_Azulejo_20cm" ;
+     bim:ids.cardinalidade    "required" ;
+     bim:ids.especificação    bim:<ids:specification name='R02 - Tipo de Parede' ifcVersion='IFC4' description='O tipo de parede deve ser CT_Par_Azulejo_20cm.' instructions='Usar parede CT_Par_Azulejo_20cm antes da exportar o IFC.'>  .
+
+bim:R02_Requerido  rdf:type  owl:NamedIndividual , bim:IDS.Necessário ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R02 - Atribuição de um tipo de parede específico de Revit para IFC" ;
+     bim:ids.descrição    "R02 - Tipo de parede." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.entidade.tipo    "IFCWALLTYPE" ;
+     bim:ids.pset    "Pset_WallCommon" ;
+     bim:ids.propriedade.nome    "Reference" ;
+     bim:ids.dado.tipo    "IFCIDENTIFIER" ;
+     bim:ids.propriedade.valor    "CT_Par_Azulejo_20cm" ;
+     bim:ids.cardinalidade    "required"  .
+
+bim:R02_Válido  rdf:type  owl:NamedIndividual , bim:IDS.Válido ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R02 - Atribuição de um tipo de parede específico de Revit para IFC" ;
+     bim:ids.descrição    "R02 - Tipo de parede." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.entidade.tipo    "IFCWALLTYPE" ;
+     bim:ids.pset    "Pset_WallCommon" ;
+     bim:ids.propriedade.nome    "Reference" ;
+     bim:ids.dado.tipo    "IFCIDENTIFIER" ;
+     bim:ids.propriedade.valor    "CT_Par_Azulejo_20cm" ;
+     bim:ids.cardinalidade    "required"  .
+
+bim:R03_AplicadoEm  rdf:type  owl:NamedIndividual , bim:IDS.Faceta.Entidade ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R03 - Atribuição de espessura da parede de 20 cm." ;
+     bim:ids.descrição    "R03 - Espessura da Parede." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.pset    "Qto_WallBaseQuantities" ;
+     bim:ids.propriedade.nome    "Width" ;
+     bim:ids.dado.tipo    "IFCLENGTHMEASURE" ;
+     bim:ids.propriedade.valor    "0.20" ;
+     bim:ids.cardinalidade    "required" ;
+     bim:ids.especificação    bim:<ids:specification name='R03 - Espessura da Parede' ifcVersion='IFC4' description='A espessura deve ser exatamente 0.20.' instructions='Definir a parede com 20cm.'>  .
+
+bim:R03_Requerido  rdf:type  owl:NamedIndividual , bim:IDS.Necessário ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R03 - Atribuição de espessura da parede de 20 cm." ;
+     bim:ids.descrição    "R03 - Espessura da Parede." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.pset    "Qto_WallBaseQuantities" ;
+     bim:ids.propriedade.nome    "Width" ;
+     bim:ids.dado.tipo    "IFCLENGTHMEASURE" ;
+     bim:ids.propriedade.valor    "0.20" ;
+     bim:ids.cardinalidade    "required"  .
+
+bim:R03_Válido  rdf:type  owl:NamedIndividual , bim:IDS.Válido ;
+     bim:é.pertencente.a    bim:Predio_A ;
+     bim:é.requisito.de    bim:Requisitos_de_Paredes ;
+     bim:descrição    "R03 - Atribuição de espessura da parede de 20 cm." ;
+     bim:ids.descrição    "R03 - Espessura da Parede." ;
+     bim:ids.classe    "IfcWall" ;
+     bim:ids.pset    "Qto_WallBaseQuantities" ;
+     bim:ids.propriedade.nome    "Width" ;
+     bim:ids.dado.tipo    "IFCLENGTHMEASURE" ;
+     bim:ids.propriedade.valor    "0.20" ;
      bim:ids.cardinalidade    "required"  .
 
 #################################################################
@@ -13564,11 +13643,67 @@ bim:p.especificar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.ids.entidade.tipo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.especificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a especificar: é.ids.entidade.tipo" ;
+                    bim:Chave               "d.especificar.120" ;
+                    bim:Ação                "Ação de especificar" ;
+                    bim:Definição           "Declara que o elemento da classe IFC especificada deve ser do tipo predefinido (ex. PARTITIONING)."@pt ;
+                    bim:Definición          "Declara que el elemento de la clase IFC especificada debe ser del tipo por defecto (por ejemplo, PARTITIONING)."@es ;bim:Definition          "Declare that the element of the specified IFC class must be of the default type (e.g. PARTITIONING)."@en  .
+
+
+bim:d.especificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:ids.entidade.tipo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.especificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para especificar: ids.entidade.tipo -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.especificar.120" ;
+                    bim:Ação                "Ação de especificar" ;
+                    bim:Definição           "Declara que o elemento da classe IFC especificada deve ser do tipo predefinido (ex. PARTITIONING)."@pt ;
+                    bim:Definición          "Declara que el elemento de la clase IFC especificada debe ser del tipo por defecto (por ejemplo, PARTITIONING)."@es ;bim:Definition          "Declare that the element of the specified IFC class must be of the default type (e.g. PARTITIONING)."@en  .
+
+
+bim:p.especificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.ids.especificação   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.especificar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a especificar: é.ids.especificação" ;
+                    bim:Chave               "d.especificar.122" ;
+                    bim:Ação                "Ação de especificar" ;
+                    bim:Definição           "Declara o conteúdo de uma especificação IDS."@pt ;
+                    bim:Definición          "Declara el contenido de una especificación IDS."@es ;bim:Definition          "Declare na IDS specification."@en  .
+
+
+bim:d.especificar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:ids.especificação   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.especificar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para especificar: ids.especificação -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.especificar.122" ;
+                    bim:Ação                "Ação de especificar" ;
+                    bim:Definição           "Declara o conteúdo de uma especificação IDS."@pt ;
+                    bim:Definición          "Declara el contenido de una especificación IDS."@es ;bim:Definition          "Declare na IDS specification."@en  .
+
+
+bim:p.especificar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.ids.propriedade.nome   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.especificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a especificar: é.ids.propriedade.nome" ;
-                    bim:Chave               "d.especificar.136" ;
+                    bim:Chave               "d.especificar.137" ;
                     bim:Ação                "Ação de especificar" ;
                     bim:Definição           "Declara que se deve buscar a propriedade específica (ex. LoadBearing)."@pt ;
                     bim:Definición          "Declara que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es ;bim:Definition          "Declare that the specific property (e.g. LoadBearing) should be fetched."@en  .
@@ -13582,7 +13717,7 @@ bim:ids.propriedade.nome   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.especificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para especificar: ids.propriedade.nome -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.especificar.136" ;
+                    bim:Chave               "d.especificar.137" ;
                     bim:Ação                "Ação de especificar" ;
                     bim:Definição           "Declara que se deve buscar a propriedade específica (ex. LoadBearing)."@pt ;
                     bim:Definición          "Declara que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es ;bim:Definition          "Declare that the specific property (e.g. LoadBearing) should be fetched."@en  .
@@ -13596,7 +13731,7 @@ bim:é.ids.propriedade.valor   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.especificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a especificar: é.ids.propriedade.valor" ;
-                    bim:Chave               "d.especificar.138" ;
+                    bim:Chave               "d.especificar.139" ;
                     bim:Ação                "Ação de especificar" ;
                     bim:Definição           "Declara qual é o valor que a propriedade deve ter (ex. TRUE)."@pt ;
                     bim:Definición          "Declara qué valor debe tener la propiedad (por ejemplo, VERDADERO)."@es ;bim:Definition          "Declare what value the property should have (e.g. TRUE)."@en  .
@@ -13610,7 +13745,7 @@ bim:ids.propriedade.valor   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.especificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para especificar: ids.propriedade.valor -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.especificar.138" ;
+                    bim:Chave               "d.especificar.139" ;
                     bim:Ação                "Ação de especificar" ;
                     bim:Definição           "Declara qual é o valor que a propriedade deve ter (ex. TRUE)."@pt ;
                     bim:Definición          "Declara qué valor debe tener la propiedad (por ejemplo, VERDADERO)."@es ;bim:Definition          "Declare what value the property should have (e.g. TRUE)."@en  .
@@ -13624,7 +13759,7 @@ bim:é.ids.pset   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.especificar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a especificar: é.ids.pset" ;
-                    bim:Chave               "d.especificar.140" ;
+                    bim:Chave               "d.especificar.141" ;
                     bim:Ação                "Ação de especificar" ;
                     bim:Definição           "Declara um conjunto de propriedades definidas em IFC (PSET)."@pt ;
                     bim:Definición          "Declara un conjunto de propiedades definidas en IFC (PSET)."@es ;bim:Definition          "Declare a set of properties defined in IFC (PSET)."@en  .
@@ -13638,7 +13773,7 @@ bim:ids.pset   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.especificar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para especificar: ids.pset -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.especificar.140" ;
+                    bim:Chave               "d.especificar.141" ;
                     bim:Ação                "Ação de especificar" ;
                     bim:Definição           "Declara um conjunto de propriedades definidas em IFC (PSET)."@pt ;
                     bim:Definición          "Declara un conjunto de propiedades definidas en IFC (PSET)."@es ;bim:Definition          "Declare a set of properties defined in IFC (PSET)."@en  .
@@ -40936,5 +41071,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 13/11/2026 7:32:35
+##  Criada em 13/11/2026 8:46:08
 #################################################################
