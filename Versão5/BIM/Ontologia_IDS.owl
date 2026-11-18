@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IDS>
 	Annotations: rdfs:comment "Norma-Referência-02: -"@pt
 	Annotations: rdfs:comment "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
 	Annotations: rdfs:comment "Observações: Modelo IDS"@pt
-	Annotations: rdfs:comment "DataHora: 18/11/2026 7:30:21"@pt
+	Annotations: rdfs:comment "DataHora: 18/11/2026 7:42:02"@pt
 	Annotations: rdfs:comment "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
 	Annotations: rdfs:comment "Aviso: -"@pt
 	Annotations: rdfs:comment "Alert: -"@pt
@@ -976,7 +976,7 @@ Individual: bim:Req_Amb_01
 	Facts: bim:ids.descrição  "Área mínima de quartos, precisa ter pelo menos 1 quarto e no máximo 3"
 	Facts: bim:ids.versão  "IFC4"
 	Facts: bim:ids.entidade.classe  "IFCSPACE"
-	Facts: bim:req.atributo.nome  "LongName"
+	Facts: bim:req.atributo.nomelongo  "LongName"
 	Facts: bim:req.atributo.nome  "Name"
 	Facts: bim:req.atributo.valor  "Quarto*"
 	Facts: bim:req.cardinalidade  "required"
@@ -999,7 +999,7 @@ Individual: bim:Req_Amb_02
 	Facts: bim:ids.descrição  "Área mínima das salas, precisa ter 1 sala."
 	Facts: bim:ids.versão  "IFC4"
 	Facts: bim:ids.entidade.classe  "IFCSPACE"
-	Facts: bim:req.atributo.nome  "LongName"
+	Facts: bim:req.atributo.nomelongo  "LongName"
 	Facts: bim:req.atributo.nome  "Name"
 	Facts: bim:req.atributo.valor  "Sala"
 	Facts: bim:req.cardinalidade  "required"
@@ -1022,7 +1022,7 @@ Individual: bim:Req_Amb_03
 	Facts: bim:ids.descrição  "Área mínima do banheiro, precisa ter 1 banheiro e no máximo 2"
 	Facts: bim:ids.versão  "IFC4"
 	Facts: bim:ids.entidade.classe  "IFCSPACE"
-	Facts: bim:req.atributo.nome  "LongName"
+	Facts: bim:req.atributo.nomelongo  "LongName"
 	Facts: bim:req.atributo.nome  "Name"
 	Facts: bim:req.atributo.valor  "Banheiro"
 	Facts: bim:req.cardinalidade  "required"
@@ -1045,7 +1045,7 @@ Individual: bim:Req_Amb_04
 	Facts: bim:ids.descrição  "Área mínima da cozinha, precisa ter 1 cozinha."
 	Facts: bim:ids.versão  "IFC4"
 	Facts: bim:ids.entidade.classe  "IFCSPACE"
-	Facts: bim:req.atributo.nome  "LongName"
+	Facts: bim:req.atributo.nomelongo  "LongName"
 	Facts: bim:req.atributo.nome  "Name"
 	Facts: bim:req.atributo.valor  "Cozinha"
 	Facts: bim:req.cardinalidade  "required"
@@ -37946,10 +37946,11 @@ ObjectProperty: bim:é.req.atributo.nome
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.atributo.nome"@pt
 	Annotations: bim:Chave "d.requisitar.115"
 	Annotations: bim:Ação "Ação de requisitar"@pt
-	Annotations: bim:Definição "Declara o requisito de abertura de uma seção de atributo definindo o nome do atributo."@pt
-	Annotations: bim:Definición "Declara el requisito de abrir una sección de atributo definiendo el nombre del atributo."@es
-	Annotations: bim:Definition "Declare the requirement to open an attribute section by defining the attribute name."@en
+	Annotations: bim:Definição "Declara o requisito de abertura de atributo definindo como nome."@pt
+	Annotations: bim:Definición "Declara el requisito de atributo definindo como Nombre."@es
+	Annotations: bim:Definition "Declare the requirement to open the Name attribute."@en
 	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+	EquivalentTo: bim:é.req.atributo.nomelongo
 
 DataProperty: bim:d.requisitar
 	SubPropertyOf: bim:BIMData
@@ -37962,9 +37963,42 @@ DataProperty: bim:req.atributo.nome
 	Annotations: rdfs:comment "Dado para requisitar: req.atributo.nome -- Formatado como (rdfs:Literal or xsd:string)"@pt
 	Annotations: bim:Chave "d.requisitar.115"
 	Annotations: bim:Ação "Ação de requisitar"@pt
-	Annotations: bim:Definição "Declara o requisito de abertura de uma seção de atributo definindo o nome do atributo."@pt
-	Annotations: bim:Definición "Declara el requisito de abrir una sección de atributo definiendo el nombre del atributo."@es
-	Annotations: bim:Definition "Declare the requirement to open an attribute section by defining the attribute name."@en
+	Annotations: bim:Definição "Declara o requisito de abertura de atributo definindo como nome."@pt
+	Annotations: bim:Definición "Declara el requisito de atributo definindo como Nombre."@es
+	Annotations: bim:Definition "Declare the requirement to open the Name attribute."@en
+	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+
+ObjectProperty: bim:p.requisitar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.req.atributo.nomelongo
+	SubPropertyOf: bim:p.requisitar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.atributo.nomelongo"@pt
+	Annotations: bim:Chave "d.requisitar.116"
+	Annotations: bim:Ação "Ação de requisitar"@pt
+	Annotations: bim:Definição "Declara o requisito de abertura de atributo definindo como nome longo."@pt
+	Annotations: bim:Definición "Declara el requisito de atributo definindo como Nombre Largo."@es
+	Annotations: bim:Definition "Declare the requirement to open the LongName attribute."@en
+	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+	EquivalentTo: bim:é.req.atributo.nome
+
+DataProperty: bim:d.requisitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:req.atributo.nomelongo
+	SubPropertyOf: bim:d.requisitar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para requisitar: req.atributo.nomelongo -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.requisitar.116"
+	Annotations: bim:Ação "Ação de requisitar"@pt
+	Annotations: bim:Definição "Declara o requisito de abertura de atributo definindo como nome longo."@pt
+	Annotations: bim:Definición "Declara el requisito de atributo definindo como Nombre Largo."@es
+	Annotations: bim:Definition "Declare the requirement to open the LongName attribute."@en
 	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
 
 ObjectProperty: bim:p.requisitar
@@ -37976,7 +38010,7 @@ ObjectProperty: bim:é.req.atributo.valor
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.atributo.valor"@pt
-	Annotations: bim:Chave "d.requisitar.116"
+	Annotations: bim:Chave "d.requisitar.117"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito do valor do atributo especificado (ex. JP1)."@pt
 	Annotations: bim:Definición "Declara el requisito del valor del atributo especificado (por ejemplo, JP1)."@es
@@ -37992,7 +38026,7 @@ DataProperty: bim:req.atributo.valor
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.atributo.valor -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.116"
+	Annotations: bim:Chave "d.requisitar.117"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito do valor do atributo especificado (ex. JP1)."@pt
 	Annotations: bim:Definición "Declara el requisito del valor del atributo especificado (por ejemplo, JP1)."@es
@@ -38008,7 +38042,7 @@ ObjectProperty: bim:é.req.cardinalidade
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.cardinalidade"@pt
-	Annotations: bim:Chave "d.requisitar.117"
+	Annotations: bim:Chave "d.requisitar.118"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito da abertura de uma seção de valores de cardinalidade mínima e máxima."@pt
 	Annotations: bim:Definición "Declara el requisito de abrir una sección con valores mínimos y máximos de cardinalidad."@es
@@ -38024,7 +38058,7 @@ DataProperty: bim:req.cardinalidade
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.cardinalidade -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.117"
+	Annotations: bim:Chave "d.requisitar.118"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito da abertura de uma seção de valores de cardinalidade mínima e máxima."@pt
 	Annotations: bim:Definición "Declara el requisito de abrir una sección con valores mínimos y máximos de cardinalidad."@es
@@ -38040,7 +38074,7 @@ ObjectProperty: bim:é.req.classificação.código
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.classificação.código"@pt
-	Annotations: bim:Chave "d.requisitar.122"
+	Annotations: bim:Chave "d.requisitar.123"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de código do sistema de classificação."@pt
 	Annotations: bim:Definición "Declara el requisito de código del sistema de clasificación."@es
@@ -38055,7 +38089,7 @@ DataProperty: bim:req.classificação.código
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.classificação.código -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.122"
+	Annotations: bim:Chave "d.requisitar.123"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de código do sistema de classificação."@pt
 	Annotations: bim:Definición "Declara el requisito de código del sistema de clasificación."@es
@@ -38070,7 +38104,7 @@ ObjectProperty: bim:é.req.classificação.sistema
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.classificação.sistema"@pt
-	Annotations: bim:Chave "d.requisitar.123"
+	Annotations: bim:Chave "d.requisitar.124"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de valor do código que deve estar especificado (ex. 3E.14.02.02)."@pt
 	Annotations: bim:Definición "Declara el requisito de valor de código que debe especificarse (por ejemplo, 3E.14.02.02)."@es
@@ -38086,7 +38120,7 @@ DataProperty: bim:req.classificação.sistema
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.classificação.sistema -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.123"
+	Annotations: bim:Chave "d.requisitar.124"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de valor do código que deve estar especificado (ex. 3E.14.02.02)."@pt
 	Annotations: bim:Definición "Declara el requisito de valor de código que debe especificarse (por ejemplo, 3E.14.02.02)."@es
@@ -38102,7 +38136,7 @@ ObjectProperty: bim:é.req.especificação
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.especificação"@pt
-	Annotations: bim:Chave "d.requisitar.133"
+	Annotations: bim:Chave "d.requisitar.134"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de nome para identificar o conteúdo de uma especificação IDS."@pt
 	Annotations: bim:Definición "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es
@@ -38119,7 +38153,7 @@ DataProperty: bim:req.especificação
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.especificação -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.133"
+	Annotations: bim:Chave "d.requisitar.134"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de nome para identificar o conteúdo de uma especificação IDS."@pt
 	Annotations: bim:Definición "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es
@@ -38135,7 +38169,7 @@ ObjectProperty: bim:é.req.instrução
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.instrução"@pt
-	Annotations: bim:Chave "d.requisitar.141"
+	Annotations: bim:Chave "d.requisitar.142"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de  a mensagem de instrução colocada para a especificação."@pt
 	Annotations: bim:Definición "Declara el requisito del mensaje de instrucción colocado para la especificación."@es
@@ -38151,7 +38185,7 @@ DataProperty: bim:req.instrução
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.instrução -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.141"
+	Annotations: bim:Chave "d.requisitar.142"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de  a mensagem de instrução colocada para a especificação."@pt
 	Annotations: bim:Definición "Declara el requisito del mensaje de instrucción colocado para la especificación."@es
@@ -38167,7 +38201,7 @@ ObjectProperty: bim:é.req.nome
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.nome"@pt
-	Annotations: bim:Chave "d.requisitar.145"
+	Annotations: bim:Chave "d.requisitar.146"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de  nome para identificar o conteúdo de uma especificação IDS."@pt
 	Annotations: bim:Definición "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es
@@ -38184,7 +38218,7 @@ DataProperty: bim:req.nome
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.nome -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.145"
+	Annotations: bim:Chave "d.requisitar.146"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de  nome para identificar o conteúdo de uma especificação IDS."@pt
 	Annotations: bim:Definición "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es
@@ -38200,7 +38234,7 @@ ObjectProperty: bim:é.req.propriedade.nome
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.propriedade.nome"@pt
-	Annotations: bim:Chave "d.requisitar.149"
+	Annotations: bim:Chave "d.requisitar.150"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de  que se deve buscar a propriedade específica (ex. LoadBearing)."@pt
 	Annotations: bim:Definición "Declara el requisito de que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es
@@ -38216,7 +38250,7 @@ DataProperty: bim:req.propriedade.nome
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.propriedade.nome -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.149"
+	Annotations: bim:Chave "d.requisitar.150"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de  que se deve buscar a propriedade específica (ex. LoadBearing)."@pt
 	Annotations: bim:Definición "Declara el requisito de que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es
@@ -38232,7 +38266,7 @@ ObjectProperty: bim:é.req.propriedade.tipo
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.propriedade.tipo"@pt
-	Annotations: bim:Chave "d.requisitar.150"
+	Annotations: bim:Chave "d.requisitar.151"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de faceta propriedade para o IDS."@pt
 	Annotations: bim:Definición "Declara el requisito de propiedad facetaria para el IDS."@es
@@ -38247,7 +38281,7 @@ DataProperty: bim:req.propriedade.tipo
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.propriedade.tipo -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.150"
+	Annotations: bim:Chave "d.requisitar.151"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de faceta propriedade para o IDS."@pt
 	Annotations: bim:Definición "Declara el requisito de propiedad facetaria para el IDS."@es
@@ -38262,7 +38296,7 @@ ObjectProperty: bim:é.req.propriedade.valor
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.propriedade.valor"@pt
-	Annotations: bim:Chave "d.requisitar.151"
+	Annotations: bim:Chave "d.requisitar.152"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de valor que a propriedade deve ter (ex. TRUE)."@pt
 	Annotations: bim:Definición "Declara el requisito de valor que debe tener la propiedad (por ejemplo, TRUE)."@es
@@ -38278,7 +38312,7 @@ DataProperty: bim:req.propriedade.valor
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.propriedade.valor -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.151"
+	Annotations: bim:Chave "d.requisitar.152"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de valor que a propriedade deve ter (ex. TRUE)."@pt
 	Annotations: bim:Definición "Declara el requisito de valor que debe tener la propiedad (por ejemplo, TRUE)."@es
@@ -38294,7 +38328,7 @@ ObjectProperty: bim:é.req.pset
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.pset"@pt
-	Annotations: bim:Chave "d.requisitar.153"
+	Annotations: bim:Chave "d.requisitar.154"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de conjunto de propriedades definidas em IFC (PSET)."@pt
 	Annotations: bim:Definición "Declara el conjunto de propiedades definidas en los requisitos IFC (PSET)."@es
@@ -38310,7 +38344,7 @@ DataProperty: bim:req.pset
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: req.pset -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.153"
+	Annotations: bim:Chave "d.requisitar.154"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara o requisito de conjunto de propriedades definidas em IFC (PSET)."@pt
 	Annotations: bim:Definición "Declara el conjunto de propiedades definidas en los requisitos IFC (PSET)."@es
@@ -38326,7 +38360,7 @@ ObjectProperty: bim:é.requisito.de
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.requisito.de"@pt
-	Annotations: bim:Chave "d.requisitar.165"
+	Annotations: bim:Chave "d.requisitar.166"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos gerais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Vida útil de 50 anos, segurança, habitabilidade, sustentabilidade, níveis de desempenho (mínimo, intermediário, superior)."@pt
 	Annotations: bim:Definición "Declara los requisitos generales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: 50 años de vida útil, seguridad, habitabilidad, sostenibilidad, niveles de rendimiento (mínimo, intermedio, superior)."@es
@@ -38342,7 +38376,7 @@ DataProperty: bim:requisito.de
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: requisito.de -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.165"
+	Annotations: bim:Chave "d.requisitar.166"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos gerais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Vida útil de 50 anos, segurança, habitabilidade, sustentabilidade, níveis de desempenho (mínimo, intermediário, superior)."@pt
 	Annotations: bim:Definición "Declara los requisitos generales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: 50 años de vida útil, seguridad, habitabilidad, sostenibilidad, niveles de rendimiento (mínimo, intermedio, superior)."@es
@@ -38357,7 +38391,7 @@ ObjectProperty: bim:é.requisito.de.cobertura
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.requisito.de.cobertura"@pt
-	Annotations: bim:Chave "d.requisitar.166"
+	Annotations: bim:Chave "d.requisitar.167"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas de coberturas da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, desempenho térmico, durabilidade, resistência ao vento."@pt
 	Annotations: bim:Definición "Declara requisitos para sistemas de cubiertas bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, rendimiento térmico, durabilidad, resistencia al viento."@es
@@ -38373,7 +38407,7 @@ DataProperty: bim:requisito.de.cobertura
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: requisito.de.cobertura -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.166"
+	Annotations: bim:Chave "d.requisitar.167"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas de coberturas da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, desempenho térmico, durabilidade, resistência ao vento."@pt
 	Annotations: bim:Definición "Declara requisitos para sistemas de cubiertas bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, rendimiento térmico, durabilidad, resistencia al viento."@es
@@ -38388,7 +38422,7 @@ ObjectProperty: bim:é.requisito.de.estrutura
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.requisito.de.estrutura"@pt
-	Annotations: bim:Chave "d.requisitar.167"
+	Annotations: bim:Chave "d.requisitar.168"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas estruturais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência a cargas estáticas e dinâmicas, estabilidade, durabilidade dos materiais."@pt
 	Annotations: bim:Definición "Declara los requisitos para sistemas estructurales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia a cargas estáticas y dinámicas, estabilidad, durabilidad de los materiales."@es
@@ -38404,7 +38438,7 @@ DataProperty: bim:requisito.de.estrutura
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: requisito.de.estrutura -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.167"
+	Annotations: bim:Chave "d.requisitar.168"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas estruturais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência a cargas estáticas e dinâmicas, estabilidade, durabilidade dos materiais."@pt
 	Annotations: bim:Definición "Declara los requisitos para sistemas estructurales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia a cargas estáticas y dinámicas, estabilidad, durabilidad de los materiales."@es
@@ -38419,7 +38453,7 @@ ObjectProperty: bim:é.requisito.de.hidráulica
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.requisito.de.hidráulica"@pt
-	Annotations: bim:Chave "d.requisitar.168"
+	Annotations: bim:Chave "d.requisitar.169"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas hidrossanitários da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, segurança contra vazamentos, durabilidade das instalações."@pt
 	Annotations: bim:Definición "Declara los requisitos para sistemas hidrosanitarios de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, seguridad ante fugas, durabilidad de las instalaciones."@es
@@ -38435,7 +38469,7 @@ DataProperty: bim:requisito.de.hidráulica
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: requisito.de.hidráulica -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.168"
+	Annotations: bim:Chave "d.requisitar.169"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas hidrossanitários da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, segurança contra vazamentos, durabilidade das instalações."@pt
 	Annotations: bim:Definición "Declara los requisitos para sistemas hidrosanitarios de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, seguridad ante fugas, durabilidad de las instalaciones."@es
@@ -38450,7 +38484,7 @@ ObjectProperty: bim:é.requisito.de.piso
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.requisito.de.piso"@pt
-	Annotations: bim:Chave "d.requisitar.170"
+	Annotations: bim:Chave "d.requisitar.171"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas de pisos da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência mecânica, conforto acústico, durabilidade, manutenção."@pt
 	Annotations: bim:Definición "Declara requisitos para sistemas de suelo de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia mecánica, confort acústico, durabilidad, mantenimiento."@es
@@ -38466,7 +38500,7 @@ DataProperty: bim:requisito.de.piso
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: requisito.de.piso -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.170"
+	Annotations: bim:Chave "d.requisitar.171"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas de pisos da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência mecânica, conforto acústico, durabilidade, manutenção."@pt
 	Annotations: bim:Definición "Declara requisitos para sistemas de suelo de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia mecánica, confort acústico, durabilidad, mantenimiento."@es
@@ -38481,7 +38515,7 @@ ObjectProperty: bim:é.requisito.de.vedação
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
 	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.requisito.de.vedação"@pt
-	Annotations: bim:Chave "d.requisitar.171"
+	Annotations: bim:Chave "d.requisitar.172"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas de vedações da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, isolamento térmico e acústico, resistência ao fogo."@pt
 	Annotations: bim:Definición "Declara requisitos para sistemas de sellado bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, aislamiento térmico y acústico, resistencia al fuego."@es
@@ -38497,7 +38531,7 @@ DataProperty: bim:requisito.de.vedação
 	SubPropertyOf: bim:d.requisitar
 	range: rdfs:Literal or xsd:string
 	Annotations: rdfs:comment "Dado para requisitar: requisito.de.vedação -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.171"
+	Annotations: bim:Chave "d.requisitar.172"
 	Annotations: bim:Ação "Ação de requisitar"@pt
 	Annotations: bim:Definição "Declara Requisitos de sistemas de vedações da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, isolamento térmico e acústico, resistência ao fogo."@pt
 	Annotations: bim:Definición "Declara requisitos para sistemas de sellado bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, aislamiento térmico y acústico, resistencia al fuego."@es
@@ -43639,5 +43673,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 18/11/2026 7:30:50
+##  Criada em 18/11/2026 7:42:31
 #################################################################
