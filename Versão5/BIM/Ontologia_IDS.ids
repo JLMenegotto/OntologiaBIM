@@ -25,16 +25,12 @@
 			<requirements>
 				<attribute  cardinality="required">
 					<name><simpleValue>Name</simpleValue></name>
-					<value><simpleValue>Quarto</simpleValue></value>
+					<value><simpleValue>Quarto.*</simpleValue></value>
 				</attribute>
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
 					<propertySet><simpleValue>Pset_SpaceCommon</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value>
-						<xs:restriction base="xs:double">
-							<xs:minInclusive value="10"/>
-						</xs:restriction>
-					</value>
+					<value><simpleValue>>10</simpleValue></value>
 				</property>
 			</requirements>
 		</specification>
@@ -58,11 +54,7 @@
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
 					<propertySet><simpleValue>Pset_SpaceCommon</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value>
-						<xs:restriction base="xs:double">
-							<xs:minInclusive value="30"/>
-						</xs:restriction>
-					</value>
+					<value><simpleValue>+30</simpleValue></value>
 				</property>
 			</requirements>
 		</specification>
@@ -86,11 +78,7 @@
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
 					<propertySet><simpleValue>Pset_SpaceCommon</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value>
-						<xs:restriction base="xs:double">
-							<xs:minInclusive value="3"/>
-						</xs:restriction>
-					</value>
+					<value><simpleValue>>3</simpleValue></value>
 				</property>
 			</requirements>
 		</specification>
@@ -114,12 +102,199 @@
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
 					<propertySet><simpleValue>Pset_SpaceCommon</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value>
-						<xs:restriction base="xs:double">
-							<xs:minInclusive value="8"/>
-						</xs:restriction>
-					</value>
+					<value><simpleValue>+8</simpleValue></value>
 				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Material usado no projeto." -->
+		<specification name="Req_Mat_01" ifcVersion="IFC4" identifier="Req_Mat_01" description="Material usado no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCMATERIAL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-OM</simpleValue></system>
+					<value><simpleValue>0M.20.10.11.01.01</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Vidro</simpleValue></value>
+				</attribute>
+			</requirements>
+		</specification>
+
+		<!-- "Material usado no projeto." -->
+		<specification name="Req_Mat_02" ifcVersion="IFC4" identifier="Req_Mat_02" description="Material usado no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCMATERIAL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-OM</simpleValue></system>
+					<value><simpleValue>0M.20.10.03.09</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Cerâmica</simpleValue></value>
+				</attribute>
+			</requirements>
+		</specification>
+
+		<!-- "Material usado no projeto." -->
+		<specification name="Req_Mat_03" ifcVersion="IFC4" identifier="Req_Mat_03" description="Material usado no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCMATERIAL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-OM</simpleValue></system>
+					<value><simpleValue>0M.20.10.05.03.01.01</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Cimento CPI</simpleValue></value>
+				</attribute>
+			</requirements>
+		</specification>
+
+		<!-- "Material usado no projeto." -->
+		<specification name="Req_Mat_04" ifcVersion="IFC4" identifier="Req_Mat_04" description="Material usado no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCMATERIAL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-OM</simpleValue></system>
+					<value><simpleValue>0M.20.30.03.01</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Madeira</simpleValue></value>
+				</attribute>
+			</requirements>
+		</specification>
+
+		<!-- "Alvenarias usadas no projeto." -->
+		<specification name="Req_Par_01" ifcVersion="IFC4" identifier="Req_Par_01" description="Alvenarias usadas no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.14.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Parede 10cm</simpleValue></value>
+				</attribute>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_PAR_10</simpleValue></value>
+				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Alvenarias usadas no projeto." -->
+		<specification name="Req_Par_02" ifcVersion="IFC4" identifier="Req_Par_02" description="Alvenarias usadas no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.14.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Parede 15cm</simpleValue></value>
+				</attribute>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_PAR_15</simpleValue></value>
+				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Alvenarias usadas no projeto." -->
+		<specification name="Req_Par_03" ifcVersion="IFC4" identifier="Req_Par_03" description="Alvenarias usadas no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.14.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Parede 20cm</simpleValue></value>
+				</attribute>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_PAR_20</simpleValue></value>
+				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Alvenarias usadas no projeto." -->
+		<specification name="Req_Par_04" ifcVersion="IFC4" identifier="Req_Par_04" description="Alvenarias usadas no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.14.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Parede 25cm</simpleValue></value>
+				</attribute>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_PAR_25</simpleValue></value>
+				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Indice de TTRF resistência ao Fogo." -->
+		<specification name="Req_Inc_01" ifcVersion="IFC4" identifier="Req_Inc_01" description="Indice de TTRF resistência ao Fogo.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-0P</simpleValue></system>
+					<value><simpleValue>0P.60.60.03</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<attribute  cardinality="required">
+					<name><simpleValue>Name</simpleValue></name>
+					<value><simpleValue>Parede 10cm</simpleValue></value>
+				</attribute>
 			</requirements>
 		</specification>
 	</specifications>
