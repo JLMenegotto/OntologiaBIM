@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IDS>
 	Annotations: rdfs:comment "Norma-Referência-02: -"@pt
 	Annotations: rdfs:comment "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
 	Annotations: rdfs:comment "Observações: Modelo IDS"@pt
-	Annotations: rdfs:comment "DataHora: 18/11/2026 14:36:40"@pt
+	Annotations: rdfs:comment "DataHora: 18/11/2026 14:40:59"@pt
 	Annotations: rdfs:comment "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
 	Annotations: rdfs:comment "Aviso: -"@pt
 	Annotations: rdfs:comment "Alert: -"@pt
@@ -986,8 +986,7 @@ Individual: bim:Req_Amb_01
 	Facts: bim:req.instrução  "Área mínima de quartos. Precisa ter pelo menos 1 quarto"
 	Facts: bim:req.pset  "Qto_SpaceBaseQuantities"
 	Facts: bim:req.propriedade.nome  "NetFloorArea"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
+	Facts: bim:req.dado.tipo  "IFCAREAMEASURE"
 	Facts: bim:req.propriedade.valor  ">10"
 
 Individual: bim:Req_Amb_02
@@ -1010,8 +1009,7 @@ Individual: bim:Req_Amb_02
 	Facts: bim:req.instrução  "Área mínima das salas. Precisa ter ao menos 1 sala."
 	Facts: bim:req.pset  "Qto_SpaceBaseQuantities"
 	Facts: bim:req.propriedade.nome  "NetFloorArea"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
+	Facts: bim:req.dado.tipo  "IFCAREAMEASURE"
 	Facts: bim:req.propriedade.valor  "+30"
 
 Individual: bim:Req_Amb_03
@@ -1034,8 +1032,7 @@ Individual: bim:Req_Amb_03
 	Facts: bim:req.instrução  "Área mínima do banheiro. Precisa ter ao menos1 banheiro."
 	Facts: bim:req.pset  "Qto_SpaceBaseQuantities"
 	Facts: bim:req.propriedade.nome  "NetFloorArea"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
+	Facts: bim:req.dado.tipo  "IFCAREAMEASURE"
 	Facts: bim:req.propriedade.valor  ">3"
 
 Individual: bim:Req_Amb_04
@@ -1058,8 +1055,7 @@ Individual: bim:Req_Amb_04
 	Facts: bim:req.instrução  "Área mínima da cozinha. Precisa ter ao menos 1 cozinha."
 	Facts: bim:req.pset  "Qto_SpaceBaseQuantities"
 	Facts: bim:req.propriedade.nome  "NetFloorArea"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
-	Facts: bim:req.propriedade.tipo  "IFCAREAMEASURE"
+	Facts: bim:req.dado.tipo  "IFCAREAMEASURE"
 	Facts: bim:req.propriedade.valor  "+8"
 
 #################################################################
@@ -38134,6 +38130,38 @@ ObjectProperty: bim:p.requisitar
 
 
 
+ObjectProperty: bim:é.req.dado.tipo
+	SubPropertyOf: bim:p.requisitar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.dado.tipo"@pt
+	Annotations: bim:Chave "d.requisitar.127"
+	Annotations: bim:Ação "Ação de requisitar"@pt
+	Annotations: bim:Definição "Declara o requisito de tipo de dado usado pela propriedade ou atributo."@pt
+	Annotations: bim:Definición "Declara el requisito de tipo de dato utilizado por la propiedad o atributo."@es
+	Annotations: bim:Definition "Declare the data type requirement used by the property or attribute."@en
+	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+
+DataProperty: bim:d.requisitar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:req.dado.tipo
+	SubPropertyOf: bim:d.requisitar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para requisitar: req.dado.tipo -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.requisitar.127"
+	Annotations: bim:Ação "Ação de requisitar"@pt
+	Annotations: bim:Definição "Declara o requisito de tipo de dado usado pela propriedade ou atributo."@pt
+	Annotations: bim:Definición "Declara el requisito de tipo de dato utilizado por la propiedad o atributo."@es
+	Annotations: bim:Definition "Declare the data type requirement used by the property or attribute."@en
+	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+
+ObjectProperty: bim:p.requisitar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.req.especificação
 	SubPropertyOf: bim:p.requisitar
 	domain: bim:BIM
@@ -38258,36 +38286,6 @@ DataProperty: bim:req.propriedade.nome
 	Annotations: bim:Definición "Declara el requisito de que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es
 	Annotations: bim:Definition "Declare the requirement that the specific property (e.g., LoadBearing) must be fetched."@en
 	Annotations: bim:CódigoABNT "[ <ids:baseName><ids:simpleValue> : val : </ids:simpleValue></ids:baseName>]"
-
-ObjectProperty: bim:p.requisitar
-	SubPropertyOf: bim:BIMProp
-
-
-
-ObjectProperty: bim:é.req.propriedade.tipo
-	SubPropertyOf: bim:p.requisitar
-	domain: bim:BIM
-	Annotations: rdfs:comment "Propriedade destinada a requisitar: é.req.propriedade.tipo"@pt
-	Annotations: bim:Chave "d.requisitar.151"
-	Annotations: bim:Ação "Ação de requisitar"@pt
-	Annotations: bim:Definição "Declara o requisito de faceta propriedade para o IDS."@pt
-	Annotations: bim:Definición "Declara el requisito de propiedad facetaria para el IDS."@es
-	Annotations: bim:Definition "Declare the facet property requirement for the IDS."@en
-
-DataProperty: bim:d.requisitar
-	SubPropertyOf: bim:BIMData
-
-
-
-DataProperty: bim:req.propriedade.tipo
-	SubPropertyOf: bim:d.requisitar
-	range: rdfs:Literal or xsd:string
-	Annotations: rdfs:comment "Dado para requisitar: req.propriedade.tipo -- Formatado como (rdfs:Literal or xsd:string)"@pt
-	Annotations: bim:Chave "d.requisitar.151"
-	Annotations: bim:Ação "Ação de requisitar"@pt
-	Annotations: bim:Definição "Declara o requisito de faceta propriedade para o IDS."@pt
-	Annotations: bim:Definición "Declara el requisito de propiedad facetaria para el IDS."@es
-	Annotations: bim:Definition "Declare the facet property requirement for the IDS."@en
 
 ObjectProperty: bim:p.requisitar
 	SubPropertyOf: bim:BIMProp
@@ -43675,5 +43673,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 18/11/2026 14:36:58
+##  Criada em 18/11/2026 14:41:17
 #################################################################
