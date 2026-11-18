@@ -26,7 +26,7 @@
 	  rdfs:label "Norma-Referência-02: -"@pt ;
 	  rdfs:label "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt ;
 	  rdfs:label "Observações: Modelo IDS"@pt ;
-	  rdfs:label "DataHora: 18/11/2026 7:30:21"@pt ;
+	  rdfs:label "DataHora: 18/11/2026 7:42:02"@pt ;
 	  rdfs:label "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Aviso: -"@pt ;
 	  rdfs:label "Alert: -"@pt ;
@@ -1823,7 +1823,7 @@ bim:Req_Amb_01  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:ids.descrição    "Área mínima de quartos, precisa ter pelo menos 1 quarto e no máximo 3" ;
      bim:ids.versão    "IFC4" ;
      bim:ids.entidade.classe    "IFCSPACE" ;
-     bim:req.atributo.nome    "LongName" ;
+     bim:req.atributo.nomelongo    "LongName" ;
      bim:req.atributo.nome    "Name" ;
      bim:req.atributo.valor    "Quarto*" ;
      bim:req.cardinalidade    "required" ;
@@ -1845,7 +1845,7 @@ bim:Req_Amb_02  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:ids.descrição    "Área mínima das salas, precisa ter 1 sala." ;
      bim:ids.versão    "IFC4" ;
      bim:ids.entidade.classe    "IFCSPACE" ;
-     bim:req.atributo.nome    "LongName" ;
+     bim:req.atributo.nomelongo    "LongName" ;
      bim:req.atributo.nome    "Name" ;
      bim:req.atributo.valor    "Sala" ;
      bim:req.cardinalidade    "required" ;
@@ -1867,7 +1867,7 @@ bim:Req_Amb_03  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:ids.descrição    "Área mínima do banheiro, precisa ter 1 banheiro e no máximo 2" ;
      bim:ids.versão    "IFC4" ;
      bim:ids.entidade.classe    "IFCSPACE" ;
-     bim:req.atributo.nome    "LongName" ;
+     bim:req.atributo.nomelongo    "LongName" ;
      bim:req.atributo.nome    "Name" ;
      bim:req.atributo.valor    "Banheiro" ;
      bim:req.cardinalidade    "required" ;
@@ -1889,7 +1889,7 @@ bim:Req_Amb_04  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:ids.descrição    "Área mínima da cozinha, precisa ter 1 cozinha." ;
      bim:ids.versão    "IFC4" ;
      bim:ids.entidade.classe    "IFCSPACE" ;
-     bim:req.atributo.nome    "LongName" ;
+     bim:req.atributo.nomelongo    "LongName" ;
      bim:req.atributo.nome    "Name" ;
      bim:req.atributo.valor    "Cozinha" ;
      bim:req.cardinalidade    "required" ;
@@ -36258,8 +36258,9 @@ bim:é.req.atributo.nome   rdf:type  owl:ObjectProperty ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.atributo.nome" ;
                     bim:Chave               "d.requisitar.115" ;
                     bim:Ação                "Ação de requisitar" ;
-                    bim:Definição           "Declara o requisito de abertura de uma seção de atributo definindo o nome do atributo."@pt ;
-                    bim:Definición          "Declara el requisito de abrir una sección de atributo definiendo el nombre del atributo."@es ;bim:Definition          "Declare the requirement to open an attribute section by defining the attribute name."@en  .
+                    bim:Definição           "Declara o requisito de abertura de atributo definindo como nome."@pt ;
+                    bim:Definición          "Declara el requisito de atributo definindo como Nombre."@es ;bim:Definition          "Declare the requirement to open the Name attribute."@en ;
+                    owl:equivalentProperty  bim:é.req.atributo.nomelongo  .
 
 
 bim:d.requisitar   rdf:type  owl:DatatypeProperty ;
@@ -36272,8 +36273,37 @@ bim:req.atributo.nome   rdf:type  owl:DatatypeProperty ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.atributo.nome -- Formatado como (rdfs:Literalxsd:string)) ] " ;
                     bim:Chave               "d.requisitar.115" ;
                     bim:Ação                "Ação de requisitar" ;
-                    bim:Definição           "Declara o requisito de abertura de uma seção de atributo definindo o nome do atributo."@pt ;
-                    bim:Definición          "Declara el requisito de abrir una sección de atributo definiendo el nombre del atributo."@es ;bim:Definition          "Declare the requirement to open an attribute section by defining the attribute name."@en  .
+                    bim:Definição           "Declara o requisito de abertura de atributo definindo como nome."@pt ;
+                    bim:Definición          "Declara el requisito de atributo definindo como Nombre."@es ;bim:Definition          "Declare the requirement to open the Name attribute."@en  .
+
+
+bim:p.requisitar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
+bim:é.req.atributo.nomelongo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.requisitar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a requisitar: é.req.atributo.nomelongo" ;
+                    bim:Chave               "d.requisitar.116" ;
+                    bim:Ação                "Ação de requisitar" ;
+                    bim:Definição           "Declara o requisito de abertura de atributo definindo como nome longo."@pt ;
+                    bim:Definición          "Declara el requisito de atributo definindo como Nombre Largo."@es ;bim:Definition          "Declare the requirement to open the LongName attribute."@en ;
+                    owl:equivalentProperty  bim:é.req.atributo.nome  .
+
+
+bim:d.requisitar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:req.atributo.nomelongo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.requisitar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.atributo.nomelongo -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.requisitar.116" ;
+                    bim:Ação                "Ação de requisitar" ;
+                    bim:Definição           "Declara o requisito de abertura de atributo definindo como nome longo."@pt ;
+                    bim:Definición          "Declara el requisito de atributo definindo como Nombre Largo."@es ;bim:Definition          "Declare the requirement to open the LongName attribute."@en  .
 
 
 bim:p.requisitar   rdf:type  owl:ObjectProperty ;
@@ -36284,7 +36314,7 @@ bim:é.req.atributo.valor   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.atributo.valor" ;
-                    bim:Chave               "d.requisitar.116" ;
+                    bim:Chave               "d.requisitar.117" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito do valor do atributo especificado (ex. JP1)."@pt ;
                     bim:Definición          "Declara el requisito del valor del atributo especificado (por ejemplo, JP1)."@es ;bim:Definition          "Declare the requirement for the value of the specified attribute (e.g., JP1)."@en  .
@@ -36298,7 +36328,7 @@ bim:req.atributo.valor   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.atributo.valor -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.116" ;
+                    bim:Chave               "d.requisitar.117" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito do valor do atributo especificado (ex. JP1)."@pt ;
                     bim:Definición          "Declara el requisito del valor del atributo especificado (por ejemplo, JP1)."@es ;bim:Definition          "Declare the requirement for the value of the specified attribute (e.g., JP1)."@en  .
@@ -36312,7 +36342,7 @@ bim:é.req.cardinalidade   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.cardinalidade" ;
-                    bim:Chave               "d.requisitar.117" ;
+                    bim:Chave               "d.requisitar.118" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito da abertura de uma seção de valores de cardinalidade mínima e máxima. "@pt ;
                     bim:Definición          "Declara el requisito de abrir una sección con valores mínimos y máximos de cardinalidad."@es ;bim:Definition          "Declare the requirement to open a section of minimum and maximum cardinality values."@en  .
@@ -36326,7 +36356,7 @@ bim:req.cardinalidade   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.cardinalidade -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.117" ;
+                    bim:Chave               "d.requisitar.118" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito da abertura de uma seção de valores de cardinalidade mínima e máxima. "@pt ;
                     bim:Definición          "Declara el requisito de abrir una sección con valores mínimos y máximos de cardinalidad."@es ;bim:Definition          "Declare the requirement to open a section of minimum and maximum cardinality values."@en  .
@@ -36340,7 +36370,7 @@ bim:é.req.classificação.código   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.classificação.código" ;
-                    bim:Chave               "d.requisitar.122" ;
+                    bim:Chave               "d.requisitar.123" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de código do sistema de classificação. "@pt ;
                     bim:Definición          "Declara el requisito de código del sistema de clasificación."@es ;bim:Definition          "Declare the code requirement of the classification system."@en  .
@@ -36354,7 +36384,7 @@ bim:req.classificação.código   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.classificação.código -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.122" ;
+                    bim:Chave               "d.requisitar.123" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de código do sistema de classificação. "@pt ;
                     bim:Definición          "Declara el requisito de código del sistema de clasificación."@es ;bim:Definition          "Declare the code requirement of the classification system."@en  .
@@ -36368,7 +36398,7 @@ bim:é.req.classificação.sistema   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.classificação.sistema" ;
-                    bim:Chave               "d.requisitar.123" ;
+                    bim:Chave               "d.requisitar.124" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de valor do código que deve estar especificado (ex. 3E.14.02.02)."@pt ;
                     bim:Definición          "Declara el requisito de valor de código que debe especificarse (por ejemplo, 3E.14.02.02)."@es ;bim:Definition          "Declare the code value requirement that must be specified (e.g. 3E.14.02.02)."@en  .
@@ -36382,7 +36412,7 @@ bim:req.classificação.sistema   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.classificação.sistema -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.123" ;
+                    bim:Chave               "d.requisitar.124" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de valor do código que deve estar especificado (ex. 3E.14.02.02)."@pt ;
                     bim:Definición          "Declara el requisito de valor de código que debe especificarse (por ejemplo, 3E.14.02.02)."@es ;bim:Definition          "Declare the code value requirement that must be specified (e.g. 3E.14.02.02)."@en  .
@@ -36396,7 +36426,7 @@ bim:é.req.especificação   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.especificação" ;
-                    bim:Chave               "d.requisitar.133" ;
+                    bim:Chave               "d.requisitar.134" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de nome para identificar o conteúdo de uma especificação IDS."@pt ;
                     bim:Definición          "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es ;bim:Definition          "Declare the name requirement to identify the content of an IDS specification."@en ;
@@ -36411,7 +36441,7 @@ bim:req.especificação   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.especificação -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.133" ;
+                    bim:Chave               "d.requisitar.134" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de nome para identificar o conteúdo de uma especificação IDS."@pt ;
                     bim:Definición          "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es ;bim:Definition          "Declare the name requirement to identify the content of an IDS specification."@en  .
@@ -36425,7 +36455,7 @@ bim:é.req.instrução   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.instrução" ;
-                    bim:Chave               "d.requisitar.141" ;
+                    bim:Chave               "d.requisitar.142" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de  a mensagem de instrução colocada para a especificação."@pt ;
                     bim:Definición          "Declara el requisito del mensaje de instrucción colocado para la especificación."@es ;bim:Definition          "Declare the requirement of the statement message placed for the specification."@en  .
@@ -36439,7 +36469,7 @@ bim:req.instrução   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.instrução -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.141" ;
+                    bim:Chave               "d.requisitar.142" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de  a mensagem de instrução colocada para a especificação."@pt ;
                     bim:Definición          "Declara el requisito del mensaje de instrucción colocado para la especificación."@es ;bim:Definition          "Declare the requirement of the statement message placed for the specification."@en  .
@@ -36453,7 +36483,7 @@ bim:é.req.nome   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.nome" ;
-                    bim:Chave               "d.requisitar.145" ;
+                    bim:Chave               "d.requisitar.146" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de  nome para identificar o conteúdo de uma especificação IDS."@pt ;
                     bim:Definición          "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es ;bim:Definition          "Declare the name requirement to identify the content of an IDS specification."@en ;
@@ -36468,7 +36498,7 @@ bim:req.nome   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.nome -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.145" ;
+                    bim:Chave               "d.requisitar.146" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de  nome para identificar o conteúdo de uma especificação IDS."@pt ;
                     bim:Definición          "Declara el requisito de nombre para identificar el contenido de una especificación IDS."@es ;bim:Definition          "Declare the name requirement to identify the content of an IDS specification."@en  .
@@ -36482,7 +36512,7 @@ bim:é.req.propriedade.nome   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.propriedade.nome" ;
-                    bim:Chave               "d.requisitar.149" ;
+                    bim:Chave               "d.requisitar.150" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de  que se deve buscar a propriedade específica (ex. LoadBearing)."@pt ;
                     bim:Definición          "Declara el requisito de que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es ;bim:Definition          "Declare the requirement that the specific property (e.g., LoadBearing) must be fetched."@en  .
@@ -36496,7 +36526,7 @@ bim:req.propriedade.nome   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.propriedade.nome -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.149" ;
+                    bim:Chave               "d.requisitar.150" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de  que se deve buscar a propriedade específica (ex. LoadBearing)."@pt ;
                     bim:Definición          "Declara el requisito de que la propiedad específica (por ejemplo, LoadBearing) debe ser recuperada."@es ;bim:Definition          "Declare the requirement that the specific property (e.g., LoadBearing) must be fetched."@en  .
@@ -36510,7 +36540,7 @@ bim:é.req.propriedade.tipo   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.propriedade.tipo" ;
-                    bim:Chave               "d.requisitar.150" ;
+                    bim:Chave               "d.requisitar.151" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de faceta propriedade para o IDS."@pt ;
                     bim:Definición          "Declara el requisito de propiedad facetaria para el IDS."@es ;bim:Definition          "Declare the facet property requirement for the IDS."@en  .
@@ -36524,7 +36554,7 @@ bim:req.propriedade.tipo   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.propriedade.tipo -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.150" ;
+                    bim:Chave               "d.requisitar.151" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de faceta propriedade para o IDS."@pt ;
                     bim:Definición          "Declara el requisito de propiedad facetaria para el IDS."@es ;bim:Definition          "Declare the facet property requirement for the IDS."@en  .
@@ -36538,7 +36568,7 @@ bim:é.req.propriedade.valor   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.propriedade.valor" ;
-                    bim:Chave               "d.requisitar.151" ;
+                    bim:Chave               "d.requisitar.152" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de valor que a propriedade deve ter (ex. TRUE)."@pt ;
                     bim:Definición          "Declara el requisito de valor que debe tener la propiedad (por ejemplo, TRUE)."@es ;bim:Definition          "Declare the value requirement that the property must have (e.g., TRUE)."@en  .
@@ -36552,7 +36582,7 @@ bim:req.propriedade.valor   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.propriedade.valor -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.151" ;
+                    bim:Chave               "d.requisitar.152" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de valor que a propriedade deve ter (ex. TRUE)."@pt ;
                     bim:Definición          "Declara el requisito de valor que debe tener la propiedad (por ejemplo, TRUE)."@es ;bim:Definition          "Declare the value requirement that the property must have (e.g., TRUE)."@en  .
@@ -36566,7 +36596,7 @@ bim:é.req.pset   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.req.pset" ;
-                    bim:Chave               "d.requisitar.153" ;
+                    bim:Chave               "d.requisitar.154" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de conjunto de propriedades definidas em IFC (PSET)."@pt ;
                     bim:Definición          "Declara el conjunto de propiedades definidas en los requisitos IFC (PSET)."@es ;bim:Definition          "Declare the set of properties defined in IFC (PSET) requirements."@en  .
@@ -36580,7 +36610,7 @@ bim:req.pset   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.pset -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.153" ;
+                    bim:Chave               "d.requisitar.154" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara o requisito de conjunto de propriedades definidas em IFC (PSET)."@pt ;
                     bim:Definición          "Declara el conjunto de propiedades definidas en los requisitos IFC (PSET)."@es ;bim:Definition          "Declare the set of properties defined in IFC (PSET) requirements."@en  .
@@ -36594,7 +36624,7 @@ bim:é.requisito.de   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.requisito.de" ;
-                    bim:Chave               "d.requisitar.165" ;
+                    bim:Chave               "d.requisitar.166" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos gerais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Vida útil de 50 anos, segurança, habitabilidade, sustentabilidade, níveis de desempenho (mínimo, intermediário, superior)."@pt ;
                     bim:Definición          "Declara los requisitos generales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: 50 años de vida útil, seguridad, habitabilidad, sostenibilidad, niveles de rendimiento (mínimo, intermedio, superior)."@es ;bim:Definition          "Declare General requirements of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: 50-year useful life, safety, habitability, sustainability, performance levels (minimum, intermediate, superior)."@en ;
@@ -36609,7 +36639,7 @@ bim:requisito.de   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: requisito.de -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.165" ;
+                    bim:Chave               "d.requisitar.166" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos gerais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Vida útil de 50 anos, segurança, habitabilidade, sustentabilidade, níveis de desempenho (mínimo, intermediário, superior)."@pt ;
                     bim:Definición          "Declara los requisitos generales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: 50 años de vida útil, seguridad, habitabilidad, sostenibilidad, niveles de rendimiento (mínimo, intermedio, superior)."@es ;bim:Definition          "Declare General requirements of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: 50-year useful life, safety, habitability, sustainability, performance levels (minimum, intermediate, superior)."@en  .
@@ -36623,7 +36653,7 @@ bim:é.requisito.de.cobertura   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.requisito.de.cobertura" ;
-                    bim:Chave               "d.requisitar.166" ;
+                    bim:Chave               "d.requisitar.167" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas de coberturas da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, desempenho térmico, durabilidade, resistência ao vento."@pt ;
                     bim:Definición          "Declara requisitos para sistemas de cubiertas bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, rendimiento térmico, durabilidad, resistencia al viento."@es ;bim:Definition          "Declare Requirements for roofing systems under the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Watertightness, thermal performance, durability, wind resistance."@en ;
@@ -36638,7 +36668,7 @@ bim:requisito.de.cobertura   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: requisito.de.cobertura -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.166" ;
+                    bim:Chave               "d.requisitar.167" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas de coberturas da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, desempenho térmico, durabilidade, resistência ao vento."@pt ;
                     bim:Definición          "Declara requisitos para sistemas de cubiertas bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, rendimiento térmico, durabilidad, resistencia al viento."@es ;bim:Definition          "Declare Requirements for roofing systems under the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Watertightness, thermal performance, durability, wind resistance."@en  .
@@ -36652,7 +36682,7 @@ bim:é.requisito.de.estrutura   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.requisito.de.estrutura" ;
-                    bim:Chave               "d.requisitar.167" ;
+                    bim:Chave               "d.requisitar.168" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas estruturais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência a cargas estáticas e dinâmicas, estabilidade, durabilidade dos materiais."@pt ;
                     bim:Definición          "Declara los requisitos para sistemas estructurales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia a cargas estáticas y dinámicas, estabilidad, durabilidad de los materiales."@es ;bim:Definition          "Declare Requirements for structural systems of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Resistance to static and dynamic loads, stability, durability of materials."@en ;
@@ -36667,7 +36697,7 @@ bim:requisito.de.estrutura   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: requisito.de.estrutura -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.167" ;
+                    bim:Chave               "d.requisitar.168" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas estruturais da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência a cargas estáticas e dinâmicas, estabilidade, durabilidade dos materiais."@pt ;
                     bim:Definición          "Declara los requisitos para sistemas estructurales de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia a cargas estáticas y dinámicas, estabilidad, durabilidad de los materiales."@es ;bim:Definition          "Declare Requirements for structural systems of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Resistance to static and dynamic loads, stability, durability of materials."@en  .
@@ -36681,7 +36711,7 @@ bim:é.requisito.de.hidráulica   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.requisito.de.hidráulica" ;
-                    bim:Chave               "d.requisitar.168" ;
+                    bim:Chave               "d.requisitar.169" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas hidrossanitários da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, segurança contra vazamentos, durabilidade das instalações."@pt ;
                     bim:Definición          "Declara los requisitos para sistemas hidrosanitarios de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, seguridad ante fugas, durabilidad de las instalaciones."@es ;bim:Definition          "Declare Requirements for hydrosanitary systems of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Watertightness, leak safety, durability of installations."@en ;
@@ -36696,7 +36726,7 @@ bim:requisito.de.hidráulica   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: requisito.de.hidráulica -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.168" ;
+                    bim:Chave               "d.requisitar.169" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas hidrossanitários da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, segurança contra vazamentos, durabilidade das instalações."@pt ;
                     bim:Definición          "Declara los requisitos para sistemas hidrosanitarios de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, seguridad ante fugas, durabilidad de las instalaciones."@es ;bim:Definition          "Declare Requirements for hydrosanitary systems of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Watertightness, leak safety, durability of installations."@en  .
@@ -36710,7 +36740,7 @@ bim:é.requisito.de.piso   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.requisito.de.piso" ;
-                    bim:Chave               "d.requisitar.170" ;
+                    bim:Chave               "d.requisitar.171" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas de pisos da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência mecânica, conforto acústico, durabilidade, manutenção."@pt ;
                     bim:Definición          "Declara requisitos para sistemas de suelo de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia mecánica, confort acústico, durabilidad, mantenimiento."@es ;bim:Definition          "Declare Requirements for flooring systems of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Mechanical resistance, acoustic comfort, durability, maintenance."@en ;
@@ -36725,7 +36755,7 @@ bim:requisito.de.piso   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: requisito.de.piso -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.170" ;
+                    bim:Chave               "d.requisitar.171" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas de pisos da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Resistência mecânica, conforto acústico, durabilidade, manutenção."@pt ;
                     bim:Definición          "Declara requisitos para sistemas de suelo de la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Resistencia mecánica, confort acústico, durabilidad, mantenimiento."@es ;bim:Definition          "Declare Requirements for flooring systems of the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Mechanical resistance, acoustic comfort, durability, maintenance."@en  .
@@ -36739,7 +36769,7 @@ bim:é.requisito.de.vedação   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
                     rdfs:label              "Propriedade destinada a requisitar: é.requisito.de.vedação" ;
-                    bim:Chave               "d.requisitar.171" ;
+                    bim:Chave               "d.requisitar.172" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas de vedações da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, isolamento térmico e acústico, resistência ao fogo."@pt ;
                     bim:Definición          "Declara requisitos para sistemas de sellado bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, aislamiento térmico y acústico, resistencia al fuego."@es ;bim:Definition          "Declare Requirements for sealing systems under the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Watertightness, thermal and acoustic insulation, fire resistance."@en ;
@@ -36754,7 +36784,7 @@ bim:requisito.de.vedação   rdf:type  owl:DatatypeProperty ;
                     rdfs:subPropertyOf      bim:d.requisitar ;
                     rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
                     rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: requisito.de.vedação -- Formatado como (rdfs:Literalxsd:string)) ] " ;
-                    bim:Chave               "d.requisitar.171" ;
+                    bim:Chave               "d.requisitar.172" ;
                     bim:Ação                "Ação de requisitar" ;
                     bim:Definição           "Declara Requisitos de sistemas de vedações da norma ABNT NBR 15575-1: Edificações habitacionais - Desempenho. Requisitos tratados: Estanqueidade, isolamento térmico e acústico, resistência ao fogo."@pt ;
                     bim:Definición          "Declara requisitos para sistemas de sellado bajo la norma ABNT NBR 15575-1: Edificios residenciales - Rendimiento. Requisitos abordados: Estanqueidad, aislamiento térmico y acústico, resistencia al fuego."@es ;bim:Definition          "Declare Requirements for sealing systems under the ABNT NBR 15575-1 standard: Residential buildings - Performance. Requirements addressed: Watertightness, thermal and acoustic insulation, fire resistance."@en  .
@@ -41547,5 +41577,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 18/11/2026 7:30:50
+##  Criada em 18/11/2026 7:42:31
 #################################################################
