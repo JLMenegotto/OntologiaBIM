@@ -26,7 +26,7 @@
 	  rdfs:label "Norma-Referência-02: -"@pt ;
 	  rdfs:label "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt ;
 	  rdfs:label "Observações: Modelo IDS"@pt ;
-	  rdfs:label "DataHora: 18/11/2026 14:40:59"@pt ;
+	  rdfs:label "DataHora: 18/11/2026 15:07:56"@pt ;
 	  rdfs:label "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt ;
 	  rdfs:label "Aviso: -"@pt ;
 	  rdfs:label "Alert: -"@pt ;
@@ -1855,6 +1855,7 @@ bim:Req_Amb_02  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:req.instrução    "Área mínima das salas. Precisa ter ao menos 1 sala." ;
      bim:req.pset    "Qto_SpaceBaseQuantities" ;
      bim:req.propriedade.nome    "NetFloorArea" ;
+     bim:req.propriedade.tipo    "IFCAREAMEASURE" ;
      bim:req.dado.tipo    "IFCAREAMEASURE" ;
      bim:req.propriedade.valor    "+30"  .
 
@@ -1877,6 +1878,7 @@ bim:Req_Amb_03  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:req.instrução    "Área mínima do banheiro. Precisa ter ao menos1 banheiro." ;
      bim:req.pset    "Qto_SpaceBaseQuantities" ;
      bim:req.propriedade.nome    "NetFloorArea" ;
+     bim:req.propriedade.tipo    "IFCAREAMEASURE" ;
      bim:req.dado.tipo    "IFCAREAMEASURE" ;
      bim:req.propriedade.valor    ">3"  .
 
@@ -1899,7 +1901,7 @@ bim:Req_Amb_04  rdf:type  owl:NamedIndividual , bim:Especifica.Ambiente ;
      bim:req.instrução    "Área mínima da cozinha. Precisa ter ao menos 1 cozinha." ;
      bim:req.pset    "Qto_SpaceBaseQuantities" ;
      bim:req.propriedade.nome    "NetFloorArea" ;
-     bim:req.dado.tipo    "IFCAREAMEASURE" ;
+     bim:req.propriedade.tipo    "IFCAREAMEASURE" ;
      bim:req.propriedade.valor    "+8"  .
 
 #################################################################
@@ -36562,6 +36564,34 @@ bim:p.requisitar   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:BIMProp  .
 
 
+bim:é.req.propriedade.tipo   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:p.requisitar ;
+                    rdfs:domain             bim:BIM ;
+                    rdfs:label              "Propriedade destinada a requisitar: é.req.propriedade.tipo" ;
+                    bim:Chave               "d.requisitar.151" ;
+                    bim:Ação                "Ação de requisitar" ;
+                    bim:Definição           "Declara o requisito de faceta propriedade para o IDS."@pt ;
+                    bim:Definición          "Declara el requisito de propiedad facetaria para el IDS."@es ;bim:Definition          "Declare the facet property requirement for the IDS."@en  .
+
+
+bim:d.requisitar   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:BIMData  .
+
+
+bim:req.propriedade.tipo   rdf:type  owl:DatatypeProperty ;
+                    rdfs:subPropertyOf      bim:d.requisitar ;
+                    rdfs:range               [rdf:type rdfs:Datatype ; owl:unionOf ( rdfs:Literalxsd:string) ]  ;
+                    rdfs:label              " [rdf:type rdfs:Datatype ; owl:unionOf ( Dado para requisitar: req.propriedade.tipo -- Formatado como (rdfs:Literalxsd:string)) ] " ;
+                    bim:Chave               "d.requisitar.151" ;
+                    bim:Ação                "Ação de requisitar" ;
+                    bim:Definição           "Declara o requisito de faceta propriedade para o IDS."@pt ;
+                    bim:Definición          "Declara el requisito de propiedad facetaria para el IDS."@es ;bim:Definition          "Declare the facet property requirement for the IDS."@en  .
+
+
+bim:p.requisitar   rdf:type  owl:ObjectProperty ;
+                    rdfs:subPropertyOf      bim:BIMProp  .
+
+
 bim:é.req.propriedade.valor   rdf:type  owl:ObjectProperty ;
                     rdfs:subPropertyOf      bim:p.requisitar ;
                     rdfs:domain             bim:BIM ;
@@ -41575,5 +41605,5 @@ bim:zona.pública   rdf:type  owl:DatatypeProperty ;
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 18/11/2026 14:41:17
+##  Criada em 18/11/2026 15:08:18
 #################################################################
