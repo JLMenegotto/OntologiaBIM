@@ -13,16 +13,16 @@
 
 		<!-- "Área mínima de quartos. Precisa ter pelo menos 1 quarto e no máximo 3" -->
 		<specification ifcVersion="IFC4" identifier="Req_Amb_01" description="Área mínima de quartos. Precisa ter pelo menos 1 quarto e no máximo 3">
-			<applicability  minOccurs= "1"  maxOccurs= "3">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
 				<entity>
 					<name><simpleValue>IFCSPACE</simpleValue></name>
 				</entity>
-			</applicability>
-			<requirements  cardinality= "required">
 				<classification>
 					<system><simpleValue>NBR-15965-4A</simpleValue></system>
 					<value><simpleValue>4A.19.01.01</simpleValue></value>
 				</classification>
+			</applicability>
+			<requirements  cardinality= "required">
 				<attribute>
 					<name><simpleValue>Name</simpleValue></name>
 					<xs:restriction base="xs:string">
@@ -32,23 +32,27 @@
 				<property cardinality="required">
 					<propertySet><simpleValue>Qto_SpaceBaseQuantities</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value><simpleValue>10</simpleValue></value>
+					<value>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value=""10""/>
+						</xs:restriction>
+					</value>
 				</property>
 			</requirements>
 		</specification>
 
 		<!-- "Área mínima das salas. Precisa ter 1 sala." -->
 		<specification ifcVersion="IFC4" identifier="Req_Amb_02" description="Área mínima das salas. Precisa ter 1 sala.">
-			<applicability  minOccurs= "1"  maxOccurs= "1">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
 				<entity>
 					<name><simpleValue>IFCSPACE</simpleValue></name>
 				</entity>
-			</applicability>
-			<requirements  cardinality= "required">
 				<classification>
 					<system><simpleValue>NBR-15965-4A</simpleValue></system>
 					<value><simpleValue>4A.19.01.07</simpleValue></value>
 				</classification>
+			</applicability>
+			<requirements  cardinality= "required">
 				<attribute>
 					<name><simpleValue>Name</simpleValue></name>
 					<value><simpleValue>Sala</simpleValue></value>
@@ -56,23 +60,27 @@
 				<property cardinality="required">
 					<propertySet><simpleValue>Qto_SpaceBaseQuantities</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value><simpleValue>30</simpleValue></value>
+					<value>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value=""30""/>
+						</xs:restriction>
+					</value>
 				</property>
 			</requirements>
 		</specification>
 
 		<!-- "Área mínima do banheiro. Precisa ter 1 banheiro e no máximo 2" -->
 		<specification ifcVersion="IFC4" identifier="Req_Amb_03" description="Área mínima do banheiro. Precisa ter 1 banheiro e no máximo 2">
-			<applicability  minOccurs= "1"  maxOccurs= "1">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
 				<entity>
 					<name><simpleValue>IFCSPACE</simpleValue></name>
 				</entity>
-			</applicability>
-			<requirements  cardinality= "required">
 				<classification>
 					<system><simpleValue>NBR-15965-4A</simpleValue></system>
 					<value><simpleValue>4A.19.04.07</simpleValue></value>
 				</classification>
+			</applicability>
+			<requirements  cardinality= "required">
 				<attribute>
 					<name><simpleValue>Name</simpleValue></name>
 					<value><simpleValue>Banheiro</simpleValue></value>
@@ -80,23 +88,27 @@
 				<property cardinality="required">
 					<propertySet><simpleValue>Qto_SpaceBaseQuantities</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value><simpleValue>3</simpleValue></value>
+					<value>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value=""3""/>
+						</xs:restriction>
+					</value>
 				</property>
 			</requirements>
 		</specification>
 
 		<!-- "Área mínima da cozinha. Precisa ter 1 cozinha." -->
 		<specification ifcVersion="IFC4" identifier="Req_Amb_04" description="Área mínima da cozinha. Precisa ter 1 cozinha.">
-			<applicability  minOccurs= "1"  maxOccurs= "1">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
 				<entity>
 					<name><simpleValue>IFCSPACE</simpleValue></name>
 				</entity>
-			</applicability>
-			<requirements  cardinality= "required">
 				<classification>
 					<system><simpleValue>NBR-15965-4A</simpleValue></system>
 					<value><simpleValue>4A.19.01.25</simpleValue></value>
 				</classification>
+			</applicability>
+			<requirements  cardinality= "required">
 				<attribute>
 					<name><simpleValue>Name</simpleValue></name>
 					<value><simpleValue>Cozinha</simpleValue></value>
@@ -104,7 +116,11 @@
 				<property cardinality="required">
 					<propertySet><simpleValue>Qto_SpaceBaseQuantities</simpleValue></propertySet>
 					<baseName><simpleValue>NetFloorArea</simpleValue></baseName>
-					<value><simpleValue>8</simpleValue></value>
+					<value>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value=""8""/>
+						</xs:restriction>
+					</value>
 				</property>
 			</requirements>
 		</specification>
