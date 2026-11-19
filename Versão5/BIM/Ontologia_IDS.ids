@@ -299,32 +299,6 @@
 			</requirements>
 		</specification>
 
-		<!-- "Alvenarias usadas no Andar 5." -->
-		<specification name="Req_Par_05" ifcVersion="IFC4" identifier="Req_Par_05" description="Alvenarias usadas no Andar 5.">
-			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
-				<entity>
-					<name><simpleValue>IFCWALL</simpleValue></name>
-				</entity>
-				<partOf  relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" >
-					<entity>
-					<name><simpleValue>IFCBUILDINGSTOREY</simpleValue></name>
-					</entity>
-				</partOf>
-				<classification>
-					<system><simpleValue>NBR-15965-3E</simpleValue></system>
-					<value><simpleValue>3E.14.02</simpleValue></value>
-				</classification>
-				<attribute>
-					<name><simpleValue>Name</simpleValue></name>
-					<xs:restriction base="xs:string">
-						<xs:pattern value="Andar 5*.*"/>
-					</xs:restriction>
-				</attribute>
-			</applicability>
-			<requirements>
-			</requirements>
-		</specification>
-
 		<!-- "Indice de TTRF resistência ao Fogo." -->
 		<specification name="Req_Inc_01" ifcVersion="IFC4" identifier="Req_Inc_01" description="Indice de TTRF resistência ao Fogo.">
 			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
@@ -544,6 +518,37 @@
 				<material  cardinality="required">
 					<value><simpleValue>Alumínio</simpleValue></value>
 				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Alvenarias usadas no 5° Andar do prédio." -->
+		<specification name="Req_Pre_01" ifcVersion="IFC4" identifier="Req_Pre_01" description="Alvenarias usadas no 5° Andar do prédio.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<partOf  relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" >
+					<entity>
+					<name><simpleValue>IFCBUILDINGSTOREY</simpleValue></name>
+					</entity>
+				</partOf>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.14.02</simpleValue></value>
+				</classification>
+				<attribute>
+					<name><simpleValue>Name</simpleValue></name>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="Andar 5*.*"/>
+					</xs:restriction>
+				</attribute>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCBOOLEAN"   cardinality="required">
+					<propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet>
+					<baseName><simpleValue>LoadBearing</simpleValue></baseName>
+					<value><simpleValue>True</simpleValue></value>
+				</property>
 			</requirements>
 		</specification>
 	</specifications>
