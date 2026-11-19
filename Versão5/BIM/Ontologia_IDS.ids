@@ -7,7 +7,7 @@
 		<version>Esp. 1.0</version>
 		<description>Especificação IDS do projeto CT da UFRJ</description>
 		<author>jlmenegotto@poli.ufrj.br</author>
-		<date>2026-11-18</date>
+		<date>2026-11-19</date>
 	</info>
 	<specifications> 
 
@@ -25,7 +25,9 @@
 			<requirements>
 				<attribute  cardinality="required">
 					<name><simpleValue>Name</simpleValue></name>
-					<value><simpleValue>Quarto*</simpleValue></value>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="Quarto*.*"/>
+					</xs:restriction>
 				</attribute>
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
 					<propertySet><simpleValue>Pset_SpaceCommon</simpleValue></propertySet>
@@ -314,8 +316,223 @@
 				<property  dataType="IFCLABEL"   cardinality="required">
 					<propertySet><simpleValue>Pset_WallCommon</simpleValue></propertySet>
 					<baseName><simpleValue>FireRating</simpleValue></baseName>
-					<value><simpleValue>REI 60</simpleValue></value>
+				<value>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="&quot;[30 min : 60 min : 90 min : 120 min ]&quot;"/>
+					</xs:restriction>
+				</value>
 				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_01" ifcVersion="IFC4" identifier="Req_Por_01" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_60</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_02" ifcVersion="IFC4" identifier="Req_Por_02" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_70</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_03" ifcVersion="IFC4" identifier="Req_Por_03" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_80</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_04" ifcVersion="IFC4" identifier="Req_Por_04" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_90</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_05" ifcVersion="IFC4" identifier="Req_Por_05" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_120_DUP</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_06" ifcVersion="IFC4" identifier="Req_Por_06" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_80_ACU</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Porta usada no projeto." -->
+		<specification name="Req_Por_07" ifcVersion="IFC4" identifier="Req_Por_07" description="Porta usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCDOOR</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.02.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_DoorCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_POR_90_VIS</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Janela usada no projeto." -->
+		<specification name="Req_Jan_01" ifcVersion="IFC4" identifier="Req_Jan_01" description="Janela usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWINDOW</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.04.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_WindowCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+				<value>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="&quot;[ CT_JAN_120x120 : CT_JAN_240x120 : CT_JAN_125x60 ]&quot;"/>
+					</xs:restriction>
+				</value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
+			</requirements>
+		</specification>
+
+		<!-- "Janela usada no projeto." -->
+		<specification name="Req_Jan_02" ifcVersion="IFC4" identifier="Req_Jan_02" description="Janela usada no projeto.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWINDOW</simpleValue></name>
+				</entity>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.20.04.02</simpleValue></value>
+				</classification>
+			</applicability>
+			<requirements>
+				<property  dataType="IFCIDENTIFIER"   cardinality="required">
+					<propertySet><simpleValue>Pset_WindowCommon</simpleValue></propertySet>
+					<baseName><simpleValue>Reference</simpleValue></baseName>
+					<value><simpleValue>CT_JAN_120x300</simpleValue></value>
+				</property>
+				<material  cardinality="required">
+					<value><simpleValue>Alumínio</simpleValue></value>
+				</material>
 			</requirements>
 		</specification>
 	</specifications>
