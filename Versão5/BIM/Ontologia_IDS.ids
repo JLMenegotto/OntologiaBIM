@@ -26,7 +26,7 @@
 				<attribute  cardinality="required">
 					<name><simpleValue>Name</simpleValue></name>
 					<xs:restriction base="xs:string">
-						<xs:pattern value="Quarto.*"/>
+						<xs:pattern value="Quarto.*.*"/>
 					</xs:restriction>
 				</attribute>
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
@@ -56,7 +56,7 @@
 				<attribute  cardinality="required">
 					<name><simpleValue>Name</simpleValue></name>
 					<xs:restriction base="xs:string">
-						<xs:pattern value="Sala.*"/>
+						<xs:pattern value="Sala.*.*"/>
 					</xs:restriction>
 				</attribute>
 				<property  dataType="IFCAREAMEASURE"   cardinality="required">
@@ -296,6 +296,32 @@
 					<baseName><simpleValue>Reference</simpleValue></baseName>
 					<value><simpleValue>CT_PAR_25</simpleValue></value>
 				</property>
+			</requirements>
+		</specification>
+
+		<!-- "Alvenarias usadas no Andar 5." -->
+		<specification name="Req_Par_05" ifcVersion="IFC4" identifier="Req_Par_05" description="Alvenarias usadas no Andar 5.">
+			<applicability  minOccurs= "1"  maxOccurs= "unbounded">
+				<entity>
+					<name><simpleValue>IFCWALL</simpleValue></name>
+				</entity>
+				<partOf  relation="IFCRELCONTAINEDINSPATIALSTRUCTURE" >
+					<entity>
+					<name><simpleValue>IFCBUILDINGSTOREY</simpleValue></name>
+					</entity>
+				</partOf>
+				<classification>
+					<system><simpleValue>NBR-15965-3E</simpleValue></system>
+					<value><simpleValue>3E.14.02</simpleValue></value>
+				</classification>
+				<attribute>
+					<name><simpleValue>Name</simpleValue></name>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="Andar 5*.*"/>
+					</xs:restriction>
+				</attribute>
+			</applicability>
+			<requirements>
 			</requirements>
 		</specification>
 
