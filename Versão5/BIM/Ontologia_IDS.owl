@@ -24,7 +24,7 @@ Ontology:  <https://github.com/JLMenegotto/RepoOnto#Objetos_IDS>
 	Annotations: rdfs:comment "Norma-Referência-02: -"@pt
 	Annotations: rdfs:comment "Norma-Referência-03: https://standards.buildingsmart.org/IFC/RELEASE/IFC4/ADD2_TC1/HTML/schema"@pt
 	Annotations: rdfs:comment "Observações: Modelo IDS"@pt
-	Annotations: rdfs:comment "DataHora: 19/11/2026 7:57:31"@pt
+	Annotations: rdfs:comment "DataHora: 19/11/2026 11:08:25"@pt
 	Annotations: rdfs:comment "Advertência: Algumas traduções podem precisar de revisão - Traducción al español incorporada"@pt
 	Annotations: rdfs:comment "Aviso: -"@pt
 	Annotations: rdfs:comment "Alert: -"@pt
@@ -1259,6 +1259,30 @@ Individual: bim:Req_Par_04
 	Facts: bim:req.propriedade.nome  "Reference"
 	Facts: bim:req.propriedade.tipo  "IFCIDENTIFIER"
 	Facts: bim:req.propriedade.valor  "CT_PAR_25"
+
+Individual: bim:Req_Par_05
+	Types: bim:Especifica.Parede
+	Facts: bim:é.pertencente.a  bim:Req_de_Paredes
+	Facts: bim:ids.seção.especificação  "especificação"
+	Facts: bim:método.revit  "IDS_Especificacao"
+	Facts: bim:ids.descrição  "Alvenarias usadas no Andar 5."
+	Facts: bim:ids.versão  "IFC4"
+	Facts: bim:ids.entidade.classe  "IFCWALL"
+	Facts: bim:ids.atributo.nome  "Name"
+	Facts: bim:ids.atributo.valor  "Andar 5*"
+	Facts: bim:req.cardinalidade  "required"
+	Facts: bim:ids.cardinalidade.min  "1"
+	Facts: bim:ids.cardinalidade.max  "unbounded"
+	Facts: bim:ids.classificação.sistema  "NBR-15965-3E"
+	Facts: bim:ids.classificação.código  "3E.14.02"
+	Facts: bim:ids.id  "Req_Par_05"
+	Facts: bim:ids.nome  "Req_Par_05"
+	Facts: bim:req.instrução  "Alvenarias usadas no Andar 5."
+	Facts: bim:ids.pset  "Pset_WallCommon"
+	Facts: bim:req.propriedade.nome  "LoadBearing"
+	Facts: bim:req.propriedade.tipo  "IFCBOOLEAN"
+	Facts: bim:ids.parte.de  "IFCBUILDINGSTOREY"
+	Facts: bim:ids.relativo.de  "IFCRELCONTAINEDINSPATIALSTRUCTURE"
 
 Individual: bim:Req_de_Bombeiros
 	Types: bim:Especificação.Bombeiros
@@ -14110,6 +14134,70 @@ ObjectProperty: bim:p.especificar
 
 
 
+ObjectProperty: bim:é.ids.atributo.nome
+	SubPropertyOf: bim:p.especificar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.atributo.nome"@pt
+	Annotations: bim:Chave "d.especificar.102"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara a abertura de uma seção de atributo definindo o nome do atributo."@pt
+	Annotations: bim:Definición "Declara la apertura de una sección de atributos definiendo el nombre del atributo."@es
+	Annotations: bim:Definition "Declare the opening of an attribute section by defining the attribute name."@en
+	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+
+DataProperty: bim:d.especificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ids.atributo.nome
+	SubPropertyOf: bim:d.especificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para especificar: ids.atributo.nome -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.especificar.102"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara a abertura de uma seção de atributo definindo o nome do atributo."@pt
+	Annotations: bim:Definición "Declara la apertura de una sección de atributos definiendo el nombre del atributo."@es
+	Annotations: bim:Definition "Declare the opening of an attribute section by defining the attribute name."@en
+	Annotations: bim:CódigoABNT "[ <ids:attribute><ids:name><ids:simpleValue> : val : </ids:simpleValue></ids:name> ]"
+
+ObjectProperty: bim:p.especificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ids.atributo.valor
+	SubPropertyOf: bim:p.especificar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.atributo.valor"@pt
+	Annotations: bim:Chave "d.especificar.103"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara o valor do atributo especificado (ex. JP1)."@pt
+	Annotations: bim:Definición "Declara el valor del atributo especificado (por ejemplo, JP1)."@es
+	Annotations: bim:Definition "Declare the value of the specified attribute (e.g. JP1)."@en
+	Annotations: bim:CódigoABNT "[ <ids:value> : sec : </ids:value> </ids:attribute> ]"
+
+DataProperty: bim:d.especificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ids.atributo.valor
+	SubPropertyOf: bim:d.especificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para especificar: ids.atributo.valor -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.especificar.103"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara o valor do atributo especificado (ex. JP1)."@pt
+	Annotations: bim:Definición "Declara el valor del atributo especificado (por ejemplo, JP1)."@es
+	Annotations: bim:Definition "Declare the value of the specified attribute (e.g. JP1)."@en
+	Annotations: bim:CódigoABNT "[ <ids:value> : sec : </ids:value> </ids:attribute> ]"
+
+ObjectProperty: bim:p.especificar
+	SubPropertyOf: bim:BIMProp
+
+
+
 ObjectProperty: bim:é.ids.cardinalidade.max
 	SubPropertyOf: bim:p.especificar
 	domain: bim:BIM
@@ -14392,6 +14480,38 @@ DataProperty: bim:ids.nome
 	Annotations: bim:Definición "Declara el nombre para identificar el contenido de una especificación IDS."@es
 	Annotations: bim:Definition "Declare a name for the IDS specification."@en
 	Annotations: bim:CódigoABNT "[ <name><simpleValue> : val : </simpleValue></name> ]"
+
+ObjectProperty: bim:p.especificar
+	SubPropertyOf: bim:BIMProp
+
+
+
+ObjectProperty: bim:é.ids.pset
+	SubPropertyOf: bim:p.especificar
+	domain: bim:BIM
+	Annotations: rdfs:comment "Propriedade destinada a especificar: é.ids.pset"@pt
+	Annotations: bim:Chave "d.especificar.143"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara um conjunto de propriedades definidas em IFC (PSET)."@pt
+	Annotations: bim:Definición "Declara un conjunto de propiedades definidas en IFC (PSET)."@es
+	Annotations: bim:Definition "Declare a set of properties defined in IFC (PSET)."@en
+	Annotations: bim:CódigoABNT "[ <ids:propertySet><ids:simpleValue> : val : </ids:simpleValue></ids:propertySet> ]"
+
+DataProperty: bim:d.especificar
+	SubPropertyOf: bim:BIMData
+
+
+
+DataProperty: bim:ids.pset
+	SubPropertyOf: bim:d.especificar
+	range: rdfs:Literal or xsd:string
+	Annotations: rdfs:comment "Dado para especificar: ids.pset -- Formatado como (rdfs:Literal or xsd:string)"@pt
+	Annotations: bim:Chave "d.especificar.143"
+	Annotations: bim:Ação "Ação de especificar"@pt
+	Annotations: bim:Definição "Declara um conjunto de propriedades definidas em IFC (PSET)."@pt
+	Annotations: bim:Definición "Declara un conjunto de propiedades definidas en IFC (PSET)."@es
+	Annotations: bim:Definition "Declare a set of properties defined in IFC (PSET)."@en
+	Annotations: bim:CódigoABNT "[ <ids:propertySet><ids:simpleValue> : val : </ids:simpleValue></ids:propertySet> ]"
 
 ObjectProperty: bim:p.especificar
 	SubPropertyOf: bim:BIMProp
@@ -44154,5 +44274,5 @@ DataProperty: bim:zona.pública
 
 #################################################################
 ##  Fim da Ontologia IDS
-##  Criada em 19/11/2026 7:57:55
+##  Criada em 19/11/2026 11:08:41
 #################################################################
