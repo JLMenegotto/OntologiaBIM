@@ -75,33 +75,33 @@ O botão <b>Modelo</b> está reservado para a função que extrairá a imagem on
 
 | Ontologias                                     | Ontologias                             |
 | :---                                           | :---                                   |
-|   0 __ \\ABNT\\Ontologia_NBR15965_0M           |  26 __ \\EST\\Ontologia_Geotecnica     |
-|   1 __ \\ABNT\\Ontologia_NBR15965_0P           |  27 __ \\EST\\Ontologia_Metalica       |
-|   2 __ \\ABNT\\Ontologia_NBR15965_1D           |  28 __ \\EST\\Ontologia_Infraestrutura |
-|   3 __ \\ABNT\\Ontologia_NBR15965_1F           |  29 __ \\GIS\\Ontologia_kml_2x2        |
-|   4 __ \\ABNT\\Ontologia_NBR15965_1S           |  30 __ \\GIS\\Ontologia_OSM            |
-|   5 __ \\ABNT\\Ontologia_NBR15965_2C           |  31 __ \\PRO\\Ontologia_Agentes        |
-|   6 __ \\ABNT\\Ontologia_NBR15965_2N           |  32 __ \\PRO\\Ontologia_Cromatica      |
-|   7 __ \\ABNT\\Ontologia_NBR15965_2Q           |  33 __ \\PRO\\Ontologia_Crono          |
-|   8 __ \\ABNT\\Ontologia_NBR15965_3E           |  34 __ \\PRO\\Ontologia_Documentos     |
-|   9 __ \\ABNT\\Ontologia_NBR15965_3R           |  35 __ \\PRO\\Ontologia_Fabricantes    |
-|  10 __ \\ABNT\\Ontologia_NBR15965_4A           |  36 __ \\PRO\\Ontologia_Genetica       |
-|  11 __ \\ABNT\\Ontologia_NBR15965_4U           |  37 __ \\PRO\\Ontologia_Materiais      |
-|  12 __ \\ABNT\\Ontologia_NBR15965_5I           |  38 __ \\PRO\\Ontologia_Requisitos     |
-|  13 __ \\ARQ\\Ontologia_Ambientes              |  39 __ \\SIS\\Ontologia_Intel          |
-|  14 __ \\ARQ\\Ontologia_Arquitetura            |  40 __ \\SIS\\Ontologia_Tubulacao      |
-|  15 __ \\ARQ\\Ontologia_Circulacao             |  41 __ \\SUS\\Ontologia_RDC_50         |
-|  16 __ \\ARQ\\Ontologia_Drones                 |  42 __ \\SUS\\Ontologia_SomaSUS_2Q     |
-|  17 __ \\ARQ\\Ontologia_Paisagismo             |  43 __ \\SUS\\Ontologia_SomaSUS_4AU    |
-|  18 __ \\BIM\\Ontologia_Ifc_4x3                |  44 __ \\SUS\\Ontologia_SomaSUS_5I     |
-|  19 __ \\BRASIL\\Ontologia_Brasil              |  45 __ \\UFRJ\\Ontologia_CT_Ambientes  |
-|  20 __ \\BRASIL\\Ontologia_Brasil_Meteorologia |  46 __ \\UFRJ\\Ontologia_CT_Codigos    |
-|  21 __ \\BRASIL\\Ontologia_Brasil_MG           |                                        |
-|  22 __ \\BRASIL\\Ontologia_Brasil_RJ           |                                        |
-|  23 __ \\BRASIL\\Ontologia_Brasil_SP           |                                        |
-|  24 __ \\BRASIL\\Ontologia_Sinapi              |                                        |
-|  25 __ \\BRASIL\\Ontologia_TSB                 |                                        |
-
+|   0 __ \\ABNT\\Ontologia_NBR15965_0M           |  27 __ \\EST\\Ontologia_Geotecnica     |
+|   1 __ \\ABNT\\Ontologia_NBR15965_0P           |  28 __ \\EST\\Ontologia_Metalica       |
+|   2 __ \\ABNT\\Ontologia_NBR15965_1D           |  29 __ \\EST\\Ontologia_Infraestrutura |
+|   3 __ \\ABNT\\Ontologia_NBR15965_1F           |  30 __ \\GIS\\Ontologia_kml_2x2        |
+|   4 __ \\ABNT\\Ontologia_NBR15965_1S           |  31 __ \\GIS\\Ontologia_OSM            |
+|   5 __ \\ABNT\\Ontologia_NBR15965_2C           |  32 __ \\PRO\\Ontologia_Agentes        |
+|   6 __ \\ABNT\\Ontologia_NBR15965_2N           |  33 __ \\PRO\\Ontologia_Cromatica      |
+|   7 __ \\ABNT\\Ontologia_NBR15965_2Q           |  34 __ \\PRO\\Ontologia_Crono          |
+|   8 __ \\ABNT\\Ontologia_NBR15965_3E           |  35 __ \\PRO\\Ontologia_Documentos     |
+|   9 __ \\ABNT\\Ontologia_NBR15965_3R           |  36 __ \\PRO\\Ontologia_Fabricantes    |
+|  10 __ \\ABNT\\Ontologia_NBR15965_4A           |  37 __ \\PRO\\Ontologia_Genetica       |
+|  11 __ \\ABNT\\Ontologia_NBR15965_4U           |  38 __ \\PRO\\Ontologia_Materiais      |
+|  12 __ \\ABNT\\Ontologia_NBR15965_5I           |  39 __ \\PRO\\Ontologia_Requisitos     |
+|  13 __ \\ARQ\\Ontologia_Ambientes              |  40 __ \\SIS\\Ontologia_Intel          |
+|  14 __ \\ARQ\\Ontologia_Arquitetura            |  41 __ \\SIS\\Ontologia_Tubulacao      |
+|  15 __ \\ARQ\\Ontologia_Circulacao             |  42 __ \\SUS\\Ontologia_RDC_50         |
+|  16 __ \\ARQ\\Ontologia_Drones                 |  43 __ \\SUS\\Ontologia_SomaSUS_2Q     |
+|  17 __ \\ARQ\\Ontologia_Paisagismo             |  44 __ \\SUS\\Ontologia_SomaSUS_4AU    |
+|  18 __ \\BIM\\Ontologia_IDS                    |  45 __ \\SUS\\Ontologia_SomaSUS_5I     |
+|  19 __ \\BIM\\Ontologia_Ifc_4x3                |  46 __ \\UFRJ\\Ontologia_CT_Ambientes  |
+|  20 __ \\BRASIL\\Ontologia_Brasil              |  47 __ \\UFRJ\\Ontologia_CT_Codigos    |
+|  21 __ \\BRASIL\\Ontologia_Brasil_Meteorologia |  46 __ \\UFRJ\\Ontologia_CT_Codigos    |
+|  22 __ \\BRASIL\\Ontologia_Brasil_MG           |                                        |
+|  23 __ \\BRASIL\\Ontologia_Brasil_RJ           |                                        |
+|  24 __ \\BRASIL\\Ontologia_Brasil_SP           |                                        |
+|  25 __ \\BRASIL\\Ontologia_Sinapi              |                                        |
+|  26 __ \\BRASIL\\Ontologia_TSB                 |                                        |
 
 
 #### Prompt de execução
