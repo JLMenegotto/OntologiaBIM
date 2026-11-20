@@ -20,6 +20,7 @@ Os arquivos necessários para a instalação do construtor de ontologias BIM est
 |  **Ontologia_ + tema + .xlsx**   |  Arquivo Excel com a estruturação do campo ontológico e ôntico. (Conceitos, Propriedades e Indivíduos (Entidades). |
 |  **Ontologia_ + tema + .owl**    |  Ontologia correspondente criada em sintaxe Manchester.                                                            |
 |  **Ontologia_ + tema + .ttl**    |  Ontologia correspondente criada em sintaxe Turtle.                                                                |
+|  **Ontologia_ + tema + .ids**    |  Arquivo IDS sincronizado com as Ontologias Manchester e Turtle (Apenas para a ontologia IDS).                     |
 
 ## Domínios ontológicos 
 
