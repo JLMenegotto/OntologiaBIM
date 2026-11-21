@@ -554,15 +554,21 @@
 
 		<!-- "Material proibido." -->
 		<specification name="Req_Mat_Proibido_01" ifcVersion="IFC4" identifier="Req_Mat_Proibido_01" description="Material proibido.">
-			<applicability  >
+			<applicability  minOccurs= "0"  maxOccurs= "0">
 				<entity>
 					<name><simpleValue>IFCMATERIAL</simpleValue></name>
 				</entity>
 			</applicability>
 			<requirements>
-				<material  cardinality="prohibited">
-					<value><simpleValue>[ Amianto : Asbesto ]</simpleValue></value>
-				</material>
+				<attribute  cardinality="prohibited">
+					<name><simpleValue>Name</simpleValue></name>
+				<value>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Amianto"/>
+						<xs:enumeration value="Asbesto"/>
+					</xs:restriction>
+				</value>
+				</attribute>
 			</requirements>
 		</specification>
 	</specifications>
